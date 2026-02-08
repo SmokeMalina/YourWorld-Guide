@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Кейс Желтый 500</title>
+
     <style>
       :root {
         color-scheme: dark;
       }
+
       body {
         margin: 0;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
@@ -15,11 +17,13 @@
         background: #0b0b0d;
         color: #eaeaea;
       }
+
       .wrap {
         max-width: 980px;
         margin: 0 auto;
         padding: 28px 16px 60px;
       }
+
       a {
         color: #ff8500;
         text-decoration: none;
@@ -27,35 +31,85 @@
       a:hover {
         text-decoration: underline;
       }
+
+      /* Универсальная карточка */
       .card {
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 14px;
         padding: 14px;
         background: rgba(255, 255, 255, 0.03);
       }
+
+      /* ===== ITEM HERO ===== */
+      .item-hero {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin: 10px 0 22px;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        background: radial-gradient(
+            700px 240px at 10% 0%,
+            rgba(255, 133, 0, 0.16),
+            transparent 60%
+          ),
+          rgba(255, 255, 255, 0.03);
+      }
+
+      .item-hero__img {
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 10px;
+        filter: drop-shadow(0 0 18px rgba(255, 133, 0, 0.25));
+        flex: 0 0 auto;
+      }
+
+      .item-hero__title {
+        margin: 0 0 6px;
+        font-size: 34px;
+      }
+
+      .item-hero__desc {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.4;
+      }
+
+      /* ===== TABLE ===== */
       table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
       }
-      td,
-      th {
+
+      th,
+      td {
         padding: 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         text-align: left;
       }
-      td:last-child,
-      th:last-child {
+
+      th:last-child,
+      td:last-child {
         text-align: right;
       }
+
+      /* ===== ITEM ROW ===== */
       .item {
         display: flex;
         align-items: center;
         gap: 14px;
       }
+
       .item span {
         font-size: 16px;
       }
+
       .item img {
         width: 80px;
         height: 80px;
@@ -66,39 +120,79 @@
         padding: 6px;
         filter: drop-shadow(0 0 10px rgba(255, 133, 0, 0.3));
       }
+
+      @media (max-width: 560px) {
+        .item-hero {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .item-hero__img {
+          width: 100%;
+          max-width: 260px;
+          height: auto;
+        }
+
+        .item-hero__title {
+          font-size: 28px;
+        }
+      }
     </style>
   </head>
+
   <body>
     <div class="wrap">
       <p><a href="../">← На главную</a></p>
-      <h1>Кейс Желтый 500</h1>
+
+      <!-- ITEM HERO -->
+      <div class="item-hero">
+        <img
+          class="item-hero__img"
+          src="../img/items/Screenshot_41.png"
+          alt="Кейс Желтый 500"
+        />
+        <div>
+          <h1 class="item-hero__title">Кейс Желтый 500</h1>
+          <p class="item-hero__desc">
+            Кейс с инструментами и ресурсами для крафта и сборок.
+          </p>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
       <div class="card">
         <h2>Содержимое</h2>
+
         <table>
           <tr>
             <th>Предмет</th>
             <th>Кол-во</th>
           </tr>
+
           <tr>
             <td>Кейс Желтый 250</td>
             <td>x1</td>
           </tr>
+
           <tr>
             <td>Кейс Желтый 100</td>
             <td>x1</td>
           </tr>
+
           <tr>
             <td>Чертеж кейса</td>
             <td>x1</td>
           </tr>
+
           <tr>
             <td>Защитный ящик</td>
             <td>x1</td>
           </tr>
+
           <tr>
             <td>
               <div class="item">
-                <img src="../img/items/Screenshot_41.png" alt="" /> 
+                <img src="../img/items/Screenshot_41.png" alt="" />
                 <span>Сварочный аппарат</span>
               </div>
             </td>
