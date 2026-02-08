@@ -1,60 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Кейс Желтый 500</title>
-  <style>
-    :root { color-scheme: dark; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0b0d; color:#eaeaea; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 16px 60px; }
-    a { color:#ff8500; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .card { border:1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 14px; background: rgba(255,255,255,.03); }
-    table { width:100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,.08); text-align:left; }
-    th:last-child, td:last-child { text-align:right; }
-    .item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .item img {
-      width: 64px;
-      height: 64px;
-      object-fit: contain;
-      border-radius: 10px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      padding: 6px;
-      filter: drop-shadow(0 0 10px rgba(255,133,0,.30));
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <p><a href="../">← На главную</a></p>
-    <h1>Кейс Желтый 500</h1>
-
-    <div class="card">
-      <h2>Содержимое</h2>
-      <table>
-        <tr><th>Предмет</th><th>Кол-во</th></tr>
-        <tr><td>Кейс Желтый 250</td><td>x1</td></tr>
-        <tr><td>Кейс Желтый 100</td><td>x1</td></tr>
-        <tr><td>Чертеж кейса</td><td>x1</td></tr>
-        <tr><td>Защитный ящик</td><td>x1</td></tr>
-        <tr>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Кейс Желтый 500</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        background: #0b0b0d;
+        color: #eaeaea;
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 16px 60px;
+      }
+      a {
+        color: #ff8500;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      td,
+      th {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: left;
+      }
+      td:last-child,
+      th:last-child {
+        text-align: right;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .item span {
+        font-size: 16px;
+      }
+      .item img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 6px;
+        filter: drop-shadow(0 0 10px rgba(255, 133, 0, 0.3));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p><a href="../">← На главную</a></p>
+      <h1>Кейс Желтый 500</h1>
+      <div class="card">
+        <h2>Содержимое</h2>
+        <table>
+          <tr>
+            <th>Предмет</th>
+            <th>Кол-во</th>
+          </tr>
+          <tr>
+            <td>Кейс Желтый 250</td>
+            <td>x1</td>
+          </tr>
+          <tr>
+            <td>Кейс Желтый 100</td>
+            <td>x1</td>
+          </tr>
+          <tr>
+            <td>Чертеж кейса</td>
+            <td>x1</td>
+          </tr>
+          <tr>
+            <td>Защитный ящик</td>
+            <td>x1</td>
+          </tr>
+          <tr>
             <td>
-                <div class="item">
-                <img src="../img/items/Screenshot_41.png" alt="">
-                Сварочный аппарат
-                </div>
-          </td>
-        <td>x1</td>
-      </tr>
-      </table>
+              <div class="item">
+                <img src="../img/items/Screenshot_41.png" alt="" /> 
+                <span>Сварочный аппарат</span>
+              </div>
+            </td>
+            <td>x1</td>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
