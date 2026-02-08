@@ -1,66 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>YourWorld Guide</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0b0d; color:#eaeaea; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 16px 60px; }
+    .hero { border:1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 18px; background: radial-gradient(800px 300px at 20% 0%, rgba(255,133,0,.20), transparent 60%), rgba(255,255,255,.03); }
+    h1 { margin: 0 0 8px; letter-spacing: .5px; }
+    .muted { color: rgba(255,255,255,.70); margin: 0; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 16px; }
+    .card { border:1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 14px; background: rgba(255,255,255,.03); }
+    .card h2 { margin: 0 0 8px; font-size: 16px; }
+    a { color: #ff8500; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .list { margin: 0; padding-left: 18px; }
+    .badge { display:inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: rgba(255,133,0,.16); border: 1px solid rgba(255,133,0,.25); color: #ffb36b; margin-left: 8px; }
+    footer { margin-top: 24px; color: rgba(255,255,255,.55); font-size: 12px; }
+  </style>
 </head>
-
 <body>
   <div class="wrap">
-
-    <!-- Шапка -->
-    <div class="header-hero">
-      <h1>YourWorld Guide</h1>
-      <p>База крафта и кейсов сервера YourWorld</p>
+    <div class="hero">
+      <h1>YourWorld Guide <span class="badge">GitHub Pages</span></h1>
+      <p class="muted">Минимальная стартовая страница. Если ты видишь это, значит Pages работает.</p>
     </div>
 
-    <!-- Поиск -->
-    <input
-      type="text"
-      id="search"
-      class="search"
-      placeholder="Поиск по крафту или кейсу..."
-    />
+    <div class="grid">
+      <div class="card">
+        <h2>Кейсы</h2>
+        <ul class="list">
+          <li><a href="craft/case_yellow.html">Кейс Желтый 500</a></li>
+        </ul>
+      </div>
 
-    <!-- Сетка карточек -->
-    <div class="grid-tiles" id="tiles">
-
-      <a class="tile" href="craft/welding.html" data-name="сварочный аппарат">
-        <img src="img/items/Screenshot_41.png" alt="Сварочный аппарат">
-        <span>Сварочный аппарат</span>
-      </a>
-
-      <a class="tile" href="cases/yellow_500.html" data-name="кейс желтый 500">
-        <img src="img/cases/yellow_500.png" alt="Кейс Желтый 500">
-        <span>Кейс Желтый 500</span>
-      </a>
-
-      <!-- Тут можно добавлять до 16 карточек -->
-      <!-- Пример:
-      <a class="tile" href="craft/another.html" data-name="ещё предмет">
-        <img src="img/items/another.png" alt="Еще предмет">
-        <span>Ещё предмет</span>
-      </a>
-      -->
-
-    </div>
+    <footer>
+      Если ссылки 404, значит страницы еще не созданы. Добавь файлы из шага 2 и 3 ниже.
+    </footer>
   </div>
-
-  <!-- Поиск JS -->
-  <script>
-    const search = document.getElementById("search");
-    const tiles = document.querySelectorAll(".tile");
-
-    search.addEventListener("input", () => {
-      const value = search.value.toLowerCase();
-
-      tiles.forEach(tile => {
-        const name = tile.dataset.name;
-        tile.style.display = name.includes(value) ? "flex" : "none";
-      });
-    });
-  </script>
 </body>
 </html>
