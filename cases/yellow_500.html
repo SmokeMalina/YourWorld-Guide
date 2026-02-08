@@ -14,6 +14,17 @@
     table { width:100%; border-collapse: collapse; margin-top: 10px; }
     th, td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,.08); text-align:left; }
     th:last-child, td:last-child { text-align:right; }
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .item img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 6px rgba(255,133,0,.25));
+    }
   </style>
 </head>
 <body>
@@ -29,7 +40,15 @@
         <tr><td>Кейс Желтый 100</td><td>x1</td></tr>
         <tr><td>Чертеж кейса</td><td>x1</td></tr>
         <tr><td>Защитный ящик</td><td>x1</td></tr>
-        <tr><td>Сварочный аппарат</td><td>x1</td></tr>
+        <tr>
+            <td>
+                <div class="item">
+                <img src="../img/items/Screenshot_41.png" alt="">
+                Сварочный аппарат
+                </div>
+          </td>
+        <td>x1</td>
+      </tr>
       </table>
     </div>
   </div>
