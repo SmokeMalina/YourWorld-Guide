@@ -3,31 +3,161 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>YourWorld Крафт</title>
+  <title>YourWorld Guide</title>
+
   <style>
     :root { color-scheme: dark; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0b0d; color:#eaeaea; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 16px 60px; }
-    .hero { border:1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 18px; background: radial-gradient(800px 300px at 20% 0%, rgba(255,133,0,.20), transparent 60%), rgba(255,255,255,.03); }
-    h1 { margin: 0 0 8px; letter-spacing: .5px; }
-    .muted { color: rgba(255,255,255,.70); margin: 0; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 16px; }
-    .card { border:1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 14px; background: rgba(255,255,255,.03); }
-    .card h2 { margin: 0 0 8px; font-size: 16px; }
-    a { color: #ff8500; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .list { margin: 0; padding-left: 18px; }
-    .badge { display:inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: rgba(255,133,0,.16); border: 1px solid rgba(255,133,0,.25); color: #ffb36b; margin-left: 8px; }
-    footer { margin-top: 24px; color: rgba(255,255,255,.55); font-size: 12px; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:#0b0b0d;
+      color:#eaeaea;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 16px 60px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 18px;
+      background:
+        radial-gradient(800px 300px at 20% 0%, rgba(255,133,0,.20), transparent 60%),
+        rgba(255,255,255,.03);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      letter-spacing: .5px;
+    }
+
+    .muted {
+      color: rgba(255,255,255,.70);
+      margin: 0;
+    }
+
+    .badge {
+      display:inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(255,133,0,.16);
+      border: 1px solid rgba(255,133,0,.25);
+      color: #ffb36b;
+      margin-left: 8px;
+    }
+
+    /* ===== GRID CARDS ===== */
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .card {
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    a {
+      color: #ff8500;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    /* ===== TABS ===== */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      cursor: pointer;
+      font-size: 14px;
+      color: rgba(255,255,255,.8);
+    }
+
+    .tab.active {
+      background: rgba(255,133,0,.18);
+      border-color: rgba(255,133,0,.35);
+      color: #ffb36b;
+    }
+
+    /* ===== CRAFT GRID ===== */
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .craft-item {
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 12px;
+      background: rgba(255,255,255,.03);
+      text-align: center;
+    }
+
+    .craft-item img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 12px rgba(255,133,0,.25));
+      margin-bottom: 6px;
+    }
+
+    .craft-item .name {
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 26px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+
+    <!-- HERO -->
     <div class="hero">
       <h1>YourWorld Guide <span class="badge">GitHub Pages</span></h1>
-      <p class="muted">Минимальная стартовая страница. Если ты видишь это, значит Pages работает.</p>
+      <p class="muted">
+        Минимальная стартовая страница. Если ты видишь это, значит Pages работает.
+      </p>
     </div>
 
+    <!-- BASE CARDS -->
     <div class="grid">
       <div class="card">
         <h2>Кейсы</h2>
@@ -51,9 +181,62 @@
       </div>
     </div>
 
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="tab active" data-tab="tools">Инструменты</div>
+      <div class="tab" data-tab="materials">Материалы</div>
+      <div class="tab" data-tab="boxes">Ящики</div>
+      <div class="tab" data-tab="other">Прочее</div>
+    </div>
+
+    <!-- CRAFT CONTENT -->
+    <div class="craft-grid" id="tools">
+      <a class="craft-item" href="craft/welding.html">
+        <img src="img/items/Screenshot_41.png" alt="">
+        <div class="name">Сварочный аппарат</div>
+      </a>
+    </div>
+
+    <div class="craft-grid" id="materials" style="display:none">
+      <div class="craft-item">
+        <img src="img/items/metal.png" alt="">
+        <div class="name">Брусок металла</div>
+      </div>
+    </div>
+
+    <div class="craft-grid" id="boxes" style="display:none">
+      <div class="craft-item">
+        <img src="img/items/box.png" alt="">
+        <div class="name">Защитный ящик</div>
+      </div>
+    </div>
+
+    <div class="craft-grid" id="other" style="display:none">
+      <div class="craft-item">
+        <img src="img/items/other.png" alt="">
+        <div class="name">Прочее</div>
+      </div>
+    </div>
+
     <footer>
-      Если ссылки 404, значит страницы еще не созданы. Добавь файлы из шага 2 и 3 ниже.
+      Если ссылки 404, значит страницы еще не созданы.
     </footer>
   </div>
+
+  <!-- TABS SCRIPT -->
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const grids = document.querySelectorAll('.craft-grid');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        grids.forEach(g => g.style.display = 'none');
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).style.display = 'grid';
+      });
+    });
+  </script>
 </body>
 </html>
