@@ -151,3 +151,65 @@ td:last-child {
     font-size: 28px;
   }
 }
+
+/* ===== SEARCH ===== */
+.search {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 16px 0 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: #eaeaea;
+}
+
+.search::placeholder {
+  color: rgba(255,255,255,.5);
+}
+
+/* ===== GRID TILES ===== */
+.grid-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+  text-align: center;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(255,133,0,.25);
+}
+
+.tile img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(255,133,0,.25));
+}
+
+.tile span {
+  font-size: 15px;
+  color: #eaeaea;
+}
+
+/* ===== ADAPTIVE ===== */
+@media (max-width: 900px) {
+  .grid-tiles { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid-tiles { grid-template-columns: repeat(2, 1fr); }
+}
