@@ -4,49 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YourWorld Guide</title>
-
-  <!-- ВАЖНО: style.css в корне -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="wrap">
 
-    <!-- HERO -->
-    <div class="card">
+    <!-- Шапка -->
+    <div class="header-hero">
       <h1>YourWorld Guide</h1>
-      <p style="color: rgba(255,255,255,.7); margin: 6px 0 0;">
-        База крафта и кейсов сервера YourWorld
-      </p>
+      <p>База крафта и кейсов сервера YourWorld</p>
     </div>
 
-    <!-- SEARCH -->
+    <!-- Поиск -->
     <input
       type="text"
       id="search"
       class="search"
-      placeholder="Поиск по крафту или кейсам..."
+      placeholder="Поиск по крафту или кейсу..."
     />
 
-    <!-- GRID -->
+    <!-- Сетка карточек -->
     <div class="grid-tiles" id="tiles">
 
       <a class="tile" href="craft/welding.html" data-name="сварочный аппарат">
-        <img src="img/items/Screenshot_41.png" alt="">
+        <img src="img/items/Screenshot_41.png" alt="Сварочный аппарат">
         <span>Сварочный аппарат</span>
       </a>
 
       <a class="tile" href="cases/yellow_500.html" data-name="кейс желтый 500">
-        <img src="img/cases/yellow_500.png" alt="">
+        <img src="img/cases/yellow_500.png" alt="Кейс Желтый 500">
         <span>Кейс Желтый 500</span>
       </a>
 
-      <!-- добавляй карточки ниже -->
+      <!-- Тут можно добавлять до 16 карточек -->
+      <!-- Пример:
+      <a class="tile" href="craft/another.html" data-name="ещё предмет">
+        <img src="img/items/another.png" alt="Еще предмет">
+        <span>Ещё предмет</span>
+      </a>
+      -->
 
     </div>
   </div>
 
-  <!-- SEARCH SCRIPT -->
+  <!-- Поиск JS -->
   <script>
     const search = document.getElementById("search");
     const tiles = document.querySelectorAll(".tile");
