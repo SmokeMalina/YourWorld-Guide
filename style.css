@@ -15,197 +15,86 @@ body {
   padding: 28px 16px 60px;
 }
 
-a {
-  color: #ff8500;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* ===== CARD ===== */
-.card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 14px;
-  background: rgba(255, 255, 255, 0.03);
+/* ===== HEADER HERO ===== */
+.header-hero {
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(180deg, rgba(255,133,0,.12), transparent 60%),
+    rgba(255,255,255,.03);
 }
 
-/* ===== ITEM HERO ===== */
-.item-hero {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin: 10px 0 22px;
-  padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  background: radial-gradient(
-      700px 240px at 10% 0%,
-      rgba(255, 133, 0, 0.16),
-      transparent 60%
-    ),
-    rgba(255, 255, 255, 0.03);
-}
-
-.item-hero__img {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 10px;
-  filter: drop-shadow(0 0 18px rgba(255, 133, 0, 0.25));
-}
-
-.item-hero__title {
-  margin: 0 0 6px;
-  font-size: 34px;
-}
-
-.item-hero__desc {
+.header-hero h1 {
   margin: 0;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 28px;
+  letter-spacing: .3px;
 }
 
-/* ===== TABLE ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th,
-td {
-  padding: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: left;
-}
-
-th:last-child,
-td:last-child {
-  text-align: right;
-}
-
-/* ===== ITEM ROW ===== */
-.item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.item img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 6px;
-  filter: drop-shadow(0 0 10px rgba(255, 133, 0, 0.3));
-}
-
-/* ===== CRAFT GRID ===== */
-.craft-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.craft-item {
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.craft-item img {
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
-  margin-bottom: 6px;
-  filter: drop-shadow(0 0 12px rgba(255, 133, 0, 0.25));
-}
-
-.craft-item .name {
+.header-hero p {
+  margin: 6px 0 0;
+  color: rgba(255,255,255,.65);
   font-size: 14px;
-}
-
-.craft-item .count {
-  margin-top: 4px;
-  font-size: 13px;
-  color: #ffb36b;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 560px) {
-  .item-hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .item-hero__title {
-    font-size: 28px;
-  }
 }
 
 /* ===== SEARCH ===== */
 .search {
   width: 100%;
-  padding: 12px 14px;
-  margin: 16px 0 20px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.12);
+  padding: 10px 12px;
+  margin: 12px 0 18px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
   color: #eaeaea;
 }
 
 .search::placeholder {
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.57);
 }
 
 /* ===== GRID TILES ===== */
 .grid-tiles {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 14px;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 .tile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 14px;
-  border-radius: 16px;
+  gap: 8px;
+  padding: 12px 8px;
+  border-radius: 14px;
   border: 1px solid rgba(255,255,255,.08);
   background: rgba(255,255,255,.03);
+  min-height: 150px;
   text-align: center;
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .tile:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 22px rgba(255,133,0,.25);
+  box-shadow: 0 0 20px rgba(255,133,0,.24);
 }
 
 .tile img {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
-  filter: drop-shadow(0 0 14px rgba(255,133,0,.25));
+  filter: drop-shadow(0 0 12px rgba(255,133,0,.25));
 }
 
 .tile span {
-  font-size: 15px;
+  font-size: 14px;
   color: #eaeaea;
 }
 
-/* ===== ADAPTIVE ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 900px) {
   .grid-tiles { grid-template-columns: repeat(3, 1fr); }
 }
