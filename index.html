@@ -9,170 +9,107 @@
   <title>Крафт YourWorld</title>
   <link rel="stylesheet" href="/YourWorld-Guide/style.css">
 </head>
-<body>
-  <div class="wrap">
 
-    <div class="hero">
-      <div class="hero-inner">
-        <img class="hero-logo" src="/YourWorld-Guide/images/ywlogo.png" alt="YourWorld">
-        <div>
-          <h1>YourWorld</h1>
-          <p class="muted">Гайд по крафту сервера YourWorld</p>
-        </div>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/YourWorld-Guide/images/ywlogo.png" alt="YourWorld">
+      <div>
+        <h1>YourWorld</h1>
+        <p class="muted">Гайд по крафту сервера YourWorld</p>
       </div>
     </div>
-
-    <!-- Поиск по рецептам -->
-    <div class="search-block">
-      <input
-        id="search"
-        type="text"
-        class="search-input"
-        placeholder="Поиск рецепта..."
-        autocomplete="off"
-        spellcheck="false"
-      />
-    
-      <div id="search-results" class="search-dropdown hidden"></div>
-    </div>
-
-    <div class="tile-grid">
-      <a class="tile" href="/YourWorld-Guide/craft/categories/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_case.png" alt="">
-        <span>Крафт кейсов</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/categories/items.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_items.png" alt="">
-        <span>Крафт предметов</span>
-      </a>
-
-      <!-- Остальные пункты пока ведут куда ты захочешь -->
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_clothing.png" alt="">
-        <span>Крафт одежды</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_conserv.png" alt="">
-        <span>Крафт консерв</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_crates_barrel_chest.png" alt="">
-        <span>Крафт ящиков бочке сундуков</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_electronic.png" alt="">
-        <span>Крафт электроники</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_knifes.png" alt="">
-        <span>Крафт ножей</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_mag_dark.png" alt="">
-        <span>Крафт магазинов Dark</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_mag_bloody.png" alt="">
-        <span>Крафт магазинов Bloody</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_mag_immortal.png" alt="">
-        <span>Крафт магазинов Immortal</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_mag_phantom.png" alt="">
-        <span>Крафт магазинов Phantom</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_medecine.png" alt="">
-        <span>Крафт медицины</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_sets.png" alt="">
-        <span>Крафт сетов</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_suppressor.png" alt="">
-        <span>Крафт глушителей</span>
-      </a>
-
-      <a class="tile" href="/YourWorld-Guide/craft/cases.html">
-        <img src="/YourWorld-Guide/images/categories/hdd_weapons.png" alt="">
-        <span>Крафт оружия</span>
-      </a>
-    </div>
-
   </div>
 
-  <!-- Поиск -->
-  <script src="/YourWorld-Guide/recipes.js"></script>
-  <script>
-  (function () {
-    const input = document.getElementById("search");
-    const dropdown = document.getElementById("search-results");
+  <!-- ПОИСК -->
+  <div class="search-block">
+    <input
+      id="search"
+      class="search-input"
+      type="text"
+      placeholder="Поиск рецепта..."
+      autocomplete="off"
+      spellcheck="false"
+    >
+    <div id="search-results" class="search-dropdown hidden"></div>
+  </div>
 
-    if (!input || !dropdown || !window.RECIPES) return;
+  <!-- КАТЕГОРИИ -->
+  <div class="tile-grid">
+    <a class="tile" href="/YourWorld-Guide/craft/categories/cases.html">
+      <img src="/YourWorld-Guide/images/categories/hdd_case.png">
+      <span>Крафт кейсов</span>
+    </a>
 
-    function clear() {
-      dropdown.innerHTML = "";
-      dropdown.classList.add("hidden");
-    }
+    <a class="tile" href="/YourWorld-Guide/craft/categories/items.html">
+      <img src="/YourWorld-Guide/images/categories/hdd_items.png">
+      <span>Крафт предметов</span>
+    </a>
+  </div>
 
-    function render(list) {
-      dropdown.innerHTML = "";
+</div>
 
-      if (!list.length) {
-        dropdown.innerHTML = "<div class='search-empty'>Ничего не найдено</div>";
-        dropdown.classList.remove("hidden");
-        return;
-      }
+<script src="/YourWorld-Guide/craft/recipes.js"></script>
 
-      list.slice(0, 20).forEach(r => {
-        const a = document.createElement("a");
-        a.href = r.path;
-        a.className = "search-item";
-        a.textContent = r.title;
-        dropdown.appendChild(a);
-      });
+<script>
+(function () {
+  const input = document.getElementById("search");
+  const dropdown = document.getElementById("search-results");
 
+  if (!input || !dropdown || !window.RECIPES) return;
+
+  function clear() {
+    dropdown.innerHTML = "";
+    dropdown.classList.add("hidden");
+  }
+
+  function render(list) {
+    dropdown.innerHTML = "";
+
+    if (!list.length) {
+      dropdown.innerHTML = "<div class='search-empty'>Ничего не найдено</div>";
       dropdown.classList.remove("hidden");
+      return;
     }
 
-    input.addEventListener("input", () => {
-      const q = input.value.trim().toLowerCase();
+    list.slice(0, 20).forEach(r => {
+      const a = document.createElement("a");
+      a.href = r.path;
+      a.className = "search-item";
 
-      if (!q) {
-        clear();
-        return;
-      }
+      const img = document.createElement("img");
+      img.src = r.icon;
+      img.className = "search-icon";
 
-      const filtered = window.RECIPES.filter(r =>
-        (r.title || "").toLowerCase().includes(q)
-      );
+      const span = document.createElement("span");
+      span.textContent = r.title;
 
-      render(filtered);
+      a.appendChild(img);
+      a.appendChild(span);
+      dropdown.appendChild(a);
     });
 
-    // Закрытие по клику вне
-    document.addEventListener("click", e => {
-      if (!e.target.closest(".search-block")) {
-        clear();
-      }
-    });
-  })();
-  </script>
+    dropdown.classList.remove("hidden");
+  }
+
+  input.addEventListener("input", () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) return clear();
+
+    render(
+      window.RECIPES.filter(r =>
+        r.title.toLowerCase().includes(q)
+      )
+    );
+  });
+
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".search-block")) clear();
+  });
+})();
+</script>
 
 </body>
 </html>
