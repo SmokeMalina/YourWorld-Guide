@@ -28,6 +28,44 @@ a:hover { text-decoration:underline; }
   margin-bottom: 18px;
 }
 
+/* HERO с логотипом */
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-logo {
+  width: 56px;         /* фикс размера */
+  height: 56px;
+  flex: 0 0 56px;      /* не даём сжиматься/растягиваться */
+  object-fit: contain; /* не тянем пропорции */
+  border-radius: 14px;
+  padding: 8px;
+
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  filter: drop-shadow(0 0 14px rgba(255,133,0,.28));
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* На мобилке можно чуть меньше */
+@media (max-width: 520px) {
+  .hero-logo {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+    border-radius: 12px;
+    padding: 6px;
+  }
+}
+
+
 h1 { margin: 0 0 8px; font-size: 34px; font-weight: 800; letter-spacing: -0.3px; }
 h2 { margin: 0 0 12px; font-size: 22px; font-weight: 700; }
 
