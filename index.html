@@ -32,7 +32,8 @@
         autocomplete="off"
         spellcheck="false"
       />
-      <div id="search-results" class="search-results"></div>
+    
+      <div id="search-results" class="search-dropdown hidden"></div>
     </div>
 
     <div class="tile-grid">
@@ -115,49 +116,63 @@
 
   </div>
 
-  <!-- Список рецептов -->
-  <script src="/YourWorld-Guide/recipes.js"></script>
-
   <!-- Поиск -->
+  <script src="/YourWorld-Guide/recipes.js"></script>
   <script>
-    (function () {
-      const input = document.getElementById("search");
-      const results = document.getElementById("search-results");
+  (function () {
+    const input = document.getElementById("search");
+    const dropdown = document.getElementById("search-results");
 
-      if (!input || !results) return;
-      if (!window.RECIPES || !Array.isArray(window.RECIPES)) {
-        results.innerHTML = "<div class='search-empty'>recipes.js не найден или RECIPES не объявлен</div>";
+    if (!input || !dropdown || !window.RECIPES) return;
+
+    function clear() {
+      dropdown.innerHTML = "";
+      dropdown.classList.add("hidden");
+    }
+
+    function render(list) {
+      dropdown.innerHTML = "";
+
+      if (!list.length) {
+        dropdown.innerHTML = "<div class='search-empty'>Ничего не найдено</div>";
+        dropdown.classList.remove("hidden");
         return;
       }
 
-      function render(list, query) {
-        results.innerHTML = "";
+      list.slice(0, 20).forEach(r => {
+        const a = document.createElement("a");
+        a.href = r.path;
+        a.className = "search-item";
+        a.textContent = r.title;
+        dropdown.appendChild(a);
+      });
 
-        const q = (query || "").trim().toLowerCase();
-        if (!q) return;
+      dropdown.classList.remove("hidden");
+    }
 
-        if (!list.length) {
-          results.innerHTML = "<div class='search-empty'>Ничего не найдено</div>";
-          return;
-        }
+    input.addEventListener("input", () => {
+      const q = input.value.trim().toLowerCase();
 
-        list.slice(0, 30).forEach(r => {
-          const a = document.createElement("a");
-          a.href = r.path;
-          a.className = "recipe-link";
-          a.textContent = r.title;
-          results.appendChild(a);
-        });
+      if (!q) {
+        clear();
+        return;
       }
 
-      input.addEventListener("input", () => {
-        const q = input.value.toLowerCase();
-        const filtered = window.RECIPES.filter(r =>
-          (r.title || "").toLowerCase().includes(q)
-        );
-        render(filtered, q);
-      });
-    })();
+      const filtered = window.RECIPES.filter(r =>
+        (r.title || "").toLowerCase().includes(q)
+      );
+
+      render(filtered);
+    });
+
+    // Закрытие по клику вне
+    document.addEventListener("click", e => {
+      if (!e.target.closest(".search-block")) {
+        clear();
+      }
+    });
+  })();
   </script>
+
 </body>
 </html>
