@@ -151,6 +151,34 @@ window.RECIPES = [
   { title: "Автомат DBR Bloody V2", path: "/YourWorld-Guide/craft/weapons/bloody_dbr.html", icon: "/YourWorld-Guide/images/weapons/bloody/bloody_dbr.png" },
   { title: "Автомат SIGSAUER Bloody V2", path: "/YourWorld-Guide/craft/weapons/bloody_sigsauer.html", icon: "/YourWorld-Guide/images/weapons/bloody/bloody_sigsauer.png" },
   { title: "Пулемет PKP Bloody V2", path: "/YourWorld-Guide/craft/weapons/bloody_pkp.html", icon: "/YourWorld-Guide/images/weapons/bloody/bloody_pkp.png" },
-  { title: "LDR-308 Bloody V2", path: "/YourWorld-Guide/craft/weapons/bloody_ldr308.html", icon: "/YourWorld-Guide/images/weapons/bloody/bloody_ldr.png" }
+  { title: "LDR-308 Bloody V2", path: "/YourWorld-Guide/craft/weapons/bloody_ldr308.html", icon: "/YourWorld-Guide/images/weapons/bloody/bloody_ldr.png" },
+
+  // ===== Предметы =====
+  { title: "Улучшенная усиленная удочка", path: "/YourWorld-Guide/craft/items/rod_v2.html", icon: "/YourWorld-Guide/images/items/rod_yw.png" },
+  { title: "Порох", path: "/YourWorld-Guide/craft/items/gunpowder.html", icon: "/YourWorld-Guide/images/items/gunpowder.png" },
+  { title: "Бронепластина Immortal", path: "/YourWorld-Guide/craft/items/armor_plate_immortal.html", icon: "/YourWorld-Guide/images/items/armor_plate_immortal.png" },
+  { title: "Ткань Immortal", path: "/YourWorld-Guide/craft/items/cloth_immortal.html", icon: "/YourWorld-Guide/images/items/cloth_immortal.png" },
+  { title: "Набор деталей экзоскелета", path: "/YourWorld-Guide/craft/items/exo_nabor.html", icon: "/YourWorld-Guide/images/items/exo_parts_box.png" },
+  { title: "Канистра 100л", path: "/YourWorld-Guide/craft/items/canister_100.html", icon: "/YourWorld-Guide/images/items/canister_100.png" },
+  { title: "Карта телепорта на данж - Скалистый", path: "/YourWorld-Guide/craft/items/card_skalisty.html", icon: "/YourWorld-Guide/images/items/card_skalik.png" },
+  { title: "Карта телепорта на данж - Лабиринт", path: "/YourWorld-Guide/craft/items/card_labirint.html", icon: "/YourWorld-Guide/images/items/cad_labirint.png" },
+  { title: "Боевой противогаз на 4 часа", path: "/YourWorld-Guide/craft/items/gasmask_4.html", icon: "/YourWorld-Guide/images/items/yw_gasmask.png" },
+  { title: "Боевой противогаз на 8 часов", path: "/YourWorld-Guide/craft/items/gasmask_8.html", icon: "/YourWorld-Guide/images/items/yw_gasmask.png" },
+  { title: "Боевой противогаз на 24 часа", path: "/YourWorld-Guide/craft/items/gasmask_24.html", icon: "/YourWorld-Guide/images/items/yw_gasmask.png" },
+  { title: "Противогаз из маски от сета на 2 часа", path: "/YourWorld-Guide/craft/items/set_mask_2.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+  { title: "Противогаз из маски от сета на 4 часа", path: "/YourWorld-Guide/craft/items/set_mask_4.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+  { title: "Противогаз из маски от сета на 8 часов", path: "/YourWorld-Guide/craft/items/set_mask_8.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+  { title: "Противогаз из маски от сета на 24 часа", path: "/YourWorld-Guide/craft/items/set_mask_24.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+
+  // ===== Сеты =====
+  { title: "Кейс с сетом Calisto Undead V2", path: "/YourWorld-Guide/craft/sets/set_calisto.html", icon: "/YourWorld-Guide/images/sets/setbox_calisto.png" },
+  { title: "Кейс с сетом Crusher V2", path: "/YourWorld-Guide/craft/sets/set_crusher.html", icon: "/YourWorld-Guide/images/sets/setbox_crusher.png" },
+  { title: "Кейс с сетом Fixer V2", path: "/YourWorld-Guide/craft/sets/set_fixer.html", icon: "/YourWorld-Guide/images/sets/setbox_fixer.png" },
+  { title: "Кейс с сетом Ghost V2", path: "/YourWorld-Guide/craft/sets/set_ghost.html", icon: "/YourWorld-Guide/images/sets/setbox_ghost.png" },
+  { title: "Кейс с сетом Kasrkin V2", path: "/YourWorld-Guide/craft/sets/set_kasrkin.html", icon: "/YourWorld-Guide/images/sets/setbox_kasrkin_black.png" },
+  { title: "Кейс с сетом Monochrome V2", path: "/YourWorld-Guide/craft/sets/set_monochrome.html", icon: "/YourWorld-Guide/images/sets/setbox_monochrome_blue.png" },
+  { title: "Кейс с сетом Roxxon V2", path: "/YourWorld-Guide/craft/sets/set_roxxon.html", icon: "/YourWorld-Guide/images/sets/roxxon_black.png" },
+  { title: "Кейс с сетом Sentinel V2", path: "/YourWorld-Guide/craft/sets/set_sentinel.html", icon: "/YourWorld-Guide/images/sets/sentinel.png" },
+  { title: "Кейс с сетом Street Warrior V2", path: "/YourWorld-Guide/craft/sets/set_streetwarrior.html", icon: "/YourWorld-Guide/images/sets/streetwarrior.png" }
 
 ];
