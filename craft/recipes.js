@@ -69,6 +69,27 @@ window.RECIPES = [
   { title: "Кейс танк БТ-7 500", path: "/YourWorld-Guide/craft/cases/case_tank_3.html", icon: "/YourWorld-Guide/images/case/case_tank_3.png" },
   { title: "Кейс танк СУ-76 500", path: "/YourWorld-Guide/craft/cases/case_tank_4.html", icon: "/YourWorld-Guide/images/case/case_tank_4.png" },
   { title: "Кейс танк Т-34-85 500", path: "/YourWorld-Guide/craft/cases/case_tank_5.html", icon: "/YourWorld-Guide/images/case/case_tank_5.png" },
-  { title: "Кейс танк ИСУ-152 500", path: "/YourWorld-Guide/craft/cases/case_tank_6.html", icon: "/YourWorld-Guide/images/case/case_tank_6.png" }
+  { title: "Кейс танк ИСУ-152 500", path: "/YourWorld-Guide/craft/cases/case_tank_6.html", icon: "/YourWorld-Guide/images/case/case_tank_6.png" },
+
+  // ===== Ящики =====
+  { title: "Деревянный ящик 100", path: "/YourWorld-Guide/craft/crates/crate_100.html", icon: "/YourWorld-Guide/images/crates/crate_1.png" },
+  { title: "Деревянный ящик 200", path: "/YourWorld-Guide/craft/crates/crate_200.html", icon: "/YourWorld-Guide/images/crates/crate_1.png" },
+  { title: "Деревянный ящик 300", path: "/YourWorld-Guide/craft/crates/crate_300.html", icon: "/YourWorld-Guide/images/crates/crate_1.png" },
+  { title: "Деревянный ящик 400", path: "/YourWorld-Guide/craft/crates/crate_400.html", icon: "/YourWorld-Guide/images/crates/crate_1.png" },
+  { title: "Деревянный ящик 500", path: "/YourWorld-Guide/craft/crates/crate_500.html", icon: "/YourWorld-Guide/images/crates/crate_1.png" },
+
+  // ===== Сундуки =====
+  { title: "Матросский сундук 100", path: "/YourWorld-Guide/craft/crates/chest_100.html", icon: "/YourWorld-Guide/images/crates/chest_1.png" },
+  { title: "Матросский сундук 200", path: "/YourWorld-Guide/craft/crates/chest_200.html", icon: "/YourWorld-Guide/images/crates/chest_1.png" },
+  { title: "Матросский сундук 300", path: "/YourWorld-Guide/craft/crates/chest_300.html", icon: "/YourWorld-Guide/images/crates/chest_1.png" },
+  { title: "Матросский сундук 400", path: "/YourWorld-Guide/craft/crates/chest_400.html", icon: "/YourWorld-Guide/images/crates/chest_1.png" },
+  { title: "Матросский сундук 500", path: "/YourWorld-Guide/craft/crates/chest_500.html", icon: "/YourWorld-Guide/images/crates/chest_1.png" },
+
+  // ===== Бочки =====
+  { title: "Бочка 100", path: "/YourWorld-Guide/craft/crates/barrel_100.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
+  { title: "Бочка 200", path: "/YourWorld-Guide/craft/crates/barrel_200.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
+  { title: "Бочка 300", path: "/YourWorld-Guide/craft/crates/barrel_300.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
+  { title: "Бочка 400", path: "/YourWorld-Guide/craft/crates/barrel_400.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
+  { title: "Бочка 500", path: "/YourWorld-Guide/craft/crates/barrel_500.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" }
 
 ];
