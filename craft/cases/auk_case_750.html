@@ -9,42 +9,6 @@
   <title>Аукционный кейс 750</title>
   <link rel="stylesheet" href="/YourWorld-Guide/style.css">
 </head>
-<script>
-(function () {
-  // сюда впиши все 5 вариантов (пути к картинкам)
-  const heroImages = [
-    "/YourWorld-Guide/images/case/case_auk_1.png",
-    "/YourWorld-Guide/images/case/case_auk_2.png",
-    "/YourWorld-Guide/images/case/case_auk_3.png",
-    "/YourWorld-Guide/images/case/case_auk_4.png",
-    "/YourWorld-Guide/images/case/case_auk_5.png"
-  ];
-
-  const hero = document.getElementById("caseHeroImg");
-  const icon1 = document.getElementById("caseIcon1");
-  const icon2 = document.getElementById("caseIcon2");
-
-  if (!hero) return;
-
-  // предзагрузка, чтобы не мигало
-  heroImages.forEach(src => { const i = new Image(); i.src = src; });
-
-  let idx = 0;
-
-  function tick() {
-    idx = (idx + 1) % heroImages.length;
-    hero.src = heroImages[idx];
-
-    // если хочешь синхронно обновлять иконки в списке — оставь:
-    if (icon1) icon1.src = heroImages[idx];
-    // вторую иконку можно либо тоже менять, либо убрать совсем.
-    // Я оставил её как "вторая картинка", но можешь синхронизировать так же:
-    // if (icon2) icon2.src = heroImages[idx];
-  }
-
-  setInterval(tick, 5000);
-})();
-</script>
 <body>
   <div class="wrap">
 
@@ -139,5 +103,41 @@
       </div>
     </div>
   </div>
+<script>
+(function () {
+  // сюда впиши все 5 вариантов (пути к картинкам)
+  const heroImages = [
+    "/YourWorld-Guide/images/case/case_auk_1.png",
+    "/YourWorld-Guide/images/case/case_auk_2.png",
+    "/YourWorld-Guide/images/case/case_auk_3.png",
+    "/YourWorld-Guide/images/case/case_auk_4.png",
+    "/YourWorld-Guide/images/case/case_auk_5.png"
+  ];
+
+  const hero = document.getElementById("caseHeroImg");
+  const icon1 = document.getElementById("caseIcon1");
+  const icon2 = document.getElementById("caseIcon2");
+
+  if (!hero) return;
+
+  // предзагрузка, чтобы не мигало
+  heroImages.forEach(src => { const i = new Image(); i.src = src; });
+
+  let idx = 0;
+
+  function tick() {
+    idx = (idx + 1) % heroImages.length;
+    hero.src = heroImages[idx];
+
+    // если хочешь синхронно обновлять иконки в списке — оставь:
+    if (icon1) icon1.src = heroImages[idx];
+    // вторую иконку можно либо тоже менять, либо убрать совсем.
+    // Я оставил её как "вторая картинка", но можешь синхронизировать так же:
+    // if (icon2) icon2.src = heroImages[idx];
+  }
+
+  setInterval(tick, 5000);
+})();
+</script>
 </body>
 </html>
