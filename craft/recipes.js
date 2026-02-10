@@ -90,6 +90,23 @@ window.RECIPES = [
   { title: "Бочка 200", path: "/YourWorld-Guide/craft/crates/barrel_200.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
   { title: "Бочка 300", path: "/YourWorld-Guide/craft/crates/barrel_300.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
   { title: "Бочка 400", path: "/YourWorld-Guide/craft/crates/barrel_400.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
-  { title: "Бочка 500", path: "/YourWorld-Guide/craft/crates/barrel_500.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" }
+  { title: "Бочка 500", path: "/YourWorld-Guide/craft/crates/barrel_500.html", icon: "/YourWorld-Guide/images/crates/barrel_1.png" },
+
+  // ===== Предметы =====
+  { title: "Улучшенная усиленная удочка", path: "/YourWorld-Guide/craft/items/rod_v2.html", icon: "/YourWorld-Guide/images/items/rod_yw.png" },
+  { title: "Порох", path: "/YourWorld-Guide/craft/items/gunpowder.html", icon: "/YourWorld-Guide/images/items/gunpowder.png" },
+  { title: "Бронепластина Immortal", path: "/YourWorld-Guide/craft/items/armor_plate_immortal.html", icon: "/YourWorld-Guide/images/items/armor_plate_immortal.png" },
+  { title: "Ткань Immortal", path: "/YourWorld-Guide/craft/items/cloth_immortal.html", icon: "/YourWorld-Guide/images/items/cloth_immortal.png" },
+  { title: "Набор деталей экзоскелета", path: "/YourWorld-Guide/craft/items/exo_nabor.html", icon: "/YourWorld-Guide/images/items/exo_parts_box.png" },
+  { title: "Канистра 100л", path: "/YourWorld-Guide/craft/items/canister_100.html", icon: "/YourWorld-Guide/images/items/canister_100.png" },
+  { title: "Карта телепорта на данж - Скалистый", path: "/YourWorld-Guide/craft/items/card_skalisty.html", icon: "/YourWorld-Guide/images/items/card_skalik.png" },
+  { title: "Карта телепорта на данж - Лабиринт", path: "/YourWorld-Guide/craft/items/card_labirint.html", icon: "/YourWorld-Guide/images/items/cad_labirint.png" },
+  { title: "Боевой противогаз на 4 часа", path: "/YourWorld-Guide/craft/items/gasmask_4.html", icon: "/YourWorld-Guide/images/items/yw_gasmask.png" },
+  { title: "Боевой противогаз на 8 часов", path: "/YourWorld-Guide/craft/items/gasmask_8.html", icon: "/YourWorld-Guide/images/items/yw_gasmask.png" },
+  { title: "Боевой противогаз на 24 часа", path: "/YourWorld-Guide/craft/items/gasmask_24.html", icon: "/YourWorld-Guide/images/items/yw_gasmask.png" },
+  { title: "Противогаз из маски от сета на 2 часа", path: "/YourWorld-Guide/craft/items/set_mask_2.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+  { title: "Противогаз из маски от сета на 2 часа", path: "/YourWorld-Guide/craft/items/set_mask_4.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+  { title: "Противогаз из маски от сета на 8 часов", path: "/YourWorld-Guide/craft/items/set_mask_8.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+  { title: "Противогаз из маски от сета на 24 часа", path: "/YourWorld-Guide/craft/items/set_mask_24.html", icon: "/YourWorld-Guide/images/items/mask.png" }
 
 ];
