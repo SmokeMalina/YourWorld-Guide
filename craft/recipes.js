@@ -107,6 +107,12 @@ window.RECIPES = [
   { title: "Противогаз из маски от сета на 2 часа", path: "/YourWorld-Guide/craft/items/set_mask_2.html", icon: "/YourWorld-Guide/images/items/mask.png" },
   { title: "Противогаз из маски от сета на 2 часа", path: "/YourWorld-Guide/craft/items/set_mask_4.html", icon: "/YourWorld-Guide/images/items/mask.png" },
   { title: "Противогаз из маски от сета на 8 часов", path: "/YourWorld-Guide/craft/items/set_mask_8.html", icon: "/YourWorld-Guide/images/items/mask.png" },
-  { title: "Противогаз из маски от сета на 24 часа", path: "/YourWorld-Guide/craft/items/set_mask_24.html", icon: "/YourWorld-Guide/images/items/mask.png" }
+  { title: "Противогаз из маски от сета на 24 часа", path: "/YourWorld-Guide/craft/items/set_mask_24.html", icon: "/YourWorld-Guide/images/items/mask.png" },
+
+  // ===== Ножи =====
+  { title: "Нож Gerber", path: "/YourWorld-Guide/craft/knife/gerber.html", icon: "/YourWorld-Guide/images/knife/gerber_2.png" },
+  { title: "Тактический нож", path: "/YourWorld-Guide/craft/knife/tactical.html", icon: "/YourWorld-Guide/images/knife/tactical_2.png" },
+  { title: "Секира молния V2", path: "/YourWorld-Guide/craft/knife/sekira.html", icon: "/YourWorld-Guide/images/knife/stormbreaker.png" },
+  { title: "Самурайская катана V2", path: "/YourWorld-Guide/craft/knife/katana.html", icon: "/YourWorld-Guide/images/knife/samurai_katana.png" }
 
 ];

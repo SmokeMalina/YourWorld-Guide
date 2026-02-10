@@ -23,5 +23,27 @@ window.CRAFT_VARIANTS = {
   "barrel": [
     "/YourWorld-Guide/images/crates/barrel_1.png",
     "/YourWorld-Guide/images/crates/barrel_2.png"
+  ],
+  "gerber": [
+    "/YourWorld-Guide/images/knife/gerber_2.png",
+    "/YourWorld-Guide/images/knife/gerber_3.png",
+    "/YourWorld-Guide/images/knife/gerber_4.png",
+    "/YourWorld-Guide/images/knife/gerber_5.png",
+    "/YourWorld-Guide/images/knife/gerber_6.png",
+    "/YourWorld-Guide/images/knife/gerber_7.png",
+    "/YourWorld-Guide/images/knife/gerber_8.png",
+    "/YourWorld-Guide/images/knife/gerber_9.png",
+    "/YourWorld-Guide/images/knife/gerber_10.png"
+  ],
+  "tactical": [
+    "/YourWorld-Guide/images/knife/tactical_2.png",
+    "/YourWorld-Guide/images/knife/tactical_3.png",
+    "/YourWorld-Guide/images/knife/tactical_4.png",
+    "/YourWorld-Guide/images/knife/tactical_5.png",
+    "/YourWorld-Guide/images/knife/tactical_6.png",
+    "/YourWorld-Guide/images/knife/tactical_7.png",
+    "/YourWorld-Guide/images/knife/tactical_8.png",
+    "/YourWorld-Guide/images/knife/tactical_9.png",
+    "/YourWorld-Guide/images/knife/tactical_10.png"
   ]
 };
