@@ -299,5 +299,49 @@ window.CRAFT_VARIANTS = {
     "/YourWorld-Guide/images/clothing/streetwarrior_shoes_camo2.png",
     "/YourWorld-Guide/images/clothing/streetwarrior_shoes_camo3.png",
     "/YourWorld-Guide/images/clothing/streetwarrior_shoes_camo4.png"
+  ],
+  "deadagent_helmet": [
+    "/YourWorld-Guide/images/clothing/deadagent_helmet_green.png",
+    "/YourWorld-Guide/images/clothing/deadagent_helmet_black.png"
+  ],
+  "deadagent_jacket": [
+    "/YourWorld-Guide/images/clothing/deadagent_jacket_green.png",
+    "/YourWorld-Guide/images/clothing/deadagent_jacket_black.png"
+  ],
+  "deadagent_pants": [
+    "/YourWorld-Guide/images/clothing/deadagent_pants_green.png",
+    "/YourWorld-Guide/images/clothing/deadagent_pants_black.png"
+  ],
+  "deadagent_gloves": [
+    "/YourWorld-Guide/images/clothing/deadagent_gloves_green.png",
+    "/YourWorld-Guide/images/clothing/deadagent_gloves_black.png"
+  ],
+  "deadagent_boots": [
+    "/YourWorld-Guide/images/clothing/deadagent_boots_green.png",
+    "/YourWorld-Guide/images/clothing/deadagent_boots_black.png"
+  ],
+  "rusher_helmet": [
+    "/YourWorld-Guide/images/clothing/rusher_helmet.png",
+    "/YourWorld-Guide/images/clothing/rusher_helmet_black.png"
+  ],
+  "rusher_vest": [
+    "/YourWorld-Guide/images/clothing/rusher_vest.png",
+    "/YourWorld-Guide/images/clothing/rusher_vest_black.png"
+  ],
+  "rusher_jacket": [
+    "/YourWorld-Guide/images/clothing/rusher_jacket.png",
+    "/YourWorld-Guide/images/clothing/rusher_jacket_black.png"
+  ],
+  "rusher_pants": [
+    "/YourWorld-Guide/images/clothing/rusher_pants.png",
+    "/YourWorld-Guide/images/clothing/rusher_pants_black.png"
+  ],
+  "rusher_gloves": [
+    "/YourWorld-Guide/images/clothing/rusher_gloves.png",
+    "/YourWorld-Guide/images/clothing/rusher_gloves_black.png"
+  ],
+  "rusher_boots": [
+    "/YourWorld-Guide/images/clothing/rusher_boots.png",
+    "/YourWorld-Guide/images/clothing/rusher_boots_black.png"
   ]
 };
