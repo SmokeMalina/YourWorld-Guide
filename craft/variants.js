@@ -343,5 +343,42 @@ window.CRAFT_VARIANTS = {
   "rusher_boots": [
     "/YourWorld-Guide/images/clothing/rusher_boots.png",
     "/YourWorld-Guide/images/clothing/rusher_boots_black.png"
+  ],
+  "whimsy_helmet": [
+    "/YourWorld-Guide/images/clothing/whimsy_helmet_pink.png",
+    "/YourWorld-Guide/images/clothing/whimsy_helmet_orange.png",
+    "/YourWorld-Guide/images/clothing/whimsy_helmet_black.png"
+  ],
+  "whimsy_vest": [
+    "/YourWorld-Guide/images/clothing/whimsy_vest_pink.png",
+    "/YourWorld-Guide/images/clothing/whimsy_vest_orange.png",
+    "/YourWorld-Guide/images/clothing/whimsy_vest_black.png"
+  ],
+  "whimsy_jacket": [
+    "/YourWorld-Guide/images/clothing/whimsy_jacket_pink.png",
+    "/YourWorld-Guide/images/clothing/whimsy_jacket_orange.png",
+    "/YourWorld-Guide/images/clothing/whimsy_jacket_black.png"
+  ],
+  "whimsy_pants": [
+    "/YourWorld-Guide/images/clothing/whimsy_pants_pink.png",
+    "/YourWorld-Guide/images/clothing/whimsy_pants_orange.png",
+    "/YourWorld-Guide/images/clothing/whimsy_pants_black.png"
+  ],
+  "whimsy_gloves": [
+    "/YourWorld-Guide/images/clothing/whimsy_gloves_pink.png",
+    "/YourWorld-Guide/images/clothing/whimsy_gloves_orange.png",
+    "/YourWorld-Guide/images/clothing/whimsy_gloves_black.png"
+  ],
+  "whimsy_boots": [
+    "/YourWorld-Guide/images/clothing/whimsy_boots_pink.png",
+    "/YourWorld-Guide/images/clothing/whimsy_boots_orange.png",
+    "/YourWorld-Guide/images/clothing/whimsy_boots_black.png"
+  ],
+  "nvg": [
+    "/YourWorld-Guide/images/items/nvg_1.png",
+    "/YourWorld-Guide/images/items/nvg_2.png",
+    "/YourWorld-Guide/images/items/nvg_3.png",
+    "/YourWorld-Guide/images/items/nvg_4.png",
+    "/YourWorld-Guide/images/items/nvg_5.png"
   ]
 };
