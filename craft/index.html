@@ -9,6 +9,8 @@
   <link rel="icon" href="/YourWorld-Guide/images/ywlogo.ico" sizes="any">
   <title>Крафт YourWorld</title>
   <link rel="stylesheet" href="/YourWorld-Guide/style.css">
+
+  <!-- SEO -->
   <meta name="description" content="Гайд по крафту сервера YourWorld в DayZ. Полный список рецептов: кейсы, ящики, оружие, предметы, сеты.">
   <meta name="keywords" content="YourWorld, DayZ, крафт DayZ, гайд DayZ, кейсы DayZ, крафт сервера">
   <meta name="author" content="YourWorld">
@@ -22,22 +24,27 @@
 
 <body>
 <div class="wrap">
-  <div class="hero-wrapper">
-    <a href="/YourWorld-Guide/craft/index.html" class="back-btn">
+
+  <!-- HERO -->
+  <div class="hero hero-with-back">
+
+    <!-- Кнопка назад -->
+    <a href="/YourWorld-Guide/index.html" class="back-btn" aria-label="Назад">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
         <path d="M15 18L9 12L15 6" stroke="#ff9a2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
-    <div class="hero">
-      <div class="hero-inner">
-        <img class="hero-logo" src="/YourWorld-Guide/images/ywlogo.png" alt="YourWorld">
-        <div>
-          <h1>YourWorld Крафт</h1>
-          <p class="muted">Гайд по крафту сервера YourWorld</p>
-        </div>
+
+    <div class="hero-inner">
+      <img class="hero-logo" src="/YourWorld-Guide/images/ywlogo.png" alt="YourWorld">
+      <div>
+        <h1>YourWorld Крафт</h1>
+        <p class="muted">Гайд по крафту сервера YourWorld</p>
       </div>
     </div>
+
   </div>
+
   <!-- ПОИСК -->
   <div class="search-block">
     <input
@@ -53,73 +60,93 @@
 
   <!-- КАТЕГОРИИ -->
   <div class="tile-grid">
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/workbench.html">
       <img src="/YourWorld-Guide/images/categories/workbench.png">
       <span>Крафтовый стол</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/items.html">
       <img src="/YourWorld-Guide/images/categories/hdd_items.png">
       <span>Крафт предметов</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/electronic.html">
       <img src="/YourWorld-Guide/images/categories/hdd_electronic.png">
       <span>Крафт электроники</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/conserv.html">
       <img src="/YourWorld-Guide/images/categories/hdd_conserv.png">
       <span>Крафт консерв</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/medicine.html">
       <img src="/YourWorld-Guide/images/categories/hdd_medecine.png">
       <span>Крафт медицины</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/cases.html">
       <img src="/YourWorld-Guide/images/categories/hdd_case.png">
       <span>Крафт кейсов</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/crates.html">
       <img src="/YourWorld-Guide/images/categories/hdd_crates_barrel_chest.png">
       <span>Крафт ящиков/бочек/сундуков</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/knife.html">
       <img src="/YourWorld-Guide/images/categories/hdd_knifes.png">
       <span>Крафт ножей</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/sets.html">
       <img src="/YourWorld-Guide/images/categories/hdd_sets.png">
-      <span>Крафт cетов</span>
+      <span>Крафт сетов</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/clothing.html">
       <img src="/YourWorld-Guide/images/categories/hdd_clothing.png">
       <span>Крафт одежды</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/weapons.html">
       <img src="/YourWorld-Guide/images/categories/hdd_weapons.png">
       <span>Крафт оружия</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/mag_dark.html">
       <img src="/YourWorld-Guide/images/categories/hdd_mag_dark.png">
       <span>Крафт магазинов Dark</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/mag_bloody.html">
       <img src="/YourWorld-Guide/images/categories/hdd_mag_bloody.png">
       <span>Крафт магазинов Bloody</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/mag_immortal.html">
       <img src="/YourWorld-Guide/images/categories/hdd_mag_immortal.png">
       <span>Крафт магазинов Immortal</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/mag_phantom.html">
       <img src="/YourWorld-Guide/images/categories/hdd_mag_phantom.png">
       <span>Крафт магазинов Phantom</span>
     </a>
+
     <a class="tile" href="/YourWorld-Guide/craft/categories/suppressor.html">
       <img src="/YourWorld-Guide/images/categories/hdd_suppressor.png">
       <span>Крафт глушителей</span>
     </a>
+
   </div>
+
 </div>
+
 <script src="/YourWorld-Guide/craft/recipes.js"></script>
+
 <script>
 (function () {
   const input = document.getElementById("search");
