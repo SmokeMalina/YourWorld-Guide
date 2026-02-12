@@ -524,3 +524,62 @@ h2 {
   /* чтобы не было zoom на iPhone */
   .search-input { font-size: 16px; }
 }
+/* =========================
+   Верх страницы: "назад" + hero в одну линию
+   ========================= */
+
+.page-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+/* Квадратная кнопка назад */
+.back-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #ff9a2f; /* стрелка */
+  text-decoration: none;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 154, 47, 0.25);
+}
+
+.back-btn:active {
+  transform: translateY(0px);
+}
+
+/* Чтобы hero занимал всю оставшуюся ширину */
+.page-top .hero {
+  flex: 1;
+  margin: 0; /* на случай если у hero где-то был margin */
+}
+
+/* Мобилка: кнопка сверху, hero ниже */
+@media (max-width: 560px) {
+  .page-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .back-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
