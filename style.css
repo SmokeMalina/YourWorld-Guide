@@ -458,6 +458,7 @@ h2 {
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .back-btn {
@@ -485,6 +486,30 @@ h2 {
   background: rgba(255,150,47,0.18);
   border-color: rgba(255,150,47,0.45);
   transform: translateX(-2px);
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+}
+
+.breadcrumbs a {
+  color: rgba(255,255,255,.78);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+.breadcrumbs a:hover { color: #fff; }
+
+.crumb-sep { opacity: 0.5; }
+
+.crumb-current {
+  color: #fff;
+  font-weight: 600;
 }
 
 
