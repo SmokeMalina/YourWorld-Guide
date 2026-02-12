@@ -508,6 +508,14 @@ h2 {
   .item-hero__img {
     max-width: 260px;
   }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero-inner {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
