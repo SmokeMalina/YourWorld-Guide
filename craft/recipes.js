@@ -379,4 +379,12 @@ window.RECIPES = [
   { title: "Штаны Whimsy V4", path: "/YourWorld-Guide/craft/clothing/whimsy_pants_v4.html", icon: "/YourWorld-Guide/images/clothing/whimsy_pants_pink.png" },
   { title: "Штаны Whimsy V5", path: "/YourWorld-Guide/craft/clothing/whimsy_pants_v5.html", icon: "/YourWorld-Guide/images/clothing/whimsy_pants_pink.png" },
 
+  // ===== Магазины Dark =====
+  { title: "Магазин Kriss Vector Dark - 60 патронов", path: "/YourWorld-Guide/craft/mag_dark/mag_pp_dark_v1_60.html", icon: "/YourWorld-Guide/images/weapons/dark/dark_pp_v1_mag.png" },
+  { title: "Магазин Kriss Vector Dark - 90 патронов", path: "/YourWorld-Guide/craft/mag_dark/mag_pp_dark_v1_90.html", icon: "/YourWorld-Guide/images/weapons/dark/dark_pp_v1_mag.png" },
+  { title: "Магазин Kriss Vector Dark - 150 патронов", path: "/YourWorld-Guide/craft/mag_dark/mag_pp_dark_v1_150.html", icon: "/YourWorld-Guide/images/weapons/dark/dark_pp_v1_mag.png" },
+  { title: "Магазин M1928A1 Dark - 60 патронов", path: "/YourWorld-Guide/craft/mag_dark/mag_pp_dark_v2_60.html", icon: "/YourWorld-Guide/images/weapons/dark/dark_pp_v1_mag.png" },
+  { title: "Магазин M1928A1 Dark - 90 патронов", path: "/YourWorld-Guide/craft/mag_dark/mag_pp_dark_v2_90.html", icon: "/YourWorld-Guide/images/weapons/dark/dark_pp_v1_mag.png" },
+  { title: "Магазин M1928A1 Dark - 150 патронов", path: "/YourWorld-Guide/craft/mag_dark/mag_pp_dark_v2_150.html", icon: "/YourWorld-Guide/images/weapons/dark/dark_pp_v1_mag.png" },
+
 ];

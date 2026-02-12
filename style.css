@@ -131,6 +131,10 @@ h2 {
   gap: 24px;
 }
 
+.hero-with-back .hero-inner {
+  padding-left: 50px;
+}
+
 /* Если где-то используется hero-top — оставляем совместимость */
 .hero-top {
   display: flex;
@@ -455,23 +459,40 @@ h2 {
    9) BACK BUTTON (кнопка "назад")
    ========================= */
 
+.hero-with-back {
+  position: relative;
+}
+
 .back-btn {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 38px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+
   border-radius: 10px;
-  background: rgba(255, 150, 47, 0.08);
-  border: 1px solid rgba(255, 150, 47, 0.2);
-  transition: transform var(--t-fast), background var(--t-fast), border-color var(--t-fast);
-  margin-top: 8px; /* если хочется ровнее по hero */
+  font-size: 18px;
+  font-weight: 600;
+
+  color: var(--accent);
+  text-decoration: none;
+
+  border: 1px solid rgba(255,150,47,0.25);
+  background: rgba(255,150,47,0.08);
+
+  transition: all 0.2s ease;
 }
 
 .back-btn:hover {
-  background: rgba(255, 150, 47, 0.18);
-  border-color: rgba(255, 154, 47, 0.45);
-  transform: translateX(-2px);
+  background: rgba(255,150,47,0.18);
+  border-color: rgba(255,150,47,0.45);
+  transform: translateY(-50%) translateX(-2px);
 }
 
 
