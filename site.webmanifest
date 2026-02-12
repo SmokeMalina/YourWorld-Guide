@@ -1,0 +1,14 @@
+{
+  "name": "YourWorld Guide",
+  "short_name": "YourWorld",
+  "icons": [
+    {
+      "src": "/images/ywlogo.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0b0b0d",
+  "background_color": "#0b0b0d",
+  "display": "standalone"
+}

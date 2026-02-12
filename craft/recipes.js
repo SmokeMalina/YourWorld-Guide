@@ -387,5 +387,448 @@ window.RECIPES = [
   { title: "Магазин M1928A1 Dark - 90 патронов", path: "/craft/mag_dark/mag_pp_dark_v2_90.html", icon: "/images/weapons/dark/dark_pp_v1_mag.png" },
   { title: "Магазин M1928A1 Dark - 150 патронов", path: "/craft/mag_dark/mag_pp_dark_v2_150.html", icon: "/images/weapons/dark/dark_pp_v1_mag.png" },
 
-];
+  // ===== ДОБАВЛЕНО АВТОМАТИЧЕСКИ =====
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ===== ДОБАВЛЕНО АВТОМАТИЧЕСКИ =====
+  { title: "Большая консервированная свекла", path: "/craft/conserv/beetroot_big_can.html", icon: "/images/food/efi_beetroot_can.png" },
+  { title: "Консервированная свекла", path: "/craft/conserv/beetroot_can.html", icon: "/images/food/efi_beetroot_can.png" },
+  { title: "Большая консервированная морковь", path: "/craft/conserv/carrot_big_can.html", icon: "/images/food/efi_carrot_can.png" },
+  { title: "Консервированная морковь", path: "/craft/conserv/carrot_can.html", icon: "/images/food/efi_carrot_can.png" },
+  { title: "Большая консервированная кукуруза", path: "/craft/conserv/corn_big_can.html", icon: "/images/food/efi_corn_can.png" },
+  { title: "Консервированная кукуруза", path: "/craft/conserv/corn_can.html", icon: "/images/food/efi_corn_can.png" },
+  { title: "Большой консервированный чеснок", path: "/craft/conserv/garlik_big_can.html", icon: "/images/food/efi_garlik_can.png" },
+  { title: "Консервированный чеснок", path: "/craft/conserv/garlik_can.html", icon: "/images/food/efi_garlik_can.png" },
+  { title: "Большая консервированная дыня", path: "/craft/conserv/melon_big_can.html", icon: "/images/food/efi_melon_can.png" },
+  { title: "Консервированная дыня", path: "/craft/conserv/melon_can.html", icon: "/images/food/efi_melon_can.png" },
+  { title: "Большой консервированный лук", path: "/craft/conserv/onion_big_can.html", icon: "/images/food/efi_onion_can.png" },
+  { title: "Консервированный лук", path: "/craft/conserv/onion_can.html", icon: "/images/food/efi_onion_can.png" },
+  { title: "Большой консервированный ананас", path: "/craft/conserv/pineapple_big_can.html", icon: "/images/food/efi_pineapple_can.png" },
+  { title: "Консервированный ананас", path: "/craft/conserv/pineapple_can.html", icon: "/images/food/efi_pineapple_can.png" },
+  { title: "Большая консервированная редиска", path: "/craft/conserv/radish_big_can.html", icon: "/images/food/efi_radish_can.png" },
+  { title: "Консервированная редиска", path: "/craft/conserv/radish_can.html", icon: "/images/food/efi_radish_can.png" },
+  { title: "Большая консервированная клубника", path: "/craft/conserv/strawberry_big_can.html", icon: "/images/food/efi_strawberry_can.png" },
+  { title: "Консервированная клубника", path: "/craft/conserv/strawberry_can.html", icon: "/images/food/efi_strawberry_can.png" },
+  { title: "Большая консервированная репа", path: "/craft/conserv/turnip_big_can.html", icon: "/images/food/efi_turnip_can.png" },
+  { title: "Консервированная репа", path: "/craft/conserv/turnip_can.html", icon: "/images/food/efi_turnip_can.png" },
+  { title: "Батарейка x10", path: "/craft/electronic/battery_x10.html", icon: "/images/items/battery_x10.png" },
+  { title: "Батарейка x15", path: "/craft/electronic/battery_x15.html", icon: "/images/items/battery_x15.png" },
+  { title: "Батарейка x20", path: "/craft/electronic/battery_x20.html", icon: "/images/items/battery_x20.png" },
+  { title: "Батарейка x30", path: "/craft/electronic/battery_x30.html", icon: "/images/items/battery_x30.png" },
+  { title: "Батарейка x40", path: "/craft/electronic/battery_x40.html", icon: "/images/items/battery_x40.png" },
+  { title: "Батарейка x5", path: "/craft/electronic/battery_x5.html", icon: "/images/items/battery_x5.png" },
+  { title: "Батарейка x50", path: "/craft/electronic/battery_x50.html", icon: "/images/items/battery_x50.png" },
+  { title: "Генератор V2", path: "/craft/electronic/generator_v2.html", icon: "/images/items/generator_1.png" },
+  { title: "Генератор V3", path: "/craft/electronic/generator_v3.html", icon: "/images/items/generator_2.png" },
+  { title: "ПНВ", path: "/craft/electronic/nvg.html", icon: "/images/items/nvg_1.png" },
+  { title: "Видеокарта BL-1080ti", path: "/craft/electronic/videocard_1080.html", icon: "/images/items/videocard_1080.png" },
+  { title: "Видеокарта BL-2080", path: "/craft/electronic/videocard_2080.html", icon: "/images/items/videocard_2080.png" },
+  { title: "Видеокарта BL-3060", path: "/craft/electronic/videocard_3060.html", icon: "/images/items/videocard_3060.png" },
+  { title: "Видеокарта BL-3080", path: "/craft/electronic/videocard_3080.html", icon: "/images/items/videocard_3080.png" },
+  { title: "Видеокарта BL-RX", path: "/craft/electronic/videocard_blrx.html", icon: "/images/items/videocard_blrx.png" },
+  { title: "Магазин AR-15 Bloody V1 - 300 патронов", path: "/craft/mag_bloody/mag_ar15_bloody_v1_300.html", icon: "/images/weapons/bloody/bloody_ar15_mag.png" },
+  { title: "Магазин AR-15 Bloody V1 - 450 патронов", path: "/craft/mag_bloody/mag_ar15_bloody_v1_450.html", icon: "/images/weapons/bloody/bloody_ar15_mag.png" },
+  { title: "Магазин AR-15 Bloody V2 - 300 патронов", path: "/craft/mag_bloody/mag_ar15_bloody_v2_300.html", icon: "/images/weapons/bloody/bloody_ar15_mag.png" },
+  { title: "Магазин AR-15 Bloody V2 - 450 патронов", path: "/craft/mag_bloody/mag_ar15_bloody_v2_450.html", icon: "/images/weapons/bloody/bloody_ar15_mag.png" },
+  { title: "Магазин DBR Bloody V1 - 300 патронов", path: "/craft/mag_bloody/mag_dbr_bloody_v1_300.html", icon: "/images/weapons/bloody/bloody_dbr_mag.png" },
+  { title: "Магазин DBR Bloody V1 - 450 патронов", path: "/craft/mag_bloody/mag_dbr_bloody_v1_450.html", icon: "/images/weapons/bloody/bloody_dbr_mag.png" },
+  { title: "Магазин DBR Bloody V2 - 300 патронов", path: "/craft/mag_bloody/mag_dbr_bloody_v2_300.html", icon: "/images/weapons/bloody/bloody_dbr_mag.png" },
+  { title: "Магазин DBR Bloody V2 - 450 патронов", path: "/craft/mag_bloody/mag_dbr_bloody_v2_450.html", icon: "/images/weapons/bloody/bloody_dbr_mag.png" },
+  { title: "Магазин KSP-58 Bloody - 400 патронов", path: "/craft/mag_bloody/mag_ksp58_bloody_400.html", icon: "/images/weapons/bloody/auk_ksp58_mag.png" },
+  { title: "Магазин LDR-308 Bloody V1 - 300 патронов", path: "/craft/mag_bloody/mag_ldr308_bloody_v1_300.html", icon: "/images/weapons/bloody/bloody_ldr_mag.png" },
+  { title: "Магазин LDR-308 Bloody V1 - 450 патронов", path: "/craft/mag_bloody/mag_ldr308_bloody_v1_450.html", icon: "/images/weapons/bloody/bloody_ldr_mag.png" },
+  { title: "Магазин LDR-308 Bloody V2 - 300 патронов", path: "/craft/mag_bloody/mag_ldr308_bloody_v2_300.html", icon: "/images/weapons/bloody/bloody_ldr_mag.png" },
+  { title: "Магазин LDR-308 Bloody V2 - 450 патронов", path: "/craft/mag_bloody/mag_ldr308_bloody_v2_450.html", icon: "/images/weapons/bloody/bloody_ldr_mag.png" },
+  { title: "Магазин M14 Bloody - 300 патронов", path: "/craft/mag_bloody/mag_m14_bloody_300.html", icon: "/images/weapons/bloody/bloody_m14_mag.png" },
+  { title: "Магазин M14 Bloody - 450 патронов", path: "/craft/mag_bloody/mag_m14_bloody_450.html", icon: "/images/weapons/bloody/bloody_m14_mag.png" },
+  { title: "Магазин Phantom AR-15 Bloody V1 - 300 патронов", path: "/craft/mag_bloody/mag_phantom_ar15_bloody_v1_300.html", icon: "/images/weapons/bloody/bloody_phantom_ar15_mag.png" },
+  { title: "Магазин Phantom AR-15 Bloody V1 - 450 патронов", path: "/craft/mag_bloody/mag_phantom_ar15_bloody_v1_450.html", icon: "/images/weapons/bloody/bloody_phantom_ar15_mag.png" },
+  { title: "Магазин Phantom AR-15 Bloody V2 - 300 патронов", path: "/craft/mag_bloody/mag_phantom_ar15_bloody_v2_300.html", icon: "/images/weapons/bloody/bloody_phantom_ar15_mag.png" },
+  { title: "Магазин Phantom AR-15 Bloody V2 - 450 патронов", path: "/craft/mag_bloody/mag_phantom_ar15_bloody_v2_450.html", icon: "/images/weapons/bloody/bloody_phantom_ar15_mag.png" },
+  { title: "Магазин PKP Bloody V1 - 400 патронов", path: "/craft/mag_bloody/mag_pkp_bloody_v1_400.html", icon: "/images/weapons/bloody/bloody_pkp_mag.png" },
+  { title: "Магазин PKP Bloody V1 - 600 патронов", path: "/craft/mag_bloody/mag_pkp_bloody_v1_600.html", icon: "/images/weapons/bloody/bloody_pkp_mag.png" },
+  { title: "Магазин PKP Bloody V2 - 400 патронов", path: "/craft/mag_bloody/mag_pkp_bloody_v2_400.html", icon: "/images/weapons/bloody/bloody_pkp_mag.png" },
+  { title: "Магазин PKP Bloody V2 - 600 патронов", path: "/craft/mag_bloody/mag_pkp_bloody_v2_600.html", icon: "/images/weapons/bloody/bloody_pkp_mag.png" },
+  { title: "Магазин RPD Bloody - 400 патронов", path: "/craft/mag_bloody/mag_rpd_bloody_400.html", icon: "/images/weapons/bloody/bloody_rpd_mag.png" },
+  { title: "Магазин RPD Bloody - 600 патронов", path: "/craft/mag_bloody/mag_rpd_bloody_600.html", icon: "/images/weapons/bloody/bloody_rpd_mag.png" },
+  { title: "Магазин SCAR Bloody - 300 патронов", path: "/craft/mag_bloody/mag_scar_bloody_300.html", icon: "/images/weapons/bloody/bloody_scar_mag.png" },
+  { title: "Магазин SCAR Bloody - 450 патронов", path: "/craft/mag_bloody/mag_scar_bloody_450.html", icon: "/images/weapons/bloody/bloody_scar_mag.png" },
+  { title: "Магазин SIGSAUER Bloody V1 - 300 патронов", path: "/craft/mag_bloody/mag_sigsauer_bloody_v1_300.html", icon: "/images/weapons/bloody/bloody_sigsauer_mag.png" },
+  { title: "Магазин SIGSAUER Bloody V1 - 450 патронов", path: "/craft/mag_bloody/mag_sigsauer_bloody_v1_450.html", icon: "/images/weapons/bloody/bloody_sigsauer_mag.png" },
+  { title: "Магазин SIGSAUER Bloody V2 - 300 патронов", path: "/craft/mag_bloody/mag_sigsauer_bloody_v2_300.html", icon: "/images/weapons/bloody/bloody_sigsauer_mag.png" },
+  { title: "Магазин SIGSAUER Bloody V2 - 450 патронов", path: "/craft/mag_bloody/mag_sigsauer_bloody_v2_450.html", icon: "/images/weapons/bloody/bloody_sigsauer_mag.png" },
+  { title: "Магазин SMG Bloody - 300 патронов", path: "/craft/mag_bloody/mag_smg_bloody_300.html", icon: "/images/weapons/bloody/bloody_smg_mag.png" },
+  { title: "Магазин SMG Bloody - 450 патронов", path: "/craft/mag_bloody/mag_smg_bloody_450.html", icon: "/images/weapons/bloody/bloody_smg_mag.png" },
+  { title: "Магазин AKM GOLD V1 - 200 патронов", path: "/craft/mag_dark/mag_akm_gold_v1_200.html", icon: "/images/weapons/gold/gold_akm_mag.png" },
+  { title: "Магазин AKM GOLD V1 - 300 патронов", path: "/craft/mag_dark/mag_akm_gold_v1_300.html", icon: "/images/weapons/gold/gold_akm_mag.png" },
+  { title: "Магазин AKM GOLD V2 - 200 патронов", path: "/craft/mag_dark/mag_akm_gold_v2_200.html", icon: "/images/weapons/gold/gold_akm_mag.png" },
+  { title: "Магазин AKM GOLD V2 - 300 патронов", path: "/craft/mag_dark/mag_akm_gold_v2_300.html", icon: "/images/weapons/gold/gold_akm_mag.png" },
+  { title: "Магазин AKM GOLD V3 - 200 патронов", path: "/craft/mag_dark/mag_akm_gold_v3_200.html", icon: "/images/weapons/gold/gold_akm_mag.png" },
+  { title: "Магазин AKM GOLD V3 - 300 патронов", path: "/craft/mag_dark/mag_akm_gold_v3_300.html", icon: "/images/weapons/gold/gold_akm_mag.png" },
+  { title: "Магазин MBR Dark - 100 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v1_100.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин MBR Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v1_150.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин MBR Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v1_200.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин TAR21 Dark - 100 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v2_100.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин TAR21 Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v2_150.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин TAR21 Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v2_200.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин AR15 Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v3_150.html", icon: "/images/weapons/dark/dark_ar556_v3_v4_mag.png" },
+  { title: "Магазин AR15 Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v3_200.html", icon: "/images/weapons/dark/dark_ar556_v3_v4_mag.png" },
+  { title: "Магазин AR15 Dark - 250 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v3_250.html", icon: "/images/weapons/dark/dark_ar556_v3_v4_mag.png" },
+  { title: "Магазин MCR Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v4_150.html", icon: "/images/weapons/dark/dark_ar556_v3_v4_mag.png" },
+  { title: "Магазин MCR Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v4_200.html", icon: "/images/weapons/dark/dark_ar556_v3_v4_mag.png" },
+  { title: "Магазин MCR Dark - 250 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v4_250.html", icon: "/images/weapons/dark/dark_ar556_v3_v4_mag.png" },
+  { title: "Магазин HK417 Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v5_200.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин HK417 Dark - 300 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v5_300.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин HK417 Dark - 400 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v5_400.html", icon: "/images/weapons/dark/dark_ar556_v1_v2_v5_mag.png" },
+  { title: "Магазин SCAR Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v6_200.html", icon: "/images/weapons/dark/dark_ar556_v6_mag.png" },
+  { title: "Магазин SCAR Dark - 300 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v6_300.html", icon: "/images/weapons/dark/dark_ar556_v6_mag.png" },
+  { title: "Магазин SCAR Dark - 400 патронов", path: "/craft/mag_dark/mag_ar_556_dark_v6_400.html", icon: "/images/weapons/dark/dark_ar556_v6_mag.png" },
+  { title: "Магазин VSK94 Dark - 100 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v1_100.html", icon: "/images/weapons/dark/dark_ar762_v1_mag.png" },
+  { title: "Магазин VSK94 Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v1_150.html", icon: "/images/weapons/dark/dark_ar762_v1_mag.png" },
+  { title: "Магазин VSK94 Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v1_200.html", icon: "/images/weapons/dark/dark_ar762_v1_mag.png" },
+  { title: "Магазин AK12 Dark - 100 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v2_100.html", icon: "/images/weapons/dark/dark_ar762_v2_mag.png" },
+  { title: "Магазин AK12 Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v2_150.html", icon: "/images/weapons/dark/dark_ar762_v2_mag.png" },
+  { title: "Магазин AK12 Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v2_200.html", icon: "/images/weapons/dark/dark_ar762_v2_mag.png" },
+  { title: "Магазин AK47 Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v3_150.html", icon: "/images/weapons/dark/dark_ar762_v3_mag.png" },
+  { title: "Магазин AK47 Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v3_200.html", icon: "/images/weapons/dark/dark_ar762_v3_mag.png" },
+  { title: "Магазин AK47 Dark - 250 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v3_250.html", icon: "/images/weapons/dark/dark_ar762_v3_mag.png" },
+  { title: "Магазин AKALPHA Dark - 150 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v4_150.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AKALPHA Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v4_200.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AKALPHA Dark - 250 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v4_250.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AK15 Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v5_200.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AK15 Dark - 300 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v5_300.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AK15 Dark - 400 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v5_400.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AEK971 Dark - 200 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v6_200.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AEK971 Dark - 300 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v6_300.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин AEK971 Dark - 400 патронов", path: "/craft/mag_dark/mag_ar_762_dark_v6_400.html", icon: "/images/weapons/dark/dark_ar762_v4_v5_v6_mag.png" },
+  { title: "Магазин HK416 GOLD V1 - 200 патронов", path: "/craft/mag_dark/mag_hk416_gold_v1_200.html", icon: "/images/weapons/gold/gold_hk416_mag.png" },
+  { title: "Магазин HK416 GOLD V1 - 300 патронов", path: "/craft/mag_dark/mag_hk416_gold_v1_300.html", icon: "/images/weapons/gold/gold_hk416_mag.png" },
+  { title: "Магазин HK416 GOLD V2 - 200 патронов", path: "/craft/mag_dark/mag_hk416_gold_v2_200.html", icon: "/images/weapons/gold/gold_hk416_mag.png" },
+  { title: "Магазин HK416 GOLD V2 - 300 патронов", path: "/craft/mag_dark/mag_hk416_gold_v2_300.html", icon: "/images/weapons/gold/gold_hk416_mag.png" },
+  { title: "Магазин HK416 GOLD V3 - 200 патронов", path: "/craft/mag_dark/mag_hk416_gold_v3_200.html", icon: "/images/weapons/gold/gold_hk416_mag.png" },
+  { title: "Магазин HK416 GOLD V3 - 300 патронов", path: "/craft/mag_dark/mag_hk416_gold_v3_300.html", icon: "/images/weapons/gold/gold_hk416_mag.png" },
+  { title: "Магазин PKM Dark - 200 патронов", path: "/craft/mag_dark/mag_hmg_dark_v1_200.html", icon: "/images/weapons/dark/dark_hmg_v1_mag.png" },
+  { title: "Магазин PKM Dark - 300 патронов", path: "/craft/mag_dark/mag_hmg_dark_v1_300.html", icon: "/images/weapons/dark/dark_hmg_v1_mag.png" },
+  { title: "Магазин PKM Dark - 400 патронов", path: "/craft/mag_dark/mag_hmg_dark_v1_400.html", icon: "/images/weapons/dark/dark_hmg_v1_mag.png" },
+  { title: "Магазин M249 Dark - 200 патронов", path: "/craft/mag_dark/mag_hmg_dark_v2_200.html", icon: "/images/weapons/dark/dark_hmg_v2_mag.png" },
+  { title: "Магазин M249 Dark - 300 патронов", path: "/craft/mag_dark/mag_hmg_dark_v2_300.html", icon: "/images/weapons/dark/dark_hmg_v2_mag.png" },
+  { title: "Магазин M249 Dark - 400 патронов", path: "/craft/mag_dark/mag_hmg_dark_v2_400.html", icon: "/images/weapons/dark/dark_hmg_v2_mag.png" },
+  { title: "Магазин PKP Dark - 200 патронов", path: "/craft/mag_dark/mag_hmg_dark_v3_200.html", icon: "/images/weapons/dark/dark_hmg_v3_mag.png" },
+  { title: "Магазин PKP Dark - 300 патронов", path: "/craft/mag_dark/mag_hmg_dark_v3_300.html", icon: "/images/weapons/dark/dark_hmg_v3_mag.png" },
+  { title: "Магазин PKP Dark - 400 патронов", path: "/craft/mag_dark/mag_hmg_dark_v3_400.html", icon: "/images/weapons/dark/dark_hmg_v3_mag.png" },
+  { title: "Магазин M60E3 Dark - 300 патронов", path: "/craft/mag_dark/mag_hmg_dark_v4_300.html", icon: "/images/weapons/dark/dark_hmg_v4_mag.png" },
+  { title: "Магазин M60E3 Dark - 400 патронов", path: "/craft/mag_dark/mag_hmg_dark_v4_400.html", icon: "/images/weapons/dark/dark_hmg_v4_mag.png" },
+  { title: "Магазин M60E3 Dark - 500 патронов", path: "/craft/mag_dark/mag_hmg_dark_v4_500.html", icon: "/images/weapons/dark/dark_hmg_v4_mag.png" },
+  { title: "Магазин HK21 Dark - 300 патронов", path: "/craft/mag_dark/mag_hmg_dark_v5_300.html", icon: "/images/weapons/dark/dark_hmg_v5_mag.png" },
+  { title: "Магазин HK21 Dark - 400 патронов", path: "/craft/mag_dark/mag_hmg_dark_v5_400.html", icon: "/images/weapons/dark/dark_hmg_v5_mag.png" },
+  { title: "Магазин HK21 Dark - 500 патронов", path: "/craft/mag_dark/mag_hmg_dark_v5_500.html", icon: "/images/weapons/dark/dark_hmg_v5_mag.png" },
+  { title: "Магазин Evolys Dark - 300 патронов", path: "/craft/mag_dark/mag_hmg_dark_v6_300.html", icon: "/images/weapons/dark/dark_hmg_v6_mag.png" },
+  { title: "Магазин Evolys Dark - 400 патронов", path: "/craft/mag_dark/mag_hmg_dark_v6_400.html", icon: "/images/weapons/dark/dark_hmg_v6_mag.png" },
+  { title: "Магазин Evolys Dark - 500 патронов", path: "/craft/mag_dark/mag_hmg_dark_v6_500.html", icon: "/images/weapons/dark/dark_hmg_v6_mag.png" },
+  { title: "Магазин PPSH Dark - 100 патронов", path: "/craft/mag_dark/mag_pp_dark_v3_100.html", icon: "/images/weapons/dark/dark_pp_v3_mag.png" },
+  { title: "Магазин PPSH Dark - 150 патронов", path: "/craft/mag_dark/mag_pp_dark_v3_150.html", icon: "/images/weapons/dark/dark_pp_v3_mag.png" },
+  { title: "Магазин PPSH Dark - 200 патронов", path: "/craft/mag_dark/mag_pp_dark_v3_200.html", icon: "/images/weapons/dark/dark_pp_v3_mag.png" },
+  { title: "Магазин Scorpion Dark - 100 патронов", path: "/craft/mag_dark/mag_pp_dark_v4_100.html", icon: "/images/weapons/dark/dark_pp_v4_mag.png" },
+  { title: "Магазин Scorpion Dark - 150 патронов", path: "/craft/mag_dark/mag_pp_dark_v4_150.html", icon: "/images/weapons/dark/dark_pp_v4_mag.png" },
+  { title: "Магазин Scorpion Dark - 200 патронов", path: "/craft/mag_dark/mag_pp_dark_v4_200.html", icon: "/images/weapons/dark/dark_pp_v4_mag.png" },
+  { title: "Магазин SUB2000 Dark - 100 патронов", path: "/craft/mag_dark/mag_pp_dark_v5_100.html", icon: "/images/weapons/dark/dark_pp_v5_v6_mag.png" },
+  { title: "Магазин SUB2000 Dark - 200 патронов", path: "/craft/mag_dark/mag_pp_dark_v5_200.html", icon: "/images/weapons/dark/dark_pp_v5_v6_mag.png" },
+  { title: "Магазин SUB2000 Dark - 300 патронов", path: "/craft/mag_dark/mag_pp_dark_v5_300.html", icon: "/images/weapons/dark/dark_pp_v5_v6_mag.png" },
+  { title: "Магазин SUB2000-S Dark - 100 патронов", path: "/craft/mag_dark/mag_pp_dark_v6_100.html", icon: "/images/weapons/dark/dark_pp_v5_v6_mag.png" },
+  { title: "Магазин SUB2000-S Dark - 200 патронов", path: "/craft/mag_dark/mag_pp_dark_v6_200.html", icon: "/images/weapons/dark/dark_pp_v5_v6_mag.png" },
+  { title: "Магазин SUB2000-S Dark - 300 патронов", path: "/craft/mag_dark/mag_pp_dark_v6_300.html", icon: "/images/weapons/dark/dark_pp_v5_v6_mag.png" },
+  { title: "Магазин AS50 Dark - 100 патронов", path: "/craft/mag_dark/mag_rifle_dark_v1_100.html", icon: "/images/weapons/dark/dark_rifle_v1_mag.png" },
+  { title: "Магазин AS50 Dark - 150 патронов", path: "/craft/mag_dark/mag_rifle_dark_v1_150.html", icon: "/images/weapons/dark/dark_rifle_v1_mag.png" },
+  { title: "Магазин AS50 Dark - 200 патронов", path: "/craft/mag_dark/mag_rifle_dark_v1_200.html", icon: "/images/weapons/dark/dark_rifle_v1_mag.png" },
+  { title: "Магазин Kivaari Dark - 100 патронов", path: "/craft/mag_dark/mag_rifle_dark_v2_100.html", icon: "/images/weapons/dark/dark_rifle_v2_mag.png" },
+  { title: "Магазин Kivaari Dark - 150 патронов", path: "/craft/mag_dark/mag_rifle_dark_v2_150.html", icon: "/images/weapons/dark/dark_rifle_v2_mag.png" },
+  { title: "Магазин Kivaari Dark - 200 патронов", path: "/craft/mag_dark/mag_rifle_dark_v2_200.html", icon: "/images/weapons/dark/dark_rifle_v2_mag.png" },
+  { title: "Магазин M110 Dark - 150 патронов", path: "/craft/mag_dark/mag_rifle_dark_v3_150.html", icon: "/images/weapons/dark/dark_rifle_v3_mag.png" },
+  { title: "Магазин M110 Dark - 200 патронов", path: "/craft/mag_dark/mag_rifle_dark_v3_200.html", icon: "/images/weapons/dark/dark_rifle_v3_mag.png" },
+  { title: "Магазин M110 Dark - 250 патронов", path: "/craft/mag_dark/mag_rifle_dark_v3_250.html", icon: "/images/weapons/dark/dark_rifle_v3_mag.png" },
+  { title: "Магазин RSASS Dark - 150 патронов", path: "/craft/mag_dark/mag_rifle_dark_v4_150.html", icon: "/images/weapons/dark/dark_rifle_v4_mag.png" },
+  { title: "Магазин RSASS Dark - 200 патронов", path: "/craft/mag_dark/mag_rifle_dark_v4_200.html", icon: "/images/weapons/dark/dark_rifle_v4_mag.png" },
+  { title: "Магазин RSASS Dark - 250 патронов", path: "/craft/mag_dark/mag_rifle_dark_v4_250.html", icon: "/images/weapons/dark/dark_rifle_v4_mag.png" },
+  { title: "Магазин VSSK Dark - 200 патронов", path: "/craft/mag_dark/mag_rifle_dark_v5_200.html", icon: "/images/weapons/dark/dark_rifle_v5_mag.png" },
+  { title: "Магазин VSSK Dark - 250 патронов", path: "/craft/mag_dark/mag_rifle_dark_v5_250.html", icon: "/images/weapons/dark/dark_rifle_v5_mag.png" },
+  { title: "Магазин VSSK Dark - 300 патронов", path: "/craft/mag_dark/mag_rifle_dark_v5_300.html", icon: "/images/weapons/dark/dark_rifle_v5_mag.png" },
+  { title: "Магазин M82A2 Dark - 200 патронов", path: "/craft/mag_dark/mag_rifle_dark_v6_200.html", icon: "/images/weapons/dark/dark_rifle_v6_mag.png" },
+  { title: "Магазин M82A2 Dark - 250 патронов", path: "/craft/mag_dark/mag_rifle_dark_v6_250.html", icon: "/images/weapons/dark/dark_rifle_v6_mag.png" },
+  { title: "Магазин M82A2 Dark - 300 патронов", path: "/craft/mag_dark/mag_rifle_dark_v6_300.html", icon: "/images/weapons/dark/dark_rifle_v6_mag.png" },
+  { title: "Магазин ACP-9 Immortal - 400 патронов", path: "/craft/mag_immortal/mag_acp9_400.html", icon: "/images/weapons/immortal/acp9_mag.png" },
+  { title: "Магазин AK-74M Immortal - 500 патронов", path: "/craft/mag_immortal/mag_ak74m_500.html", icon: "/images/weapons/immortal/ak74m_mag.png" },
+  { title: "Магазин автомата Immortal V1 - 500 патронов", path: "/craft/mag_immortal/mag_ar1_500.html", icon: "/images/weapons/immortal/ar1_mag.png" },
+  { title: "Магазин автомата Immortal V2 - 500 патронов", path: "/craft/mag_immortal/mag_ar2_500.html", icon: "/images/weapons/immortal/ar2_mag.png" },
+  { title: "Магазин AS-VAL A Immortal - 500 патронов", path: "/craft/mag_immortal/mag_asval_a_500.html", icon: "/images/weapons/immortal/asval_a_mag.png" },
+  { title: "Магазин AS-VAL B Immortal - 500 патронов", path: "/craft/mag_immortal/mag_asval_b_500.html", icon: "/images/weapons/immortal/asval_b_mag.png" },
+  { title: "Магазин BT-9 NY Tactical - 400 патронов", path: "/craft/mag_immortal/mag_bt9_400.html", icon: "/images/weapons/ny/ny_bt9_mag.png" },
+  { title: "Магазин DMR M800 NY Tactical - 400 патронов", path: "/craft/mag_immortal/mag_dmrm800_400.html", icon: "/images/weapons/ny/ny_dmr_m800_mag.png" },
+  { title: "Магазин Galil Immortal - 500 патронов", path: "/craft/mag_immortal/mag_galil_500.html", icon: "/images/weapons/immortal/galil_mag.png" },
+  { title: "Магазин пулемета Immortal V2 - 700 патронов", path: "/craft/mag_immortal/mag_hmg_700.html", icon: "/images/weapons/immortal/hmg_mag.png" },
+  { title: "Магазин Honey Badger Immortal - 400 патронов", path: "/craft/mag_immortal/mag_honey_400.html", icon: "/images/weapons/immortal/honeybadger_mag.png" },
+  { title: "Магазин Kriss Vector Immortal - 400 патронов", path: "/craft/mag_immortal/mag_kriss_400.html", icon: "/images/weapons/immortal/kriss_mag.png" },
+  { title: "Магазин L129A1 Immortal - 500 патронов", path: "/craft/mag_immortal/mag_l129a1_500.html", icon: "/images/weapons/immortal/l129a1_mag.png" },
+  { title: "Магазин M249 NY Tactical - 700 патронов", path: "/craft/mag_immortal/mag_m249_700.html", icon: "/images/weapons/ny/ny_m249_mag.png" },
+  { title: "Магазин MDR Immortal - 500 патронов", path: "/craft/mag_immortal/mag_mdr_500.html", icon: "/images/weapons/immortal/mdr_mag.png" },
+  { title: "Магазин MSR Immortal - 400 патронов", path: "/craft/mag_immortal/mag_msr_400.html", icon: "/images/weapons/immortal/msr_mag.png" },
+  { title: "Магазин PKP Immortal - 700 патронов", path: "/craft/mag_immortal/mag_pkp_700.html", icon: "/images/weapons/immortal/pkp_mag.png" },
+  { title: "Магазин ПП Immortal V2 - 400 патронов", path: "/craft/mag_immortal/mag_pp_400.html", icon: "/images/weapons/immortal/smg_mag.png" },
+  { title: "Магазин Saiga-9 Immortal - 400 патронов", path: "/craft/mag_immortal/mag_saiga9_400.html", icon: "/images/weapons/immortal/saiga9_mag.png" },
+  { title: "Магазин STM-545 NY Tactical - 500 патронов", path: "/craft/mag_immortal/mag_stm545_500.html", icon: "/images/weapons/ny/ny_stm545_mag.png" },
+  { title: "Магазин SMG Type-85 - 400 патронов", path: "/craft/mag_immortal/mag_type_400.html", icon: "/images/weapons/immortal/auk_type85_mag.png" },
+  { title: "Магазин Vityaz Immortal - 400 патронов", path: "/craft/mag_immortal/mag_vityaz_400.html", icon: "/images/weapons/immortal/vityaz_mag.png" },
+  { title: "Магазин VSSK Immortal - 500 патронов", path: "/craft/mag_immortal/mag_vssk_500.html", icon: "/images/weapons/immortal/vssk_mag.png" },
+  { title: "Магазин XM109 Immortal - 400 патронов", path: "/craft/mag_immortal/mag_xm109_400.html", icon: "/images/weapons/immortal/xm109_mag.png" },
+  { title: "Магазин XRK M4 - 500 патронов", path: "/craft/mag_immortal/mag_xrk_500.html", icon: "/images/weapons/immortal/auk_xrk_mag.png" },
+  { title: "Магазин ASH-12 Phantom - 500 патронов", path: "/craft/mag_phantom/mag_ash_500.html", icon: "/images/weapons/phantom/ash12_mag.png" },
+  { title: "Магазин Honey Badger Phantom - 400 патронов", path: "/craft/mag_phantom/mag_honey_400.html", icon: "/images/weapons/phantom/honeybadger_mag.png" },
+  { title: "Магазин M170 Phantom - 400 патронов", path: "/craft/mag_phantom/mag_m170_400.html", icon: "/images/weapons/phantom/m170_mag.png" },
+  { title: "Магазин MCX Phantom - 500 патронов", path: "/craft/mag_phantom/mag_mcx_500.html", icon: "/images/weapons/phantom/mcx_mag.png" },
+  { title: "Магазин MK-14 Phantom - 400 патронов", path: "/craft/mag_phantom/mag_mk14_400.html", icon: "/images/weapons/phantom/mk14_mag.png" },
+  { title: "Магазин Saiga-12 Phantom - 200 патронов", path: "/craft/mag_phantom/mag_origin12_200.html", icon: "/images/weapons/phantom/saiga12_mag.png" },
+  { title: "Магазин PKP Bullpup Phantom - 700 патронов", path: "/craft/mag_phantom/mag_pkp_700.html", icon: "/images/weapons/phantom/pkp_mag.png" },
+  { title: "Магазин Reaper Phantom - 400 патронов", path: "/craft/mag_phantom/mag_reaper_400.html", icon: "/images/weapons/phantom/reaper_mag.png" },
+  { title: "Магазин Velociraptor Phantom - 500 патронов", path: "/craft/mag_phantom/mag_velociraptor_500.html", icon: "/images/weapons/phantom/velociraptor_mag.png" },
+  { title: "Магазин Veresk Phantom - 400 патронов", path: "/craft/mag_phantom/mag_veresk_400.html", icon: "/images/weapons/phantom/veresk_mag.png" },
+  { title: "Клей БФ-6 200", path: "/craft/medicine/bf200.html", icon: "/images/medicine/bf200.png" },
+  { title: "Клей БФ-6 400", path: "/craft/medicine/bf400.html", icon: "/images/medicine/bf400.png" },
+  { title: "Клей БФ-6 600", path: "/craft/medicine/bf600.html", icon: "/images/medicine/bf600.png" },
+  { title: "Аптечка 120", path: "/craft/medicine/firstaid_120.html", icon: "/images/medicine/firstaid_yw.png" },
+  { title: "Аптечка 150", path: "/craft/medicine/firstaid_150.html", icon: "/images/medicine/firstaid_yw.png" },
+  { title: "Аптечка 60", path: "/craft/medicine/firstaid_60.html", icon: "/images/medicine/firstaid_yw.png" },
+  { title: "Аптечка 90", path: "/craft/medicine/firstaid_90.html", icon: "/images/medicine/firstaid_yw.png" },
+  { title: "Стимулятор - кровь 100", path: "/craft/medicine/stimulator_blood_100.html", icon: "/images/medicine/stimulator_blood_100.png" },
+  { title: "Стимулятор - кровь 20", path: "/craft/medicine/stimulator_blood_20.html", icon: "/images/medicine/stimulator_blood_20.png" },
+  { title: "Стимулятор - кровь 40", path: "/craft/medicine/stimulator_blood_40.html", icon: "/images/medicine/stimulator_blood_40.png" },
+  { title: "Стимулятор - кровь 60", path: "/craft/medicine/stimulator_blood_60.html", icon: "/images/medicine/stimulator_blood_60.png" },
+  { title: "Стимулятор - кровь 80", path: "/craft/medicine/stimulator_blood_80.html", icon: "/images/medicine/stimulator_blood_80.png" },
+  { title: "Стимулятор - здоровье 100", path: "/craft/medicine/stimulator_hp_100.html", icon: "/images/medicine/stimulator_hp_100.png" },
+  { title: "Стимулятор - здоровье 20", path: "/craft/medicine/stimulator_hp_20.html", icon: "/images/medicine/stimulator_hp_20.png" },
+  { title: "Стимулятор - здоровье 40", path: "/craft/medicine/stimulator_hp_40.html", icon: "/images/medicine/stimulator_hp_40.png" },
+  { title: "Стимулятор - здоровье 60", path: "/craft/medicine/stimulator_hp_60.html", icon: "/images/medicine/stimulator_hp_60.png" },
+  { title: "Стимулятор - здоровье 80", path: "/craft/medicine/stimulator_hp_80.html", icon: "/images/medicine/stimulator_hp_80.png" },
+  { title: "Стимулятор - Immortal", path: "/craft/medicine/stimulator_immortal.html", icon: "/images/medicine/stimulator_immortal.png" },
+  { title: "Глушитель V1", path: "/craft/suppressors/supp_v1.html", icon: "/images/weapons/suppressor.png" },
+  { title: "Глушитель V2", path: "/craft/suppressors/supp_v2.html", icon: "/images/weapons/suppressor.png" },
+  { title: "Глушитель V3", path: "/craft/suppressors/supp_v3.html", icon: "/images/weapons/suppressor.png" },
+
+];
