@@ -107,8 +107,41 @@
     });
   }
 
+  function saveScrollOnNav() {
+    const isCategory = location.pathname.startsWith("/craft/categories/");
+    if (!isCategory) return;
+
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", () => {
+        try {
+          const key = `scroll:${location.pathname}`;
+          sessionStorage.setItem(key, String(window.scrollY || 0));
+        } catch (_) {
+          // ignore storage errors
+        }
+      });
+    });
+  }
+
+  function restoreScroll() {
+    try {
+      const key = `scroll:${location.pathname}`;
+      const value = sessionStorage.getItem(key);
+      if (!value) return;
+      const y = parseInt(value, 10);
+      if (!Number.isNaN(y)) {
+        requestAnimationFrame(() => window.scrollTo(0, y));
+      }
+      sessionStorage.removeItem(key);
+    } catch (_) {
+      // ignore storage errors
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     addBreadcrumbs();
     enableHistoryBack();
+    saveScrollOnNav();
+    restoreScroll();
   });
 })();
