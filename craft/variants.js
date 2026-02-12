@@ -380,5 +380,161 @@ window.CRAFT_VARIANTS = {
     "/YourWorld-Guide/images/items/nvg_3.png",
     "/YourWorld-Guide/images/items/nvg_4.png",
     "/YourWorld-Guide/images/items/nvg_5.png"
+  ],
+  "galil_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/galil_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/galil_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/galil_green_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/galil_beige_mag.png"
+  ],
+  "xm109_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/xm109_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/xm109_spider_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/xm109_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/xm109_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/xm109_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/xm109_camo3_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/xm109_camo4_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/xm109_camo5_mag.png"
+  ],
+  "pkp_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/pkp_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/pkp_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/pkp_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/pkp_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/pkp_camo3_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/pkp_camo4_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/pkp_camo5_mag.png"
+  ],
+  "vssk_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/vssk_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vssk_black_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vssk_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vssk_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vssk_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vssk_camo3_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vssk_camo4_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vssk_camo5_mag.png"
+  ],
+  "ak74m_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_black_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_camo3_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_camo4_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_camo5_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_camo6_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/ak74m_camo7_mag.png"
+  ],
+  "saiga9_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_black_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_camo3_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_camo4_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_camo5_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_camo6_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/saiga9_camo7_mag.png"
+  ],
+  "msr_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/msr_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_black_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_camo3_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_camo4_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_camo5_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_camo6_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/msr_camo7_mag.png"
+  ],
+  "vityaz_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/vityaz_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vityaz_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vityaz_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vityaz_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vityaz_camo3_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/vityaz_camo4_mag.png"
+  ],
+  "l129a1_mag": [
+    "/YourWorld-Guide/images/weapons/immortal/l129a1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/l129a1_white_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/l129a1_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/l129a1_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/immortal/l129a1_camo3_mag.png"
+  ],
+  "honey_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/honeybadger_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/honeybadger_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/honeybadger_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/honeybadger_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/honeybadger_camo3_mag.png"
+  ],
+  "ash_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/ash12_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/ash12_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/ash12_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/ash12_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/ash12_camo3_mag.png"
+  ],
+  "mcx_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/mcx_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mcx_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mcx_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mcx_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mcx_camo3_mag.png"
+  ],
+  "velociraptor_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/velociraptor_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/velociraptor_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/velociraptor_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/velociraptor_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/velociraptor_camo3_mag.png"
+  ],
+  "pkp_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/pkp_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/pkp_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/pkp_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/pkp_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/pkp_camo3_mag.png"
+  ],
+  "m170_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/m170_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/m170_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/m170_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/m170_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/m170_camo3_mag.png"
+  ],
+  "mk14_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/mk14_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mk14_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mk14_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mk14_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/mk14_camo3_mag.png"
+  ],
+  "reaper_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/reaper_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/reaper_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/reaper_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/reaper_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/reaper_camo3_mag.png"
+  ],
+  "origin_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/origin12_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/origin12_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/origin12_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/origin12_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/origin12_camo3_mag.png"
+  ],
+  "saiga_phantom_mag": [
+    "/YourWorld-Guide/images/weapons/phantom/saiga12_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/saiga12_white_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/saiga12_camo1_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/saiga12_camo2_mag.png",
+    "/YourWorld-Guide/images/weapons/phantom/saiga12_camo3_mag.png"
   ]
 };
