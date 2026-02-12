@@ -339,3 +339,31 @@ h2 { margin: 0 0 12px; font-size: 22px; font-weight: 700; }
     font-size: 16px; /* чтобы не было zoom на iPhone */
   }
 }
+
+/* Верхняя навигация */
+.top-nav {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link.active {
+  color: #ff9a2f;
+}
+
+/* Заглушки */
+.tile.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
