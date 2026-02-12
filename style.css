@@ -378,7 +378,7 @@ h2 { margin: 0 0 12px; font-size: 22px; font-weight: 700; }
 }
 
 .back-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 42px;
@@ -386,13 +386,18 @@ h2 { margin: 0 0 12px; font-size: 22px; font-weight: 700; }
   border-radius: 10px;
   background: rgba(255, 150, 47, 0.08);
   border: 1px solid rgba(255, 150, 47, 0.2);
-  color: #ff9a2f;
-  text-decoration: none;
-  font-size: 20px;
   transition: 0.2s ease;
+  margin-top: 8px; /* слегка выравнивает по hero */
 }
+
 
 .back-btn:hover {
   background: rgba(255, 150, 47, 0.18);
   transform: translateX(-2px);
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
