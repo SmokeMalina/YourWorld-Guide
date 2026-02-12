@@ -40,18 +40,27 @@ a:hover { text-decoration:underline; }
   align-items: center;
   gap: 14px;
 }
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
 .hero-logo {
-  width: 56px;         /* фикс размера */
-  height: 56px;
+  width: 64px;         /* фикс размера */
+  height: 64px;
   flex: 0 0 56px;      /* не даём сжиматься/растягиваться */
-  object-fit: contain; /* не тянем пропорции */
+  object-fit: contain;
   border-radius: 14px;
   padding: 8px;
 
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.10);
   filter: drop-shadow(0 0 14px rgba(255,133,0,.28));
+}
+
+.hero h1 {
+  margin: 0;
 }
 
 .hero-title {
@@ -366,4 +375,24 @@ h2 { margin: 0 0 12px; font-size: 22px; font-weight: 700; }
 .tile.disabled {
   opacity: 0.4;
   pointer-events: none;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 150, 47, 0.08);
+  border: 1px solid rgba(255, 150, 47, 0.2);
+  color: #ff9a2f;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 150, 47, 0.18);
+  transform: translateX(-2px);
 }
