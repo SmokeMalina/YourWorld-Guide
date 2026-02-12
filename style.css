@@ -1,17 +1,7 @@
-/* =========================================================
-   YourWorld Wiki - Основной стиль
-   Версия: аккуратный апгрейд без смены вайба
-   Что внутри:
-   1) Токены (цвета/радиусы/тени)
-   2) База (body, wrap, типографика)
-   3) Hero (шапка)
-   4) Навигация (Wiki / Крафт)
-   5) Карточки/плитки (главная/категории)
-   6) Поиск (инпут + dropdown)
-   7) Страница рецепта (item-hero, card, item-row)
-   8) Variant slider (картинка + точки)
-   9) Адаптив
-   ========================================================= */
+/* ======================================================
+   YourWorld Wiki — основной стиль
+   Аккуратный апгрейд без смены вайба
+====================================================== */
 
 
 /* =========================
@@ -31,497 +21,316 @@
 
   /* Поверхности */
   --card: rgba(255,255,255,.03);
-  --card2: rgba(255,255,255,.04);
+  --card2: rgba(255,255,255,.05);
 
   /* Бордеры */
   --b1: rgba(255,255,255,.08);
-  --b2: rgba(255,255,255,.10);
-  --b3: rgba(255,170,70,.15);
+  --b2: rgba(255,255,255,.12);
 
   /* Радиусы */
-  --r-lg: 18px;
-  --r-md: 16px;
-  --r-sm: 12px;
+  --r-lg: 20px;
+  --r-md: 14px;
+  --r-sm: 10px;
 
-  /* Тени/глоу */
-  --glow: rgba(255,133,0,.28);
-  --glow-strong: rgba(255,133,0,.30);
-  --shadow-soft: 0 12px 40px rgba(255,150,50,0.18);
-  --shadow-deep: 0 10px 40px rgba(0,0,0,0.55);
-
-  /* Анимации */
-  --t-fast: 0.15s ease;
-  --t: 0.25s ease;
+  /* Тени */
+  --shadow: 0 10px 40px rgba(0,0,0,.45);
 }
 
 
 /* =========================
-   2) BASE / TYPOGRAPHY
+   2) BASE
    ========================= */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
+  font-family: "Manrope", sans-serif;
   background: var(--bg);
   color: var(--text);
-  animation: fadeInPage 0.35s ease;
-}
-
-@keyframes fadeInPage {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .wrap {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 28px 16px 60px;
+  padding: 24px;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-h1 {
-  margin: 0 0 8px;
-  font-size: 34px;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-}
-
-h2 {
-  margin: 0 0 12px;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.muted {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 500;
+a {
+  color: var(--accent2);
+  text-decoration: none;
 }
 
 
 /* =========================
-   3) HERO (Шапка)
+   3) HERO (ШАПКА)
    ========================= */
 
 .hero {
+  background: linear-gradient(90deg,
+    rgba(255,133,0,.25),
+    rgba(255,133,0,.08),
+    rgba(255,133,0,0)
+  );
   border: 1px solid var(--b1);
   border-radius: var(--r-lg);
-  padding: 20px;
-  background:
-    radial-gradient(900px 340px at 15% 0%, rgba(255,133,0,.22), transparent 60%),
-    var(--card);
-  margin-bottom: 18px;
+  padding: 26px 28px;
+  box-shadow: var(--shadow);
 }
 
-/* Обертка "назад + hero" (чтобы кнопка не висела отдельно) */
-.hero-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Внутри hero: логотип + текст справа */
 .hero-inner {
   display: flex;
   align-items: center;
-  gap: 24px;
-}
-
-.hero-with-back .hero-inner {
-  padding-left: 50px;
-}
-
-/* Если где-то используется hero-top — оставляем совместимость */
-.hero-top {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  gap: 18px;
 }
 
 .hero-logo {
-  width: 64px;
-  height: 64px;
-  flex: 0 0 64px;
-  object-fit: contain;
-  border-radius: 14px;
+  width: 70px;
+  height: 70px;
+  border-radius: var(--r-md);
+  background: var(--card);
   padding: 8px;
-
-  background: var(--card2);
-  border: 1px solid var(--b2);
-  filter: drop-shadow(0 0 14px var(--glow));
 }
 
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.hero-title h1 {
+  margin: 0;
+  font-size: 32px;
 }
 
-/* Мобильная шапка */
-@media (max-width: 520px) {
-  .hero-logo {
-    width: 44px;
-    height: 44px;
-    flex-basis: 44px;
-    border-radius: 12px;
-    padding: 6px;
-  }
+.hero-title p {
+  margin: 6px 0 0;
+  color: var(--muted);
 }
 
 
 /* =========================
-   4) TOP NAV (Wiki / Крафт)
+   4) BACK BUTTON (сверху)
    ========================= */
 
-.top-nav {
+.page-top {
   display: flex;
-  gap: 24px;
-  margin-bottom: 24px;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #aaa;
-  font-weight: 600;
-  transition: color var(--t-fast);
+.back-btn {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--r-md);
+
+  background: var(--card);
+  border: 1px solid var(--b1);
+
+  color: var(--accent2);
+  font-size: 18px;
+
+  transition: all .2s ease;
 }
 
-.nav-link:hover { color: #fff; }
+.back-btn:hover {
+  background: var(--card2);
+  border-color: rgba(255,154,47,.35);
+  transform: translateX(-2px);
+}
 
-.nav-link.active { color: var(--accent2); }
+.page-top .hero {
+  flex: 1;
+}
 
 
 /* =========================
-   5) TILE GRID (плитки/категории)
+   5) TILE GRID (главная)
    ========================= */
 
 .tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  gap: 22px;
+  margin-top: 26px;
 }
 
 .tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-
-  padding: 18px;
-  border-radius: var(--r-lg);
-  border: 1px solid var(--b1);
   background: var(--card);
+  border: 1px solid var(--b1);
+  border-radius: var(--r-lg);
+  padding: 20px;
   text-align: center;
-
-  /* Чуть “дороже” ощущение: меньше резкого прыжка, аккуратная тень */
-  transition: transform var(--t), box-shadow var(--t), border-color var(--t-fast), background var(--t-fast);
-  will-change: transform;
+  transition: all .2s ease;
 }
 
 .tile:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-soft);
-  border-color: rgba(255,170,70,.22);
-}
-
-.tile.active {
-  border: 1px solid var(--accent2);
-}
-
-/* Иконка в плитке */
-.tile img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-
   background: var(--card2);
-  border: 1px solid var(--b2);
-  border-radius: 16px;
-  padding: 10px;
+  transform: translateY(-3px);
+}
 
-  filter: drop-shadow(0 0 18px var(--glow-strong));
+.tile img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 
 .tile span {
-  font-size: 15px;
-  font-weight: 650;
-}
-
-/* Заглушки “скоро” */
-.tile.disabled {
-  opacity: 0.4;
-  pointer-events: none;
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
 }
 
 
 /* =========================
-   6) SEARCH (инпут + dropdown)
+   6) SEARCH
    ========================= */
 
-.search-block {
-  position: relative;
-  margin: 18px 0 24px;
+.search-wrap {
+  margin-top: 18px;
 }
 
 .search-input {
   width: 100%;
   padding: 14px 16px;
+
   border-radius: var(--r-md);
-  box-sizing: border-box;
+  border: 1px solid var(--b1);
+  background: var(--card);
 
-  border: 1px solid rgba(255,255,255,0.08);
-  background: linear-gradient(
-    145deg,
-    rgba(35,25,15,0.9),
-    rgba(15,15,15,0.9)
-  );
+  color: var(--text);
+  font-size: 15px;
 
-  color: #fff;
-  font: inherit;
   outline: none;
-
-  transition: border-color var(--t-fast), box-shadow var(--t-fast);
 }
 
-/* Добавил понятный focus (премиальнее и удобнее) */
 .search-input:focus {
-  border-color: rgba(255,154,47,.55);
-  box-shadow: 0 0 0 2px rgba(255,154,47,.12);
+  border-color: rgba(255,133,0,.4);
 }
-
-.search-input::placeholder {
-  color: rgba(255,255,255,0.55);
-}
-
-.search-dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  right: 0;
-
-  background: linear-gradient(
-    145deg,
-    rgba(40,28,18,0.96),
-    rgba(18,18,18,0.96)
-  );
-
-  border-radius: var(--r-lg);
-  border: 1px solid var(--b3);
-  box-shadow: var(--shadow-deep);
-
-  max-height: 360px;
-  overflow-y: auto;
-
-  z-index: 50;
-}
-
-/* Скрытие dropdown */
-.hidden { display: none; }
-
-.search-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  color: #fff;
-  text-decoration: none;
-  transition: background var(--t-fast);
-}
-
-.search-item:hover {
-  background: rgba(255,170,70,0.08);
-}
-
-.search-icon {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.35);
-  padding: 6px;
-  flex-shrink: 0;
-}
-
-/* У тебя было два .search-empty — оставил один */
-.search-empty {
-  padding: 16px;
-  opacity: 0.6;
-}
-
-/* Красивый скроллбар dropdown (Chrome/Edge) */
-.search-dropdown::-webkit-scrollbar { width: 8px; }
-.search-dropdown::-webkit-scrollbar-track { background: rgba(0,0,0,.25); border-radius: 999px; }
-.search-dropdown::-webkit-scrollbar-thumb { background: rgba(255,170,70,.25); border-radius: 999px; }
-.search-dropdown::-webkit-scrollbar-thumb:hover { background: rgba(255,170,70,.35); }
 
 
 /* =========================
-   7) RECIPE PAGE (страница рецепта)
+   7) ITEM PAGE
    ========================= */
 
 .item-hero {
   display: flex;
-  gap: 18px;
   align-items: center;
-  margin: 10px 0 18px;
+  gap: 30px;
+  margin: 30px 0;
 }
 
 .item-hero__img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
-  filter: drop-shadow(0 0 18px var(--glow));
 }
 
 .card {
+  background: var(--card);
   border: 1px solid var(--b1);
   border-radius: var(--r-lg);
-  padding: 18px;
-  background: var(--card);
+  padding: 22px;
+}
+
+.card h2 {
+  margin-top: 0;
 }
 
 .item-list {
   display: flex;
   flex-direction: column;
+  gap: 14px;
 }
 
 .item-row {
-  display: grid;
-  grid-template-columns: 66px 1fr auto;
+  display: flex;
   align-items: center;
   gap: 14px;
-
-  padding: 12px 6px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  transition: background var(--t-fast);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--b1);
 }
 
-.item-row:last-child { border-bottom: none; }
-
-.item-row:hover { background: rgba(255,255,255,.03); }
+.item-row:last-child {
+  border-bottom: none;
+}
 
 .item-row img {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
-
-  background: var(--card2);
-  border: 1px solid var(--b2);
-  border-radius: 14px;
-  padding: 8px;
-
-  filter: drop-shadow(0 0 12px var(--glow));
-  transition: transform var(--t-fast);
 }
 
-.item-row:hover img { transform: scale(1.04); }
+.item-row span {
+  flex: 1;
+}
 
-.item-row span { font-size: 16px; }
-.item-row b { font-size: 15px; color: var(--accent); }
+.item-row b {
+  color: var(--accent);
+}
 
 
 /* =========================
-   8) VARIANT SLIDER (картинки + точки)
+   8) VARIANT SLIDER
    ========================= */
 
 .variant-slider {
-  transition: opacity 0.4s ease;
+  position: relative;
+  display: inline-block;
 }
 
-/* Контейнер точек */
 .variant-dots {
   display: flex;
-  gap: 8px;
+  justify-content: center;
+  gap: 6px;
   margin-top: 10px;
 }
 
-/* Точка */
-.variant-dot {
+.variant-dots span {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  background: rgba(255,255,255,.25);
 }
 
-.variant-dot.active {
-  background: var(--accent2);
-  transform: scale(1.2);
+.variant-dots span.active {
+  background: var(--accent);
 }
 
 
 /* =========================
-   9) BACK BUTTON (кнопка "назад")
+   9) ADAPTIVE
    ========================= */
 
-.hero-with-back {
-  position: relative;
-}
-
-.back-btn {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 600;
-
-  color: var(--accent);
-  text-decoration: none;
-
-  border: 1px solid rgba(255,150,47,0.25);
-  background: rgba(255,150,47,0.08);
-
-  transition: all 0.2s ease;
-}
-
-.back-btn:hover {
-  background: rgba(255,150,47,0.18);
-  border-color: rgba(255,150,47,0.45);
-  transform: translateY(-50%) translateX(-2px);
-}
-
-
-/* =========================
-   10) RESPONSIVE (адаптив)
-   ========================= */
-
-@media (max-width: 1024px) {
-  .tile-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 768px) {
-  .tile-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) {
 
   .item-hero {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
   }
 
-  .item-hero__img {
-    max-width: 260px;
+}
+
+@media (max-width: 560px) {
+
+  .wrap {
+    padding: 16px;
   }
+
+  .hero-title h1 {
+    font-size: 24px;
+  }
+
+  .page-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .back-btn {
+    align-self: flex-start;
+  }
+
 }
-
-@media (max-width: 480px) {
-  .tile-grid { grid-template-columns: 1fr; }
-
-  /* чтобы не было zoom на iPhone */
-  .search-input { font-size: 16px; }
-}
-
