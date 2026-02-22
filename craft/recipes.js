@@ -590,6 +590,9 @@ window.RECIPES = [
   { title: "Клей БФ-6 200", path: "/craft/medicine/bf200.html", icon: "/images/medicine/bf200.png" },
   { title: "Клей БФ-6 400", path: "/craft/medicine/bf400.html", icon: "/images/medicine/bf400.png" },
   { title: "Клей БФ-6 600", path: "/craft/medicine/bf600.html", icon: "/images/medicine/bf600.png" },
+  { title: "Банка йода 200", path: "/craft/medicine/iod200.html", icon: "/images/medicine/iod_200.png" },
+  { title: "Банка йода 400", path: "/craft/medicine/iod400.html", icon: "/images/medicine/iod_400.png" },
+  { title: "Банка йода 600", path: "/craft/medicine/iod600.html", icon: "/images/medicine/iod_600.png" },
   { title: "Аптечка 120", path: "/craft/medicine/firstaid_120.html", icon: "/images/medicine/firstaid_yw.png" },
   { title: "Аптечка 150", path: "/craft/medicine/firstaid_150.html", icon: "/images/medicine/firstaid_yw.png" },
   { title: "Аптечка 60", path: "/craft/medicine/firstaid_60.html", icon: "/images/medicine/firstaid_yw.png" },
@@ -608,5 +611,4 @@ window.RECIPES = [
   { title: "Глушитель V1", path: "/craft/suppressors/supp_v1.html", icon: "/images/weapons/suppressor.png" },
   { title: "Глушитель V2", path: "/craft/suppressors/supp_v2.html", icon: "/images/weapons/suppressor.png" },
   { title: "Глушитель V3", path: "/craft/suppressors/supp_v3.html", icon: "/images/weapons/suppressor.png" },
-
 ];
