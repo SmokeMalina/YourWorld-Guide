@@ -32,7 +32,8 @@
       "/craft/categories/mag_bloody.html": "Крафт магазинов Bloody",
       "/craft/categories/mag_immortal.html": "Крафт магазинов Immortal",
       "/craft/categories/mag_phantom.html": "Крафт магазинов Phantom",
-      "/craft/categories/suppressor.html": "Крафт глушителей"
+      "/craft/categories/suppressor.html": "Крафт глушителей",
+      "/craft/categories/craft_resources.html": "Крафт компонентов"
     };
 
     const path = location.pathname.replace(/\/$/, "");
@@ -42,6 +43,8 @@
     const isCraftIndex = path === "/craft" || path === "/craft/index.html";
     const isCategory = path.startsWith("/craft/categories/");
     const isCraftItem = path.startsWith("/craft/") && !isCraftIndex && !isCategory;
+    const isRecyclerIndex = path === "/recycler" || path === "/recycler/index.html";
+    const isRecyclerInfo = path === "/recycler/info.html";
 
     if (isIndex) {
       crumbs.push({ title: "Главная" });
@@ -57,6 +60,14 @@
       }
     }
 
+    if (path.startsWith("/recycler")) {
+      if (isRecyclerIndex) {
+        crumbs.push({ title: "Переработчик" });
+      } else {
+        crumbs.push({ title: "Переработчик", href: "/recycler/index.html" });
+      }
+    }
+
     if (isCategory) {
       crumbs.push({ title: currentTitle });
     }
@@ -68,6 +79,10 @@
       if (backHref) {
         crumbs.push({ title: catTitle, href: backHref });
       }
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (isRecyclerInfo) {
       crumbs.push({ title: currentTitle });
     }
 

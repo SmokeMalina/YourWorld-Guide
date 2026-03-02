@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Крафт компонентов</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Крафт компонентов за скрап на сервере YourWorld PVE.">
+  <meta property="og:title" content="Крафт компонентов YourWorld">
+  <meta property="og:description" content="Список крафт-компонентов и их стоимость в скрапе.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/craft/categories/craft_resources.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-top">
+      <a href="/craft/index.html" class="back-btn" aria-label="Назад">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <img class="hero-logo" src="/images/categories/hdd_craft_comp.png" alt="Крафт компонентов">
+        <h1>Крафт компонентов</h1>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tile-grid">
+        <a class="tile" href="../craft_resources/gunpowder.html">
+          <img src="/images/items/gunpowder.png" alt="Порох">
+          <span>Порох</span>
+        </a>
+        <a class="tile" href="../craft_resources/armor_plate_immortal.html">
+          <img src="/images/items/armor_plate_immortal.png" alt="Бронепластина Immortal">
+          <span>Бронепластина Immortal</span>
+        </a>
+          <a class="tile" href="../craft_resources/cloth_immortal.html">
+          <img src="/images/items/cloth_immortal.png" alt="Ткань Immortal">
+          <span>Ткань Immortal</span>
+        </a>
+          <a class="tile" href="../craft_resources/exo_nabor.html">
+          <img src="/images/items/exo_parts_box.png" alt="Набор деталей экзоскелета">
+          <span>Набор деталей экзоскелета</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card recycler-card resource-craft-section">
+      <h2>Крафт из скрапа</h2>
+      <div class="search-block recycler-search-block">
+        <input
+          id="resource-search"
+          class="search-input"
+          type="text"
+          placeholder="Поиск компонента..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+      </div>
+      <div id="resource-empty" class="search-empty hidden">Ничего не найдено</div>
+      <div id="resource-list" class="resource-craft-grid"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/images/ywlogo.png" alt="YourWorld">
+          <span>YourWorld</span>
+        </div>
+        <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+        <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+        <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+        <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+  </footer>
+
+  <script src="/craft/resource_costs.js"></script>
+  <script>
+  (function () {
+    const list = document.getElementById("resource-list");
+    const input = document.getElementById("resource-search");
+    const empty = document.getElementById("resource-empty");
+    if (!list || !input || !empty) return;
+
+    const excluded = new Set(["ткань immortal", "бронепластина immortal"]);
+    const manualCosts = window.RESOURCE_COSTS || {};
+    let cards = [];
+
+    function normalize(value) {
+      return (value || "").toLowerCase().trim();
+    }
+
+    function makeCard(icon, name, count, recycleBase) {
+      const card = document.createElement("div");
+      card.className = "resource-craft-item";
+      card.dataset.search = normalize(name) + " " + normalize(count) + " " + normalize(recycleBase);
+
+      card.innerHTML =
+        '<div class="resource-craft-item__main">' +
+          '<img src="' + icon + '" alt="' + name + '">' +
+          '<span>' + name + "</span>" +
+        "</div>" +
+        '<div class="resource-craft-item__price">' +
+          '<div class="resource-craft-item__value">' +
+            '<img src="/images/items/scrap.png" alt="Скрап">' +
+            '<b>' + count + "</b>" +
+          "</div>" +
+        "</div>";
+
+      return card;
+    }
+
+    function applyFilter() {
+      const q = normalize(input.value);
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const match = !q || card.dataset.search.includes(q);
+        card.style.display = match ? "" : "none";
+        if (match) visible += 1;
+      });
+
+      empty.classList.toggle("hidden", visible > 0);
+    }
+
+    fetch("/recycler/index.html")
+      .then((res) => res.text())
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        const rows = Array.from(doc.querySelectorAll(".recycle-card"));
+
+        rows.forEach((row) => {
+          const itemImg = row.querySelector(".recycle-side img");
+          const itemName = row.querySelector(".recycle-label span");
+          const itemCount = row.querySelector(".recycle-count");
+          if (!itemImg || !itemName || !itemCount) return;
+
+          const name = itemName.textContent.trim();
+          if (excluded.has(normalize(name))) return;
+
+          const recycleCount = itemCount.textContent.trim();
+          const numeric = parseInt(recycleCount.replace(/[^\d]/g, ""), 10);
+          const manual = manualCosts[name];
+          const craftCountNumber = Number.isFinite(manual)
+            ? manual
+            : (Number.isNaN(numeric) ? null : numeric);
+          const craftCount = craftCountNumber === null ? recycleCount : ("x" + String(craftCountNumber));
+
+          const card = makeCard(itemImg.getAttribute("src"), name, craftCount, recycleCount);
+          list.appendChild(card);
+          cards.push(card);
+        });
+
+        applyFilter();
+      })
+      .catch(() => {
+        empty.textContent = "Не удалось загрузить список ресурсов";
+        empty.classList.remove("hidden");
+      });
+
+    input.addEventListener("input", applyFilter);
+  })();
+  </script>
+  <script src="/site.js"></script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106804657', 'ym');
+
+      ym(106804657, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/106804657" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</body>
+</html>
