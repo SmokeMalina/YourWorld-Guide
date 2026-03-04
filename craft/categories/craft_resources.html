@@ -104,7 +104,12 @@
     const empty = document.getElementById("resource-empty");
     if (!list || !input || !empty) return;
 
-    const excluded = new Set(["ткань immortal", "бронепластина immortal, порох, набор деталей экзоскелета"]);
+    const excluded = new Set([
+      "ткань immortal",
+      "бронепластина immortal",
+      "порох",
+      "набор деталей экзоскелета"
+    ]);
     const manualCosts = window.RESOURCE_COSTS || {};
     let cards = [];
 
