@@ -45,6 +45,8 @@
     const isCraftItem = path.startsWith("/craft/") && !isCraftIndex && !isCategory;
     const isRecyclerIndex = path === "/recycler" || path === "/recycler/index.html";
     const isRecyclerInfo = path === "/recycler/info.html";
+    const isGardeningIndex = path === "/gardening" || path === "/gardening/index.html";
+    const isHoochIndex = path === "/hooch" || path === "/hooch/index.html";
 
     if (isIndex) {
       crumbs.push({ title: "Главная" });
@@ -65,6 +67,22 @@
         crumbs.push({ title: "Переработчик" });
       } else {
         crumbs.push({ title: "Переработчик", href: "/recycler/index.html" });
+      }
+    }
+
+    if (path.startsWith("/gardening")) {
+      if (isGardeningIndex) {
+        crumbs.push({ title: "Садоводство" });
+      } else {
+        crumbs.push({ title: "Садоводство", href: "/gardening/index.html" });
+      }
+    }
+
+    if (path.startsWith("/hooch")) {
+      if (isHoochIndex) {
+        crumbs.push({ title: "Самогоноварение" });
+      } else {
+        crumbs.push({ title: "Самогоноварение", href: "/hooch/index.html" });
       }
     }
 
