@@ -20,7 +20,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
 </head>
-<body>
+<body class="page-hooch">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -35,6 +35,7 @@
       <img class="hero-logo" src="/images/hooch/hooch.png" alt="Самогоноварение">
       <div>
         <h1>Самогоноварение</h1>
+        <p class="muted">Инструкция по сборке самогонного аппарата и созданию самогона.</p>
       </div>
     </div>
   </div>
@@ -158,6 +159,7 @@
   </div>
   <div class="card info-card">
     <h2>Рецепты самогона</h2>
+    <p class="muted">Для наклейки этикетки используется бумажка.</p>
     <div class="hooch-flow-grid">
 
       <article class="hooch-flow-card hooch-flow-card--wide">
@@ -211,11 +213,69 @@
   </div>
 
   <div class="card info-card">
+    <h2>Места добычи фруктов</h2>
+    <p class="muted hooch-fruit-note">
+      Фруктовые деревья можно трясти <strong>руками</strong> или <strong>кувалдой</strong>.
+    </p>
+
+    <div class="hooch-fruit-tabs" role="tablist" aria-label="Категории фруктов">
+      <button class="hooch-tab-btn is-active" type="button" role="tab" aria-selected="true" data-fruit-tab="apples">
+        <img src="/images/food/apple.png" alt="" aria-hidden="true">
+        <span>Яблоки</span>
+      </button>
+      <button class="hooch-tab-btn" type="button" role="tab" aria-selected="false" data-fruit-tab="pears">
+        <img src="/images/food/pear.png" alt="" aria-hidden="true">
+        <span>Груши</span>
+      </button>
+      <button class="hooch-tab-btn" type="button" role="tab" aria-selected="false" data-fruit-tab="plums">
+        <img src="/images/food/plum.png" alt="" aria-hidden="true">
+        <span>Сливы</span>
+      </button>
+    </div>
+
+    <div class="hooch-tab-panel is-active" data-fruit-panel="apples">
+      <div class="hooch-map-grid">
+        <figure class="info-shot"><img src="/images/hooch/Яблоки-Березино.png" alt="Яблоки — Березино" data-zoomable="true"><figcaption>Березино</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Яблоки-Зеленогорск.png" alt="Яблоки — Зеленогорск" data-zoomable="true"><figcaption>Зеленогорск</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Яблоки-Кабанино.png" alt="Яблоки — Кабанино" data-zoomable="true"><figcaption>Кабанино</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Яблоки-Новая Петровка.png" alt="Яблоки — Новая Петровка" data-zoomable="true"><figcaption>Новая Петровка</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Яблоки-Новодмитровск.png" alt="Яблоки — Новодмитровск" data-zoomable="true"><figcaption>Новодмитровск</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Яблоки-Синысток.png" alt="Яблоки — Синысток" data-zoomable="true"><figcaption>Синысток</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Яблоки-Электрозаводск.png" alt="Яблоки — Электрозаводск" data-zoomable="true"><figcaption>Электрозаводск</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="hooch-tab-panel" data-fruit-panel="pears" hidden>
+      <div class="hooch-map-grid">
+        <figure class="info-shot"><img src="/images/hooch/Груши-Горка.png" alt="Груши — Горка" data-zoomable="true"><figcaption>Горка</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Груши-Запрудное.png" alt="Груши — Запрудное" data-zoomable="true"><figcaption>Запрудное</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Груши-Нижнее.png" alt="Груши — Нижнее" data-zoomable="true"><figcaption>Нижнее</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Груши-Пулково.png" alt="Груши — Пулково" data-zoomable="true"><figcaption>Пулково</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Груши-Синысток.png" alt="Груши — Синысток" data-zoomable="true"><figcaption>Синысток</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Груши-Черная поляна.png" alt="Груши — Черная поляна" data-zoomable="true"><figcaption>Черная поляна</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Груши-Электрозаводск.png" alt="Груши — Электрозаводск" data-zoomable="true"><figcaption>Электрозаводск</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="hooch-tab-panel" data-fruit-panel="plums" hidden>
+      <div class="hooch-map-grid">
+        <figure class="info-shot"><img src="/images/hooch/Сливы-Балота.png" alt="Сливы — Балота" data-zoomable="true"><figcaption>Балота</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Сливы-Горка.png" alt="Сливы — Горка" data-zoomable="true"><figcaption>Горка</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Сливы-Нижнее.png" alt="Сливы — Нижнее" data-zoomable="true"><figcaption>Нижнее</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Сливы-Новая Петровка.png" alt="Сливы — Новая Петровка" data-zoomable="true"><figcaption>Новая Петровка</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Сливы-Синысток.png" alt="Сливы — Синысток" data-zoomable="true"><figcaption>Синысток</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Сливы-Сосновка.png" alt="Сливы — Сосновка" data-zoomable="true"><figcaption>Сосновка</figcaption></figure>
+        <figure class="info-shot"><img src="/images/hooch/Сливы-Черная поляна.png" alt="Сливы — Черная поляна" data-zoomable="true"><figcaption>Черная поляна</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="card info-card">
     <h2>Варианты самогона</h2>
     <div class="hooch-gallery">
-      <figure class="info-shot"><img src="/images/hooch/samogon_apple.png" alt="Красная бурда" data-zoomable="true"><figcaption>Самогон - Красная бурда</figcaption></figure>
-      <figure class="info-shot"><img src="/images/hooch/samogon_pear.png" alt="Зеленый змей" data-zoomable="true"><figcaption>Самогон - Зеленый змей</figcaption></figure>
-      <figure class="info-shot"><img src="/images/hooch/samogon_plum.png" alt="Синяя рожа" data-zoomable="true"><figcaption>Самогон - Синяя рожа</figcaption></figure>
+      <figure class="info-shot"><img src="/images/hooch/samogon_apple.png" alt="Красная бурда" data-zoomable="false"><figcaption>Самогон - Красная бурда</figcaption></figure>
+      <figure class="info-shot"><img src="/images/hooch/samogon_pear.png" alt="Зеленый змей" data-zoomable="false"><figcaption>Самогон - Зеленый змей</figcaption></figure>
+      <figure class="info-shot"><img src="/images/hooch/samogon_plum.png" alt="Синяя рожа" data-zoomable="false"><figcaption>Самогон - Синяя рожа</figcaption></figure>
     </div>
   </div>
 </div>
@@ -274,6 +334,30 @@
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
+  });
+})();
+
+(function () {
+  const tabButtons = document.querySelectorAll("[data-fruit-tab]");
+  const panels = document.querySelectorAll("[data-fruit-panel]");
+  if (!tabButtons.length || !panels.length) return;
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tab = btn.getAttribute("data-fruit-tab");
+
+      tabButtons.forEach((other) => {
+        const active = other === btn;
+        other.classList.toggle("is-active", active);
+        other.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      panels.forEach((panel) => {
+        const active = panel.getAttribute("data-fruit-panel") === tab;
+        panel.classList.toggle("is-active", active);
+        panel.hidden = !active;
+      });
+    });
   });
 })();
 </script>

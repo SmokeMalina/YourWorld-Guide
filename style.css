@@ -731,7 +731,11 @@ h2 {
 .hooch-flow-card h3 {
   margin: 0 0 10px;
   font-size: 18px;
+  display: block;
+  width: 100%;
   text-align: center;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .hooch-result {
@@ -863,12 +867,91 @@ h2 {
   gap: 10px;
 }
 
+.hooch-conditions .condition-chip {
+  border-radius: 10px;
+  border-color: rgba(255,170,70,.28);
+  background: rgba(255,133,0,.10);
+  color: rgba(255,255,255,.95);
+}
+
 .condition-chip {
   border: 1px solid var(--b1);
   border-radius: 999px;
   background: var(--card2);
   padding: 8px 14px;
   font-weight: 650;
+}
+
+.hooch-fruit-note {
+  margin: 0 0 10px;
+}
+
+.hooch-fruit-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.hooch-fruit-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.hooch-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--b1);
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: var(--card2);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.hooch-tab-btn:hover {
+  border-color: var(--b2);
+  box-shadow: 0 0 0 1px rgba(255,170,70,.18) inset;
+  transform: translateY(-1px);
+}
+
+.hooch-tab-btn.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(255,170,70,.25) inset;
+}
+
+.hooch-tab-btn img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.hooch-tab-panel {
+  display: none;
+}
+
+.hooch-tab-panel.is-active {
+  display: block;
+}
+
+.hooch-map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.page-hooch .info-card > h2 {
+  margin: 0 0 10px;
+}
+
+.page-hooch .info-card > p {
+  margin: 0 0 10px;
 }
 
 @media (max-width: 620px) {
@@ -1273,6 +1356,15 @@ h2 {
   .hooch-ingredients::before,
   .hooch-ing::before {
     display: none;
+  }
+
+  .hooch-tab-btn {
+    flex: 1 1 calc(50% - 10px);
+    justify-content: center;
+  }
+
+  .hooch-map-grid {
+    grid-template-columns: 1fr;
   }
 }
 
