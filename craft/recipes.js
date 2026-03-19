@@ -25,6 +25,7 @@ window.RECIPES = [
   { title: "Канистра 100л", path: "/craft/items/canister_100.html", icon: "/images/items/canister_100.png" },
   { title: "Карта телепорта на данж - Скалистый", path: "/craft/items/card_skalisty.html", icon: "/images/items/card_skalik.png" },
   { title: "Карта телепорта на данж - Лабиринт", path: "/craft/items/card_labirint.html", icon: "/images/items/cad_labirint.png" },
+  { title: "Садовая известь", path: "/craft/items/gardenlime.html", icon: "/images/food/gardenlime.png" },
   { title: "Боевой противогаз на 4 часа", path: "/craft/items/gasmask_4.html", icon: "/images/items/yw_gasmask.png" },
   { title: "Боевой противогаз на 8 часов", path: "/craft/items/gasmask_8.html", icon: "/images/items/yw_gasmask.png" },
   { title: "Боевой противогаз на 24 часа", path: "/craft/items/gasmask_24.html", icon: "/images/items/yw_gasmask.png" },
@@ -161,6 +162,9 @@ window.RECIPES = [
   { title: "Коробка для хранения полной коллекции карточек Pokemon", path: "/craft/cases/pokemon_box_all.html", icon: "/images/case/pokemon_box_5.png" },
   { title: "Ящик для 16 бутылок вина", path: "/craft/cases/wine_box_16.html", icon: "/images/case/winebox.png" },
   { title: "Ящик для 32 бутылок вина", path: "/craft/cases/wine_box_32.html", icon: "/images/case/winebox.png" },
+  { title: "Ящик садовода 100", path: "/craft/cases/gardening_box_100.html", icon: "/images/food/box.png" },
+  { title: "Ящик садовода 200", path: "/craft/cases/gardening_box_200.html", icon: "/images/food/box.png" },
+  { title: "Ящик садовода 300", path: "/craft/cases/gardening_box_300.html", icon: "/images/food/box.png" },
 
   // ===== Ящики/Бочки/Сундуки =====
   { title: "Деревянный ящик 100", path: "/craft/crates/crate_100.html", icon: "/images/crates/crate_1.png" },
