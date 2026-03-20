@@ -688,6 +688,141 @@ h2 {
   gap: 12px;
 }
 
+.farming-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.page-farming .info-card {
+  background:
+    radial-gradient(280px 110px at 0% 0%, rgba(255,133,0,.06), transparent 62%),
+    rgba(255,255,255,.02);
+}
+
+.page-farming .info-card > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.page-farming .info-card > h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffb257, #ff8500);
+  box-shadow: 0 0 14px rgba(255,133,0,.35);
+}
+
+.farming-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.farming-animal-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.farming-animal-head img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  flex: 0 0 180px;
+  border-radius: 16px;
+  border: 1px solid var(--b2);
+  background:
+    radial-gradient(260px 100px at 50% 0%, rgba(255,133,0,.12), transparent 60%),
+    rgba(255,255,255,.02);
+  padding: 12px;
+  filter: drop-shadow(0 0 16px var(--glow));
+}
+
+.farming-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.page-farming .condition-chip {
+  border-color: rgba(255,170,70,.24);
+  background: rgba(255,133,0,.08);
+}
+
+.page-lootbox .info-card {
+  background:
+    radial-gradient(300px 110px at 0% 0%, rgba(255,196,0,.07), transparent 62%),
+    rgba(255,255,255,.02);
+}
+
+.page-lootbox .info-card > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-lootbox .info-card > h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffe26a, #ffb400);
+  box-shadow: 0 0 12px rgba(255,196,0,.28);
+}
+
+.lootbox-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.lootbox-entry {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  background:
+    radial-gradient(260px 100px at 50% 0%, rgba(255,196,0,.08), transparent 60%),
+    rgba(255,255,255,.02);
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.lootbox-entry h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.lootbox-entry__media {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 10px;
+  filter: drop-shadow(0 0 12px var(--glow));
+}
+
+.lootbox-entry__media--placeholder {
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.55);
+  font-weight: 800;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  border-style: dashed;
+  background:
+    linear-gradient(145deg, rgba(255,214,79,.08), rgba(255,255,255,.02));
+}
+
 .info-shot {
   margin: 0;
   border: 1px solid var(--b1);
@@ -1479,6 +1614,16 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .farming-split {
+    grid-template-columns: 1fr;
+  }
+
+  .farming-animal-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1539,6 +1684,17 @@ h2 {
   .brodyaga-locations.is-list .brodyaga-location-grid .info-shot {
     min-width: 220px;
     flex-basis: 220px;
+  }
+
+  .farming-animal-head img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    flex-basis: auto;
+  }
+
+  .lootbox-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

@@ -46,6 +46,8 @@
     const isRecyclerIndex = path === "/recycler" || path === "/recycler/index.html";
     const isRecyclerInfo = path === "/recycler/info.html";
     const isGardeningIndex = path === "/gardening" || path === "/gardening/index.html";
+    const isFarmingIndex = path === "/farming" || path === "/farming/index.html";
+    const isLootboxIndex = path === "/lootbox" || path === "/lootbox/index.html";
     const isHoochIndex = path === "/hooch" || path === "/hooch/index.html";
     const isBrodyagaIndex = path === "/brodyaga" || path === "/brodyaga/index.html";
 
@@ -76,6 +78,22 @@
         crumbs.push({ title: "Садоводство" });
       } else {
         crumbs.push({ title: "Садоводство", href: "/gardening/index.html" });
+      }
+    }
+
+    if (path.startsWith("/farming")) {
+      if (isFarmingIndex) {
+        crumbs.push({ title: "Фермерство" });
+      } else {
+        crumbs.push({ title: "Фермерство", href: "/farming/index.html" });
+      }
+    }
+
+    if (path.startsWith("/lootbox")) {
+      if (isLootboxIndex) {
+        crumbs.push({ title: "Лутбоксы" });
+      } else {
+        crumbs.push({ title: "Лутбоксы", href: "/lootbox/index.html" });
       }
     }
 
