@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Бродячий торговец YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Информация о бродячем торговце на сервере YourWorld PVE.">
+  <meta property="og:title" content="Бродячий торговец YourWorld">
+  <meta property="og:description" content="Места спавна и типы бродячих торговцев.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/brodyaga/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/brodyaga/Бродяга.png" alt="Бродячий торговец">
+      <div>
+        <h1>Бродячий торговец</h1>
+        <p class="muted">Точки появления и виды торговцев</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card info-card">
+    <h2>Основная информация</h2>
+    <ul class="info-list">
+      <li>В этом разделе собраны скриншоты мест, где может появляться торговец.</li>
+      <li>Бродячий торговец меняет местоположение каждые 24 часа.</li>
+      <li>Торговцы принимают только доллары.</li>
+    </ul>
+  </div>
+
+  <div class="card info-card">
+    <h2>Типы торговцев</h2>
+    <div class="brodyaga-type-grid">
+      <article class="brodyaga-type-card">
+        <img src="/images/brodyaga/Бродяга.png" alt="Бродяга">
+        <h3>Бродяга</h3>
+        <p class="muted">Торгует различными предметами.</p>
+      </article>
+      <article class="brodyaga-type-card">
+        <img src="/images/brodyaga/Бродяга-механик.png" alt="Бродяга-механик">
+        <h3>Бродяга-механик</h3>
+        <p class="muted">Торгует автомобилями.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="card info-card">
+    <div class="brodyaga-head">
+      <h2>Места появления</h2>
+      <div class="view-switch" role="group" aria-label="Режим отображения">
+        <button type="button" class="view-btn is-active" data-view-mode="list">Список</button>
+        <button type="button" class="view-btn" data-view-mode="grid">Сетка</button>
+      </div>
+    </div>
+    <p class="info-note">Нажмите на скриншот, чтобы увеличить.</p>
+    <div class="brodyaga-locations" id="brodyaga-locations">
+      <article class="brodyaga-location-card">
+        <h3>Березино</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Березино-1.png" alt="Бродяга в Березино — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Березино-2.png" alt="Бродяга в Березино — точка 2" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Биатлон арена</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Биатлон арена-1.png" alt="Бродяга на Биатлон арене — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Биатлон арена-2.png" alt="Бродяга на Биатлон арене — точка 2" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Выбор</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Выбор-1.png" alt="Бродяга в Выборе — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Выбор-2.png" alt="Бродяга в Выборе — точка 2" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Горка</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Горка-1.png" alt="Бродяга в Горке — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Горка-2.png" alt="Бродяга в Горке — точка 2" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Зеленогорск</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Зеленогорск.png" alt="Бродяга в Зеленогорске" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Красностав</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Красностав-1.png" alt="Бродяга в Красноставе — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Красностав-2.png" alt="Бродяга в Красноставе — точка 2" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Новая Петровка</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Новая петровка.png" alt="Бродяга в Новой Петровке" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Новодмитровск</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Новодмитровск.png" alt="Бродяга в Новодмитровске" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Поляна</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Поляна.png" alt="Бродяга в Поляне" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Пустошка</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Пустошка-1.png" alt="Бродяга в Пустошке — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Пустошка-2.png" alt="Бродяга в Пустошке — точка 2" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Светлоярск</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Светлоярск.png" alt="Бродяга в Светлоярске" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Североград</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Североград.png" alt="Бродяга в Северограде" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Старый собор</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Старый собор-1.png" alt="Бродяга у Старого собора — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Старый собор-2.png" alt="Бродяга у Старого собора — точка 2" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Старый собор-3.png" alt="Бродяга у Старого собора — точка 3" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Топольники</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Топольники.png" alt="Бродяга в Топольниках" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Черная поляна</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Черная поляна-1.png" alt="Бродяга на Черной поляне — точка 1" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Черная поляна-2.png" alt="Бродяга на Черной поляне — точка 2" data-zoomable="true"></figure>
+          <figure class="info-shot"><img src="/images/brodyaga/Черная поляна-3.png" alt="Бродяга на Черной поляне — точка 3" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Черногорск</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Черногорск.png" alt="Бродяга в Черногорске" data-zoomable="true"></figure>
+        </div>
+      </article>
+
+      <article class="brodyaga-location-card">
+        <h3>Электрозаводск</h3>
+        <div class="brodyaga-location-grid">
+          <figure class="info-shot"><img src="/images/brodyaga/Электрозаводск.png" alt="Бродяга в Электрозаводске" data-zoomable="true"></figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="img-modal" id="img-modal" aria-hidden="true">
+  <button class="img-modal__close" id="img-modal-close" aria-label="Закрыть">×</button>
+  <img class="img-modal__image" id="img-modal-image" alt="">
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+
+<script>
+(function () {
+  const modal = document.getElementById("img-modal");
+  const modalImage = document.getElementById("img-modal-image");
+  const closeBtn = document.getElementById("img-modal-close");
+  const zoomables = document.querySelectorAll("img[data-zoomable='true']");
+  if (!modal || !modalImage || !closeBtn || !zoomables.length) return;
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    modalImage.src = "";
+  }
+
+  zoomables.forEach((img) => {
+    img.classList.add("zoomable-img");
+    img.addEventListener("click", () => {
+      modalImage.src = img.src;
+      modalImage.alt = img.alt || "";
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+})();
+
+(function () {
+  const wrap = document.getElementById("brodyaga-locations");
+  const buttons = document.querySelectorAll(".view-btn[data-view-mode]");
+  if (!wrap || !buttons.length) return;
+
+  const key = "brodyaga:view";
+  const saved = localStorage.getItem(key);
+  const initial = saved === "grid" ? "grid" : "list";
+
+  function applyMode(mode) {
+    wrap.classList.toggle("is-list", mode === "list");
+    buttons.forEach((btn) => {
+      const active = btn.getAttribute("data-view-mode") === mode;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  applyMode(initial);
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const mode = btn.getAttribute("data-view-mode");
+      if (!mode) return;
+      localStorage.setItem(key, mode);
+      applyMode(mode);
+    });
+  });
+})();
+</script>
+<script src="/site.js"></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106804657', 'ym');
+
+    ym(106804657, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106804657" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

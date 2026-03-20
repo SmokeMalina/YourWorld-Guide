@@ -946,6 +946,132 @@ h2 {
   gap: 12px;
 }
 
+.brodyaga-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.brodyaga-type-card {
+  border: 1px solid var(--b1);
+  border-radius: 14px;
+  background: var(--card2);
+  padding: 12px;
+  text-align: center;
+}
+
+.brodyaga-type-card img {
+  width: 170px;
+  max-width: 100%;
+  height: 170px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--b2);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  padding: 8px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.35));
+}
+
+.brodyaga-type-card h3 {
+  margin: 0 0 6px;
+}
+
+.brodyaga-type-card .muted {
+  margin: 0;
+}
+
+.brodyaga-locations {
+  column-count: 3;
+  column-gap: 12px;
+}
+
+.brodyaga-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.brodyaga-head h2 {
+  margin: 0;
+}
+
+.view-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-btn {
+  border: 1px solid var(--b1);
+  border-radius: 10px;
+  background: var(--card2);
+  color: rgba(255,255,255,.9);
+  font: inherit;
+  font-weight: 650;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: border-color var(--t-fast), background var(--t-fast), color var(--t-fast);
+}
+
+.view-btn:hover {
+  border-color: var(--b2);
+}
+
+.view-btn.is-active {
+  border-color: rgba(255,170,70,.45);
+  background: rgba(255,133,0,.10);
+  color: #fff;
+}
+
+.brodyaga-location-card {
+  border: 1px solid var(--b1);
+  border-radius: 14px;
+  background: var(--card2);
+  padding: 12px;
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+.brodyaga-location-card h3 {
+  margin: 0 0 10px;
+}
+
+.brodyaga-location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.brodyaga-location-grid .info-shot {
+  margin: 0;
+}
+
+.brodyaga-location-grid .info-shot:only-child {
+  grid-column: 1 / -1;
+}
+
+.brodyaga-locations.is-list {
+  column-count: 1;
+}
+
+.brodyaga-locations.is-list .brodyaga-location-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 4px;
+  scroll-snap-type: x mandatory;
+}
+
+.brodyaga-locations.is-list .brodyaga-location-grid .info-shot {
+  min-width: 260px;
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}
+
 .page-hooch .info-card > h2 {
   margin: 0 0 10px;
 }
@@ -1337,6 +1463,15 @@ h2 {
     width: 72px;
     height: 72px;
   }
+
+  .brodyaga-locations {
+    column-count: 2;
+  }
+
+  .brodyaga-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1365,6 +1500,19 @@ h2 {
 
   .hooch-map-grid {
     grid-template-columns: 1fr;
+  }
+
+  .brodyaga-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brodyaga-locations {
+    column-count: 1;
+  }
+
+  .brodyaga-locations.is-list .brodyaga-location-grid .info-shot {
+    min-width: 220px;
+    flex-basis: 220px;
   }
 }
 

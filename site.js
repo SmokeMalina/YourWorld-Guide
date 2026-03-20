@@ -47,6 +47,7 @@
     const isRecyclerInfo = path === "/recycler/info.html";
     const isGardeningIndex = path === "/gardening" || path === "/gardening/index.html";
     const isHoochIndex = path === "/hooch" || path === "/hooch/index.html";
+    const isBrodyagaIndex = path === "/brodyaga" || path === "/brodyaga/index.html";
 
     if (isIndex) {
       crumbs.push({ title: "Главная" });
@@ -83,6 +84,14 @@
         crumbs.push({ title: "Самогоноварение" });
       } else {
         crumbs.push({ title: "Самогоноварение", href: "/hooch/index.html" });
+      }
+    }
+
+    if (path.startsWith("/brodyaga")) {
+      if (isBrodyagaIndex) {
+        crumbs.push({ title: "Бродячий торговец" });
+      } else {
+        crumbs.push({ title: "Бродячий торговец", href: "/brodyaga/index.html" });
       }
     }
 
