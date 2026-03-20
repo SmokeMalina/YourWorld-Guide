@@ -54,6 +54,12 @@
   --t: 0.25s ease;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 
 /* =========================
    2) BASE / TYPOGRAPHY
@@ -70,6 +76,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: clip;
 }
 
 @keyframes fadeInPage {
@@ -1477,6 +1484,25 @@ h2 {
 @media (max-width: 480px) {
   .tile-grid { grid-template-columns: 1fr; }
 
+  .wrap {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .hero {
+    padding: 18px 14px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+
   /* чтобы не было zoom на iPhone */
   .search-input { font-size: 16px; }
 
@@ -1523,7 +1549,7 @@ h2 {
 
 .site-footer {
   margin-top: auto;
-  padding: 28px 0 0;
+  padding: 28px 0 calc(env(safe-area-inset-bottom, 0px) + 8px);
   border-top: 1px solid rgba(255,255,255,.08);
   background:
     radial-gradient(900px 260px at 10% 0%, rgba(255,133,0,.12), transparent 60%),
