@@ -48,6 +48,13 @@
     const isGardeningIndex = path === "/gardening" || path === "/gardening/index.html";
     const isFarmingIndex = path === "/farming" || path === "/farming/index.html";
     const isLootboxIndex = path === "/lootbox" || path === "/lootbox/index.html";
+    const isBbpIndex = path === "/bbp" || path === "/bbp/index.html";
+    const isP2pIndex = path === "/p2p" || path === "/p2p/index.html";
+    const isWeaponCollectorIndex = path === "/weapon-collector" || path === "/weapon-collector/index.html";
+    const isVehicleCollectorIndex = path === "/vehicle-collector" || path === "/vehicle-collector/index.html";
+    const isFishCollectorIndex = path === "/fish-collector" || path === "/fish-collector/index.html";
+    const isPokemonCollectionIndex = path === "/pokemon-collection" || path === "/pokemon-collection/index.html";
+    const isStashIndex = path === "/stash" || path === "/stash/index.html";
     const isHoochIndex = path === "/hooch" || path === "/hooch/index.html";
     const isBrodyagaIndex = path === "/brodyaga" || path === "/brodyaga/index.html";
 
@@ -97,6 +104,62 @@
       }
     }
 
+    if (path.startsWith("/bbp")) {
+      if (isBbpIndex) {
+        crumbs.push({ title: "Стройка" });
+      } else {
+        crumbs.push({ title: "Стройка", href: "/bbp/index.html" });
+      }
+    }
+
+    if (path.startsWith("/p2p")) {
+      if (isP2pIndex) {
+        crumbs.push({ title: "P2P трейд" });
+      } else {
+        crumbs.push({ title: "P2P трейд", href: "/p2p/index.html" });
+      }
+    }
+
+    if (path.startsWith("/weapon-collector")) {
+      if (isWeaponCollectorIndex) {
+        crumbs.push({ title: "Оружейный коллекционер" });
+      } else {
+        crumbs.push({ title: "Оружейный коллекционер", href: "/weapon-collector/index.html" });
+      }
+    }
+
+    if (path.startsWith("/vehicle-collector")) {
+      if (isVehicleCollectorIndex) {
+        crumbs.push({ title: "Автомобильный коллекционер" });
+      } else {
+        crumbs.push({ title: "Автомобильный коллекционер", href: "/vehicle-collector/index.html" });
+      }
+    }
+
+    if (path.startsWith("/fish-collector")) {
+      if (isFishCollectorIndex) {
+        crumbs.push({ title: "Рыболовный коллекционер" });
+      } else {
+        crumbs.push({ title: "Рыболовный коллекционер", href: "/fish-collector/index.html" });
+      }
+    }
+
+    if (path.startsWith("/pokemon-collection")) {
+      if (isPokemonCollectionIndex) {
+        crumbs.push({ title: "Коллекция Pokemon" });
+      } else {
+        crumbs.push({ title: "Коллекция Pokemon", href: "/pokemon-collection/index.html" });
+      }
+    }
+
+    if (path.startsWith("/stash")) {
+      if (isStashIndex) {
+        crumbs.push({ title: "Тайники" });
+      } else {
+        crumbs.push({ title: "Тайники", href: "/stash/index.html" });
+      }
+    }
+
     if (path.startsWith("/hooch")) {
       if (isHoochIndex) {
         crumbs.push({ title: "Самогоноварение" });
@@ -128,6 +191,14 @@
     }
 
     if (isRecyclerInfo) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/bbp/") && !isBbpIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/p2p/") && !isP2pIndex) {
       crumbs.push({ title: currentTitle });
     }
 

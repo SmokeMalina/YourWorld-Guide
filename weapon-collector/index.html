@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Оружейный коллекционер YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Гайд по оружейному коллекционеру на сервере YourWorld PVE.">
+  <meta property="og:title" content="Оружейный коллекционер YourWorld">
+  <meta property="og:description" content="Как собирать оружейные карточки и обменивать полную коллекцию на эксклюзивное оружие.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/weapon-collector/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body class="page-collection">
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/weapon_card_collector/weapon_card_book.png" alt="Оружейный коллекционер">
+      <div>
+        <h1>Оружейный коллекционер</h1>
+        <p class="muted">Карточки, полная коллекция и обмен на эксклюзивное оружие</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Описание</h2>
+    <p class="info-text">Оружейный коллекционер это отдельная система коллекционных карточек. Ваша цель собрать всю коллекцию из 50 карточек и затем обменять её на эксклюзивное оружие.</p>
+  </section>
+
+  <section class="card info-card">
+    <h2>Основные предметы</h2>
+    <div class="collector-feature-grid">
+      <article class="collector-feature-card">
+        <figure class="collector-highlight collector-highlight--plain">
+          <img src="/images/weapon_card_collector/weapon_card_box.png" alt="Коробка с карточками">
+          <figcaption><span class="collector-highlight__meta">Лутбокс</span>Коробка с карточками</figcaption>
+        </figure>
+      </article>
+      <article class="collector-feature-card">
+        <figure class="collector-highlight collector-highlight--plain">
+          <img src="/images/weapon_card_collector/weapon_card_book.png" alt="Книга для полной коллекции">
+          <figcaption><span class="collector-highlight__meta">Хранилище</span>Книга для полной коллекции</figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Где брать карточки</h2>
+    <ul class="info-list">
+      <li>Оружейные карточки выпадают из военных зомби</li>
+      <li>Из зомби на данжах</li>
+    </ul>
+  </section>
+
+  <section class="card info-card">
+    <h2>Что даёт полная коллекция</h2>
+    <p class="info-text">После того как Вы соберете полную коллекцию из 50 карточек, откроется возможность обменять её на эксклюзивное оружие.</p>
+    <p class="info-note">Полный набор карточек обменивается через квесты. Эксклюзивное оружие доступно только тем игрокам, которые действительно закрыли всю коллекцию.</p>
+    <div class="collector-highlight-grid">
+      <figure class="collector-highlight">
+        <img src="/images/weapons/bloody/bloody_smg.png" alt="SMG Bloody">
+        <figcaption>SMG Bloody</figcaption>
+      </figure>
+      <figure class="collector-highlight">
+        <img src="/images/weapons/bloody/bloody_scar.png" alt="Scar Bloody">
+        <figcaption>Scar Bloody</figcaption>
+      </figure>
+      <figure class="collector-highlight">
+        <img src="/images/weapons/bloody/bloody_rpd.png" alt="RPD Bloody">
+        <figcaption>RPD Bloody</figcaption>
+      </figure>
+      <figure class="collector-highlight">
+        <img src="/images/weapons/bloody/bloody_m14.png" alt="M14 Bloody">
+        <figcaption>M14 Bloody</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Как проходит обмен</h2>
+    <ol class="grow-steps">
+      <li>Соберите все 50 карточек коллекции.</li>
+      <li>Подготовьте полную коллекцию для обмена.</li>
+      <li>Примите квест с нужным вам оружием.</li>
+      <li>После обмена получите эксклюзивное оружие.</li>
+    </ol>
+  </section>
+
+  <section class="card info-card">
+    <h2>Полная коллекция</h2>
+    <p class="info-note">Ниже показаны все 50 оружейных карточек, которые нужно собрать для полного обмена.</p>
+    <div class="collector-catalog" id="weapon-collector-catalog"></div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+<script src="/site.js"></script>
+<script>
+  (() => {
+    const root = document.getElementById("weapon-collector-catalog");
+    if (!root) return;
+
+    for (let i = 1; i <= 50; i += 1) {
+      const card = document.createElement("figure");
+      card.className = "collector-item";
+      card.innerHTML = `
+        <div class="collector-item__num">№${i}</div>
+        <img src="/images/weapon_card_collector/weapon_card_${i}.png" alt="Оружейная карточка ${i}">
+      `;
+      root.appendChild(card);
+    }
+  })();
+</script>
+</body>
+</html>
