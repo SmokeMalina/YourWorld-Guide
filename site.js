@@ -50,6 +50,10 @@
     const isLootboxIndex = path === "/lootbox" || path === "/lootbox/index.html";
     const isBbpIndex = path === "/bbp" || path === "/bbp/index.html";
     const isP2pIndex = path === "/p2p" || path === "/p2p/index.html";
+    const isMeleeInfoIndex = path === "/melee-info" || path === "/melee-info/index.html";
+    const isVehiclesInfoIndex = path === "/vehicles-info" || path === "/vehicles-info/index.html";
+    const isClothingInfoIndex = path === "/clothing-info" || path === "/clothing-info/index.html";
+    const isArsenalIndex = path === "/arsenal" || path === "/arsenal/index.html";
     const isWeaponCollectorIndex = path === "/weapon-collector" || path === "/weapon-collector/index.html";
     const isVehicleCollectorIndex = path === "/vehicle-collector" || path === "/vehicle-collector/index.html";
     const isFishCollectorIndex = path === "/fish-collector" || path === "/fish-collector/index.html";
@@ -117,6 +121,38 @@
         crumbs.push({ title: "P2P трейд" });
       } else {
         crumbs.push({ title: "P2P трейд", href: "/p2p/index.html" });
+      }
+    }
+
+    if (path.startsWith("/melee-info")) {
+      if (isMeleeInfoIndex) {
+        crumbs.push({ title: "Холодное оружие" });
+      } else {
+        crumbs.push({ title: "Холодное оружие", href: "/melee-info/index.html" });
+      }
+    }
+
+    if (path.startsWith("/vehicles-info")) {
+      if (isVehiclesInfoIndex) {
+        crumbs.push({ title: "Транспорт" });
+      } else {
+        crumbs.push({ title: "Транспорт", href: "/vehicles-info/index.html" });
+      }
+    }
+
+    if (path.startsWith("/clothing-info")) {
+      if (isClothingInfoIndex) {
+        crumbs.push({ title: "Одежда" });
+      } else {
+        crumbs.push({ title: "Одежда", href: "/clothing-info/index.html" });
+      }
+    }
+
+    if (path.startsWith("/arsenal")) {
+      if (isArsenalIndex) {
+        crumbs.push({ title: "Огнестрельное оружие" });
+      } else {
+        crumbs.push({ title: "Огнестрельное оружие", href: "/arsenal/index.html" });
       }
     }
 
@@ -202,6 +238,18 @@
       crumbs.push({ title: currentTitle });
     }
 
+    if (path.startsWith("/melee-info/") && !isMeleeInfoIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/vehicles-info/") && !isVehiclesInfoIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/clothing-info/") && !isClothingInfoIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
     const nav = document.createElement("nav");
     nav.className = "breadcrumbs";
     nav.setAttribute("aria-label", "Навигация");
@@ -269,10 +317,37 @@
     }
   }
 
+  function addScrollTopButton() {
+    if (document.querySelector(".scroll-top-btn")) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "scroll-top-btn";
+    button.setAttribute("aria-label", "Наверх");
+    button.innerHTML = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 18V6M12 6L7 11M12 6L17 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `;
+
+    const toggleVisibility = () => {
+      button.classList.toggle("is-visible", (window.scrollY || 0) > 420);
+    };
+
+    button.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.body.appendChild(button);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    toggleVisibility();
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     addBreadcrumbs();
     enableHistoryBack();
     saveScrollOnNav();
     restoreScroll();
+    addScrollTopButton();
   });
 })();

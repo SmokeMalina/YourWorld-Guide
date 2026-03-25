@@ -184,10 +184,10 @@ window.RECIPES = [
   { title: "Матросский сундук 500", path: "/craft/crates/chest_500.html", icon: "/images/crates/chest_1.png" },
 
   // ===== Ножи =====
-  { title: "Нож Gerber", path: "/craft/knife/gerber.html", icon: "/images/knife/gerber_2.png" },
-  { title: "Тактический нож", path: "/craft/knife/tactical.html", icon: "/images/knife/tactical_2.png" },
-  { title: "Секира молния V2", path: "/craft/knife/sekira.html", icon: "/images/knife/stormbreaker.png" },
-  { title: "Самурайская катана V2", path: "/craft/knife/katana.html", icon: "/images/knife/samurai_katana.png" },
+  { title: "Нож Gerber", path: "/craft/knife/gerber.html", icon: "/images/melee/gerber_2.png" },
+  { title: "Тактический нож", path: "/craft/knife/tactical.html", icon: "/images/melee/tactical_2.png" },
+  { title: "Секира молния V2", path: "/craft/knife/sekira.html", icon: "/images/melee/stormbreaker.png" },
+  { title: "Самурайская катана V2", path: "/craft/knife/katana.html", icon: "/images/melee/samurai_katana.png" },
 
   // ===== Сеты =====
   { title: "Кейс с сетом Calisto Undead V2", path: "/craft/sets/set_calisto.html", icon: "/images/sets/setbox_calisto.png" },

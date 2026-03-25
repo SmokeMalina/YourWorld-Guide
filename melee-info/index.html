@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Холодное оружие YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Каталог melee оружия YourWorld по категориям с переключением вариантов и увеличением изображений.">
+  <meta property="og:title" content="Холодное оружие YourWorld">
+  <meta property="og:description" content="Ножи, топоры, мечи, косы и молоты YourWorld с переключением вариантов.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/melee-info/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body class="page-melee">
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/melee/prev.png" alt="Холодное оружие">
+      <div>
+        <h1>Холодное оружие</h1>
+        <p class="muted">Каталог ближнего оружия YourWorld с вариантами внешнего вида</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Описание</h2>
+    <p class="info-text">На этой странице собрано холодное оружие YourWorld по категориям получения и подкатегориям. Для каждой модели можно посмотреть скорость разделки, обычный и сильный удар, а также разделку по радиусу, если этот параметр есть у оружия.</p>
+    <p class="info-note">Если у модели есть несколько вариантов внешнего вида, они переключаются стрелками прямо в карточке. Изображение оружия можно открыть в увеличении.</p>
+  </section>
+
+  <section class="card info-card">
+    <h2>Категории и поиск</h2>
+    <div class="melee-db-tabs" id="meleeTabs" role="tablist" aria-label="Категории melee оружия"></div>
+    <div class="melee-db-subtabs" id="meleeHandTabs" role="tablist" aria-label="Подкатегории melee оружия"></div>
+    <div class="search-block melee-db-search-block">
+      <input
+        class="search-input"
+        id="meleeSearch"
+        type="search"
+        placeholder="Найти холодное оружие по названию..."
+        autocomplete="off">
+    </div>
+    <div class="melee-db-search-empty hidden" id="meleeSearchEmpty">Ничего не найдено.</div>
+  </section>
+
+  <section class="melee-stack" id="meleeCatalog"></section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+
+<div class="img-modal" id="meleeModal" aria-hidden="true">
+  <button class="img-modal__nav img-modal__nav--prev" type="button" aria-label="Предыдущее изображение">‹</button>
+  <button class="img-modal__close" type="button" aria-label="Закрыть">&times;</button>
+  <img class="img-modal__image" src="" alt="">
+  <button class="img-modal__nav img-modal__nav--next" type="button" aria-label="Следующее изображение">›</button>
+</div>
+
+<script src="/site.js"></script>
+<script src="/melee-info/data.js"></script>
+<script>
+  (() => {
+    const data = window.meleeGuideData || {};
+    const meleeCategories = Array.isArray(data.meleeCategories) ? data.meleeCategories : [];
+    const meleeHandTypes = Array.isArray(data.meleeHandTypes) ? data.meleeHandTypes : [];
+    const meleeItems = Array.isArray(data.meleeItems) ? data.meleeItems : [];
+    const meleeLibrary = data.meleeLibrary || {};
+
+    const STORAGE_KEYS = {
+      category: "melee.category",
+      handType: "melee.handType",
+      query: "melee.query",
+      scroll: "melee.scroll",
+      viewers: "melee.viewers"
+    };
+
+    const titleOverrides = {
+      big_sharpening: "Большая заточка",
+      ice_axe: "Ледяной топор",
+      ny_hatchet: "Новогодний топор",
+      samurai_knife: "Самурайский нож",
+      deadly_knife: "Смертоносный нож",
+      dragon_axe: "Топор драконов",
+      cyber_catana: "Cyber Katana",
+      solar_thunger_axe: "Solar Thunger Axe"
+    };
+
+    const tabsEl = document.getElementById("meleeTabs");
+    const handTabsEl = document.getElementById("meleeHandTabs");
+    const searchInput = document.getElementById("meleeSearch");
+    const searchEmpty = document.getElementById("meleeSearchEmpty");
+    const catalogEl = document.getElementById("meleeCatalog");
+
+    const modal = document.getElementById("meleeModal");
+    const modalImage = modal ? modal.querySelector(".img-modal__image") : null;
+    const modalPrev = modal ? modal.querySelector(".img-modal__nav--prev") : null;
+    const modalNext = modal ? modal.querySelector(".img-modal__nav--next") : null;
+    const modalClose = modal ? modal.querySelector(".img-modal__close") : null;
+
+    let currentCategory = meleeCategories[0] ? meleeCategories[0].id : "";
+    let currentHandType = meleeHandTypes[0] ? meleeHandTypes[0].id : "";
+    let currentQuery = "";
+    let restoredScroll = false;
+    let modalGallery = [];
+    let modalIndex = 0;
+    let modalTitle = "";
+
+    const viewerState = loadJSON(STORAGE_KEYS.viewers, {});
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function loadJSON(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch (_) {
+        return fallback;
+      }
+    }
+
+    function saveJSON(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (_) {
+        // ignore
+      }
+    }
+
+    function humanizeKey(key) {
+      if (titleOverrides[key]) return titleOverrides[key];
+      return key
+        .split("_")
+        .map((part) => {
+          if (/^\d+$/.test(part)) return part;
+          return part.charAt(0).toUpperCase() + part.slice(1);
+        })
+        .join(" ");
+    }
+
+    function getFilteredModels() {
+      const query = currentQuery.toLowerCase();
+      return meleeItems
+        .filter((item) => {
+          if (Array.isArray(item.category)) {
+            return item.category.includes(currentCategory);
+          }
+          return item.category === currentCategory;
+        })
+        .filter((item) => currentHandType === "all" || item.handType === currentHandType)
+        .filter((item) => Array.isArray(meleeLibrary[item.key]) && meleeLibrary[item.key].length)
+        .filter((item) =>
+          !query ||
+          item.title.toLowerCase().includes(query) ||
+          String(item.search || "").toLowerCase().includes(query)
+        )
+        .map((item) => ({
+          ...item,
+          title: item.title || humanizeKey(item.key),
+          gallery: meleeLibrary[item.key]
+        }));
+    }
+
+    function hasModels(categoryId, handTypeId, query = "") {
+      const normalizedQuery = String(query || "").toLowerCase();
+      return meleeItems.some((item) => {
+        if (Array.isArray(item.category)) {
+          if (!item.category.includes(categoryId)) return false;
+        } else if (item.category !== categoryId) {
+          return false;
+        }
+        if (handTypeId !== "all" && item.handType !== handTypeId) return false;
+        if (!Array.isArray(meleeLibrary[item.key]) || !meleeLibrary[item.key].length) return false;
+        if (!normalizedQuery) return true;
+        return (
+          String(item.title || humanizeKey(item.key)).toLowerCase().includes(normalizedQuery) ||
+          String(item.search || "").toLowerCase().includes(normalizedQuery)
+        );
+      });
+    }
+
+    function ensureValidSelection() {
+      if (hasModels(currentCategory, currentHandType, currentQuery)) return;
+
+      for (const category of meleeCategories) {
+        if (hasModels(category.id, currentHandType, currentQuery)) {
+          currentCategory = category.id;
+          localStorage.setItem(STORAGE_KEYS.category, currentCategory);
+          return;
+        }
+      }
+
+      for (const hand of meleeHandTypes) {
+        for (const category of meleeCategories) {
+          if (hasModels(category.id, hand.id, currentQuery)) {
+            currentHandType = hand.id;
+            currentCategory = category.id;
+            localStorage.setItem(STORAGE_KEYS.handType, currentHandType);
+            localStorage.setItem(STORAGE_KEYS.category, currentCategory);
+            return;
+          }
+        }
+      }
+    }
+
+    function getViewerIndex(key, gallery) {
+      const raw = Number(viewerState[key] || 0);
+      const length = gallery.length || 1;
+      return ((raw % length) + length) % length;
+    }
+
+    function persistViewers() {
+      saveJSON(STORAGE_KEYS.viewers, viewerState);
+    }
+
+    function renderTabs() {
+      tabsEl.innerHTML = meleeCategories.map((category) => `
+        <button
+          class="melee-db-tab${category.id === currentCategory ? " is-active" : ""}"
+          type="button"
+          data-melee-tab="${escapeHtml(category.id)}"
+          role="tab"
+          aria-selected="${category.id === currentCategory ? "true" : "false"}">
+          ${escapeHtml(category.label)}
+        </button>
+      `).join("");
+    }
+
+    function renderHandTabs() {
+      handTabsEl.innerHTML = meleeHandTypes.map((hand) => `
+        <button
+          class="melee-db-subtab${hand.id === currentHandType ? " is-active" : ""}"
+          type="button"
+          data-melee-hand="${escapeHtml(hand.id)}"
+          role="tab"
+          aria-selected="${hand.id === currentHandType ? "true" : "false"}">
+          ${escapeHtml(hand.label)}
+        </button>
+      `).join("");
+    }
+
+    function renderCard(model) {
+      const currentIndex = getViewerIndex(model.key, model.gallery);
+      const currentImage = model.gallery[currentIndex];
+      const showNav = model.gallery.length > 1;
+      const skinningSpeed = model.skinningSpeed
+        ? `
+            <div class="melee-card__stat">
+              <span class="melee-card__stat-label">Скорость разделки</span>
+              <strong class="melee-card__stat-value">${escapeHtml(model.skinningSpeed)}</strong>
+            </div>
+          `
+        : "";
+      const damagePrimary = model.damagePrimary
+        ? `
+            <div class="melee-card__stat">
+              <span class="melee-card__stat-label">${escapeHtml(model.damagePrimaryLabel || "Обычный удар")}</span>
+              <strong class="melee-card__stat-value">${escapeHtml(model.damagePrimary)}</strong>
+            </div>
+          `
+        : "";
+      const damageSecondary = model.damageSecondary
+        ? `
+            <div class="melee-card__stat">
+              <span class="melee-card__stat-label">${escapeHtml(model.damageSecondaryLabel || "Сильный удар")}</span>
+              <strong class="melee-card__stat-value">${escapeHtml(model.damageSecondary)}</strong>
+            </div>
+          `
+        : "";
+      const radiusSkinning = model.radiusSkinning
+        ? `
+            <div class="melee-card__stat">
+              <span class="melee-card__stat-label">Разделка по радиусу</span>
+              <strong class="melee-card__stat-value">${escapeHtml(model.radiusSkinning)}</strong>
+            </div>
+          `
+        : "";
+      return `
+        <article class="melee-card" data-melee-card="${escapeHtml(model.key)}">
+          <div class="melee-card__media">
+            <div class="melee-viewer">
+              <button class="melee-viewer__nav melee-viewer__nav--prev" type="button" aria-label="Предыдущий вариант" data-melee-arrow="${escapeHtml(model.key)}" data-direction="-1"${showNav ? "" : " hidden"}>‹</button>
+              <img
+                class="melee-viewer__img"
+                src="${escapeHtml(currentImage)}"
+                alt="${escapeHtml(model.title)}"
+                data-melee-open="${escapeHtml(model.key)}">
+              <button class="melee-viewer__nav melee-viewer__nav--next" type="button" aria-label="Следующий вариант" data-melee-arrow="${escapeHtml(model.key)}" data-direction="1"${showNav ? "" : " hidden"}>›</button>
+            </div>
+          </div>
+          <div class="melee-card__body">
+            <div class="melee-card__head">
+              <h3 class="melee-card__title">${escapeHtml(model.title)}</h3>
+              ${showNav ? `<span class="melee-card__count">${currentIndex + 1} / ${model.gallery.length}</span>` : ""}
+            </div>
+            <div class="melee-card__stats">
+              ${skinningSpeed}
+              ${damagePrimary}
+              ${damageSecondary}
+              ${radiusSkinning}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderCatalog() {
+      ensureValidSelection();
+      const models = getFilteredModels();
+
+      searchEmpty.classList.toggle("hidden", models.length > 0);
+      catalogEl.innerHTML = models.map(renderCard).join("");
+
+      if (!restoredScroll) {
+        const savedScroll = Number(localStorage.getItem(STORAGE_KEYS.scroll) || "0");
+        if (savedScroll > 0) {
+          restoredScroll = true;
+          requestAnimationFrame(() => window.scrollTo(0, savedScroll));
+        }
+      }
+    }
+
+    function updateCard(key) {
+      const card = document.querySelector(`[data-melee-card="${CSS.escape(key)}"]`);
+      const gallery = meleeLibrary[key];
+      if (!card || !Array.isArray(gallery) || !gallery.length) return;
+      const index = getViewerIndex(key, gallery);
+      const img = card.querySelector(".melee-viewer__img");
+      const count = card.querySelector(".melee-card__count");
+      if (img) img.src = gallery[index];
+      if (count) count.textContent = `${index + 1} / ${gallery.length}`;
+    }
+
+    function openModal(gallery, index, title) {
+      if (!modal || !modalImage) return;
+      modalGallery = Array.isArray(gallery) ? gallery.filter(Boolean) : [];
+      modalIndex = Number.isFinite(index) ? index : 0;
+      modalTitle = title || "";
+      syncModal();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      modalGallery = [];
+      modalIndex = 0;
+      modalTitle = "";
+    }
+
+    function syncModal() {
+      if (!modalImage || !modalGallery.length) return;
+      modalIndex = ((modalIndex % modalGallery.length) + modalGallery.length) % modalGallery.length;
+      modalImage.src = modalGallery[modalIndex];
+      modalImage.alt = modalTitle || "Melee оружие";
+      if (modalPrev) modalPrev.hidden = modalGallery.length <= 1;
+      if (modalNext) modalNext.hidden = modalGallery.length <= 1;
+    }
+
+    function setCategory(categoryId) {
+      currentCategory = categoryId;
+      localStorage.setItem(STORAGE_KEYS.category, currentCategory);
+      localStorage.setItem(STORAGE_KEYS.scroll, "0");
+      renderTabs();
+      renderHandTabs();
+      renderCatalog();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function setHandType(handTypeId) {
+      currentHandType = handTypeId;
+      localStorage.setItem(STORAGE_KEYS.handType, currentHandType);
+      localStorage.setItem(STORAGE_KEYS.scroll, "0");
+      renderHandTabs();
+      renderCatalog();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function initState() {
+      const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
+      if (savedCategory && meleeCategories.some((category) => category.id === savedCategory)) {
+        currentCategory = savedCategory;
+      }
+
+      const savedHandType = localStorage.getItem(STORAGE_KEYS.handType);
+      if (savedHandType && meleeHandTypes.some((hand) => hand.id === savedHandType)) {
+        currentHandType = savedHandType;
+      }
+
+      const savedQuery = localStorage.getItem(STORAGE_KEYS.query);
+      if (savedQuery) {
+        currentQuery = savedQuery;
+        if (searchInput) searchInput.value = savedQuery;
+      }
+    }
+
+    initState();
+    renderTabs();
+    renderHandTabs();
+    renderCatalog();
+
+    tabsEl.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-melee-tab]");
+      if (!button) return;
+      setCategory(button.getAttribute("data-melee-tab"));
+    });
+
+    handTabsEl.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-melee-hand]");
+      if (!button) return;
+      setHandType(button.getAttribute("data-melee-hand"));
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        currentQuery = searchInput.value.trim();
+        localStorage.setItem(STORAGE_KEYS.query, currentQuery);
+        localStorage.setItem(STORAGE_KEYS.scroll, "0");
+        ensureValidSelection();
+        renderTabs();
+        renderHandTabs();
+        renderCatalog();
+      });
+    }
+
+    catalogEl.addEventListener("click", (event) => {
+      const arrow = event.target.closest("[data-melee-arrow]");
+      if (arrow) {
+        const key = arrow.getAttribute("data-melee-arrow");
+        const direction = Number(arrow.getAttribute("data-direction") || "0");
+        const gallery = meleeLibrary[key];
+        if (!Array.isArray(gallery) || gallery.length <= 1) return;
+        viewerState[key] = getViewerIndex(key, gallery) + direction;
+        persistViewers();
+        updateCard(key);
+        return;
+      }
+
+      const opener = event.target.closest("[data-melee-open]");
+      if (!opener) return;
+      const key = opener.getAttribute("data-melee-open");
+      const gallery = meleeLibrary[key];
+      if (!Array.isArray(gallery) || !gallery.length) return;
+      openModal(gallery, getViewerIndex(key, gallery), humanizeKey(key));
+    });
+
+    window.addEventListener("scroll", () => {
+      localStorage.setItem(STORAGE_KEYS.scroll, String(window.scrollY || 0));
+    }, { passive: true });
+
+    if (modalClose) modalClose.addEventListener("click", closeModal);
+    if (modalPrev) modalPrev.addEventListener("click", () => {
+      if (modalGallery.length <= 1) return;
+      modalIndex -= 1;
+      syncModal();
+    });
+    if (modalNext) modalNext.addEventListener("click", () => {
+      if (modalGallery.length <= 1) return;
+      modalIndex += 1;
+      syncModal();
+    });
+
+    if (modal) {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (!modal || !modal.classList.contains("is-open")) return;
+      if (event.key === "Escape") {
+        closeModal();
+        return;
+      }
+      if (modalGallery.length <= 1) return;
+      if (event.key === "ArrowLeft") {
+        modalIndex -= 1;
+        syncModal();
+      }
+      if (event.key === "ArrowRight") {
+        modalIndex += 1;
+        syncModal();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -25,26 +25,26 @@ window.CRAFT_VARIANTS = {
     "/images/crates/barrel_2.png"
   ],
   "gerber": [
-    "/images/knife/gerber_2.png",
-    "/images/knife/gerber_3.png",
-    "/images/knife/gerber_4.png",
-    "/images/knife/gerber_5.png",
-    "/images/knife/gerber_6.png",
-    "/images/knife/gerber_7.png",
-    "/images/knife/gerber_8.png",
-    "/images/knife/gerber_9.png",
-    "/images/knife/gerber_10.png"
+    "/images/melee/gerber_knife_2.png",
+    "/images/melee/gerber_knife_3.png",
+    "/images/melee/gerber_knife_4.png",
+    "/images/melee/gerber_knife_5.png",
+    "/images/melee/gerber_knife_6.png",
+    "/images/melee/gerber_knife_7.png",
+    "/images/melee/gerber_knife_8.png",
+    "/images/melee/gerber_knife_9.png",
+    "/images/melee/gerber_knife_10.png"
   ],
   "tactical": [
-    "/images/knife/tactical_2.png",
-    "/images/knife/tactical_3.png",
-    "/images/knife/tactical_4.png",
-    "/images/knife/tactical_5.png",
-    "/images/knife/tactical_6.png",
-    "/images/knife/tactical_7.png",
-    "/images/knife/tactical_8.png",
-    "/images/knife/tactical_9.png",
-    "/images/knife/tactical_10.png"
+    "/images/melee/tactical_knife_2.png",
+    "/images/melee/tactical_knife_3.png",
+    "/images/melee/tactical_knife_4.png",
+    "/images/melee/tactical_knife_5.png",
+    "/images/melee/tactical_knife_6.png",
+    "/images/melee/tactical_knife_7.png",
+    "/images/melee/tactical_knife_8.png",
+    "/images/melee/tactical_knife_9.png",
+    "/images/melee/tactical_knife_10.png"
   ],
   "fixer_set": [
     "/images/sets/setbox_fixer.png",
@@ -383,9 +383,9 @@ window.CRAFT_VARIANTS = {
   ],
   "galil_mag": [
     "/images/weapons/immortal/galil_mag.png",
-    "/images/weapons/immortal/galil_white_mag.png",
+    "/images/weapons/immortal/galil_beige_mag.png",
     "/images/weapons/immortal/galil_green_mag.png",
-    "/images/weapons/immortal/galil_beige_mag.png"
+    "/images/weapons/immortal/galil_white_mag.png"
   ],
   "xm109_mag": [
     "/images/weapons/immortal/xm109_mag.png",
@@ -536,6 +536,41 @@ window.CRAFT_VARIANTS = {
     "/images/weapons/phantom/saiga12_camo1_mag.png",
     "/images/weapons/phantom/saiga12_camo2_mag.png",
     "/images/weapons/phantom/saiga12_camo3_mag.png"
+  ],
+  "kg19_mag": [
+    "/images/weapons/immortal/kg19_mag.png",
+    "/images/weapons/immortal/kg19_white_mag.png",
+    "/images/weapons/immortal/kg19_camo1_mag.png",
+    "/images/weapons/immortal/kg19_camo2_mag.png",
+    "/images/weapons/immortal/kg19_camo3_mag.png",
+    "/images/weapons/immortal/kg19_camo4_mag.png",
+    "/images/weapons/immortal/kg19_camo5_mag.png"
+  ],
+  "hk121_mag": [
+    "/images/weapons/immortal/hk121_mag.png",
+    "/images/weapons/immortal/hk121_white_mag.png",
+    "/images/weapons/immortal/hk121_camo1_mag.png",
+    "/images/weapons/immortal/hk121_camo2_mag.png",
+    "/images/weapons/immortal/hk121_camo3_mag.png"
+  ],
+  "as50_mag": [
+    "/images/weapons/immortal/as50_mag.png",
+    "/images/weapons/immortal/as50_beige_mag.png",
+    "/images/weapons/immortal/as50_green_mag.png",
+    "/images/weapons/immortal/as50_white_mag.png"
+  ],
+  "tac21_mag": [
+    "/images/weapons/phantom/tac21_mag.png",
+    "/images/weapons/phantom/tac21_white_mag.png",
+    "/images/weapons/phantom/tac21_camo1_mag.png",
+    "/images/weapons/phantom/tac21_camo2_mag.png",
+    "/images/weapons/phantom/tac21_camo3_mag.png"
+  ],
+  "xm2010_mag": [
+    "/images/weapons/phantom/xm2010_mag.png",
+    "/images/weapons/phantom/xm2010_white_mag.png",
+    "/images/weapons/phantom/xm2010_camo1_mag.png",
+    "/images/weapons/phantom/xm2010_camo2_mag.png",
+    "/images/weapons/phantom/xm2010_camo3_mag.png"
   ]
 };
-

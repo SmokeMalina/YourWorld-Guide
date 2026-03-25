@@ -1,0 +1,4474 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Одежда YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Информация по сетам одежды на сервере YourWorld PVE.">
+  <meta property="og:title" content="Одежда YourWorld">
+  <meta property="og:description" content="Сеты одежды, слоты, аттачи и защита комплектов YourWorld.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/clothing-info/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body class="page-collection">
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/sets/prev.png" alt="Одежда">
+      <div>
+        <h1>Одежда</h1>
+        <p class="muted">Сеты, слоты, аттачи и защита комплектов</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Описание</h2>
+    <p class="info-text">На этой странице собрана информация по сетам YourWorld. Для каждого комплекта есть отдельная карточка с превью, слотами, местом под аттачи и основными параметрами защиты.</p>
+    <p class="info-note">Изображение сета можно открыть в увеличении. Если у комплекта есть разные версии, цвета или дополнительные варианты предметов, их можно переключать прямо в карточке.</p>
+  </section>
+
+  <section class="card info-card">
+    <h2>Категории</h2>
+    <div class="outfit-filter-nav" id="outfitFilterNav"></div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Поиск</h2>
+    <label class="search-input search-input--outfit" aria-label="Поиск по сетам одежды">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <input type="search" id="outfitSearchInput" placeholder="Найти сет по названию">
+    </label>
+  </section>
+
+  <section class="outfit-stack" id="outfitCatalog"></section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+
+<div class="img-modal" id="outfitModal" aria-hidden="true">
+  <button class="img-modal__nav img-modal__nav--prev" type="button" aria-label="Предыдущее изображение">‹</button>
+  <button class="img-modal__close" type="button" aria-label="Закрыть">&times;</button>
+  <img class="img-modal__image" src="" alt="">
+  <button class="img-modal__nav img-modal__nav--next" type="button" aria-label="Следующее изображение">›</button>
+</div>
+
+<script src="/site.js"></script>
+<script>
+  (() => {
+    // Добавляйте новые сеты по этому же шаблону.
+    const outfitCategories = [
+      { id: "trade", label: "Трейд" },
+      { id: "dollars", label: "Доллары" },
+      { id: "donation", label: "Пожертвование" },
+      { id: "quests", label: "Квесты" },
+      { id: "crystals", label: "Кристаллы" },
+      { id: "exclusive", label: "Эксклюзив" }
+    ];
+
+    const outfits = [
+      {
+        slug: "alkatala",
+        category: "quests",
+        name: "Al Katala",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/al_katala.png",
+            gallery: ["/images/sets/al_katala.png"],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "95%" },
+              { label: "Защита от порезов", value: "95%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/al_katala.png",
+            gallery: ["/images/sets/al_katala.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "95%" },
+              { label: "Защита от порезов", value: "95%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "apocalypse",
+        category: "donation",
+        name: "Apocalypse Phantom",
+        image: "/images/sets/apocalypse.png",
+        gallery: [
+          "/images/sets/apocalypse.png",
+          "/images/sets/apocalypse_black.png"
+        ],
+        slots: [
+          { label: "Броня", value: "1000" },
+          { label: "Куртка", value: "1000" },
+          { label: "Штаны", value: "1000" },
+          { label: "Ремень", value: "1000" },
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+          { name: "Удочка", count: 1, image: "/images/sets/attach/rod.png" },
+          { name: "Гаечный ключ", count: 1, image: "/images/sets/attach/wrench.png" },
+          { name: "Лебёдка", count: 1, image: "/images/sets/attach/winch.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+          { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+          { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "95%" },
+          { label: "Защита от порезов", value: "95%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ]
+      },
+      {
+        slug: "biohazard",
+        category: "trade",
+        name: "Biohazard",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/biohazard.png",
+            gallery: ["/images/sets/biohazard.png"],
+            slots: [
+              { label: "Броня", value: "100" },
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/biohazard.png",
+            gallery: ["/images/sets/biohazard.png"],
+            slots: [
+              { label: "Броня", value: "150" },
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 1, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/biohazard.png",
+            gallery: ["/images/sets/biohazard.png"],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/biohazard.png",
+            gallery: ["/images/sets/biohazard.png"],
+            slots: [
+              { label: "Броня", value: "250" },
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/biohazard.png",
+            gallery: ["/images/sets/biohazard.png"],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "Рюкзак V1",
+            image: "/images/clothing/biohazard_backpack.png",
+            gallery: ["/images/clothing/biohazard_backpack.png"],
+            slots: [
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "Рюкзак V2",
+            image: "/images/clothing/biohazard_backpack.png",
+            gallery: ["/images/clothing/biohazard_backpack.png"],
+            slots: [
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "Ремень V1",
+            image: "/images/clothing/biohazard_belt.png",
+            gallery: ["/images/clothing/biohazard_belt.png"],
+            slots: [
+              { label: "Ремень", value: "100" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "Ремень V2",
+            image: "/images/clothing/biohazard_belt.png",
+            gallery: ["/images/clothing/biohazard_belt.png"],
+            slots: [
+              { label: "Ремень", value: "200" }
+            ],
+            attachments: [],
+            protection: []
+          }
+        ]
+      },
+      {
+        slug: "bracken",
+        category: "donation",
+        name: "Bracken",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/bracken.png",
+            gallery: ["/images/sets/bracken.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/bracken.png",
+            gallery: ["/images/sets/bracken.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/bracken.png",
+            gallery: ["/images/sets/bracken.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "caj",
+        category: "trade",
+        name: "CAJ",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/caj.png",
+            gallery: ["/images/sets/caj.png"],
+            slots: [
+              { label: "Броня", value: "100" },
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/caj.png",
+            gallery: ["/images/sets/caj.png"],
+            slots: [
+              { label: "Броня", value: "150" },
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 1, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/caj.png",
+            gallery: ["/images/sets/caj.png"],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/caj.png",
+            gallery: ["/images/sets/caj.png"],
+            slots: [
+              { label: "Броня", value: "250" },
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/caj.png",
+            gallery: ["/images/sets/caj.png"],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "Ремень V1",
+            image: "/images/clothing/biohazard_belt.png",
+            gallery: ["/images/clothing/biohazard_belt.png"],
+            slots: [
+              { label: "Ремень", value: "100" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "Ремень V2",
+            image: "/images/clothing/caj_belt.png",
+            gallery: ["/images/clothing/caj_belt.png"],
+            slots: [
+              { label: "Ремень", value: "200" }
+            ],
+            attachments: [],
+            protection: []
+          }
+        ]
+      },
+      {
+        slug: "calistoundead",
+        category: "donation",
+        name: "Calisto Undead",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/callisto_undead.png",
+            gallery: ["/images/sets/callisto_undead.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/callisto_undead.png",
+            gallery: ["/images/sets/callisto_undead.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/callisto_undead.png",
+            gallery: ["/images/sets/callisto_undead.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "calistoundead",
+        category: "crystals",
+        name: "Calisto Undead",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/callisto_undead.png",
+            gallery: ["/images/sets/callisto_undead.png"],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" },
+              { label: "Ремень", value: "200" },
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/callisto_undead.png",
+            gallery: ["/images/sets/callisto_undead.png"],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" },
+              { label: "Ремень", value: "300" },
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 6, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "crusher",
+        category: "crystals",
+        name: "Crusher",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/crusher.png",
+            gallery: ["/images/sets/crusher.png"],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" },
+              { label: "Ремень", value: "200" },
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/crusher.png",
+            gallery: ["/images/sets/crusher.png"],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" },
+              { label: "Ремень", value: "300" },
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 6, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "cybercat",
+        category: "donation",
+        name: "Cyber Cat",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/cyber_cat.png",
+            gallery: [
+              "/images/sets/cyber_cat.png",
+              "/images/sets/cyber_cat_blue.png",
+              "/images/sets/cyber_cat_green.png",
+              "/images/sets/cyber_cat_orange.png",
+              "/images/sets/cyber_cat_pink.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/cyber_cat.png",
+            gallery: [
+              "/images/sets/cyber_cat.png",
+              "/images/sets/cyber_cat_blue.png",
+              "/images/sets/cyber_cat_green.png",
+              "/images/sets/cyber_cat_orange.png",
+              "/images/sets/cyber_cat_pink.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/cyber_cat.png",
+            gallery: [
+              "/images/sets/cyber_cat.png",
+              "/images/sets/cyber_cat_blue.png",
+              "/images/sets/cyber_cat_green.png",
+              "/images/sets/cyber_cat_orange.png",
+              "/images/sets/cyber_cat_pink.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "deadagent",
+        category: "trade",
+        name: "Dead Agent",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/dead_agent.png",
+            gallery: [
+              "/images/sets/dead_agent.png",
+              "/images/sets/dead_agent_green.png"
+            ],
+            slots: [
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/dead_agent.png",
+            gallery: [
+              "/images/sets/dead_agent.png",
+              "/images/sets/dead_agent_green.png"
+            ],
+            slots: [
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/dead_agent.png",
+            gallery: [
+              "/images/sets/dead_agent.png",
+              "/images/sets/dead_agent_green.png"
+            ],
+            slots: [
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/dead_agent.png",
+            gallery: [
+              "/images/sets/dead_agent.png",
+              "/images/sets/dead_agent_green.png"
+            ],
+            slots: [
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/dead_agent.png",
+            gallery: [
+              "/images/sets/dead_agent.png",
+              "/images/sets/dead_agent_green.png"
+            ],
+            slots: [
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "dreadwood",
+        category: "donation",
+        name: "Dreadwood",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/dreadwood.png",
+            gallery: [
+              "/images/sets/dreadwood.png",
+              "/images/sets/dreadwood_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/dreadwood.png",
+            gallery: [
+              "/images/sets/dreadwood.png",
+              "/images/sets/dreadwood_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/dreadwood.png",
+            gallery: [
+              "/images/sets/dreadwood.png",
+              "/images/sets/dreadwood_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "eod",
+        category: "exclusive",
+        name: "EOD",
+        image: "/images/sets/eod.png",
+        gallery: ["/images/sets/eod.png"],
+        slots: [
+          { label: "Броня", value: "500" },
+          { label: "Куртка", value: "500" },
+          { label: "Штаны", value: "500" },
+          { label: "Ремень", value: "500" }
+        ],
+        attachments: [
+          { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "85%" },
+          { label: "Защита от порезов", value: "75%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ]
+      },
+      {
+        slug: "fixer",
+        category: "crystals",
+        name: "Fixer",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/fixer.png",
+            gallery: [
+              "/images/sets/fixer.png",
+              "/images/sets/fixer_black.png",
+              "/images/sets/fixer_camo.png"
+            ],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" },
+              { label: "Ремень", value: "200" },
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/fixer.png",
+            gallery: [
+              "/images/sets/fixer.png",
+              "/images/sets/fixer_black.png",
+              "/images/sets/fixer_camo.png"
+            ],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" },
+              { label: "Ремень", value: "300" },
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 6, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "fs",
+        category: "donation",
+        name: "FS Phantom",
+        image: "/images/sets/fs.png",
+        gallery: [
+          "/images/sets/fs.png",
+          "/images/sets/fs_blue.png",
+          "/images/sets/fs_pink.png",
+          "/images/sets/fs_yellow.png",
+          "/images/sets/fs_camo1.png",
+          "/images/sets/fs_camo2.png"
+        ],
+        slots: [
+          { label: "Броня", value: "1000" },
+          { label: "Куртка", value: "1000" },
+          { label: "Штаны", value: "1000" },
+          { label: "Ремень", value: "1000" },
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+          { name: "Удочка", count: 1, image: "/images/sets/attach/rod.png" },
+          { name: "Гаечный ключ", count: 1, image: "/images/sets/attach/wrench.png" },
+          { name: "Лебёдка", count: 1, image: "/images/sets/attach/winch.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+          { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+          { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "95%" },
+          { label: "Защита от порезов", value: "95%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ],
+        details: [
+          {
+            title: "Вариативность шлема",
+            image: "/images/sets/fs_helmet_1.png",
+            gallery: [
+              "/images/sets/fs_helmet_1.png",
+              "/images/sets/fs_helmet_2.png",
+              "/images/sets/fs_helmet_3.png",
+              "/images/sets/fs_helmet_4.png",
+              "/images/sets/fs_helmet_5.png"
+            ]
+          },
+          {
+            title: "Вариативность обуви",
+            image: "/images/sets/fs_boots_1.png",
+            gallery: [
+              "/images/sets/fs_boots_1.png",
+              "/images/sets/fs_boots_2.png"
+            ]
+          }
+        ]
+      },
+      {
+        slug: "ghost",
+        category: "dollars",
+        name: "Ghost",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/ghost.png",
+            gallery: [
+              "/images/sets/ghost.png",
+              "/images/sets/ghost_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "350" },
+              { label: "Куртка", value: "350" },
+              { label: "Штаны", value: "350" },
+              { label: "Ремень", value: "350" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/ghost.png",
+            gallery: [
+              "/images/sets/ghost.png",
+              "/images/sets/ghost_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "450" },
+              { label: "Куртка", value: "450" },
+              { label: "Штаны", value: "450" },
+              { label: "Ремень", value: "450" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "hips",
+        category: "donation",
+        name: "Hips",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/hips.png",
+            gallery: [
+              "/images/sets/hips.png",
+              "/images/sets/hips_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/hips.png",
+            gallery: [
+              "/images/sets/hips.png",
+              "/images/sets/hips_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/hips.png",
+            gallery: [
+              "/images/sets/hips.png",
+              "/images/sets/hips_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "incite",
+        category: "donation",
+        name: "Incite Phantom",
+        image: "/images/sets/incite.png",
+        gallery: [
+          "/images/sets/incite.png",
+          "/images/sets/incite_black.png",
+          "/images/sets/incite_green.png"
+        ],
+        slots: [
+          { label: "Броня", value: "1000" },
+          { label: "Куртка", value: "1000" },
+          { label: "Штаны", value: "1000" },
+          { label: "Ремень", value: "1000" },
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+          { name: "Удочка", count: 1, image: "/images/sets/attach/rod.png" },
+          { name: "Гаечный ключ", count: 1, image: "/images/sets/attach/wrench.png" },
+          { name: "Лебёдка", count: 1, image: "/images/sets/attach/winch.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+          { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+          { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "95%" },
+          { label: "Защита от порезов", value: "95%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ]
+      },
+      {
+        slug: "kasrkin",
+        category: "dollars",
+        name: "Kasrkin",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/kaskin_black.png",
+            gallery: [
+              "/images/sets/kaskin_black.png",
+              "/images/sets/kaskin_blue.png",
+              "/images/sets/kaskin_green.png",
+              "/images/sets/kaskin_red.png"
+            ],
+            slots: [
+              { label: "Броня", value: "350" },
+              { label: "Куртка", value: "350" },
+              { label: "Штаны", value: "350" },
+              { label: "Ремень", value: "350" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/kaskin_black.png",
+            gallery: [
+              "/images/sets/kaskin_black.png",
+              "/images/sets/kaskin_blue.png",
+              "/images/sets/kaskin_green.png",
+              "/images/sets/kaskin_red.png"
+            ],
+            slots: [
+              { label: "Броня", value: "450" },
+              { label: "Куртка", value: "450" },
+              { label: "Штаны", value: "450" },
+              { label: "Ремень", value: "450" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "kato",
+        category: "donation",
+        name: "Kato Phantom",
+        image: "/images/sets/kato.png",
+        gallery: [
+          "/images/sets/kato.png",
+          "/images/sets/kato_camo1.png",
+          "/images/sets/kato_camo2.png",
+          "/images/sets/kato_camo3.png"
+        ],
+        slots: [
+          { label: "Броня", value: "1000" },
+          { label: "Куртка", value: "1000" },
+          { label: "Штаны", value: "1000" },
+          { label: "Ремень", value: "1000" },
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+          { name: "Удочка", count: 1, image: "/images/sets/attach/rod.png" },
+          { name: "Гаечный ключ", count: 1, image: "/images/sets/attach/wrench.png" },
+          { name: "Лебёдка", count: 1, image: "/images/sets/attach/winch.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+          { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+          { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "95%" },
+          { label: "Защита от порезов", value: "95%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ],
+        details: [
+          {
+            title: "Вариативность шлема и маски",
+            image: "/images/sets/kato_mask_1.png",
+            gallery: [
+              "/images/sets/kato_mask_1.png",
+              "/images/sets/kato_mask_2.png"
+            ]
+          }
+        ]
+      },
+      {
+        slug: "monochrome",
+        category: "dollars",
+        name: "Monochrome",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/monochrome.png",
+            gallery: [
+              "/images/sets/monochrome.png",
+              "/images/sets/monochrome_blue.png",
+              "/images/sets/monochrome_green.png",
+              "/images/sets/monochrome_orange.png",
+              "/images/sets/monochrome_pink.png",
+              "/images/sets/monochrome_red.png"
+            ],
+            slots: [
+              { label: "Броня", value: "350" },
+              { label: "Куртка", value: "350" },
+              { label: "Штаны", value: "350" },
+              { label: "Ремень", value: "350" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/monochrome.png",
+            gallery: [
+              "/images/sets/monochrome.png",
+              "/images/sets/monochrome_blue.png",
+              "/images/sets/monochrome_green.png",
+              "/images/sets/monochrome_orange.png",
+              "/images/sets/monochrome_pink.png",
+              "/images/sets/monochrome_red.png"
+            ],
+            slots: [
+              { label: "Броня", value: "450" },
+              { label: "Куртка", value: "450" },
+              { label: "Штаны", value: "450" },
+              { label: "Ремень", value: "450" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "nova",
+        category: "donation",
+        name: "Nova",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/nova.png",
+            gallery: [
+              "/images/sets/nova.png",
+              "/images/sets/nova_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/nova.png",
+            gallery: [
+              "/images/sets/nova.png",
+              "/images/sets/nova_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/hips.png",
+            gallery: [
+              "/images/sets/hips.png",
+              "/images/sets/hips_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "oni",
+        category: "donation",
+        name: "Oni",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/oni.png",
+            gallery: ["/images/sets/oni.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/oni.png",
+            gallery: ["/images/sets/oni.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/oni.png",
+            gallery: ["/images/sets/oni.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "possessed",
+        category: "donation",
+        name: "Possessed",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/possessed.png",
+            gallery: ["/images/sets/possessed.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/possessed.png",
+            gallery: ["/images/sets/possessed.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/possessed.png",
+            gallery: ["/images/sets/possessed.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "prime",
+        category: "donation",
+        name: "Prime",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/prime.png",
+            gallery: [
+              "/images/sets/prime.png",
+              "/images/sets/prime_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/prime.png",
+            gallery: [
+              "/images/sets/prime.png",
+              "/images/sets/prime_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/prime.png",
+            gallery: [
+              "/images/sets/prime.png",
+              "/images/sets/prime_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "ratnikm",
+        category: "exclusive",
+        name: "RatnikM",
+        image: "/images/sets/ratnik.png",
+        gallery: ["/images/sets/ratnik.png"],
+        slots: [
+          { label: "Броня", value: "500" },
+          { label: "Куртка", value: "500" },
+          { label: "Штаны", value: "500" },
+          { label: "Ремень", value: "500" }
+        ],
+        attachments: [
+          { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "85%" },
+          { label: "Защита от порезов", value: "75%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ]
+      },
+      {
+        slug: "reddead",
+        category: "donation",
+        name: "Red Dead",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/red_dead.png",
+            gallery: ["/images/sets/red_dead.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/red_dead.png",
+            gallery: ["/images/sets/red_dead.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/red_dead.png",
+            gallery: ["/images/sets/red_dead.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "roxxon",
+        category: "crystals",
+        name: "Roxxon",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/roxxon_black_set.png",
+            gallery: [
+              "/images/sets/roxxon_black_set.png",
+              "/images/sets/roxxon_red_set.png"
+            ],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" },
+              { label: "Ремень", value: "200" },
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/roxxon_black_set.png",
+            gallery: [
+              "/images/sets/roxxon_black_set.png",
+              "/images/sets/roxxon_red_set.png"
+            ],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" },
+              { label: "Ремень", value: "300" },
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 6, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "caj",
+        category: "trade",
+        name: "CAJ",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/rusher.png",
+            gallery: [
+              "/images/sets/rusher.png",
+              "/images/sets/rusher_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "100" },
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/rusher.png",
+            gallery: [
+              "/images/sets/rusher.png",
+              "/images/sets/rusher_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "150" },
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 1, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/rusher.png",
+            gallery: [
+              "/images/sets/rusher.png",
+              "/images/sets/rusher_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/rusher.png",
+            gallery: [
+              "/images/sets/rusher.png",
+              "/images/sets/rusher_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "250" },
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/rusher.png",
+            gallery: [
+              "/images/sets/rusher.png",
+              "/images/sets/rusher_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "sentinel",
+        category: "crystals",
+        name: "Sentinel",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/sentinel_set.png",
+            gallery: [
+              "/images/sets/sentinel_set.png",
+              "/images/sets/sentinel_camo1_set.png",
+              "/images/sets/sentinel_camo2_set.png",
+              "/images/sets/sentinel_camo3_set.png"
+            ],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" },
+              { label: "Ремень", value: "200" },
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/sentinel_set.png",
+            gallery: [
+              "/images/sets/sentinel_set.png",
+              "/images/sets/sentinel_camo1_set.png",
+              "/images/sets/sentinel_camo2_set.png",
+              "/images/sets/sentinel_camo3_set.png"
+            ],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" },
+              { label: "Ремень", value: "300" },
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 6, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "shadow",
+        category: "donation",
+        name: "Shadow",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/shadow.png",
+            gallery: ["/images/sets/shadow.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/shadow.png",
+            gallery: ["/images/sets/shadow.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/shadow.png",
+            gallery: ["/images/sets/shadow.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "shepard",
+        category: "trade",
+        name: "Shepard",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/shepard.png",
+            gallery: ["/images/sets/shepard.png"],
+            slots: [
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/shepard.png",
+            gallery: ["/images/sets/shepard.png"],
+            slots: [
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/shepard.png",
+            gallery: ["/images/sets/shepard.png"],
+            slots: [
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/shepard.png",
+            gallery: ["/images/sets/shepard.png"],
+            slots: [
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/shepard.png",
+            gallery: ["/images/sets/shepard.png"],
+            slots: [
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "sinister",
+        category: "donation",
+        name: "Sinister",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/sinister.png",
+            gallery: ["/images/sets/sinister.png"],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/sinister.png",
+            gallery: ["/images/sets/sinister.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/sinister.png",
+            gallery: ["/images/sets/sinister.png"],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "sprinkles",
+        category: "donation",
+        name: "Sprinkles",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/sprinkles.png",
+            gallery: [
+              "/images/sets/sprinkles.png",
+              "/images/sets/sprinkles_green.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/sprinkles.png",
+            gallery: [
+              "/images/sets/sprinkles.png",
+              "/images/sets/sprinkles_green.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/sprinkles.png",
+            gallery: [
+              "/images/sets/sprinkles.png",
+              "/images/sets/sprinkles_green.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "streetwarrior",
+        category: "crystals",
+        name: "Street Warrior",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/streetwarrior_set.png",
+            gallery: [
+              "/images/sets/streetwarrior_set.png",
+              "/images/sets/streetwarrior_camo1_set.png",
+              "/images/sets/streetwarrior_camo2_set.png",
+              "/images/sets/streetwarrior_camo3_set.png",
+              "/images/sets/streetwarrior_camo4_set.png"
+            ],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" },
+              { label: "Ремень", value: "200" },
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/streetwarrior_set.png",
+            gallery: [
+              "/images/sets/streetwarrior_set.png",
+              "/images/sets/streetwarrior_camo1_set.png",
+              "/images/sets/streetwarrior_camo2_set.png",
+              "/images/sets/streetwarrior_camo3_set.png",
+              "/images/sets/streetwarrior_camo4_set.png"
+            ],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" },
+              { label: "Ремень", value: "300" },
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 6, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "taiga",
+        category: "donation",
+        name: "Taiga",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/taiga.png",
+            gallery: [
+              "/images/sets/taiga.png",
+              "/images/sets/taiga_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/taiga.png",
+            gallery: [
+              "/images/sets/taiga.png",
+              "/images/sets/taiga_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/taiga.png",
+            gallery: [
+              "/images/sets/taiga.png",
+              "/images/sets/taiga_black.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "taladro",
+        category: "exclusive",
+        name: "Taladro",
+        image: "/images/sets/taladro1_black.png",
+        gallery: [
+          "/images/sets/taladro1_black.png",
+          "/images/sets/taladro1_white.png",
+          "/images/sets/taladro1_camo1.png",
+          "/images/sets/taladro1_camo2.png",
+          "/images/sets/taladro1_camo3.png",
+          "/images/sets/taladro1_camo4.png",
+          "/images/sets/taladro2_black.png",
+          "/images/sets/taladro2_white.png",
+          "/images/sets/taladro2_camo1.png",
+          "/images/sets/taladro2_camo2.png",
+          "/images/sets/taladro2_camo3.png",
+          "/images/sets/taladro2_camo4.png"
+        ],
+        slots: [
+          { label: "Броня", value: "1000" },
+          { label: "Куртка", value: "1000" },
+          { label: "Штаны", value: "1000" },
+          { label: "Ремень", value: "500" }
+        ],
+        attachments: [
+          { name: "Удочка", count: 1, image: "/images/sets/attach/rod.png" },
+          { name: "Гаечный ключ", count: 1, image: "/images/sets/attach/wrench.png" },
+          { name: "Лебёдка", count: 1, image: "/images/sets/attach/winch.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+          { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+          { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "85%" },
+          { label: "Защита от порезов", value: "85%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ]
+      },
+      {
+        slug: "thirst",
+        category: "trade",
+        name: "Thirst",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/thirst.png",
+            gallery: ["/images/sets/thirst.png"],
+            slots: [
+              { label: "Броня", value: "100" },
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/thirst.png",
+            gallery: ["/images/sets/thirst.png"],
+            slots: [
+              { label: "Броня", value: "150" },
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 1, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/thirst.png",
+            gallery: ["/images/sets/thirst.png"],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/thirst.png",
+            gallery: ["/images/sets/thirst.png"],
+            slots: [
+              { label: "Броня", value: "250" },
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/thirst.png",
+            gallery: ["/images/sets/thirst.png"],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "Ремень V1",
+            image: "/images/clothing/thirst_belt.png",
+            gallery: ["/images/clothing/thirst_belt.png"],
+            slots: [
+              { label: "Ремень", value: "100" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "Ремень V2",
+            image: "/images/clothing/thirst_belt.png",
+            gallery: ["/images/clothing/thirst_belt.png"],
+            slots: [
+              { label: "Ремень", value: "200" }
+            ],
+            attachments: [],
+            protection: []
+          }
+        ]
+      },
+      {
+        slug: "trooper",
+        category: "trade",
+        name: "Trooper",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/trooper.png",
+            gallery: ["/images/sets/trooper.png"],
+            slots: [
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/trooper.png",
+            gallery: ["/images/sets/trooper.png"],
+            slots: [
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/trooper.png",
+            gallery: ["/images/sets/trooper.png"],
+            slots: [
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/trooper.png",
+            gallery: ["/images/sets/trooper.png"],
+            slots: [
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/trooper.png",
+            gallery: ["/images/sets/trooper.png"],
+            slots: [
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "unicorn",
+        category: "donation",
+        name: "Unicorn",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/unicorn_pink.png",
+            gallery: [
+              "/images/sets/unicorn_pink.png",
+              "/images/sets/unicorn_orange.png",
+              "/images/sets/unicorn_blue.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/unicorn_pink.png",
+            gallery: [
+              "/images/sets/unicorn_pink.png",
+              "/images/sets/unicorn_orange.png",
+              "/images/sets/unicorn_blue.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/unicorn_pink.png",
+            gallery: [
+              "/images/sets/unicorn_pink.png",
+              "/images/sets/unicorn_orange.png",
+              "/images/sets/unicorn_blue.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "unicornnohorn",
+        category: "donation",
+        name: "Unicorn NoHorn",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/unicorn_nohorn_pink.png",
+            gallery: [
+              "/images/sets/unicorn_nohorn_pink.png",
+              "/images/sets/unicorn_nohorn_orange.png",
+              "/images/sets/unicorn_nohorn_blue.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/unicorn_nohorn_pink.png",
+            gallery: [
+              "/images/sets/unicorn_nohorn_pink.png",
+              "/images/sets/unicorn_nohorn_orange.png",
+              "/images/sets/unicorn_nohorn_blue.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/unicorn_nohorn_pink.png",
+            gallery: [
+              "/images/sets/unicorn_nohorn_pink.png",
+              "/images/sets/unicorn_nohorn_orange.png",
+              "/images/sets/unicorn_nohorn_blue.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "velikan",
+        category: "donation",
+        name: "Velokan",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/velikan.png",
+            gallery: [
+              "/images/sets/velikan.png",
+              "/images/sets/velikan_black.png",
+              "/images/sets/velikan_nosmile.png",
+              "/images/sets/velikan_black_nosmile.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/velikan.png",
+            gallery: [
+              "/images/sets/velikan.png",
+              "/images/sets/velikan_black.png",
+              "/images/sets/velikan_nosmile.png",
+              "/images/sets/velikan_black_nosmile.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/velikan.png",
+            gallery: [
+              "/images/sets/velikan.png",
+              "/images/sets/velikan_black.png",
+              "/images/sets/velikan_nosmile.png",
+              "/images/sets/velikan_black_nosmile.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "voitelnica",
+        category: "donation",
+        name: "Voitelnica",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/voitelnica.png",
+            gallery: [
+              "/images/sets/voitelnica.png",
+              "/images/sets/voitelnica_black.png",
+              "/images/sets/voitelnica_camo1.png",
+              "/images/sets/voitelnica_camo2.png",
+              "/images/sets/voitelnica_camo3.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/voitelnica.png",
+            gallery: [
+              "/images/sets/voitelnica.png",
+              "/images/sets/voitelnica_black.png",
+              "/images/sets/voitelnica_camo1.png",
+              "/images/sets/voitelnica_camo2.png",
+              "/images/sets/voitelnica_camo3.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/voitelnica.png",
+            gallery: [
+              "/images/sets/voitelnica.png",
+              "/images/sets/voitelnica_black.png",
+              "/images/sets/voitelnica_camo1.png",
+              "/images/sets/voitelnica_camo2.png",
+              "/images/sets/voitelnica_camo3.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "warfighter",
+        category: "trade",
+        name: "Warfighter",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/warfighter.png",
+            gallery: ["/images/sets/warfighter.png"],
+            slots: [
+              { label: "Броня", value: "100" },
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/warfighter.png",
+            gallery: ["/images/sets/warfighter.png"],
+            slots: [
+              { label: "Броня", value: "150" },
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 1, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/warfighter.png",
+            gallery: ["/images/sets/warfighter.png"],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/warfighter.png",
+            gallery: ["/images/sets/warfighter.png"],
+            slots: [
+              { label: "Броня", value: "250" },
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/warfighter.png",
+            gallery: ["/images/sets/warfighter.png"],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "Ремень V1",
+            image: "/images/clothing/warfighter_belt.png",
+            gallery: ["/images/clothing/warfighter_belt.png"],
+            slots: [
+              { label: "Ремень", value: "100" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "Ремень V2",
+            image: "/images/clothing/warfighter_belt.png",
+            gallery: ["/images/clothing/warfighter_belt.png"],
+            slots: [
+              { label: "Ремень", value: "200" }
+            ],
+            attachments: [],
+            protection: []
+          }
+        ]
+      },
+      {
+        slug: "whimsytrade",
+        category: "trade",
+        name: "Whimsy",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "100" },
+              { label: "Куртка", value: "100" },
+              { label: "Штаны", value: "100" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "150" },
+              { label: "Куртка", value: "150" },
+              { label: "Штаны", value: "150" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 1, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "200" },
+              { label: "Куртка", value: "200" },
+              { label: "Штаны", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "250" },
+              { label: "Куртка", value: "250" },
+              { label: "Штаны", value: "250" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "300" },
+              { label: "Куртка", value: "300" },
+              { label: "Штаны", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "whimsy",
+        category: "donation",
+        name: "Whimsy",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "500" },
+              { label: "Куртка", value: "500" },
+              { label: "Штаны", value: "500" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "75%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          },
+          {
+            label: "TOP",
+            image: "/images/sets/whimsy.png",
+            gallery: [
+              "/images/sets/whimsy.png",
+              "/images/sets/whimsy_black.png",
+              "/images/sets/whimsy_orange.png"
+            ],
+            slots: [
+              { label: "Броня", value: "1000" },
+              { label: "Куртка", value: "1000" },
+              { label: "Штаны", value: "1000" },
+              { label: "Ремень", value: "1000" },
+              { label: "Рюкзак", value: "1000" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+              { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+              { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "85%" },
+              { label: "Защита от порезов", value: "85%" },
+              { label: "Защита от хим. заражения", value: "100%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "widow",
+        category: "donation",
+        name: "Widow Phantom",
+        image: "/images/sets/widow.png",
+        gallery: [
+          "/images/sets/widow.png",
+          "/images/sets/widow_white.png",
+          "/images/sets/widow_yellow.png"
+        ],
+        slots: [
+          { label: "Броня", value: "1000" },
+          { label: "Куртка", value: "1000" },
+          { label: "Штаны", value: "1000" },
+          { label: "Ремень", value: "1000" },
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+          { name: "Удочка", count: 1, image: "/images/sets/attach/rod.png" },
+          { name: "Гаечный ключ", count: 1, image: "/images/sets/attach/wrench.png" },
+          { name: "Лебёдка", count: 1, image: "/images/sets/attach/winch.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+          { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+          { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "95%" },
+          { label: "Защита от порезов", value: "95%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ]
+      },
+      {
+        slug: "yaka",
+        category: "donation",
+        name: "Yaka Phantom",
+        image: "/images/sets/yaka.png",
+        gallery: [
+          "/images/sets/yaka.png",
+          "/images/sets/yaka_green.png",
+          "/images/sets/yaka_pink.png",
+          "/images/sets/yaka_white.png",
+          "/images/sets/yaka_japan.png",
+          "/images/sets/yaka_bape.png",
+          "/images/sets/yaka_bape2.png",
+          "/images/sets/yaka_bape3.png"
+        ],
+        slots: [
+          { label: "Броня", value: "1000" },
+          { label: "Куртка", value: "1000" },
+          { label: "Штаны", value: "1000" },
+          { label: "Ремень", value: "1000" },
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+          { name: "Удочка", count: 1, image: "/images/sets/attach/rod.png" },
+          { name: "Гаечный ключ", count: 1, image: "/images/sets/attach/wrench.png" },
+          { name: "Лебёдка", count: 1, image: "/images/sets/attach/winch.png" },
+          { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+          { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+          { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+          { name: "Оружие", count: 10, image: "/images/sets/attach/weapon.png" },
+          { name: "Магазин", count: 14, image: "/images/sets/attach/magazine.png" }
+        ],
+        protection: [
+          { label: "Защита от ударов", value: "95%" },
+          { label: "Защита от порезов", value: "95%" },
+          { label: "Защита от хим. заражения", value: "100%" }
+        ]
+      },
+      {
+        slug: "vesttrade",
+        category: "trade",
+        name: "Невидимый бронежилет",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/vest_trade_1.png",
+            gallery: ["/images/sets/vest_trade_1.png"],
+            slots: [
+              { label: "Броня", value: "100" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "60%" },
+              { label: "Защита от порезов", value: "50%" }
+            ]
+          },
+          {
+            label: "V2",
+            image: "/images/sets/vest_trade_2.png",
+            gallery: ["/images/sets/vest_trade_2.png"],
+            slots: [
+              { label: "Броня", value: "150" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 1, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "65%" },
+              { label: "Защита от порезов", value: "55%" }
+            ]
+          },
+          {
+            label: "V3",
+            image: "/images/sets/vest_trade_3.png",
+            gallery: ["/images/sets/vest_trade_3.png"],
+            slots: [
+              { label: "Броня", value: "200" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "70%" },
+              { label: "Защита от порезов", value: "60%" }
+            ]
+          },
+          {
+            label: "V4",
+            image: "/images/sets/vest_trade_4.png",
+            gallery: ["/images/sets/vest_trade_4.png"],
+            slots: [
+              { label: "Броня", value: "250" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "75%" },
+              { label: "Защита от порезов", value: "65%" }
+            ]
+          },
+          {
+            label: "V5",
+            image: "/images/sets/vest_trade_5.png",
+            gallery: ["/images/sets/vest_trade_5.png"],
+            slots: [
+              { label: "Броня", value: "300" }
+            ],
+            attachments: [
+              { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+              { name: "Клей", count: 2, image: "/images/sets/attach/bf_glue.png" },
+              { name: "Дезинфектор", count: 1, image: "/images/sets/attach/desinfector.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" },
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" }
+            ],
+            protection: [
+              { label: "Защита от ударов", value: "80%" },
+              { label: "Защита от порезов", value: "70%" }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "vest",
+        category: "donation",
+        name: "Невидимый бронежилет",
+        image: "/images/sets/vest.png",
+        gallery: ["/images/sets/vest.png"],
+        slots: [
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+            { name: "Нож", count: 1, image: "/images/sets/attach/knife.png" },
+            { name: "Топорик", count: 1, image: "/images/sets/attach/hatchet.png" },
+            { name: "Дезинфектор", count: 2, image: "/images/sets/attach/desinfector.png" },
+            { name: "Клей", count: 4, image: "/images/sets/attach/bf_glue.png" },
+            { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" },
+            { name: "Магазин", count: 6, image: "/images/sets/attach/magazine.png" }
+          ],
+        protection: [
+          { label: "Защита от ударов", value: "85%" },
+          { label: "Защита от порезов", value: "85%" }
+        ]
+      },
+      {
+        slug: "backpacktrade",
+        category: "trade",
+        name: "Невидимый рюкзак",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/backpack_trade_1.png",
+            gallery: ["/images/sets/backpack_trade_1.png"],
+            slots: [
+              { label: "Рюкзак", value: "100" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "V2",
+            image: "/images/sets/backpack_trade_2.png",
+            gallery: ["/images/sets/backpack_trade_2.png"],
+            slots: [
+              { label: "Рюкзак", value: "150" }
+            ],
+            attachments: [
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" },
+              { name: "Оружие", count: 1, image: "/images/sets/attach/weapon.png" }
+            ],
+            protection: []
+          },
+          {
+            label: "V3",
+            image: "/images/sets/backpack_trade_3.png",
+            gallery: ["/images/sets/backpack_trade_3.png"],
+            slots: [
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [
+              { name: "Магазин", count: 2, image: "/images/sets/attach/magazine.png" },
+              { name: "Оружие", count: 2, image: "/images/sets/attach/weapon.png" }
+            ],
+            protection: []
+          },
+          {
+            label: "V4",
+            image: "/images/sets/backpack_trade_4.png",
+            gallery: ["/images/sets/backpack_trade_4.png"],
+            slots: [
+              { label: "Рюкзак", value: "250" }
+            ],
+            attachments: [
+              { name: "Магазин", count: 3, image: "/images/sets/attach/magazine.png" },
+              { name: "Оружие", count: 3, image: "/images/sets/attach/weapon.png" }
+            ],
+            protection: []
+          },
+          {
+            label: "V5",
+            image: "/images/sets/backpack_trade_5.png",
+            gallery: ["/images/sets/backpack_trade_5.png"],
+            slots: [
+              { label: "Рюкзак", value: "300" }
+            ],
+            attachments: [
+              { name: "Магазин", count: 4, image: "/images/sets/attach/magazine.png" },
+              { name: "Оружие", count: 4, image: "/images/sets/attach/weapon.png" }
+            ],
+            protection: []
+          }
+        ]
+      },
+      {
+        slug: "backpack",
+        category: "donation",
+        name: "Невидимый рюкзак",
+        image: "/images/sets/backpack.png",
+        gallery: ["/images/sets/backpack.png"],
+        slots: [
+          { label: "Рюкзак", value: "1000" }
+        ],
+        attachments: [
+              { name: "Магазин", count: 8, image: "/images/sets/attach/magazine.png" },
+              { name: "Оружие", count: 8, image: "/images/sets/attach/weapon.png" }
+          ],
+        protection: []
+      },
+      {
+        slug: "belttrade",
+        category: "trade",
+        name: "Невидимый ремень",
+        versions: [
+          {
+            label: "V1",
+            image: "/images/sets/belt.png",
+            gallery: ["/images/sets/belt.png"],
+            slots: [
+              { label: "Рюкзак", value: "100" }
+            ],
+            attachments: [],
+            protection: []
+          },
+          {
+            label: "V2",
+            image: "/images/sets/belt.png",
+            gallery: ["/images/sets/belt.png"],
+            slots: [
+              { label: "Рюкзак", value: "200" }
+            ],
+            attachments: [],
+            protection: []
+          }
+        ]
+      },
+      {
+        slug: "belt",
+        category: "donation",
+        name: "Невидимый ремень",
+        image: "/images/sets/belt.png",
+        gallery: ["/images/sets/belt.png"],
+        slots: [
+          { label: "Ремень", value: "1000" }
+        ],
+        attachments: [],
+        protection: []
+      },
+    ];
+
+    const filterRoot = document.getElementById("outfitFilterNav");
+    const searchInput = document.getElementById("outfitSearchInput");
+    const catalogRoot = document.getElementById("outfitCatalog");
+    const modal = document.getElementById("outfitModal");
+    const modalImage = modal ? modal.querySelector(".img-modal__image") : null;
+    const modalClose = modal ? modal.querySelector(".img-modal__close") : null;
+    const modalPrev = modal ? modal.querySelector(".img-modal__nav--prev") : null;
+    const modalNext = modal ? modal.querySelector(".img-modal__nav--next") : null;
+
+    if (!filterRoot || !searchInput || !catalogRoot) return;
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll("\"", "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    const STORAGE_KEYS = {
+      category: "yw-clothing-category",
+      query: "yw-clothing-query",
+      scroll: "yw-clothing-scroll",
+      versions: "yw-clothing-versions",
+      viewers: "yw-clothing-viewers"
+    };
+
+    let currentCategory = "all";
+    let currentQuery = "";
+    const outfitViewerState = new Map();
+    const outfitVersionState = new Map();
+    const outfitDetailViewerState = new Map();
+    let modalGallery = [];
+    let modalIndex = 0;
+    let modalTitle = "";
+
+    function saveMapState(key, map) {
+      try {
+        localStorage.setItem(key, JSON.stringify(Object.fromEntries(map)));
+      } catch (_) {}
+    }
+
+    function restoreMapState(key, map) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        Object.entries(parsed).forEach(([entryKey, value]) => {
+          if (Number.isFinite(Number(value))) {
+            map.set(entryKey, Number(value));
+          }
+        });
+      } catch (_) {}
+    }
+
+    restoreMapState(STORAGE_KEYS.versions, outfitVersionState);
+    restoreMapState(STORAGE_KEYS.viewers, outfitViewerState);
+
+    try {
+      const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
+      if (savedCategory) currentCategory = savedCategory;
+      const savedQuery = localStorage.getItem(STORAGE_KEYS.query);
+      if (savedQuery) currentQuery = savedQuery;
+    } catch (_) {}
+
+    function renderCatalog(activeCategory = "all", query = "") {
+      catalogRoot.innerHTML = "";
+
+      const normalizedQuery = query.trim().toLowerCase();
+
+      const filteredOutfits = outfits.filter((outfit) => {
+        const matchCategory = activeCategory === "all" || outfit.category === activeCategory;
+        const versionLabels = Array.isArray(outfit.versions)
+          ? outfit.versions.map((item) => item.label || "").join(" ")
+          : "";
+        const searchText = `${outfit.name} ${outfit.version || ""} ${versionLabels}`.toLowerCase();
+        const matchQuery = !normalizedQuery || searchText.includes(normalizedQuery);
+        return matchCategory && matchQuery;
+      });
+
+      filteredOutfits.forEach((outfit) => {
+      const versions = Array.isArray(outfit.versions) && outfit.versions.length
+        ? outfit.versions
+        : [null];
+      const currentVersionIndex = outfitVersionState.has(outfit.slug)
+        ? outfitVersionState.get(outfit.slug)
+        : 0;
+      const safeVersionIndex = ((currentVersionIndex % versions.length) + versions.length) % versions.length;
+      outfitVersionState.set(outfit.slug, safeVersionIndex);
+
+      const activeVersion = versions[safeVersionIndex] || outfit;
+      const gallery = Array.isArray(activeVersion.gallery) && activeVersion.gallery.length
+        ? activeVersion.gallery
+        : [activeVersion.image];
+      const currentIndex = outfitViewerState.has(outfit.slug)
+        ? outfitViewerState.get(outfit.slug)
+        : 0;
+      const safeIndex = ((currentIndex % gallery.length) + gallery.length) % gallery.length;
+      outfitViewerState.set(outfit.slug, safeIndex);
+
+      const detailsSource = Array.isArray(activeVersion.details) && activeVersion.details.length
+        ? activeVersion.details
+        : Array.isArray(outfit.details) && outfit.details.length
+          ? outfit.details
+          : [];
+
+      const slots = activeVersion.slots
+        .map((item) => `
+          <div class="outfit-slot-item">
+            <span>${escapeHtml(item.label)}</span>
+            <strong>${escapeHtml(item.value)}</strong>
+          </div>
+        `)
+        .join("");
+
+      const attachmentsSource = Array.isArray(activeVersion.attachments) ? activeVersion.attachments : [];
+      const protectionSource = Array.isArray(activeVersion.protection) ? activeVersion.protection : [];
+
+      const attachments = attachmentsSource
+        .map((item, index) => {
+          const attachment = typeof item === "string"
+            ? { name: item, count: 1, image: "" }
+            : {
+                name: item.name || `Аттач ${index + 1}`,
+                count: item.count || 1,
+                image: item.image || ""
+              };
+
+          return `
+          <div class="outfit-attach">
+            <div class="outfit-attach__box">
+              ${attachment.image
+                ? `<img class="outfit-attach__img" src="${escapeHtml(attachment.image)}" alt="${escapeHtml(attachment.name)}">`
+                : `<span>+</span>`}
+              ${attachment.count > 1 ? `<strong class="outfit-attach__count">x${escapeHtml(attachment.count)}</strong>` : ""}
+            </div>
+            <div class="outfit-attach__name">${escapeHtml(attachment.name)}</div>
+          </div>
+        `;
+        })
+        .join("");
+
+      const protection = protectionSource
+        .map((item) => `
+          <div class="outfit-protection__row">
+            <span>${escapeHtml(item.label)}</span>
+            <strong>${escapeHtml(item.value)}</strong>
+          </div>
+        `)
+        .join("");
+
+      const details = detailsSource
+        .map((item, index) => {
+          const detail = typeof item === "string"
+            ? { title: `Доп. изображение ${index + 1}`, image: item, gallery: [item] }
+            : {
+                title: item.title || `Доп. изображение ${index + 1}`,
+                image: item.image || "",
+                gallery: Array.isArray(item.gallery) && item.gallery.length
+                  ? item.gallery
+                  : (item.image ? [item.image] : [])
+              };
+
+          if (!detail.image && !detail.gallery.length) return "";
+
+          const detailGallery = detail.gallery.length ? detail.gallery : [detail.image];
+          const detailKey = `${outfit.slug}-${safeVersionIndex}-detail-${index}`;
+          const currentDetailIndex = outfitDetailViewerState.has(detailKey)
+            ? outfitDetailViewerState.get(detailKey)
+            : 0;
+          const safeDetailIndex = ((currentDetailIndex % detailGallery.length) + detailGallery.length) % detailGallery.length;
+          outfitDetailViewerState.set(detailKey, safeDetailIndex);
+          const currentDetailImage = detailGallery[safeDetailIndex];
+
+          return `
+            <div class="outfit-detail-card${detailGallery.length <= 1 ? " is-single" : ""}" data-outfit-detail-card="${escapeHtml(detailKey)}">
+              <button
+                class="outfit-detail-preview"
+                type="button"
+                data-outfit-detail-zoom="true"
+                data-outfit-detail-key="${escapeHtml(detailKey)}"
+                data-outfit-detail-title="${escapeHtml(detail.title)}"
+                data-outfit-detail-gallery='${escapeHtml(JSON.stringify(detailGallery))}'
+              >
+                <img src="${escapeHtml(currentDetailImage)}" alt="${escapeHtml(detail.title)}">
+              </button>
+              <button class="outfit-detail-arrow outfit-detail-arrow--prev" type="button" aria-label="Предыдущее изображение" data-outfit-detail-arrow="${escapeHtml(detailKey)}" data-direction="-1"${detailGallery.length <= 1 ? " hidden" : ""}>‹</button>
+              <button class="outfit-detail-arrow outfit-detail-arrow--next" type="button" aria-label="Следующее изображение" data-outfit-detail-arrow="${escapeHtml(detailKey)}" data-direction="1"${detailGallery.length <= 1 ? " hidden" : ""}>›</button>
+              <span>${escapeHtml(detail.title)}</span>
+            </div>
+          `;
+        })
+        .join("");
+
+      const card = document.createElement("article");
+      card.className = "outfit-card";
+      card.id = outfit.slug;
+      card.dataset.category = outfit.category || "";
+      card.innerHTML = `
+        <div class="outfit-card__head">
+          <h3>
+            ${escapeHtml(`${outfit.name}${activeVersion.label ? ` ${activeVersion.label}` : ""}`)}
+          </h3>
+        </div>
+        <div class="outfit-card__layout">
+          <div class="outfit-viewer" data-outfit-viewer="${escapeHtml(outfit.slug)}">
+            <button
+              class="outfit-preview"
+              type="button"
+              data-outfit-zoom="true"
+              data-outfit-slug="${escapeHtml(outfit.slug)}"
+              data-outfit-name="${escapeHtml(`${outfit.name}${activeVersion.label ? ` ${activeVersion.label}` : ""}`)}"
+            >
+              <img
+                src="${escapeHtml(gallery[safeIndex])}"
+                alt="${escapeHtml(`${outfit.name}${activeVersion.label ? ` ${activeVersion.label}` : ""}`)}"
+                data-outfit-preview-img="${escapeHtml(outfit.slug)}"
+              >
+            </button>
+            <button class="outfit-arrow outfit-arrow--prev" type="button" aria-label="Предыдущий цвет" data-outfit-arrow="${escapeHtml(outfit.slug)}" data-direction="-1"${gallery.length <= 1 ? " hidden" : ""}>‹</button>
+            <button class="outfit-arrow outfit-arrow--next" type="button" aria-label="Следующий цвет" data-outfit-arrow="${escapeHtml(outfit.slug)}" data-direction="1"${gallery.length <= 1 ? " hidden" : ""}>›</button>
+          </div>
+          <div class="outfit-card__body">
+            <div class="outfit-card__grid">
+              ${versions.length > 1 ? `
+              <section class="outfit-panel outfit-panel--wide outfit-panel--version-switch">
+                <div class="outfit-version-switch">
+                  ${versions.map((version, versionIndex) => `
+                    <button
+                      class="outfit-version-btn${versionIndex === safeVersionIndex ? " is-active" : ""}"
+                      type="button"
+                      data-outfit-version-btn="${escapeHtml(outfit.slug)}"
+                      data-version-index="${versionIndex}"
+                    >${escapeHtml(version.label || `V${versionIndex + 1}`)}</button>
+                  `).join("")}
+                </div>
+              </section>` : ""}
+              <section class="outfit-panel outfit-panel--wide">
+                <span class="outfit-panel__label">Слоты по предметам</span>
+                <div class="outfit-slot-grid">${slots}</div>
+              </section>
+              ${attachmentsSource.length ? `
+              <section class="outfit-panel outfit-panel--wide">
+                <span class="outfit-panel__label">Аттачи</span>
+                <div class="outfit-attach-grid">${attachments}</div>
+              </section>` : ""}
+              ${protectionSource.length ? `
+              <section class="outfit-panel outfit-panel--wide">
+                <span class="outfit-panel__label">Защита</span>
+                <div class="outfit-protection">${protection}</div>
+              </section>` : ""}
+              ${details ? `
+              <section class="outfit-panel outfit-panel--wide">
+                <span class="outfit-panel__label">Дополнительная информация</span>
+                <p class="outfit-detail-note">Поменять визуал можно взяв предмет одежды в руки и нажав кнопку "Сменить вид".</p>
+                <div class="outfit-detail-grid">${details}</div>
+              </section>` : ""}
+            </div>
+          </div>
+        </div>
+      `;
+      catalogRoot.appendChild(card);
+      });
+
+      if (!filteredOutfits.length) {
+        const empty = document.createElement("div");
+        empty.className = "card info-card";
+        empty.innerHTML = `
+          <h2>Ничего не найдено</h2>
+          <p class="info-text">Попробуйте сменить категорию или изменить поисковый запрос.</p>
+        `;
+        catalogRoot.appendChild(empty);
+      }
+    }
+
+    const filterButtons = [
+      { id: "all", label: "Все" },
+      ...outfitCategories
+    ];
+
+    function setActiveFilter(categoryId) {
+      currentCategory = categoryId;
+      try {
+        localStorage.setItem(STORAGE_KEYS.category, currentCategory);
+      } catch (_) {}
+      document.querySelectorAll(".outfit-filter-btn").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.category === categoryId);
+      });
+      renderCatalog(currentCategory, currentQuery);
+    }
+
+    filterButtons.forEach((item) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "outfit-filter-btn";
+      button.dataset.category = item.id;
+      button.textContent = item.label;
+      button.addEventListener("click", () => setActiveFilter(item.id));
+      filterRoot.appendChild(button);
+    });
+
+    searchInput.addEventListener("input", () => {
+      currentQuery = searchInput.value || "";
+      try {
+        localStorage.setItem(STORAGE_KEYS.query, currentQuery);
+      } catch (_) {}
+      renderCatalog(currentCategory, currentQuery);
+    });
+
+    searchInput.value = currentQuery;
+    setActiveFilter(currentCategory);
+
+    let restoreScrollPending = true;
+    window.addEventListener("load", () => {
+      if (!restoreScrollPending) return;
+      restoreScrollPending = false;
+      try {
+        const savedScroll = Number(localStorage.getItem(STORAGE_KEYS.scroll) || "0");
+        if (savedScroll > 0) {
+          window.scrollTo({ top: savedScroll, behavior: "auto" });
+        }
+      } catch (_) {}
+    });
+
+    let scrollSaveTimer = 0;
+    window.addEventListener("scroll", () => {
+      window.clearTimeout(scrollSaveTimer);
+      scrollSaveTimer = window.setTimeout(() => {
+        try {
+          localStorage.setItem(STORAGE_KEYS.scroll, String(window.scrollY || 0));
+        } catch (_) {}
+      }, 80);
+    }, { passive: true });
+
+    if (!modal || !modalImage || !modalClose) return;
+
+    function syncModal() {
+      if (!modalGallery.length) {
+        modalImage.src = "";
+        modalImage.alt = "";
+        if (modalPrev) modalPrev.hidden = true;
+        if (modalNext) modalNext.hidden = true;
+        return;
+      }
+
+      const safeIndex = ((modalIndex % modalGallery.length) + modalGallery.length) % modalGallery.length;
+      modalIndex = safeIndex;
+      modalImage.src = modalGallery[safeIndex] || "";
+      modalImage.alt = modalTitle || "Изображение";
+      if (modalPrev) modalPrev.hidden = modalGallery.length <= 1;
+      if (modalNext) modalNext.hidden = modalGallery.length <= 1;
+    }
+
+    function openModalGallery(gallery, index, title) {
+      modalGallery = Array.isArray(gallery) ? gallery.filter(Boolean) : [];
+      modalIndex = Number.isFinite(index) ? index : 0;
+      modalTitle = title || "Изображение";
+      syncModal();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      modalGallery = [];
+      modalIndex = 0;
+      modalTitle = "";
+      syncModal();
+    }
+
+    catalogRoot.addEventListener("click", (event) => {
+      const versionButton = event.target.closest("[data-outfit-version-btn]");
+      if (versionButton) {
+        const slug = versionButton.dataset.outfitVersionBtn || "";
+        const versionIndex = Number(versionButton.dataset.versionIndex || "0");
+        const outfit = outfits.find((item) => item.slug === slug);
+        if (!outfit || !Array.isArray(outfit.versions) || outfit.versions.length <= 1) return;
+
+        const safeVersionIndex = Math.max(0, Math.min(versionIndex, outfit.versions.length - 1));
+        outfitVersionState.set(slug, safeVersionIndex);
+        outfitViewerState.set(slug, 0);
+        saveMapState(STORAGE_KEYS.versions, outfitVersionState);
+        saveMapState(STORAGE_KEYS.viewers, outfitViewerState);
+        renderCatalog(currentCategory, currentQuery);
+        return;
+      }
+
+      const arrow = event.target.closest("[data-outfit-arrow]");
+      if (arrow) {
+        const slug = arrow.dataset.outfitArrow || "";
+        const direction = Number(arrow.dataset.direction || "0");
+        const outfit = outfits.find((item) => item.slug === slug);
+        if (!outfit || !direction) return;
+
+        const versions = Array.isArray(outfit.versions) && outfit.versions.length ? outfit.versions : [null];
+        const currentVersionIndex = outfitVersionState.has(slug) ? outfitVersionState.get(slug) : 0;
+        const activeVersion = versions[currentVersionIndex] || outfit;
+        const gallery = Array.isArray(activeVersion.gallery) && activeVersion.gallery.length
+          ? activeVersion.gallery
+          : [activeVersion.image];
+        if (gallery.length <= 1) return;
+
+        const currentIndex = outfitViewerState.has(slug) ? outfitViewerState.get(slug) : 0;
+        const nextIndex = (currentIndex + direction + gallery.length) % gallery.length;
+        outfitViewerState.set(slug, nextIndex);
+        saveMapState(STORAGE_KEYS.viewers, outfitViewerState);
+
+        const img = catalogRoot.querySelector(`[data-outfit-preview-img="${slug}"]`);
+        if (img) img.src = gallery[nextIndex];
+        return;
+      }
+
+      const detailPreview = event.target.closest("[data-outfit-detail-zoom]");
+      const detailArrow = event.target.closest("[data-outfit-detail-arrow]");
+      if (detailArrow) {
+        const detailKey = detailArrow.dataset.outfitDetailArrow || "";
+        const direction = Number(detailArrow.dataset.direction || "0");
+        const card = catalogRoot.querySelector(`[data-outfit-detail-card="${detailKey}"]`);
+        const previewButton = card ? card.querySelector("[data-outfit-detail-zoom]") : null;
+        if (!previewButton || !direction) return;
+
+        let detailGallery = [];
+        try {
+          detailGallery = JSON.parse(previewButton.dataset.outfitDetailGallery || "[]");
+        } catch (_) {
+          detailGallery = [];
+        }
+        if (!detailGallery.length) return;
+
+        const currentDetailIndex = outfitDetailViewerState.has(detailKey)
+          ? outfitDetailViewerState.get(detailKey)
+          : 0;
+        const nextDetailIndex = (currentDetailIndex + direction + detailGallery.length) % detailGallery.length;
+        outfitDetailViewerState.set(detailKey, nextDetailIndex);
+
+        const img = previewButton.querySelector("img");
+        if (img) img.src = detailGallery[nextDetailIndex];
+        return;
+      }
+
+      if (detailPreview) {
+        let detailGallery = [];
+        try {
+          detailGallery = JSON.parse(detailPreview.dataset.outfitDetailGallery || "[]");
+        } catch (_) {
+          detailGallery = [];
+        }
+        const detailKey = detailPreview.dataset.outfitDetailKey || "";
+        const currentDetailIndex = outfitDetailViewerState.has(detailKey)
+          ? outfitDetailViewerState.get(detailKey)
+          : 0;
+        openModalGallery(
+          detailGallery,
+          currentDetailIndex,
+          detailPreview.dataset.outfitDetailTitle || "Дополнительная информация"
+        );
+        return;
+      }
+
+      const preview = event.target.closest("[data-outfit-zoom]");
+      if (!preview) return;
+
+      const slug = preview.dataset.outfitSlug || "";
+      const outfit = outfits.find((item) => item.slug === slug);
+      if (!outfit) return;
+
+      const versions = Array.isArray(outfit.versions) && outfit.versions.length ? outfit.versions : [null];
+      const currentVersionIndex = outfitVersionState.has(slug) ? outfitVersionState.get(slug) : 0;
+      const activeVersion = versions[currentVersionIndex] || outfit;
+      const gallery = Array.isArray(activeVersion.gallery) && activeVersion.gallery.length
+        ? activeVersion.gallery
+        : [activeVersion.image];
+      const currentIndex = outfitViewerState.has(slug) ? outfitViewerState.get(slug) : 0;
+
+      openModalGallery(
+        gallery,
+        currentIndex,
+        preview.dataset.outfitName || "Сет одежды"
+      );
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    if (modalPrev) {
+      modalPrev.addEventListener("click", () => {
+        if (modalGallery.length <= 1) return;
+        modalIndex -= 1;
+        syncModal();
+      });
+    }
+    if (modalNext) {
+      modalNext.addEventListener("click", () => {
+        if (modalGallery.length <= 1) return;
+        modalIndex += 1;
+        syncModal();
+      });
+    }
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+        return;
+      }
+
+      if (!modal.classList.contains("is-open") || modalGallery.length <= 1) return;
+
+      if (event.key === "ArrowLeft") {
+        modalIndex -= 1;
+        syncModal();
+      }
+
+      if (event.key === "ArrowRight") {
+        modalIndex += 1;
+        syncModal();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

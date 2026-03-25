@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Транспорт YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Информация по машинам YourWorld: категории, модели и доступные расцветки.">
+  <meta property="og:title" content="Транспорт YourWorld">
+  <meta property="og:description" content="Каталог машин YourWorld по категориям с переключением цветов и увеличением изображений.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/vehicles-info/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body class="page-vehicles">
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/vehicles/prev.png" alt="Транспорт">
+      <div>
+        <h1>Транспорт</h1>
+        <p class="muted">Каталог транспорта YourWorld по категориям с переключением расцветок</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Описание</h2>
+    <p class="info-text">На этой странице собрана информация по машинам YourWorld. Внутри каждой категории показаны инфокарты моделей с параметрами: вместимостью, доступными аттачами и максимальной скоростью.</p>
+    <p class="info-note">Изображение машины можно открыть в увеличении. Если у модели есть разные цвета или версии кузова, их можно переключать прямо в карточке.</p>
+  </section>
+
+  <section class="card info-card">
+    <h2>Категории и поиск</h2>
+    <div class="vehicle-db-tabs" id="vehicleTabs" role="tablist" aria-label="Категории машин"></div>
+    <div class="search-block vehicle-db-search-block">
+      <input
+        class="search-input"
+        id="vehicleSearch"
+        type="search"
+        placeholder="Найти машину по названию в категории..."
+        autocomplete="off">
+    </div>
+    <div class="vehicle-db-search-empty hidden" id="vehicleSearchEmpty">Ничего не найдено.</div>
+  </section>
+
+  <section class="vehicle-stack" id="vehicleCatalog"></section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+
+<div class="img-modal" id="vehicleModal" aria-hidden="true">
+  <button class="img-modal__nav img-modal__nav--prev" type="button" aria-label="Предыдущее изображение">‹</button>
+  <button class="img-modal__close" type="button" aria-label="Закрыть">&times;</button>
+  <img class="img-modal__image" src="" alt="">
+  <button class="img-modal__nav img-modal__nav--next" type="button" aria-label="Следующее изображение">›</button>
+</div>
+
+<script src="/site.js"></script>
+<script src="/vehicles-info/data.js"></script>
+<script>
+  (() => {
+    const data = window.vehicleGuideData || {};
+    const vehicleCategories = Array.isArray(data.vehicleCategories) ? data.vehicleCategories : [];
+    const vehicleGroups = data.vehicleGroups || {};
+    const vehicleLibrary = data.vehicleLibrary || {};
+
+    const STORAGE_KEYS = {
+      category: "vehicles.category",
+      query: "vehicles.query",
+      scroll: "vehicles.scroll",
+      viewers: "vehicles.viewers"
+    };
+
+    const titleOverrides = {
+      atv: "ATV",
+      atv_noattach: "ATV без аттачей",
+      audi_rsq8: "Audi RSQ8",
+      audi_rsq8_mans1: "Audi RSQ8 Mans 1",
+      audi_rsq8_mans2: "Audi RSQ8 Mans 2",
+      audi_rsq8_mans3: "Audi RSQ8 Mans 3",
+      audi_rsq8_prior: "Audi RSQ8 Prior",
+      audi_rsq8_urban: "Audi RSQ8 Urban",
+      bentley_8l: "Bentley 8L",
+      bmw_e34: "BMW E34",
+      bmw_m3_cls_e46: "BMW M3 CLS E46",
+      bmw_m3_e46: "BMW M3 E46",
+      bmw_m3_gtr_e46: "BMW M3 GTR E46",
+      bmw_m3t: "BMW M3 Touring",
+      bmw_m3t_rainbow: "BMW M3 Touring Rainbow",
+      bmw_m5_e60: "BMW M5 E60",
+      bmw_m5_f90: "BMW M5 F90",
+      bmw_m5_g90: "BMW M5 G90",
+      bmw_m8_f92: "BMW M8 F92",
+      bmw_x5_e53: "BMW X5 E53",
+      bmw_x5m_f95: "BMW X5M F95",
+      bmw_x6m_f86: "BMW X6M F86",
+      brabus_crawler: "Brabus Crawler",
+      btr: "BTR",
+      bugatti_divo: "Bugatti Divo",
+      defender: "Defender",
+      eger_bort: "Eger Bort",
+      eger_kung: "Eger Kung",
+      ford_bronco: "Ford Bronco",
+      hemtt: "HEMTT",
+      hennessey_velociraptor: "Hennessey Velociraptor",
+      kamaz_bort: "Kamaz Bort",
+      kamaz_kung: "Kamaz Kung",
+      kamaz_typhoon: "Kamaz Typhoon",
+      koenigsegg_agera: "Koenigsegg Agera",
+      koenigsegg_jesko: "Koenigsegg Jesko",
+      koenigsegg_jesko_pink1: "Koenigsegg Jesko Pink 1",
+      koenigsegg_jesko_pink2: "Koenigsegg Jesko Pink 2",
+      lamborghini_huracan: "Lamborghini Huracan",
+      lamborghini_huracan_sterrato: "Lamborghini Huracan Sterrato",
+      lamborghini_urus: "Lamborghini Urus",
+      mazda_rx7: "Mazda RX-7",
+      mercedfe_gt63s: "Mercedes GT63S",
+      mercedes_cls63_brabus: "Mercedes CLS63 Brabus",
+      mercedes_cls63_w212_12: "Mercedes CLS63 W212 12",
+      mercedes_cls63_w218_15: "Mercedes CLS63 W218 15",
+      mercedes_e63: "Mercedes E63",
+      mercedes_g63: "Mercedes G63",
+      mercedes_g64_4x4: "Mercedes G64 4x4",
+      mercedes_v250: "Mercedes V250",
+      mitsubishi_lancer: "Mitsubishi Lancer",
+      nissan_gtr_r34: "Nissan GTR R34",
+      nissan_gtr_r35: "Nissan GTR R35",
+      nissan_warrior: "Nissan Warrior",
+      niva_pickup: "Niva Pickup",
+      oshkosh: "Oshkosh",
+      paz_bandit: "PAZ Bandit",
+      pitbull_vx: "Pitbull VX",
+      porsche_911_gt2rs: "Porsche 911 GT2RS",
+      ram_hennessey: "RAM Hennessey",
+      ram_hennessey_khaki: "RAM Hennessey Khaki",
+      ram_trx: "RAM TRX",
+      ram_trx_khaki: "RAM TRX Khaki",
+      range_rover_sport: "Range Rover Sport",
+      rolls_royce_cullinan: "Rolls-Royce Cullinan",
+      rolls_royce_phantom: "Rolls-Royce Phantom",
+      rolls_royce_wraith: "Rolls-Royce Wraith",
+      toyota_camry: "Toyota Camry",
+      toyota_camry_khann: "Toyota Camry Khann",
+      toyota_land_cruoser_200: "Toyota Land Cruiser 200",
+      toyota_land_cruoser_200_mtr: "Toyota Land Cruiser 200 MTR",
+      traveler: "Traveler",
+      traveler_rust: "Traveler Rust",
+      typhoon_4x4: "Typhoon 4x4",
+      uaz469: "UAZ 469",
+      uaz469_expedition: "UAZ 469 Expedition",
+      uaz469_opentop: "UAZ 469 Open Top",
+      ural_bort: "Ural Bort",
+      ural_kung: "Ural Kung",
+      vaz_2101: "VAZ 2101",
+      vaz_2101_offroad: "VAZ 2101 Offroad",
+      vaz_2107: "VAZ 2107",
+      volkswagen_transporter: "Volkswagen Transporter",
+      wmotors_lycan: "W Motors Lycan",
+      yar87: "YAR 87"
+    };
+
+    const tabsEl = document.getElementById("vehicleTabs");
+    const searchInput = document.getElementById("vehicleSearch");
+    const searchEmpty = document.getElementById("vehicleSearchEmpty");
+    const catalogEl = document.getElementById("vehicleCatalog");
+
+    const modal = document.getElementById("vehicleModal");
+    const modalImage = modal ? modal.querySelector(".img-modal__image") : null;
+    const modalPrev = modal ? modal.querySelector(".img-modal__nav--prev") : null;
+    const modalNext = modal ? modal.querySelector(".img-modal__nav--next") : null;
+    const modalClose = modal ? modal.querySelector(".img-modal__close") : null;
+
+    let currentCategory = vehicleCategories[0] ? vehicleCategories[0].id : "";
+    let currentQuery = "";
+    let restoredScroll = false;
+    let modalGallery = [];
+    let modalIndex = 0;
+    let modalTitle = "";
+
+    const viewerState = loadJSON(STORAGE_KEYS.viewers, {});
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function loadJSON(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch (_) {
+        return fallback;
+      }
+    }
+
+    function saveJSON(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (_) {
+        // ignore
+      }
+    }
+
+    function humanizeKey(key) {
+      if (titleOverrides[key]) return titleOverrides[key];
+      return key
+        .split("_")
+        .map((part) => /^[a-z]+$/i.test(part) ? part.charAt(0).toUpperCase() + part.slice(1) : part.toUpperCase())
+        .join(" ");
+    }
+
+    function normalizeCategoryEntry(entry, index) {
+      if (typeof entry === "string") {
+        return {
+          id: `${entry}__${index}`,
+          key: entry,
+          title: humanizeKey(entry),
+          slots: "",
+          attachments: [],
+          speed: "",
+          search: "",
+          note: ""
+        };
+      }
+
+      if (!entry || typeof entry !== "object") return null;
+
+      const baseKey = entry.key || entry.model || entry.vehicle || entry.id;
+      if (!baseKey) return null;
+
+      return {
+        id: entry.id || `${baseKey}__${index}`,
+        key: baseKey,
+        title: entry.title || humanizeKey(baseKey),
+        slots: entry.slots || "",
+        attachments: Array.isArray(entry.attachments) ? entry.attachments : [],
+        speed: entry.speed || "",
+        search: entry.search || "",
+        note: entry.note || ""
+      };
+    }
+
+    function getCategoryModels(categoryId) {
+      const entries = Array.isArray(vehicleGroups[categoryId]) ? vehicleGroups[categoryId] : [];
+      return entries
+        .map(normalizeCategoryEntry)
+        .filter((entry) => entry && Array.isArray(vehicleLibrary[entry.key]) && vehicleLibrary[entry.key].length)
+        .map((entry) => ({
+          ...entry,
+          gallery: vehicleLibrary[entry.key]
+        }));
+    }
+
+    function getViewerIndex(key, gallery) {
+      const raw = Number(viewerState[key] || 0);
+      const length = gallery.length || 1;
+      return ((raw % length) + length) % length;
+    }
+
+    function persistViewers() {
+      saveJSON(STORAGE_KEYS.viewers, viewerState);
+    }
+
+    function renderTabs() {
+      tabsEl.innerHTML = vehicleCategories.map((category) => `
+        <button
+          class="vehicle-db-tab${category.id === currentCategory ? " is-active" : ""}"
+          type="button"
+          data-vehicle-tab="${escapeHtml(category.id)}"
+          role="tab"
+          aria-selected="${category.id === currentCategory ? "true" : "false"}">
+          ${escapeHtml(category.label)}
+        </button>
+      `).join("");
+    }
+
+    function renderCard(model) {
+      const currentIndex = getViewerIndex(model.id, model.gallery);
+      const currentImage = model.gallery[currentIndex];
+      const showNav = model.gallery.length > 1;
+      const attachments = model.attachments.length
+        ? `
+            <div class="vehicle-card__meta-block">
+              <span class="vehicle-card__meta-label">Аттачи</span>
+              <div class="vehicle-card__meta-chips">
+                ${model.attachments.map((item) => `<span class="vehicle-card__meta-chip">${escapeHtml(item)}</span>`).join("")}
+              </div>
+            </div>
+          `
+        : "";
+      return `
+        <article class="vehicle-card" data-vehicle-card="${escapeHtml(model.id)}">
+          <div class="vehicle-card__head">
+            <h3 class="vehicle-card__title">${escapeHtml(model.title)}</h3>
+            ${showNav ? `<span class="vehicle-card__count">${currentIndex + 1} / ${model.gallery.length}</span>` : ""}
+          </div>
+          <div class="vehicle-viewer">
+            <button class="vehicle-viewer__nav vehicle-viewer__nav--prev" type="button" aria-label="Предыдущий цвет" data-vehicle-arrow="${escapeHtml(model.id)}" data-direction="-1"${showNav ? "" : " hidden"}>‹</button>
+            <img
+              class="vehicle-viewer__img"
+              src="${escapeHtml(currentImage)}"
+              alt="${escapeHtml(model.title)}"
+              data-vehicle-open="${escapeHtml(model.id)}">
+            <button class="vehicle-viewer__nav vehicle-viewer__nav--next" type="button" aria-label="Следующий цвет" data-vehicle-arrow="${escapeHtml(model.id)}" data-direction="1"${showNav ? "" : " hidden"}>›</button>
+          </div>
+          <div class="vehicle-card__meta">
+            <div class="vehicle-card__meta-row">
+              <span class="vehicle-card__meta-label">Слоты</span>
+              <strong class="vehicle-card__meta-value">${escapeHtml(model.slots || "Указать")}</strong>
+            </div>
+            <div class="vehicle-card__meta-row">
+              <span class="vehicle-card__meta-label">Макс. скорость</span>
+              <strong class="vehicle-card__meta-value">${escapeHtml(model.speed || "Указать")}</strong>
+            </div>
+            ${attachments}
+            ${model.note ? `<p class="vehicle-card__note">${escapeHtml(model.note)}</p>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderCatalog() {
+      const query = currentQuery.toLowerCase();
+      const models = getCategoryModels(currentCategory).filter((model) =>
+        !query ||
+        model.title.toLowerCase().includes(query) ||
+        String(model.search || "").toLowerCase().includes(query)
+      );
+
+      searchEmpty.classList.toggle("hidden", models.length > 0);
+      catalogEl.innerHTML = models.map(renderCard).join("");
+
+      if (!restoredScroll) {
+        const savedScroll = Number(localStorage.getItem(STORAGE_KEYS.scroll) || "0");
+        if (savedScroll > 0) {
+          restoredScroll = true;
+          requestAnimationFrame(() => window.scrollTo(0, savedScroll));
+        }
+      }
+    }
+
+    function updateCard(key) {
+      const card = document.querySelector(`[data-vehicle-card="${CSS.escape(key)}"]`);
+      const model = getCategoryModels(currentCategory).find((item) => item.id === key);
+      const gallery = model ? model.gallery : null;
+      if (!card || !Array.isArray(gallery) || !gallery.length) return;
+      const index = getViewerIndex(key, gallery);
+      const img = card.querySelector(".vehicle-viewer__img");
+      const count = card.querySelector(".vehicle-card__count");
+      if (img) img.src = gallery[index];
+      if (count) count.textContent = `${index + 1} / ${gallery.length}`;
+    }
+
+    function openModal(gallery, index, title) {
+      if (!modal || !modalImage) return;
+      modalGallery = Array.isArray(gallery) ? gallery.filter(Boolean) : [];
+      modalIndex = Number.isFinite(index) ? index : 0;
+      modalTitle = title || "";
+      syncModal();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      modalGallery = [];
+      modalIndex = 0;
+      modalTitle = "";
+    }
+
+    function syncModal() {
+      if (!modalImage || !modalGallery.length) return;
+      modalIndex = ((modalIndex % modalGallery.length) + modalGallery.length) % modalGallery.length;
+      modalImage.src = modalGallery[modalIndex];
+      modalImage.alt = modalTitle || "Машина";
+      if (modalPrev) modalPrev.hidden = modalGallery.length <= 1;
+      if (modalNext) modalNext.hidden = modalGallery.length <= 1;
+    }
+
+    function setCategory(categoryId) {
+      currentCategory = categoryId;
+      localStorage.setItem(STORAGE_KEYS.category, currentCategory);
+      localStorage.setItem(STORAGE_KEYS.scroll, "0");
+      renderTabs();
+      renderCatalog();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function initState() {
+      const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
+      if (savedCategory && vehicleCategories.some((category) => category.id === savedCategory)) {
+        currentCategory = savedCategory;
+      }
+
+      const savedQuery = localStorage.getItem(STORAGE_KEYS.query);
+      if (savedQuery) {
+        currentQuery = savedQuery;
+        if (searchInput) searchInput.value = savedQuery;
+      }
+    }
+
+    initState();
+    renderTabs();
+    renderCatalog();
+
+    tabsEl.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-vehicle-tab]");
+      if (!button) return;
+      setCategory(button.getAttribute("data-vehicle-tab"));
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        currentQuery = searchInput.value.trim();
+        localStorage.setItem(STORAGE_KEYS.query, currentQuery);
+        localStorage.setItem(STORAGE_KEYS.scroll, "0");
+        renderCatalog();
+      });
+    }
+
+    catalogEl.addEventListener("click", (event) => {
+      const arrow = event.target.closest("[data-vehicle-arrow]");
+      if (arrow) {
+        const key = arrow.getAttribute("data-vehicle-arrow");
+        const direction = Number(arrow.getAttribute("data-direction") || "0");
+        const model = getCategoryModels(currentCategory).find((item) => item.id === key);
+        const gallery = model ? model.gallery : null;
+        if (!Array.isArray(gallery) || gallery.length <= 1) return;
+        viewerState[key] = getViewerIndex(key, gallery) + direction;
+        persistViewers();
+        updateCard(key);
+        return;
+      }
+
+      const opener = event.target.closest("[data-vehicle-open]");
+      if (!opener) return;
+      const key = opener.getAttribute("data-vehicle-open");
+      const model = getCategoryModels(currentCategory).find((item) => item.id === key);
+      const gallery = model ? model.gallery : null;
+      if (!Array.isArray(gallery) || !gallery.length) return;
+      openModal(gallery, getViewerIndex(key, gallery), model.title);
+    });
+
+    window.addEventListener("scroll", () => {
+      localStorage.setItem(STORAGE_KEYS.scroll, String(window.scrollY || 0));
+    }, { passive: true });
+
+    if (modalClose) modalClose.addEventListener("click", closeModal);
+    if (modalPrev) modalPrev.addEventListener("click", () => {
+      if (modalGallery.length <= 1) return;
+      modalIndex -= 1;
+      syncModal();
+    });
+    if (modalNext) modalNext.addEventListener("click", () => {
+      if (modalGallery.length <= 1) return;
+      modalIndex += 1;
+      syncModal();
+    });
+
+    if (modal) {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (!modal || !modal.classList.contains("is-open")) return;
+      if (event.key === "Escape") {
+        closeModal();
+        return;
+      }
+      if (modalGallery.length <= 1) return;
+      if (event.key === "ArrowLeft") {
+        modalIndex -= 1;
+        syncModal();
+      }
+      if (event.key === "ArrowRight") {
+        modalIndex += 1;
+        syncModal();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
