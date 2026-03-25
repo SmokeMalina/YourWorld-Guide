@@ -4177,12 +4177,46 @@ h2 {
   gap: 12px;
 }
 
+.melee-card__head-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
 .melee-card__title {
   margin: 0;
   font-size: 30px;
   line-height: 1.02;
   font-weight: 800;
   letter-spacing: -0.02em;
+}
+
+.melee-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.melee-card__meta-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,170,70,.22);
+  background: rgba(255,133,0,.08);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.melee-card__meta-chip--dim {
+  border-color: rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.82);
 }
 
 .melee-card__count {

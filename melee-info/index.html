@@ -48,8 +48,7 @@
 
   <section class="card info-card">
     <h2>Категории и поиск</h2>
-    <div class="melee-db-tabs" id="meleeTabs" role="tablist" aria-label="Категории melee оружия"></div>
-    <div class="melee-db-subtabs" id="meleeHandTabs" role="tablist" aria-label="Подкатегории melee оружия"></div>
+    <div class="melee-db-tabs" id="meleeTabs" role="tablist" aria-label="Категории холодного оружия"></div>
     <div class="search-block melee-db-search-block">
       <input
         class="search-input"
@@ -102,7 +101,6 @@
 
     const STORAGE_KEYS = {
       category: "melee.category",
-      handType: "melee.handType",
       query: "melee.query",
       scroll: "melee.scroll",
       viewers: "melee.viewers"
@@ -120,7 +118,6 @@
     };
 
     const tabsEl = document.getElementById("meleeTabs");
-    const handTabsEl = document.getElementById("meleeHandTabs");
     const searchInput = document.getElementById("meleeSearch");
     const searchEmpty = document.getElementById("meleeSearchEmpty");
     const catalogEl = document.getElementById("meleeCatalog");
@@ -132,7 +129,6 @@
     const modalClose = modal ? modal.querySelector(".img-modal__close") : null;
 
     let currentCategory = meleeCategories[0] ? meleeCategories[0].id : "";
-    let currentHandType = meleeHandTypes[0] ? meleeHandTypes[0].id : "";
     let currentQuery = "";
     let restoredScroll = false;
     let modalGallery = [];
@@ -178,6 +174,17 @@
         .join(" ");
     }
 
+    function getCategoryLabels(item) {
+      const ids = Array.isArray(item.category) ? item.category : [item.category];
+      return ids
+        .map((id) => meleeCategories.find((category) => category.id === id)?.label || id)
+        .filter(Boolean);
+    }
+
+    function getHandTypeLabel(item) {
+      return meleeHandTypes.find((hand) => hand.id === item.handType)?.label || "";
+    }
+
     function getFilteredModels() {
       const query = currentQuery.toLowerCase();
       return meleeItems
@@ -187,7 +194,6 @@
           }
           return item.category === currentCategory;
         })
-        .filter((item) => currentHandType === "all" || item.handType === currentHandType)
         .filter((item) => Array.isArray(meleeLibrary[item.key]) && meleeLibrary[item.key].length)
         .filter((item) =>
           !query ||
@@ -197,11 +203,13 @@
         .map((item) => ({
           ...item,
           title: item.title || humanizeKey(item.key),
-          gallery: meleeLibrary[item.key]
+          gallery: meleeLibrary[item.key],
+          categoryLabels: getCategoryLabels(item),
+          handTypeLabel: getHandTypeLabel(item)
         }));
     }
 
-    function hasModels(categoryId, handTypeId, query = "") {
+    function hasModels(categoryId, query = "") {
       const normalizedQuery = String(query || "").toLowerCase();
       return meleeItems.some((item) => {
         if (Array.isArray(item.category)) {
@@ -209,7 +217,6 @@
         } else if (item.category !== categoryId) {
           return false;
         }
-        if (handTypeId !== "all" && item.handType !== handTypeId) return false;
         if (!Array.isArray(meleeLibrary[item.key]) || !meleeLibrary[item.key].length) return false;
         if (!normalizedQuery) return true;
         return (
@@ -219,38 +226,16 @@
       });
     }
 
-    function ensureValidSelection() {
-      if (hasModels(currentCategory, currentHandType, currentQuery)) return;
+    function ensureValidCategory() {
+      if (hasModels(currentCategory, currentQuery)) return;
 
       for (const category of meleeCategories) {
-        if (hasModels(category.id, currentHandType, currentQuery)) {
+        if (hasModels(category.id, currentQuery)) {
           currentCategory = category.id;
           localStorage.setItem(STORAGE_KEYS.category, currentCategory);
           return;
         }
       }
-
-      for (const hand of meleeHandTypes) {
-        for (const category of meleeCategories) {
-          if (hasModels(category.id, hand.id, currentQuery)) {
-            currentHandType = hand.id;
-            currentCategory = category.id;
-            localStorage.setItem(STORAGE_KEYS.handType, currentHandType);
-            localStorage.setItem(STORAGE_KEYS.category, currentCategory);
-            return;
-          }
-        }
-      }
-    }
-
-    function getViewerIndex(key, gallery) {
-      const raw = Number(viewerState[key] || 0);
-      const length = gallery.length || 1;
-      return ((raw % length) + length) % length;
-    }
-
-    function persistViewers() {
-      saveJSON(STORAGE_KEYS.viewers, viewerState);
     }
 
     function renderTabs() {
@@ -266,23 +251,24 @@
       `).join("");
     }
 
-    function renderHandTabs() {
-      handTabsEl.innerHTML = meleeHandTypes.map((hand) => `
-        <button
-          class="melee-db-subtab${hand.id === currentHandType ? " is-active" : ""}"
-          type="button"
-          data-melee-hand="${escapeHtml(hand.id)}"
-          role="tab"
-          aria-selected="${hand.id === currentHandType ? "true" : "false"}">
-          ${escapeHtml(hand.label)}
-        </button>
-      `).join("");
+    function getViewerIndex(key, gallery) {
+      const raw = Number(viewerState[key] || 0);
+      const length = gallery.length || 1;
+      return ((raw % length) + length) % length;
+    }
+
+    function persistViewers() {
+      saveJSON(STORAGE_KEYS.viewers, viewerState);
     }
 
     function renderCard(model) {
       const currentIndex = getViewerIndex(model.key, model.gallery);
       const currentImage = model.gallery[currentIndex];
       const showNav = model.gallery.length > 1;
+      const metaChips = [
+        ...model.categoryLabels.map((label) => `<span class="melee-card__meta-chip">${escapeHtml(label)}</span>`),
+        model.handTypeLabel ? `<span class="melee-card__meta-chip melee-card__meta-chip--dim">${escapeHtml(model.handTypeLabel)}</span>` : ""
+      ].filter(Boolean).join("");
       const skinningSpeed = model.skinningSpeed
         ? `
             <div class="melee-card__stat">
@@ -330,7 +316,10 @@
           </div>
           <div class="melee-card__body">
             <div class="melee-card__head">
-              <h3 class="melee-card__title">${escapeHtml(model.title)}</h3>
+              <div class="melee-card__head-main">
+                <h3 class="melee-card__title">${escapeHtml(model.title)}</h3>
+                ${metaChips ? `<div class="melee-card__meta">${metaChips}</div>` : ""}
+              </div>
               ${showNav ? `<span class="melee-card__count">${currentIndex + 1} / ${model.gallery.length}</span>` : ""}
             </div>
             <div class="melee-card__stats">
@@ -345,7 +334,7 @@
     }
 
     function renderCatalog() {
-      ensureValidSelection();
+      ensureValidCategory();
       const models = getFilteredModels();
 
       searchEmpty.classList.toggle("hidden", models.length > 0);
@@ -399,34 +388,10 @@
       if (modalNext) modalNext.hidden = modalGallery.length <= 1;
     }
 
-    function setCategory(categoryId) {
-      currentCategory = categoryId;
-      localStorage.setItem(STORAGE_KEYS.category, currentCategory);
-      localStorage.setItem(STORAGE_KEYS.scroll, "0");
-      renderTabs();
-      renderHandTabs();
-      renderCatalog();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function setHandType(handTypeId) {
-      currentHandType = handTypeId;
-      localStorage.setItem(STORAGE_KEYS.handType, currentHandType);
-      localStorage.setItem(STORAGE_KEYS.scroll, "0");
-      renderHandTabs();
-      renderCatalog();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
     function initState() {
       const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
       if (savedCategory && meleeCategories.some((category) => category.id === savedCategory)) {
         currentCategory = savedCategory;
-      }
-
-      const savedHandType = localStorage.getItem(STORAGE_KEYS.handType);
-      if (savedHandType && meleeHandTypes.some((hand) => hand.id === savedHandType)) {
-        currentHandType = savedHandType;
       }
 
       const savedQuery = localStorage.getItem(STORAGE_KEYS.query);
@@ -438,19 +403,17 @@
 
     initState();
     renderTabs();
-    renderHandTabs();
     renderCatalog();
 
     tabsEl.addEventListener("click", (event) => {
       const button = event.target.closest("[data-melee-tab]");
       if (!button) return;
-      setCategory(button.getAttribute("data-melee-tab"));
-    });
-
-    handTabsEl.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-melee-hand]");
-      if (!button) return;
-      setHandType(button.getAttribute("data-melee-hand"));
+      currentCategory = button.getAttribute("data-melee-tab");
+      localStorage.setItem(STORAGE_KEYS.category, currentCategory);
+      localStorage.setItem(STORAGE_KEYS.scroll, "0");
+      renderTabs();
+      renderCatalog();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
     if (searchInput) {
@@ -458,9 +421,8 @@
         currentQuery = searchInput.value.trim();
         localStorage.setItem(STORAGE_KEYS.query, currentQuery);
         localStorage.setItem(STORAGE_KEYS.scroll, "0");
-        ensureValidSelection();
+        ensureValidCategory();
         renderTabs();
-        renderHandTabs();
         renderCatalog();
       });
     }
