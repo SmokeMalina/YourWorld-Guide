@@ -863,7 +863,7 @@ window.vehicleGuideData = {
         "id": "ram_trx_jeep_trade",
         "key": "ram_trx",
         "title": "RAM TRX",
-        "slots": "1000 слотов",
+        "slots": "500 слотов",
         "attachments": [
           "Канистра",
           "Оружие",
@@ -1349,7 +1349,7 @@ window.vehicleGuideData = {
         "id": "bmw_m3t_sedan_trade",
         "key": "bmw_m3t",
         "title": "BMW M3 Touring",
-        "slots": "1000 слотов",
+        "slots": "500 слотов",
         "attachments": [
           "Канистра",
           "Оружие",
