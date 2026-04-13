@@ -23,7 +23,7 @@
       "/craft/categories/conserv.html": "Крафт консерв",
       "/craft/categories/medicine.html": "Крафт медицины",
       "/craft/categories/cases.html": "Крафт кейсов",
-      "/craft/categories/crates.html": "Крафт ящиков",
+      "/craft/categories/crates.html": "Крафт ящиков/бочек/сундуков",
       "/craft/categories/knife.html": "Крафт ножей",
       "/craft/categories/sets.html": "Крафт сетов",
       "/craft/categories/clothing.html": "Крафт одежды",

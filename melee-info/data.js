@@ -711,7 +711,7 @@ window.meleeGuideData = {
       "key": "spiked_axe",
       "title": "Топор с шипами",
       "category": "donation",
-      "handType": "two_handed",
+      "handType": "one_handed",
       "skinningSpeed": "Моментальная",
       "damagePrimary": "40000",
       "damagePrimaryLabel": "Урон",

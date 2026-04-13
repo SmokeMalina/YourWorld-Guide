@@ -33,21 +33,21 @@ foreach ($file in $htmlFiles) {
   $text = Get-Content -LiteralPath $file.FullName -Raw
 
   # missing or empty alt
-  $imgTags = [regex]::Matches($text, "<img\\b[^>]*>", "IgnoreCase")
+  $imgTags = [regex]::Matches($text, '<img\b[^>]*>', 'IgnoreCase')
   foreach ($m in $imgTags) {
     $tag = $m.Value
-    if ($tag -notmatch "\\salt=") {
+    if ($tag -notmatch '\salt=') {
       $missingAlt.Add($file.FullName)
       break
     }
-    if ($tag -match "\\salt=\"\\s*\"") {
+    if ($tag -match '\salt="\s*"') {
       $missingAlt.Add($file.FullName)
       break
     }
   }
 
   # assets in html (src/href/content for og:image)
-  $attrMatches = [regex]::Matches($text, "\\b(?:src|href|content)=\"([^\"]+)\"", "IgnoreCase")
+  $attrMatches = [regex]::Matches($text, '\b(?:src|href|content)="([^"]+)"', 'IgnoreCase')
   foreach ($a in $attrMatches) {
     $ref = $a.Groups[1].Value
     if ($ref -notmatch "images/") { continue }
@@ -60,7 +60,7 @@ foreach ($file in $htmlFiles) {
 
 foreach ($file in $jsFiles) {
   $text = Get-Content -LiteralPath $file.FullName -Raw
-  $pathMatches = [regex]::Matches($text, "\"([^\"]*images/[^\"]+)\"", "IgnoreCase")
+  $pathMatches = [regex]::Matches($text, '"([^"]*images/[^"]+)"', 'IgnoreCase')
   foreach ($m in $pathMatches) {
     $ref = $m.Groups[1].Value
     $resolved = Resolve-AssetPath -Ref $ref -FileDir $file.Directory.FullName -RepoRoot $Root
