@@ -1389,6 +1389,108 @@ h2 {
   box-shadow: 0 0 12px rgba(255,133,0,.28);
 }
 
+.page-money-exchange .info-card {
+  background:
+    radial-gradient(280px 110px at 0% 0%, rgba(255,133,0,.05), transparent 62%),
+    rgba(255,255,255,.02);
+}
+
+.page-money-exchange .info-card > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.page-money-exchange .info-card > h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffb257, #ff8500);
+  box-shadow: 0 0 12px rgba(255,133,0,.28);
+}
+
+.exchange-machine {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.exchange-text-flow {
+  display: grid;
+  gap: 12px;
+}
+
+.exchange-note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.exchange-note-card,
+.exchange-list-card,
+.exchange-currency-block {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  background:
+    radial-gradient(240px 100px at 50% 0%, rgba(255,133,0,.08), transparent 60%),
+    rgba(255,255,255,.02);
+  padding: 14px;
+}
+
+.exchange-note-card h3,
+.exchange-list-card h3,
+.exchange-currency-block h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.exchange-currency-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.exchange-money-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.exchange-money-item {
+  margin: 0;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    radial-gradient(220px 90px at 50% 0%, rgba(255,133,0,.08), transparent 60%),
+    rgba(255,255,255,.02);
+}
+
+.exchange-money-item img {
+  display: block;
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.exchange-money-item figcaption {
+  padding: 0 10px 12px;
+  text-align: center;
+  color: rgba(255,255,255,.84);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.exchange-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
 .stash-level-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));

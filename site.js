@@ -58,6 +58,7 @@
     const isVehicleCollectorIndex = path === "/vehicle-collector" || path === "/vehicle-collector/index.html";
     const isFishCollectorIndex = path === "/fish-collector" || path === "/fish-collector/index.html";
     const isPokemonCollectionIndex = path === "/pokemon-collection" || path === "/pokemon-collection/index.html";
+    const isMoneyExchangeIndex = path === "/money-exchange" || path === "/money-exchange/index.html";
     const isStashIndex = path === "/stash" || path === "/stash/index.html";
     const isHoochIndex = path === "/hooch" || path === "/hooch/index.html";
     const isBrodyagaIndex = path === "/brodyaga" || path === "/brodyaga/index.html";
@@ -185,6 +186,14 @@
         crumbs.push({ title: "Коллекция Pokemon" });
       } else {
         crumbs.push({ title: "Коллекция Pokemon", href: "/pokemon-collection/index.html" });
+      }
+    }
+
+    if (path.startsWith("/money-exchange")) {
+      if (isMoneyExchangeIndex) {
+        crumbs.push({ title: "Размен валюты" });
+      } else {
+        crumbs.push({ title: "Размен валюты", href: "/money-exchange/index.html" });
       }
     }
 

@@ -43,6 +43,9 @@
     <loc>https://wiki-yourworld.ru/stash/</loc>
   </url>
   <url>
+    <loc>https://wiki-yourworld.ru/money-exchange/</loc>
+  </url>
+  <url>
     <loc>https://wiki-yourworld.ru/bbp/</loc>
   </url>
   <url>
@@ -973,7 +976,7 @@
     <loc>https://wiki-yourworld.ru/craft/index.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/items/armor_plate_immortal.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/craft_resources/armor_plate_immortal.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/items/canister_100.html</loc>
@@ -985,10 +988,10 @@
     <loc>https://wiki-yourworld.ru/craft/items/card_skalisty.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/items/cloth_immortal.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/craft_resources/cloth_immortal.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/items/exo_nabor.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/craft_resources/exo_nabor.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/items/gasmask_24.html</loc>
@@ -1000,7 +1003,7 @@
     <loc>https://wiki-yourworld.ru/craft/items/gasmask_8.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/items/gunpowder.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/craft_resources/gunpowder.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/items/rod_v2.html</loc>
