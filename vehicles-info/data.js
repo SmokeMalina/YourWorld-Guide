@@ -157,6 +157,36 @@ window.vehicleGuideData = {
         "speed": "205 км/ч"
       },
       {
+        "id": "cadillac_jeep",
+        "key": "cadillac",
+        "title": "Cadillac Escalade",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "4 ящика",
+          "2 бочки",
+          "2 оружейных ящика"
+        ],
+        "speed": "235 км/ч"
+      },
+      {
+        "id": "cadillac_larte_jeep",
+        "key": "cadillac_larte",
+        "title": "Cadillac Escalade Larte",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "4 ящика",
+          "2 бочки",
+          "2 оружейных ящика"
+        ],
+        "speed": "235 км/ч"
+      },
+      {
         "id": "defender_jeep",
         "key": "defender",
         "title": "Defender",
@@ -203,6 +233,20 @@ window.vehicleGuideData = {
         ],
         "speed": "162 км/ч",
         "note": "Валит деревья"
+      },
+      {
+        "id": "jeep_gladiator_jeep",
+        "key": "jeep_gladiator",
+        "title": "Jeep Gladiator F9",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "4 бочки",
+          "2 оружейных ящика"
+        ],
+        "speed": "240 км/ч"
       },
       {
         "id": "lamborghini_urus_jeep",
@@ -643,6 +687,20 @@ window.vehicleGuideData = {
     ],
     "jeep_dollar": [
       {
+        "id": "hennessey_velociraptor_jeep_dollar",
+        "key": "hennessey_velociraptor",
+        "title": "Hennessey Velociraptor",
+        "slots": "500 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "2 ящика",
+          "2 сундука"
+        ],
+        "speed": "210 км/ч"
+      },
+      {
         "id": "insurgent_jeep_dollar",
         "key": "insurgent",
         "title": "Insurgent SUV",
@@ -698,6 +756,20 @@ window.vehicleGuideData = {
           "3 сундука"
         ],
         "speed": "210 км/ч"
+      },
+      {
+        "id": "rolls_royce_cullinan_jeep_dollar",
+        "key": "rolls_royce_cullinan",
+        "title": "Rolls Royce Cullinan",
+        "slots": "500 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "3 ящика",
+          "3 сундука"
+        ],
+        "speed": "226 км/ч"
       },
       {
         "id": "toyota_land_cruoser_200_jeep_dollar",
@@ -998,6 +1070,21 @@ window.vehicleGuideData = {
     ],
     "sedan": [
       {
+        "id": "audi_rs6_sedan",
+        "key": "audi_rs6_abt",
+        "title": "Audi RS6 ABT",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "3 ящика",
+          "2 сундука",
+          "2 оружейных ящика"
+        ],
+        "speed": "255 км/ч"
+      },
+      {
         "id": "bmw_e34_sedan",
         "key": "bmw_e34",
         "title": "BMW E34",
@@ -1283,6 +1370,14 @@ window.vehicleGuideData = {
         "speed": "250 км/ч"
       },
       {
+        "id": "bmw_m5_g90_sedan_dollar",
+        "key": "bmw_m5_g90",
+        "title": "BMW M5 G90",
+        "slots": "Без слотов",
+        "attachments": [],
+        "speed": "270 км/ч"
+      },
+      {
         "id": "bmw_m8_f92_sedan_dollar",
         "key": "bmw_m8_f92",
         "title": "BMW M8 F92",
@@ -1332,6 +1427,20 @@ window.vehicleGuideData = {
       }
     ],
     "sedan_trade": [
+      {
+        "id": "audi_rs6_sedan_trade",
+        "key": "audi_rs6_abt",
+        "title": "Audi RS6 ABT",
+        "slots": "500 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "3 ящика",
+          "2 сундука"
+        ],
+        "speed": "255 км/ч"
+      },
       {
         "id": "bmw_e34_sedan_trade",
         "key": "bmw_e34",
@@ -1614,6 +1723,14 @@ window.vehicleGuideData = {
         "slots": "Без слотов",
         "attachments": [],
         "speed": "243 км/ч"
+      },
+      {
+        "id": "lamborghini_huracan_sterrato_sport_dollar",
+        "key": "lamborghini_huracan_sterrato",
+        "title": "Lamborghini Huracan Sterrato",
+        "slots": "Без слотов",
+        "attachments": [],
+        "speed": "225 км/ч"
       },
       {
         "id": "nissan_gtr_r35_sport_dollar",
@@ -2877,6 +2994,46 @@ window.vehicleGuideData = {
       "/images/vehicles/yar87_camo4.png",
       "/images/vehicles/yar87_camo5.png",
       "/images/vehicles/yar87_camo6.png"
+    ],
+    "audi_rs6_abt": [
+      "/images/vehicles/audi_rs6_abt_black.png",
+      "/images/vehicles/audi_rs6_abt_blue.png",
+      "/images/vehicles/audi_rs6_abt_chrome.png",
+      "/images/vehicles/audi_rs6_abt_chrome_green.png",
+      "/images/vehicles/audi_rs6_abt_pink.png",
+      "/images/vehicles/audi_rs6_abt_red.png",
+      "/images/vehicles/audi_rs6_abt_white.png",
+      "/images/vehicles/audi_rs6_abt_yellow.png"
+    ],
+    "cadillac": [
+      "/images/vehicles/cadillac_escalade_black.png",
+      "/images/vehicles/cadillac_escalade_white.png",
+      "/images/vehicles/cadillac_escalade_grey.png",
+      "/images/vehicles/cadillac_escalade_black_nochrome.png",
+      "/images/vehicles/cadillac_escalade_white_nochrome.png",
+      "/images/vehicles/cadillac_escalade_grey_nochrome.png",
+      "/images/vehicles/cadillac_escalade_camo1.png",
+      "/images/vehicles/cadillac_escalade_camo2.png",
+      "/images/vehicles/cadillac_escalade_camo3.png"
+    ],
+    "cadillac_larte": [
+      "/images/vehicles/cadillac_escalade_larte_black.png",
+      "/images/vehicles/cadillac_escalade_larte_white.png",
+      "/images/vehicles/cadillac_escalade_larte_grey.png",
+      "/images/vehicles/cadillac_escalade_larte_camo1.png",
+      "/images/vehicles/cadillac_escalade_larte_camo2.png",
+      "/images/vehicles/cadillac_escalade_larte_camo3.png"
+    ],
+    "jeep_gladiator": [
+      "/images/vehicles/jeep_gladiator_black.png",
+      "/images/vehicles/jeep_gladiator_blue.png",
+      "/images/vehicles/jeep_gladiator_green.png",
+      "/images/vehicles/jeep_gladiator_orange.png",
+      "/images/vehicles/jeep_gladiator_red.png",
+      "/images/vehicles/jeep_gladiator_white.png",
+      "/images/vehicles/jeep_gladiator_camo1.png",
+      "/images/vehicles/jeep_gladiator_camo2.png",
+      "/images/vehicles/jeep_gladiator_camo3.png"
     ]
   }
 };

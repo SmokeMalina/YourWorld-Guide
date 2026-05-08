@@ -1760,7 +1760,7 @@
             fireModes: "Полуавтомат",
             fireRate: "600",
             ammo: {
-              label: "12.7x108 V5",
+              label: "12.7x108 V6",
               image: "/images/weapons/ammo/dark_127x108.png" 
             },
             magazine: "",
@@ -2675,6 +2675,55 @@
         kicker: "Серия",
         description: "",
         weapons: [
+          {
+            name: "Ruger Hybrid Phantom",
+            image: "/images/weapons/phantom/gun_ruger.png",
+            gallery: [
+              "/images/weapons/phantom/gun_ruger.png",
+              "/images/weapons/phantom/gun_ruger_white.png",
+              "/images/weapons/phantom/gun_ruger_camo1.png",
+              "/images/weapons/phantom/gun_ruger_camo2.png",
+              "/images/weapons/phantom/gun_ruger_camo3.png"
+            ],
+            damage: "27100",
+            fireModes: "Автомат / Полуавтомат",
+            fireRate: "900",
+            ammo: {
+              label: "9mm Phantom",
+              image: "/images/weapons/ammo/phantom_9mm.png" 
+            },
+            magazine: "",
+            magTypes: ["150"],
+            magPreview: {
+              image: "/images/weapons/phantom/ruger_mag.png"
+            },
+            suppressors: suppressorPreset("pistolImmortal")
+          },
+          {
+            name: "Hammerhead Phantom",
+            image: "/images/weapons/phantom/gun_hammerhead.png",
+            gallery: [
+              "/images/weapons/phantom/gun_hammerhead.png",
+              "/images/weapons/phantom/gun_hammerhead_white.png",
+              "/images/weapons/phantom/gun_hammerhead_camo1.png",
+              "/images/weapons/phantom/gun_hammerhead_camo2.png",
+              "/images/weapons/phantom/gun_hammerhead_camo3.png"
+            ],
+            damage: "27100",
+            fireModes: "Автомат / Полуавтомат",
+            fireRate: "900",
+            ammo: {
+              label: "9mm Phantom",
+              image: "/images/weapons/ammo/phantom_9mm.png" 
+            },
+            magazine: "",
+            magTypes: ["150"],
+            magPreview: {
+              variantKey: "hammerhead_mag"
+            },
+            integratedSuppressor: "Встроенный глушитель",
+            suppressors: []
+          },
           {
             name: "Honey Badger Phantom",
             image: "/images/weapons/phantom/gun_hb_p.png",

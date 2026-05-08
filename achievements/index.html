@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Ачивки YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Информация по ачивкам на сервере YourWorld PVE: названия достижений и условия их выполнения.">
+  <meta property="og:title" content="Ачивки YourWorld">
+  <meta property="og:description" content="Список достижений YourWorld с кратким описанием того, что нужно сделать игроку.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/achivments/achivments.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/achievements/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+  <style>
+    .achievements-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .achievement-item {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .achievement-item__icon {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 12px;
+      justify-self: center;
+      box-sizing: border-box;
+    }
+
+    .achievement-item > div {
+      min-width: 0;
+    }
+
+    .achievement-item h3 {
+      margin: 0 0 12px;
+      font-size: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .achievement-item .info-list {
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      padding-left: 22px;
+    }
+
+    .achievement-item .info-list li {
+      line-height: 1.4;
+    }
+
+    @media (max-width: 640px) {
+      .achievement-item {
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .achievement-item__icon {
+        width: 88px;
+        height: 88px;
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      .achievement-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/achivments/achivments.png" alt="Ачивки">
+      <div>
+        <h1>Ачивки</h1>
+        <p class="muted">Названия достижений и что нужно сделать для их выполнения</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Описание</h2>
+    <div class="exchange-machine">
+      <figure class="collector-highlight collector-highlight--plain">
+        <img src="/images/achivments/achivments.png" alt="Ачивки YourWorld">
+        <figcaption>Система ачивок</figcaption>
+      </figure>
+      <div class="exchange-text-flow">
+        <p class="info-text">На сервере есть система достижений, которые выполняются за разные активности: фермерство, путешествия, транспорт, медицина, торговля, PvE, поиск тайников и другие действия.</p>
+        <p class="info-text">Ниже собраны названия ачивок, их иконки из мода и прогрессия по этапам, если у достижения есть несколько уровней.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Список ачивок</h2>
+    <div class="achievements-list">
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_1.png" alt="Властелин грядок">
+        <div>
+        <h3>Властелин грядок</h3>
+        <ul class="info-list">
+          <li>1 этап — собери урожай 100 раз.</li>
+          <li>2 этап — собери урожай 250 раз.</li>
+          <li>3 этап — собери урожай 400 раз.</li>
+          <li>4 этап — собери урожай 550 раз.</li>
+          <li>5 этап — собери урожай 700 раз.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_2.png" alt="Пешеход">
+        <div>
+        <h3>Пешеход</h3>
+        <ul class="info-list">
+          <li>1 этап — пройди пешком 50 км.</li>
+          <li>2 этап — пройди пешком 150 км.</li>
+          <li>3 этап — пройди пешком 300 км.</li>
+          <li>4 этап — пройди пешком 600 км.</li>
+          <li>5 этап — пройди пешком 1000 км.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_3.png" alt="Водила со стажем">
+        <div>
+        <h3>Водила со стажем</h3>
+        <ul class="info-list">
+          <li>1 этап — проедь 2000 км на автомобиле.</li>
+          <li>2 этап — проедь 3500 км на автомобиле.</li>
+          <li>3 этап — проедь 5000 км на автомобиле.</li>
+          <li>4 этап — проедь 8000 км на автомобиле.</li>
+          <li>5 этап — проедь 10000 км на автомобиле.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_4.png" alt="Первая помощь">
+        <div>
+        <h3>Первая помощь</h3>
+        <ul class="info-list">
+          <li>1 этап — перевяжи себе раны 250 раз.</li>
+          <li>2 этап — перевяжи себе раны 500 раз.</li>
+          <li>3 этап — перевяжи себе раны 750 раз.</li>
+          <li>4 этап — перевяжи себе раны 1000 раз.</li>
+          <li>5 этап — перевяжи себе раны 1250 раз.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_5.png" alt="Друг в беде не бросит">
+        <div>
+        <h3>Друг в беде не бросит</h3>
+        <ul class="info-list">
+          <li>1 этап — перевяжи раны другому игроку 250 раз.</li>
+          <li>2 этап — перевяжи раны другому игроку 500 раз.</li>
+          <li>3 этап — перевяжи раны другому игроку 750 раз.</li>
+          <li>4 этап — перевяжи раны другому игроку 1000 раз.</li>
+          <li>5 этап — перевяжи раны другому игроку 1250 раз.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_6.png" alt="Обескровленный">
+        <div>
+        <h3>Обескровленный</h3>
+        <ul class="info-list">
+          <li>1 этап — сделай переливание крови себе 250 раз.</li>
+          <li>2 этап — сделай переливание крови себе 500 раз.</li>
+          <li>3 этап — сделай переливание крови себе 750 раз.</li>
+          <li>4 этап — сделай переливание крови себе 1000 раз.</li>
+          <li>5 этап — сделай переливание крови себе 1250 раз.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_7.png" alt="Полевой медик">
+        <div>
+        <h3>Полевой медик</h3>
+        <ul class="info-list">
+          <li>1 этап — сделай переливание крови другому игроку 250 раз.</li>
+          <li>2 этап — сделай переливание крови другому игроку 500 раз.</li>
+          <li>3 этап — сделай переливание крови другому игроку 750 раз.</li>
+          <li>4 этап — сделай переливание крови другому игроку 1000 раз.</li>
+          <li>5 этап — сделай переливание крови другому игроку 1250 раз.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_8.png" alt="Барыга">
+        <div>
+        <h3>Барыга</h3>
+        <ul class="info-list">
+          <li>1 этап — продай 500 предметов торговцам.</li>
+          <li>2 этап — продай 1000 предметов торговцам.</li>
+          <li>3 этап — продай 1500 предметов торговцам.</li>
+          <li>4 этап — продай 2000 предметов торговцам.</li>
+          <li>5 этап — продай 2500 предметов торговцам.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_9.png" alt="Лесоруб">
+        <div>
+        <h3>Лесоруб</h3>
+        <ul class="info-list">
+          <li>1 этап — сруби 200 деревьев.</li>
+          <li>2 этап — сруби 400 деревьев.</li>
+          <li>3 этап — сруби 600 деревьев.</li>
+          <li>4 этап — сруби 800 деревьев.</li>
+          <li>5 этап — сруби 1000 деревьев.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_10.png" alt="Каменщик">
+        <div>
+        <h3>Каменщик</h3>
+        <ul class="info-list">
+          <li>1 этап — добудь 200 камней.</li>
+          <li>2 этап — добудь 400 камней.</li>
+          <li>3 этап — добудь 600 камней.</li>
+          <li>4 этап — добудь 800 камней.</li>
+          <li>5 этап — добудь 1000 камней.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_11.png" alt="Мясник">
+        <div>
+        <h3>Мясник</h3>
+        <ul class="info-list">
+          <li>1 этап — разделай 2000 туш.</li>
+          <li>2 этап — разделай 4000 туш.</li>
+          <li>3 этап — разделай 6000 туш.</li>
+          <li>4 этап — разделай 8000 туш.</li>
+          <li>5 этап — разделай 10000 туш.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_12.png" alt="Убийца зомби">
+        <div>
+        <h3>Убийца зомби</h3>
+        <ul class="info-list">
+          <li>1 этап — убей 3000 зомби любым оружием.</li>
+          <li>2 этап — убей 5000 зомби любым оружием.</li>
+          <li>3 этап — убей 7000 зомби любым оружием.</li>
+          <li>4 этап — убей 10000 зомби любым оружием.</li>
+          <li>5 этап — убей 15000 зомби любым оружием.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_13.png" alt="Охотник за схронами">
+        <div>
+        <h3>Охотник за схронами</h3>
+        <ul class="info-list">
+          <li>1 этап — найди на карте и обыщи 1000 схронов.</li>
+          <li>2 этап — найди на карте и обыщи 3000 схронов.</li>
+          <li>3 этап — найди на карте и обыщи 5000 схронов.</li>
+          <li>4 этап — найди на карте и обыщи 7000 схронов.</li>
+          <li>5 этап — найди на карте и обыщи 10000 схронов.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_14.png" alt="Археолог">
+        <div>
+        <h3>Археолог</h3>
+        <ul class="info-list">
+          <li>1 этап — откопай 500 кладов по координатам с документов.</li>
+          <li>2 этап — откопай 1500 кладов по координатам с документов.</li>
+          <li>3 этап — откопай 2500 кладов по координатам с документов.</li>
+          <li>4 этап — откопай 3500 кладов по координатам с документов.</li>
+          <li>5 этап — откопай 5000 кладов по координатам с документов.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_15.png" alt="Искатель сокровищ">
+        <div>
+        <h3>Искатель сокровищ</h3>
+        <ul class="info-list">
+          <li>1 этап — прочитай документы и получи координаты закопанного клада 1500 раз.</li>
+          <li>2 этап — прочитай документы и получи координаты закопанного клада 2500 раз.</li>
+          <li>3 этап — прочитай документы и получи координаты закопанного клада 3500 раз.</li>
+          <li>4 этап — прочитай документы и получи координаты закопанного клада 4500 раз.</li>
+          <li>5 этап — прочитай документы и получи координаты закопанного клада 6000 раз.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_16.png" alt="Гроза данжей">
+        <div>
+        <h3>Гроза данжей</h3>
+        <ul class="info-list">
+          <li>1 этап — посети данжи и убей 30 боссов.</li>
+          <li>2 этап — посети данжи и убей 60 боссов.</li>
+          <li>3 этап — посети данжи и убей 90 боссов.</li>
+          <li>4 этап — посети данжи и убей 120 боссов.</li>
+          <li>5 этап — посети данжи и убей 150 боссов.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_17.png" alt="Прирождённый охотник">
+        <div>
+        <h3>Прирождённый охотник</h3>
+        <ul class="info-list">
+          <li>1 этап — найди и убей 1000 животных.</li>
+          <li>2 этап — найди и убей 2000 животных.</li>
+          <li>3 этап — найди и убей 3000 животных.</li>
+          <li>4 этап — найди и убей 4000 животных.</li>
+          <li>5 этап — найди и убей 5000 животных.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_18.png" alt="Счастливчик">
+        <div>
+        <h3>Счастливчик</h3>
+        <ul class="info-list">
+          <li>1 этап — найди и открой 250 лутбоксов.</li>
+          <li>2 этап — найди и открой 500 лутбоксов.</li>
+          <li>3 этап — найди и открой 750 лутбоксов.</li>
+          <li>4 этап — найди и открой 1000 лутбоксов.</li>
+          <li>5 этап — найди и открой 1500 лутбоксов.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_19.png" alt="Владыка трофеев">
+        <div>
+        <h3>Владыка трофеев</h3>
+        <ul class="info-list">
+          <li>1 этап — получи и открой 100 сундуков за убийство боссов.</li>
+          <li>2 этап — получи и открой 200 сундуков за убийство боссов.</li>
+          <li>3 этап — получи и открой 300 сундуков за убийство боссов.</li>
+          <li>4 этап — получи и открой 400 сундуков за убийство боссов.</li>
+          <li>5 этап — получи и открой 500 сундуков за убийство боссов.</li>
+        </ul>
+        </div>
+      </article>
+      <article class="achievement-item">
+        <img class="achievement-item__icon" src="/images/achivments/yw_lb_achiv_icon_20.png" alt="Потусторонний">
+        <div>
+        <h3>Потусторонний</h3>
+        <ul class="info-list">
+          <li>1 этап — подари девочке-призраку 50 предметов.</li>
+          <li>2 этап — подари девочке-призраку 100 предметов.</li>
+          <li>3 этап — подари девочке-призраку 150 предметов.</li>
+          <li>4 этап — подари девочке-призраку 200 предметов.</li>
+          <li>5 этап — подари девочке-призраку 250 предметов.</li>
+        </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+<script src="/site.js"></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106804657', 'ym');
+
+    ym(106804657, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106804657" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

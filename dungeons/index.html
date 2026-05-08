@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Данжи YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Информация по данжам на сервере YourWorld PVE: локации, тиры, карты, телепорты и карточки с описанием прохождения.">
+  <meta property="og:title" content="Данжи YourWorld">
+  <meta property="og:description" content="Каталог данжей YourWorld с распределением по картам, тирам и подробной инфой по каждому данжу.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/dungeons/dungeon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/dungeons/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+  <style>
+    .dungeon-overview {
+      display: grid;
+      gap: 18px;
+    }
+
+    .dungeon-overview__content,
+    .dungeon-note,
+    .dungeon-card,
+    .dungeon-modal__panel,
+    .teleport-card {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .dungeon-overview__content {
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+    }
+
+    .dungeon-overview__content h3,
+    .dungeon-map h3,
+    .dungeon-note h3 {
+      margin: 0;
+    }
+
+    .dungeon-overview__facts {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .dungeon-overview__facts li {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dungeon-notes {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .dungeon-note {
+      padding: 16px 18px;
+    }
+
+    .dungeon-note p {
+      margin: 10px 0 0;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .dungeon-map + .dungeon-map {
+      margin-top: 34px;
+    }
+
+    .dungeon-map {
+      display: grid;
+      gap: 18px;
+    }
+
+    .dungeon-map__head {
+      display: grid;
+      gap: 0;
+    }
+
+    .dungeon-map__head h3 {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 153, 0, 0.08);
+      border: 1px solid rgba(255, 153, 0, 0.14);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .dungeon-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .dungeon-map--compact .dungeon-grid {
+      grid-template-columns: minmax(260px, 520px);
+    }
+
+    .dungeon-card {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      align-content: start;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .dungeon-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 153, 0, 0.24);
+      background: linear-gradient(180deg, rgba(255, 153, 0, 0.085), rgba(255, 255, 255, 0.025));
+    }
+
+    .dungeon-card__visual img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .dungeon-card__body {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .dungeon-card__title {
+      margin: 0;
+      font-size: 1.16rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .dungeon-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dungeon-card__meta span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .dungeon-card__meta .tier-badge {
+      color: #fff4df;
+      border: 1px solid transparent;
+    }
+
+    .dungeon-card__meta .tier-badge--easy {
+      background: rgba(110, 207, 128, 0.14);
+      border-color: rgba(110, 207, 128, 0.22);
+      color: #bbf3c4;
+    }
+
+    .dungeon-card__meta .tier-badge--medium {
+      background: rgba(255, 196, 87, 0.14);
+      border-color: rgba(255, 196, 87, 0.22);
+      color: #ffd990;
+    }
+
+    .dungeon-card__meta .tier-badge--hard {
+      background: rgba(255, 111, 111, 0.14);
+      border-color: rgba(255, 111, 111, 0.2);
+      color: #ffb1b1;
+    }
+
+    .dungeon-card__hint {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .dungeon-card__action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-width: 118px;
+      padding: 11px 18px;
+      border: 1px solid rgba(255, 153, 0, 0.34);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 153, 0, 0.22), rgba(255, 153, 0, 0.14));
+      color: #fff1d6;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .dungeon-card__action:hover {
+      background: linear-gradient(180deg, rgba(255, 153, 0, 0.28), rgba(255, 153, 0, 0.18));
+      border-color: rgba(255, 184, 82, 0.52);
+      transform: translateY(-1px);
+    }
+
+    .teleport-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .teleport-card { padding: 14px; }
+
+    .teleport-card__button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in;
+    }
+
+    .teleport-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .teleport-card h3 {
+      margin: 12px 0 8px;
+      font-size: 1rem;
+    }
+
+    .teleport-card__hint {
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .dungeon-modal[hidden] {
+      display: none;
+    }
+
+    .dungeon-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(6, 6, 8, 0.78);
+      backdrop-filter: blur(6px);
+    }
+
+    .dungeon-modal__panel {
+      width: min(1080px, 100%);
+      max-height: min(90vh, 920px);
+      overflow: auto;
+      padding: 22px;
+      border-color: rgba(255, 153, 0, 0.16);
+      background:
+        radial-gradient(circle at top right, rgba(255, 153, 0, 0.14), transparent 34%),
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 28%),
+        linear-gradient(180deg, rgba(27, 27, 31, 0.98), rgba(19, 19, 22, 0.98));
+    }
+
+    .dungeon-modal__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .dungeon-modal__title {
+      display: grid;
+      gap: 12px;
+    }
+
+    .dungeon-modal__title h3 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .dungeon-modal__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dungeon-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .dungeon-chip--accent {
+      background: rgba(255, 153, 0, 0.14);
+      border-color: rgba(255, 153, 0, 0.18);
+      color: #ffbe63;
+    }
+
+    .dungeon-modal__close {
+      flex: 0 0 auto;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .dungeon-modal__body {
+      display: grid;
+      gap: 18px;
+    }
+
+    .dungeon-modal__preview {
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .dungeon-modal__preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .dungeon-modal__preview img {
+      max-height: 68vh;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .dungeon-modal__content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .dungeon-modal__lead {
+      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.88);
+      padding: 0 2px;
+    }
+
+    .dungeon-modal__facts {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .dungeon-modal__facts li {
+      padding: 13px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      line-height: 1.45;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    @media (max-width: 680px) {
+      .dungeon-grid,
+      .dungeon-map--compact .dungeon-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dungeon-modal {
+        padding: 12px;
+      }
+
+      .dungeon-modal__panel {
+        padding: 16px;
+        max-height: 92vh;
+      }
+
+      .dungeon-modal__head {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/dungeons/dungeon.png" alt="Данжи">
+      <div>
+        <h1>Данжи</h1>
+        <p class="muted">Каталог данжей по картам, тирам и оружейной прогрессии</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Описание</h2>
+    <div class="dungeon-overview">
+      <div class="dungeon-overview__content">
+        <div class="info-note">Если нужна подробность по конкретному данжу, нажмите кнопку <strong>Открыть</strong> на его карточке ниже.</div>
+      </div>
+    </div>
+
+    <div class="dungeon-notes">
+      <article class="dungeon-note">
+        <h3>Запись на данж</h3>
+        <p>Чтобы записаться на прохождение данжа, нужно открыть специальное меню, которое активируется клавишей <strong>"0"</strong>.</p>
+      </article>
+      <article class="dungeon-note">
+        <h3>Кулдаун</h3>
+        <p>КД записи на данж — <strong>3 часа</strong>. Даже при случайной записи и последующей отмене кулдаун всё равно останется, поэтому лучше избегать лишних нажатий.</p>
+      </article>
+      <article class="dungeon-note">
+        <h3>Финальная награда</h3>
+        <p>Финальная награда за прохождение данжа — ящик, выпадающий после убийства босса. Для убийства боссов лучше использовать оружие под <strong>20мм</strong> и <strong>улучшенный патрон 20мм</strong>.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Телепорты</h2>
+    <div class="teleport-grid" id="teleportGrid"></div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Информация по данжам</h2>
+    <div id="dungeonMaps"></div>
+  </section>
+</div>
+
+<div class="dungeon-modal" id="dungeonModal" hidden aria-hidden="true">
+  <div class="dungeon-modal__panel" role="dialog" aria-modal="true" aria-labelledby="dungeonModalTitle">
+    <div class="dungeon-modal__head">
+      <div class="dungeon-modal__title">
+        <h3 id="dungeonModalTitle">Данж</h3>
+        <div class="dungeon-modal__chips" id="dungeonModalChips"></div>
+      </div>
+      <button class="dungeon-modal__close" type="button" id="dungeonModalClose">Закрыть</button>
+    </div>
+    <div class="dungeon-modal__body">
+      <div class="dungeon-modal__preview">
+        <img id="dungeonModalPreview" src="" alt="">
+      </div>
+      <div class="dungeon-modal__content">
+        <p class="dungeon-modal__lead" id="dungeonModalLead"></p>
+        <ul class="dungeon-modal__facts" id="dungeonModalFacts"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+
+<script src="/site.js"></script>
+<script>
+  (() => {
+    const dungeons = [
+      {
+        title: "Скалистый",
+        map: "Черно",
+        tier: "Сложный",
+        reward: "Bloody V2",
+        bosses: "4 босса",
+        preview: "Скалистый.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Bloody V2.",
+          "Формат: четырёхуровневый данж.",
+          "Боссы: 4.",
+          "Телепорт находится возле острова Скалистый."
+        ]
+      },
+      {
+        title: "Лабиринт",
+        map: "Черно",
+        tier: "Сложный",
+        reward: "Bloody V2",
+        bosses: "2 босса",
+        preview: "Лабиринт.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Bloody V2.",
+          "Боссы: 2.",
+          "Тип: сложный данж.",
+          "Телепорт расположен на территории военного объекта «Тисы»."
+        ]
+      },
+      {
+        title: "Снежная гробница",
+        map: "Дедфол",
+        tier: "Сложный",
+        reward: "Bloody V2",
+        bosses: "2 босса",
+        preview: "Снежная гробница.png",
+        lead: "",
+        facts: [
+          "Карта: Дедфол.",
+          "Тип: сложный данж.",
+          "Рекомендуемое оружие: Bloody V2.",
+          "Боссы: 2."
+        ]
+      },
+      {
+        title: "Кладбище вертолетов",
+        map: "Dungeon",
+        tier: "Лёгкий",
+        reward: "Dark V2-V3",
+        bosses: "Без босса",
+        preview: "Кладбище вертолетов.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V2-V3.",
+          "Тип: лёгкий данж.",
+          "Босс: отсутствует."
+        ]
+      },
+      {
+        title: "Туннель",
+        map: "Dungeon",
+        tier: "Лёгкий",
+        reward: "Dark V2-V3",
+        bosses: "Без босса",
+        preview: "Туннель.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V2-V3.",
+          "Тип: лёгкий данж.",
+          "Босс: отсутствует."
+        ]
+      },
+      {
+        title: "Тропа смерти",
+        map: "Dungeon",
+        tier: "Лёгкий",
+        reward: "Dark V4-V6",
+        bosses: "1 босс",
+        preview: "Тропа смерти.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V4-V6.",
+          "Тип: лёгкий данж.",
+          "Босс: 1."
+        ]
+      },
+      {
+        title: "Гремучий лес",
+        map: "Dungeon",
+        tier: "Лёгкий",
+        reward: "Dark V4-V6",
+        bosses: "1 босс",
+        preview: "Гремучий лес.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V4-V6.",
+          "Тип: лёгкий данж.",
+          "Босс: 1."
+        ]
+      },
+      {
+        title: "Тюрьма",
+        map: "Dungeon",
+        tier: "Средний",
+        reward: "Dark V3-V5",
+        bosses: "Без босса",
+        preview: "Тюрьма.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V3-V5.",
+          "Тип: средний данж.",
+          "Босс: отсутствует."
+        ]
+      },
+      {
+        title: "Париж",
+        map: "Dungeon",
+        tier: "Средний",
+        reward: "Dark V3-V5",
+        bosses: "Без босса",
+        preview: "Париж.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V3-V5.",
+          "Тип: средний данж.",
+          "Босс: отсутствует."
+        ]
+      },
+      {
+        title: "Лес гриззли",
+        map: "Dungeon",
+        tier: "Средний",
+        reward: "Dark V6 и выше",
+        bosses: "1 босс",
+        preview: "Лес гриззли.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V6 и выше.",
+          "Тип: средний данж.",
+          "Босс: 1."
+        ]
+      },
+      {
+        title: "Замок старков",
+        map: "Dungeon",
+        tier: "Средний",
+        reward: "Dark V6 и выше",
+        bosses: "1 босс",
+        preview: "Замок старков.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V6 и выше.",
+          "Тип: средний данж.",
+          "Босс: 1."
+        ]
+      },
+      {
+        title: "Бермудский треугольник",
+        map: "Dungeon",
+        tier: "Средний",
+        reward: "Dark V6 и выше",
+        bosses: "1 босс",
+        preview: "Бермудский треугольник.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Dark V6 и выше.",
+          "Тип: средний данж.",
+          "Босс: 1."
+        ]
+      },
+      {
+        title: "Заброшенный лагерь",
+        map: "Dungeon",
+        tier: "Сложный",
+        reward: "Bloody V2",
+        bosses: "2 босса",
+        preview: "Заброшенный лагерь.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Bloody V2.",
+          "Тип: сложный данж.",
+          "Боссы: 2."
+        ]
+      },
+      {
+        title: "Остров мертвых",
+        map: "Dungeon",
+        tier: "Сложный",
+        reward: "Bloody V2",
+        bosses: "2 босса",
+        preview: "Остров мертвых.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Bloody V2.",
+          "Тип: сложный данж.",
+          "Боссы: 2."
+        ]
+      },
+      {
+        title: "Каменная долина",
+        map: "Dungeon",
+        tier: "Сложный",
+        reward: "Bloody V2",
+        bosses: "2 босса",
+        preview: "Каменная долина.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Bloody V2.",
+          "Тип: сложный данж.",
+          "Боссы: 2."
+        ]
+      },
+      {
+        title: "Бункер",
+        map: "Dungeon",
+        tier: "Сложный",
+        reward: "Bloody V2",
+        bosses: "Цикличный",
+        preview: "Бункер.png",
+        lead: "",
+        facts: [
+          "Рекомендуемое оружие: Bloody V2.",
+          "Тип: сложный цикличный данж.",
+          "Прохождение: 1 этаж -> 3 этаж -> обратно."
+        ]
+      }
+    ];
+
+    const teleportCards = [
+      {
+        title: "Телепорты Dungeon",
+        image: "Телепорты данжи.png",
+        text: "Расположены в месте появления на картах Dungeon-1 и Dungeon-2."
+      },
+      {
+        title: "Телепорты Deadfall",
+        image: "Телепорты дедфол.png",
+        text: "Отдельная новая карточка с телепортами карты Deadfall."
+      },
+      {
+        title: "Телепорт лабиринт",
+        image: "Телепорт лабиринт.png",
+        text: "Новая отдельная картинка телепорта в Лабиринт."
+      },
+      {
+        title: "Телепорт скалистый",
+        image: "Телепорт скалик.png",
+        text: "Новая отдельная картинка телепорта на Скалистый."
+      }
+    ];
+
+    const mapSections = [
+      { name: "Черно" },
+      { name: "Дедфол" },
+      { name: "Dungeon" }
+    ];
+
+    const mapsRoot = document.getElementById("dungeonMaps");
+    const teleportsRoot = document.getElementById("teleportGrid");
+    const modal = document.getElementById("dungeonModal");
+    const modalTitle = document.getElementById("dungeonModalTitle");
+    const modalChips = document.getElementById("dungeonModalChips");
+    const modalLead = document.getElementById("dungeonModalLead");
+    const modalFacts = document.getElementById("dungeonModalFacts");
+    const modalPreview = document.getElementById("dungeonModalPreview");
+    const modalClose = document.getElementById("dungeonModalClose");
+
+    function imagePath(file) {
+      return `/images/dungeons/${encodeURIComponent(file)}`;
+    }
+
+    function tierBadgeClass(tier) {
+      if (tier === "Лёгкий") return "tier-badge tier-badge--easy";
+      if (tier === "Средний") return "tier-badge tier-badge--medium";
+      return "tier-badge tier-badge--hard";
+    }
+
+    function openModal(item) {
+      if (!modal || !modalTitle || !modalChips || !modalLead || !modalFacts || !modalPreview) return;
+      modalTitle.textContent = item.title;
+      modalChips.innerHTML = [
+        `<span class="dungeon-chip dungeon-chip--accent">${item.map}</span>`,
+        `<span class="dungeon-chip">${item.tier}</span>`,
+        `<span class="dungeon-chip">Рекомендуемое оружие: ${item.reward}</span>`,
+        `<span class="dungeon-chip">${item.bosses}</span>`
+      ].join("");
+      modalLead.textContent = item.lead;
+      modalFacts.innerHTML = item.facts.map((fact) => `<li>${fact}</li>`).join("");
+      modalPreview.src = imagePath(item.preview);
+      modalPreview.alt = item.title;
+
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    if (mapsRoot) {
+      mapsRoot.innerHTML = mapSections.map((section) => {
+        const sectionItems = dungeons.filter((item) => item.map === section.name);
+        const sortedItems = [...sectionItems].sort((a, b) => {
+          const tierOrder = { "Лёгкий": 1, "Средний": 2, "Сложный": 3 };
+          const tierDiff = (tierOrder[a.tier] || 99) - (tierOrder[b.tier] || 99);
+          if (tierDiff !== 0) return tierDiff;
+          return a.title.localeCompare(b.title, "ru");
+        });
+        return `
+          <section class="dungeon-map ${section.name === "Дедфол" ? "dungeon-map--compact" : ""}">
+            <div class="dungeon-map__head">
+              <h3>Карта ${section.name}</h3>
+            </div>
+            <div class="dungeon-grid">
+              ${sortedItems.map((item) => `
+                <article class="dungeon-card" data-map="${item.map}">
+                  <div class="dungeon-card__visual">
+                    <img src="${imagePath(item.preview)}" alt="${item.title}" loading="lazy">
+                  </div>
+                  <div class="dungeon-card__body">
+                    <h5 class="dungeon-card__title">${item.title}</h5>
+                    <div class="dungeon-card__meta">
+                      <span class="${tierBadgeClass(item.tier)}">${item.tier}</span>
+                      <span>Рекомендуемое оружие: ${item.reward}</span>
+                      <span>${item.bosses}</span>
+                    </div>
+                    <button class="dungeon-card__action" type="button" data-dungeon-title="${item.title}">Открыть</button>
+                  </div>
+                </article>
+              `).join("")}
+            </div>
+          </section>
+        `;
+      }).join("");
+
+      mapsRoot.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-dungeon-title]");
+        if (!button) return;
+        const title = button.getAttribute("data-dungeon-title") || "";
+        const item = dungeons.find((dungeon) => dungeon.title === title);
+        if (!item) return;
+        openModal(item);
+      });
+    }
+
+    if (teleportsRoot) {
+      teleportsRoot.innerHTML = teleportCards.map((item) => `
+        <article class="teleport-card">
+          <button class="teleport-card__button" type="button" data-teleport-image="${item.image}" data-teleport-title="${item.title}">
+            <img src="${imagePath(item.image)}" alt="${item.title}" loading="lazy">
+          </button>
+          <h3>${item.title}</h3>
+          <div class="teleport-card__hint">Нажмите на картинку, чтобы увеличить</div>
+        </article>
+      `).join("");
+
+      teleportsRoot.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-teleport-image]");
+        if (!button || !modal || !modalTitle || !modalChips || !modalLead || !modalFacts || !modalPreview) return;
+
+        const title = button.getAttribute("data-teleport-title") || "Телепорт";
+        const image = button.getAttribute("data-teleport-image") || "";
+
+        modalTitle.textContent = title;
+        modalChips.innerHTML = `<span class="dungeon-chip dungeon-chip--accent">Телепорт</span>`;
+        modalLead.textContent = "Увеличенное изображение телепорта.";
+        modalFacts.innerHTML = "";
+        modalPreview.src = imagePath(image);
+        modalPreview.alt = title;
+        modal.hidden = false;
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      });
+    }
+
+    if (modalClose) {
+      modalClose.addEventListener("click", closeModal);
+    }
+
+    if (modal) {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal && !modal.hidden) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener("beforeunload", () => {
+      document.body.style.overflow = "";
+    });
+  })();
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106804657', 'ym');
+
+    ym(106804657, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106804657" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

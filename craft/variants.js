@@ -572,5 +572,12 @@ window.CRAFT_VARIANTS = {
     "/images/weapons/phantom/xm2010_camo1_mag.png",
     "/images/weapons/phantom/xm2010_camo2_mag.png",
     "/images/weapons/phantom/xm2010_camo3_mag.png"
+  ],
+  "hammerhead_mag": [
+    "/images/weapons/phantom/hammerhead_mag.png",
+    "/images/weapons/phantom/hammerhead_white_mag.png",
+    "/images/weapons/phantom/hammerhead_camo1_mag.png",
+    "/images/weapons/phantom/hammerhead_camo2_mag.png",
+    "/images/weapons/phantom/hammerhead_camo3_mag.png"
   ]
 };

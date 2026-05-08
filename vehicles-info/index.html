@@ -105,94 +105,6 @@
       viewers: "vehicles.viewers"
     };
 
-    const titleOverrides = {
-      atv: "ATV",
-      atv_noattach: "ATV без аттачей",
-      audi_rsq8: "Audi RSQ8",
-      audi_rsq8_mans1: "Audi RSQ8 Mans 1",
-      audi_rsq8_mans2: "Audi RSQ8 Mans 2",
-      audi_rsq8_mans3: "Audi RSQ8 Mans 3",
-      audi_rsq8_prior: "Audi RSQ8 Prior",
-      audi_rsq8_urban: "Audi RSQ8 Urban",
-      bentley_8l: "Bentley 8L",
-      bmw_e34: "BMW E34",
-      bmw_m3_cls_e46: "BMW M3 CLS E46",
-      bmw_m3_e46: "BMW M3 E46",
-      bmw_m3_gtr_e46: "BMW M3 GTR E46",
-      bmw_m3t: "BMW M3 Touring",
-      bmw_m3t_rainbow: "BMW M3 Touring Rainbow",
-      bmw_m5_e60: "BMW M5 E60",
-      bmw_m5_f90: "BMW M5 F90",
-      bmw_m5_g90: "BMW M5 G90",
-      bmw_m8_f92: "BMW M8 F92",
-      bmw_x5_e53: "BMW X5 E53",
-      bmw_x5m_f95: "BMW X5M F95",
-      bmw_x6m_f86: "BMW X6M F86",
-      brabus_crawler: "Brabus Crawler",
-      btr: "BTR",
-      bugatti_divo: "Bugatti Divo",
-      defender: "Defender",
-      eger_bort: "Eger Bort",
-      eger_kung: "Eger Kung",
-      ford_bronco: "Ford Bronco",
-      hemtt: "HEMTT",
-      hennessey_velociraptor: "Hennessey Velociraptor",
-      kamaz_bort: "Kamaz Bort",
-      kamaz_kung: "Kamaz Kung",
-      kamaz_typhoon: "Kamaz Typhoon",
-      koenigsegg_agera: "Koenigsegg Agera",
-      koenigsegg_jesko: "Koenigsegg Jesko",
-      koenigsegg_jesko_pink1: "Koenigsegg Jesko Pink 1",
-      koenigsegg_jesko_pink2: "Koenigsegg Jesko Pink 2",
-      lamborghini_huracan: "Lamborghini Huracan",
-      lamborghini_huracan_sterrato: "Lamborghini Huracan Sterrato",
-      lamborghini_urus: "Lamborghini Urus",
-      mazda_rx7: "Mazda RX-7",
-      mercedfe_gt63s: "Mercedes GT63S",
-      mercedes_cls63_brabus: "Mercedes CLS63 Brabus",
-      mercedes_cls63_w212_12: "Mercedes CLS63 W212 12",
-      mercedes_cls63_w218_15: "Mercedes CLS63 W218 15",
-      mercedes_e63: "Mercedes E63",
-      mercedes_g63: "Mercedes G63",
-      mercedes_g64_4x4: "Mercedes G64 4x4",
-      mercedes_v250: "Mercedes V250",
-      mitsubishi_lancer: "Mitsubishi Lancer",
-      nissan_gtr_r34: "Nissan GTR R34",
-      nissan_gtr_r35: "Nissan GTR R35",
-      nissan_warrior: "Nissan Warrior",
-      niva_pickup: "Niva Pickup",
-      oshkosh: "Oshkosh",
-      paz_bandit: "PAZ Bandit",
-      pitbull_vx: "Pitbull VX",
-      porsche_911_gt2rs: "Porsche 911 GT2RS",
-      ram_hennessey: "RAM Hennessey",
-      ram_hennessey_khaki: "RAM Hennessey Khaki",
-      ram_trx: "RAM TRX",
-      ram_trx_khaki: "RAM TRX Khaki",
-      range_rover_sport: "Range Rover Sport",
-      rolls_royce_cullinan: "Rolls-Royce Cullinan",
-      rolls_royce_phantom: "Rolls-Royce Phantom",
-      rolls_royce_wraith: "Rolls-Royce Wraith",
-      toyota_camry: "Toyota Camry",
-      toyota_camry_khann: "Toyota Camry Khann",
-      toyota_land_cruoser_200: "Toyota Land Cruiser 200",
-      toyota_land_cruoser_200_mtr: "Toyota Land Cruiser 200 MTR",
-      traveler: "Traveler",
-      traveler_rust: "Traveler Rust",
-      typhoon_4x4: "Typhoon 4x4",
-      uaz469: "UAZ 469",
-      uaz469_expedition: "UAZ 469 Expedition",
-      uaz469_opentop: "UAZ 469 Open Top",
-      ural_bort: "Ural Bort",
-      ural_kung: "Ural Kung",
-      vaz_2101: "VAZ 2101",
-      vaz_2101_offroad: "VAZ 2101 Offroad",
-      vaz_2107: "VAZ 2107",
-      volkswagen_transporter: "Volkswagen Transporter",
-      wmotors_lycan: "W Motors Lycan",
-      yar87: "YAR 87"
-    };
-
     const tabsEl = document.getElementById("vehicleTabs");
     const searchInput = document.getElementById("vehicleSearch");
     const searchEmpty = document.getElementById("vehicleSearchEmpty");
@@ -240,7 +152,6 @@
     }
 
     function humanizeKey(key) {
-      if (titleOverrides[key]) return titleOverrides[key];
       return key
         .split("_")
         .map((part) => /^[a-z]+$/i.test(part) ? part.charAt(0).toUpperCase() + part.slice(1) : part.toUpperCase())
@@ -286,7 +197,8 @@
         .map((entry) => ({
           ...entry,
           gallery: vehicleLibrary[entry.key]
-        }));
+        }))
+        .sort((a, b) => a.title.localeCompare(b.title, "ru"));
     }
 
     function getViewerIndex(key, gallery) {

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Голосование Wargm YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Гайд по голосованию за сервер YourWorld на Wargm.ru: как проголосовать, получить кристаллы и перенести их между группами серверов.">
+  <meta property="og:title" content="Голосование Wargm YourWorld">
+  <meta property="og:description" content="Пошаговая инструкция по голосованию, получению кристаллов и переносу между группами серверов.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/items/wargm.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/vote/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+  <style>
+    .vote-step-grid,
+    .vote-server-grid,
+    .vote-note-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .vote-step-grid,
+    .vote-note-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .vote-server-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .vote-card {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 18px 20px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 184, 82, 0.08), transparent 30%),
+        rgba(255, 255, 255, 0.02);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .vote-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .vote-card .info-list,
+    .vote-card .info-text {
+      margin: 0;
+    }
+
+    .vote-link-row {
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/items/wargm.png" alt="Голосование Wargm">
+      <div>
+        <h1>Голосование на Wargm</h1>
+        <p class="muted">Как поддержать сервер, получить кристаллы и забрать награду в игре</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Что даёт голосование</h2>
+    <p class="info-text">Голосование за наш сервер помогает привлекать новых игроков, поднимать проект в рейтинге и получать кристаллы, которые можно обменять на уникальные предметы в игре.</p>
+    <div class="bbp-jump-nav vote-link-row">
+      <a class="bbp-jump-link" href="https://yourworld.wargm.ru/" target="_blank" rel="noopener">Открыть Wargm проекта</a>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Пошаговая инструкция</h2>
+    <div class="vote-step-grid">
+      <article class="vote-card">
+        <h3>1. Перейдите на сайт Wargm</h3>
+        <p class="info-text">Откройте страницу проекта <a href="https://yourworld.wargm.ru/" target="_blank" rel="noopener">Wargm</a>.</p>
+      </article>
+      <article class="vote-card">
+        <h3>2. Авторизуйтесь через Steam</h3>
+        <p class="info-text">Нажмите кнопку <strong>Войти через Steam</strong> в правом верхнем углу и войдите через свой Steam-аккаунт.</p>
+      </article>
+      <article class="vote-card">
+        <h3>3. Перейдите на страницу сервера</h3>
+        <p class="info-text">Откройте страницу нужного сервера, нажмите <strong>Голосовать</strong> и пройдите капчу, если она появится.</p>
+      </article>
+      <article class="vote-card">
+        <h3>4. Получите кристаллы</h3>
+        <p class="info-text">После успешного голосования на баланс сайта будут начислены кристаллы.</p>
+      </article>
+      <article class="vote-card">
+        <h3>5. Обменяйте кристаллы</h3>
+        <p class="info-text">На сайте можно купить товары <strong>Кристалл 1, 5, 10, 20, 50, 100, 200</strong>, а затем забрать их через автовыдачу сочетанием <strong>Shift + B</strong>.</p>
+      </article>
+      <article class="vote-card">
+        <h3>6. Дождитесь автовыдачи</h3>
+        <p class="info-text">Кристаллы приходят в автовыдачу примерно через <strong>5 минут</strong> после покупки на сайте.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Ссылки на серверы</h2>
+    <div class="vote-server-grid">
+      <a class="bbp-jump-link" href="https://wargm.ru/server/71064" target="_blank" rel="noopener">1 сервер</a>
+      <a class="bbp-jump-link" href="https://wargm.ru/server/71065" target="_blank" rel="noopener">2 сервер</a>
+      <a class="bbp-jump-link" href="https://wargm.ru/server/71067" target="_blank" rel="noopener">3 сервер</a>
+      <a class="bbp-jump-link" href="https://wargm.ru/server/71393" target="_blank" rel="noopener">4 сервер</a>
+      <a class="bbp-jump-link" href="https://wargm.ru/server/71066" target="_blank" rel="noopener">Deadfall 1</a>
+      <a class="bbp-jump-link" href="https://wargm.ru/server/72693" target="_blank" rel="noopener">Deadfall 2</a>
+      <a class="bbp-jump-link" href="https://wargm.ru/server/72694" target="_blank" rel="noopener">Dungeon 1</a>
+      <a class="bbp-jump-link" href="https://wargm.ru/server/72695" target="_blank" rel="noopener">Dungeon 2</a>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Перенос кристаллов между группами</h2>
+    <div class="vote-step-grid">
+      <article class="vote-card">
+        <h3>1. Зарегистрируйте Steam ID</h3>
+        <p class="info-text"><a href="https://discord.com/channels/1191479186062319735/1422493137968042036" target="_blank" rel="noopener">Открыть канал регистрации</a></p>
+      </article>
+      <article class="vote-card">
+        <h3>2. Проверьте баланс</h3>
+        <p class="info-text">После регистрации можно проверить количество доступных кристаллов через бота.</p>
+      </article>
+      <article class="vote-card">
+        <h3>3. Перенесите кристаллы</h3>
+        <p class="info-text"><a href="https://discord.com/channels/1191479186062319735/1422489708646105158" target="_blank" rel="noopener">Открыть канал переноса</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Важно</h2>
+    <div class="vote-note-grid">
+      <article class="vote-card">
+        <h3>Кулдауны</h3>
+        <ul class="info-list">
+          <li>Голосовать можно <strong>1 раз в 16 часов</strong>.</li>
+          <li>КД на перенос кристаллов — <strong>1 час</strong>.</li>
+          <li>КД на проверку баланса — <strong>2 минуты</strong>.</li>
+        </ul>
+      </article>
+      <article class="vote-card">
+        <h3>Авторизация</h3>
+        <p class="info-text">Убедитесь, что вы вошли на Wargm через тот же аккаунт Steam, который используете в игре, чтобы кристаллы пришли именно вам.</p>
+      </article>
+      <article class="vote-card">
+        <h3>Если возникли проблемы</h3>
+        <p class="info-text">Если есть трудности с голосованием, переносом кристаллов или получением предметов, обратитесь к администрации через тикет в Discord.</p>
+      </article>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+<script src="/site.js"></script>
+</body>
+</html>

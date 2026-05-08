@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Майнинг YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Гайд по майнингу на сервере YourWorld: компоненты фермы, сборка, видеокарты, генераторы и канистры.">
+  <meta property="og:title" content="Майнинг YourWorld">
+  <meta property="og:description" content="Что нужно для майнинг-фермы, как её собрать и сколько работают видеокарты и генераторы.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/mining/farm.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/mining/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+  <style>
+    .mining-overview,
+    .mining-component-grid,
+    .mining-build-grid,
+    .mining-runtime-grid,
+    .mining-fuel-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mining-overview {
+      grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .mining-overview .mining-panel {
+      padding: 22px 24px;
+    }
+
+    .mining-component-grid,
+    .mining-runtime-grid,
+    .mining-fuel-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .mining-build-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mining-panel {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 18px 20px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 184, 82, 0.08), transparent 30%),
+        rgba(255, 255, 255, 0.02);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .mining-panel h3 {
+      margin: 0 0 12px;
+    }
+
+    .mining-panel .info-text,
+    .mining-panel .info-list {
+      margin: 0;
+    }
+
+    .mining-panel .info-text {
+      line-height: 1.6;
+    }
+
+    .mining-panel .info-list li + li {
+      margin-top: 10px;
+    }
+
+    .mining-overview .info-text {
+      margin-bottom: 14px;
+    }
+
+    .mining-overview .info-list {
+      display: grid;
+      gap: 10px;
+      padding-left: 20px;
+    }
+
+    .mining-hero-image,
+    .mining-item-card img,
+    .mining-runtime-card img,
+    .mining-fuel-card img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    .mining-hero-image {
+      max-width: 280px;
+      justify-self: center;
+      filter: drop-shadow(0 0 22px rgba(255, 184, 82, 0.18));
+    }
+
+    .mining-item-card,
+    .mining-runtime-card,
+    .mining-fuel-card {
+      text-align: center;
+    }
+
+    .mining-component-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mining-component-row {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .mining-component-row img {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 18px;
+      padding: 10px;
+    }
+
+    .mining-component-row h3 {
+      margin: 0 0 8px;
+    }
+
+    .mining-item-card img,
+    .mining-runtime-card img,
+    .mining-fuel-card img {
+      max-width: 132px;
+      max-height: 132px;
+      margin: 0 auto 14px;
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .mining-runtime-card img {
+      max-width: 150px;
+    }
+
+    .mining-fuel-card img {
+      max-width: 140px;
+    }
+
+    .mining-recipe {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mining-recipe__title {
+      margin: 0 0 18px;
+      text-align: center;
+    }
+
+    .mining-recipe__flow {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 36px minmax(150px, 170px);
+      gap: 14px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .mining-recipe__result {
+      width: 100%;
+      max-width: 170px;
+      min-width: 0;
+      padding: 14px;
+      border-radius: 22px;
+      background: rgba(255, 184, 82, 0.08);
+      border: 1px solid rgba(255, 184, 82, 0.2);
+      box-shadow: 0 0 24px rgba(255, 184, 82, 0.1);
+      text-align: center;
+      justify-self: end;
+    }
+
+    .mining-recipe__result img {
+      width: 100%;
+      max-width: 128px;
+      max-height: 128px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .mining-recipe__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      border-radius: 999px;
+      background: rgba(255, 184, 82, 0.08);
+      border: 1px solid rgba(255, 184, 82, 0.18);
+      color: #ffd48b;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .mining-recipe__result strong,
+    .mining-recipe__item strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .mining-recipe__inputs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: stretch;
+      min-width: 0;
+    }
+
+    .mining-recipe__item {
+      height: 100%;
+    }
+
+    .mining-recipe__item-card {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      min-height: 106px;
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: left;
+    }
+
+    .mining-recipe__item-card img {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .mining-recipe__item-card strong {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 14px;
+      min-height: 0;
+    }
+
+    .mining-recipe__qty {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-width: 34px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(255, 184, 82, 0.14);
+      border: 1px solid rgba(255, 184, 82, 0.24);
+      color: #ffd48b;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .mining-recipe__item-text {
+      display: grid;
+      gap: 6px;
+      align-content: center;
+    }
+
+    @media (max-width: 860px) {
+      .mining-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .mining-build-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mining-component-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mining-recipe__flow {
+        grid-template-columns: 1fr;
+      }
+
+      .mining-recipe__arrow {
+        width: 56px;
+        margin: 0 auto;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .mining-recipe__item-card {
+        grid-template-columns: 72px minmax(0, 1fr);
+        min-height: 0;
+      }
+
+      .mining-recipe__item-card img {
+        width: 72px;
+        height: 72px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/mining/mining_kit.png" alt="Майнинг">
+      <div>
+        <h1>Майнинг</h1>
+        <p class="muted">Комплект фермы, сборка, видеокарты, генераторы и расход топлива</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Что такое майнинг-ферма</h2>
+    <div class="mining-overview">
+      <img class="mining-hero-image" src="/images/mining/farm.png" alt="Майнинг-ферма">
+      <div class="mining-panel">
+        <h3>Комплект майнинг-фермы</h3>
+        <p class="info-text">Майнинг-ферма собирается из отдельных компонентов и работает от генератора. Внутри размещаются основные модули, а итоговый ресурс приносит биткоин.</p>
+        <ul class="info-list">
+          <li><strong>2</strong> собранные полки вентиляторов</li>
+          <li><strong>2</strong> блока питания</li>
+          <li>10 видеокарт</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Основные компоненты</h2>
+    <div class="mining-component-grid">
+      <article class="mining-panel mining-component-row">
+        <img src="/images/mining/mining_kit.png" alt="Комплект майнинг-фермы">
+        <div>
+          <h3>Комплект майнинг-фермы</h3>
+          <p class="info-text">Так выглядит сам комплект, с которого начинается установка майнинг-системы.</p>
+        </div>
+      </article>
+      <article class="mining-panel mining-component-row">
+        <img src="/images/mining/fansbar.png" alt="Полка вентиляторов">
+        <div>
+          <h3>Полка вентиляторов</h3>
+          <p class="info-text">Готовый модуль охлаждения, который устанавливается в ферму.</p>
+        </div>
+      </article>
+      <article class="mining-panel mining-component-row">
+        <img src="/images/mining/bp.png" alt="Блок питания">
+        <div>
+          <h3>Блок питания</h3>
+          <p class="info-text">Для полной сборки фермы нужно два блока питания.</p>
+        </div>
+      </article>
+      <article class="mining-panel mining-component-row">
+        <img src="/images/mining/bitcoin.png" alt="Биткоин">
+        <div>
+          <h3>Биткоин</h3>
+          <p class="info-text">Итоговый ресурс, который приносит работающая майнинг-ферма.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Сборка компонентов</h2>
+    <div class="mining-build-grid">
+      <article class="mining-panel mining-recipe">
+        <h3 class="mining-recipe__title">Сборка полки вентиляторов</h3>
+        <div class="mining-recipe__flow">
+          <div class="mining-recipe__inputs">
+            <div class="mining-recipe__item">
+              <div class="mining-recipe__item-card">
+                <img src="/images/mining/fan.png" alt="Вентилятор">
+                <div class="mining-recipe__item-text">
+                  <span class="mining-recipe__qty">x1</span>
+                  <strong>Вентилятор</strong>
+                </div>
+              </div>
+            </div>
+            <div class="mining-recipe__item">
+              <div class="mining-recipe__item-card">
+                <img src="/images/mining/fanscorp.png" alt="Корпус полки вентиляторов">
+                <div class="mining-recipe__item-text">
+                  <span class="mining-recipe__qty">x1</span>
+                  <strong>Корпус полки вентиляторов</strong>
+                </div>
+              </div>
+            </div>
+            <div class="mining-recipe__item">
+              <div class="mining-recipe__item-card">
+                <img src="/images/items/screwdriver.png" alt="Отвертка">
+                <div class="mining-recipe__item-text">
+                  <span class="mining-recipe__qty">x1</span>
+                  <strong>Отвертка</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mining-recipe__arrow" aria-hidden="true">→</div>
+          <div class="mining-recipe__result">
+            <img src="/images/mining/fansbar.png" alt="Полка вентиляторов">
+            <strong>Полка вентиляторов</strong>
+          </div>
+        </div>
+      </article>
+      <article class="mining-panel mining-recipe">
+        <h3 class="mining-recipe__title">Сборка блока питания</h3>
+        <div class="mining-recipe__flow">
+          <div class="mining-recipe__inputs">
+            <div class="mining-recipe__item">
+              <div class="mining-recipe__item-card">
+                <img src="/images/mining/bp.png" alt="Корпус блока питания">
+                <div class="mining-recipe__item-text">
+                  <span class="mining-recipe__qty">x1</span>
+                  <strong>Корпус блока питания</strong>
+                </div>
+              </div>
+            </div>
+            <div class="mining-recipe__item">
+              <div class="mining-recipe__item-card">
+                <img src="/images/mining/capasitors.png" alt="Конденсаторы">
+                <div class="mining-recipe__item-text">
+                  <span class="mining-recipe__qty">x1</span>
+                  <strong>Конденсаторы</strong>
+                </div>
+              </div>
+            </div>
+            <div class="mining-recipe__item">
+              <div class="mining-recipe__item-card">
+                <img src="/images/items/screwdriver.png" alt="Отвертка">
+                <div class="mining-recipe__item-text">
+                  <span class="mining-recipe__qty">x1</span>
+                  <strong>Отвертка</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mining-recipe__arrow" aria-hidden="true">→</div>
+          <div class="mining-recipe__result">
+            <img src="/images/mining/bp.png" alt="Блок питания">
+            <strong>Блок питания</strong>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Видеокарты и время работы</h2>
+    <div class="mining-runtime-grid">
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/videocard_2060.png" alt="BL-2060">
+        <h3>BL-2060</h3>
+        <p class="info-text">Максимальное время работы: <strong>36 часов</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/videocard_2080.png" alt="BL-2080">
+        <h3>BL-2080</h3>
+        <p class="info-text">Максимальное время работы: <strong>60 часов</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/videocard_3060.png" alt="BL-3060">
+        <h3>BL-3060</h3>
+        <p class="info-text">Максимальное время работы: <strong>84 часа</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/videocard_3080.png" alt="BL-3080">
+        <h3>BL-3080</h3>
+        <p class="info-text">Максимальное время работы: <strong>108 часов</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/videocard_blrx.png" alt="BL-RX">
+        <h3>BL-RX</h3>
+        <p class="info-text">Максимальное время работы: <strong>132 часа</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/videocard_1080.png" alt="BL-1080TI">
+        <h3>BL-1080TI</h3>
+        <p class="info-text">Максимальное время работы: <strong>156 часов</strong>.</p>
+      </article>
+    </div>
+    <div class="info-note">После того как ресурс видеокарты заканчивается, она ломается.</div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Генераторы</h2>
+    <div class="mining-runtime-grid">
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/generator_1.png" alt="Генератор V1">
+        <h3>Генератор V1</h3>
+        <p class="info-text">Время работы: <strong>24 часа</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/generator_2.png" alt="Генератор V2">
+        <h3>Генератор V2</h3>
+        <p class="info-text">Время работы: <strong>60 часов</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/generator_2.png" alt="Генератор V3">
+        <h3>Генератор V3</h3>
+        <p class="info-text">Время работы: <strong>108 часов</strong>.</p>
+      </article>
+      <article class="mining-panel mining-runtime-card">
+        <img src="/images/items/generator_2.png" alt="Генератор V4">
+        <h3>Генератор V4</h3>
+        <p class="info-text">Время работы: <strong>156 часов</strong>.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
+    <h2>Канистры</h2>
+    <div class="mining-fuel-grid">
+      <article class="mining-panel mining-fuel-card">
+        <img src="/images/items/canister_50.png" alt="Канистра 50 литров">
+        <h3>Канистра 50 литров</h3>
+      </article>
+      <article class="mining-panel mining-fuel-card">
+        <img src="/images/items/canister_100.png" alt="Канистра 100 литров">
+        <h3>Канистра 100 литров</h3>
+      </article>
+      <article class="mining-panel mining-fuel-card">
+        <img src="/images/items/canister_250.png" alt="Канистра 250 литров">
+        <h3>Канистра 250 литров</h3>
+      </article>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+</footer>
+<script src="/site.js"></script>
+</body>
+</html>

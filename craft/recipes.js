@@ -1,9 +1,9 @@
 window.RECIPES = [
 
   // ===== Крафтовый стол =====
-  { title: "Стандартный патрон 20мм", path: "/craft/workbench/ammo_20mm_v1.html", icon: "/images/weapons/20mm_ammo.png" },
-  { title: "Улучшенный патрон 20мм", path: "/craft/workbench/ammo_20mm_v2.html", icon: "/images/weapons/20mm_ammo.png" },
-  { title: "Патроны 7.92x57", path: "/craft/workbench/ammo_792x57.html", icon: "/images/weapons/ammo_792x57.png" },
+  { title: "Стандартный патрон 20мм", path: "/craft/workbench/ammo_20mm_v1.html", icon: "/images/weapons/ammo/20mm_ammo.png" },
+  { title: "Улучшенный патрон 20мм", path: "/craft/workbench/ammo_20mm_v2.html", icon: "/images/weapons/ammo/20mm_ammo.png" },
+  { title: "Патроны 7.92x57", path: "/craft/workbench/ammo_792x57.html", icon: "/images/weapons/ammo/ammo_792x57.png" },
   { title: "Kriss Vector Dark", path: "/craft/workbench/pp_dark_v1.html", icon: "/images/weapons/dark/dark_pp_v1.png" },
   { title: "MBR Dark", path: "/craft/workbench/ar_556_dark_v1.html", icon: "/images/weapons/dark/dark_ar556_v1.png" },
   { title: "VSK94 Dark", path: "/craft/workbench/ar_762_dark_v1.html", icon: "/images/weapons/dark/dark_ar762_v1.png" },
@@ -20,6 +20,7 @@ window.RECIPES = [
   { title: "Порох", path: "/craft/craft_resources/gunpowder.html", icon: "/images/items/gunpowder.png" },
   { title: "Бронепластина Immortal", path: "/craft/craft_resources/armor_plate_immortal.html", icon: "/images/items/armor_plate_immortal.png" },
   { title: "Ткань Immortal", path: "/craft/craft_resources/cloth_immortal.html", icon: "/images/items/cloth_immortal.png" },
+  { title: "Баллончик с краской Immortal", path: "/craft/craft_resources/spraypaitn_immortal.html", icon: "/images/items/spray_immortal.png" },
   { title: "Набор деталей экзоскелета", path: "/craft/craft_resources/exo_nabor.html", icon: "/images/items/exo_parts_box.png" },
   { title: "Канистра 100л", path: "/craft/items/canister_100.html", icon: "/images/items/canister_100.png" },
   { title: "Карта телепорта на данж - Скалистый", path: "/craft/items/card_skalisty.html", icon: "/images/items/card_skalik.png" },
@@ -32,6 +33,7 @@ window.RECIPES = [
   { title: "Противогаз из маски от сета на 4 часа", path: "/craft/items/set_mask_4.html", icon: "/images/items/mask.png" },
   { title: "Противогаз из маски от сета на 8 часов", path: "/craft/items/set_mask_8.html", icon: "/images/items/mask.png" },
   { title: "Противогаз из маски от сета на 24 часа", path: "/craft/items/set_mask_24.html", icon: "/images/items/mask.png" },
+  { title: "Стол для покраски", path: "/craft/items/retexture_table.html", icon: "/images/items/retex_table.png" },
 
   // ===== Электроника =====
   { title: "Батарейка x10", path: "/craft/electronic/battery_x10.html", icon: "/images/items/battery_x10.png" },
@@ -183,8 +185,8 @@ window.RECIPES = [
   { title: "Матросский сундук 500", path: "/craft/crates/chest_500.html", icon: "/images/crates/chest_1.png" },
 
   // ===== Ножи =====
-  { title: "Нож Gerber", path: "/craft/knife/gerber.html", icon: "/images/melee/gerber_2.png" },
-  { title: "Тактический нож", path: "/craft/knife/tactical.html", icon: "/images/melee/tactical_2.png" },
+  { title: "Нож Gerber", path: "/craft/knife/gerber.html", icon: "/images/melee/gerber_knife_2.png" },
+  { title: "Тактический нож", path: "/craft/knife/tactical.html", icon: "/images/melee/tactical_knife_2.png" },
   { title: "Секира молния V2", path: "/craft/knife/sekira.html", icon: "/images/melee/stormbreaker_axe.png" },
   { title: "Самурайская катана V2", path: "/craft/knife/katana.html", icon: "/images/melee/samurai_katana.png" },
 

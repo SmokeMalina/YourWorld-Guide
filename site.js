@@ -47,7 +47,7 @@
     const isRecyclerInfo = path === "/recycler/info.html";
     const isGardeningIndex = path === "/gardening" || path === "/gardening/index.html";
     const isFarmingIndex = path === "/farming" || path === "/farming/index.html";
-    const isLootboxIndex = path === "/lootbox" || path === "/lootbox/index.html";
+    const isLootboxIndex = path === "/cases" || path === "/cases/index.html";
     const isBbpIndex = path === "/bbp" || path === "/bbp/index.html";
     const isP2pIndex = path === "/p2p" || path === "/p2p/index.html";
     const isMeleeInfoIndex = path === "/melee-info" || path === "/melee-info/index.html";
@@ -59,9 +59,17 @@
     const isFishCollectorIndex = path === "/fish-collector" || path === "/fish-collector/index.html";
     const isPokemonCollectionIndex = path === "/pokemon-collection" || path === "/pokemon-collection/index.html";
     const isMoneyExchangeIndex = path === "/money-exchange" || path === "/money-exchange/index.html";
+    const isMiningIndex = path === "/mining" || path === "/mining/index.html";
+    const isVoteIndex = path === "/vote" || path === "/vote/index.html";
+    const isCustomsIndex = path === "/customs" || path === "/customs/index.html";
     const isStashIndex = path === "/stash" || path === "/stash/index.html";
     const isHoochIndex = path === "/hooch" || path === "/hooch/index.html";
     const isBrodyagaIndex = path === "/brodyaga" || path === "/brodyaga/index.html";
+    const isConnectIndex = path === "/connect" || path === "/connect/index.html";
+    const isRetexTableIndex = path === "/retex-table" || path === "/retex-table/index.html";
+    const isRanksIndex = path === "/ranks" || path === "/ranks/index.html";
+    const isAchievementsIndex = path === "/achievements" || path === "/achievements/index.html";
+    const isDungeonsIndex = path === "/dungeons" || path === "/dungeons/index.html";
 
     if (isIndex) {
       crumbs.push({ title: "Главная" });
@@ -101,11 +109,19 @@
       }
     }
 
-    if (path.startsWith("/lootbox")) {
+    if (path.startsWith("/cases")) {
       if (isLootboxIndex) {
-        crumbs.push({ title: "Лутбоксы" });
+        crumbs.push({ title: "Кейсы" });
       } else {
-        crumbs.push({ title: "Лутбоксы", href: "/lootbox/index.html" });
+        crumbs.push({ title: "Кейсы", href: "/cases/index.html" });
+      }
+    }
+
+    if (path.startsWith("/connect")) {
+      if (isConnectIndex) {
+        crumbs.push({ title: "Как зайти на сервер" });
+      } else {
+        crumbs.push({ title: "Как зайти на сервер", href: "/connect/index.html" });
       }
     }
 
@@ -122,6 +138,30 @@
         crumbs.push({ title: "P2P трейд" });
       } else {
         crumbs.push({ title: "P2P трейд", href: "/p2p/index.html" });
+      }
+    }
+
+    if (path.startsWith("/vote")) {
+      if (isVoteIndex) {
+        crumbs.push({ title: "Голосование Wargm" });
+      } else {
+        crumbs.push({ title: "Голосование Wargm", href: "/vote/index.html" });
+      }
+    }
+
+    if (path.startsWith("/customs")) {
+      if (isCustomsIndex) {
+        crumbs.push({ title: "Кастомизация" });
+      } else {
+        crumbs.push({ title: "Кастомизация", href: "/customs/index.html" });
+      }
+    }
+
+    if (path.startsWith("/mining")) {
+      if (isMiningIndex) {
+        crumbs.push({ title: "Майнинг" });
+      } else {
+        crumbs.push({ title: "Майнинг", href: "/mining/index.html" });
       }
     }
 
@@ -221,6 +261,38 @@
       }
     }
 
+    if (path.startsWith("/retex-table")) {
+      if (isRetexTableIndex) {
+        crumbs.push({ title: "Стол для покраски" });
+      } else {
+        crumbs.push({ title: "Стол для покраски", href: "/retex-table/index.html" });
+      }
+    }
+
+    if (path.startsWith("/ranks")) {
+      if (isRanksIndex) {
+        crumbs.push({ title: "Ранги" });
+      } else {
+        crumbs.push({ title: "Ранги", href: "/ranks/index.html" });
+      }
+    }
+
+    if (path.startsWith("/achievements")) {
+      if (isAchievementsIndex) {
+        crumbs.push({ title: "Ачивки" });
+      } else {
+        crumbs.push({ title: "Ачивки", href: "/achievements/index.html" });
+      }
+    }
+
+    if (path.startsWith("/dungeons")) {
+      if (isDungeonsIndex) {
+        crumbs.push({ title: "Данжи" });
+      } else {
+        crumbs.push({ title: "Данжи", href: "/dungeons/index.html" });
+      }
+    }
+
     if (isCategory) {
       crumbs.push({ title: currentTitle });
     }
@@ -256,6 +328,22 @@
     }
 
     if (path.startsWith("/clothing-info/") && !isClothingInfoIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/retex-table/") && !isRetexTableIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/ranks/") && !isRanksIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/achievements/") && !isAchievementsIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/dungeons/") && !isDungeonsIndex) {
       crumbs.push({ title: currentTitle });
     }
 
