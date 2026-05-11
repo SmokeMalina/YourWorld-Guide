@@ -1661,6 +1661,17 @@ h2 {
   font-size: 18px;
 }
 
+@media (max-width: 760px) {
+  .exchange-machine {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .exchange-note-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .exchange-currency-stack {
   display: grid;
   gap: 16px;

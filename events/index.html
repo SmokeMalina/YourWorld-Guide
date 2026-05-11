@@ -179,6 +179,7 @@
             "Первый ящик можно найти на военных объектах и он открывается ломом.",
             "Второй ящик появляется на заражённых военных объектах и открывается специальной зелёной картой."
           ],
+          relatedTitle: "",
           relatedLayout: "crate-showcase",
           related: [
             {
@@ -293,6 +294,7 @@
             "Второй красный ящик спавнится в зимнем биоме и открывается красной картой.",
             "Красную карту можно найти только в деревянном ящике."
           ],
+          relatedTitle: "",
           relatedLayout: "crate-showcase",
           related: [
             {
@@ -540,7 +542,7 @@
         ` : ""}
         ${event.related.length ? `
           <div class="events-detail__related">
-            <h3>${event.relatedTitle || "Необходимые предметы"}</h3>
+            ${event.relatedTitle === "" ? "" : `<h3>${event.relatedTitle || "Необходимые предметы"}</h3>`}
             ${renderRelated(event.related, event.relatedLayout)}
           </div>
         ` : ""}
@@ -612,4 +614,3 @@
 </script>
 </body>
 </html>
-
