@@ -3,14 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>404</title>
-  <style>
-    :root { color-scheme: dark; }
-    body { margin:0; display:grid; place-items:center; min-height:100vh; background:#0b0b0d; color:#eaeaea; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    .box { text-align:center; padding: 22px; border:1px solid rgba(255,255,255,.08); border-radius: 14px; background: rgba(255,255,255,.03); }
-    a { color:#ff8500; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-  </style>
+  <title>Что-то случилось | YourWorld Wiki</title>
+  <meta name="description" content="Похоже, эта страница потерялась или больше не существует. Вернитесь на главную страницу YourWorld Wiki или сообщите об ошибке в Discord.">
+  <meta property="og:title" content="Что-то случилось | YourWorld Wiki">
+  <meta property="og:description" content="Страница не найдена. Вернитесь на главную YourWorld Wiki или сообщите об ошибке в Discord.">
+  <meta property="og:url" content="https://wiki-yourworld.ru/404.html">
+  <link rel="stylesheet" href="/style.css">
+  <link rel='stylesheet' href='/styles/pages/404.css'>
 <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
 <link rel="icon" href="/images/ywlogo.ico" sizes="any">
 <link rel="apple-touch-icon" href="/images/ywlogo.png">
@@ -18,11 +17,21 @@
 <meta name="theme-color" content="#0b0b0d">
 </head>
 <body>
-  <div class="box">
-    <h1>404</h1>
-    <p>Страница не найдена.</p>
-    <p><a href="../index.html">Вернуться на главную</a></p>
-  </div>
+<main class="error-page">
+  <section class="error-stage">
+    <div class="error-stage__visual">
+      <img src="/images/404.png" alt="Персонаж страницы 404">
+    </div>
+    <div class="error-stage__copy">
+      <h1>Что-то случилось</h1>
+      <p>Похоже, эта страница потерялась или больше не существует.</p>
+      <div class="error-actions">
+        <a class="error-action error-action--primary" href="/index.html">Вернуться на главную</a>
+        <a class="error-action" href="https://discord.com/channels/1191479186062319735/1213638879546966058" target="_blank" rel="noopener">Сообщить в Discord</a>
+      </div>
+    </div>
+  </section>
+</main>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -41,7 +50,7 @@
     </div>
   </div>
 
-  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+  <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
 </footer>
 <script src="/site.js"></script>
 <!-- Yandex.Metrika counter -->
@@ -59,9 +68,6 @@
 <!-- /Yandex.Metrika counter -->
 </body>
 </html>
-
-
-
 
 
 

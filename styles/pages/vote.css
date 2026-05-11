@@ -1,0 +1,38 @@
+.vote-step-grid,
+    .vote-server-grid,
+    .vote-note-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .vote-step-grid,
+    .vote-note-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .vote-server-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .vote-card {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 18px 20px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 184, 82, 0.08), transparent 30%),
+        rgba(255, 255, 255, 0.02);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .vote-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .vote-card .info-list,
+    .vote-card .info-text {
+      margin: 0;
+    }
+
+    .vote-link-row {
+      margin-top: 16px;
+    }

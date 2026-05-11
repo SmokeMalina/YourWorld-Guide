@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>События YourWorld</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="Информация по событиям YourWorld на Chernarus и Deadfall: вкладки событий, описание и необходимые предметы.">
+  <meta property="og:title" content="События YourWorld">
+  <meta property="og:description" content="Каталог событий по картам Chernarus и Deadfall с описанием, карточками и необходимыми предметами.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/events/events_logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/events/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel='stylesheet' href='/styles/pages/events.css'>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="/images/events/events_logo.png" alt="События">
+      <div>
+        <h1>События</h1>
+        <p class="muted">Переключайте карту и открывайте вкладку нужного события, чтобы посмотреть его описание и связанные предметы</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card">
+    <h2>Карта событий</h2>
+    <p class="info-text">Сначала выберите карту, а затем откройте вкладку нужного события. Внутри будет основная картинка события, текстовое описание и связанные предметы.</p>
+    <div class="events-map-switch" id="events-map-switch" role="tablist" aria-label="Выбор карты">
+      <button class="events-map-btn is-active" type="button" data-map="chernarus" aria-selected="true">Chernarus</button>
+      <button class="events-map-btn" type="button" data-map="deadfall" aria-selected="false">Deadfall</button>
+    </div>
+  </section>
+
+  <section class="events-map-panel is-active" data-map-panel="chernarus">
+    <div class="events-tabs-wrap">
+      <div class="events-tabs" data-events-tabs="chernarus"></div>
+    </div>
+    <div class="events-detail" data-events-detail="chernarus"></div>
+  </section>
+
+  <section class="events-map-panel" data-map-panel="deadfall">
+    <div class="events-tabs-wrap">
+      <div class="events-tabs" data-events-tabs="deadfall"></div>
+    </div>
+    <div class="events-detail" data-events-detail="deadfall"></div>
+  </section>
+</div>
+
+<div class="events-modal" hidden>
+  <div class="events-modal__panel">
+    <div class="events-modal__top">
+      <h3 id="events-modal-title">Изображение</h3>
+      <button class="events-modal__close" type="button">Закрыть</button>
+    </div>
+    <img id="events-modal-image" class="events-modal__image" src="" alt="">
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/images/ywlogo.png" alt="YourWorld">
+        <span>YourWorld</span>
+      </div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
+      <a href="https://yourworlddayz.ru/" target="_blank" rel="noopener">Магазин</a>
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
+</footer>
+
+<script src="/site.js"></script>
+<script>
+  (() => {
+    const STORAGE_KEY = "yw-events-state";
+    const eventMaps = {
+      chernarus: [
+        {
+          id: "blockpost",
+          title: "Блокпост",
+          image: "/images/events/chernarus/Блокпост.png",
+          description: [
+            "Событие появляется на всех военных объектах.",
+            "С собой необходимо иметь отмычку и отвертку.",
+            "Следите за таймером бомбы."
+          ],
+          related: [
+            { title: "Отвертка", image: "/images/items/screwdriver.png", kind: "Необходимо" },
+            { title: "Отмычка", image: "/images/items/lockpick.png", kind: "Необходимо" }
+          ]
+        },
+        {
+          id: "military-camp",
+          title: "Военный лагерь",
+          image: "/images/events/chernarus/Военный лагерь.png",
+          description: [
+            "Событие появляется в лесах.",
+            "Для получения награды необходимо зачистить шесть волн."
+          ],
+          related: []
+        },
+        {
+          id: "convoy",
+          title: "Военный конвой",
+          image: "/images/events/chernarus/Конвой.png",
+          description: [
+            "Событие появляется на дорогах.",
+            "Для получения награды необходимо зачистить шесть волн."
+          ],
+          related: []
+        },
+        {
+          id: "clearance",
+          title: "Зачистка",
+          image: "/images/events/chernarus/Зачистка.png",
+          description: [
+            "Событие появляется по всей карте.",
+            "Есть обычная и усиленная версия.",
+            "В обычной версии появляется один мутант, из которого выпадет ящик с наградой.",
+            "В усиленной версии появляется два мутанта, из которых выпадают ящики с наградой."
+          ],
+          related: []
+        },
+        {
+          id: "loading",
+          title: "Погрузка",
+          image: "/images/events/chernarus/Погрузка.png",
+          description: [
+            "Событие появляется по всей карте.",
+            "Для получения награды необходимо зачистить пять волн."
+          ],
+          related: []
+        },
+        {
+          id: "ghost-girl",
+          title: "Девочка-призрак",
+          image: "/images/events/chernarus/Девочка призрак.png",
+          description: [
+            "Она изначально дружелюбна по отношению к игроку.",
+            "Если дать ей подарок, то она даст подарок в ответ.",
+            "Её невозможно убить: при получении урона она пропадает, ломает ноги и призывает своих подданных."
+          ],
+          relatedTitle: "Награда",
+          related: [
+            { title: "Подарок девочки-призрака", image: "/images/events/chernarus/Подарок девочки призрака.png", kind: "Награда", note: "Этот подарок девочка-призрак может выдать игроку в ответ." }
+          ]
+        },
+        {
+          id: "military-crate-cherno",
+          title: "Военные ящики",
+          image: "",
+          description: [
+            "На Чернаруси есть два типа военных ящиков.",
+            "Первый ящик можно найти на военных объектах и он открывается ломом.",
+            "Второй ящик появляется на заражённых военных объектах и открывается специальной зелёной картой."
+          ],
+          relatedLayout: "crate-showcase",
+          related: [
+            {
+              title: "Военный ящик",
+              image: "/images/events/chernarus/Военный ящик черно 1.png",
+              note: "Можно найти на военных объектах.",
+              requirement: {
+                title: "Лом",
+                image: "/images/items/crowbar.png",
+                note: "Открывает этот ящик."
+              }
+            },
+            {
+              title: "Военный ящик с электронным замком",
+              image: "/images/events/chernarus/Военный ящик черно 2.png",
+              note: "Можно найти на заражённых военных объектах.",
+              requirement: {
+                title: "Зелёная карта",
+                image: "/images/events/chernarus/Карточка военного ящика черно.png",
+                note: "Открывает этот ящик."
+              }
+            }
+          ]
+        },
+        {
+          id: "documents-cache",
+          title: "Тайники по координатам",
+          image: "",
+          description: [
+            "При использовании, с шансом 80% вы получите координаты закопанного тайника с наградой.",
+            "Тайник с наградой стоит на карте 1 час и в момент рестарта не пропадает."
+          ],
+          relatedLayout: "list",
+          related: [
+            { title: "Документы", images: ["/images/events/chernarus/Документы A.png", "/images/events/chernarus/Документы B.png", "/images/events/chernarus/Документы C.png", "/images/events/chernarus/Документы D.png", "/images/events/chernarus/Документы E.png"], note: "Можно получить из мутантов на заражённых военных объектах." },
+            { title: "Военное письмо", image: "/images/events/chernarus/Военное письмо.png", note: "Можно получить из мутантов на военных объектах." },
+            { title: "Пиратская карта", image: "/images/events/chernarus/Пиратская карта.png", note: "Выпадает из бутылки, которую можно выловить во время рыбалки." }
+          ]
+        }
+      ],
+      deadfall: [
+        {
+          id: "deadfall-blockpost",
+          title: "Блокпост Deadfall",
+          image: "/images/events/deadfall/Блокпост дедфол.png",
+          description: [
+            "Событие появляется по всей карте.",
+            "С собой необходимо иметь отмычку и отвертку.",
+            "Следите за таймером бомбы."
+          ],
+          related: [
+            { title: "Отвертка", image: "/images/items/screwdriver.png", kind: "Необходимо" },
+            { title: "Отмычка", image: "/images/items/lockpick.png", kind: "Необходимо" }
+          ]
+        },
+        {
+          id: "deadfall-graveoid",
+          title: "Гробоид",
+          image: "/images/events/deadfall/Гробоид.png",
+          description: [
+            "Спавнится в зимнем биоме без оповещения.",
+            "Гробоид — это свирепое подземное существо, которое охраняет территорию.",
+            "Оно выходит на поверхность, когда игрок ходит по поверхности его территориальных нор.",
+            "Лут в кучах, оставленных гробоидом, могут быть не только яйца чудовища, но и другие предметы. Их нужно раскапывать лопатой.",
+            "Гробоида убить нельзя, он неуязвим и пропадает после раскопки всех земляных куч."
+          ],
+          related: [
+            { title: "Лопата", image: "/images/items/shovel.png", kind: "Необходимо", note: "Нужна, чтобы раскапывать кучи, оставленные гробоидом." }
+          ]
+        },
+        {
+          id: "deadfall-lair",
+          title: "Логово",
+          image: "/images/events/deadfall/Логово.png",
+          description: [
+            "Спавнится в летнем биоме без оповещения.",
+            "Эти пещеры можно раскопать в поисках лута, но будьте осторожны: они охраняются агрессивными мутантами.",
+            "Даже если вы зачистите территорию, всегда существует риск потревожить тех, кто прячется внутри норы."
+          ],
+          related: [
+            { title: "Лопата", image: "/images/items/shovel.png", kind: "Необходимо", note: "Нужна для раскопки логова и поиска лута." }
+          ]
+        },
+        {
+          id: "deadfall-stalker",
+          title: "Бродячий сталкер",
+          image: "/images/events/deadfall/Бродячий сталкер.png",
+          description: [
+            "Он бродит по летнему биому в городах, деревнях и других местах.",
+            "Можно напасть на него, но он призовёт свою охрану, и вы ничего с него не получите.",
+            "Можно поговорить с ним: поприветствовать, проявить уважение или попробовать напасть, чего он не хочет.",
+            "Если повезёт, он преподнесёт вам желанный дар.",
+            "После того как вы отдадите ему желанный предмет и получите координаты тайника, дальше вам понадобится металлоискатель.",
+            "С помощью металлоискателя можно найти тайник, а наградой станет рюкзак сталкера.",
+            "Будьте осторожны: тайник могут охранять."
+          ],
+          relatedTitle: "Необходимые предметы",
+          related: [
+            { title: "Бронзовый жетон", image: "/images/events/deadfall/Бронзовый жетон.png", kind: "Необходимо" },
+            { title: "Серебряный жетон", image: "/images/events/deadfall/Серебрянный жетон.png", kind: "Необходимо" },
+            { title: "Золотой жетон", image: "/images/events/deadfall/Золотой жетон.png", kind: "Необходимо" },
+            { title: "Металлоискатель", image: "/images/events/deadfall/Детектор.png", kind: "Необходимо", note: "Помогает в поиске тайника." }
+          ]
+        },
+        {
+          id: "deadfall-crate",
+          title: "Военные ящики",
+          image: "",
+          description: [
+            "На Deadfall есть два типа военных ящиков.",
+            "Первый деревянный ящик спавнится в летнем биоме и открывается ломом.",
+            "Второй красный ящик спавнится в зимнем биоме и открывается красной картой.",
+            "Красную карту можно найти только в деревянном ящике."
+          ],
+          relatedLayout: "crate-showcase",
+          related: [
+            {
+              title: "Деревянный ящик",
+              image: "/images/events/deadfall/Военный ящик дедфол 1.png",
+              note: "Спавнится в летнем биоме.",
+              requirement: {
+                title: "Лом",
+                image: "/images/items/crowbar.png",
+                note: "Открывает этот ящик."
+              }
+            },
+            {
+              title: "Военный ящик с электронным замком",
+              image: "/images/events/deadfall/Военный ящик дедфол 2.png",
+              note: "Спавнится в зимнем биоме.",
+              requirement: {
+                title: "Красная карта",
+                image: "/images/events/deadfall/Карточка военного ящика дедфол.png",
+                note: "Открывает этот ящик. Падает только из деревянного ящика."
+              }
+            }
+          ]
+        }
+      ]
+    };
+
+    function loadSavedState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          currentMap,
+          currentEvent
+        }));
+      } catch {}
+    }
+
+    const savedState = loadSavedState();
+    let currentMap = savedState?.currentMap && eventMaps[savedState.currentMap]
+      ? savedState.currentMap
+      : "chernarus";
+    const currentEvent = {
+      chernarus: savedState?.currentEvent?.chernarus && eventMaps.chernarus.some((item) => item.id === savedState.currentEvent.chernarus)
+        ? savedState.currentEvent.chernarus
+        : eventMaps.chernarus[0].id,
+      deadfall: savedState?.currentEvent?.deadfall && eventMaps.deadfall.some((item) => item.id === savedState.currentEvent.deadfall)
+        ? savedState.currentEvent.deadfall
+        : eventMaps.deadfall[0].id
+    };
+
+    const mapButtons = [...document.querySelectorAll(".events-map-btn")];
+    const mapPanels = [...document.querySelectorAll(".events-map-panel")];
+    const modal = document.querySelector(".events-modal");
+    const modalTitle = document.getElementById("events-modal-title");
+    const modalImage = document.getElementById("events-modal-image");
+    const closeButton = document.querySelector(".events-modal__close");
+
+    function openImage(title, image) {
+      modalTitle.textContent = title;
+      modalImage.src = image;
+      modalImage.alt = title;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      modalImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    function renderRelated(related, layout = "grid") {
+      if (!related.length) {
+        return '<p class="events-empty">Для этого события отдельные необходимые предметы не указаны.</p>';
+      }
+
+      if (layout === "crate-showcase") {
+        return `
+          <div class="events-crate-grid">
+            ${related.map((item) => `
+              <article class="events-crate-card">
+                <div class="events-crate-card__main">
+                  <button class="events-crate-card__zoom" type="button" data-open-image="${item.image}" data-open-title="${item.title}">
+                    <img src="${item.image}" alt="${item.title}">
+                  </button>
+                  <h4>${item.title}</h4>
+                  ${item.note ? `<p>${item.note}</p>` : ""}
+                </div>
+                <div class="events-crate-card__requirement">
+                  ${item.requirement?.image ? `<img src="${item.requirement.image}" alt="${item.requirement.title}">` : ""}
+                  <h5>${item.requirement?.title || ""}</h5>
+                  ${item.requirement?.note ? `<p>${item.requirement.note}</p>` : ""}
+                </div>
+              </article>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      if (layout === "list") {
+        const first = related[0];
+        const rest = related.slice(1);
+
+        return `
+          <div class="events-related-grid events-related-grid--list">
+            ${first ? `
+              <article class="events-related-variant-card events-related-variant-card--documents">
+                <h4>${first.title}</h4>
+                ${first.images ? `
+                  <div class="events-related-variant-card__gallery">
+                    ${first.images.map((image) => `<img src="${image}" alt="${first.title}">`).join("")}
+                  </div>
+                ` : ""}
+                ${first.note ? `<p>${first.note}</p>` : ""}
+                ${!first.images ? `
+                  <div class="events-related-variant-card__gallery">
+                    <img src="${first.image}" alt="${first.title}">
+                  </div>
+                ` : ""}
+              </article>
+            ` : ""}
+            ${rest.length ? `
+              <div class="events-related-grid events-related-grid--list-split">
+                ${rest.map((item) => `
+                  <article class="events-related-variant-card events-related-variant-card--single">
+                    <div class="events-related-variant-card__body">
+                      <h4>${item.title}</h4>
+                      ${item.note ? `<p>${item.note}</p>` : ""}
+                    </div>
+                    <div class="events-related-variant-card__gallery">
+                      <img src="${item.image}" alt="${item.title}">
+                    </div>
+                  </article>
+                `).join("")}
+              </div>
+            ` : ""}
+          </div>
+        `;
+      }
+
+      if (layout === "variants") {
+        return `
+          <div class="events-related-grid">
+            ${related.map((item) => `
+              <article class="events-related-variant-card">
+                <div class="events-related-card__kind">${item.kind}</div>
+                <h4>${item.title}</h4>
+                <div class="events-related-variant-card__gallery">
+                  ${item.images ? item.images.map((image) => `<img src="${image}" alt="${item.title}">`).join("") : `<img src="${item.image}" alt="${item.title}">`}
+                </div>
+                ${item.note ? `<p>${item.note}</p>` : ""}
+              </article>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      if (layout === "paired") {
+        const pairs = [];
+        for (let i = 0; i < related.length; i += 2) {
+          pairs.push(related.slice(i, i + 2));
+        }
+
+        return `
+          <div class="events-related-grid events-related-grid--paired">
+            ${pairs.map(([main, sub]) => `
+              <article class="events-related-pair">
+                <div class="events-related-pair__main">
+                  ${main.image ? `<img src="${main.image}" alt="${main.title}">` : ""}
+                  <h4>${main.title}</h4>
+                  ${main.note ? `<p>${main.note}</p>` : ""}
+                </div>
+                ${sub ? `
+                  <div class="events-related-pair__sub${sub.image ? "" : " events-related-pair__sub--text"}">
+                    ${sub.image ? `<img src="${sub.image}" alt="${sub.title}">` : ""}
+                    <h4>${sub.title}</h4>
+                    ${sub.note ? `<p>${sub.note}</p>` : ""}
+                  </div>
+                ` : ""}
+              </article>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      return `
+        <div class="events-related-grid${related.length === 1 ? " events-related-grid--single" : ""}">
+          ${related.map((item) => `
+            <article class="events-related-card${item.image ? "" : " events-related-card--text"}">
+              ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ""}
+              <div class="events-related-card__kind">${item.kind}</div>
+              <h4>${item.title}</h4>
+              ${item.note ? `<p>${item.note}</p>` : ""}
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderDescription(description) {
+      if (Array.isArray(description)) {
+        return `
+          <div class="events-detail__text">
+            <h3>Описание события</h3>
+            <ul class="events-detail__description-list">
+              ${description.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="events-detail__text">
+          <h3>Описание события</h3>
+          <p class="events-detail__description">${description}</p>
+        </div>
+      `;
+    }
+
+    function renderDetail(mapName) {
+      const detail = document.querySelector(`[data-events-detail="${mapName}"]`);
+      const event = eventMaps[mapName].find((item) => item.id === currentEvent[mapName]);
+      if (!detail || !event) return;
+
+      detail.innerHTML = `
+        <div class="events-detail__head">
+          <h2>${event.title}</h2>
+          <span class="events-detail__tag">${mapName === "chernarus" ? "Chernarus" : "Deadfall"}</span>
+        </div>
+        ${renderDescription(event.description)}
+        ${event.image ? `
+          <div class="events-detail__preview">
+            <button type="button" data-open-image="${event.image}" data-open-title="${event.title}">
+              <img src="${event.image}" alt="${event.title}">
+            </button>
+          </div>
+        ` : ""}
+        ${event.related.length ? `
+          <div class="events-detail__related">
+            <h3>${event.relatedTitle || "Необходимые предметы"}</h3>
+            ${renderRelated(event.related, event.relatedLayout)}
+          </div>
+        ` : ""}
+      `;
+
+      detail.querySelectorAll("[data-open-image]").forEach((button) => {
+        button.addEventListener("click", () => openImage(button.dataset.openTitle, button.dataset.openImage));
+      });
+    }
+
+    function renderTabs(mapName) {
+      const tabs = document.querySelector(`[data-events-tabs="${mapName}"]`);
+      if (!tabs) return;
+
+      tabs.innerHTML = eventMaps[mapName].map((event) => `
+        <button
+          class="events-tab-btn${currentEvent[mapName] === event.id ? " is-active" : ""}"
+          type="button"
+          data-event-tab="${event.id}"
+          data-map-owner="${mapName}"
+        >
+          ${event.title}
+        </button>
+      `).join("");
+
+      tabs.querySelectorAll("[data-event-tab]").forEach((button) => {
+        button.addEventListener("click", () => {
+          currentEvent[mapName] = button.dataset.eventTab;
+          saveState();
+          renderTabs(mapName);
+          renderDetail(mapName);
+        });
+      });
+    }
+
+    function setMap(mapName) {
+      currentMap = mapName;
+      saveState();
+      mapButtons.forEach((button) => {
+        const isActive = button.dataset.map === mapName;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-selected", String(isActive));
+      });
+
+      mapPanels.forEach((panel) => {
+        panel.classList.toggle("is-active", panel.dataset.mapPanel === mapName);
+      });
+    }
+
+    mapButtons.forEach((button) => {
+      button.addEventListener("click", () => setMap(button.dataset.map));
+    });
+
+    closeButton.addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.hidden) closeModal();
+    });
+
+    renderTabs("chernarus");
+    renderTabs("deadfall");
+    renderDetail("chernarus");
+    renderDetail("deadfall");
+    setMap(currentMap);
+  })();
+</script>
+</body>
+</html>
+

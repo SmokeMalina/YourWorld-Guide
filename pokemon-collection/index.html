@@ -44,8 +44,10 @@
     <h2>Описание</h2>
     <ul class="info-list">
       <li>Коллекция включает в себя 239 карточек.</li>
+      <li>Для обмена на приз нужны 100 карточек из списка ниже.</li>
+      <li>Нужные для коллекции карточки подсвечиваются в игре зелёным цветом.</li>
       <li>Доступно 2 вида лутбоксов со случайной карточкой: обычный и редкий.</li>
-      <li>Для хранения карточек используются коробки на 8, 16, 25 и 48 карт.</li>
+      <li>Для хранения карточек используются коробки на 8, 16, 24 и 48 карт.</li>
       <li>Для полной коллекции используется отдельная коробка.</li>
     </ul>
   </section>
@@ -107,8 +109,8 @@
 
   <section class="card info-card">
     <h2>Что даёт полная коллекция</h2>
-    <p class="info-text">После того как Вы соберете все 239 карточек, полную коллекцию можно будет обменять на награду.</p>
-    <p class="info-note">Награда за полную коллекцию включает в себя оружие на выбор серии Specter.</p>
+    <p class="info-text">После того как вы соберёте 100 нужных карточек из списка ниже, коллекцию можно будет обменять на награду.</p>
+    <p class="info-note">Награда за коллекцию включает в себя оружие на выбор серии Specter.</p>
     <div class="collector-highlight-grid">
       <figure class="collector-highlight">
         <img src="/images/weapons/specter/specter_aek.png" alt="AEK-919K Specter">
@@ -126,8 +128,8 @@
   </section>
 
   <section class="card info-card">
-    <h2>Полная коллекция</h2>
-    <p class="info-note">Ниже показаны все 239 карточек Pokemon, которые входят в полный набор.</p>
+    <h2>Нужные карточки</h2>
+    <p class="info-note">Ниже показаны 100 карточек Pokemon, которые нужны для обмена на приз. В игре они подсвечиваются зелёным цветом.</p>
     <div class="collector-catalog" id="pokemon-collector-catalog"></div>
   </section>
 </div>
@@ -148,7 +150,7 @@
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
+  <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
 </footer>
 <script src="/site.js"></script>
 <script>
@@ -156,7 +158,17 @@
     const root = document.getElementById("pokemon-collector-catalog");
     if (!root) return;
 
-    for (let i = 1; i <= 239; i += 1) {
+    const cardIds = [
+      1, 2, 5, 6, 10, 14, 17, 18, 20, 22, 25, 26, 29, 30, 32, 33, 35, 41,
+      45, 46, 47, 48, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 66, 67,
+      68, 69, 71, 72, 73, 75, 95, 99, 100, 101, 107, 109, 111, 112, 114, 119,
+      123, 124, 125, 135, 137, 138, 145, 151, 155, 160, 162, 169, 170, 171,
+      175, 181, 184, 188, 189, 190, 194, 196, 200, 204, 207, 209, 212, 213,
+      214, 215, 217, 220, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233,
+      234, 235, 236, 237, 238, 239
+    ];
+
+    cardIds.forEach((i) => {
       const card = document.createElement("figure");
       card.className = "collector-item";
       card.innerHTML = `
@@ -164,7 +176,7 @@
         <img src="/images/pokemon_card_collector/pokemon_card_${i}.png" alt="Карточка Pokemon ${i}">
       `;
       root.appendChild(card);
-    }
+    });
   })();
 </script>
 </body>

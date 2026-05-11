@@ -1,0 +1,126 @@
+.lootbox-entry__actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .lootbox-rewards-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 170, 70, 0.24);
+      background: rgba(255, 133, 0, 0.08);
+      color: #fff;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .lootbox-rewards-btn:hover {
+      background: rgba(255, 133, 0, 0.14);
+      border-color: rgba(255, 170, 70, 0.34);
+      transform: translateY(-1px);
+    }
+
+    .lootbox-reward-source {
+      display: none;
+    }
+
+    .reward-modal[hidden] {
+      display: none;
+    }
+
+    .reward-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1300;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(7, 7, 10, 0.78);
+      backdrop-filter: blur(6px);
+    }
+
+    .reward-modal__panel {
+      width: min(1100px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at top right, rgba(255, 184, 82, 0.12), transparent 32%),
+        linear-gradient(180deg, rgba(25, 25, 30, 0.98), rgba(16, 16, 20, 0.98));
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .reward-modal__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .reward-modal__title {
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    .reward-modal__close {
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 170, 70, 0.24);
+      background: rgba(255, 133, 0, 0.08);
+      color: #fff;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .reward-modal__close:hover {
+      background: rgba(255, 133, 0, 0.14);
+      border-color: rgba(255, 170, 70, 0.34);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 920px) {
+      .lootbox-showcase--dollar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .reward-modal__body .lootbox-showcase {
+      margin-top: 0;
+    }
+
+    @media (max-width: 680px) {
+      .lootbox-showcase,
+      .lootbox-showcase--dollar {
+        grid-template-columns: 1fr;
+      }
+
+      .reward-modal {
+        padding: 12px;
+      }
+
+      .reward-modal__panel {
+        padding: 16px;
+      }
+
+      .reward-modal__head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .reward-modal__close {
+        width: 100%;
+      }
+    }

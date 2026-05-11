@@ -262,6 +262,13 @@ h2 {
   object-position: center 8px;
 }
 
+.tile--teleports img {
+  width: 120px;
+  height: 120px;
+  padding: 4px 2px 0;
+  object-position: center bottom;
+}
+
 .tile span {
   display: flex;
   align-items: center;
@@ -288,11 +295,11 @@ h2 {
 .home-featured {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .home-hero-tile {
-  min-height: 236px;
+  min-height: 244px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 126px;
   align-items: start;
@@ -324,7 +331,7 @@ h2 {
 }
 
 .home-hero-tile__copy strong {
-  font-size: 23px;
+  font-size: clamp(22px, 2.1vw, 26px);
   line-height: 1.05;
   min-height: calc(1.05em * 2);
   display: flex;
@@ -339,7 +346,7 @@ h2 {
   font-weight: 600;
   line-height: 1.45;
   text-wrap: pretty;
-  max-width: 24ch;
+  max-width: 23ch;
 }
 
 .home-hero-tile img {
@@ -366,6 +373,19 @@ h2 {
   max-width: 15ch;
 }
 
+.home-hero-tile--vote .home-hero-tile__copy {
+  padding-right: 18px;
+}
+
+.home-hero-tile--vote .home-hero-tile__copy span {
+  max-width: 15ch;
+}
+
+.home-hero-tile--vote img {
+  width: 132px;
+  height: 132px;
+}
+
 .home-hero-tile--customs .home-hero-tile__copy {
   padding-right: 10px;
 }
@@ -379,7 +399,7 @@ h2 {
 
 .home-section {
   padding: 20px;
-  border-radius: 34px;
+  border-radius: 28px;
   border: 1px solid var(--b1);
   background:
     linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
@@ -392,14 +412,27 @@ h2 {
 }
 
 .home-section__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 16px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
+.home-section__head::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffb257, #ff8500);
+  box-shadow: 0 0 12px rgba(255,133,0,.28);
+  flex: 0 0 auto;
+}
+
 .home-section__head h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 21px;
   letter-spacing: 0.02em;
 }
 
@@ -3956,7 +3989,8 @@ h2 {
   }
 
   .home-hero-tile {
-    grid-template-columns: minmax(0, 1fr) 120px;
+    grid-template-columns: minmax(0, 1fr) 126px;
+    min-height: 220px;
   }
 
   .tile-grid { grid-template-columns: repeat(3, 1fr); }
@@ -3965,17 +3999,39 @@ h2 {
 @media (max-width: 768px) {
   .tile-grid { grid-template-columns: repeat(2, 1fr); }
 
+  .home-featured,
+  .home-section {
+    margin-top: 18px;
+  }
+
   .home-hero-tile {
     grid-template-columns: 1fr;
+    text-align: center;
+    min-height: 0;
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .home-hero-tile__copy {
+    justify-items: center;
+  }
+
+  .home-hero-tile__copy strong {
+    min-height: 0;
+    justify-content: center;
     text-align: center;
   }
 
   .home-hero-tile__copy span {
     text-align: center;
+    max-width: 30ch;
   }
 
   .home-hero-tile img {
     justify-self: center;
+    width: 132px;
+    height: 132px;
+    margin-top: 0;
   }
 
   .item-hero {
@@ -3990,10 +4046,19 @@ h2 {
 
   .hero {
     text-align: center;
+    padding: 18px 16px;
   }
 
   .hero-inner {
+    flex-direction: column;
     justify-content: center;
+    gap: 16px;
+  }
+
+  .hero-logo {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
   }
 
   .outfit-card__layout {
@@ -4099,10 +4164,71 @@ h2 {
     align-items: flex-start;
   }
 
+  .footer-inner {
+    gap: 18px;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
 }
 
 @media (max-width: 480px) {
   .tile-grid { grid-template-columns: 1fr; }
+
+  .home-featured,
+  .home-section {
+    margin-top: 18px;
+  }
+
+  .home-section {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .home-section__head {
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+  }
+
+  .home-section__head h2 {
+    font-size: 19px;
+  }
+
+  .home-hero-tile {
+    padding: 18px 16px;
+    border-radius: 22px;
+  }
+
+  .home-hero-tile__copy strong {
+    font-size: 20px;
+    line-height: 1.08;
+  }
+
+  .home-hero-tile__copy span {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .home-hero-tile img {
+    width: 128px;
+    height: 128px;
+  }
+
+  .hero-inner {
+    gap: 12px;
+  }
+
+  .footer-inner {
+    align-items: stretch;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
 
   .outfit-attach-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

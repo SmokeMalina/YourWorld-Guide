@@ -1,0 +1,50 @@
+.customs-flow > * + * {
+      margin-top: 18px;
+    }
+
+    .customs-flow h2 {
+      margin-bottom: 12px;
+    }
+
+    .customs-flow .info-text,
+    .customs-flow .info-list {
+      margin: 0;
+    }
+
+    .customs-flow .info-list li + li {
+      margin-top: 10px;
+    }
+
+    .customs-inline-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .customs-inline-list p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .customs-example-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .customs-example-list li + li {
+      margin-top: 10px;
+    }
+
+    .customs-action-row {
+      margin-top: 16px;
+    }
+
+    @media (max-width: 680px) {
+      .customs-action-row {
+        width: 100%;
+      }
+
+      .customs-action-row .bbp-jump-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }

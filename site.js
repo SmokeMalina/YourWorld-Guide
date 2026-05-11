@@ -70,6 +70,10 @@
     const isRanksIndex = path === "/ranks" || path === "/ranks/index.html";
     const isAchievementsIndex = path === "/achievements" || path === "/achievements/index.html";
     const isDungeonsIndex = path === "/dungeons" || path === "/dungeons/index.html";
+    const isEventsIndex = path === "/events" || path === "/events/index.html";
+    const isTeleportsIndex = path === "/teleports" || path === "/teleports/index.html";
+    const isShronIndex = path === "/shron" || path === "/shron/index.html";
+    const isRepairBarrelIndex = path === "/repair-barrel" || path === "/repair-barrel/index.html";
 
     if (isIndex) {
       crumbs.push({ title: "Главная" });
@@ -293,6 +297,38 @@
       }
     }
 
+    if (path.startsWith("/events")) {
+      if (isEventsIndex) {
+        crumbs.push({ title: "События" });
+      } else {
+        crumbs.push({ title: "События", href: "/events/index.html" });
+      }
+    }
+
+    if (path.startsWith("/teleports")) {
+      if (isTeleportsIndex) {
+        crumbs.push({ title: "Телепорты" });
+      } else {
+        crumbs.push({ title: "Телепорты", href: "/teleports/index.html" });
+      }
+    }
+
+    if (path.startsWith("/shron")) {
+      if (isShronIndex) {
+        crumbs.push({ title: "Персональный схрон" });
+      } else {
+        crumbs.push({ title: "Персональный схрон", href: "/shron/index.html" });
+      }
+    }
+
+    if (path.startsWith("/repair-barrel")) {
+      if (isRepairBarrelIndex) {
+        crumbs.push({ title: "Бочка-чинилка" });
+      } else {
+        crumbs.push({ title: "Бочка-чинилка", href: "/repair-barrel/index.html" });
+      }
+    }
+
     if (isCategory) {
       crumbs.push({ title: currentTitle });
     }
@@ -344,6 +380,18 @@
     }
 
     if (path.startsWith("/dungeons/") && !isDungeonsIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/teleports/") && !isTeleportsIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/shron/") && !isShronIndex) {
+      crumbs.push({ title: currentTitle });
+    }
+
+    if (path.startsWith("/repair-barrel/") && !isRepairBarrelIndex) {
       crumbs.push({ title: currentTitle });
     }
 
