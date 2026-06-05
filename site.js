@@ -488,7 +488,21 @@
     toggleVisibility();
   }
 
+  function removeStoreLinks() {
+    document.querySelectorAll("a[href]").forEach(link => {
+      const href = (link.getAttribute("href") || "").trim();
+      const label = (link.textContent || "").trim().toLowerCase();
+      const isStoreUrl = href === "https://yourworlddayz.ru/" || href === "https://yourworlddayz.ru";
+      const isFooterStoreLink = label === "магазин" && link.closest(".site-footer, .footer-links, header, nav");
+
+      if (isStoreUrl || isFooterStoreLink) {
+        link.remove();
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
+    removeStoreLinks();
     addBreadcrumbs();
     enableHistoryBack();
     saveScrollOnNav();

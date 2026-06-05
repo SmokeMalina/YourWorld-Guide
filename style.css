@@ -5150,6 +5150,11 @@ h2 {
   transform: translateY(-1px);
 }
 
+.footer-links a[href="https://yourworlddayz.ru/"],
+.footer-links a[href="https://yourworlddayz.ru"] {
+  display: none !important;
+}
+
 .footer-bottom {
   max-width: 1100px;
   margin: 0 auto;
