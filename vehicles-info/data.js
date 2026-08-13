@@ -29,6 +29,10 @@ window.vehicleGuideData = {
       "label": "Sedan"
     },
     {
+      "id": "sedan_battlepass",
+      "label": "Sedan Battlepass"
+    },
+    {
       "id": "sedan_crystal",
       "label": "Sedan Crystal"
     },
@@ -1274,6 +1278,23 @@ window.vehicleGuideData = {
           "Оружейный ящик"
         ],
         "speed": "200 км/ч"
+      }
+    ],
+    "sedan_battlepass": [
+      {
+        "id": "mercedes_sl63_sedan_battlepass",
+        "key": "mercedes_sl63",
+        "title": "Mercedes SL63 AMG",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "2 ящика",
+          "2 сундука",
+          "2 оружейных ящика"
+        ],
+        "speed": "285 км/ч"
       }
     ],
     "sedan_crystal": [
@@ -3034,6 +3055,18 @@ window.vehicleGuideData = {
       "/images/vehicles/jeep_gladiator_camo1.png",
       "/images/vehicles/jeep_gladiator_camo2.png",
       "/images/vehicles/jeep_gladiator_camo3.png"
+    ],
+    "mercedes_sl63": [
+      "/images/vehicles/mercedes_sl63_black.png",
+      "/images/vehicles/mercedes_sl63_black_matte.png",
+      "/images/vehicles/mercedes_sl63_blue.png",
+      "/images/vehicles/mercedes_sl63_green.png",
+      "/images/vehicles/mercedes_sl63_grey.png",
+      "/images/vehicles/mercedes_sl63_orange.png",
+      "/images/vehicles/mercedes_sl63_red.png",
+      "/images/vehicles/mercedes_sl63_white.png",
+      "/images/vehicles/mercedes_sl63_yellow.png",
+      "/images/vehicles/mercedes_sl63_camo1.png"
     ]
   }
 };

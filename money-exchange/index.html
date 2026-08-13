@@ -7,11 +7,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="/images/ywlogo.ico" sizes="any">
-  <title>Размен валюты YourWorld</title>
+  <title>Обмен/размен валюты YourWorld</title>
   <link rel="stylesheet" href="/style.css">
-  <meta name="description" content="Гайд по аппарату для размена валюты на сервере YourWorld PVE: рубли, доллары, кристаллы и таблица размена.">
-  <meta property="og:title" content="Размен валюты YourWorld">
-  <meta property="og:description" content="Аппарат для размена валюты, поддерживаемые номиналы и таблица размена рублей, долларов и кристаллов.">
+  <meta name="description" content="Гайд по аппарату для обмена и размена валюты на сервере YourWorld PVE: обмен рублей на доллары, рубли, доллары, кристаллы и таблица размена.">
+  <meta property="og:title" content="Обмен/размен валюты YourWorld">
+  <meta property="og:description" content="Аппарат для обмена и размена валюты: обмен рублей на доллары и обратно, лимиты и комиссии, поддерживаемые номиналы и таблица размена.">
   <meta property="og:image" content="https://wiki-yourworld.ru/images/money_razmen/apparat.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wiki-yourworld.ru/money-exchange/">
@@ -19,6 +19,7 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+  <link rel='stylesheet' href='/styles/pages/money-exchange.css'>
 </head>
 <body class="page-money-exchange">
 <div class="wrap">
@@ -32,10 +33,10 @@
 
   <div class="hero">
     <div class="hero-inner">
-      <img class="hero-logo" src="/images/money_razmen/apparat.png" alt="Размен валюты">
+      <img class="hero-logo" src="/images/money_razmen/apparat.png" alt="Обмен/размен валюты">
       <div>
-        <h1>Размен валюты</h1>
-        <p class="muted">Аппарат для размена рублей, долларов и кристаллов</p>
+        <h1>Обмен/размен валюты</h1>
+        <p class="muted">Аппарат для обмена рублей на доллары и размена рублей, долларов и кристаллов</p>
       </div>
     </div>
   </div>
@@ -48,7 +49,7 @@
         <figcaption>Аппарат для размена валюты</figcaption>
       </figure>
       <div class="exchange-text-flow">
-        <p class="info-text">Аппарат для размена расположен на всех трейд-зонах и работает с тремя валютами: рубли, доллары и кристаллы.</p>
+        <p class="info-text">Аппарат расположен на всех трейд-зонах, работает с тремя валютами (рубли, доллары и кристаллы) и умеет как разменивать номиналы, так и обменивать рубли на доллары.</p>
         <ul class="info-list">
           <li>Лагерь выживших</li>
           <li>Егерь</li>
@@ -61,11 +62,46 @@
   </section>
 
   <section class="card info-card">
+    <h2>Обмен валют</h2>
+    <div class="exchange-obmen-layout">
+      <figure class="collector-highlight collector-highlight--plain exchange-obmen-figure">
+        <img src="/images/money_razmen/Обменник.png" alt="Панель обмена валют" data-zoomable="true">
+        <figcaption>
+          Панель обмена валют
+          <span class="exchange-obmen-hint">Нажмите на картинку, чтобы увеличить</span>
+        </figcaption>
+      </figure>
+      <div class="exchange-text-flow">
+        <p class="info-text">В аппарате появилась визуальная панель обмена: перед подтверждением сразу видно, что и на что будет обменяно.</p>
+        <div class="info-note">Обмен рублей на доллары ограничен лимитом и комиссией, обмен долларов на рубли — без ограничений.</div>
+      </div>
+    </div>
+    <div class="exchange-note-grid">
+      <article class="exchange-note-card">
+        <h3>Рубли → Доллары</h3>
+        <ul class="info-list">
+          <li>Можно выбрать лимит обмена: <strong>суточный</strong> или <strong>на 3 дня</strong>.</li>
+          <li>Без комиссии: <strong>50.000$</strong> в сутки при суточном лимите или <strong>250.000$</strong> раз в 3 дня при лимите на 3 дня.</li>
+          <li>После исчерпания лимита обмен доступен с комиссией <strong>40%</strong>.</li>
+          <li>Обмены с комиссией ограничены — не более <strong>10 раз в неделю</strong>.</li>
+        </ul>
+      </article>
+      <article class="exchange-note-card">
+        <h3>Доллары → Рубли</h3>
+        <ul class="info-list">
+          <li>Работает без лимитов и без комиссии.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="card info-card">
     <h2>Действия</h2>
     <div class="exchange-note-grid">
       <article class="exchange-note-card">
         <h3>Что умеет аппарат</h3>
         <ul class="info-list">
+          <li><strong>Обменять валюту</strong> — конвертация рублей в доллары и обратно.</li>
           <li><strong>Разменять номинал</strong> — размен 1 предмета в руках.</li>
           <li><strong>Разменять весь стак</strong> — размен всей пачки.</li>
           <li><strong>Выдать крупными номиналами</strong> — пересборка в крупные номиналы.</li>
@@ -203,6 +239,11 @@
   </section>
 </div>
 
+<div class="img-modal" id="img-modal" aria-hidden="true">
+  <button class="img-modal__close" id="img-modal-close" aria-label="Закрыть">×</button>
+  <img class="img-modal__image" id="img-modal-image" alt="">
+</div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -216,10 +257,45 @@
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+      <a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a>
     </div>
   </div>
   <div class="footer-bottom">© 2026 YourWorld Dayz. Все права защищены.</div>
 </footer>
+<script>
+(function () {
+  const modal = document.getElementById("img-modal");
+  const modalImage = document.getElementById("img-modal-image");
+  const closeBtn = document.getElementById("img-modal-close");
+  const zoomables = document.querySelectorAll("img[data-zoomable='true']");
+  if (!modal || !modalImage || !closeBtn || !zoomables.length) return;
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    modalImage.src = "";
+  }
+
+  zoomables.forEach((img) => {
+    img.classList.add("zoomable-img");
+    img.addEventListener("click", () => {
+      modalImage.src = img.src;
+      modalImage.alt = img.alt || "";
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+})();
+</script>
 <script src="/site.js"></script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">

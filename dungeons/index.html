@@ -9,9 +9,9 @@
   <link rel="icon" href="/images/ywlogo.ico" sizes="any">
   <title>Данжи | YourWorld Wiki</title>
   <link rel="stylesheet" href="/style.css">
-  <meta name="description" content="Информация по данжам на сервере YourWorld PVE: локации, тиры, карты, телепорты и карточки с описанием прохождения.">
+  <meta name="description" content="Информация по данжам на сервере YourWorld PVE: сложность, боссы, телепорты и карточки с описанием прохождения.">
   <meta property="og:title" content="Данжи YourWorld">
-  <meta property="og:description" content="Каталог данжей YourWorld с распределением по картам, тирам и подробной информацией по каждому данжу.">
+  <meta property="og:description" content="Каталог данжей YourWorld с распределением по сложности и подробной информацией по каждому данжу.">
   <meta property="og:image" content="https://wiki-yourworld.ru/images/dungeons/dungeon.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wiki-yourworld.ru/dungeons/">
@@ -36,7 +36,7 @@
       <img class="hero-logo" src="/images/dungeons/dungeon.png" alt="Данжи">
       <div>
         <h1>Данжи</h1>
-        <p class="muted">Каталог данжей по картам, тирам и оружейной прогрессии</p>
+        <p class="muted">Каталог данжей по сложности и наличию боссов</p>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@
       </article>
       <article class="dungeon-note">
         <h3>Финальная награда</h3>
-        <p>Финальная награда за прохождение данжа — ящик, выпадающий после убийства босса. Для убийства боссов лучше использовать оружие под <strong>20мм</strong> и <strong>улучшенный патрон 20мм</strong>.</p>
+        <p>Финальная награда за прохождение данжа — ящик, выпадающий после убийства босса. В данжах без босса награда выдаётся по механике самого данжа.</p>
       </article>
     </div>
   </section>
@@ -110,6 +110,7 @@
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+      <a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a>
     </div>
   </div>
   <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
@@ -120,230 +121,221 @@
   (() => {
     const dungeons = [
       {
-        title: "Скалистый",
-        map: "Черно",
-        tier: "Сложный",
-        reward: "Bloody V2",
-        bosses: "4 босса",
-        preview: "Скалистый.png",
-        lead: "",
-        facts: [
-          "Рекомендуемое оружие: Bloody V2.",
-          "Формат: четырёхуровневый данж.",
-          "Боссы: 4.",
-          "Телепорт находится возле острова Скалистый."
-        ]
-      },
-      {
-        title: "Лабиринт",
-        map: "Черно",
-        tier: "Сложный",
-        reward: "Bloody V2",
-        bosses: "2 босса",
-        preview: "Лабиринт.png",
-        lead: "",
-        facts: [
-          "Рекомендуемое оружие: Bloody V2.",
-          "Боссы: 2.",
-          "Тип: сложный данж.",
-          "Телепорт расположен на территории военного объекта «Тисы»."
-        ]
-      },
-      {
-        title: "Снежная гробница",
-        map: "Дедфол",
-        tier: "Сложный",
-        reward: "Bloody V2",
-        bosses: "2 босса",
-        preview: "Снежная гробница.png",
-        lead: "",
-        facts: [
-          "Карта: Дедфол.",
-          "Тип: сложный данж.",
-          "Рекомендуемое оружие: Bloody V2.",
-          "Боссы: 2."
-        ]
-      },
-      {
+        id: "helicopter-graveyard",
         title: "Кладбище вертолетов",
         map: "Dungeon",
+        difficulty: "Лёгкие без босса",
         tier: "Лёгкий",
-        reward: "Dark V2-V3",
         bosses: "Без босса",
         preview: "Кладбище вертолетов.png",
-        lead: "",
+        lead: "Лёгкий данж без босса.",
         facts: [
-          "Рекомендуемое оружие: Dark V2-V3.",
-          "Тип: лёгкий данж.",
+          "Сложность: лёгкий данж.",
           "Босс: отсутствует."
         ]
       },
       {
+        id: "tunnel",
         title: "Туннель",
         map: "Dungeon",
+        difficulty: "Лёгкие без босса",
         tier: "Лёгкий",
-        reward: "Dark V2-V3",
         bosses: "Без босса",
         preview: "Туннель.png",
-        lead: "",
+        lead: "Лёгкий данж без босса.",
         facts: [
-          "Рекомендуемое оружие: Dark V2-V3.",
-          "Тип: лёгкий данж.",
+          "Сложность: лёгкий данж.",
           "Босс: отсутствует."
         ]
       },
       {
+        id: "death-trail",
         title: "Тропа смерти",
         map: "Dungeon",
+        difficulty: "Лёгкие с боссом",
         tier: "Лёгкий",
-        reward: "Dark V4-V6",
         bosses: "1 босс",
         preview: "Тропа смерти.png",
-        lead: "",
+        lead: "Лёгкий данж с боссом.",
         facts: [
-          "Рекомендуемое оружие: Dark V4-V6.",
-          "Тип: лёгкий данж.",
+          "Сложность: лёгкий данж.",
           "Босс: 1."
         ]
       },
       {
+        id: "rattling-forest",
         title: "Гремучий лес",
         map: "Dungeon",
+        difficulty: "Лёгкие с боссом",
         tier: "Лёгкий",
-        reward: "Dark V4-V6",
         bosses: "1 босс",
         preview: "Гремучий лес.png",
-        lead: "",
+        lead: "Лёгкий данж с боссом.",
         facts: [
-          "Рекомендуемое оружие: Dark V4-V6.",
-          "Тип: лёгкий данж.",
+          "Сложность: лёгкий данж.",
           "Босс: 1."
         ]
       },
       {
+        id: "prison",
         title: "Тюрьма",
         map: "Dungeon",
+        difficulty: "Средние без босса",
         tier: "Средний",
-        reward: "Dark V3-V5",
         bosses: "Без босса",
         preview: "Тюрьма.png",
-        lead: "",
+        lead: "Средний данж без босса.",
         facts: [
-          "Рекомендуемое оружие: Dark V3-V5.",
-          "Тип: средний данж.",
+          "Сложность: средний данж.",
           "Босс: отсутствует."
         ]
       },
       {
+        id: "paris",
         title: "Париж",
         map: "Dungeon",
+        difficulty: "Средние без босса",
         tier: "Средний",
-        reward: "Dark V3-V5",
         bosses: "Без босса",
         preview: "Париж.png",
-        lead: "",
+        lead: "Средний данж без босса.",
         facts: [
-          "Рекомендуемое оружие: Dark V3-V5.",
-          "Тип: средний данж.",
+          "Сложность: средний данж.",
           "Босс: отсутствует."
         ]
       },
       {
-        title: "Лес гриззли",
-        map: "Dungeon",
-        tier: "Средний",
-        reward: "Dark V6 и выше",
-        bosses: "1 босс",
-        preview: "Лес гриззли.png",
-        lead: "",
-        facts: [
-          "Рекомендуемое оружие: Dark V6 и выше.",
-          "Тип: средний данж.",
-          "Босс: 1."
-        ]
-      },
-      {
+        id: "stark-castle",
         title: "Замок старков",
         map: "Dungeon",
+        difficulty: "Средние с боссом",
         tier: "Средний",
-        reward: "Dark V6 и выше",
         bosses: "1 босс",
         preview: "Замок старков.png",
-        lead: "",
+        lead: "Средний данж с боссом.",
         facts: [
-          "Рекомендуемое оружие: Dark V6 и выше.",
-          "Тип: средний данж.",
+          "Сложность: средний данж.",
           "Босс: 1."
         ]
       },
       {
-        title: "Бермудский треугольник",
+        id: "islands",
+        title: "Острова",
         map: "Dungeon",
+        difficulty: "Средние с боссом",
         tier: "Средний",
-        reward: "Dark V6 и выше",
         bosses: "1 босс",
-        preview: "Бермудский треугольник.png",
-        lead: "",
+        preview: "Острова.png",
+        lead: "Средний данж с боссом.",
         facts: [
-          "Рекомендуемое оружие: Dark V6 и выше.",
-          "Тип: средний данж.",
+          "Сложность: средний данж.",
           "Босс: 1."
         ]
       },
       {
-        title: "Заброшенный лагерь",
+        id: "portland",
+        title: "Портленд",
         map: "Dungeon",
+        subtitle: "4 уровня",
+        difficulty: "Сложные с боссами",
         tier: "Сложный",
-        reward: "Bloody V2",
-        bosses: "2 босса",
-        preview: "Заброшенный лагерь.png",
-        lead: "",
+        bosses: "Боссы по уровням",
+        preview: "Портленд.png",
+        lead: "Четырёхуровневый сложный данж.",
         facts: [
-          "Рекомендуемое оружие: Bloody V2.",
-          "Тип: сложный данж.",
-          "Боссы: 2."
+          "Данж разделён на 4 уровня.",
+          "С каждым уровнем увеличивается сложность мобов и босса."
         ]
       },
       {
-        title: "Остров мертвых",
+        id: "abandoned-port",
+        title: "Заброшенный порт",
         map: "Dungeon",
+        difficulty: "Сложные с боссами",
         tier: "Сложный",
-        reward: "Bloody V2",
-        bosses: "2 босса",
-        preview: "Остров мертвых.png",
-        lead: "",
+        bosses: "1 босс",
+        preview: "Заброшенный Порт.png",
+        lead: "Сложный данж с механикой прохода во вторую часть.",
         facts: [
-          "Рекомендуемое оружие: Bloody V2.",
-          "Тип: сложный данж.",
-          "Боссы: 2."
-        ]
+          "Данж разделён на 2 части.",
+          "Чтобы пройти во вторую часть, нужно найти моба, из которого выпадает карта пропуска.",
+          "Во второй части данжа находится босс."
+        ],
+        passCard: {
+          title: "Карта пропуска",
+          image: "Пропуск.png",
+          note: "Выпадает из одного из мобов в первой части данжа и нужна для прохода во вторую часть."
+        }
       },
       {
-        title: "Каменная долина",
-        map: "Dungeon",
-        tier: "Сложный",
-        reward: "Bloody V2",
-        bosses: "2 босса",
-        preview: "Каменная долина.png",
-        lead: "",
-        facts: [
-          "Рекомендуемое оружие: Bloody V2.",
-          "Тип: сложный данж.",
-          "Боссы: 2."
-        ]
-      },
-      {
+        id: "bunker",
         title: "Бункер",
         map: "Dungeon",
+        difficulty: "Сложные с боссами",
         tier: "Сложный",
-        reward: "Bloody V2",
-        bosses: "Цикличный",
+        bosses: "Босс",
         preview: "Бункер.png",
-        lead: "",
+        lead: "Сложный данж с боссом.",
         facts: [
-          "Рекомендуемое оружие: Bloody V2.",
-          "Тип: сложный цикличный данж.",
-          "Прохождение: 1 этаж -> 3 этаж -> обратно."
+          "Сложность: сложный данж.",
+          "Есть босс."
+        ]
+      },
+      {
+        id: "abandoned-camp",
+        title: "Заброшенный лагерь",
+        map: "Dungeon",
+        difficulty: "Сложные с боссами",
+        tier: "Сложный",
+        bosses: "2 босса",
+        preview: "Заброшенный лагерь.png",
+        lead: "Сложный данж с двумя боссами.",
+        facts: [
+          "Сложность: сложный данж.",
+          "Боссы: 2."
+        ]
+      },
+      {
+        id: "dead-island",
+        title: "Остров мертвых",
+        map: "Dungeon",
+        difficulty: "Сложные с боссами",
+        tier: "Сложный",
+        bosses: "2 босса",
+        preview: "Остров мертвых.png",
+        lead: "Сложный данж с двумя боссами.",
+        facts: [
+          "Сложность: сложный данж.",
+          "Боссы: 2."
+        ]
+      },
+      {
+        id: "stone-valley",
+        title: "Каменная долина",
+        map: "Dungeon",
+        difficulty: "Сложные с боссами",
+        tier: "Сложный",
+        bosses: "2 босса",
+        preview: "Каменная долина.png",
+        lead: "Сложный данж с двумя боссами.",
+        facts: [
+          "Сложность: сложный данж.",
+          "Боссы: 2."
+        ]
+      },
+      {
+        id: "snow-tomb",
+        title: "Снежная гробница",
+        map: "Deadfall",
+        difficulty: "Самые сложные",
+        tier: "Самый сложный",
+        bosses: "2 босса",
+        preview: "Снежная гробница.png",
+        lead: "Самый сложный данж Deadfall.",
+        facts: [
+          "Карта: Deadfall.",
+          "Сложность: самый сложный данж.",
+          "Боссы: 2."
         ]
       }
     ];
@@ -358,25 +350,17 @@
         title: "Телепорты Deadfall",
         image: "Телепорты дедфол.png",
         text: "Отдельная новая карточка с телепортами карты Deadfall."
-      },
-      {
-        title: "Телепорт лабиринт",
-        image: "Телепорт лабиринт.png",
-        text: "Новая отдельная картинка телепорта в Лабиринт."
-      },
-      {
-        title: "Телепорт скалистый",
-        image: "Телепорт скалик.png",
-        text: "Новая отдельная картинка телепорта на Скалистый."
       }
     ];
 
-    const mapSections = [
-      { name: "Черно" },
-      { name: "Дедфол" },
-      { name: "Dungeon" }
+    const difficultySections = [
+      "Лёгкие без босса",
+      "Лёгкие с боссом",
+      "Средние без босса",
+      "Средние с боссом",
+      "Сложные с боссами",
+      "Самые сложные"
     ];
-
     const mapsRoot = document.getElementById("dungeonMaps");
     const teleportsRoot = document.getElementById("teleportGrid");
     const modal = document.getElementById("dungeonModal");
@@ -394,20 +378,32 @@
     function tierBadgeClass(tier) {
       if (tier === "Лёгкий") return "tier-badge tier-badge--easy";
       if (tier === "Средний") return "tier-badge tier-badge--medium";
+      if (tier === "Самый сложный") return "tier-badge tier-badge--extreme";
       return "tier-badge tier-badge--hard";
     }
 
     function openModal(item) {
       if (!modal || !modalTitle || !modalChips || !modalLead || !modalFacts || !modalPreview) return;
-      modalTitle.textContent = item.title;
+      modalTitle.textContent = item.subtitle ? `${item.title} — ${item.subtitle}` : item.title;
       modalChips.innerHTML = [
-        `<span class="dungeon-chip dungeon-chip--accent">${item.map}</span>`,
+        `<span class="dungeon-chip dungeon-chip--map">${item.map}</span>`,
+        `<span class="dungeon-chip dungeon-chip--accent">${item.difficulty}</span>`,
         `<span class="dungeon-chip">${item.tier}</span>`,
-        `<span class="dungeon-chip">Рекомендуемое оружие: ${item.reward}</span>`,
         `<span class="dungeon-chip">${item.bosses}</span>`
       ].join("");
       modalLead.textContent = item.lead;
       modalFacts.innerHTML = item.facts.map((fact) => `<li>${fact}</li>`).join("");
+      if (item.passCard) {
+        modalFacts.insertAdjacentHTML("beforeend", `
+          <li class="dungeon-pass-card">
+            <img src="${imagePath(item.passCard.image)}" alt="${item.passCard.title}">
+            <div>
+              <strong>${item.passCard.title}</strong>
+              <span>${item.passCard.note}</span>
+            </div>
+          </li>
+        `);
+      }
       modalPreview.src = imagePath(item.preview);
       modalPreview.alt = item.title;
 
@@ -424,33 +420,37 @@
     }
 
     if (mapsRoot) {
-      mapsRoot.innerHTML = mapSections.map((section) => {
-        const sectionItems = dungeons.filter((item) => item.map === section.name);
-        const sortedItems = [...sectionItems].sort((a, b) => {
-          const tierOrder = { "Лёгкий": 1, "Средний": 2, "Сложный": 3 };
-          const tierDiff = (tierOrder[a.tier] || 99) - (tierOrder[b.tier] || 99);
-          if (tierDiff !== 0) return tierDiff;
-          return a.title.localeCompare(b.title, "ru");
-        });
+      mapsRoot.innerHTML = difficultySections.map((section) => {
+        const sectionItems = dungeons.filter((item) => item.difficulty === section);
         return `
-          <section class="dungeon-map ${section.name === "Дедфол" ? "dungeon-map--compact" : ""}">
+          <section class="dungeon-map">
             <div class="dungeon-map__head">
-              <h3>Карта ${section.name}</h3>
+              <h3>${section}</h3>
             </div>
             <div class="dungeon-grid">
-              ${sortedItems.map((item) => `
-                <article class="dungeon-card" data-map="${item.map}">
+              ${sectionItems.map((item) => `
+                <article class="dungeon-card">
                   <div class="dungeon-card__visual">
-                    <img src="${imagePath(item.preview)}" alt="${item.title}" loading="lazy">
+                    <img src="${imagePath(item.preview)}" alt="${item.subtitle ? `${item.title} — ${item.subtitle}` : item.title}" loading="lazy">
                   </div>
                   <div class="dungeon-card__body">
                     <h5 class="dungeon-card__title">${item.title}</h5>
                     <div class="dungeon-card__meta">
+                      <span class="dungeon-card__map">${item.map}</span>
+                      ${item.subtitle ? `<span class="dungeon-card__level">${item.subtitle}</span>` : ""}
                       <span class="${tierBadgeClass(item.tier)}">${item.tier}</span>
-                      <span>Рекомендуемое оружие: ${item.reward}</span>
                       <span>${item.bosses}</span>
                     </div>
-                    <button class="dungeon-card__action" type="button" data-dungeon-title="${item.title}">Открыть</button>
+                    ${item.passCard ? `
+                      <div class="dungeon-card__pass">
+                        <img src="${imagePath(item.passCard.image)}" alt="${item.passCard.title}" loading="lazy">
+                        <div>
+                          <strong>${item.passCard.title}</strong>
+                          <span>Нужна для прохода во вторую часть</span>
+                        </div>
+                      </div>
+                    ` : ""}
+                    <button class="dungeon-card__action" type="button" data-dungeon-id="${item.id}">Открыть</button>
                   </div>
                 </article>
               `).join("")}
@@ -460,10 +460,10 @@
       }).join("");
 
       mapsRoot.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-dungeon-title]");
+        const button = event.target.closest("[data-dungeon-id]");
         if (!button) return;
-        const title = button.getAttribute("data-dungeon-title") || "";
-        const item = dungeons.find((dungeon) => dungeon.title === title);
+        const id = button.getAttribute("data-dungeon-id") || "";
+        const item = dungeons.find((dungeon) => dungeon.id === id);
         if (!item) return;
         openModal(item);
       });
@@ -489,7 +489,7 @@
 
         modalTitle.textContent = title;
         modalChips.innerHTML = `<span class="dungeon-chip dungeon-chip--accent">Телепорт</span>`;
-        modalLead.textContent = "Увеличенное изображение телепорта.";
+        modalLead.textContent = "";
         modalFacts.innerHTML = "";
         modalPreview.src = imagePath(image);
         modalPreview.alt = title;
@@ -537,4 +537,3 @@
 <!-- /Yandex.Metrika counter -->
 </body>
 </html>
-

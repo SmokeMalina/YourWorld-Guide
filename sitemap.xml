@@ -61,9 +61,6 @@
     <loc>https://wiki-yourworld.ru/retex-table/</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/ranks/</loc>
-  </url>
-  <url>
     <loc>https://wiki-yourworld.ru/achievements/</loc>
   </url>
   <url>
@@ -101,6 +98,9 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/hooch/</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/fruit-orchards/</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/brodyaga/</loc>
@@ -859,28 +859,28 @@
     <loc>https://wiki-yourworld.ru/craft/clothing/whimsy_vest_v5.html</loc>
   </url>
   <url>
+    <loc>https://wiki-yourworld.ru/craft/conserv/avocado_big_can.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/conserv/avocado_can.html</loc>
+  </url>
+  <url>
     <loc>https://wiki-yourworld.ru/craft/conserv/beetroot_big_can.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/conserv/beetroot_can.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/carrot_big_can.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/conserv/cucumber_big_can.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/carrot_can.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/conserv/cucumber_can.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/corn_big_can.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/conserv/eggplant_big_can.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/corn_can.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/garlik_big_can.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/garlik_can.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/conserv/eggplant_can.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/conserv/melon_big_can.html</loc>
@@ -889,22 +889,22 @@
     <loc>https://wiki-yourworld.ru/craft/conserv/melon_can.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/onion_big_can.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/conserv/peper_big_can.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/onion_can.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/pineapple_big_can.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/conserv/pineapple_can.html</loc>
+    <loc>https://wiki-yourworld.ru/craft/conserv/peper_can.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/conserv/radish_big_can.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/conserv/radish_can.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/conserv/red_potato_big_can.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/conserv/red_potato_can.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/conserv/strawberry_big_can.html</loc>
@@ -1016,12 +1016,6 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/items/canister_100.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/items/card_labirint.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/items/card_skalisty.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/craft_resources/cloth_immortal.html</loc>
@@ -1814,5 +1808,134 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/workbench/rifle_dark_v1.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/workbench/ammo_556x45_specter.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/ranks/</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/chertezh_book_32.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/gardening_box_100.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/gardening_box_200.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/gardening_box_300.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/med_case_100.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/med_case_250.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/med_case_500.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/pokemon_box_16.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/pokemon_box_24.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/pokemon_box_48.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/pokemon_box_all.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/sneaker_box_8.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/sneaker_box_16.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/sneaker_box_32.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/wine_box_16.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/wine_box_32.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/cases/wine_box_40.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/clothing/marauder_jacket_v2.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/clothing/marauder_pants_v2.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/clothing/marauder_vest_v2.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/clothing/tempest_jacket_v2.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/clothing/tempest_pants_v2.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/clothing/tempest_vest_v2.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/craft_resources/spraypaitn_immortal.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/items/card_portland.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/items/gardenlime.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/items/key_purple.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/items/key_red.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/items/key_yellow.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/items/retexture_table.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_aek_300.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_as50_400.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_groza_300.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_hk121_700.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_mp7_300.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_vulkan_300.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_vulkan_450.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_phantom/mag_saiga12_200.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/medicine/iod200.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/medicine/iod400.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/medicine/iod600.html</loc>
   </url>
 </urlset>

@@ -64,6 +64,7 @@
     const isCustomsIndex = path === "/customs" || path === "/customs/index.html";
     const isStashIndex = path === "/stash" || path === "/stash/index.html";
     const isHoochIndex = path === "/hooch" || path === "/hooch/index.html";
+    const isFruitOrchardsIndex = path === "/fruit-orchards" || path === "/fruit-orchards/index.html";
     const isBrodyagaIndex = path === "/brodyaga" || path === "/brodyaga/index.html";
     const isConnectIndex = path === "/connect" || path === "/connect/index.html";
     const isRetexTableIndex = path === "/retex-table" || path === "/retex-table/index.html";
@@ -235,9 +236,9 @@
 
     if (path.startsWith("/money-exchange")) {
       if (isMoneyExchangeIndex) {
-        crumbs.push({ title: "Размен валюты" });
+        crumbs.push({ title: "Обмен/размен валюты" });
       } else {
-        crumbs.push({ title: "Размен валюты", href: "/money-exchange/index.html" });
+        crumbs.push({ title: "Обмен/размен валюты", href: "/money-exchange/index.html" });
       }
     }
 
@@ -254,6 +255,14 @@
         crumbs.push({ title: "Самогоноварение" });
       } else {
         crumbs.push({ title: "Самогоноварение", href: "/hooch/index.html" });
+      }
+    }
+
+    if (path.startsWith("/fruit-orchards")) {
+      if (isFruitOrchardsIndex) {
+        crumbs.push({ title: "Фруктовые сады" });
+      } else {
+        crumbs.push({ title: "Фруктовые сады", href: "/fruit-orchards/index.html" });
       }
     }
 
@@ -488,21 +497,7 @@
     toggleVisibility();
   }
 
-  function removeStoreLinks() {
-    document.querySelectorAll("a[href]").forEach(link => {
-      const href = (link.getAttribute("href") || "").trim();
-      const label = (link.textContent || "").trim().toLowerCase();
-      const isStoreUrl = href === "https://yourworlddayz.ru/" || href === "https://yourworlddayz.ru";
-      const isFooterStoreLink = label === "магазин" && link.closest(".site-footer, .footer-links, header, nav");
-
-      if (isStoreUrl || isFooterStoreLink) {
-        link.remove();
-      }
-    });
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
-    removeStoreLinks();
     addBreadcrumbs();
     enableHistoryBack();
     saveScrollOnNav();

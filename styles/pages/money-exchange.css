@@ -1,0 +1,27 @@
+.exchange-obmen-layout {
+  display: grid;
+  gap: 16px;
+}
+
+.exchange-obmen-figure {
+  width: min(100%, 320px);
+  margin: 0 auto;
+}
+
+.exchange-obmen-figure img {
+  height: 380px;
+}
+
+.exchange-obmen-hint {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .exchange-obmen-figure img {
+    height: 320px;
+  }
+}

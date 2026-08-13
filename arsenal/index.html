@@ -75,6 +75,7 @@
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+      <a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a>
     </div>
   </div>
   <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
@@ -3124,6 +3125,42 @@
             },
             integratedSuppressor: "Встроенный глушитель",
             suppressors: []
+          },
+          {
+            name: "Vulkan Specter",
+            image: "/images/weapons/specter/specter_vulkan.png",
+            gallery: [
+              "/images/weapons/specter/specter_vulkan.png"
+            ],
+            damage: [
+              {
+                label: "5.56x45 Specter",
+                value: "29500"
+              },
+              {
+                label: "5.56x45 Specter Craft",
+                value: "35100"
+              }
+            ],
+            fireModes: "Автомат / Полуавтомат",
+            fireRate: "900",
+            ammo: [
+              {
+                label: "5.56x45 Specter",
+                image: "/images/weapons/ammo/specter_556x45.png"
+              },
+              {
+                label: "5.56x45 Specter Craft",
+                image: "/images/weapons/ammo/specter_556x45_craft.png"
+              }
+            ],
+            magazine: "",
+            magTypes: ["150", "300", "450"],
+            magPreview: {
+              image: "/images/weapons/specter/vulkan_mag.png"
+            },
+            integratedSuppressor: "Встроенный глушитель",
+            suppressors: []
           }
         ]
       },
@@ -3201,6 +3238,51 @@
 
     const hasFireRateBlock = (weapon) => weapon.hasFireRate !== false;
 
+    const renderDamageBlock = (weapon) => {
+      if (!Array.isArray(weapon.damage)) {
+        return `<div class="weapon-db-stat"><span class="weapon-db-stat__label">Урон</span><strong class="weapon-db-stat__value weapon-db-stat__badge">${escapeHtml(weapon.damage)}</strong></div>`;
+      }
+
+      const ammoItems = Array.isArray(weapon.ammo) ? weapon.ammo : [weapon.ammo];
+      const ammoByLabel = new Map(
+        ammoItems
+          .filter((item) => item && item.label && item.image)
+          .map((item) => [item.label, item])
+      );
+      const damageItems = weapon.damage
+        .filter((item) => item && item.label && item.value)
+        .map((item) => {
+          const ammo = ammoByLabel.get(item.label);
+          const icon = ammo
+            ? `<img class="zoomable-img" data-zoomable="true" src="${ammo.image}" alt="${escapeHtml(ammo.label)}">`
+            : "";
+
+          return `
+          <div class="weapon-db-damage__item">
+            ${icon}
+            <span class="weapon-db-damage__name">${escapeHtml(item.label)}</span>
+            <span class="weapon-db-damage__value">${escapeHtml(item.value)}</span>
+          </div>
+        `;
+        }).join("");
+
+      return `<div class="weapon-db-stat weapon-db-stat--damage"><span class="weapon-db-stat__label">Урон по патронам</span><div class="weapon-db-damage">${damageItems}</div></div>`;
+    };
+
+    const renderAmmoBlock = (weapon) => {
+      const ammoItems = Array.isArray(weapon.ammo) ? weapon.ammo : [weapon.ammo];
+      const validAmmoItems = ammoItems.filter((item) => item && item.label && item.image);
+      const label = validAmmoItems.length > 1 ? "Используемые патроны" : "Используемый патрон";
+      const items = validAmmoItems.map((item) => `
+        <div class="weapon-db-ammo__item">
+          <img class="zoomable-img" data-zoomable="true" src="${item.image}" alt="${escapeHtml(item.label)}">
+          <strong class="weapon-db-stat__value weapon-db-stat__badge">${escapeHtml(item.label)}</strong>
+        </div>
+      `).join("");
+
+      return `<div class="weapon-db-stat weapon-db-stat--ammo"><span class="weapon-db-stat__label">${label}</span><div class="weapon-db-ammo">${items}</div></div>`;
+    };
+
     const hasSuppressorBlock = (weapon) => {
       if (weapon.integratedSuppressor) return true;
       if (weapon.hasSuppressors === false) return false;
@@ -3265,10 +3347,10 @@
           </div>
           <div class="weapon-db-card__body">
             <div class="weapon-db-stats">
-              <div class="weapon-db-stat"><span class="weapon-db-stat__label">Урон</span><strong class="weapon-db-stat__value weapon-db-stat__badge">${escapeHtml(weapon.damage)}</strong></div>
+              ${renderDamageBlock(weapon)}
               <div class="weapon-db-stat"><span class="weapon-db-stat__label">Режимы стрельбы</span><strong class="weapon-db-stat__value weapon-db-stat__badge">${escapeHtml(weapon.fireModes)}</strong></div>
               ${fireRateBlock}
-              <div class="weapon-db-stat weapon-db-stat--ammo"><span class="weapon-db-stat__label">Используемый патрон</span><div class="weapon-db-ammo"><img class="zoomable-img" data-zoomable="true" src="${weapon.ammo.image}" alt="${escapeHtml(weapon.ammo.label)}"><strong class="weapon-db-stat__value weapon-db-stat__badge">${escapeHtml(weapon.ammo.label)}</strong></div></div>
+              ${renderAmmoBlock(weapon)}
             </div>
             <div class="weapon-db-detail-grid">
               ${magazineBlock}
