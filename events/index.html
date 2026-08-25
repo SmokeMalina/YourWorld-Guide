@@ -387,6 +387,12 @@
         ? savedState.currentEvent.deadfall
         : eventMaps.deadfall[0].id
     };
+    const requestedMap = new URLSearchParams(window.location.search).get("map")?.trim();
+    const requestedEventId = new URLSearchParams(window.location.search).get("event")?.trim();
+    if (requestedMap && requestedEventId && eventMaps[requestedMap]?.some((item) => item.id === requestedEventId)) {
+      currentMap = requestedMap;
+      currentEvent[requestedMap] = requestedEventId;
+    }
 
     const mapButtons = [...document.querySelectorAll(".events-map-btn")];
     const mapPanels = [...document.querySelectorAll(".events-map-panel")];

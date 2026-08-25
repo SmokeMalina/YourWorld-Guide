@@ -389,6 +389,28 @@
     }
 
     function initState() {
+      const urlItemId = new URLSearchParams(window.location.search).get("item")?.trim();
+      if (urlItemId) {
+        const target = meleeItems.find((item) => item.key === urlItemId);
+        if (target) {
+          currentCategory = Array.isArray(target.category) ? target.category[0] : target.category;
+          currentQuery = target.title || humanizeKey(target.key);
+          if (searchInput) searchInput.value = currentQuery;
+          return;
+        }
+      }
+
+      const urlSearchQuery = new URLSearchParams(window.location.search)
+        .getAll("search")
+        .map((value) => value.trim())
+        .filter(Boolean)
+        .join(" ");
+      if (urlSearchQuery) {
+        currentQuery = urlSearchQuery;
+        if (searchInput) searchInput.value = currentQuery;
+        return;
+      }
+
       const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
       if (savedCategory && meleeCategories.some((category) => category.id === savedCategory)) {
         currentCategory = savedCategory;
@@ -404,6 +426,14 @@
     initState();
     renderTabs();
     renderCatalog();
+
+    const urlItemId = new URLSearchParams(window.location.search).get("item")?.trim();
+    if (urlItemId) {
+      requestAnimationFrame(() => {
+        document.querySelector(`[data-melee-card="${CSS.escape(urlItemId)}"]`)
+          ?.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    }
 
     tabsEl.addEventListener("click", (event) => {
       const button = event.target.closest("[data-melee-tab]");

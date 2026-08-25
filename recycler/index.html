@@ -1150,6 +1150,10 @@
   const cards = Array.from(document.querySelectorAll(".recycle-card"));
   if (!input || !empty || !cards.length) return;
 
+  cards.forEach((card, index) => {
+    card.id ||= `recycler-card-${index + 1}`;
+  });
+
   function normalize(value) {
     return value.toLowerCase().trim();
   }
@@ -1164,6 +1168,7 @@
       const haystack = `${name} ${count}`;
       const match = !q || haystack.includes(q);
       card.style.display = match ? "" : "none";
+      card.dataset.recyclerMatch = String(match);
       if (match) visible += 1;
     });
 
@@ -1171,6 +1176,22 @@
   }
 
   input.addEventListener("input", applyFilter);
+
+  // Pagefind puts every query word into a separate `search` parameter.
+  // The section name is only navigation context, not an item filter.
+  const searchQuery = new URLSearchParams(window.location.search)
+    .getAll("search")
+    .flatMap((value) => value.split(/\s+/))
+    .filter((word) => !["переработчик", "recycler"].includes(normalize(word)))
+    .join(" ");
+  if (searchQuery) {
+    input.value = searchQuery;
+    applyFilter();
+    requestAnimationFrame(() => {
+      document.querySelector('.recycle-card[data-recycler-match="true"]')
+        ?.scrollIntoView({ block: "center", behavior: "auto" });
+    });
+  }
 })();
 </script>
 <script src="/site.js"></script>

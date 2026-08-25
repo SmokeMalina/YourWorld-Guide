@@ -188,11 +188,17 @@
     for (let i = 1; i <= 41; i += 1) {
       const card = document.createElement("figure");
       card.className = "collector-item";
+      card.id = `vehicle-collector-item-${i}`;
       card.innerHTML = `
         <img src="/images/vehicle_toy_collector/car_toy_${i}.png" alt="Коллекционная машинка ${i}">
         <figcaption>${vehicleNames[i - 1]}</figcaption>
       `;
       root.appendChild(card);
+    }
+
+    const hashTarget = window.location.hash.slice(1);
+    if (hashTarget) {
+      requestAnimationFrame(() => document.getElementById(hashTarget)?.scrollIntoView({ block: "start", behavior: "auto" }));
     }
   })();
 </script>

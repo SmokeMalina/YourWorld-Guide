@@ -469,6 +469,12 @@
       });
     }
 
+    const requestedDungeonId = new URLSearchParams(window.location.search).get("dungeon")?.trim();
+    const requestedDungeon = dungeons.find((item) => item.id === requestedDungeonId);
+    if (requestedDungeon) {
+      requestAnimationFrame(() => openModal(requestedDungeon));
+    }
+
     if (teleportsRoot) {
       teleportsRoot.innerHTML = teleportCards.map((item) => `
         <article class="teleport-card">

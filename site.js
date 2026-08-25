@@ -497,11 +497,45 @@
     toggleVisibility();
   }
 
+  function addSiteSearch() {
+    if (document.querySelector(".site-search")) return;
+
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = "/pagefind/pagefind-component-ui.css";
+    document.head.appendChild(stylesheet);
+
+    const script = document.createElement("script");
+    script.type = "module";
+    script.src = "/pagefind/pagefind-component-ui.js";
+    document.head.appendChild(script);
+
+    const search = document.createElement("div");
+    search.className = "site-search";
+    search.setAttribute("data-pf-theme", "dark");
+
+    const config = document.createElement("pagefind-config");
+    config.setAttribute("bundle-path", "/pagefind/");
+    config.setAttribute("base-url", "/");
+    config.setAttribute("lang", "ru");
+    config.setAttribute("highlight-param", "search");
+
+    const trigger = document.createElement("pagefind-modal-trigger");
+    trigger.setAttribute("placeholder", "Поиск по вики");
+
+    const modal = document.createElement("pagefind-modal");
+    modal.setAttribute("reset-on-close", "");
+
+    search.append(config, trigger, modal);
+    document.body.appendChild(search);
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     addBreadcrumbs();
     enableHistoryBack();
     saveScrollOnNav();
     restoreScroll();
     addScrollTopButton();
+    addSiteSearch();
   });
 })();

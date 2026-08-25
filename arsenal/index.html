@@ -87,6 +87,11 @@
   (() => {
     const STORAGE_TAB_KEY = "arsenal.activeSeries";
     const STORAGE_SCROLL_KEY = "arsenal.scrollY";
+    const urlSearchQuery = new URLSearchParams(window.location.search)
+      .getAll("search")
+      .map((value) => value.trim())
+      .filter(Boolean)
+      .join(" ");
     const suppressorIcon = "/images/weapons/suppressor.png";
     const makeSuppressor = (label, image, extra = {}) => ({ label, image, ...extra });
     const buildImmortalSuppressors = () => ([
@@ -3338,7 +3343,7 @@
         : "";
 
       return `
-        <article class="weapon-db-card" data-weapon-name="${escapeHtml(weapon.name.toLowerCase())}" data-series-id="${escapeHtml(seriesId)}">
+        <article class="weapon-db-card" data-weapon-name="${escapeHtml(weapon.name.toLowerCase())}" data-series-id="${escapeHtml(seriesId)}" data-weapon-index="${weaponIndex}">
           <div class="weapon-db-card__header"><h3>${escapeHtml(weapon.name)}</h3></div>
           <div class="weapon-db-card__media">
             <div class="weapon-db-card__image">
@@ -3625,7 +3630,10 @@
         panel.classList.toggle("is-filtered-out", !hasMatch);
       });
 
-      const firstMatchSeries = seriesData.find((series) => seriesMatches.has(series.id));
+      const exactMatch = seriesData
+        .flatMap((series) => series.weapons.map((weapon) => ({ series, weapon })))
+        .find(({ weapon }) => weapon.name.trim().toLowerCase() === query);
+      const firstMatchSeries = exactMatch?.series || seriesData.find((series) => seriesMatches.has(series.id));
       if (firstMatchSeries) {
         setActiveSeries(firstMatchSeries.id);
         if (searchEmpty) searchEmpty.classList.add("hidden");
@@ -3638,6 +3646,26 @@
       searchInput.addEventListener("input", applySearch);
     }
 
+    // Pagefind adds the search text to the result URL. Apply it to this
+    // client-rendered catalog before restoring the previously opened tab.
+    const directSeriesId = new URLSearchParams(window.location.search).get("series")?.trim();
+    const directWeaponIndex = Number(new URLSearchParams(window.location.search).get("weapon"));
+    const directWeapon = seriesData.find((series) => series.id === directSeriesId)?.weapons[directWeaponIndex];
+    const initialSearchQuery = directWeapon?.name || urlSearchQuery;
+    if (initialSearchQuery && searchInput) {
+      searchInput.value = initialSearchQuery;
+      applySearch();
+      requestAnimationFrame(() => {
+        const query = initialSearchQuery.toLowerCase();
+        const exactCard = Array.from(document.querySelectorAll(".weapon-db-card"))
+          .find((card) => directWeapon
+            ? card.dataset.seriesId === directSeriesId && Number(card.dataset.weaponIndex) === directWeaponIndex
+            : card.dataset.weaponName === query);
+        (exactCard || document.querySelector(".weapon-db-card:not(.is-filtered-out)"))
+          ?.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    }
+
     const persistScroll = () => {
       sessionStorage.setItem(STORAGE_SCROLL_KEY, String(window.scrollY));
     };
@@ -3645,11 +3673,11 @@
     window.addEventListener("scroll", persistScroll, { passive: true });
     window.addEventListener("beforeunload", persistScroll);
 
-    if (savedSeriesId && seriesData.some((series) => series.id === savedSeriesId)) {
+    if (!initialSearchQuery && savedSeriesId && seriesData.some((series) => series.id === savedSeriesId)) {
       setActiveSeries(savedSeriesId);
     }
 
-    if (savedScrollY !== null) {
+    if (!initialSearchQuery && savedScrollY !== null) {
       requestAnimationFrame(() => {
         window.scrollTo(0, Number(savedScrollY) || 0);
       });

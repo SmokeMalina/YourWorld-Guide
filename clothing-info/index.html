@@ -4598,10 +4598,22 @@
     restoreMapState(STORAGE_KEYS.viewers, outfitViewerState);
 
     try {
-      const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
-      if (savedCategory) currentCategory = savedCategory;
-      const savedQuery = localStorage.getItem(STORAGE_KEYS.query);
-      if (savedQuery) currentQuery = savedQuery;
+      const urlSearchQuery = new URLSearchParams(window.location.search)
+        .getAll("search")
+        .map((value) => value.trim())
+        .filter(Boolean)
+        .join(" ");
+      if (urlSearchQuery) {
+        // A global-search result must not be restricted by the last category
+        // the visitor selected locally.
+        currentCategory = "all";
+        currentQuery = urlSearchQuery;
+      } else {
+        const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
+        if (savedCategory) currentCategory = savedCategory;
+        const savedQuery = localStorage.getItem(STORAGE_KEYS.query);
+        if (savedQuery) currentQuery = savedQuery;
+      }
     } catch (_) {}
 
     function renderCatalog(activeCategory = "all", query = "") {

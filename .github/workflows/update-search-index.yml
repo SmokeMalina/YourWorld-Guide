@@ -1,0 +1,34 @@
+name: Update Pagefind index
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "pagefind/**"
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build:search
+
+      - name: Commit updated search index
+        run: |
+          git add pagefind
+          git diff --cached --quiet || (
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: update Pagefind index"
+            git push
+          )

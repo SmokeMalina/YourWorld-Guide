@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "build:search": "node scripts/build-search-index.mjs"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2"
+  }
+}

@@ -339,6 +339,35 @@
     }
 
     function initState() {
+      const urlItemId = new URLSearchParams(window.location.search).get("item")?.trim();
+      if (urlItemId) {
+        const target = vehicleCategories
+          .map((category) => ({ category, model: getCategoryModels(category.id).find((model) => model.id === urlItemId) }))
+          .find((item) => item.model);
+        if (target) {
+          currentCategory = target.category.id;
+          currentQuery = target.model.title;
+          if (searchInput) searchInput.value = currentQuery;
+          return;
+        }
+      }
+
+      const urlSearchQuery = new URLSearchParams(window.location.search)
+        .getAll("search")
+        .map((value) => value.trim())
+        .filter(Boolean)
+        .join(" ");
+      if (urlSearchQuery) {
+        currentQuery = urlSearchQuery;
+        const matchingCategory = vehicleCategories.find((category) => getCategoryModels(category.id).some((model) => {
+          const query = urlSearchQuery.toLowerCase();
+          return model.title.toLowerCase().includes(query) || String(model.search || "").toLowerCase().includes(query);
+        }));
+        if (matchingCategory) currentCategory = matchingCategory.id;
+        if (searchInput) searchInput.value = currentQuery;
+        return;
+      }
+
       const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
       if (savedCategory && vehicleCategories.some((category) => category.id === savedCategory)) {
         currentCategory = savedCategory;
@@ -354,6 +383,14 @@
     initState();
     renderTabs();
     renderCatalog();
+
+    const urlItemId = new URLSearchParams(window.location.search).get("item")?.trim();
+    if (urlItemId) {
+      requestAnimationFrame(() => {
+        document.querySelector(`[data-vehicle-card="${CSS.escape(urlItemId)}"]`)
+          ?.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    }
 
     tabsEl.addEventListener("click", (event) => {
       const button = event.target.closest("[data-vehicle-tab]");

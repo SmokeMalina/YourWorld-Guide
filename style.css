@@ -5219,4 +5219,70 @@ h2 {
   .footer-text { max-width: none; }
 }
 
+/* =========================
+   12) SITE SEARCH
+   ========================= */
+
+.site-search {
+  --pf-text: #f7f2ed;
+  --pf-text-secondary: rgba(255,255,255,.72);
+  --pf-text-muted: rgba(255,255,255,.56);
+  --pf-background: #151316;
+  --pf-border: rgba(255,255,255,.13);
+  --pf-border-focus: rgba(255,170,70,.7);
+  --pf-skeleton: rgba(255,255,255,.08);
+  --pf-skeleton-shine: rgba(255,255,255,.13);
+  --pf-hover: rgba(255,133,0,.10);
+  --pf-mark: #ffb164;
+  --pf-scroll-shadow: rgba(0,0,0,.4);
+  --pf-outline-focus: #ff9d3d;
+  --pf-font: "Rubik", system-ui, sans-serif;
+  --pf-border-radius: 12px;
+  --pf-modal-backdrop: rgba(0,0,0,.72);
+  --pf-modal-max-width: 680px;
+  --pf-shadow-lg: 0 22px 70px rgba(0,0,0,.55);
+}
+
+.site-search pagefind-modal-trigger {
+  position: fixed;
+  z-index: 40;
+  top: 16px;
+  right: 16px;
+}
+
+.site-search pagefind-modal-body,
+.site-search .pf-modal-body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.38) rgba(0,0,0,.25);
+}
+
+.site-search pagefind-modal-body::-webkit-scrollbar,
+.site-search .pf-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.site-search pagefind-modal-body::-webkit-scrollbar-track,
+.site-search .pf-modal-body::-webkit-scrollbar-track {
+  background: rgba(0,0,0,.25);
+  border-radius: 999px;
+}
+
+.site-search pagefind-modal-body::-webkit-scrollbar-thumb,
+.site-search .pf-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.32);
+  border-radius: 999px;
+}
+
+.site-search pagefind-modal-body::-webkit-scrollbar-thumb:hover,
+.site-search .pf-modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.46);
+}
+
+@media (max-width: 640px) {
+  .site-search pagefind-modal-trigger {
+    top: 10px;
+    right: 10px;
+  }
+}
+
 
