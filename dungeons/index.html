@@ -52,7 +52,7 @@
     <div class="dungeon-notes">
       <article class="dungeon-note">
         <h3>Запись на данж</h3>
-        <p>Чтобы записаться на прохождение данжа, нужно открыть специальное меню, которое активируется клавишей <strong>"0"</strong>.</p>
+        <p>Панель записи на данжи открывается латинской клавишей <kbd>O</kbd>. Перед созданием записи обязательно ознакомьтесь с правилами данжей.</p>
       </article>
       <article class="dungeon-note">
         <h3>Кулдаун</h3>
@@ -62,6 +62,101 @@
         <h3>Финальная награда</h3>
         <p>Финальная награда за прохождение данжа — ящик, выпадающий после убийства босса. В данжах без босса награда выдаётся по механике самого данжа.</p>
       </article>
+    </div>
+  </section>
+
+  <section class="card info-card dungeon-booking">
+    <div class="dungeon-booking__head">
+      <div>
+        <div class="dungeon-booking__eyebrow">Запись на прохождение</div>
+        <h2>Панель записи на данжи</h2>
+        <p>Через панель можно выбрать данж и время прохождения, собрать команду, управлять составом и при необходимости отменить запись.</p>
+      </div>
+      <div class="dungeon-booking__hotkey" aria-label="Панель открывается клавишей O">
+        <span>Открыть панель</span>
+        <kbd>O</kbd>
+      </div>
+    </div>
+
+    <div class="dungeon-booking__layout">
+      <ol class="dungeon-booking__steps">
+        <li>
+          <span class="dungeon-booking__number">1</span>
+          <div><strong>Ознакомьтесь с правилами</strong><p>До создания записи прочитайте правила прохождения данжей и убедитесь, что команда готова их соблюдать.</p></div>
+        </li>
+        <li>
+          <span class="dungeon-booking__number">2</span>
+          <div><strong>Выберите данж и свободное время</strong><p>Откройте панель клавишей <kbd>O</kbd>, выберите нужный данж и свободный слот на сегодня или завтра, затем подтвердите запись.</p></div>
+        </li>
+        <li>
+          <span class="dungeon-booking__number">3</span>
+          <div><strong>Добавьте команду в состав</strong><p>В запись необходимо добавить всех игроков, которые будут проходить данж вместе с вами.</p></div>
+        </li>
+        <li>
+          <span class="dungeon-booking__number">4</span>
+          <div><strong>Управляйте записью</strong><p>До начала прохождения можно изменить состав или полностью отменить созданную запись через панель управления.</p></div>
+        </li>
+      </ol>
+
+      <aside class="dungeon-booking__rule">
+        <span class="dungeon-booking__rule-icon" aria-hidden="true">!</span>
+        <div>
+          <strong>В составе должна быть вся команда</strong>
+          <p>Не оставляйте участников только в устной договорённости — добавьте каждого игрока непосредственно в созданную запись.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="dungeon-booking__gallery" id="dungeonBookingGallery">
+      <figure class="dungeon-booking__shot dungeon-booking__shot--wide">
+        <button type="button" data-booking-image="panel_osn.png" data-booking-title="Выбор данжа и времени">
+          <img src="/images/dungeons/panel_osn.png" alt="Основной экран панели записи на данжи" loading="lazy">
+          <span>Нажмите, чтобы увеличить</span>
+        </button>
+        <figcaption><strong>1. Выбор слота</strong><span>Выберите данж и свободное время на сегодня или завтра.</span></figcaption>
+      </figure>
+      <figure class="dungeon-booking__shot">
+        <button type="button" data-booking-image="panel_aprov.png" data-booking-title="Подтверждение записи">
+          <img src="/images/dungeons/panel_aprov.png" alt="Подтверждение записи на выбранный данж" loading="lazy">
+          <span>Нажмите, чтобы увеличить</span>
+        </button>
+        <figcaption><strong>2. Подтверждение</strong><span>Проверьте выбранный данж и время перед подтверждением.</span></figcaption>
+      </figure>
+      <figure class="dungeon-booking__shot">
+        <button type="button" data-booking-image="panel_edit_zapis.png" data-booking-title="Управление составом записи">
+          <img src="/images/dungeons/panel_edit_zapis.png" alt="Управление командой и отмена записи на данж" loading="lazy">
+          <span>Нажмите, чтобы увеличить</span>
+        </button>
+        <figcaption><strong>3. Состав команды</strong><span>Добавьте участников, измените состав или отмените запись.</span></figcaption>
+      </figure>
+      <figure class="dungeon-booking__shot">
+        <button type="button" data-booking-image="panel_spisok.png" data-booking-title="Расписание записей">
+          <img src="/images/dungeons/panel_spisok.png" alt="Список доступных записей на данжи" loading="lazy">
+          <span>Нажмите, чтобы увеличить</span>
+        </button>
+        <figcaption><strong>Расписание</strong><span>В панели отображаются доступные слоты и уже созданные записи.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="card info-card dungeon-restart">
+    <div class="dungeon-booking__eyebrow">После рестарта сервера</div>
+    <h2>Активация данжей через 15 минут</h2>
+    <p class="dungeon-restart__lead">Данжи становятся доступны для активации через <strong>15 минут после рестарта сервера</strong>.</p>
+    <div class="dungeon-restart__timeline" aria-label="Первые 15 минут после рестарта">
+      <div class="dungeon-restart__point dungeon-restart__point--start">
+        <span>0 минут</span>
+        <strong>Рестарт сервера</strong>
+      </div>
+      <div class="dungeon-restart__line"><span>Данж не активируется</span></div>
+      <div class="dungeon-restart__point dungeon-restart__point--active">
+        <span>15 минут</span>
+        <strong>Активация доступна</strong>
+      </div>
+    </div>
+    <div class="dungeon-restart__recovery">
+      <span aria-hidden="true">↩</span>
+      <p><strong>Возврат за вещами.</strong> Если игрок погиб в данже в первые 15 минут после рестарта, он может вернуться и забрать вещи со своего тела — такой вход не активирует данж.</p>
     </div>
   </section>
 
@@ -363,6 +458,7 @@
     ];
     const mapsRoot = document.getElementById("dungeonMaps");
     const teleportsRoot = document.getElementById("teleportGrid");
+    const bookingGallery = document.getElementById("dungeonBookingGallery");
     const modal = document.getElementById("dungeonModal");
     const modalTitle = document.getElementById("dungeonModalTitle");
     const modalChips = document.getElementById("dungeonModalChips");
@@ -423,7 +519,7 @@
       mapsRoot.innerHTML = difficultySections.map((section) => {
         const sectionItems = dungeons.filter((item) => item.difficulty === section);
         return `
-          <section class="dungeon-map">
+          <section class="dungeon-map${sectionItems.length === 1 ? " dungeon-map--compact" : ""}">
             <div class="dungeon-map__head">
               <h3>${section}</h3>
             </div>
@@ -495,6 +591,26 @@
 
         modalTitle.textContent = title;
         modalChips.innerHTML = `<span class="dungeon-chip dungeon-chip--accent">Телепорт</span>`;
+        modalLead.textContent = "";
+        modalFacts.innerHTML = "";
+        modalPreview.src = imagePath(image);
+        modalPreview.alt = title;
+        modal.hidden = false;
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      });
+    }
+
+    if (bookingGallery) {
+      bookingGallery.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-booking-image]");
+        if (!button || !modal || !modalTitle || !modalChips || !modalLead || !modalFacts || !modalPreview) return;
+
+        const title = button.getAttribute("data-booking-title") || "Панель записи на данжи";
+        const image = button.getAttribute("data-booking-image") || "";
+
+        modalTitle.textContent = title;
+        modalChips.innerHTML = `<span class="dungeon-chip dungeon-chip--accent">Панель записи</span>`;
         modalLead.textContent = "";
         modalFacts.innerHTML = "";
         modalPreview.src = imagePath(image);

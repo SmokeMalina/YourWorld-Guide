@@ -9,6 +9,54 @@
       margin-top: 18px;
     }
 
+    .events-auto-note {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 153, 0, 0.2);
+      border-radius: 17px;
+      background: rgba(255, 153, 0, 0.07);
+    }
+
+    .events-auto-note__icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      color: #17110a;
+      background: #ff9400;
+      font-weight: 900;
+    }
+
+    .events-auto-note strong { display: block; margin-top: 3px; }
+
+    .events-auto-note p {
+      margin: 6px 0 0;
+      color: rgba(255, 255, 255, 0.74);
+      line-height: 1.48;
+    }
+
+    .events-auto-note__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .events-auto-note__list span {
+      padding: 6px 9px;
+      border: 1px solid rgba(255, 153, 0, 0.16);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.78);
+      background: rgba(11, 11, 13, 0.34);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
     .events-map-btn,
     .events-tab-btn {
       min-height: 42px;

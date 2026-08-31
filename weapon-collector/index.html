@@ -12,7 +12,7 @@
   <meta name="description" content="Гайд по оружейному коллекционеру на сервере YourWorld PVE.">
   <meta property="og:title" content="Оружейный коллекционер YourWorld">
   <meta property="og:description" content="Как собирать оружейные карточки и обменивать полную коллекцию на эксклюзивное оружие.">
-  <meta property="og:image" content="https://wiki-yourworld.ru/images/ywlogo.png">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/weapon_card_collector/prev.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wiki-yourworld.ru/weapon-collector/">
   <meta name="robots" content="index, follow">
@@ -32,7 +32,7 @@
 
   <div class="hero">
     <div class="hero-inner">
-      <img class="hero-logo" src="/images/weapon_card_collector/weapon_card_book.png" alt="Оружейный коллекционер">
+      <img class="hero-logo" src="/images/weapon_card_collector/prev.png" alt="Оружейный коллекционер">
       <div>
         <h1>Оружейный коллекционер</h1>
         <p class="muted">Карточки, полная коллекция и обмен на эксклюзивное оружие</p>
@@ -42,22 +42,17 @@
 
   <section class="card info-card">
     <h2>Описание</h2>
-    <p class="info-text">Оружейный коллекционер это отдельная система коллекционных карточек. Ваша цель собрать всю коллекцию из 50 карточек и затем обменять её на эксклюзивное оружие.</p>
+    <p class="info-text">Оружейный коллекционер — это отдельная система коллекционных карточек. Собрав полный набор из 50 карточек, вы сможете выбрать одно эксклюзивное оружие прямо в панели коллекций.</p>
+    <p class="info-note">Полученные карточки складываются в виртуальную <a href="/collection-system/">систему коллекций</a>, где также отображается прогресс полного набора.</p>
   </section>
 
   <section class="card info-card">
-    <h2>Основные предметы</h2>
-    <div class="collector-feature-grid">
+    <h2>Источник карточек</h2>
+    <div class="collector-feature-grid collector-feature-grid--compact">
       <article class="collector-feature-card">
         <figure class="collector-highlight collector-highlight--plain">
           <img src="/images/weapon_card_collector/weapon_card_box.png" alt="Коробка с карточками">
           <figcaption><span class="collector-highlight__meta">Лутбокс</span>Коробка с карточками</figcaption>
-        </figure>
-      </article>
-      <article class="collector-feature-card">
-        <figure class="collector-highlight collector-highlight--plain">
-          <img src="/images/weapon_card_collector/weapon_card_book.png" alt="Книга для полной коллекции">
-          <figcaption><span class="collector-highlight__meta">Хранилище</span>Книга для полной коллекции</figcaption>
         </figure>
       </article>
     </div>
@@ -73,8 +68,8 @@
 
   <section class="card info-card">
     <h2>Что даёт полная коллекция</h2>
-    <p class="info-text">После того как Вы соберете полную коллекцию из 50 карточек, откроется возможность обменять её на эксклюзивное оружие.</p>
-    <p class="info-note">Полный набор карточек обменивается через квесты. Эксклюзивное оружие доступно только тем игрокам, которые действительно закрыли всю коллекцию.</p>
+    <p class="info-text">После того как вы соберёте полную коллекцию из 50 карточек, в системе коллекций можно самостоятельно выбрать одно из четырёх эксклюзивных оружий.</p>
+    <p class="info-note"><strong>Коллекцию можно сдать четыре раза.</strong> Повторно собирая полный набор карточек, вы сможете последовательно выбрать и получить все четыре оружия.</p>
     <div class="collector-highlight-grid">
       <figure class="collector-highlight">
         <img src="/images/weapons/bloody/bloody_smg.png" alt="SMG Bloody">
@@ -96,18 +91,18 @@
   </section>
 
   <section class="card info-card">
-    <h2>Как проходит обмен</h2>
+    <h2>Как получить оружие</h2>
     <ol class="grow-steps">
       <li>Соберите все 50 карточек коллекции.</li>
-      <li>Подготовьте полную коллекцию для обмена.</li>
-      <li>Примите квест с нужным вам оружием.</li>
-      <li>После обмена получите эксклюзивное оружие.</li>
+      <li>Внесите карточки в виртуальную систему коллекций.</li>
+      <li>После закрытия полного набора выберите желаемое оружие прямо в панели.</li>
+      <li>Чтобы получить остальные варианты, соберите и сдайте коллекцию повторно.</li>
     </ol>
   </section>
 
   <section class="card info-card">
     <h2>Полная коллекция</h2>
-    <p class="info-note">Ниже показаны все 50 оружейных карточек, которые нужно собрать для полного обмена.</p>
+    <p class="info-note">Ниже показаны все 50 оружейных карточек, необходимые для одной полной сдачи коллекции.</p>
     <div class="collector-catalog" id="weapon-collector-catalog"></div>
   </section>
 </div>

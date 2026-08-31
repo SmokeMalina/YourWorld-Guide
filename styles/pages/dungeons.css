@@ -57,6 +57,335 @@
       color: rgba(255, 255, 255, 0.84);
     }
 
+    .dungeon-booking__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .dungeon-booking__head h2,
+    .dungeon-restart h2 {
+      margin: 6px 0 10px;
+    }
+
+    .dungeon-booking__head p,
+    .dungeon-restart__lead {
+      margin: 0;
+      max-width: 780px;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.55;
+    }
+
+    .dungeon-booking__eyebrow {
+      color: #ff9400;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .dungeon-booking__hotkey {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 0 0 auto;
+      padding: 12px 14px 12px 16px;
+      border: 1px solid rgba(255, 153, 0, 0.24);
+      border-radius: 16px;
+      background: rgba(255, 153, 0, 0.08);
+    }
+
+    .dungeon-booking__hotkey span {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .dungeon-booking kbd,
+    .dungeon-note kbd {
+      display: inline-grid;
+      place-items: center;
+      min-width: 38px;
+      min-height: 38px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 163, 43, 0.4);
+      border-bottom-width: 3px;
+      border-radius: 10px;
+      background: rgba(12, 12, 14, 0.82);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .dungeon-booking__steps kbd {
+      display: inline-flex;
+      min-width: 25px;
+      min-height: 25px;
+      padding: 2px 7px;
+      border-radius: 7px;
+      vertical-align: middle;
+    }
+
+    .dungeon-booking__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 22px;
+    }
+
+    .dungeon-booking__steps {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .dungeon-booking__steps li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .dungeon-booking__number {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #ff9400;
+      color: #17110a;
+      font-weight: 800;
+    }
+
+    .dungeon-booking__steps strong {
+      display: block;
+      margin-top: 4px;
+    }
+
+    .dungeon-booking__steps p,
+    .dungeon-booking__rule p {
+      margin: 5px 0 0;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.45;
+    }
+
+    .dungeon-booking__rule {
+      display: flex;
+      gap: 13px;
+      align-self: start;
+      padding: 20px;
+      border: 1px solid rgba(255, 153, 0, 0.22);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(255, 153, 0, 0.12), rgba(255, 153, 0, 0.045));
+    }
+
+    .dungeon-booking__rule-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ff9400;
+      color: #17110a;
+      font-weight: 900;
+    }
+
+    .dungeon-booking__gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .dungeon-booking__shot {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      margin: 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .dungeon-booking__shot button {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 19px 19px 0 0;
+      background: #09090b;
+      cursor: zoom-in;
+    }
+
+    .dungeon-booking__shot button::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 0 2px transparent;
+      transition: box-shadow 180ms ease, background 180ms ease;
+      pointer-events: none;
+    }
+
+    .dungeon-booking__shot button:hover::after,
+    .dungeon-booking__shot button:focus-visible::after {
+      box-shadow: inset 0 0 0 2px rgba(255, 153, 0, 0.52);
+      background: rgba(255, 153, 0, 0.035);
+    }
+
+    .dungeon-booking__shot button:focus-visible {
+      outline: 2px solid rgba(255, 153, 0, 0.72);
+      outline-offset: -2px;
+    }
+
+    .dungeon-booking__shot img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      transition: transform 180ms ease;
+    }
+
+    .dungeon-booking__shot button:hover img {
+      transform: scale(1.012);
+    }
+
+    .dungeon-booking__shot button > span {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      background: rgba(7, 7, 9, 0.82);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.75rem;
+      font-weight: 700;
+      backdrop-filter: blur(5px);
+    }
+
+    .dungeon-booking__shot figcaption {
+      display: grid;
+      gap: 5px;
+      padding: 14px 16px 16px;
+    }
+
+    .dungeon-booking__shot figcaption span {
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .dungeon-restart__timeline {
+      display: grid;
+      grid-template-columns: minmax(150px, auto) minmax(180px, 1fr) minmax(150px, auto);
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .dungeon-restart__point {
+      display: grid;
+      gap: 4px;
+      padding: 15px 17px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .dungeon-restart__point span {
+      color: #ff9a13;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .dungeon-restart__point strong { font-size: 0.88rem; }
+
+    .dungeon-restart__point--active {
+      border-color: rgba(255, 153, 0, 0.24);
+      background: rgba(255, 153, 0, 0.09);
+    }
+
+    .dungeon-restart__line {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 48px;
+    }
+
+    .dungeon-restart__line::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255, 153, 0, 0.35), #ff9400);
+    }
+
+    .dungeon-restart__line::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      width: 9px;
+      height: 9px;
+      border-top: 2px solid #ff9400;
+      border-right: 2px solid #ff9400;
+      transform: rotate(45deg);
+    }
+
+    .dungeon-restart__line span {
+      position: relative;
+      z-index: 1;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #151518;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .dungeon-restart__recovery {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 13px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 15px 17px;
+      border-left: 3px solid #ff9400;
+      border-radius: 0 16px 16px 0;
+      background: rgba(255, 153, 0, 0.08);
+    }
+
+    .dungeon-restart__recovery > span {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 153, 0, 0.14);
+      color: #ff9a13;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .dungeon-restart__recovery p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+    }
+
     .dungeon-map + .dungeon-map {
       margin-top: 34px;
     }
@@ -490,6 +819,48 @@
     }
 
     @media (max-width: 680px) {
+      .dungeon-booking__head {
+        flex-direction: column;
+      }
+
+      .dungeon-booking__layout,
+      .dungeon-booking__gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .dungeon-booking__hotkey {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .dungeon-booking__shot button > span {
+        display: none;
+      }
+
+      .dungeon-restart__timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .dungeon-restart__line {
+        min-height: 70px;
+      }
+
+      .dungeon-restart__line::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(180deg, rgba(255, 153, 0, 0.35), #ff9400);
+      }
+
+      .dungeon-restart__line::after {
+        right: auto;
+        bottom: 0;
+        left: calc(50% - 4px);
+        transform: rotate(135deg);
+      }
+
       .teleport-grid {
         grid-template-columns: 1fr;
       }

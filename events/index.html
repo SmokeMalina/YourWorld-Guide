@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="/images/ywlogo.ico" sizes="any">
-  <title>События YourWorld</title>
+  <title>События | YourWorld Wiki</title>
   <link rel="stylesheet" href="/style.css">
   <meta name="description" content="Информация по событиям YourWorld на Chernarus и Deadfall: вкладки событий, описание и необходимые предметы.">
   <meta property="og:title" content="События YourWorld">
@@ -47,6 +47,16 @@
     <div class="events-map-switch" id="events-map-switch" role="tablist" aria-label="Выбор карты">
       <button class="events-map-btn is-active" type="button" data-map="chernarus" aria-selected="true">Chernarus</button>
       <button class="events-map-btn" type="button" data-map="deadfall" aria-selected="false">Deadfall</button>
+    </div>
+    <div class="events-auto-note">
+      <div class="events-auto-note__icon" aria-hidden="true">!</div>
+      <div>
+        <strong>Занятие события определяется автоматически</strong>
+        <p>На перечисленных ниже событиях система сообщает в игровой чат о начале зачистки после первого урона по монстру. Дополнительно писать о занятии события не требуется.</p>
+        <div class="events-auto-note__list">
+          <span>Военный конвой</span><span>Военный лагерь</span><span>Зачистка</span><span>Погрузка</span><span>Ритуал сектантов</span><span>Химическая авария</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -98,6 +108,8 @@
 <script>
   (() => {
     const STORAGE_KEY = "yw-events-state";
+    const automaticClaim = "Система автоматически сообщает в игровой чат о начале события после первого урона по монстру. Дополнительно писать о занятии не требуется.";
+    const greenSmokeReward = "Награда появляется в ящике, отмеченном зелёным дымом.";
     const eventMaps = {
       chernarus: [
         {
@@ -120,7 +132,9 @@
           image: "/images/events/chernarus/Военный лагерь.png",
           description: [
             "Событие появляется в лесах.",
-            "Для получения награды необходимо зачистить шесть волн."
+            "Для получения награды необходимо зачистить шесть волн.",
+            automaticClaim,
+            greenSmokeReward
           ],
           related: []
         },
@@ -130,7 +144,9 @@
           image: "/images/events/chernarus/Конвой.png",
           description: [
             "Событие появляется на дорогах.",
-            "Для получения награды необходимо зачистить шесть волн."
+            "Для получения награды необходимо зачистить шесть волн.",
+            automaticClaim,
+            greenSmokeReward
           ],
           related: []
         },
@@ -140,9 +156,9 @@
           image: "/images/events/chernarus/Зачистка.png",
           description: [
             "Событие появляется по всей карте.",
-            "Есть обычная и усиленная версия.",
-            "В обычной версии появляется один мутант, из которого выпадет ящик с наградой.",
-            "В усиленной версии появляется два мутанта, из которых выпадают ящики с наградой."
+            "Событие проходит без волн.",
+            automaticClaim,
+            "Награда появляется в ящике, отмеченном зелёным дымом. Наградной ящик больше не выпадает из мутантов."
           ],
           related: []
         },
@@ -152,7 +168,9 @@
           image: "/images/events/chernarus/Погрузка.png",
           description: [
             "Событие появляется по всей карте.",
-            "Для получения награды необходимо зачистить шесть волн."
+            "Для получения награды необходимо зачистить шесть волн.",
+            automaticClaim,
+            greenSmokeReward
           ],
           related: []
         },
@@ -265,12 +283,14 @@
         },
         {
           id: "cultists",
-          title: "Культисты",
+          title: "Ритуал сектантов",
           image: "/images/events/deadfall/Культисты.png",
           description: [
             "Событие появляется по всей карте.",
             "Для получения награды необходимо зачистить шесть волн.",
-            "На событии обитают мини-боссы, будьте готовы, они сильнее обычных мобов."
+            "На событии обитают мини-боссы, будьте готовы, они сильнее обычных мобов.",
+            automaticClaim,
+            greenSmokeReward
           ],
           related: []
         },
@@ -282,7 +302,9 @@
             "Событие появляется по всей карте.",
             "Для получения награды необходимо зачистить шесть волн.",
             "С событием спавнится зараженная зона, для посещения необходима специальная защита.",
-            "На событии обитают мини-боссы, будьте готовы, они сильнее обычных мобов."
+            "На событии обитают мини-боссы, будьте готовы, они сильнее обычных мобов.",
+            automaticClaim,
+            greenSmokeReward
           ],
           related: []
         },

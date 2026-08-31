@@ -156,6 +156,68 @@ h2 {
   filter: drop-shadow(0 0 14px var(--glow));
 }
 
+/* Баннерные шапки внутренних разделов. Специальные страницы могут
+   дополнять этот каркас собственными классами и композицией. */
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 30px;
+}
+
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero):not(.battle-pass-hero):not(.quests-hero) {
+  background:
+    radial-gradient(circle at 84% 44%, rgba(255, 145, 0, .16), transparent 30%),
+    linear-gradient(110deg, rgba(70, 35, 8, .58), rgba(20, 20, 23, .98) 68%);
+}
+
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) .hero-inner {
+  min-height: 168px;
+}
+
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) .hero-inner > div {
+  position: relative;
+  z-index: 1;
+  order: 1;
+  max-width: 700px;
+}
+
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) .hero-logo {
+  order: 2;
+  width: 270px;
+  height: 190px;
+  flex: 0 0 270px;
+  margin: -18px 6px -18px auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .48));
+}
+
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) .hero-logo.hero-logo--bottom {
+  align-self: flex-end;
+  margin-bottom: -26px;
+  object-position: center bottom;
+}
+
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) h1 {
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.08;
+}
+
+.page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero):not(.battle-pass-hero):not(.quests-hero) .hero-inner > div::before {
+  content: "База знаний YourWorld";
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
 .hero-title {
   display: flex;
   flex-direction: column;
@@ -211,9 +273,10 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 12px;
+  gap: 10px;
 
-  padding: 18px;
+  min-height: 226px;
+  padding: 12px;
   border-radius: var(--r-lg);
   border: 1px solid var(--b1);
   background: var(--card);
@@ -236,36 +299,58 @@ h2 {
 
 /* Иконка в плитке */
 .tile img {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 158px;
   object-fit: contain;
+  object-position: center;
 
   background: var(--card2);
   border: 1px solid var(--b2);
-  border-radius: 16px;
-  padding: 10px;
+  border-radius: 18px;
+  padding: 4px;
 
   filter: drop-shadow(0 0 18px var(--glow-strong));
 }
 
 .tile--connect img {
-  width: 120px;
-  height: 120px;
-  padding: 2px;
-  object-position: center 12px;
+  width: 100%;
+  height: 158px;
+  padding: 4px;
+  object-position: center;
 }
 
 .tile--customs img {
-  width: 120px;
-  height: 120px;
-  padding: 2px;
-  object-position: center 8px;
+  width: 100%;
+  height: 158px;
+  padding: 4px;
+  object-position: center;
+}
+
+.tile--collection-system img {
+  width: 100%;
+  height: 158px;
+  padding: 4px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.tile--quests img {
+  width: 100%;
+  height: 158px;
+  padding: 4px;
+  object-position: center;
 }
 
 .tile--teleports img {
-  width: 120px;
-  height: 120px;
-  padding: 4px 2px 0;
+  width: 100%;
+  height: 158px;
+  padding: 4px;
+  object-position: center;
+}
+
+/* Персонажи и составные иллюстрации стоят на единой нижней линии. */
+.tile.tile--bottom-art img {
+  padding-bottom: 0;
   object-position: center bottom;
 }
 
@@ -301,7 +386,7 @@ h2 {
 .home-hero-tile {
   min-height: 244px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 126px;
+  grid-template-columns: minmax(0, 1fr) 150px;
   align-items: start;
   gap: 18px;
   padding: 22px;
@@ -315,9 +400,18 @@ h2 {
   transform: translateY(-4px);
 }
 
+.home-hero-tile--planned {
+  cursor: default;
+}
+
+.home-hero-tile--planned:hover {
+  transform: none;
+}
+
 .home-hero-tile__copy {
   display: grid;
   gap: 10px;
+  min-width: 0;
   max-width: 100%;
   align-self: start;
 }
@@ -350,11 +444,17 @@ h2 {
 }
 
 .home-hero-tile img {
-  width: 132px;
-  height: 132px;
+  width: 150px;
+  height: 150px;
   justify-self: end;
   align-self: end;
   margin-top: 8px;
+}
+
+.home-hero-tile.tile--bottom-art img {
+  align-self: end;
+  padding-bottom: 0;
+  object-position: center bottom;
 }
 
 .home-hero-tile.tile--connect img {
@@ -374,7 +474,7 @@ h2 {
 }
 
 .home-hero-tile--vote .home-hero-tile__copy {
-  padding-right: 18px;
+  padding-right: 0;
 }
 
 .home-hero-tile--vote .home-hero-tile__copy span {
@@ -382,8 +482,8 @@ h2 {
 }
 
 .home-hero-tile--vote img {
-  width: 132px;
-  height: 132px;
+  width: 150px;
+  height: 150px;
 }
 
 .home-hero-tile--customs .home-hero-tile__copy {
@@ -391,10 +491,36 @@ h2 {
 }
 
 .home-hero-tile--customs img {
-  width: 132px;
-  height: 132px;
+  width: 150px;
+  height: 150px;
   padding: 8px 2px 0;
   object-position: center bottom;
+}
+
+.home-hero-tile--rules img,
+.home-hero-tile--faq img {
+  width: 150px;
+  height: 150px;
+  padding: 2px 2px 0;
+  object-position: center bottom;
+}
+
+.home-hero-tile--vote,
+.home-hero-tile--faq {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  gap: 14px;
+}
+
+.home-hero-tile--vote img,
+.home-hero-tile--faq img {
+  width: 126px;
+  height: 150px;
+}
+
+.home-hero-tile--vote .home-hero-tile__copy strong,
+.home-hero-tile--faq .home-hero-tile__copy strong {
+  max-width: 100%;
+  font-size: 24px;
 }
 
 .home-section {
@@ -4472,6 +4598,38 @@ h2 {
     border-radius: 12px;
   }
 }
+
+.collector-feature-grid--compact {
+  grid-template-columns: minmax(240px, 380px);
+}
+
+@media (max-width: 760px) {
+  .page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) {
+    padding: 22px 18px 0;
+  }
+
+  .page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) .hero-inner {
+    min-height: 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) .hero-inner > div {
+    order: 1;
+  }
+
+  .page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) .hero-logo {
+    order: 2;
+    width: min(100%, 270px);
+    height: 160px;
+    flex-basis: 160px;
+    margin: 2px auto -8px;
+  }
+
+  .page-top + .hero:not(.faq-hero):not(.rules-hero):not(.starter-hero):not(.collection-hero) h1 {
+    font-size: clamp(28px, 9vw, 36px);
+  }
+}
 /* =========================
    11) VEHICLES
    ========================= */
@@ -5220,36 +5378,91 @@ h2 {
 }
 
 /* =========================
-   12) SITE SEARCH
+   12) SITE SEARCH (Pagefind)
    ========================= */
 
-.site-search {
-  --pf-text: #f7f2ed;
-  --pf-text-secondary: rgba(255,255,255,.72);
-  --pf-text-muted: rgba(255,255,255,.56);
-  --pf-background: #151316;
-  --pf-border: rgba(255,255,255,.13);
-  --pf-border-focus: rgba(255,170,70,.7);
-  --pf-skeleton: rgba(255,255,255,.08);
-  --pf-skeleton-shine: rgba(255,255,255,.13);
-  --pf-hover: rgba(255,133,0,.10);
-  --pf-mark: #ffb164;
-  --pf-scroll-shadow: rgba(0,0,0,.4);
-  --pf-outline-focus: #ff9d3d;
-  --pf-font: "Rubik", system-ui, sans-serif;
-  --pf-border-radius: 12px;
-  --pf-modal-backdrop: rgba(0,0,0,.72);
+/* Палитра Pagefind под стиль сайта. Селектор с [data-pf-theme] нужен, чтобы
+   перебить дефолтную тёмную тему Pagefind: его CSS подключается скриптом
+   позже нашего style.css, поэтому при равной специфичности выигрывал бы он. */
+.site-search[data-pf-theme="dark"] {
+  --pf-text: #eaeaea;                     /* --text сайта */
+  --pf-text-secondary: rgba(255,255,255,.66);
+  --pf-text-muted: rgba(255,255,255,.5);
+  --pf-background: #15110d;               /* тёплый тёмный под поверхности сайта, а не серый */
+  --pf-border: rgba(255,170,70,.16);      /* тёплый бордер сайта (--b3) */
+  --pf-border-focus: rgba(255,154,47,.6); /* как у .search-input:focus */
+  --pf-skeleton: rgba(255,255,255,.05);
+  --pf-skeleton-shine: rgba(255,160,70,.12);
+  --pf-hover: rgba(255,133,0,.12);
+  --pf-mark: var(--accent2);
+  --pf-scroll-shadow: rgba(0,0,0,.45);
+  --pf-outline-focus: var(--accent);
+  --pf-font: Rubik, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --pf-border-radius: 14px;
+  --pf-input-font-size: 15px;
+  --pf-modal-backdrop: rgba(6,5,4,.74);
   --pf-modal-max-width: 680px;
-  --pf-shadow-lg: 0 22px 70px rgba(0,0,0,.55);
+  --pf-modal-top: 9dvh;
+  --pf-shadow-lg: 0 24px 70px rgba(0,0,0,.55), 0 6px 26px rgba(255,120,20,.06);
 }
 
-.site-search pagefind-modal-trigger {
-  position: fixed;
-  z-index: 40;
-  top: 16px;
-  right: 16px;
+.site-search { display: block; }
+
+/* Панель модалки — в тон карточкам сайта (у Pagefind тут border:none, radius 12px). */
+.site-search dialog.pf-modal {
+  border: 1px solid var(--pf-border) !important;
+  border-radius: var(--r-md) !important;
 }
 
+/* --- Главная: широкая полоса поиска между плитками и «Основными разделами» --- */
+.home-search { margin-top: 22px; }
+
+.site-search--inline {
+  --pf-input-height: 52px;
+  --pf-border-radius: var(--r-md);
+}
+
+/* Растянуть кнопку-триггер на всю ширину блока (Pagefind по умолчанию
+   делает элемент inline-block, и width:100% внутри него схлопывается). */
+.site-search--inline pagefind-modal-trigger { display: block; }
+
+/* Тот же градиент, что у штатных полей поиска сайта (.search-input).
+   !important — у Pagefind это правило со сверхвысокой специфичностью. */
+.site-search--inline .pf-trigger-btn {
+  background: linear-gradient(145deg, rgba(35,25,15,.9), rgba(15,15,15,.9)) !important;
+}
+
+.site-search--inline .pf-trigger-btn:hover {
+  box-shadow: 0 0 0 2px rgba(255,154,47,.12);
+}
+
+/* --- Внутренние страницы: компактная кнопка в строке хлебных крошек --- */
+.site-search--compact {
+  --pf-input-height: 38px;
+  --pf-border-radius: 10px;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Не растягиваться на всю строку — Pagefind ставит width:100% высокой
+   специфичностью, поэтому здесь без !important не обойтись. */
+.site-search--compact .pf-trigger-btn { width: auto !important; }
+.site-search--compact .pf-trigger-text { flex: 0 0 auto; }
+
+.site-search--compact .pf-trigger-btn:hover {
+  border-color: rgba(255,154,47,.45);
+  color: var(--accent);
+}
+.site-search--compact .pf-trigger-btn:hover .pf-trigger-icon {
+  background: var(--accent);
+}
+
+@media (max-width: 560px) {
+  .site-search--compact { width: 100%; margin-left: 0; }
+}
+
+/* --- Модалка: скроллбар в тон сайту --- */
 .site-search pagefind-modal-body,
 .site-search .pf-modal-body {
   scrollbar-width: thin;
@@ -5276,13 +5489,6 @@ h2 {
 .site-search pagefind-modal-body::-webkit-scrollbar-thumb:hover,
 .site-search .pf-modal-body::-webkit-scrollbar-thumb:hover {
   background: rgba(255,255,255,.46);
-}
-
-@media (max-width: 640px) {
-  .site-search pagefind-modal-trigger {
-    top: 10px;
-    right: 10px;
-  }
 }
 
 

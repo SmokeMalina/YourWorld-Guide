@@ -404,6 +404,12 @@
       crumbs.push({ title: currentTitle });
     }
 
+    // Корневые страницы без отдельной иерархии не должны требовать ручного
+    // добавления в этот файл: «Главная» уже есть, добавляем текущую страницу.
+    if (!isIndex && crumbs.length === 1) {
+      crumbs.push({ title: currentTitle });
+    }
+
     const nav = document.createElement("nav");
     nav.className = "breadcrumbs";
     nav.setAttribute("aria-label", "Навигация");
@@ -521,13 +527,36 @@
     config.setAttribute("highlight-param", "search");
 
     const trigger = document.createElement("pagefind-modal-trigger");
-    trigger.setAttribute("placeholder", "Поиск по вики");
+    // Убираем подсказку "Ctrl K" (hide-shortcut) и сам глобальный перехват
+    // этого хоткея: shortcut="none" парсится в несуществующую клавишу,
+    // поэтому обработчик Pagefind никогда не срабатывает.
+    trigger.setAttribute("hide-shortcut", "");
+    trigger.setAttribute("shortcut", "none");
 
     const modal = document.createElement("pagefind-modal");
     modal.setAttribute("reset-on-close", "");
 
     search.append(config, trigger, modal);
-    document.body.appendChild(search);
+
+    // Главная: широкая полоса поиска между плитками и блоком "Основные разделы".
+    const slot = document.querySelector("#site-search-slot");
+    // Внутренние страницы: компактная кнопка в строке хлебных крошек.
+    const pageTop = document.querySelector(".page-top");
+
+    if (slot) {
+      search.classList.add("site-search--inline");
+      trigger.setAttribute("placeholder", "Поиск по вики: оружие, транспорт, данжи…");
+      slot.appendChild(search);
+    } else if (pageTop) {
+      search.classList.add("site-search--compact");
+      trigger.setAttribute("placeholder", "Поиск");
+      pageTop.appendChild(search);
+    } else {
+      search.classList.add("site-search--inline");
+      trigger.setAttribute("placeholder", "Поиск по вики");
+      const host = document.querySelector(".wrap") || document.body;
+      host.insertBefore(search, host.firstChild);
+    }
   }
 
   document.addEventListener("DOMContentLoaded", () => {

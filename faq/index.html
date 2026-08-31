@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Часто задаваемые вопросы | YourWorld Wiki</title>
+  <meta name="description" content="Ответы на часто задаваемые вопросы игроков YourWorld PVE: вход на сервер, кристаллы, транспорт, данжи и хранение предметов.">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/styles/pages/faq.css">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <div class="hero faq-hero">
+    <div class="hero-inner">
+      <div class="faq-hero__copy">
+        <div class="faq-eyebrow">Помощь игрокам</div>
+        <h1>Часто задаваемые вопросы</h1>
+        <p class="muted">Короткие ответы на распространённые вопросы о проекте YourWorld</p>
+      </div>
+      <img class="faq-hero__image hero-art--bottom" src="/images/items/4zv.png" alt="Часто задаваемые вопросы">
+    </div>
+  </div>
+
+  <section class="card info-card faq-tools">
+    <div class="faq-tools__head">
+      <div><div class="faq-eyebrow">Быстрый поиск</div><h2>Найдите нужный ответ</h2></div>
+      <span class="faq-tools__count"><strong id="faqVisibleCount">40</strong> <span id="faqCountLabel">вопросов</span></span>
+    </div>
+    <label class="faq-search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="faqSearch" type="search" placeholder="Например: гараж, кристаллы или данж" autocomplete="off">
+    </label>
+    <div class="faq-filters" id="faqFilters" aria-label="Категории вопросов">
+      <button type="button" class="is-active" data-faq-filter="all">Все</button>
+      <button type="button" data-faq-filter="account">Вход и аккаунт</button>
+      <button type="button" data-faq-filter="currency">Валюта</button>
+      <button type="button" data-faq-filter="transport">Транспорт</button>
+      <button type="button" data-faq-filter="dungeons">Данжи</button>
+      <button type="button" data-faq-filter="items">Предметы</button>
+      <button type="button" data-faq-filter="gameplay">Игровой процесс</button>
+      <button type="button" data-faq-filter="wipe">Вайпы</button>
+    </div>
+  </section>
+
+  <main class="faq-list" id="faqList">
+    <details class="faq-item" data-faq-category="account">
+      <summary><span>Что делать, если меня не пускает на сервер и появляется ошибка «Admin kick: Смените никнейм»?</span></summary>
+      <div class="faq-answer"><ol><li>Полностью закройте игру.</li><li>Откройте лаунчер DayZ.</li><li>Перейдите в раздел «Параметры».</li><li>Откройте вкладку «Все параметры».</li><li>В строке «Имя профиля» введите ваш никнейм и поставьте галочку.</li><li>После этого попробуйте снова зайти на сервер.</li></ol></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="currency">
+      <summary><span>Купил кристаллы на всех серверах, но получил только половину. Как получить остальные?</span></summary>
+      <div class="faq-answer"><p>Кристаллы приобретаются на Wargm отдельно для каждого сервера, а серверы проекта разделены на две группы. Купленные в разных группах кристаллы можно объединить через <a href="https://discord.com/channels/1191479186062319735/1505030175690195044" target="_blank" rel="noopener">бота переноса в Discord</a>.</p><ol><li>Пройдите регистрацию SteamID в специальном канале Discord.</li><li>Откройте бота переноса и выберите нужные группы серверов.</li><li>Выполните перенос и проверьте итоговый баланс в игре.</li></ol><p>Через этого же бота можно перенести предмет, случайно приобретённый не для той группы серверов. Не обращайте внимания на упоминание только кристаллов: бот переносит всю корзину покупки.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Что делать, если машина попала за край карты?</span></summary>
+      <div class="faq-answer"><p>Если машина выехала за край карты, после рестарта она пропадёт вместе со всем содержимым.</p><p>Что необходимо сделать:</p><ul><li>Обязательно вытащите все вещи из машины.</li><li>Сделайте скриншот, подтверждающий, что машина находится за краем карты.</li><li>Напишите тикет и приложите скриншот.</li></ul><p class="faq-answer__notice">Край карты — не место для покатушек на машинах.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Как пользоваться лебёдкой?</span></summary>
+      <div class="faq-answer"><p>Если автомобиль застрял, перевернулся или возникли другие проблемы:</p><ol><li>Переведите машину на нейтральную передачу.</li><li>Установите лебёдку на устойчивую поверхность недалеко от автомобиля.</li><li>Подойдите к машине и нажмите кнопку «Вытащить авто».</li></ol><p class="faq-answer__notice">Вытащить автомобиль может только последний водитель.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Автомобиль начинает тонуть в земле или исчезает на глазах. Что делать?</span></summary>
+      <div class="faq-answer"><ul><li>Бросьте в автомобиль любой неценный предмет.</li><li>Перезайдите на сервер.</li></ul></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Почему я не могу убрать машину в гараж после того, как забрал её со штрафстоянки?</span></summary>
+      <div class="faq-answer"><ul><li>CarLock и штрафстоянка относятся к разным системам.</li><li>Штрафстоянка не сохраняет CarLock на машине.</li><li>После получения машины со штрафстоянки повторно установите на неё восьмизначный код.</li></ul></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Почему я не могу убрать машину в гараж?</span></summary>
+      <div class="faq-answer"><p>Чтобы убрать машину в гараж, необходимо выполнить следующие условия:</p><ul><li>На машине должен быть установлен CarLock.</li><li>Машина должна находиться в центре парковочной зоны.</li><li>На парковочном месте не должно быть посторонних предметов или объектов.</li></ul><p>Если какое-либо условие не выполнено, убрать машину в гараж не получится.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Можно ли найти свободный автомобиль в спавне?</span></summary>
+      <div class="faq-answer"><p>Нет, спавн ванильных и модовых машин отключён. Машину можно только купить в торговом автомате.</p><p>Все машины, которые находятся на карте, принадлежат другим игрокам. Трогать их запрещено, нарушение наказывается баном.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Почему я не могу установить CarLock на транспортное средство?</span></summary>
+      <div class="faq-answer"><p>Для установки CarLock необходимо ввести ровно 8 цифр — не больше и не меньше. Если указано неправильное количество символов, установка будет невозможна.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="currency">
+      <summary><span>Где можно хранить доллары?</span></summary>
+      <div class="faq-answer"><p>Доллары нельзя положить в банкомат. Их можно хранить в следующих местах:</p><ul><li>персональный схрон;</li><li>багажник автомобиля;</li><li>кошелёк.</li></ul></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="items">
+      <summary><span>Как посмотреть урон оружия?</span></summary>
+      <div class="faq-answer"><p>Правильный урон оружия отображается на патроне, который оно использует. Проверьте информацию на патронах, чтобы узнать точный урон.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="items">
+      <summary><span>Почему я получаю порезы в химической зоне?</span></summary>
+      <div class="faq-answer"><p>Скорее всего, шлем не переключён в режим NBC. Чтобы включить его, возьмите шлем в руки и выберите действие «Переключить».</p><p>Если режим NBC уже включён, проверьте экипировку: используемый сет может не иметь химической защиты.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="items">
+      <summary><span>Есть ли персональный схрон у Егеря и Контрабандиста?</span></summary>
+      <div class="faq-answer"><p>Да, персональные схроны доступны на каждой трейд-зоне.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="dungeons">
+      <summary><span>Во сколько обновляется расписание записи на данжи?</span></summary>
+      <div class="faq-answer"><p>Регистрация данжей обновляется ежедневно в 00:15 по московскому времени.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="dungeons">
+      <summary><span>Зашёл на данж через 15 минут после рестарта, а мутанты не появляются. Что делать?</span></summary>
+      <div class="faq-answer"><p>Оставайтесь на точке появления после телепортации. Данж становится доступен для активации через 15 минут после рестарта, а мутанты начнут появляться после системного сообщения «Удачи в прохождении данжа».</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="items">
+      <summary><span>Почему с базы пропали ванильные деревянные ящики, сундуки или бочки вместимостью 100 слотов и более?</span></summary>
+      <div class="faq-answer"><p>Эти предметы можно использовать только в машине. Они не предназначены для хранения лута на базах.</p><p>Для хранения на базе используйте специальную фурнитуру, доступную в соответствующем разделе у трейдера.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Что даёт VIP-статус?</span></summary>
+      <div class="faq-answer"><p>VIP-статус сохраняет после смерти весь инвентарь персонажа, включая предметы, закреплённые в быстрых слотах.</p><p>В <a href="https://discord.com/channels/1191479186062319735/1505030212537028769" target="_blank" rel="noopener">VIP-боте Discord</a> можно проверить, сколько дней осталось до окончания статуса. Бот также заранее отправляет игроку личное сообщение о скором завершении VIP.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="account">
+      <summary><span>Как получить стартовый набор?</span></summary>
+      <div class="faq-answer"><p>Стартовый набор можно получить на нашем сайте. Подробный состав и условия получения указаны на странице <a href="/starter-kit/">«Стартовый набор»</a>.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Как узнать, где находится какой тир?</span></summary>
+      <div class="faq-answer"><p>Откройте меню карты и нажмите кнопку, включающую фильтр отображения тиров.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Почему я не могу сдать квест?</span></summary>
+      <div class="faq-answer"><p>Откройте панель квестов клавишей <kbd>U</kbd>. Вероятнее всего, выполнены не все задачи квеста: наведите указатель мыши на список заданий и прокрутите его колёсиком, чтобы проверить скрытые ниже условия.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Как зарегистрировать базу?</span></summary>
+      <div class="faq-answer"><p>База регистрируется непосредственно в игре. Панель регистрации открывается сочетанием клавиш <kbd>Ctrl</kbd> + <kbd>R</kbd>.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="wipe">
+      <summary><span>Как часто происходят вайпы?</span></summary>
+      <div class="faq-answer"><p>Вайп происходит примерно один раз в 3–6 месяцев. Мы всегда предупреждаем о нём за 1,5–2 недели, поэтому у игроков есть время сохранить вещи.</p><p>В объявлении также указывается, что именно будет сброшено и куда можно сложить имущество для сохранения.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="wipe">
+      <summary><span>Почему после вайпа у меня пропали вещи?</span></summary>
+      <div class="faq-answer"><p>Причины могут быть разными: некоторые предметы могли быть выведены из игры либо вещи не были сняты с персонажа и сохранены в указанном месте.</p><p>Просто так имущество не исчезает. Практически во всех подобных обращениях проверка логов и базы данных показывает, что вещи не были сложены, автомобиль остался на карте либо имущество было передано другим участникам команды.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="wipe">
+      <summary><span>Можно ли вернуть вещи, если я не сохранил их перед вайпом?</span></summary>
+      <div class="faq-answer"><p>Да. Предметы поддержки, обнулённые во время вайпа из-за того, что игрок их не сохранил, восстанавливаются после проверки логов и записи об их приобретении.</p><p>Также существует возможность полного восстановления персонажа. Проект хранит данные за последние четыре вайпа — это примерно полтора года истории. Условия восстановления можно уточнить у администрации, создав тикет.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Почему я не могу снять CarLock с машины?</span></summary>
+      <div class="faq-answer"><p>Снять CarLock плоскогубцами может только тот игрок, который его установил. Если замок установлен другим человеком, самостоятельно снять его не получится.</p><p>При покупке автомобиля с рук обязательно попросите владельца снять CarLock до передачи машины. Если автомобиль уже передан, а замок остался, обратитесь за помощью к администрации через тикет.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Куда пропал мой автомобиль, если я помню, что поставил его в гараж?</span></summary>
+      <div class="faq-answer"><p>В большинстве таких случаев автомобиль отправился на штрафстоянку, потому что фактически не был убран в гараж. После последнего взаимодействия автомобиль может находиться на карте без активности 7 часов, затем он отправляется на штрафстоянку.</p><p>Если оставить автомобиль непосредственно на парковке и его передвинет другой игрок, транспорт отправится на штрафстоянку последнему водителю. Если автомобиль оказался привязан к другому игроку, создайте тикет для получения помощи.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Сколько времени автомобиль хранится на штрафстоянке?</span></summary>
+      <div class="faq-answer"><p>Автомобиль хранится на штрафстоянке 15 дней, после чего удаляется.</p><p>Если вы не смогли выкупить его в течение этого срока, создайте тикет и подробно объясните причину. Администрация может вернуть автомобиль на штрафстоянку, установив пятикратную сумму выкупа. Решение принимается индивидуально.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Как открыть боевой пропуск?</span></summary>
+      <div class="faq-answer"><p>Боевой пропуск открывается сочетанием клавиш <kbd>Ctrl</kbd> + <kbd>G</kbd>. В нём доступны обычная и премиум-ветка, каждая из которых содержит 150 уровней наград.</p><p>Подробнее о заданиях, карточках и магазине читайте на странице <a href="/battle-pass/">«Боевой пропуск»</a>.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="currency">
+      <summary><span>Сохраняются ли YW BP Coin после завершения сезона?</span></summary>
+      <div class="faq-answer"><p>Нет. YW BP Coin рассчитаны только на один сезон и обнуляются с началом следующего. Рекомендуем потратить все монеты до завершения текущего сезона.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Как открыть панель квестов и работать с заданиями?</span></summary>
+      <div class="faq-answer"><p>Панель квестов открывается клавишей <kbd>U</kbd>. Квесты принимаются и сдаются только через эту панель.</p><p>Если часть задач не видна, наведите указатель мыши на список условий и прокрутите его колёсиком.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="dungeons">
+      <summary><span>Как записаться на данж и когда можно начинать прохождение?</span></summary>
+      <div class="faq-answer"><p>Панель записи открывается клавишей <kbd>O</kbd>. Выберите данж и свободное время, подтвердите запись и обязательно добавьте в состав всех участников команды.</p><p>Перед записью ознакомьтесь с правилами данжей. Данж становится доступен для активации через 15 минут после рестарта сервера.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="wipe">
+      <summary><span>Куда складывать вещи перед вайпом?</span></summary>
+      <div class="faq-answer"><p>В основном вещи можно сохранить в персональном схроне или в автомобиле, который находится в виртуальном гараже.</p><p>Условия могут отличаться для конкретного вайпа, поэтому заранее прочитайте объявление администрации: в нём всегда указывается, что будет сброшено и куда лучше сложить имущество.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="account">
+      <summary><span>Как получить доступ к созданию тикетов?</span></summary>
+      <div class="faq-answer"><p>Сначала пройдите регистрацию в <a href="https://discord.com/channels/1191479186062319735/1504630915098218558" target="_blank" rel="noopener">специальном канале Discord</a>. Без регистрации создать тикет невозможно.</p><p>Если вы не знаете свой SteamID, отправьте в канале регистрации ссылку на профиль Steam — система поможет определить нужный идентификатор.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Как часто происходят рестарты серверов?</span></summary>
+      <div class="faq-answer"><p>Рестарты проходят каждые 2 часа по московскому времени: в 00:00, 02:00, 04:00 и далее по тому же расписанию.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Какой часовой пояс используется на проекте?</span></summary>
+      <div class="faq-answer"><p>Всё время на проекте указывается и учитывается исключительно по московскому времени — МСК.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="items">
+      <summary><span>Что указать в тикете при пропаже предмета или автомобиля?</span></summary>
+      <div class="faq-answer"><p>Опишите ситуацию максимально подробно, чтобы администрация могла найти нужную запись в логах:</p><ul><li>точное название и описание предмета или автомобиля;</li><li>примерное время пропажи;</li><li>место, где имущество находилось в последний раз;</li><li>что вы делали с предметом или автомобилем перед пропажей;</li><li>скриншоты или другие доказательства, если они есть.</li></ul><p>Одной фразы «потерял машину» недостаточно: на проекте используется более 700 классов автомобилей.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="items">
+      <summary><span>Где взять крафтовый стол и диски для крафта?</span></summary>
+      <div class="faq-answer"><p>Крафтовый стол и диски для крафта можно приобрести за кристаллы.</p><p>Крафтовые столы также установлены на трейд-зонах: вы можете прийти туда со своими дисками и воспользоваться общим столом.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="gameplay">
+      <summary><span>Влияют ли удочка и наживка на улов?</span></summary>
+      <div class="faq-answer"><p>На доступный улов влияет только удочка. Редкую рыбу можно поймать только улучшенной удочкой — на ванильную и самодельную удочки она не ловится.</p></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="currency">
+      <summary><span>Где брать доллары?</span></summary>
+      <div class="faq-answer"><p>Доллары можно получить несколькими способами:</p><ul><li>продавать предметы <a href="/brodyaga/">бродячему торговцу</a>;</li><li>сдавать некоторые <a href="/collection-system/">коллекции</a>;</li><li>пользоваться <a href="/money-exchange/">обменником валюты</a>.</li></ul></div>
+    </details>
+
+    <details class="faq-item" data-faq-category="transport">
+      <summary><span>Как продать автомобиль через трейд?</span></summary>
+      <div class="faq-answer"><ol><li>Уберите автомобиль в виртуальный гараж.</li><li>Подойдите к торговому терминалу, в ассортименте которого есть нужная модель автомобиля.</li><li>Откройте вкладку «Транспорт» — в ней появится возможность продать автомобиль.</li></ol></div>
+    </details>
+
+    <div class="faq-empty" id="faqEmpty" hidden><strong>Ничего не найдено</strong><span>Попробуйте изменить запрос или выбрать другую категорию.</span></div>
+  </main>
+</div>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><img src="/images/ywlogo.png" alt="YourWorld"><span>YourWorld</span></div><p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p></div><div class="footer-links"><a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a><a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a><a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a><a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a></div></div><div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div></footer>
+<script src="/site.js"></script>
+<script>
+  (() => {
+    const search = document.getElementById("faqSearch");
+    const filters = document.getElementById("faqFilters");
+    const items = [...document.querySelectorAll(".faq-item")];
+    const count = document.getElementById("faqVisibleCount");
+    const countLabel = document.getElementById("faqCountLabel");
+    const empty = document.getElementById("faqEmpty");
+    let activeCategory = "all";
+
+    function updateList() {
+      const query = (search?.value || "").trim().toLocaleLowerCase("ru");
+      let visible = 0;
+      items.forEach((item) => {
+        const matchesCategory = activeCategory === "all" || item.dataset.faqCategory === activeCategory;
+        const matchesQuery = !query || item.textContent.toLocaleLowerCase("ru").includes(query);
+        const show = matchesCategory && matchesQuery;
+        item.hidden = !show;
+        if (!show) item.open = false;
+        if (show) visible += 1;
+      });
+      if (count) count.textContent = String(visible);
+      if (countLabel) {
+        const lastTwo = visible % 100;
+        const last = visible % 10;
+        countLabel.textContent = last === 1 && lastTwo !== 11
+          ? "вопрос"
+          : last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14)
+            ? "вопроса"
+            : "вопросов";
+      }
+      if (empty) empty.hidden = visible !== 0;
+    }
+
+    search?.addEventListener("input", updateList);
+    filters?.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-faq-filter]");
+      if (!button) return;
+      activeCategory = button.dataset.faqFilter || "all";
+      filters.querySelectorAll("button").forEach((item) => item.classList.toggle("is-active", item === button));
+      updateList();
+    });
+  })();
+</script>
+</body>
+</html>

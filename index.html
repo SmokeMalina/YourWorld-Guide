@@ -38,7 +38,7 @@
     </div>
   </div>
   <section class="home-featured">
-    <a class="home-hero-tile tile tile--connect" href="connect/index.html">
+    <a class="home-hero-tile tile tile--connect tile--bottom-art" href="connect/index.html">
       <div class="home-hero-tile__copy">
         <small>Старт</small>
         <strong>Как зайти на сервер</strong>
@@ -54,7 +54,7 @@
       </div>
       <img src="/images/items/wargm.png" alt="Голосование Wargm">
     </a>
-    <a class="home-hero-tile home-hero-tile--customs tile tile--customs" href="customs/index.html">
+    <a class="home-hero-tile home-hero-tile--customs tile tile--customs tile--bottom-art" href="customs/index.html">
       <div class="home-hero-tile__copy">
         <small>Уникальность</small>
         <strong>Кастомизация</strong>
@@ -62,20 +62,49 @@
       </div>
       <img src="/images/items/customs.png" alt="Кастомизация">
     </a>
+    <a class="home-hero-tile home-hero-tile--rules tile tile--bottom-art" href="rules/index.html">
+      <div class="home-hero-tile__copy">
+        <small>Важно</small>
+        <strong>Правила</strong>
+        <span>Основные правила проекта и требования, которые необходимо соблюдать игрокам.</span>
+      </div>
+      <img src="/images/items/pravila.png" alt="Правила проекта">
+    </a>
+    <a class="home-hero-tile tile" href="starter-kit/index.html">
+      <div class="home-hero-tile__copy">
+        <small>Для новичков</small>
+        <strong>Стартовый набор</strong>
+        <span>Что получает новый игрок и как воспользоваться стартовыми предметами.</span>
+      </div>
+      <img src="/images/items/start_nabor.png" alt="Стартовый набор">
+    </a>
+    <a class="home-hero-tile home-hero-tile--faq tile tile--bottom-art" href="faq/index.html">
+      <div class="home-hero-tile__copy">
+        <small>Помощь</small>
+        <strong>Часто задаваемые вопросы</strong>
+        <span>Короткие ответы на частые вопросы о сервере и игровых системах.</span>
+      </div>
+      <img src="/images/items/4zv.png" alt="Часто задаваемые вопросы">
+    </a>
   </section>
+
+  <!-- Глобальный поиск (Pagefind) монтируется сюда через site.js -->
+  <div class="home-search" id="site-search-slot"></div>
 
   <section class="home-section">
     <div class="home-section__head">
       <h2>Основные разделы</h2>
     </div>
     <div class="tile-grid">
-      <a class="tile" href="craft/index.html"><img src="/images/categories/workbench.png" alt="Крафт"><span>Крафт</span></a>
-      <a class="tile" href="vehicles-info/index.html"><img src="/images/vehicles/prev.png" alt="Транспорт"><span>Транспорт</span></a>
-      <a class="tile" href="clothing-info/index.html"><img src="/images/sets/prev.png" alt="Одежда"><span>Одежда</span></a>
-      <a class="tile" href="arsenal/index.html"><img src="/images/weapons/prev.png" alt="Огнестрельное оружие"><span>Огнестрельное оружие</span></a>
+      <a class="tile" href="craft/index.html"><img src="/images/categories/craft_prev.png" alt="Крафт"><span>Крафт</span></a>
+      <a class="tile" href="vehicles-info/index.html"><img src="/images/items/cars_prev.png" alt="Транспорт"><span>Транспорт</span></a>
+      <a class="tile" href="clothing-info/index.html"><img src="/images/items/clothng_prev.png" alt="Одежда"><span>Одежда</span></a>
+      <a class="tile tile--bottom-art" href="arsenal/index.html"><img src="/images/weapons/prev.png" alt="Огнестрельное оружие"><span>Огнестрельное оружие</span></a>
       <a class="tile" href="melee-info/index.html"><img src="/images/melee/prev.png" alt="Холодное оружие"><span>Холодное оружие</span></a>
       <a class="tile" href="dungeons/index.html"><img src="/images/dungeons/dungeon.png" alt="Данжи"><span>Данжи</span></a>
       <a class="tile" href="events/index.html"><img src="/images/events/events_logo.png" alt="События"><span>События</span></a>
+      <a class="tile" href="battle-pass/index.html"><img src="/battle-pass/prev.png" alt="Боевой пропуск"><span>Боевой пропуск</span></a>
+      <a class="tile tile--quests tile--bottom-art" href="quests/index.html"><img src="/quests/prev.png" alt="Квесты"><span>Квесты</span></a>
     </div>
   </section>
 
@@ -84,18 +113,19 @@
       <h2>Игровые механики</h2>
     </div>
     <div class="tile-grid">
-      <a class="tile" href="recycler/index.html"><img src="/images/items/recycler.png" alt="Переработчик"><span>Переработчик</span></a>
-      <a class="tile" href="retex-table/index.html"><img src="/images/items/retex_table.png" alt="Стол для покраски"><span>Стол для покраски</span></a>
-      <a class="tile tile--teleports" href="teleports/index.html"><img src="/images/teleports/tp_logo.png" alt="Телепорты"><span>Телепорты</span></a>
-      <a class="tile" href="shron/index.html"><img src="/images/shron/personalchest.png" alt="Персональный схрон"><span>Персональный схрон</span></a>
-      <a class="tile" href="repair-barrel/index.html"><img src="/images/items/repair_barrel.png" alt="Бочка-чинилка"><span>Бочка-чинилка</span></a>
-      <a class="tile" href="cases/index.html"><img src="/images/cases/yw_case_1.png" alt="Кейсы"><span>Кейсы</span></a>
-      <a class="tile" href="money-exchange/index.html"><img src="/images/money_razmen/apparat.png" alt="Обмен/размен валюты"><span>Обмен/размен валюты</span></a>
-      <a class="tile" href="achievements/index.html"><img src="/images/achivments/achivments.png" alt="Ачивки"><span>Ачивки</span></a>
+      <a class="tile tile--collection-system tile--bottom-art" href="collection-system/index.html"><img src="/images/collector_system/prev.png" alt="Система коллекций"><span>Система коллекций</span></a>
+      <a class="tile" href="recycler/index.html"><img src="/images/recycle/prev.png" alt="Переработчик"><span>Переработчик</span></a>
+      <a class="tile" href="retex-table/index.html"><img src="/images/retex_table/prev.png" alt="Стол для покраски"><span>Стол для покраски</span></a>
+      <a class="tile tile--teleports tile--bottom-art" href="teleports/index.html"><img src="/images/teleports/tp_logo.png" alt="Телепорты"><span>Телепорты</span></a>
+      <a class="tile" href="shron/index.html"><img src="/images/shron/prev.png" alt="Персональный схрон"><span>Персональный схрон</span></a>
+      <a class="tile" href="repair-barrel/index.html"><img src="/images/items/repair_barrel_prev.png" alt="Бочка-чинилка"><span>Бочка-чинилка</span></a>
+      <a class="tile" href="cases/index.html"><img src="/images/cases/prev.png" alt="Кейсы"><span>Кейсы</span></a>
+      <a class="tile tile--bottom-art" href="money-exchange/index.html"><img src="/images/money_razmen/prev.png" alt="Обмен/размен валюты"><span>Обмен/размен валюты</span></a>
+      <a class="tile tile--bottom-art" href="achievements/index.html"><img src="/images/achivments/achivments.png" alt="Ачивки"><span>Ачивки</span></a>
       <a class="tile" href="bbp/index.html"><img src="/images/bbp/house.png" alt="Стройка"><span>Стройка</span></a>
-      <a class="tile" href="stash/index.html"><img src="/images/stash/deadfall/yw_safe_stash_yellow.png" alt="Тайники"><span>Тайники</span></a>
-      <a class="tile" href="p2p/index.html"><img src="/images/p2p/board.png" alt="P2P трейд"><span>P2P трейд</span></a>
-      <a class="tile" href="brodyaga/index.html"><img src="/images/brodyaga/Бродяга.png" alt="Бродячий торговец"><span>Бродячий торговец</span></a>
+      <a class="tile" href="stash/index.html"><img src="/images/stash/prev.png" alt="Тайники"><span>Тайники</span></a>
+      <a class="tile" href="p2p/index.html"><img src="/images/p2p/prev.png" alt="P2P трейд"><span>P2P трейд</span></a>
+      <a class="tile" href="brodyaga/index.html"><img src="/images/brodyaga/prev.png" alt="Бродячий торговец"><span>Бродячий торговец</span></a>
     </div>
   </section>
 
@@ -104,11 +134,11 @@
       <h2>Хозяйство и добыча</h2>
     </div>
     <div class="tile-grid">
-      <a class="tile" href="mining/index.html"><img src="/images/mining/farm.png" alt="Майнинг"><span>Майнинг</span></a>
-      <a class="tile" href="gardening/index.html"><img src="/images/food/kabak.png" alt="Садоводство"><span>Садоводство</span></a>
-      <a class="tile" href="farming/index.html"><img src="/images/farming/animal.png" alt="Фермерство"><span>Фермерство</span></a>
-      <a class="tile" href="hooch/index.html"><img src="/images/hooch/hooch.png" alt="Самогоноварение"><span>Самогоноварение</span></a>
-      <a class="tile" href="fruit-orchards/index.html"><img src="/images/food/apple.png" alt="Фруктовые сады"><span>Фруктовые сады</span></a>
+      <a class="tile" href="mining/index.html"><img src="/images/mining/prev.png" alt="Майнинг"><span>Майнинг</span></a>
+      <a class="tile" href="gardening/index.html"><img src="/images/food/prev.png" alt="Садоводство"><span>Садоводство</span></a>
+      <a class="tile" href="farming/index.html"><img src="/images/farming/prev.png" alt="Фермерство"><span>Фермерство</span></a>
+      <a class="tile" href="hooch/index.html"><img src="/images/hooch/prev.png" alt="Самогоноварение"><span>Самогоноварение</span></a>
+      <a class="tile" href="fruit-orchards/index.html"><img src="/images/food/sad_prev.png" alt="Фруктовые сады"><span>Фруктовые сады</span></a>
     </div>
   </section>
 

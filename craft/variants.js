@@ -579,5 +579,57 @@ window.CRAFT_VARIANTS = {
     "/images/weapons/phantom/hammerhead_camo1_mag.png",
     "/images/weapons/phantom/hammerhead_camo2_mag.png",
     "/images/weapons/phantom/hammerhead_camo3_mag.png"
+  ],
+  "smg_bloody_mag": [
+    "/images/weapons/bloody/bloody_smg_mag.png",
+    "/images/weapons/bloody/bloody_smg_mag_camo1.png"
+  ],
+  "bloody_ar15_mag": [
+    "/images/weapons/bloody/bloody_ar15_mag.png",
+    "/images/weapons/bloody/bloody_ar15_mag_camo1.png",
+    "/images/weapons/bloody/bloody_ar15_mag_camo2.png"
+  ],
+  "bloody_phantom_ar15_mag": [
+    "/images/weapons/bloody/bloody_phantom_ar15_mag.png",
+    "/images/weapons/bloody/bloody_phantom_ar15_mag_camo1.png",
+    "/images/weapons/bloody/bloody_phantom_ar15_mag_camo2.png"
+  ],
+  "bloody_dbr_mag": [
+    "/images/weapons/bloody/bloody_dbr_mag.png",
+    "/images/weapons/bloody/bloody_dbr_mag_camo1.png",
+    "/images/weapons/bloody/bloody_dbr_mag_camo2.png"
+  ],
+  "bloody_sigsauer_mag": [
+    "/images/weapons/bloody/bloody_sigsauer_mag.png",
+    "/images/weapons/bloody/bloody_sigsauer_mag_camo2.png"
+  ],
+  "bloody_scar_mag": [
+    "/images/weapons/bloody/bloody_scar_mag.png",
+    "/images/weapons/bloody/bloody_scar_mag_green.png",
+    "/images/weapons/bloody/bloody_scar_mag_white.png",
+    "/images/weapons/bloody/bloody_scar_mag_camo1.png"
+  ],
+  "bloody_pkp_mag": [
+    "/images/weapons/bloody/bloody_pkp_mag.png",
+    "/images/weapons/bloody/bloody_pkp_mag_black.png",
+    "/images/weapons/bloody/bloody_pkp_mag_camo1.png",
+    "/images/weapons/bloody/bloody_pkp_mag_camo2.png"
+  ],
+  "bloody_rpd_mag": [
+    "/images/weapons/bloody/bloody_rpd_mag.png",
+    "/images/weapons/bloody/bloody_rpd_mag_camo1.png",
+    "/images/weapons/bloody/bloody_rpd_mag_camo2.png",
+    "/images/weapons/bloody/bloody_rpd_mag_camo3.png"
+  ],
+  "bloody_ldr_mag": [
+    "/images/weapons/bloody/bloody_ldr_mag.png",
+    "/images/weapons/bloody/bloody_ldr_mag_camo1.png",
+    "/images/weapons/bloody/bloody_ldr_mag_camo2.png"
+  ],
+  "bloody_m14_mag": [
+    "/images/weapons/bloody/bloody_m14_mag.png",
+    "/images/weapons/bloody/bloody_m14_mag_black.png",
+    "/images/weapons/bloody/bloody_m14_mag_camo2.png",
+    "/images/weapons/bloody/bloody_m14_mag_camo1.png"
   ]
 };

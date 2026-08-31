@@ -64,6 +64,43 @@ function readInlineConst(source, name) {
   throw new Error(`Unable to parse ${name}`);
 }
 
+function readEventMaps(source) {
+  const preambleMatch = /\bconst\s+automaticClaim\s*=/.exec(source);
+  const preambleStart = preambleMatch?.index ?? -1;
+  const eventMapsMatch = /\bconst\s+eventMaps\s*=/.exec(source);
+  if (preambleStart < 0 || !eventMapsMatch) throw new Error("Unable to locate eventMaps data");
+
+  const expressionStart = source.slice(eventMapsMatch.index + eventMapsMatch[0].length)
+    .search(/[\[{]/) + eventMapsMatch.index + eventMapsMatch[0].length;
+  let depth = 0;
+  let quote = "";
+  let escaped = false;
+
+  for (let index = expressionStart; index < source.length; index += 1) {
+    const char = source[index];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (char === "\\") escaped = true;
+      else if (char === quote) quote = "";
+      continue;
+    }
+    if (["'", "\"", "`"].includes(char)) {
+      quote = char;
+      continue;
+    }
+    if (char === "{" || char === "[") depth += 1;
+    if (char === "}" || char === "]") depth -= 1;
+    if (depth === 0) {
+      const context = {};
+      const declarations = source.slice(preambleStart, index + 1);
+      vm.runInNewContext(`${declarations}\nglobalThis.value = eventMaps;`, context, { timeout: 1000 });
+      return context.value;
+    }
+  }
+
+  throw new Error("Unable to parse eventMaps data");
+}
+
 async function addRecord(record) {
   const result = await index.addCustomRecord({
     language: "ru",
@@ -185,7 +222,7 @@ async function addDungeonRecords() {
 
 async function addEventRecords() {
   const source = await readFile(path.join(siteRoot, "events/index.html"), "utf8");
-  const eventMaps = readInlineConst(source, "eventMaps");
+  const eventMaps = readEventMaps(source);
   for (const [map, events] of Object.entries(eventMaps)) {
     for (const event of events) {
       if (!event?.title) continue;
