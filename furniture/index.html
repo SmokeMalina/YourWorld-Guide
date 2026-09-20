@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Фурнитура YourWorld</title>
+  <meta name="description" content="Каталог фурнитуры YourWorld: мебель, хранилища, оружейные стойки и предметы интерьера.">
+  <meta name="keywords" content="YourWorld, фурнитура, мебель, хранилища, шкафы, ящики, аттачи, интерьер">
+  <meta property="og:title" content="Фурнитура YourWorld">
+  <meta property="og:description" content="Мебель, хранилища и функциональные предметы YourWorld PVE.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/furniture/prew.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/furniture/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel="stylesheet" href="/style.css?v=20260920-furniture5">
+</head>
+<body class="page-furniture">
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <header class="hero furniture-hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Фурнитура</h1>
+        <p class="muted">Мебель, хранилища и предметы для обустройства базы.</p>
+      </div>
+      <img class="hero-logo hero-logo--bottom" src="/images/furniture/prew.png" alt="">
+    </div>
+  </header>
+
+  <section class="furniture-browser" aria-labelledby="furniture-title">
+    <div class="furniture-browser__head">
+      <h2 id="furniture-title">Каталог</h2>
+      <p id="furniture-results" class="furniture-results" aria-live="polite"></p>
+    </div>
+    <div id="furniture-tabs" class="furniture-tabs" role="tablist" aria-label="Категория фурнитуры"></div>
+    <div id="furniture-catalog" class="furniture-catalog"></div>
+  </section>
+</div>
+
+<div class="img-modal img-modal--panel-mode furniture-modal" id="furniture-modal" aria-hidden="true">
+  <button class="img-modal__close" type="button" aria-label="Закрыть">&times;</button>
+  <section class="img-modal__panel furniture-modal__panel" role="dialog" aria-modal="true" aria-labelledby="furniture-modal-title">
+    <div id="furniture-modal-content"></div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="footer-logo"><img src="/images/ywlogo.png" alt="YourWorld"><span>YourWorld</span></div><p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p></div>
+    <div class="footer-links"><a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a><a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a><a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a><a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
+</footer>
+
+<script src="/site.js"></script>
+<script src="/furniture/data.js?v=20260920-furniture12"></script>
+<script>
+  (() => {
+    const sourceData = window.furnitureGuideData;
+    if (!sourceData) return;
+    // Преобразование нужно только для отображения. Настраивается страница выше, в data.js.
+    const data = {
+      ...sourceData,
+      items: sourceData.items.flatMap((card) => {
+        const attachments = Array.isArray(card.attachments) ? card.attachments : [];
+        const images = Array.isArray(card.images) && card.images.length ? card.images : [];
+        return images.map((image) => ({
+          id: `${card.id}-${image}`,
+          title: card.name,
+          image,
+          category: card.category,
+          group: { id: card.id, title: card.name },
+          capacity: card.capacity,
+          slots: attachments.map((attachment) => attachment.icon),
+          slotNames: Object.fromEntries(attachments.map((attachment) => [attachment.icon, attachment.name])),
+          slotCounts: Object.fromEntries(attachments
+            .filter((attachment) => attachment.count > 1)
+            .map((attachment) => [attachment.icon, attachment.count]))
+        }));
+      })
+    };
+    const tabs = document.getElementById("furniture-tabs");
+    const catalog = document.getElementById("furniture-catalog");
+    const result = document.getElementById("furniture-results");
+    const modal = document.getElementById("furniture-modal");
+    const modalContent = document.getElementById("furniture-modal-content");
+    const modalClose = modal.querySelector(".img-modal__close");
+    const params = new URLSearchParams(location.search);
+    const validCategories = new Set(data.categories.map((category) => category.id));
+    const directItemId = params.get("item")?.trim();
+    const directItem = sourceData.items.find((item) => item.id === directItemId);
+    let currentCategory = validCategories.has(params.get("category"))
+      ? params.get("category")
+      : (directItem?.category || data.categories[0]?.id || "furniture");
+    const selectedVariants = new Map();
+    const variantBases = [
+      "Армейский_ящик_огромного_размера_с_выбором_категорий",
+      "Армейский_ящик_среднего_размера_с_выбором_категорий",
+      "Армейский_ящик_большого_размера",
+      "Армейский_ящик_небольшого_размера",
+      "Армейский_ящик_огромного_размера",
+      "Армейский_ящик_среднего_размера",
+      "Большой_армейский_ящик",
+      "Маленький_армейский_ящик",
+      "Домашние_жалюзи",
+      "Манекен",
+      "Картина",
+      "Огромный_шкаф",
+      "Старый_шкаф"
+    ];
+
+    const slotLabels = {
+      weapon: "Оружие", pistol: "Пистолеты", magazine: "Магазины",
+      nails: "Гвозди", metal: "Металл", woodenplanks: "Доски",
+      foodcan: "Еда", meat: "Мясо", bottle_water: "Вода",
+      gas_ballon: "Газ", pot: "Кастрюли", komforka: "Конфорки",
+      backpack: "Рюкзаки", jacket: "Куртки", pants: "Штаны"
+    };
+
+    function updateUrl() {
+      const next = new URLSearchParams();
+      if (currentCategory !== "all") next.set("category", currentCategory);
+      history.replaceState(null, "", next.toString() ? `${location.pathname}?${next}` : location.pathname);
+    }
+
+    function formatCount(count) {
+      const lastTwo = count % 100;
+      const last = count % 10;
+      if (last === 1 && lastTwo !== 11) return `${count} предмет`;
+      if (last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14)) return `${count} предмета`;
+      return `${count} предметов`;
+    }
+
+    function renderTabs() {
+      tabs.replaceChildren();
+      data.categories.forEach((category) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "furniture-tab";
+        button.textContent = category.label;
+        button.setAttribute("role", "tab");
+        button.setAttribute("aria-selected", String(category.id === currentCategory));
+        button.addEventListener("click", () => {
+          currentCategory = category.id;
+          updateUrl();
+          render();
+        });
+        tabs.appendChild(button);
+      });
+    }
+
+    function renderCatalog() {
+      const items = data.items
+        .filter((item) => currentCategory === "all" || item.category === currentCategory)
+        .sort((a, b) => a.title.localeCompare(b.title, "ru"));
+      const groups = new Map();
+      items.forEach((item) => {
+        const base = variantBases.find((candidate) => item.id.startsWith(`${candidate}_`));
+        const key = item.group?.id || base || item.id;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(item);
+      });
+      catalog.replaceChildren();
+      result.textContent = formatCount(groups.size);
+      groups.forEach((variants, groupKey) => {
+        const selectedIndex = Math.min(selectedVariants.get(groupKey) || 0, variants.length - 1);
+        const item = variants[selectedIndex];
+        const groupTitle = item.group?.title || item.title;
+        const card = document.createElement("article");
+        card.className = "furniture-item";
+        card.dataset.furnitureCard = groupKey;
+        const image = document.createElement("img");
+        image.src = item.image;
+        image.alt = item.title;
+        image.loading = "lazy";
+        const body = document.createElement("div");
+        body.className = "furniture-item__body";
+        const title = document.createElement("h3");
+        title.textContent = groupTitle;
+        body.appendChild(title);
+        if (variants.length > 1) {
+          const variantList = document.createElement("div");
+          variantList.className = "furniture-variants";
+          variantList.setAttribute("aria-label", "Варианты расцветки");
+          variants.forEach((variant, index) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "furniture-variant";
+            button.setAttribute("aria-pressed", String(index === selectedIndex));
+            button.setAttribute("aria-label", `Вариант ${index + 1}: ${variant.title}`);
+            const preview = document.createElement("img");
+            preview.src = variant.image;
+            preview.alt = "";
+            button.appendChild(preview);
+            button.addEventListener("click", () => {
+              selectedVariants.set(groupKey, index);
+              renderCatalog();
+            });
+            variantList.appendChild(button);
+          });
+          body.appendChild(variantList);
+        }
+        if (item.capacity) {
+          const capacity = document.createElement("p");
+          capacity.className = "furniture-item__capacity";
+          capacity.textContent = `Вместимость: ${item.capacity} слотов`;
+          body.appendChild(capacity);
+        }
+        const openButton = document.createElement("button");
+        openButton.type = "button";
+        openButton.className = "furniture-item__open";
+        openButton.textContent = "Подробнее";
+        openButton.addEventListener("click", () => openModal(variants, selectedIndex, groupKey));
+        body.appendChild(openButton);
+        card.append(image, body);
+        catalog.appendChild(card);
+      });
+    }
+
+    function renderModal(variants, selectedIndex, groupKey) {
+      const item = variants[selectedIndex];
+      modalContent.replaceChildren();
+      const layout = document.createElement("div");
+      layout.className = "furniture-modal__layout";
+      const image = document.createElement("img");
+      image.className = "furniture-modal__image";
+      image.src = item.image;
+      image.alt = item.title;
+      const copy = document.createElement("div");
+      copy.className = "furniture-modal__copy";
+      const title = document.createElement("h2");
+      title.id = "furniture-modal-title";
+      title.textContent = item.group?.title || item.title;
+      copy.appendChild(title);
+      if (variants.length > 1) {
+        const variantsTitle = document.createElement("p");
+        variantsTitle.className = "furniture-modal__label";
+        variantsTitle.textContent = "Варианты";
+        copy.appendChild(variantsTitle);
+        const variantList = document.createElement("div");
+        variantList.className = "furniture-modal__variants";
+        variants.forEach((variant, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "furniture-variant";
+          button.setAttribute("aria-pressed", String(index === selectedIndex));
+          button.setAttribute("aria-label", `Вариант ${index + 1}: ${variant.title}`);
+          const preview = document.createElement("img");
+          preview.src = variant.image;
+          preview.alt = "";
+          button.appendChild(preview);
+          button.addEventListener("click", () => {
+            selectedVariants.set(groupKey, index);
+            renderModal(variants, index, groupKey);
+            renderCatalog();
+          });
+          variantList.appendChild(button);
+        });
+        copy.appendChild(variantList);
+      }
+      if (item.capacity) {
+        const capacity = document.createElement("p");
+        capacity.className = "furniture-modal__capacity";
+        capacity.textContent = `Вместимость: ${item.capacity} слотов`;
+        copy.appendChild(capacity);
+      }
+      if (item.slots.length) {
+        const slotsTitle = document.createElement("p");
+        slotsTitle.className = "furniture-modal__label";
+        slotsTitle.textContent = "Аттачи";
+        copy.appendChild(slotsTitle);
+        const slots = document.createElement("div");
+        slots.className = "furniture-modal__slots";
+        item.slots.forEach((slot) => {
+          const slotItem = document.createElement("div");
+          slotItem.className = "furniture-modal__slot";
+          const slotImage = document.createElement("img");
+          slotImage.src = `/images/sets/attach/${slot}.png`;
+          slotImage.alt = slotLabels[slot] || slot;
+          const name = document.createElement("span");
+          name.textContent = item.slotNames?.[slot] || slotLabels[slot] || slot;
+          slotItem.append(slotImage, name);
+          if (item.slotCounts?.[slot]) {
+            const count = document.createElement("b");
+            count.textContent = `×${item.slotCounts[slot]}`;
+            slotItem.appendChild(count);
+          }
+          slots.appendChild(slotItem);
+        });
+        copy.appendChild(slots);
+      }
+      layout.append(image, copy);
+      modalContent.appendChild(layout);
+    }
+
+    function openModal(variants, selectedIndex, groupKey) {
+      renderModal(variants, selectedIndex, groupKey);
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+
+    function render() {
+      renderTabs();
+      renderCatalog();
+    }
+    render();
+    if (directItem) {
+      requestAnimationFrame(() => {
+        document.querySelector(`[data-furniture-card="${CSS.escape(directItem.id)}"]`)
+          ?.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

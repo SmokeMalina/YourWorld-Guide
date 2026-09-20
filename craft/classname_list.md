@@ -1,0 +1,2055 @@
+# Classname для страниц крафта
+
+Заполняй classname после двоеточия. Если страница объединяет варианты, перечисли classname через `;`.
+
+## Глушители
+
+- Глушитель V1 — `/craft/suppressors/supp_v1.html`
+  - classname: ``
+- Глушитель V2 — `/craft/suppressors/supp_v2.html`
+  - classname: ``
+- Глушитель V3 — `/craft/suppressors/supp_v3.html`
+  - classname: ``
+
+## Кейсы
+
+- Аукционный кейс 750 — `/craft/cases/auk_case_750.html`
+  - classname: `YW_Auk_Case_1_750`, `YW_Auk_Case_2_750`, `YW_Auk_Case_3_750`, `YW_Auk_Case_4_750`, `YW_Auk_Case_5_750`
+- Кейс белый 100 — `/craft/cases/case_white_100.html`
+  - classname: `YW_Case_100_White`
+- Кейс белый 250 — `/craft/cases/case_white_250.html`
+  - classname: `YW_Case_250_White`
+- Кейс белый 500 — `/craft/cases/case_white_500.html`
+  - classname: `YW_Case_500_White`
+- Кейс голубой 100 — `/craft/cases/case_lightblue_100.html`
+  - classname: `YW_Case_100_Lightblue`
+- Кейс голубой 250 — `/craft/cases/case_lightblue_250.html`
+  - classname: `YW_Case_250_Lightblue`
+- Кейс голубой 500 — `/craft/cases/case_lightblue_500.html`
+  - classname: `YW_Case_500_Lightblue`
+- Кейс для оружия 100 — `/craft/cases/case_weapon_100.html`
+  - classname: `YW_Weapon_Case_2_2lvl`
+- Кейс для оружия 250 — `/craft/cases/case_weapon_250.html`
+  - classname: `YW_Weapon_Case_2_3lvl`
+- Кейс для оружия 500 — `/craft/cases/case_weapon_500.html`
+  - classname: `YW_Weapon_Case_2_4lvl`
+- Кейс для патронов 100 — `/craft/cases/reload_case_100.html`
+  - classname: `Hel_MagazineLoading_Case_100`
+- Кейс желтый 100 — `/craft/cases/case_yellow_100.html`
+  - classname: `YW_Case_100_Yellow`
+- Кейс желтый 250 — `/craft/cases/case_yellow_250.html`
+  - classname: `YW_Case_250_Yellow`
+- Кейс желтый 500 — `/craft/cases/case_yellow_500.html`
+  - classname: `YW_Case_500_Yellow`
+- Кейс зеленый 100 — `/craft/cases/case_green_100.html`
+  - classname: `YW_Case_100_Green`
+- Кейс зеленый 250 — `/craft/cases/case_green_250.html`
+  - classname: `YW_Case_250_Green`
+- Кейс зеленый 500 — `/craft/cases/case_green_500.html`
+  - classname: `YW_Case_500_Green`
+- Кейс красный 100 — `/craft/cases/case_red_100.html`
+  - classname: `YW_Case_100_Red`
+- Кейс красный 250 — `/craft/cases/case_red_250.html`
+  - classname: `YW_Case_250_Red`
+- Кейс красный 500 — `/craft/cases/case_red_500.html`
+  - classname: `YW_Case_500_Red`
+- Кейс оранжевый 100 — `/craft/cases/case_orange_100.html`
+  - classname: `YW_Case_100_Orange`
+- Кейс оранжевый 250 — `/craft/cases/case_orange_250.html`
+  - classname: `YW_Case_250_Orange`
+- Кейс оранжевый 500 — `/craft/cases/case_orange_500.html`
+  - classname: `YW_Case_500_Orange`
+- Кейс розовый 100 — `/craft/cases/case_pink_100.html`
+  - classname: `YW_Case_100_Pink`
+- Кейс розовый 250 — `/craft/cases/case_pink_250.html`
+  - classname: `YW_Case_250_Pink`
+- Кейс розовый 500 — `/craft/cases/case_pink_500.html`
+  - classname: `YW_Case_500_Pink`
+- Кейс синий 100 — `/craft/cases/case_blue_100.html`
+  - classname: `YW_Case_100_Blue`
+- Кейс синий 250 — `/craft/cases/case_blue_250.html`
+  - classname: `YW_Case_250_Blue`
+- Кейс синий 500 — `/craft/cases/case_blue_500.html`
+  - classname: `YW_Case_500_Blue`
+- Кейс танк БТ-7 500 — `/craft/cases/case_tank_3.html`
+  - classname: `YW_Case_Tank_2_500`
+- Кейс танк ИСУ-152 500 — `/craft/cases/case_tank_6.html`
+  - classname: `YW_Case_Tank_3_500`
+- Кейс танк КВ-1 500 — `/craft/cases/case_tank_2.html`
+  - classname: `YW_Case_Tank_4_500`
+- Кейс танк СУ-76 500 — `/craft/cases/case_tank_4.html`
+  - classname: `YW_Case_Tank_5_500`
+- Кейс танк Т-34-85 500 — `/craft/cases/case_tank_5.html`
+  - classname: `YW_Case_Tank_6_500`
+- Кейс фиолетовый 100 — `/craft/cases/case_purple_100.html`
+  - classname: `YW_Case_100_Purple`
+- Кейс фиолетовый 250 — `/craft/cases/case_purple_250.html`
+  - classname: `YW_Case_250_Purple`
+- Кейс фиолетовый 500 — `/craft/cases/case_purple_500.html`
+  - classname: `YW_Case_500_Purple`
+- Кейс черный 100 — `/craft/cases/case_black_100.html`
+  - classname: `YW_Case_100_Black`
+- Кейс черный 250 — `/craft/cases/case_black_250.html`
+  - classname: `YW_Case_250_Black`
+- Кейс черный 500 — `/craft/cases/case_black_500.html`
+  - classname: `YW_Case_500_Black`
+- Книга для 32 чертежей — `/craft/cases/chertezh_book_32.html`
+  - classname: `YW_Chertezh_Book_32`
+- Коробка для 16 пар кроссовок — `/craft/cases/sneaker_box_16.html`
+  - classname: `ML_Sneaker_Box_Nike`
+- Коробка для 32 пар кроссовок — `/craft/cases/sneaker_box_32.html`
+  - classname: `ML_Sneaker_Box_Nike_Red`
+- Коробка для 8 пар кроссовок — `/craft/cases/sneaker_box_8.html`
+  - classname: `ML_Sneaker_Box_Jordan`
+- Коробка для хранения 16 карточек Pokemon — `/craft/cases/pokemon_box_16.html`
+  - classname: `RIO_Collector_Pokemon_Box_16`
+- Коробка для хранения 24 карточки Pokemon — `/craft/cases/pokemon_box_24.html`
+  - classname: `RIO_Collector_Pokemon_Box_24`
+- Коробка для хранения 48 карточек Pokemon — `/craft/cases/pokemon_box_48.html`
+  - classname: `RIO_Collector_Pokemon_Box_48`
+- Коробка для хранения полной коллекции карточек Pokemon — `/craft/cases/pokemon_box_all.html`
+  - classname: `RIO_Collector_Pokemon_Box_All`
+- Медицинский кейс 100 — `/craft/cases/med_case_100.html`
+  - classname: `YW_Med_Case_100`
+- Медицинский кейс 250 — `/craft/cases/med_case_250.html`
+  - classname: `YW_Med_Case_250`
+- Медицинский кейс 500 — `/craft/cases/med_case_500.html`
+  - classname: `YW_Med_Case_500`
+- Ящик для 12 игрушек — `/craft/cases/toy_box_12.html`
+  - classname: `YW_Toys_Box_12`
+- Ящик для 16 бутылок вина — `/craft/cases/wine_box_16.html`
+  - classname: `YW_Wine_Box_16`
+- Ящик для 16 игрушек — `/craft/cases/toy_box_16.html`
+  - classname: `YW_Toys_Box_16`
+- Ящик для 32 бутылок вина — `/craft/cases/wine_box_32.html`
+  - classname: `YW_Wine_Box_32`
+- Ящик для 32 игрушек — `/craft/cases/toy_box_32.html`
+  - classname: `YW_Toys_Box_32`
+- Ящик для 40 бутылок вина — `/craft/cases/wine_box_40.html`
+  - classname: `YW_Wine_Box_40`
+- Ящик для 64 игрушек — `/craft/cases/toy_box_64.html`
+  - classname: `YW_Toys_Box_64`
+- Ящик для 8 игрушек — `/craft/cases/toy_box_8.html`
+  - classname: `YW_Toys_Box_8`
+- Ящик для инструментов 2 уровня — `/craft/cases/tool_box_2.html`
+  - classname: `YW_Tool_Box_2lvl`
+- Ящик для инструментов 3 уровня — `/craft/cases/tool_box_3.html`
+  - classname: `YW_Tool_Box_3lvl`
+- Ящик для инструментов 4 уровня — `/craft/cases/tool_box_4.html`
+  - classname: `YW_Tool_Box_4lvl`
+- Ящик для инструментов 5 уровня — `/craft/cases/tool_box_5.html`
+  - classname: `YW_Tool_Box_5lvl`
+- Ящик для переноски оружия 2 уровня — `/craft/cases/weapon_crate_2.html`
+  - classname: `YW_Weapon_Case_2lvl`
+- Ящик для переноски оружия 3 уровня — `/craft/cases/weapon_crate_3.html`
+  - classname: `YW_Weapon_Case_3lvl`
+- Ящик для переноски оружия 4 уровня — `/craft/cases/weapon_crate_4.html`
+  - classname: `YW_Weapon_Case_4lvl`
+- Ящик садовода 100 — `/craft/cases/gardening_box_100.html`
+  - classname: `ML_Gardenung_Box_100`
+- Ящик садовода 200 — `/craft/cases/gardening_box_200.html`
+  - classname: `ML_Gardenung_Box_200`
+- Ящик садовода 300 — `/craft/cases/gardening_box_300.html`
+  - classname: `ML_Gardenung_Box_300`
+
+## Компоненты
+
+- Баллончик с краской Immortal — `/craft/craft_resources/spraypaitn_immortal.html`
+  - classname: `YW_SprayPaint_Immortal`
+- Бронепластина Immortal — `/craft/craft_resources/armor_plate_immortal.html`
+  - classname: `YW_Armor_Plate_Immortal`
+- Набор деталей экзоскелета — `/craft/craft_resources/exo_nabor.html`
+  - classname: `YW_Exo_Parts_Box`
+- Порох — `/craft/craft_resources/gunpowder.html`
+  - classname: `YW_Gunpowder`
+- Ткань Immortal — `/craft/craft_resources/cloth_immortal.html`
+  - classname: `YW_Cloth_Immortal`
+
+## Консервы
+
+- Большая консервированная дыня — `/craft/conserv/melon_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Melon`
+- Большая консервированная клубника — `/craft/conserv/strawberry_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Strawberry`
+- Большая консервированная репа — `/craft/conserv/turnip_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Turnip`
+- Большая консервированная свекла — `/craft/conserv/beetroot_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Beetroot`
+- Большое консервированное авокадо — `/craft/conserv/avocado_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Avocado`
+- Большой консервированный баклажан — `/craft/conserv/eggplant_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Eggplant`
+- Большой консервированный красный картофель — `/craft/conserv/red_potato_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Red_Potato`
+- Большой консервированный красный перец — `/craft/conserv/peper_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Peper`
+- Большой консервированный огурец — `/craft/conserv/cucumber_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Cucumber`
+- Большой консервированный редис — `/craft/conserv/radish_big_can.html`
+  - classname: `ML_Food_Can_Craft_Big_Radish`
+- Консервированная дыня — `/craft/conserv/melon_can.html`
+  - classname: `ML_Food_Can_Craft_Melon`
+- Консервированная клубника — `/craft/conserv/strawberry_can.html`
+  - classname: `ML_Food_Can_Craft_Strawberry`
+- Консервированная репа — `/craft/conserv/turnip_can.html`
+  - classname: `ML_Food_Can_Craft_Turnip`
+- Консервированная свекла — `/craft/conserv/beetroot_can.html`
+  - classname: `ML_Food_Can_Craft_Beetroot`
+- Консервированное авокадо — `/craft/conserv/avocado_can.html`
+  - classname: `ML_Food_Can_Craft_Avocado`
+- Консервированный баклажан — `/craft/conserv/eggplant_can.html`
+  - classname: `ML_Food_Can_Craft_Eggplant`
+- Консервированный красный картофель — `/craft/conserv/red_potato_can.html`
+  - classname: `ML_Food_Can_Craft_Red_Potato`
+- Консервированный красный перец — `/craft/conserv/peper_can.html`
+  - classname: `ML_Food_Can_Craft_Peper`
+- Консервированный огурец — `/craft/conserv/cucumber_can.html`
+  - classname: `ML_Food_Can_Craft_Cucumber`
+- Консервированный редис — `/craft/conserv/radish_can.html`
+  - classname: `ML_Food_Can_Craft_Radish`
+
+## Крафтовый стол
+
+- Брикет Crystal Eclipse — `/craft/workbench/coca_crystal.html`
+  - classname: `YW_Coca_Brick_Crystal_Eclipse`
+- Брикет Lunar Aura — `/craft/workbench/coca_lunar.html`
+  - classname: `YW_Coca_Brick_Lunar_Aura`
+- Брикет Madness Rainbow — `/craft/workbench/coca_madness.html`
+  - classname: `YW_Coca_Brick_Madness_Rainbow`
+- Брикет Nirvana Spark — `/craft/workbench/coca_nirvana.html`
+  - classname: `YW_Coca_Brick_Nirvana_Spark`
+- Брикет Whirlwind Ecstasy — `/craft/workbench/coca_whirlwind.html`
+  - classname: `YW_Coca_Brick_Whirlwind_Ecstasy`
+- Патроны 5.56x45 Specter Craft — `/craft/workbench/ammo_556x45_specter.html`
+  - classname: `YW_AmmoBox_556x45_Specter_Craft`
+- Патроны 7.92x57 — `/craft/workbench/ammo_792x57.html`
+  - classname: `KOD_Ammo_792x57`
+- Стандартный патрон 20мм — `/craft/workbench/ammo_20mm_v1.html`
+  - classname: `YW_20mm_Craft_V1`
+- Улучшенный патрон 20мм — `/craft/workbench/ammo_20mm_v2.html`
+  - classname: `YW_20mm_Craft_V2`
+- AS50 Dark — `/craft/workbench/rifle_dark_v1.html`
+  - classname: `KOD_AS50_Black`
+- Kriss Vector Dark — `/craft/workbench/pp_dark_v1.html`
+  - classname: `KOD_Vector`
+- MBR Dark — `/craft/workbench/ar_556_dark_v1.html`
+  - classname: `KOD_MBR_Black`
+- PKM Dark — `/craft/workbench/hmg_dark_v1.html`
+  - classname: `KOD_PKM`
+- VSK94 Dark — `/craft/workbench/ar_762_dark_v1.html`
+  - classname: `KOD_VSK94`
+
+## Магазины Bloody
+
+- Магазин AR-15 Bloody V1 - 300 патронов — `/craft/mag_bloody/mag_ar15_bloody_v1_300.html`
+  - classname: `RS_P_MAG_Kinoptic_ar15_Bloody_300_V1`
+- Магазин AR-15 Bloody V1 - 450 патронов — `/craft/mag_bloody/mag_ar15_bloody_v1_450.html`
+  - classname: `RS_P_MAG_Kinoptic_ar15_Bloody_450_V1`
+- Магазин AR-15 Bloody V2 - 300 патронов — `/craft/mag_bloody/mag_ar15_bloody_v2_300.html`
+  - classname: `RS_P_MAG_Kinoptic_ar15_Bloody_300_V2`
+- Магазин AR-15 Bloody V2 - 450 патронов — `/craft/mag_bloody/mag_ar15_bloody_v2_450.html`
+  - classname: `RS_P_MAG_Kinoptic_ar15_Bloody_450_V2`
+- Магазин DBR Bloody V1 - 300 патронов — `/craft/mag_bloody/mag_dbr_bloody_v1_300.html`
+  - classname: `RS_P_MAG_DBR_Bloody_300_V1`
+- Магазин DBR Bloody V1 - 450 патронов — `/craft/mag_bloody/mag_dbr_bloody_v1_450.html`
+  - classname: `RS_P_MAG_DBR_Bloody_450_V1`
+- Магазин DBR Bloody V2 - 300 патронов — `/craft/mag_bloody/mag_dbr_bloody_v2_300.html`
+  - classname: `RS_P_MAG_DBR_Bloody_300_V2`
+- Магазин DBR Bloody V2 - 450 патронов — `/craft/mag_bloody/mag_dbr_bloody_v2_450.html`
+  - classname: `RS_P_MAG_DBR_Bloody_450_V2`
+- Магазин KSP-58 Bloody - 400 патронов — `/craft/mag_bloody/mag_ksp58_bloody_400.html`
+  - classname: `YW_KSP58_Magazine_400`
+- Магазин LDR-308 Bloody V1 - 300 патронов — `/craft/mag_bloody/mag_ldr308_bloody_v1_300.html`
+  - classname: `YW_LDR_308_Bloody_Magazine_300_V1`
+- Магазин LDR-308 Bloody V1 - 450 патронов — `/craft/mag_bloody/mag_ldr308_bloody_v1_450.html`
+  - classname: `YW_LDR_308_Bloody_Magazine_450_V1`
+- Магазин LDR-308 Bloody V2 - 300 патронов — `/craft/mag_bloody/mag_ldr308_bloody_v2_300.html`
+  - classname: `YW_LDR_308_Bloody_Magazine_300_V2`
+- Магазин LDR-308 Bloody V2 - 450 патронов — `/craft/mag_bloody/mag_ldr308_bloody_v2_450.html`
+  - classname: `YW_LDR_308_Bloody_Magazine_450_V2`
+- Магазин M14 Bloody - 300 патронов — `/craft/mag_bloody/mag_m14_bloody_300.html`
+  - classname: `YW_M14_Bloody_Magazine_300`
+- Магазин M14 Bloody - 450 патронов — `/craft/mag_bloody/mag_m14_bloody_450.html`
+  - classname: `YW_M14_Bloody_Magazine_450`
+- Магазин Phantom AR-15 Bloody V1 - 300 патронов — `/craft/mag_bloody/mag_phantom_ar15_bloody_v1_300.html`
+  - classname: `RS_P_MAG_AR_15_RED_Bloody_300_V1`
+- Магазин Phantom AR-15 Bloody V1 - 450 патронов — `/craft/mag_bloody/mag_phantom_ar15_bloody_v1_450.html`
+  - classname: `RS_P_MAG_AR_15_RED_Bloody_450_V1`
+- Магазин Phantom AR-15 Bloody V2 - 300 патронов — `/craft/mag_bloody/mag_phantom_ar15_bloody_v2_300.html`
+  - classname: `RS_P_MAG_AR_15_RED_Bloody_300_V2`
+- Магазин Phantom AR-15 Bloody V2 - 450 патронов — `/craft/mag_bloody/mag_phantom_ar15_bloody_v2_450.html`
+  - classname: `RS_P_MAG_AR_15_RED_Bloody_450_V2`
+- Магазин PKP Bloody V1 - 400 патронов — `/craft/mag_bloody/mag_pkp_bloody_v1_400.html`
+  - classname: `RS_P_MAG_PKP_Bloody_400_V1`
+- Магазин PKP Bloody V1 - 600 патронов — `/craft/mag_bloody/mag_pkp_bloody_v1_600.html`
+  - classname: `RS_P_MAG_PKP_Bloody_600_V1`
+- Магазин PKP Bloody V2 - 400 патронов — `/craft/mag_bloody/mag_pkp_bloody_v2_400.html`
+  - classname: `RS_P_MAG_PKP_Bloody_400_V2`
+- Магазин PKP Bloody V2 - 600 патронов — `/craft/mag_bloody/mag_pkp_bloody_v2_600.html`
+  - classname: `RS_P_MAG_PKP_Bloody_600_V2`
+- Магазин RPD Bloody - 400 патронов — `/craft/mag_bloody/mag_rpd_bloody_400.html`
+  - classname: `YW_RPD_Bloody_Magazine_400`
+- Магазин RPD Bloody - 600 патронов — `/craft/mag_bloody/mag_rpd_bloody_600.html`
+  - classname: `YW_RPD_Bloody_Magazine_600`
+- Магазин SCAR Bloody - 300 патронов — `/craft/mag_bloody/mag_scar_bloody_300.html`
+  - classname: `RS_P_MAG_SCAR_TAC_300`
+- Магазин SCAR Bloody - 450 патронов — `/craft/mag_bloody/mag_scar_bloody_450.html`
+  - classname: `RS_P_MAG_SCAR_TAC_450`
+- Магазин SIGSAUER Bloody V1 - 300 патронов — `/craft/mag_bloody/mag_sigsauer_bloody_v1_300.html`
+  - classname: `RS_P_MAG_SIGSAUER_Bloody_300_V1`
+- Магазин SIGSAUER Bloody V1 - 450 патронов — `/craft/mag_bloody/mag_sigsauer_bloody_v1_450.html`
+  - classname: `RS_P_MAG_SIGSAUER_Bloody_450_V1`
+- Магазин SIGSAUER Bloody V2 - 300 патронов — `/craft/mag_bloody/mag_sigsauer_bloody_v2_300.html`
+  - classname: `RS_P_MAG_SIGSAUER_Bloody_300_V2`
+- Магазин SIGSAUER Bloody V2 - 450 патронов — `/craft/mag_bloody/mag_sigsauer_bloody_v2_450.html`
+  - classname: `RS_P_MAG_SIGSAUER_Bloody_450_V2`
+- Магазин SMG Bloody - 300 патронов — `/craft/mag_bloody/mag_smg_bloody_300.html`
+  - classname: `YW_SMG_Bloody_Mag_300`
+- Магазин SMG Bloody - 450 патронов — `/craft/mag_bloody/mag_smg_bloody_450.html`
+  - classname: `YW_SMG_Bloody_Mag_450`
+
+## Магазины Dark
+
+- Магазин AEK971 Dark - 200 патронов — `/craft/mag_dark/mag_ar_762_dark_v6_200.html`
+  - classname: `Mag_KOD_AEK971_200rnd`
+- Магазин AEK971 Dark - 300 патронов — `/craft/mag_dark/mag_ar_762_dark_v6_300.html`
+  - classname: `Mag_KOD_AEK971_300rnd`
+- Магазин AEK971 Dark - 400 патронов — `/craft/mag_dark/mag_ar_762_dark_v6_400.html`
+  - classname: `Mag_KOD_AEK971_400rnd`
+- Магазин AK12 Dark - 100 патронов — `/craft/mag_dark/mag_ar_762_dark_v2_100.html`
+  - classname: `RS_P_MAG_AK12_100rnd`
+- Магазин AK12 Dark - 150 патронов — `/craft/mag_dark/mag_ar_762_dark_v2_150.html`
+  - classname: `RS_P_MAG_AK12_150rnd`
+- Магазин AK12 Dark - 200 патронов — `/craft/mag_dark/mag_ar_762_dark_v2_200.html`
+  - classname: `RS_P_MAG_AK12_200rnd`
+- Магазин AK15 Dark - 200 патронов — `/craft/mag_dark/mag_ar_762_dark_v5_200.html`
+  - classname: `Mag_KOD_AK15_200rnd`
+- Магазин AK15 Dark - 300 патронов — `/craft/mag_dark/mag_ar_762_dark_v5_300.html`
+  - classname: `Mag_KOD_AK15_300rnd`
+- Магазин AK15 Dark - 400 патронов — `/craft/mag_dark/mag_ar_762_dark_v5_400.html`
+  - classname: `Mag_KOD_AK15_400rnd`
+- Магазин AK47 Dark - 150 патронов — `/craft/mag_dark/mag_ar_762_dark_v3_150.html`
+  - classname: `Mag_KOD_AK47_150rnd`
+- Магазин AK47 Dark - 200 патронов — `/craft/mag_dark/mag_ar_762_dark_v3_200.html`
+  - classname: `Mag_KOD_AK47_200rnd`
+- Магазин AK47 Dark - 250 патронов — `/craft/mag_dark/mag_ar_762_dark_v3_250.html`
+  - classname: `Mag_KOD_AK47_250rnd`
+- Магазин AKALPHA Dark - 150 патронов — `/craft/mag_dark/mag_ar_762_dark_v4_150.html`
+  - classname: `Mag_KOD_AKALPHA_150rnd`
+- Магазин AKALPHA Dark - 200 патронов — `/craft/mag_dark/mag_ar_762_dark_v4_200.html`
+  - classname: `Mag_KOD_AKALPHA_200rnd`
+- Магазин AKALPHA Dark - 250 патронов — `/craft/mag_dark/mag_ar_762_dark_v4_250.html`
+  - classname: `Mag_KOD_AKALPHA_250rnd`
+- Магазин AKM GOLD V1 - 200 патронов — `/craft/mag_dark/mag_akm_gold_v1_200.html`
+  - classname: `RS_P_MAG_AKM_GOLD_200`
+- Магазин AKM GOLD V1 - 300 патронов — `/craft/mag_dark/mag_akm_gold_v1_300.html`
+  - classname: `RS_P_MAG_AKM_GOLD_300`
+- Магазин AKM GOLD V2 - 200 патронов — `/craft/mag_dark/mag_akm_gold_v2_200.html`
+  - classname: `RS_P_MAG_AKM_GOLD_V2_200`
+- Магазин AKM GOLD V2 - 300 патронов — `/craft/mag_dark/mag_akm_gold_v2_300.html`
+  - classname: `RS_P_MAG_AKM_GOLD_V2_300`
+- Магазин AKM GOLD V3 - 200 патронов — `/craft/mag_dark/mag_akm_gold_v3_200.html`
+  - classname: `RS_P_MAG_AKM_GOLD_V3_200`
+- Магазин AKM GOLD V3 - 300 патронов — `/craft/mag_dark/mag_akm_gold_v3_300.html`
+  - classname: `RS_P_MAG_AKM_GOLD_V3_300`
+- Магазин AR15 Dark - 150 патронов — `/craft/mag_dark/mag_ar_556_dark_v3_150.html`
+  - classname: `Mag_KOD_AR15_150rnd`
+- Магазин AR15 Dark - 200 патронов — `/craft/mag_dark/mag_ar_556_dark_v3_200.html`
+  - classname: `Mag_KOD_AR15_200rnd`
+- Магазин AR15 Dark - 250 патронов — `/craft/mag_dark/mag_ar_556_dark_v3_250.html`
+  - classname: `Mag_KOD_AR15_250rnd`
+- Магазин AS50 Dark - 100 патронов — `/craft/mag_dark/mag_rifle_dark_v1_100.html`
+  - classname: `Mag_KOD_AS50_100Rnd`
+- Магазин AS50 Dark - 150 патронов — `/craft/mag_dark/mag_rifle_dark_v1_150.html`
+  - classname: `Mag_KOD_AS50_150Rnd`
+- Магазин AS50 Dark - 200 патронов — `/craft/mag_dark/mag_rifle_dark_v1_200.html`
+  - classname: `Mag_KOD_AS50_200Rnd`
+- Магазин Evolys Dark - 300 патронов — `/craft/mag_dark/mag_hmg_dark_v6_300.html`
+  - classname: `Mag_KOD_Evolys_300rnd`
+- Магазин Evolys Dark - 400 патронов — `/craft/mag_dark/mag_hmg_dark_v6_400.html`
+  - classname: `Mag_KOD_Evolys_400rnd`
+- Магазин Evolys Dark - 500 патронов — `/craft/mag_dark/mag_hmg_dark_v6_500.html`
+  - classname: `Mag_KOD_Evolys_500rnd`
+- Магазин HK21 Dark - 300 патронов — `/craft/mag_dark/mag_hmg_dark_v5_300.html`
+  - classname: `Mag_KOD_HK21_300rnd`
+- Магазин HK21 Dark - 400 патронов — `/craft/mag_dark/mag_hmg_dark_v5_400.html`
+  - classname: `Mag_KOD_HK21_400rnd`
+- Магазин HK21 Dark - 500 патронов — `/craft/mag_dark/mag_hmg_dark_v5_500.html`
+  - classname: `Mag_KOD_HK21_500rnd`
+- Магазин HK416 GOLD V1 - 200 патронов — `/craft/mag_dark/mag_hk416_gold_v1_200.html`
+  - classname: `RS_P_MAG_HK416_GOLD_200`
+- Магазин HK416 GOLD V1 - 300 патронов — `/craft/mag_dark/mag_hk416_gold_v1_300.html`
+  - classname: `RS_P_MAG_HK416_GOLD_300`
+- Магазин HK416 GOLD V2 - 200 патронов — `/craft/mag_dark/mag_hk416_gold_v2_200.html`
+  - classname: `RS_P_MAG_HK416_GOLD_V2_200`
+- Магазин HK416 GOLD V2 - 300 патронов — `/craft/mag_dark/mag_hk416_gold_v2_300.html`
+  - classname: `RS_P_MAG_HK416_GOLD_V2_300`
+- Магазин HK416 GOLD V3 - 200 патронов — `/craft/mag_dark/mag_hk416_gold_v3_200.html`
+  - classname: `RS_P_MAG_HK416_GOLD_V3_200`
+- Магазин HK416 GOLD V3 - 300 патронов — `/craft/mag_dark/mag_hk416_gold_v3_300.html`
+  - classname: `RS_P_MAG_HK416_GOLD_V3_300`
+- Магазин HK417 Dark - 200 патронов — `/craft/mag_dark/mag_ar_556_dark_v5_200.html`
+  - classname: `Mag_KOD_HK417_200rnd`
+- Магазин HK417 Dark - 300 патронов — `/craft/mag_dark/mag_ar_556_dark_v5_300.html`
+  - classname: `Mag_KOD_HK417_300rnd`
+- Магазин HK417 Dark - 400 патронов — `/craft/mag_dark/mag_ar_556_dark_v5_400.html`
+  - classname: `Mag_KOD_HK417_400rnd`
+- Магазин Kivaari Dark - 100 патронов — `/craft/mag_dark/mag_rifle_dark_v2_100.html`
+  - classname: `Mag_KOD_Kivaari_100rnd`
+- Магазин Kivaari Dark - 150 патронов — `/craft/mag_dark/mag_rifle_dark_v2_150.html`
+  - classname: `Mag_KOD_Kivaari_150rnd`
+- Магазин Kivaari Dark - 200 патронов — `/craft/mag_dark/mag_rifle_dark_v2_200.html`
+  - classname: `Mag_KOD_Kivaari_200rnd`
+- Магазин Kriss Vector Dark - 150 патронов — `/craft/mag_dark/mag_pp_dark_v1_150.html`
+  - classname: `Mag_KOD_Vector_150rnd`
+- Магазин Kriss Vector Dark - 60 патронов — `/craft/mag_dark/mag_pp_dark_v1_60.html`
+  - classname: `Mag_KOD_Vector_60rnd`
+- Магазин Kriss Vector Dark - 90 патронов — `/craft/mag_dark/mag_pp_dark_v1_90.html`
+  - classname: `Mag_KOD_Vector_90rnd`
+- Магазин M110 Dark - 150 патронов — `/craft/mag_dark/mag_rifle_dark_v3_150.html`
+  - classname: `Mag_KOD_M110_150rnd`
+- Магазин M110 Dark - 200 патронов — `/craft/mag_dark/mag_rifle_dark_v3_200.html`
+  - classname: `Mag_KOD_M110_200rnd`
+- Магазин M110 Dark - 250 патронов — `/craft/mag_dark/mag_rifle_dark_v3_250.html`
+  - classname: `Mag_KOD_M110_250rnd`
+- Магазин M1928A1 Dark - 150 патронов — `/craft/mag_dark/mag_pp_dark_v2_150.html`
+  - classname: `Mag_KOD_M1928A1_150rnd`
+- Магазин M1928A1 Dark - 60 патронов — `/craft/mag_dark/mag_pp_dark_v2_60.html`
+  - classname: `Mag_KOD_M1928A1_60rnd`
+- Магазин M1928A1 Dark - 90 патронов — `/craft/mag_dark/mag_pp_dark_v2_90.html`
+  - classname: `Mag_KOD_M1928A1_90rnd`
+- Магазин M249 Dark - 200 патронов — `/craft/mag_dark/mag_hmg_dark_v2_200.html`
+  - classname: `Mag_KOD_M249_200rnd`
+- Магазин M249 Dark - 300 патронов — `/craft/mag_dark/mag_hmg_dark_v2_300.html`
+  - classname: `Mag_KOD_M249_300rnd`
+- Магазин M249 Dark - 400 патронов — `/craft/mag_dark/mag_hmg_dark_v2_400.html`
+  - classname: `Mag_KOD_M249_400rnd`
+- Магазин M60E3 Dark - 300 патронов — `/craft/mag_dark/mag_hmg_dark_v4_300.html`
+  - classname: `Mag_KOD_M60E3_300rnd`
+- Магазин M60E3 Dark - 400 патронов — `/craft/mag_dark/mag_hmg_dark_v4_400.html`
+  - classname: `Mag_KOD_M60E3_400rnd`
+- Магазин M60E3 Dark - 500 патронов — `/craft/mag_dark/mag_hmg_dark_v4_500.html`
+  - classname: `Mag_KOD_M60E3_500rnd`
+- Магазин M82A2 Dark - 200 патронов — `/craft/mag_dark/mag_rifle_dark_v6_200.html`
+  - classname: `Mag_KOD_M82A2_200rnd`
+- Магазин M82A2 Dark - 250 патронов — `/craft/mag_dark/mag_rifle_dark_v6_250.html`
+  - classname: `Mag_KOD_M82A2_250rnd`
+- Магазин M82A2 Dark - 300 патронов — `/craft/mag_dark/mag_rifle_dark_v6_300.html`
+  - classname: `Mag_KOD_M82A2_300rnd`
+- Магазин MBR Dark - 100 патронов — `/craft/mag_dark/mag_ar_556_dark_v1_100.html`
+  - classname: `Mag_KOD_MBR_100rnd`
+- Магазин MBR Dark - 150 патронов — `/craft/mag_dark/mag_ar_556_dark_v1_150.html`
+  - classname: `Mag_KOD_MBR_150rnd`
+- Магазин MBR Dark - 200 патронов — `/craft/mag_dark/mag_ar_556_dark_v1_200.html`
+  - classname: `Mag_KOD_MBR_200rnd`
+- Магазин MCR Dark - 150 патронов — `/craft/mag_dark/mag_ar_556_dark_v4_150.html`
+  - classname: `Mag_KOD_MCR_150rnd`
+- Магазин MCR Dark - 200 патронов — `/craft/mag_dark/mag_ar_556_dark_v4_200.html`
+  - classname: `Mag_KOD_MCR_200rnd`
+- Магазин MCR Dark - 250 патронов — `/craft/mag_dark/mag_ar_556_dark_v4_250.html`
+  - classname: `Mag_KOD_MCR_250rnd`
+- Магазин PKM Dark - 200 патронов — `/craft/mag_dark/mag_hmg_dark_v1_200.html`
+  - classname: `Mag_KOD_PKM_200rnd`
+- Магазин PKM Dark - 300 патронов — `/craft/mag_dark/mag_hmg_dark_v1_300.html`
+  - classname: `Mag_KOD_PKM_300rnd`
+- Магазин PKM Dark - 400 патронов — `/craft/mag_dark/mag_hmg_dark_v1_400.html`
+  - classname: `Mag_KOD_PKM_400rnd`
+- Магазин PKP Dark - 200 патронов — `/craft/mag_dark/mag_hmg_dark_v3_200.html`
+  - classname: `Mag_KOD_PKP_200rnd`
+- Магазин PKP Dark - 300 патронов — `/craft/mag_dark/mag_hmg_dark_v3_300.html`
+  - classname: `Mag_KOD_PKP_300rnd`
+- Магазин PKP Dark - 400 патронов — `/craft/mag_dark/mag_hmg_dark_v3_400.html`
+  - classname: `Mag_KOD_PKP_400rnd`
+- Магазин PPSH Dark - 100 патронов — `/craft/mag_dark/mag_pp_dark_v3_100.html`
+  - classname: `Mag_KOD_PPSh_100rnd`
+- Магазин PPSH Dark - 150 патронов — `/craft/mag_dark/mag_pp_dark_v3_150.html`
+  - classname: `Mag_KOD_PPSh_150rnd`
+- Магазин PPSH Dark - 200 патронов — `/craft/mag_dark/mag_pp_dark_v3_200.html`
+  - classname: `Mag_KOD_PPSh_200rnd`
+- Магазин RSASS Dark - 150 патронов — `/craft/mag_dark/mag_rifle_dark_v4_150.html`
+  - classname: `Mag_KOD_RSASS_150rnd`
+- Магазин RSASS Dark - 200 патронов — `/craft/mag_dark/mag_rifle_dark_v4_200.html`
+  - classname: `Mag_KOD_RSASS_200rnd`
+- Магазин RSASS Dark - 250 патронов — `/craft/mag_dark/mag_rifle_dark_v4_250.html`
+  - classname: `Mag_KOD_RSASS_250rnd`
+- Магазин SCAR Dark - 200 патронов — `/craft/mag_dark/mag_ar_556_dark_v6_200.html`
+  - classname: `Mag_KOD_SCARH_200rnd`
+- Магазин SCAR Dark - 300 патронов — `/craft/mag_dark/mag_ar_556_dark_v6_300.html`
+  - classname: `Mag_KOD_SCARH_300rnd`
+- Магазин SCAR Dark - 400 патронов — `/craft/mag_dark/mag_ar_556_dark_v6_400.html`
+  - classname: `Mag_KOD_SCARH_400rnd`
+- Магазин Scorpion Dark - 100 патронов — `/craft/mag_dark/mag_pp_dark_v4_100.html`
+  - classname: `Mag_KOD_Scorpion_100rnd`
+- Магазин Scorpion Dark - 150 патронов — `/craft/mag_dark/mag_pp_dark_v4_150.html`
+  - classname: `Mag_KOD_Scorpion_150rnd`
+- Магазин Scorpion Dark - 200 патронов — `/craft/mag_dark/mag_pp_dark_v4_200.html`
+  - classname: `Mag_KOD_Scorpion_200rnd`
+- Магазин SUB2000 Dark - 100 патронов — `/craft/mag_dark/mag_pp_dark_v5_100.html`
+  - classname: `Mag_KOD_SUB2000_100rnd`
+- Магазин SUB2000 Dark - 200 патронов — `/craft/mag_dark/mag_pp_dark_v5_200.html`
+  - classname: `Mag_KOD_SUB2000_200rnd`
+- Магазин SUB2000 Dark - 300 патронов — `/craft/mag_dark/mag_pp_dark_v5_300.html`
+  - classname: `Mag_KOD_SUB2000_300rnd`
+- Магазин SUB2000-S Dark - 100 патронов — `/craft/mag_dark/mag_pp_dark_v6_100.html`
+  - classname: `Mag_KOD_SUB2000S_100rnd`
+- Магазин SUB2000-S Dark - 200 патронов — `/craft/mag_dark/mag_pp_dark_v6_200.html`
+  - classname: `Mag_KOD_SUB2000S_200rnd`
+- Магазин SUB2000-S Dark - 300 патронов — `/craft/mag_dark/mag_pp_dark_v6_300.html`
+  - classname: `Mag_KOD_SUB2000S_300rnd`
+- Магазин TAR21 Dark - 100 патронов — `/craft/mag_dark/mag_ar_556_dark_v2_100.html`
+  - classname: `Mag_KOD_TAR21_100rnd`
+- Магазин TAR21 Dark - 150 патронов — `/craft/mag_dark/mag_ar_556_dark_v2_150.html`
+  - classname: `Mag_KOD_TAR21_150rnd`
+- Магазин TAR21 Dark - 200 патронов — `/craft/mag_dark/mag_ar_556_dark_v2_200.html`
+  - classname: `Mag_KOD_TAR21_200rnd`
+- Магазин VSK94 Dark - 100 патронов — `/craft/mag_dark/mag_ar_762_dark_v1_100.html`
+  - classname: `Mag_KOD_VSK94_100rnd`
+- Магазин VSK94 Dark - 150 патронов — `/craft/mag_dark/mag_ar_762_dark_v1_150.html`
+  - classname: `Mag_KOD_VSK94_150rnd`
+- Магазин VSK94 Dark - 200 патронов — `/craft/mag_dark/mag_ar_762_dark_v1_200.html`
+  - classname: `Mag_KOD_VSK94_200rnd`
+- Магазин VSSK Dark - 200 патронов — `/craft/mag_dark/mag_rifle_dark_v5_200.html`
+  - classname: `Mag_KOD_VSSK_200rnd`
+- Магазин VSSK Dark - 250 патронов — `/craft/mag_dark/mag_rifle_dark_v5_250.html`
+  - classname: `Mag_KOD_VSSK_250rnd`
+- Магазин VSSK Dark - 300 патронов — `/craft/mag_dark/mag_rifle_dark_v5_300.html`
+  - classname: `Mag_KOD_VSSK_300rnd`
+
+## Магазины Immortal
+
+- Магазин автомата Immortal V1 - 500 патронов — `/craft/mag_immortal/mag_ar1_500.html`
+  - classname: `MWP6_AR1_magazine_500`
+- Магазин автомата Immortal V2 - 500 патронов — `/craft/mag_immortal/mag_ar2_500.html`
+  - classname: `MWP6_AR2_magazine_500`
+- Магазин ПП Immortal V1 - 400 патронов — `/craft/mag_immortal/mag_pp_400.html`
+  - classname: `MWP6_SMG_magazine_400`
+- Магазин пулемета Immortal V2 - 700 патронов — `/craft/mag_immortal/mag_hmg_700.html`
+  - classname: `MWP6_HMG_magazine_700`
+- Магазин ACP-9 Immortal - 400 патронов — `/craft/mag_immortal/mag_acp9_400.html`
+  - classname: `YW_ACP9_Immortal_Mag_400`
+- Магазин AEK-919K Specter - 300 патронов — `/craft/mag_immortal/mag_aek_300.html`
+  - classname: `YW_AEK919K_Specter_Mag_300`
+- Магазин AK-74M Immortal - 500 патронов — `/craft/mag_immortal/mag_ak74m_500.html`
+  - classname: `YW_AK74M_Immortal_Mag_500`, `YW_AK74M_Immortal_Mag_500_Black`, `YW_AK74M_Immortal_Mag_500_White`, `YW_AK74M_Immortal_Mag_500_Camo_1`, `YW_AK74M_Immortal_Mag_500_Camo_2`, `YW_AK74M_Immortal_Mag_500_Camo_3`, `YW_AK74M_Immortal_Mag_500_Camo_4`, `YW_AK74M_Immortal_Mag_500_Camo_5`, `YW_AK74M_Immortal_Mag_500_Camo_6`, `YW_AK74M_Immortal_Mag_500_Camo_7`
+- Магазин AS-VAL A Immortal - 500 патронов — `/craft/mag_immortal/mag_asval_a_500.html`
+  - classname: `RS_P_MAG_VAL_MODERN_500`
+- Магазин AS-VAL B Immortal - 500 патронов — `/craft/mag_immortal/mag_asval_b_500.html`
+  - classname: `RS_P_MAG_VAL_M_500`
+- Магазин AS50 Immortal - 400 патронов — `/craft/mag_immortal/mag_as50_400.html`
+  - classname: `Mag_Welliton_AS50_400rnd_Black`, `Mag_Welliton_AS50_400rnd_Beige`, `Mag_Welliton_AS50_400rnd_Green`, `Mag_Welliton_AS50_400rnd_White`
+- Магазин BT-9 NY Tactical - 400 патронов — `/craft/mag_immortal/mag_bt9_400.html`
+  - classname: `YW_BT9_NY_Tactical_Mag_400`
+- Магазин DMR M800 NY Tactical - 400 патронов — `/craft/mag_immortal/mag_dmrm800_400.html`
+  - classname: `YW_DMR_M800_NY_Tactical_Magazine_400`
+- Магазин Galil Immortal - 500 патронов — `/craft/mag_immortal/mag_galil_500.html`
+  - classname: `Mag_Welliton_Galil_Ace_500Rnd_Black`, `Mag_Welliton_Galil_Ace_500Rnd_Beige`, `Mag_Welliton_Galil_Ace_500Rnd_Green`, `Mag_Welliton_Galil_Ace_500Rnd_White`
+- Магазин Groza Specter - 300 патронов — `/craft/mag_immortal/mag_groza_300.html`
+  - classname: `YW_Groza_Specter_Mag_300`
+- Магазин HK-121 Immortal - 700 патронов — `/craft/mag_immortal/mag_hk121_700.html`
+  - classname: `YW_HK121_Immortal_Magazine_700`, `YW_HK121_Immortal_Magazine_700_White`, `YW_HK121_Immortal_Magazine_700_Camo_1`, `YW_HK121_Immortal_Magazine_700_Camo_2`, `YW_HK121_Immortal_Magazine_700_Camo_3`
+- Магазин Honey Badger Immortal - 400 патронов — `/craft/mag_immortal/mag_honey_400.html`
+  - classname: `YW_Honey_Badger_Immortal_Mag_400`
+- Магазин Kriss Vector Immortal - 400 патронов — `/craft/mag_immortal/mag_kriss_400.html`
+  - classname: `RS_P_MAG_KRISS_400`
+- Магазин L129A1 Immortal - 500 патронов — `/craft/mag_immortal/mag_l129a1_500.html`
+  - classname: `YW_L129A1_Immortal_Mag_500`, `YW_L129A1_Immortal_Mag_500_White`, `YW_L129A1_Immortal_Mag_500_Camo_1`, `YW_L129A1_Immortal_Mag_500_Camo_2`, `YW_L129A1_Immortal_Mag_500_Camo_3` 
+- Магазин M249 NY Tactical - 700 патронов — `/craft/mag_immortal/mag_m249_700.html`
+  - classname: `YW_M249_Magazine_NY_Tactical_700`
+- Магазин MDR Immortal - 500 патронов — `/craft/mag_immortal/mag_mdr_500.html`
+  - classname: `YW_MDR_Immortal_Mag_500`
+- Магазин MP7A1 Specter - 300 патронов — `/craft/mag_immortal/mag_mp7_300.html`
+  - classname: `YW_MP7_Specter_Mag_300`
+- Магазин MSR Immortal - 400 патронов — `/craft/mag_immortal/mag_msr_400.html`
+  - classname: `YW_MSR_Magazine_400`, `YW_MSR_Magazine_400_Black`, `YW_MSR_Magazine_400_White`, `YW_MSR_Magazine_400_Camo`, `YW_MSR_Magazine_400_Camo_2`, `YW_MSR_Magazine_400_Camo_3`, `YW_MSR_Magazine_400_Camo_4`, `YW_MSR_Magazine_400_Camo_5`, `YW_MSR_Magazine_400_Camo_6`, `YW_MSR_Magazine_400_Camo_7`,
+- Магазин PKP Immortal - 700 патронов — `/craft/mag_immortal/mag_pkp_700.html`
+  - classname: `YW_PKP_Immortal_Magazine_700`, `YW_PKP_Immortal_Magazine_700_White`, `YW_PKP_Immortal_Magazine_700_Camo_1`, `YW_PKP_Immortal_Magazine_700_Camo_2`, `YW_PKP_Immortal_Magazine_700_Camo_3`, `YW_PKP_Immortal_Magazine_700_Camo_4`, `YW_PKP_Immortal_Magazine_700_Camo_5`
+- Магазин Saiga-9 Immortal - 400 патронов — `/craft/mag_immortal/mag_saiga9_400.html`
+  - classname: `YW_Saiga9_Immortal_Mag_400`, `YW_Saiga9_Immortal_Mag_400_Black`, `YW_Saiga9_Immortal_Mag_400_White`, `YW_Saiga9_Immortal_Mag_400_Camo_1`, `YW_Saiga9_Immortal_Mag_400_Camo_2`, `YW_Saiga9_Immortal_Mag_400_Camo_3`, `YW_Saiga9_Immortal_Mag_400_Camo_4`, `YW_Saiga9_Immortal_Mag_400_Camo_5`, `YW_Saiga9_Immortal_Mag_400_Camo_6`, `YW_Saiga9_Immortal_Mag_400_Camo_7`
+- Магазин SMG Type-85 - 400 патронов — `/craft/mag_immortal/mag_type_400.html`
+  - classname: `YW_Type85_Mag_400`
+- Магазин STM-545 NY Tactical - 500 патронов — `/craft/mag_immortal/mag_stm545_500.html`
+  - classname: `YW_STM545_NY_Tactical_Mag_500`
+- Магазин Vityaz Immortal - 400 патронов — `/craft/mag_immortal/mag_vityaz_400.html`
+  - classname: `YW_Vityaz_Immortal_Mag_400`, `YW_Vityaz_Immortal_Mag_400_White`, `YW_Vityaz_Immortal_Mag_400_Camo_1`, `YW_Vityaz_Immortal_Mag_400_Camo_2`, `YW_Vityaz_Immortal_Mag_400_Camo_3`, `YW_Vityaz_Immortal_Mag_400_Camo_4`
+- Магазин VSSK Immortal - 500 патронов — `/craft/mag_immortal/mag_vssk_500.html`
+  - classname: `YW_VSSK_Immortal_Mag_500`, `YW_VSSK_Immortal_Mag_500_White`, `YW_VSSK_Immortal_Mag_500_Camo_1`, `YW_VSSK_Immortal_Mag_500_Camo_2`, `YW_VSSK_Immortal_Mag_500_Camo_3`, `YW_VSSK_Immortal_Mag_500_Camo_4`, `YW_VSSK_Immortal_Mag_500_Camo_5`, `YW_VSSK_Immortal_Mag_500_Black`
+- Магазин Vulkan Specter - 300 патронов — `/craft/mag_immortal/mag_vulkan_300.html`
+  - classname: `YW_Vulkan_Specter_Mag_300`
+- Магазин Vulkan Specter - 450 патронов — `/craft/mag_immortal/mag_vulkan_450.html`
+  - classname: `YW_Vulkan_Specter_Mag_450`
+- Магазин XM109 Immortal - 400 патронов — `/craft/mag_immortal/mag_xm109_400.html`
+  - classname: `YW_XM109_Magazine_400`, `YW_XM109_Magazine_400_White`, `YW_XM109_Magazine_400_Spider`, `YW_XM109_Magazine_400_Camo`, `YW_XM109_Magazine_400_Camo_2`, `YW_XM109_Magazine_400_Camo_3`, `YW_XM109_Magazine_400_Camo_4`, `YW_XM109_Magazine_400_Camo_5`
+- Магазин XRK M4 - 500 патронов — `/craft/mag_immortal/mag_xrk_500.html`
+  - classname: `YW_XRK_M4_Mag_500`
+
+## Магазины Phantom
+
+- Магазин ASH-12 Phantom - 500 патронов — `/craft/mag_phantom/mag_ash_500.html`
+  - classname: `YW_ASH_Phantom_Mag_500`, `YW_ASH_Phantom_Mag_500_White`, `YW_ASH_Phantom_Mag_500_Camo_1`, `YW_ASH_Phantom_Mag_500_Camo_2`, `YW_ASH_Phantom_Mag_500_Camo_3`
+- Магазин Honey Badger Phantom - 400 патронов — `/craft/mag_phantom/mag_honey_400.html`
+  - classname: `YW_Honey_Badger_Phantom_Mag_400`, `YW_Honey_Badger_Phantom_Mag_400_White`, `YW_Honey_Badger_Phantom_Mag_400_Camo_1`, `YW_Honey_Badger_Phantom_Mag_400_Camo_2`, `YW_Honey_Badger_Phantom_Mag_400_Camo_3`
+- Магазин M170 Phantom - 400 патронов — `/craft/mag_phantom/mag_m170_400.html`
+  - classname: `YW_M170_Phantom_Mag_400`, `YW_M170_Phantom_Mag_400_White`, `YW_M170_Phantom_Mag_400_Camo_1`, `YW_M170_Phantom_Mag_400_Camo_2`, `YW_M170_Phantom_Mag_400_Camo_3`
+- Магазин MCX Phantom - 500 патронов — `/craft/mag_phantom/mag_mcx_500.html`
+  - classname: `YW_MCX_Spear_Phantom_Mag_500`, `YW_MCX_Spear_Phantom_Mag_500_White`, `YW_MCX_Spear_Phantom_Mag_500_Camo_1`, `YW_MCX_Spear_Phantom_Mag_500_Camo_2`, `YW_MCX_Spear_Phantom_Mag_500_Camo_3`
+- Магазин MK-14 Phantom - 400 патронов — `/craft/mag_phantom/mag_mk14_400.html`
+  - classname: `YW_MK14_Phantom_Mag_400`, `YW_MK14_Phantom_Mag_400_White`, `YW_MK14_Phantom_Mag_400_Camo_1`, `YW_MK14_Phantom_Mag_400_Camo_2`, `YW_MK14_Phantom_Mag_400_Camo_3`
+- Магазин Origin-12 Phantom - 200 патронов — `/craft/mag_phantom/mag_origin12_200.html`
+  - classname: `YW_Origin_12_Phantom_Mag_200`, `YW_Origin_12_Phantom_Mag_200_White`, `YW_Origin_12_Phantom_Mag_200_Camo_1`, `YW_Origin_12_Phantom_Mag_200_Camo_2`, `YW_Origin_12_Phantom_Mag_200_Camo_3`
+- Магазин PKP Bullpup Phantom - 700 патронов — `/craft/mag_phantom/mag_pkp_700.html`
+  - classname: `YW_PKP_Bullpup_Phantom_Mag_700`, `YW_PKP_Bullpup_Phantom_Mag_700_White`, `YW_PKP_Bullpup_Phantom_Mag_700_Camo_1`, `YW_PKP_Bullpup_Phantom_Mag_700_Camo_2`, `YW_PKP_Bullpup_Phantom_Mag_700_Camo_3`
+- Магазин Reaper Phantom - 400 патронов — `/craft/mag_phantom/mag_reaper_400.html`
+  - classname: `YW_Reaper_Phantom_Mag_400`, `YW_Reaper_Phantom_Mag_400_White`, `YW_Reaper_Phantom_Mag_400_Camo_1`, `YW_Reaper_Phantom_Mag_400_Camo_2`, `YW_Reaper_Phantom_Mag_400_Camo_3`
+- Магазин Saiga-12 Phantom - 200 патронов — `/craft/mag_phantom/mag_saiga12_200.html`
+  - classname: `YW_Saiga_12_Phantom_Mag_200`, `YW_Saiga_12_Phantom_Mag_200_White`, `YW_Saiga_12_Phantom_Mag_200_Camo_1`, `YW_Saiga_12_Phantom_Mag_200_Camo_2`, `YW_Saiga_12_Phantom_Mag_200_Camo_3`
+- Магазин Velociraptor Phantom - 500 патронов — `/craft/mag_phantom/mag_velociraptor_500.html`
+  - classname: `YW_Velociraptor_Phantom_Mag_500`, `YW_Velociraptor_Phantom_Mag_500_White`, `YW_Velociraptor_Phantom_Mag_500_Camo_1`, `YW_Velociraptor_Phantom_Mag_500_Camo_2`, `YW_Velociraptor_Phantom_Mag_500_Camo_3`
+- Магазин Veresk Phantom - 400 патронов — `/craft/mag_phantom/mag_veresk_400.html`
+  - classname: `YW_SR2_Veresk_Phantom_Mag_400`
+
+## Медицина
+
+- Аптечка 120 — `/craft/medicine/firstaid_120.html`
+  - classname: `YW_FirstAidKit_120`
+- Аптечка 150 — `/craft/medicine/firstaid_150.html`
+  - classname: `YW_FirstAidKit_150`
+- Аптечка 60 — `/craft/medicine/firstaid_60.html`
+  - classname: `YW_FirstAidKit_60`
+- Аптечка 90 — `/craft/medicine/firstaid_90.html`
+  - classname: `YW_FirstAidKit_90`
+- Банка йода 200 — `/craft/medicine/iod200.html`
+  - classname: `YW_Iodine_200_Craft`
+- Банка йода 400 — `/craft/medicine/iod400.html`
+  - classname: `YW_Iodine_400_Craft`
+- Банка йода 600 — `/craft/medicine/iod600.html`
+  - classname: `YW_Iodine_600_Craft`
+- Клей БФ-6 200 — `/craft/medicine/bf200.html`
+  - classname: `YW_BF_Glue_200_Craft`
+- Клей БФ-6 400 — `/craft/medicine/bf400.html`
+  - classname: `YW_BF_Glue_400_Craft`
+- Клей БФ-6 600 — `/craft/medicine/bf600.html`
+  - classname: `YW_BF_Glue_600_Craft`
+- Стимулятор - здоровье 100 — `/craft/medicine/stimulator_hp_100.html`
+  - classname: `RLF_Health_100_Injector_Cure`
+- Стимулятор - здоровье 20 — `/craft/medicine/stimulator_hp_20.html`
+  - classname: `RLF_Health_20_Injector_Cure`
+- Стимулятор - здоровье 40 — `/craft/medicine/stimulator_hp_40.html`
+  - classname: `RLF_Health_40_Injector_Cure`
+- Стимулятор - здоровье 60 — `/craft/medicine/stimulator_hp_60.html`
+  - classname: `RLF_Health_60_Injector_Cure`
+- Стимулятор - здоровье 80 — `/craft/medicine/stimulator_hp_80.html`
+  - classname: `RLF_Health_80_Injector_Cure`
+- Стимулятор - кровь 100 — `/craft/medicine/stimulator_blood_100.html`
+  - classname: `RLF_Blood_100_Injector_Cure`
+- Стимулятор - кровь 20 — `/craft/medicine/stimulator_blood_20.html`
+  - classname: `RLF_Blood_20_Injector_Cure`
+- Стимулятор - кровь 40 — `/craft/medicine/stimulator_blood_40.html`
+  - classname: `RLF_Blood_40_Injector_Cure`
+- Стимулятор - кровь 60 — `/craft/medicine/stimulator_blood_60.html`
+  - classname: `RLF_Blood_60_Injector_Cure`
+- Стимулятор - кровь 80 — `/craft/medicine/stimulator_blood_80.html`
+  - classname: `RLF_Blood_80_Injector_Cure`
+- Стимулятор - Immortal — `/craft/medicine/stimulator_immortal.html`
+  - classname: `RLF_Health_Blood_Injector_Cure`
+
+## Ножи
+
+- Нож Gerber — `/craft/knife/gerber.html`
+  - classname: `ML_Gerber_Knife_Camo_1`, `ML_Gerber_Knife_Camo_2`, `ML_Gerber_Knife_Camo_3`, `ML_Gerber_Knife_Camo_4`, `ML_Gerber_Knife_Camo_5`, `ML_Gerber_Knife_Camo_6`, `ML_Gerber_Knife_Camo_7`, `ML_Gerber_Knife_Camo_8`, `ML_Gerber_Knife_Camo_9`
+- Самурайская катана V2 — `/craft/knife/katana.html`
+  - classname: `ML_Samurai_Katana_Craft`
+- Секира молния V2 — `/craft/knife/sekira.html`
+  - classname: `ML_Stormbreaker_Axe_Craft`
+- Тактический нож — `/craft/knife/tactical.html`
+  - classname: `ML_Tactical_Knife_Camo_1`, `ML_Tactical_Knife_Camo_2`, `ML_Tactical_Knife_Camo_3`, `ML_Tactical_Knife_Camo_4`, `ML_Tactical_Knife_Camo_5`, `ML_Tactical_Knife_Camo_6`, `ML_Tactical_Knife_Camo_7`, `ML_Tactical_Knife_Camo_8`, `ML_Tactical_Knife_Camo_9`
+
+## Одежда
+
+- Ботинки CAJ NBC — `/craft/clothing/caj_boots_nbc.html`
+  - classname: `YW_CAJ_Boots_NBC`
+- Ботинки Dead Agent NBC — `/craft/clothing/deadagent_boots_nbc.html`
+  - classname: `YW_DeadAgent_Boots_NBC`
+- Ботинки Rusher NBC — `/craft/clothing/rusher_boots_nbc.html`
+  - classname: `YW_Rusher_Boots_NBC`
+- Ботинки Shepard NBC — `/craft/clothing/shepard_boots_nbc.html`
+  - classname: `YW_Shepard_Boots_NBC`
+- Ботинки Thirst NBC — `/craft/clothing/thirst_boots_nbc.html`
+  - classname: `YW_Thirst_Boots_NBC`
+- Ботинки Trooper NBC — `/craft/clothing/trooper_boots_nbc.html`
+  - classname: `YW_Trooper_Boots_NBC`
+- Ботинки Warfighter NBC — `/craft/clothing/warfighter_boots_nbc.html`
+  - classname: `YW_Kpop_Boots_NBC`
+- Ботинки Whimsy NBC — `/craft/clothing/whimsy_boots_nbc.html`
+  - classname: `YW_Whimsy_Boots_NBC_Pink`
+- Бронежилет Аль Катала V2 — `/craft/clothing/katala_vest_v2.html`
+  - classname: `IMP_Vest_SET22_V2`
+- Бронежилет Biohazard V2 — `/craft/clothing/biohazard_vest_v2.html`
+  - classname: `YW_Biohazard_Vest_V2`
+- Бронежилет Biohazard V3 — `/craft/clothing/biohazard_vest_v3.html`
+  - classname: `YW_Biohazard_Vest_V3`
+- Бронежилет Biohazard V4 — `/craft/clothing/biohazard_vest_v4.html`
+  - classname: `YW_Biohazard_Vest_V4`
+- Бронежилет Biohazard V5 — `/craft/clothing/biohazard_vest_v5.html`
+  - classname: `YW_Biohazard_Vest_V5`
+- Бронежилет CAJ V2 — `/craft/clothing/caj_vest_v2.html`
+  - classname: `YW_CAJ_Vest_V2`
+- Бронежилет CAJ V3 — `/craft/clothing/caj_vest_v3.html`
+  - classname: `YW_CAJ_Vest_V3`
+- Бронежилет CAJ V4 — `/craft/clothing/caj_vest_v4.html`
+  - classname: `YW_CAJ_Vest_V4`
+- Бронежилет CAJ V5 — `/craft/clothing/caj_vest_v5.html`
+  - classname: `YW_CAJ_Vest_V5`
+- Бронежилет Marauder V2 — `/craft/clothing/marauder_vest_v2.html`
+  - classname: `YW_Marauder_Vest_V2`
+- Бронежилет Rusher V2 — `/craft/clothing/rusher_vest_v2.html`
+  - classname: `YW_Rusher_Vest_V2`
+- Бронежилет Rusher V3 — `/craft/clothing/rusher_vest_v3.html`
+  - classname: `YW_Rusher_Vest_V3`
+- Бронежилет Rusher V4 — `/craft/clothing/rusher_vest_v4.html`
+  - classname: `YW_Rusher_Vest_V4`
+- Бронежилет Rusher V5 — `/craft/clothing/rusher_vest_v5.html`
+  - classname: `YW_Rusher_Vest_V5`
+- Бронежилет Tempest V2 — `/craft/clothing/tempest_vest_v2.html`
+  - classname: `YW_Tempest_Vest_V2`
+- Бронежилет Thirst V2 — `/craft/clothing/thirst_vest_v2.html`
+  - classname: `YW_Thirst_Vest_V2`
+- Бронежилет Thirst V3 — `/craft/clothing/thirst_vest_v3.html`
+  - classname: `YW_Thirst_Vest_V3`
+- Бронежилет Thirst V4 — `/craft/clothing/thirst_vest_v4.html`
+  - classname: `YW_Thirst_Vest_V4`
+- Бронежилет Thirst V5 — `/craft/clothing/thirst_vest_v5.html`
+  - classname: `YW_Thirst_Vest_V5`
+- Бронежилет Warfighter V2 — `/craft/clothing/warfighter_vest_v2.html`
+  - classname: `YW_Kpop_Vest_V2`
+- Бронежилет Warfighter V3 — `/craft/clothing/warfighter_vest_v3.html`
+  - classname: `YW_Kpop_Vest_V3`
+- Бронежилет Warfighter V4 — `/craft/clothing/warfighter_vest_v4.html`
+  - classname: `YW_Kpop_Vest_V4`
+- Бронежилет Warfighter V5 — `/craft/clothing/warfighter_vest_v5.html`
+  - classname: `YW_Kpop_Vest_V5`
+- Бронежилет Whimsy V2 — `/craft/clothing/whimsy_vest_v2.html`
+  - classname: `YW_Whimsy_Vest_V2_Pink`
+- Бронежилет Whimsy V3 — `/craft/clothing/whimsy_vest_v3.html`
+  - classname: `YW_Whimsy_Vest_V3_Pink`
+- Бронежилет Whimsy V4 — `/craft/clothing/whimsy_vest_v4.html`
+  - classname: `YW_Whimsy_Vest_V4_Pink`
+- Бронежилет Whimsy V5 — `/craft/clothing/whimsy_vest_v5.html`
+  - classname: `YW_Whimsy_Vest_V5_Pink`
+- Капюшон Biohazard NBC — `/craft/clothing/biohazard_hood_nbc.html`
+  - classname: ``
+- Капюшон Biohazard V2 — `/craft/clothing/biohazard_hood_v2.html`
+  - classname: `YW_Biohazard_Hood_V2`
+- Капюшон Biohazard V3 — `/craft/clothing/biohazard_hood_v3.html`
+  - classname: `YW_Biohazard_Hood_V3`
+- Капюшон Biohazard V4 — `/craft/clothing/biohazard_hood_v4.html`
+  - classname: `YW_Biohazard_Hood_V4`
+- Капюшон Biohazard V5 — `/craft/clothing/biohazard_hood_v5.html`
+  - classname: `YW_Biohazard_Hood_V5`
+- Куртка Аль Катала V2 — `/craft/clothing/katala_jacket_v2.html`
+  - classname: `IMP_Jacket_SET22_V2`
+- Куртка Biohazard V2 — `/craft/clothing/biohazard_jacket_v2.html`
+  - classname: `YW_Biohazard_Jacket_V2`
+- Куртка Biohazard V3 — `/craft/clothing/biohazard_jacket_v3.html`
+  - classname: `YW_Biohazard_Jacket_V3`
+- Куртка Biohazard V4 — `/craft/clothing/biohazard_jacket_v4.html`
+  - classname: `YW_Biohazard_Jacket_V4`
+- Куртка Biohazard V5 — `/craft/clothing/biohazard_jacket_v5.html`
+  - classname: `YW_Biohazard_Jacket_V5`
+- Куртка CAJ V2 — `/craft/clothing/caj_jacket_v2.html`
+  - classname: `YW_CAJ_Jacket_V2`
+- Куртка CAJ V3 — `/craft/clothing/caj_jacket_v3.html`
+  - classname: `YW_CAJ_Jacket_V3`
+- Куртка CAJ V4 — `/craft/clothing/caj_jacket_v4.html`
+  - classname: `YW_CAJ_Jacket_V4`
+- Куртка CAJ V5 — `/craft/clothing/caj_jacket_v5.html`
+  - classname: `YW_CAJ_Jacket_V5`
+- Куртка Dead Agent V2 — `/craft/clothing/deadagent_jacket_v2.html`
+  - classname: `YW_DeadAgent_Jacket_V2`
+- Куртка Dead Agent V3 — `/craft/clothing/deadagent_jacket_v3.html`
+  - classname: `YW_DeadAgent_Jacket_V3`
+- Куртка Dead Agent V4 — `/craft/clothing/deadagent_jacket_v4.html`
+  - classname: `YW_DeadAgent_Jacket_V4`
+- Куртка Dead Agent V5 — `/craft/clothing/deadagent_jacket_v5.html`
+  - classname: `YW_DeadAgent_Jacket_V5`
+- Куртка Marauder V2 — `/craft/clothing/marauder_jacket_v2.html`
+  - classname: `YW_Marauder_Body_V2`
+- Куртка Rusher V2 — `/craft/clothing/rusher_jacket_v2.html`
+  - classname: `YW_Rusher_Jacket_V2`
+- Куртка Rusher V3 — `/craft/clothing/rusher_jacket_v3.html`
+  - classname: `YW_Rusher_Jacket_V3`
+- Куртка Rusher V4 — `/craft/clothing/rusher_jacket_v4.html`
+  - classname: `YW_Rusher_Jacket_V4`
+- Куртка Rusher V5 — `/craft/clothing/rusher_jacket_v5.html`
+  - classname: `YW_Rusher_Jacket_V5`
+- Куртка Shepard V2 — `/craft/clothing/shepard_jacket_v2.html`
+  - classname: `YW_Shepard_Torso_V2`
+- Куртка Shepard V3 — `/craft/clothing/shepard_jacket_v3.html`
+  - classname: `YW_Shepard_Torso_V3`
+- Куртка Shepard V4 — `/craft/clothing/shepard_jacket_v4.html`
+  - classname: `YW_Shepard_Torso_V4`
+- Куртка Shepard V5 — `/craft/clothing/shepard_jacket_v5.html`
+  - classname: `YW_Shepard_Torso_V5`
+- Куртка Tempest V2 — `/craft/clothing/tempest_jacket_v2.html`
+  - classname: `YW_Tempest_Jacket_V2`
+- Куртка Thirst V2 — `/craft/clothing/thirst_jacket_v2.html`
+  - classname: `YW_Thirst_Jacket_V2`
+- Куртка Thirst V3 — `/craft/clothing/thirst_jacket_v3.html`
+  - classname: `YW_Thirst_Jacket_V3`
+- Куртка Thirst V4 — `/craft/clothing/thirst_jacket_v4.html`
+  - classname: `YW_Thirst_Jacket_V4`
+- Куртка Thirst V5 — `/craft/clothing/thirst_jacket_v5.html`
+  - classname: `YW_Thirst_Jacket_V5`
+- Куртка Trooper V2 — `/craft/clothing/trooper_jacket_v2.html`
+  - classname: `YW_Trooper_Torso_V2`
+- Куртка Trooper V3 — `/craft/clothing/trooper_jacket_v3.html`
+  - classname: `YW_Trooper_Torso_V3`
+- Куртка Trooper V4 — `/craft/clothing/trooper_jacket_v4.html`
+  - classname: `YW_Trooper_Torso_V4`
+- Куртка Trooper V5 — `/craft/clothing/trooper_jacket_v5.html`
+  - classname: `YW_Trooper_Torso_V5`
+- Куртка Warfighter V2 — `/craft/clothing/warfighter_jacket_v2.html`
+  - classname: `YW_Kpop_Jacket_V2`
+- Куртка Warfighter V3 — `/craft/clothing/warfighter_jacket_v3.html`
+  - classname: `YW_Kpop_Jacket_V3`
+- Куртка Warfighter V4 — `/craft/clothing/warfighter_jacket_v4.html`
+  - classname: `YW_Kpop_Jacket_V4`
+- Куртка Warfighter V5 — `/craft/clothing/warfighter_jacket_v5.html`
+  - classname: `YW_Kpop_Jacket_V5`
+- Куртка Whimsy V2 — `/craft/clothing/whimsy_jacket_v2.html`
+  - classname: `YW_Whimsy_Jacket_V2_Pink`
+- Куртка Whimsy V3 — `/craft/clothing/whimsy_jacket_v3.html`
+  - classname: `YW_Whimsy_Jacket_V3_Pink`
+- Куртка Whimsy V4 — `/craft/clothing/whimsy_jacket_v4.html`
+  - classname: `YW_Whimsy_Jacket_V4_Pink`
+- Куртка Whimsy V5 — `/craft/clothing/whimsy_jacket_v5.html`
+  - classname: `YW_Whimsy_Jacket_V5_Pink`
+- Невидимый бронежилет V2 — `/craft/clothing/vest_inviz_v2.html`
+  - classname: `YW_Vest_Inviz_V2`
+- Невидимый бронежилет V3 — `/craft/clothing/vest_inviz_v3.html`
+  - classname: `YW_Vest_Inviz_V3`
+- Невидимый бронежилет V4 — `/craft/clothing/vest_inviz_v4.html`
+  - classname: `YW_Vest_Inviz_V4`
+- Невидимый бронежилет V5 — `/craft/clothing/vest_inviz_v5.html`
+  - classname: `YW_Vest_Inviz_V5`
+- Невидимый ремень V2 — `/craft/clothing/belt_inviz_v2.html`
+  - classname: `YW_Belt_Inviz_V2`
+- Невидимый ремешок для ПНВ V2 — `/craft/clothing/nvgstrap_inviz_v2.html`
+  - classname: `YW_NVG_Strap_V2`
+- Невидимый рюкзак V2 — `/craft/clothing/backpack_inviz_v2.html`
+  - classname: `YW_Backpack_Inviz_V2`
+- Невидимый рюкзак V3 — `/craft/clothing/backpack_inviz_v3.html`
+  - classname: `YW_Backpack_Inviz_V3`
+- Невидимый рюкзак V4 — `/craft/clothing/backpack_inviz_v4.html`
+  - classname: `YW_Backpack_Inviz_V4`
+- Невидимый рюкзак V5 — `/craft/clothing/backpack_inviz_v5.html`
+  - classname: `YW_Backpack_Inviz_V5`
+- Перчатки CAJ NBC — `/craft/clothing/caj_gloves_nbc.html`
+  - classname: `YW_CAJ_Gloves_NBC`
+- Перчатки Dead Agent NBC — `/craft/clothing/deadagent_gloves_nbc.html`
+  - classname: `YW_DeadAgent_Gloves_NBC`
+- Перчатки Rusher NBC — `/craft/clothing/rusher_gloves_nbc.html`
+  - classname: `YW_Rusher_Gloves_NBC`
+- Перчатки Shepard NBC — `/craft/clothing/shepard_gloves_nbc.html`
+  - classname: `YW_Shepard_Gloves_NBC`
+- Перчатки Thirst NBC — `/craft/clothing/thirst_gloves_nbc.html`
+  - classname: `YW_Thirst_Gloves_NBC`
+- Перчатки Trooper NBC — `/craft/clothing/trooper_gloves_nbc.html`
+  - classname: `YW_Trooper_Gloves_NBC`
+- Перчатки Warfighter NBC — `/craft/clothing/warfighter_gloves_nbc.html`
+  - classname: `YW_Kpop_Gloves_NBC`
+- Перчатки Whimsy NBC — `/craft/clothing/whimsy_gloves_nbc.html`
+  - classname: `YW_Whimsy_Gloves_NBC_Pink`
+- Ремень Biohazard V2 — `/craft/clothing/biohazard_belt_v2.html`
+  - classname: `YW_Biohazard_Belt_V2`
+- Ремень CAJ V2 — `/craft/clothing/caj_belt_v2.html`
+  - classname: `YW_CAJ_Belt_V2`
+- Ремень Warfighter V2 — `/craft/clothing/warfighter_belt_v2.html`
+  - classname: `YW_Kpop_Belt_V2`
+- НЕТ РЕМНЯ THIRST - YW_Thirst_Belt_V2
+- Рюкзак Biohazard V2 — `/craft/clothing/biohazard_backpack_v2.html`
+  - classname: `YW_Biohazard_Backpack_V2`
+- Шлем CAJ NBC — `/craft/clothing/caj_helmet_nbc.html`
+  - classname: ``
+- Шлем CAJ V2 — `/craft/clothing/caj_helmet_v2.html`
+  - classname: `YW_CAJ_Helmet_V2`
+- Шлем CAJ V3 — `/craft/clothing/caj_helmet_v3.html`
+  - classname: `YW_CAJ_Helmet_V3`
+- Шлем CAJ V4 — `/craft/clothing/caj_helmet_v4.html`
+  - classname: `YW_CAJ_Helmet_V4`
+- Шлем CAJ V5 — `/craft/clothing/caj_helmet_v5.html`
+  - classname: `YW_CAJ_Helmet_V5`
+- Шлем Dead Agent NBC — `/craft/clothing/deadagent_helmet_nbc.html`
+  - classname: ``
+- Шлем Dead Agent V2 — `/craft/clothing/deadagent_helmet_v2.html`
+  - classname: `YW_DeadAgent_Helmet_V2`
+- Шлем Dead Agent V3 — `/craft/clothing/deadagent_helmet_v3.html`
+  - classname: `YW_DeadAgent_Helmet_V3`
+- Шлем Dead Agent V4 — `/craft/clothing/deadagent_helmet_v4.html`
+  - classname: `YW_DeadAgent_Helmet_V4`
+- Шлем Dead Agent V5 — `/craft/clothing/deadagent_helmet_v5.html`
+  - classname: `YW_DeadAgent_Helmet_V5`
+- Шлем Rusher NBC — `/craft/clothing/rusher_helmet_nbc.html`
+  - classname: ``
+- Шлем Rusher V2 — `/craft/clothing/rusher_helmet_v2.html`
+  - classname: `YW_Rusher_Helmet_V2`
+- Шлем Rusher V3 — `/craft/clothing/rusher_helmet_v3.html`
+  - classname: `YW_Rusher_Helmet_V3`
+- Шлем Rusher V4 — `/craft/clothing/rusher_helmet_v4.html`
+  - classname: `YW_Rusher_Helmet_V4`
+- Шлем Rusher V5 — `/craft/clothing/rusher_helmet_v5.html`
+  - classname: `YW_Rusher_Helmet_V5`
+- Шлем Shepard NBC — `/craft/clothing/shepard_helmet_nbc.html`
+  - classname: ``
+- Шлем Shepard V2 — `/craft/clothing/shepard_helmet_v2.html`
+  - classname: `YW_Shepard_Helmet_V2`
+- Шлем Shepard V3 — `/craft/clothing/shepard_helmet_v3.html`
+  - classname: `YW_Shepard_Helmet_V3`
+- Шлем Shepard V4 — `/craft/clothing/shepard_helmet_v4.html`
+  - classname: `YW_Shepard_Helmet_V4`
+- Шлем Shepard V5 — `/craft/clothing/shepard_helmet_v5.html`
+  - classname: `YW_Shepard_Helmet_V5`
+- Шлем Thirst NBC — `/craft/clothing/thirst_helmet_nbc.html`
+  - classname: ``
+- Шлем Thirst V2 — `/craft/clothing/thirst_helmet_v2.html`
+  - classname: `YW_Thirst_Helmet_V2`
+- Шлем Thirst V3 — `/craft/clothing/thirst_helmet_v3.html`
+  - classname: `YW_Thirst_Helmet_V3`
+- Шлем Thirst V4 — `/craft/clothing/thirst_helmet_v4.html`
+  - classname: `YW_Thirst_Helmet_V4`
+- Шлем Thirst V5 — `/craft/clothing/thirst_helmet_v5.html`
+  - classname: `YW_Thirst_Helmet_V5`
+- Шлем Trooper NBC — `/craft/clothing/trooper_helmet_nbc.html`
+  - classname: ``
+- Шлем Trooper V2 — `/craft/clothing/trooper_helmet_v2.html`
+  - classname: `YW_Trooper_Helmet_V2`
+- Шлем Trooper V3 — `/craft/clothing/trooper_helmet_v3.html`
+  - classname: `YW_Trooper_Helmet_V3`
+- Шлем Trooper V4 — `/craft/clothing/trooper_helmet_v4.html`
+  - classname: `YW_Trooper_Helmet_V4`
+- Шлем Trooper V5 — `/craft/clothing/trooper_helmet_v5.html`
+  - classname: `YW_Trooper_Helmet_V5`
+- Шлем Warfighter NBC — `/craft/clothing/warfighter_helmet_nbc.html`
+  - classname: ``
+- Шлем Warfighter V2 — `/craft/clothing/warfighter_helmet_v2.html`
+  - classname: `YW_Kpop_Helmet_V2`
+- Шлем Warfighter V3 — `/craft/clothing/warfighter_helmet_v3.html`
+  - classname: `YW_Kpop_Helmet_V3`
+- Шлем Warfighter V4 — `/craft/clothing/warfighter_helmet_v4.html`
+  - classname: `YW_Kpop_Helmet_V4`
+- Шлем Warfighter V5 — `/craft/clothing/warfighter_helmet_v5.html`
+  - classname: `YW_Kpop_Helmet_V5`
+- Шлем Whimsy NBC — `/craft/clothing/whimsy_helmet_nbc.html`
+  - classname: ``
+- Шлем Whimsy V2 — `/craft/clothing/whimsy_helmet_v2.html`
+  - classname: `YW_Whimsy_Helmet_V2_Pink`
+- Шлем Whimsy V3 — `/craft/clothing/whimsy_helmet_v3.html`
+  - classname: `YW_Whimsy_Helmet_V3_Pink`
+- Шлем Whimsy V4 — `/craft/clothing/whimsy_helmet_v4.html`
+  - classname: `YW_Whimsy_Helmet_V4_Pink`
+- Шлем Whimsy V5 — `/craft/clothing/whimsy_helmet_v5.html`
+  - classname: `YW_Whimsy_Helmet_V5_Pink`
+- Штаны Аль Катала V2 — `/craft/clothing/katala_pants_v2.html`
+  - classname: `IMP_Pants_SET22_V2`
+- Штаны Biohazard V2 — `/craft/clothing/biohazard_pants_v2.html`
+  - classname: `YW_Biohazard_Pants_V2`
+- Штаны Biohazard V3 — `/craft/clothing/biohazard_pants_v3.html`
+  - classname: `YW_Biohazard_Pants_V3`
+- Штаны Biohazard V4 — `/craft/clothing/biohazard_pants_v4.html`
+  - classname: `YW_Biohazard_Pants_V4`
+- Штаны Biohazard V5 — `/craft/clothing/biohazard_pants_v5.html`
+  - classname: `YW_Biohazard_Pants_V5`
+- Штаны CAJ V2 — `/craft/clothing/caj_pants_v2.html`
+  - classname: `YW_CAJ_Pants_V2`
+- Штаны CAJ V3 — `/craft/clothing/caj_pants_v3.html`
+  - classname: `YW_CAJ_Pants_V3`
+- Штаны CAJ V4 — `/craft/clothing/caj_pants_v4.html`
+  - classname: `YW_CAJ_Pants_V4`
+- Штаны CAJ V5 — `/craft/clothing/caj_pants_v5.html`
+  - classname: `YW_CAJ_Pants_V5`
+- Штаны Dead Agent V2 — `/craft/clothing/deadagent_pants_v2.html`
+  - classname: `YW_DeadAgent_Pants_V2`
+- Штаны Dead Agent V3 — `/craft/clothing/deadagent_pants_v3.html`
+  - classname: `YW_DeadAgent_Pants_V3`
+- Штаны Dead Agent V4 — `/craft/clothing/deadagent_pants_v4.html`
+  - classname: `YW_DeadAgent_Pants_V4`
+- Штаны Dead Agent V5 — `/craft/clothing/deadagent_pants_v5.html`
+  - classname: `YW_DeadAgent_Pants_V5`
+- Штаны Marauder V2 — `/craft/clothing/marauder_pants_v2.html`
+  - classname: `YW_Marauder_Pants_V2`
+- Штаны Rusher V2 — `/craft/clothing/rusher_pants_v2.html`
+  - classname: `YW_Rusher_Pants_V2`
+- Штаны Rusher V3 — `/craft/clothing/rusher_pants_v3.html`
+  - classname: `YW_Rusher_Pants_V3`
+- Штаны Rusher V4 — `/craft/clothing/rusher_pants_v4.html`
+  - classname: `YW_Rusher_Pants_V4`
+- Штаны Rusher V5 — `/craft/clothing/rusher_pants_v5.html`
+  - classname: `YW_Rusher_Pants_V5`
+- Штаны Shepard V2 — `/craft/clothing/shepard_pants_v2.html`
+  - classname: `YW_Shepard_Pants_V2`
+- Штаны Shepard V3 — `/craft/clothing/shepard_pants_v3.html`
+  - classname: `YW_Shepard_Pants_V3`
+- Штаны Shepard V4 — `/craft/clothing/shepard_pants_v4.html`
+  - classname: `YW_Shepard_Pants_V4`
+- Штаны Shepard V5 — `/craft/clothing/shepard_pants_v5.html`
+  - classname: `YW_Shepard_Pants_V5`
+- Штаны Tempest V2 — `/craft/clothing/tempest_pants_v2.html`
+  - classname: `YW_Tempest_Pants_V2`
+- Штаны Thirst V2 — `/craft/clothing/thirst_pants_v2.html`
+  - classname: `YW_Thirst_Pants_V2`
+- Штаны Thirst V3 — `/craft/clothing/thirst_pants_v3.html`
+  - classname: `YW_Thirst_Pants_V3`
+- Штаны Thirst V4 — `/craft/clothing/thirst_pants_v4.html`
+  - classname: `YW_Thirst_Pants_V4`
+- Штаны Thirst V5 — `/craft/clothing/thirst_pants_v5.html`
+  - classname: `YW_Thirst_Pants_V5`
+- Штаны Trooper V2 — `/craft/clothing/trooper_pants_v2.html`
+  - classname: `YW_Trooper_Pants_V2`
+- Штаны Trooper V3 — `/craft/clothing/trooper_pants_v3.html`
+  - classname: `YW_Trooper_Pants_V3`
+- Штаны Trooper V4 — `/craft/clothing/trooper_pants_v4.html`
+  - classname: `YW_Trooper_Pants_V4`
+- Штаны Trooper V5 — `/craft/clothing/trooper_pants_v5.html`
+  - classname: `YW_Trooper_Pants_V5`
+- Штаны Warfighter V2 — `/craft/clothing/warfighter_pants_v2.html`
+  - classname: `YW_Kpop_Pants_V2`
+- Штаны Warfighter V3 — `/craft/clothing/warfighter_pants_v3.html`
+  - classname: `YW_Kpop_Pants_V3`
+- Штаны Warfighter V4 — `/craft/clothing/warfighter_pants_v4.html`
+  - classname: `YW_Kpop_Pants_V4`
+- Штаны Warfighter V5 — `/craft/clothing/warfighter_pants_v5.html`
+  - classname: `YW_Kpop_Pants_V5`
+- Штаны Whimsy V2 — `/craft/clothing/whimsy_pants_v2.html`
+  - classname: `YW_Whimsy_Pants_V2_Pink`
+- Штаны Whimsy V3 — `/craft/clothing/whimsy_pants_v3.html`
+  - classname: `YW_Whimsy_Pants_V3_Pink`
+- Штаны Whimsy V4 — `/craft/clothing/whimsy_pants_v4.html`
+  - classname: `YW_Whimsy_Pants_V4_Pink`
+- Штаны Whimsy V5 — `/craft/clothing/whimsy_pants_v5.html`
+  - classname: `YW_Whimsy_Pants_V5_Pink`
+- Экзоскелет Black V1 — `/craft/clothing/exo_roxxon_black_v1.html`
+  - classname: `YW_Exo_Craft_2_V1`
+- Экзоскелет Black V2 — `/craft/clothing/exo_roxxon_black_v2.html`
+  - classname: `YW_Exo_Craft_2_V2`
+- Экзоскелет Red V1 — `/craft/clothing/exo_roxxon_red_v1.html`
+  - classname: `YW_Exo_Red_Craft_3_V1`
+- Экзоскелет Red V2 — `/craft/clothing/exo_roxxon_red_v2.html`
+  - classname: `YW_Exo_Red_Craft_3_V2`
+- Экзоскелет V1 — `/craft/clothing/exo_crusher_v1.html`
+  - classname: `YW_Exo_Craft_1_V1`
+- Экзоскелет V2 — `/craft/clothing/exo_crusher_v2.html`
+  - classname: `YW_Exo_Craft_1_V2`
+
+## Оружие
+
+- Автомат AR-15 Bloody V2 — `/craft/weapons/bloody_ar15.html`
+  - classname: `RS_P_GUN_Kinetics_ar15_Craft`
+- Автомат DBR Bloody V2 — `/craft/weapons/bloody_dbr.html`
+  - classname: `RS_P_GUN_DBR_Craft`
+- Автомат Phantom AR-15 Bloody V2 — `/craft/weapons/bloody_ar15_phantom.html`
+  - classname: `RS_P_GUN_AR_15_RED_Craft`
+- Автомат SIGSAUER Bloody V2 — `/craft/weapons/bloody_sigsauer.html`
+  - classname: `RS_P_GUN_SIGSAUER_Craft`
+- Пулемет PKP Bloody V2 — `/craft/weapons/bloody_pkp.html`
+  - classname: `RS_P_GUN_PKP_Craft`
+- AEK971 Dark — `/craft/weapons/ar_762_dark_v6.html`
+  - classname: `KOD_AEK971`
+- AK-12 Dark — `/craft/weapons/ar_762_dark_v2.html`
+  - classname: `RS_P_GUN_AK12`
+- AK15 Dark — `/craft/weapons/ar_762_dark_v5.html`
+  - classname: `KOD_AK15`
+- AK47 Dark — `/craft/weapons/ar_762_dark_v3.html`
+  - classname: `KOD_AK47`
+- AKALPHA Dark — `/craft/weapons/ar_762_dark_v4.html`
+  - classname: `KOD_AKALPHA`
+- AKM Gold V2 — `/craft/weapons/gold_akm_v2.html`
+  - classname: `RS_P_GUN_AKM_GOLD_V2`
+- AKM Gold V3 — `/craft/weapons/gold_akm_v3.html`
+  - classname: `RS_P_GUN_AKM_GOLD_V3`
+- AR15 Dark — `/craft/weapons/ar_556_dark_v3.html`
+  - classname: `KOD_AR15Skeleton`
+- CSR50 Bloody — `/craft/weapons/csr_bloody.html`
+  - classname: `KOD_CSR50`
+- Evolys Dark — `/craft/weapons/hmg_dark_v6.html`
+  - classname: `KOD_Evolys`
+- HK21 Dark — `/craft/weapons/hmg_dark_v5.html`
+  - classname: `KOD_HK21_Black`
+- HK416 Gold V2 — `/craft/weapons/gold_hk416_v2.html`
+  - classname: `RS_P_GUN_HK416_GOLD_V2`
+- HK416 Gold V3 — `/craft/weapons/gold_hk416_v3.html`
+  - classname: `RS_P_GUN_HK416_GOLD_V3`
+- HK417 Dark — `/craft/weapons/ar_556_dark_v5.html`
+  - classname: `KOD_HK417`
+- Kivaari Dark — `/craft/weapons/rifle_dark_v2.html`
+  - classname: `KOD_Kivaari_Black`
+- LDR-308 Bloody V2 — `/craft/weapons/bloody_ldr308.html`
+  - classname: `YW_LDR_308_Bloody_Craft`
+- M110 Dark — `/craft/weapons/rifle_dark_v3.html`
+  - classname: `KOD_M110_Black`
+- M1928A1 Dark — `/craft/weapons/pp_dark_v2.html`
+  - classname: `KOD_M1928A1`
+- M249 Dark — `/craft/weapons/hmg_dark_v2.html`
+  - classname: `KOD_M249`
+- M60E3 Dark — `/craft/weapons/hmg_dark_v4.html`
+  - classname: `KOD_M60E3`
+- M82A2 Dark — `/craft/weapons/rifle_dark_v6.html`
+  - classname: `KOD_M82A2_Black`
+- MCR Dark — `/craft/weapons/ar_556_dark_v4.html`
+  - classname: `KOD_MCR_Tan`
+- PKP Dark — `/craft/weapons/hmg_dark_v3.html`
+  - classname: `KOD_PKP`
+- PPSH Dark — `/craft/weapons/pp_dark_v3.html`
+  - classname: `KOD_PPSh`
+- RSASS Dark — `/craft/weapons/rifle_dark_v4.html`
+  - classname: `KOD_RSASS_Black`
+- SCAR Dark — `/craft/weapons/ar_556_dark_v6.html`
+  - classname: `KOD_SCARH`
+- Scorpion Dark — `/craft/weapons/pp_dark_v4.html`
+  - classname: `KOD_Scorpion`
+- SUB2000 Dark — `/craft/weapons/pp_dark_v5.html`
+  - classname: `KOD_SUB2000`
+- SUB2000-S Dark — `/craft/weapons/pp_dark_v6.html`
+  - classname: `KOD_SUB2000_Suppressed`
+- TAR21 Dark — `/craft/weapons/ar_556_dark_v2.html`
+  - classname: `KOD_TAR21_Black`
+- VSSK Dark — `/craft/weapons/rifle_dark_v5.html`
+  - classname: `KOD_VSSK`
+
+## Предметы
+
+- Боевой противогаз на 24 часа — `/craft/items/gasmask_24.html`
+  - classname: `YW_GasMask_24_hours`
+- Боевой противогаз на 4 часа — `/craft/items/gasmask_4.html`
+  - classname: `YW_GasMask_4_hours`
+- Боевой противогаз на 8 часов — `/craft/items/gasmask_8.html`
+  - classname: `YW_GasMask_8_hours`
+- Желтый ключ — `/craft/items/key_yellow.html`
+  - classname: `YW_Key_Yellow`
+- Канистра 100л — `/craft/items/canister_100.html`
+  - classname: `YW_CanisterGasoline_100l`
+- Карта телепорта на данж - Портленд — `/craft/items/card_portland.html`
+  - classname: `YW_Card_Teleport_Portland`
+- Красный ключ — `/craft/items/key_red.html`
+  - classname: `YW_Key_Red`
+- Противогаз из маски от сета на 2 часа — `/craft/items/set_mask_2.html`
+  - classname: ``
+- Противогаз из маски от сета на 24 часа — `/craft/items/set_mask_24.html`
+  - classname: ``
+- Противогаз из маски от сета на 4 часа — `/craft/items/set_mask_4.html`
+  - classname: ``
+- Противогаз из маски от сета на 8 часов — `/craft/items/set_mask_8.html`
+  - classname: ``
+- Садовая известь — `/craft/items/gardenlime.html`
+  - classname: `GardenLime`
+- Стол для покраски — `/craft/items/retexture_table.html`
+  - classname: `YW_Retexture_Table_Kit`
+- Улучшенная усиленная удочка — `/craft/items/rod_v2.html`
+  - classname: `YW_Fishing_Rod_Crystall_V2`
+- Фиолетовый ключ — `/craft/items/key_purple.html`
+  - classname: `YW_Key_Purple`
+
+## Сеты
+
+- Кейс с сетом Calisto Undead V2 — `/craft/sets/set_calisto.html`
+  - classname: `YW_SetBox_Calisto_Undead_Crystal_V2`
+- Кейс с сетом Crusher V2 — `/craft/sets/set_crusher.html`
+  - classname: `YW_SetBox_Crusher_V2`
+- Кейс с сетом Fixer V2 — `/craft/sets/set_fixer.html`
+  - classname: `YW_SetBox_Fixer_V2`
+- Кейс с сетом Ghost V2 — `/craft/sets/set_ghost.html`
+  - classname: `YW_SetBox_Ghost_V2`
+- Кейс с сетом Kasrkin V2 — `/craft/sets/set_kasrkin.html`
+  - classname: `YW_SetBox_Kasrkin_Green_V2`
+- Кейс с сетом Monochrome V2 — `/craft/sets/set_monochrome.html`
+  - classname: `YW_SetBox_Monochrome_White_V2`
+- Кейс с сетом Roxxon V2 — `/craft/sets/set_roxxon.html`
+  - classname: `YW_SetBox_Roxxon_Black_V2`
+- Кейс с сетом Sentinel V2 — `/craft/sets/set_sentinel.html`
+  - classname: `YW_SetBox_Sentinel_V2`
+- Кейс с сетом Street Warrior V2 — `/craft/sets/set_streetwarrior.html`
+  - classname: `YW_SetBox_Street_Warrior_V2`
+
+## Электроника
+
+- Батарейка x10 — `/craft/electronic/battery_x10.html`
+  - classname: `YW_Battery_X10`
+- Батарейка x15 — `/craft/electronic/battery_x15.html`
+  - classname: `YW_Battery_X15`
+- Батарейка x20 — `/craft/electronic/battery_x20.html`
+  - classname: `YW_Battery_X20`
+- Батарейка x30 — `/craft/electronic/battery_x30.html`
+  - classname: `YW_Battery_X30`
+- Батарейка x40 — `/craft/electronic/battery_x40.html`
+  - classname: `YW_Battery_X40`
+- Батарейка x5 — `/craft/electronic/battery_x5.html`
+  - classname: `YW_Battery_X5`
+- Батарейка x50 — `/craft/electronic/battery_x50.html`
+  - classname: `YW_Battery_X50`
+- Видеокарта BL-1080ti — `/craft/electronic/videocard_1080.html`
+  - classname: `RF_MININGFARM_Videocard_BL_1080ti`
+- Видеокарта BL-2080 — `/craft/electronic/videocard_2080.html`
+  - classname: `RF_MININGFARM_Videocard_BL2080`
+- Видеокарта BL-3060 — `/craft/electronic/videocard_3060.html`
+  - classname: `RF_MININGFARM_Videocard_BL3060`
+- Видеокарта BL-3080 — `/craft/electronic/videocard_3080.html`
+  - classname: `RF_MININGFARM_Videocard_BL3080`
+- Видеокарта BL-RX — `/craft/electronic/videocard_blrx.html`
+  - classname: `RF_MININGFARM_Videocard_BL_RX`
+- Генератор V2 — `/craft/electronic/generator_v2.html`
+  - classname: `YW_PowerGenerator_V2`
+- Генератор V3 — `/craft/electronic/generator_v3.html`
+  - classname: `YW_PowerGenerator_V3`
+- ПНВ — `/craft/electronic/nvg.html`
+  - classname: `YW_NVG_Black`
+
+## Ящики, бочки и сундуки
+
+- Бочка 100 — `/craft/crates/barrel_100.html`
+  - classname: `YW_Barrel_100_Camo_1`
+- Бочка 200 — `/craft/crates/barrel_200.html`
+  - classname: `YW_Barrel_200_Camo_1`
+- Бочка 300 — `/craft/crates/barrel_300.html`
+  - classname: `YW_Barrel_300_Camo_1`
+- Бочка 400 — `/craft/crates/barrel_400.html`
+  - classname: `YW_Barrel_400_Camo_1`
+- Бочка 500 — `/craft/crates/barrel_500.html`
+  - classname: `YW_Barrel_500_Camo_1`
+- Деревянный ящик 100 — `/craft/crates/crate_100.html`
+  - classname: `YW_WoodenCrate_100_Camo_1`
+- Деревянный ящик 200 — `/craft/crates/crate_200.html`
+  - classname: `YW_WoodenCrate_200_Camo_1`
+- Деревянный ящик 300 — `/craft/crates/crate_300.html`
+  - classname: `YW_WoodenCrate_300_Camo_1`
+- Деревянный ящик 400 — `/craft/crates/crate_400.html`
+  - classname: `YW_WoodenCrate_400_Camo_1`
+- Деревянный ящик 500 — `/craft/crates/crate_500.html`
+  - classname: `YW_WoodenCrate_500_Camo_1`
+- Матросский сундук 100 — `/craft/crates/chest_100.html`
+  - classname: `YW_SeaChest_100_Camo_1`
+- Матросский сундук 200 — `/craft/crates/chest_200.html`
+  - classname: `YW_SeaChest_200_Camo_1`
+- Матросский сундук 300 — `/craft/crates/chest_300.html`
+  - classname: `YW_SeaChest_300_Camo_1`
+- Матросский сундук 400 — `/craft/crates/chest_400.html`
+  - classname: `YW_SeaChest_400_Camo_1`
+- Матросский сундук 500 — `/craft/crates/chest_500.html`
+  - classname: `YW_SeaChest_500_Camo_1`
+
+
+## Компоненты для рецептов
+
+Порядок соответствует первому появлению в JSON CraftTools. Классы подставлены только при совпадении числа строк ингредиентов на странице и в серверном рецепте; проверь позиции с несколькими classname.
+
+- Чертеж оружия серии Dark — используется: 5
+  - classname: `YW_Chertezh_Weapon_Dark_V1`
+- Коробка с гильзами — используется: 4
+  - classname: `YW_Casings_Box`
+- Чертеж патронов — используется: 4
+  - classname: `YW_Chertezh_Ammo`
+- Мачете — используется: 5
+  - classname: `Machete`
+- Пакетик Lunar Aura — используется: 1
+  - classname: `YW_Coca_Bag_Lunar_Aura`
+- Скотч — используется: 5
+  - classname: `DuctTape`
+- Пакетик Crystal Eclipse — используется: 1
+  - classname: `YW_Coca_Bag_Crystal_Eclipse`
+- Пакетик Nirvana Spark — используется: 1
+  - classname: `YW_Coca_Bag_Nirvana_Spark`
+- Пакетик Whirlwind Ecstasy — используется: 1
+  - classname: `YW_Coca_Bag_Whirlwind_Ecstasy`
+- Пакетик Madness Rainbow — используется: 1
+  - classname: `YW_Coca_Bag_Madness_Rainbow`
+- Кейс для патронов 50 — используется: 1
+  - classname: `Hel_MagazineLoading_Case`
+- Коробка припоя — используется: 228
+  - classname: `YW_Pripoy_Box`
+- Коробка пружин — используется: 221
+  - classname: `YW_Springs_Box`
+- Набор для тонкой работы — используется: 264
+  - classname: `YW_Nabor_Tonkoi`
+- Паяльник — используется: 237
+  - classname: `YW_Solder`
+- Сварочный аппарат — используется: 122
+  - classname: `YW_Welding_Machine`
+- Чертеж кейса для патронов — используется: 1
+  - classname: `YW_Chertezh_Reload_Case`
+- Брусок металла — используется: 133
+  - classname: `YW_Bar_Metall`
+- Кейс черный 50 — используется: 1
+  - classname: `YW_Case_50_Black`
+- Коробка болтов — используется: 63
+  - classname: `YW_Bolts_Box`
+- Коробка гаек — используется: 63
+  - classname: `YW_Nuts_Box`
+- Молоток — используется: 82
+  - classname: `Hammer`
+- Набор для грубой работы — используется: 91
+  - classname: `YW_Nabor_Gryboi`
+- Слесарная ножовка — используется: 145
+  - classname: `Hacksaw`
+- Черная краска — используется: 11
+  - classname: `YW_SprayPaint_Black`
+- Кейс синий 50 — используется: 1
+  - classname: `YW_Case_50_Blue`
+- Синяя краска — используется: 6
+  - classname: `YW_SprayPaint_Blue`
+- Зеленая краска — используется: 6
+  - classname: `YW_SprayPaint_Green`
+- Кейс зеленый 50 — используется: 1
+  - classname: `YW_Case_50_Green`
+- Голубая краска — используется: 4
+  - classname: `YW_SprayPaint_Lightblue`
+- Кейс голубой 50 — используется: 1
+  - classname: `YW_Case_50_Lightblue`
+- Кейс оранжевый 50 — используется: 1
+  - classname: `YW_Case_50_Orange`
+- Оранжевая краска — используется: 6
+  - classname: `YW_SprayPaint_Orange`
+- Кейс розовый 50 — используется: 1
+  - classname: `YW_Case_50_Pink`
+- Кейс фиолетовый 50 — используется: 1
+  - classname: `YW_Case_50_Purple`
+- Кейс красный 50 — используется: 1
+  - classname: `YW_Case_50_Red`
+- Красная краска — используется: 10
+  - classname: `YW_SprayPaint_Red`
+- Белая краска — используется: 4
+  - classname: `YW_SprayPaint_White`
+- Кейс белый 50 — используется: 1
+  - classname: `YW_Case_50_White`
+- Желтая краска — используется: 5
+  - classname: `YW_SprayPaint_Yellow`
+- Кейс желтый 50 — используется: 1
+  - classname: `YW_Case_50_Yellow`
+- Брусок лития — используется: 118
+  - classname: `YW_Bar_Lithium`
+- Защитный ящик — используется: 45
+  - classname: `SmallProtectorCase`
+- Кувалда — используется: 80
+  - classname: `SledgeHammer`
+- Чертеж кейса — используется: 33
+  - classname: `YW_Chertezh_Case`
+- Розовая краска — используется: 3
+  - classname: `YW_SprayPaint_Pink`
+- Фиолетовая краска — используется: 4
+  - classname: `YW_SprayPaint_Purple`
+- Брусок алюминия — используется: 83
+  - classname: `YW_Bar_Aluminum`
+- Медицинский кейс 50 — используется: 1
+  - classname: `YW_Med_Case_50`
+- Брусок меди — используется: 114
+  - classname: `YW_Bar_Copper`
+- Кейс для оружия 50 — используется: 1
+  - classname: `YW_Weapon_Case_2_1lvl`
+- Ящик для инструментов 1 уровня — используется: 1
+  - classname: `YW_Tool_Box_1lvl`
+- Чертеж ящика — используется: 27
+  - classname: `YW_Chertezh_Crate`
+- Ящик для переноски оружия 1 уровня — используется: 1
+  - classname: `YW_Weapon_Case_1lvl`
+- Ящик для 4 игрушек — используется: 2
+  - classname: `YW_Toys_Box_4`
+- Гвозди — используется: 13
+  - classname: `Nails`
+- Доски — используется: 13
+  - classname: `WoodenPlank`
+- Пила — используется: 16
+  - classname: `HandSaw`
+- Ящик для 8 бутылок вина — используется: 1
+  - classname: `YW_Wine_Box_8`
+- Коробка гвоздей — используется: 3
+  - classname: `YW_Nails_Box`
+- Ящик садовода 50 — используется: 1
+  - classname: `ML_Gardenung_Box_50`
+- Коробка для 4 пар кроссовок — используется: 1
+  - classname: `ML_Sneaker_Box_Adidas`
+- Коробка для хранения 8 карточек Pokemon — используется: 1
+  - classname: `RIO_Collector_Pokemon_Box_8`
+- Книга для 16 чертежей — используется: 1
+  - classname: `YW_Chertezh_Book_16`
+- Суперклей — используется: 4
+  - classname: `YW_Superglue`
+- Швейный набор — используется: 179
+  - classname: `YW_Sewing_Kit`
+- Кейс танк БТ-7 250 — используется: 1
+  - classname: `YW_Case_Tank_2_250`
+- Кейс танк ИСУ-152 250 — используется: 1
+  - classname: `YW_Case_Tank_3_250`
+- Кейс танк КВ-1 250 — используется: 1
+  - classname: `YW_Case_Tank_4_250`
+- Кейс танк СУ-76 250 — используется: 1
+  - classname: `YW_Case_Tank_5_250`
+- Кейс танк Т-34-85 250 — используется: 1
+  - classname: `YW_Case_Tank_6_250`
+- Бронепластина 2 уровня — используется: 35
+  - classname: `YW_Armor_Plate_2_Level`
+- Невидимый бронежилет V1 — используется: 1
+  - classname: `YW_Vest_Inviz_V1`
+- Плоскогубцы — используется: 73
+  - classname: `Pliers`
+- Чертеж бронежилета — используется: 40
+  - classname: `YW_Chertezh_Vest`
+- Бронепластина 3 уровня — используется: 35
+  - classname: `YW_Armor_Plate_3_Level`
+- Бронепластина 4 уровня — используется: 37
+  - classname: `YW_Armor_Plate_4_Level`
+- Бронепластина 5 уровня — используется: 33
+  - classname: `YW_Armor_Plate_5_Level`
+- Невидимый рюкзак V1 — используется: 1
+  - classname: `YW_Backpack_Inviz_V1`
+- Чертеж рюкзака — используется: 11
+  - classname: `YW_Chertezh_Backpack`
+- Набор инструментов скорняка — используется: 16
+  - classname: `LeatherSewingKit`
+- Невидимый ремешок для ПНВ V1 — используется: 1
+  - classname: `YW_NVG_Strap_V1`
+- Чертеж одежды — используется: 38
+  - classname: `YW_Chertezh_Clothing`
+- Невидимый ремень V1 — используется: 1
+  - classname: `YW_Belt_Inviz_V1`
+- Чертеж экзоскелета — используется: 6
+  - classname: `YW_Chertezh_Exo`
+- Куртка Аль Катала V1 — используется: 1
+  - classname: `IMP_Jacket_SET22_V1`
+- Чертеж куртки — используется: 48
+  - classname: `YW_Chertezh_Jacket`
+- Чертеж штанов — используется: 48
+  - classname: `YW_Chertezh_Pants`
+- Штаны Аль Катала V1 — используется: 1
+  - classname: `IMP_Pants_SET22_V1`
+- Бронежилет Аль Катала V1 — используется: 1
+  - classname: `IMP_Vest_SET22_V1`
+- Отвертка — используется: 3
+  - classname: `Screwdriver`
+- Куртка Marauder V1 — используется: 1
+  - classname: `YW_Marauder_Body_V1`
+- Штаны Marauder V1 — используется: 1
+  - classname: `YW_Marauder_Pants_V1`
+- Бронежилет Marauder V1 — используется: 1
+  - classname: `YW_Marauder_Vest_V1`
+- Куртка Tempest V1 — используется: 1
+  - classname: `YW_Tempest_Jacket_V1`
+- Штаны Tempest V1 — используется: 1
+  - classname: `YW_Tempest_Pants_V1`
+- Бронежилет Tempest V1 — используется: 1
+  - classname: `YW_Tempest_Vest_V1`
+- Ремень Biohazard V1 — используется: 1
+  - classname: `YW_Biohazard_Belt_V1`
+- Рюкзак Biohazard V1 — используется: 1
+  - classname: `YW_Biohazard_Backpack_V1`
+- Капюшон Biohazard V1 — используется: 1
+  - classname: `YW_Biohazard_Hood_V1`
+- Чертеж шлема — используется: 45
+  - classname: `YW_Chertezh_Helmet`
+- Бронежилет Biohazard V1 — используется: 1
+  - classname: `YW_Biohazard_Vest_V1`
+- Куртка Biohazard V1 — используется: 1
+  - classname: `YW_Biohazard_Jacket_V1`
+- Штаны Biohazard V1 — используется: 1
+  - classname: `YW_Biohazard_Pants_V1`
+- Ботинки химзащиты — используется: 7
+  - classname: `YW_NBC_Boots`
+- Ботинки CAJ — используется: 1
+  - classname: `YW_CAJ_Boots`
+- Перчатки химзащиты — используется: 8
+  - classname: `YW_NBC_Gloves`
+- Перчатки CAJ — используется: 1
+  - classname: `YW_CAJ_Gloves`
+- Ремень CAJ V1 — используется: 1
+  - classname: `YW_CAJ_Belt_V1`
+- Шлем CAJ V1 — используется: 1
+  - classname: `YW_CAJ_Helmet_V1`
+- Бронежилет CAJ V1 — используется: 1
+  - classname: `YW_CAJ_Vest_V1`
+- Куртка CAJ V1 — используется: 1
+  - classname: `YW_CAJ_Jacket_V1`
+- Штаны CAJ V1 — используется: 1
+  - classname: `YW_CAJ_Pants_V1`
+- Куртка химзащиты — используется: 18
+  - classname: `YW_NBC_Jacket`
+- Штаны химзащиты — используется: 18
+  - classname: `YW_NBC_Pants`
+- Ботинки Dead Agent — используется: 1
+  - classname: `YW_DeadAgent_Boots`
+- Перчатки Dead Agent — используется: 1
+  - classname: `YW_DeadAgent_Gloves`
+- Шлем Dead Agent V1 — используется: 1
+  - classname: `YW_DeadAgent_Helmet_V1`
+- Куртка Dead Agent V1 — используется: 1
+  - classname: `YW_DeadAgent_Jacket_V1`
+- Штаны Dead Agent V1 — используется: 1
+  - classname: `YW_DeadAgent_Pants_V1`
+- Ботинки Rusher — используется: 1
+  - classname: `YW_Rusher_Boots`
+- Перчатки Rusher — используется: 1
+  - classname: `YW_Rusher_Gloves`
+- Шлем Rusher V1 — используется: 1
+  - classname: `YW_Rusher_Helmet_V1`
+- Бронежилет Rusher V1 — используется: 1
+  - classname: `YW_Rusher_Vest_V1`
+- Куртка Rusher V1 — используется: 1
+  - classname: `YW_Rusher_Jacket_V1`
+- Штаны Rusher V1 — используется: 1
+  - classname: `YW_Rusher_Pants_V1`
+- Ботинки Shepard — используется: 1
+  - classname: `YW_Shepard_Boots`
+- Перчатки Shepard — используется: 1
+  - classname: `YW_Shepard_Gloves`
+- Шлем Shepard V1 — используется: 1
+  - classname: `YW_Shepard_Helmet_V1`
+- Куртка Shepard V1 — используется: 1
+  - classname: `YW_Shepard_Torso_V1`
+- Штаны Shepard V1 — используется: 1
+  - classname: `YW_Shepard_Pants_V1`
+- Ботинки Thirst — используется: 1
+  - classname: `YW_Thirst_Boots`
+- Перчатки Thirst — используется: 1
+  - classname: `YW_Thirst_Gloves`
+- Шлем Thirst V1 — используется: 1
+  - classname: `YW_Thirst_Helmet_V1`
+- Бронежилет Thirst V1 — используется: 1
+  - classname: `YW_Thirst_Vest_V1`
+- Куртка Thirst V1 — используется: 2
+  - classname: `YW_Thirst_Jacket_V1`
+- Штаны Thirst V1 — используется: 1
+  - classname: `YW_Thirst_Pants_V1`
+- Ботинки Trooper — используется: 1
+  - classname: `YW_Trooper_Boots`
+- Перчатки Trooper — используется: 1
+  - classname: `YW_Trooper_Gloves`
+- Шлем Trooper V1 — используется: 1
+  - classname: `YW_Trooper_Helmet_V1`
+- Куртка Trooper V1 — используется: 1
+  - classname: `YW_Trooper_Torso_V1`
+- Штаны Trooper V1 — используется: 1
+  - classname: `YW_Trooper_Pants_V1`
+- Ботинки Warfighter — используется: 1
+  - classname: `YW_Kpop_Boots`
+- Перчатки Warfighter — используется: 1
+  - classname: `YW_Kpop_Gloves`
+- Ремень Warfighter V1 — используется: 1
+  - classname: `YW_Kpop_Belt_V1`
+- Шлем Warfighter V1 — используется: 1
+  - classname: `YW_Kpop_Helmet_V1`
+- Бронежилет Warfighter V1 — используется: 1
+  - classname: `YW_Kpop_Vest_V1`
+- Куртка Warfighter V1 — используется: 1
+  - classname: `YW_Kpop_Jacket_V1`
+- Штаны Warfighter V1 — используется: 1
+  - classname: `YW_Kpop_Pants_V1`
+- Перчатки Whimsy — используется: 1
+  - classname: `YW_Whimsy_Gloves_Pink`
+- Шлем Whimsy V1 — используется: 1
+  - classname: `YW_Whimsy_Helmet_V1_Pink`
+- Штаны Whimsy V1 — используется: 1
+  - classname: `YW_Whimsy_Pants_V1_Pink`
+- Куртка Whimsy V1 — используется: 1
+  - classname: `YW_Whimsy_Jacket_V1_Pink`
+- Бронежилет Whimsy V1 — используется: 1
+  - classname: `YW_Whimsy_Vest_V1_Pink`
+- Селитра — используется: 1
+  - classname: `YW_Selitra`
+- Сера — используется: 1
+  - classname: `YW_Sulfur`
+- Уголь — используется: 1
+  - classname: `YW_Coal`
+- Бронепластина 1 уровня — используется: 1
+  - classname: `YW_Armor_Plate_1_Level`
+- Бежевая ткань — используется: 1
+  - classname: `YW_Cloth_Biege`
+- Зеленая ткань — используется: 1
+  - classname: `YW_Cloth_Green`
+- Красная ткань — используется: 1
+  - classname: `YW_Cloth_Red`
+- Синяя ткань — используется: 1
+  - classname: `YW_Cloth_Blue`
+- Черная ткань — используется: 1
+  - classname: `YW_Cloth_Black`
+- Деталь экзоскелета — используется: 4
+  - classname: `YW_Exo_Detal_1`, `YW_Exo_Detal_2`, `YW_Exo_Detal_3`, `YW_Exo_Detal_4`
+- Авокадо — используется: 2
+  - classname: `ML_Avacado`
+- Банка сахара — используется: 6
+  - classname: `YW_Sugar`
+- Кухонный нож — используется: 20
+  - classname: `KitchenKnife`
+- Пластиковая бутылка — используется: 20
+  - classname: `WaterBottle`
+- Пустая банка — используется: 10
+  - classname: `YW_Empty_Can`
+- Масло — используется: 14
+  - classname: `YW_Oil`
+- Свекла — используется: 2
+  - classname: `ML_Beetroot`
+- Соль — используется: 14
+  - classname: `YW_Salt`
+- Специи — используется: 14
+  - classname: `YW_Spices`
+- Уксус — используется: 14
+  - classname: `YW_Vinegar`
+- Огурец — используется: 2
+  - classname: `ML_Cucumber`
+- Баклажан — используется: 2
+  - classname: `ML_Eggplant`
+- Красный перец — используется: 2
+  - classname: `ML_Peper`
+- Редис — используется: 2
+  - classname: `ML_Radish`
+- Красный картофель — используется: 2
+  - classname: `ML_Red_Potato`
+- Клубника — используется: 2
+  - classname: `ML_Strawberry`
+- Дыня — используется: 2
+  - classname: `ML_Sugar_Melon`
+- Репа — используется: 2
+  - classname: `ML_Turnip`
+- Большая пустая банка — используется: 10
+  - classname: `YW_Empty_Can_Big`
+- Чертеж сундука — используется: 5
+  - classname: `YW_Chertezh_Chest`
+- Листовой металл — используется: 8
+  - classname: `MetalPlate`
+- Чертеж бочки — используется: 5
+  - classname: `YW_Chertezh_Barrel`
+- Батарейка 9v — используется: 1
+  - classname: `Battery9V`
+- Конденсаторы — используется: 8
+  - classname: `YW_Capacitors`
+- Коробка транзисторов — используется: 8
+  - classname: `YW_Transistors_Box`
+- Чертеж электроники — используется: 15
+  - classname: `YW_Chertezh_Electronic`
+- Плата — используется: 30
+  - classname: `YW_Plata_1`, `YW_Plata_2`, `YW_Plata_3`
+- Большая голубая линза — используется: 1
+  - classname: `YW_Linse_Big_Lightblue`
+- Большая желтая линза — используется: 1
+  - classname: `YW_Linse_Big_Yellow`
+- Большая зеленая линза — используется: 1
+  - classname: `YW_Linse_Big_Green`
+- Большая красная линза — используется: 1
+  - classname: `YW_Linse_Big_Red`
+- Большая оранжевая линза — используется: 1
+  - classname: `YW_Linse_Big_Orange`
+- Большая прозрачная линза — используется: 1
+  - classname: `YW_Linse_Big`
+- Большая розовая линза — используется: 1
+  - classname: `YW_Linse_Big_Pink`
+- Большая синяя линза — используется: 1
+  - classname: `YW_Linse_Big_Blue`
+- Чертеж пнв — используется: 1
+  - classname: `YW_Chertezh_NVG`
+- Видеокарта BL-2060 — используется: 1
+  - classname: `RF_MININGFARM_Videocard_BL2060`
+- Заводская удочка — используется: 1
+  - classname: `FishingRod`
+- Усиленная удочка — используется: 1
+  - classname: `YW_Fishing_Rod_Crystall`
+- Чертеж удочки — используется: 1
+  - classname: `YW_Chertezh_Fishing_Rod_Crystall_V2`
+- Синий ключ — используется: 1
+  - classname: `YW_Key_Blue`
+- Канистра 50л — используется: 1
+  - classname: `YW_CanisterGasoline_50l`
+- Часть карты телепорта на данж - Портленд №1 — используется: 1
+  - classname: `YW_Card_Teleport_Portland_Chast_1`
+- Часть карты телепорта на данж - Портленд №2 — используется: 1
+  - classname: `YW_Card_Teleport_Portland_Chast_2`
+- Часть карты телепорта на данж - Портленд №3 — используется: 1
+  - classname: `YW_Card_Teleport_Portland_Chast_3`
+- Часть карты телепорта на данж - Портленд №4 — используется: 1
+  - classname: `YW_Card_Teleport_Portland_Chast_4`
+- Растительный материал — используется: 1
+  - classname: `PlantMaterial`
+- Активированный уголь — используется: 3
+  - classname: `CharcoalTablets`
+- Боевой противогаз на 2 часа — используется: 1
+  - classname: `YW_GasMask_2_hours`
+- Чертеж фильтра — используется: 3
+  - classname: `YW_Chertezh_Filter`
+- Точильный камень — используется: 4
+  - classname: `Whetstone`
+- Чертеж ножа — используется: 4
+  - classname: `YW_Chertezh_Knife`
+- Секира молния — используется: 1
+  - classname: `ML_Stormbreaker_Axe`
+- Чертеж оружия — используется: 27
+  - classname: `YW_Chertezh_Weapon`
+- Самурайская катана — используется: 1
+  - classname: `ML_Samurai_Katana`
+- Магазин AR-15 Bloody V1 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_Kinoptic_ar15_Bloody_150_V1`
+- Чертеж магазина — используется: 178
+  - classname: `YW_Chertezh_Magazine`
+- Магазин AR-15 Bloody V2 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_Kinoptic_ar15_Bloody_150_V2`
+- Магазин Phantom AR-15 Bloody V1 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_AR_15_RED_Bloody_150_V1`
+- Магазин Phantom AR-15 Bloody V2 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_AR_15_RED_Bloody_150_V2`
+- Магазин DBR Bloody V1 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_DBR_Bloody_150_V1`
+- Магазин DBR Bloody V2 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_DBR_Bloody_150_V2`
+- Магазин SIGSAUER Bloody V1 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_SIGSAUER_Bloody_150_V1`
+- Магазин SIGSAUER Bloody V2 - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_SIGSAUER_Bloody_150_V2`
+- Магазин PKP Bloody V1 - 200 патронов — используется: 1
+  - classname: `RS_P_MAG_PKP_Bloody_200_V1`
+- Магазин PKP Bloody V2 - 200 патронов — используется: 1
+  - classname: `RS_P_MAG_PKP_Bloody_200_V2`
+- Магазин SCAR Bloody - 150 патронов — используется: 1
+  - classname: `RS_P_MAG_SCAR_TAC_150`
+- Магазин SMG Bloody - 150 патронов — используется: 1
+  - classname: `YW_SMG_Bloody_Mag_150`
+- Магазин LDR-308 Bloody V1 - 150 патронов — используется: 1
+  - classname: `YW_LDR_308_Bloody_Magazine_150_V1`
+- Магазин LDR-308 Bloody V2 - 150 патронов — используется: 1
+  - classname: `YW_LDR_308_Bloody_Magazine_150_V2`
+- Магазин RPD Bloody - 200 патронов — используется: 1
+  - classname: `YW_RPD_Bloody_Magazine_200`
+- Магазин M14 Bloody - 150 патронов — используется: 1
+  - classname: `YW_M14_Bloody_Magazine_150`
+- Магазин KSP-58 Bloody - 200 патронов — используется: 1
+  - classname: `YW_KSP58_Magazine_200`
+- Магазин Kriss Vector Dark - 30 патронов — используется: 1
+  - classname: `Mag_KOD_Vector_30rnd`
+- Магазин M1928A1 Dark - 30 патронов — используется: 1
+  - classname: `Mag_KOD_M1928A1_30rnd`
+- Магазин PPSH Dark - 50 патронов — используется: 1
+  - classname: `Mag_KOD_PPSh_50rnd`
+- Магазин Scorpion Dark - 50 патронов — используется: 1
+  - classname: `Mag_KOD_Scorpion_50rnd`
+- Магазин SUB2000 Dark - 50 патронов — используется: 2
+  - classname: `Mag_KOD_SUB2000_50rnd`
+- Магазин VSK94 Dark - 50 патронов — используется: 1
+  - classname: `Mag_KOD_VSK94_50rnd`
+- Магазин AK12 Dark - 50 патронов — используется: 1
+  - classname: `RS_P_MAG_AK12_50rnd`
+- Магазин AK47 Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_AK47_100rnd`
+- Магазин AKALPHA Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_AKALPHA_100rnd`
+- Магазин AK15 Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_AK15_100rnd`
+- Магазин AEK971 Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_AEK971_100rnd`
+- Магазин MBR Dark - 50 патронов — используется: 1
+  - classname: `Mag_KOD_MBR_50rnd`
+- Магазин TAR21 Dark - 50 патронов — используется: 1
+  - classname: `Mag_KOD_TAR21_50rnd`
+- Магазин AR15 Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_AR15_100rnd`
+- Магазин MCR Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_MCR_100rnd`
+- Магазин HK417 Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_HK417_100rnd`
+- Магазин SCAR Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_SCARH_100rnd`
+- Магазин PKM Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_PKM_100rnd`
+- Магазин M249 Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_M249_100rnd`
+- Магазин PKP Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_PKP_100rnd`
+- Магазин M60E3 Dark - 200 патронов — используется: 1
+  - classname: `Mag_KOD_M60E3_200rnd`
+- Магазин HK21 Dark - 200 патронов — используется: 1
+  - classname: `Mag_KOD_HK21_200rnd`
+- Магазин Evolys Dark - 200 патронов — используется: 1
+  - classname: `Mag_KOD_Evolys_200rnd`
+- Магазин AS50 Dark - 50 патронов — используется: 1
+  - classname: `Mag_KOD_AS50_50Rnd`
+- Магазин Kivaari Dark - 50 патронов — используется: 1
+  - classname: `Mag_KOD_Kivaari_50rnd`
+- Магазин M110 Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_M110_100rnd`
+- Магазин RSASS Dark - 100 патронов — используется: 1
+  - classname: `Mag_KOD_RSASS_100rnd`
+- Магазин VSSK Dark - 150 патронов — используется: 1
+  - classname: `Mag_KOD_VSSK_150rnd`
+- Магазин M82A2 Dark - 150 патронов — используется: 1
+  - classname: `Mag_KOD_M82A2_150rnd`
+- Магазин HK416 GOLD V1 - 100 патронов — используется: 1
+  - classname: `RS_P_MAG_HK416_GOLD`
+- Магазин HK416 GOLD V2 - 100 патронов — используется: 1
+  - classname: `RS_P_MAG_HK416_GOLD_V2`
+- Магазин HK416 GOLD V3 - 100 патронов — используется: 1
+  - classname: `RS_P_MAG_HK416_GOLD_V3`
+- Магазин AKM GOLD V1 - 100 патронов — используется: 1
+  - classname: `RS_P_MAG_AKM_GOLD`
+- Магазин AKM GOLD V2 - 100 патронов — используется: 1
+  - classname: `RS_P_MAG_AKM_GOLD_V2`
+- Магазин AKM GOLD V3 - 100 патронов — используется: 1
+  - classname: `RS_P_MAG_AKM_GOLD_V3`
+- Магазин автомата Immortal V1 - 300 патронов — используется: 1
+  - classname: `MWP6_AR1_magazine_300`
+- Магазин автомата Immortal V2 - 300 патронов — используется: 1
+  - classname: `MWP6_AR2_magazine_300`
+- Магазин пулемета Immortal V2 - 400 патронов — используется: 1
+  - classname: `MWP6_HMG_magazine_400`
+- Магазин ПП Immortal V1 - 200 патронов — используется: 1
+  - classname: `MWP6_SMG_magazine_200`
+- Магазин Galil Immortal - 300 патронов — используется: 1
+  - classname: `Mag_Welliton_Galil_Ace_300Rnd_Black`
+- Магазин AS50 Immortal - 200 патронов — используется: 1
+  - classname: `Mag_Welliton_AS50_200rnd_Black`
+- Магазин Kriss Vector Immortal - 200 патронов — используется: 1
+  - classname: `RS_P_MAG_KRISS_200`
+- Магазин AS-VAL A Immortal - 300 патронов — используется: 1
+  - classname: `RS_P_MAG_VAL_MODERN_300`
+- Магазин AS-VAL B Immortal - 300 патронов — используется: 1
+  - classname: `RS_P_MAG_VAL_M_300`
+- Магазин XM109 Immortal - 200 патронов — используется: 1
+  - classname: `YW_XM109_Magazine_200`
+- Магазин PKP Immortal - 400 патронов — используется: 1
+  - classname: `YW_PKP_Immortal_Magazine_400`
+- Магазин VSSK Immortal - 300 патронов — используется: 1
+  - classname: `YW_VSSK_Immortal_Mag_300`
+- Магазин AK-74M Immortal - 300 патронов — используется: 1
+  - classname: `YW_AK74M_Immortal_Mag_300`
+- Магазин Saiga-9 Immortal - 200 патронов — используется: 1
+  - classname: `YW_Saiga9_Immortal_Mag_200`
+- Магазин MDR Immortal - 300 патронов — используется: 1
+  - classname: `YW_MDR_Immortal_Mag_300`
+- Магазин Honey Badger Immortal - 200 патронов — используется: 1
+  - classname: `YW_Honey_Badger_Immortal_Mag_200`
+- Магазин ACP-9 Immortal - 200 патронов — используется: 1
+  - classname: `YW_ACP9_Immortal_Mag_200`
+- Магазин MSR Immortal - 200 патронов — используется: 1
+  - classname: `YW_MSR_Magazine_200`
+- Магазин Vityaz Immortal - 200 патронов — используется: 1
+  - classname: `YW_Vityaz_Immortal_Mag_200`
+- Магазин HK-121 Immortal - 400 патронов — используется: 1
+  - classname: `YW_HK121_Immortal_Magazine_400`
+- Магазин L129A1 Immortal - 300 патронов — используется: 1
+  - classname: `YW_L129A1_Immortal_Mag_300`
+- Магазин XRK M4 - 300 патронов — используется: 1
+  - classname: `YW_XRK_M4_Mag_300`
+- Магазин SMG Type-85 - 200 патронов — используется: 1
+  - classname: `YW_Type85_Mag_200`
+- Магазин BT-9 NY Tactical - 200 патронов — используется: 1
+  - classname: `YW_BT9_NY_Tactical_Mag_200`
+- Магазин DMR M800 NY Tactical - 200 патронов — используется: 1
+  - classname: `YW_DMR_M800_NY_Tactical_Magazine_200`
+- Магазин M249 NY Tactical - 400 патронов — используется: 1
+  - classname: `YW_M249_Magazine_NY_Tactical_400`
+- Магазин STM-545 NY Tactical - 300 патронов — используется: 1
+  - classname: `YW_STM545_NY_Tactical_Mag_300`
+- Магазин Groza Specter - 150 патронов — используется: 1
+  - classname: `YW_Groza_Specter_Mag_150`
+- Магазин AEK-919K Specter - 150 патронов — используется: 1
+  - classname: `YW_AEK919K_Specter_Mag_150`
+- Магазин MP7A1 Specter - 150 патронов — используется: 1
+  - classname: `YW_MP7_Specter_Mag_150`
+- Магазин Vulkan Specter - 150 патронов — используется: 1
+  - classname: `YW_Vulkan_Specter_Mag_150`
+- Магазин ASH-12 Phantom - 300 патронов — используется: 1
+  - classname: `YW_ASH_Phantom_Mag_300`
+- Магазин MCX Phantom - 300 патронов — используется: 1
+  - classname: `YW_MCX_Spear_Phantom_Mag_300`
+- Магазин Velociraptor Phantom - 300 патронов — используется: 1
+  - classname: `YW_Velociraptor_Phantom_Mag_300`
+- Магазин PKP Bullpup Phantom - 400 патронов — используется: 1
+  - classname: `YW_PKP_Bullpup_Phantom_Mag_400`
+- Магазин M170 Phantom - 200 патронов — используется: 1
+  - classname: `YW_M170_Phantom_Mag_200`
+- Магазин MK-14 Phantom - 200 патронов — используется: 1
+  - classname: `YW_MK14_Phantom_Mag_200`
+- Магазин Reaper Phantom - 200 патронов — используется: 1
+  - classname: `YW_Reaper_Phantom_Mag_200`
+- Магазин Honey Badger Phantom - 200 патронов — используется: 1
+  - classname: `YW_Honey_Badger_Phantom_Mag_200`
+- Магазин Veresk Phantom - 200 патронов — используется: 1
+  - classname: `YW_SR2_Veresk_Phantom_Mag_200`
+- Магазин Origin-12 Phantom - 100 патронов — используется: 1
+  - classname: `YW_Origin_12_Phantom_Mag_100`
+- Магазин Saiga-12 Phantom - 100 патронов — используется: 1
+  - classname: `YW_Saiga_12_Phantom_Mag_100`
+- Аптечка — используется: 4
+  - classname: `FirstAidKit`
+- Аптечка 30 — используется: 1
+  - classname: `YW_FirstAidKit_30`
+- Бинт — используется: 3
+  - classname: `BandageDressing`
+- Клей БФ-6 — используется: 3
+  - classname: `YW_BF_Glue`
+- Настойка йода — используется: 13
+  - classname: `IodineTincture`
+- Банка йода — используется: 3
+  - classname: `IodineTincture`
+- Витамины — используется: 3
+  - classname: `VitaminBottle`
+- Тетрациклин — используется: 3
+  - classname: `TetracyclineAntibiotics`
+- Ботинки Calisto Undead V1 — используется: 1
+  - classname: `YW_Set_Calisto_Undead_Crystal_Boots_V1`
+- Бронежилет Calisto Undead V1 — используется: 1
+  - classname: `YW_Set_Calisto_Undead_Crystal_Vest_V1`
+- Верхняя одежда Calisto Undead V1 — используется: 1
+  - classname: `YW_Set_Calisto_Undead_Crystal_Body_V1`
+- Невидимый шлем V1 — используется: 1
+  - classname: `YW_Helmet_Crystall_Inviz_V1`
+- Нижняя одежда Calisto Undead V1 — используется: 1
+  - classname: `YW_Set_Calisto_Undead_Crystal_Pants_V1`
+- Перчатки Calisto Undead V1 — используется: 1
+  - classname: `YW_Set_Calisto_Undead_Crystal_Gloves_V1`
+- Ремень Calisto Undead V1 — используется: 1
+  - classname: `YW_Set_Calisto_Undead_Crystal_Belt_V1`
+- Рюкзак Calisto Undead V1 — используется: 1
+  - classname: `YW_Set_Calisto_Undead_Crystal_Backpack_V1`
+- Ботинки Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Boots_V1`, `SC_Fixer_Boots_V1_Black`, `SC_Fixer_Boots_V1_Camo_1`
+- Бронежилет Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Vest_V1`, `SC_Fixer_Vest_V1_Black`, `SC_Fixer_Vest_V1_Camo_1`
+- Куртка Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Jacket_V1`, `SC_Fixer_Jacket_V1_Black`, `SC_Fixer_Jacket_V1_Camo_1`
+- Перчатки Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Gloves_V1`, `SC_Fixer_Gloves_V1_Black`, `SC_Fixer_Gloves_V1_Camo_1`
+- Ремень Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Belt_V1`
+- Рюкзак Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Backpack_V1`
+- Шлем Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Helmet_V1`, `SC_Fixer_Helmet_V1_Black`, `SC_Fixer_Helmet_V1_Camo_1`
+- Штаны Fixer V1 — используется: 1
+  - classname: `SC_Fixer_Pants_V1`, `SC_Fixer_Pants_V1_Black`, `SC_Fixer_Pants_V1_Camo_1`
+- Ботинки Ghost V1 — используется: 1
+  - classname: `YW_Ghost_Dollar_Boots_V1`
+- Бронежилет Ghost V1 — используется: 1
+  - classname: `YW_Ghost_Dollar_Vest_V1`
+- Куртка Ghost V1 — используется: 1
+  - classname: `YW_Ghost_Dollar_Jacket_V1`
+- Невидимый ремень Ghost V1 — используется: 1
+  - classname: `YW_Ghost_Dollar_Belt_V1`
+- Перчатки Ghost V1 — используется: 1
+  - classname: `YW_Ghost_Dollar_Gloves_V1`
+- Шлем Ghost V1 — используется: 1
+  - classname: `YW_Ghost_Dollar_Mask_V1`
+- Штаны Ghost V1 — используется: 1
+  - classname: `YW_Ghost_Dollar_Pants_V1`
+- Ботинки Kasrkin V1 — используется: 1
+  - classname: `YW_Kasrkin_Dollar_Boots_V1`
+- Бронежилет Kasrkin V1 — используется: 1
+  - classname: `YW_Kasrkin_Dollar_Vest_V1`
+- Куртка Kasrkin V1 — используется: 1
+  - classname: `YW_Kasrkin_Dollar_Jacket_V1`
+- Перчатки Kasrkin V1 — используется: 1
+  - classname: `YW_Kasrkin_Dollar_Gloves_V1`
+- Рюкзкак Kasrkin V1 — используется: 1
+  - classname: `YW_Kasrkin_Dollar_Backpack_V1`
+- Шлем Kasrkin V1 — используется: 1
+  - classname: `YW_Kasrkin_Dollar_Helmet_V1`
+- Штаны Kasrkin V1 — используется: 1
+  - classname: `YW_Kasrkin_Dollar_Pants_V1`
+- Ботинки Monochrome V1 — используется: 1
+  - classname: `YW_Monochrome_Dollar_Boots_V1`
+- Бронежилет Monochrome V1 — используется: 1
+  - classname: `YW_Monochrome_Dollar_Vest_V1`
+- Куртка Monochrome V1 — используется: 1
+  - classname: `YW_Monochrome_Dollar_Jacket_V1`
+- Перчатки Monochrome V1 — используется: 1
+  - classname: `YW_Monochrome_Dollar_Gloves_V1`
+- Ремень Monochrome V1 — используется: 1
+  - classname: `YW_Monochrome_Dollar_Belt_V1`
+- Шлем Monochrome V1 — используется: 1
+  - classname: `YW_Monochrome_Dollar_Helmet_V1`
+- Штаны Monochrome V1 — используется: 1
+  - classname: `YW_Monochrome_Dollar_Pants_V1`
+- Ботинки Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Boots_V1`, `YW_Sentinel_Boots_V1_Camo_1`, `YW_Sentinel_Boots_V1_Camo_2`, `YW_Sentinel_Boots_V1_Camo_3`
+- Бронежилет Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Vest_V1`
+- Куртка Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Jacket_V1`, `YW_Sentinel_Jacket_V1_Camo_1`, `YW_Sentinel_Jacket_V1_Camo_2`, `YW_Sentinel_Jacket_V1_Camo_3`
+- Перчатки Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Gloves_V1`, `YW_Sentinel_Gloves_V1_Camo_1`, `YW_Sentinel_Gloves_V1_Camo_2`, `YW_Sentinel_Gloves_V1_Camo_3`
+- Ремень Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Belt_V1`
+- Рюкзак Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Backpack_V1`
+- Шлем Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Helmet_V1`, `YW_Sentinel_Helmet_V1_Camo_1`, `YW_Sentinel_Helmet_V1_Camo_2`, `YW_Sentinel_Helmet_V1_Camo_3`
+- Штаны Sentinel V1 — используется: 1
+  - classname: `YW_Sentinel_Pants_V1`, `YW_Sentinel_Pants_V1_Camo_1`, `YW_Sentinel_Pants_V1_Camo_2`, `YW_Sentinel_Pants_V1_Camo_3`
+- Ботинки Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Shoes_V1`, `SK_Street_Warrior_Shoes_V1_Camo_1`, `SK_Street_Warrior_Shoes_V1_Camo_2`, `SK_Street_Warrior_Shoes_V1_Camo_3`, `SK_Street_Warrior_Shoes_V1_Camo_4`
+- Бронежилет Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Vest_V1`, `SK_Street_Warrior_Vest_V1_Camo_1`, `SK_Street_Warrior_Vest_V1_Camo_2`, `SK_Street_Warrior_Vest_V1_Camo_3`, `SK_Street_Warrior_Vest_V1_Camo_4`
+- Перчатки Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Gloves_V1`, `SK_Street_Warrior_Gloves_V1_Camo_1`, `SK_Street_Warrior_Gloves_V1_Camo_2`, `SK_Street_Warrior_Gloves_V1_Camo_3`, `SK_Street_Warrior_Gloves_V1_Camo_4`
+- Ремень Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Belt_V1`
+- Рюкзак Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Backpack_V1`
+- Футболка Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Shirt_V1`, `SK_Street_Warrior_Shirt_V1_Camo_1`, `SK_Street_Warrior_Shirt_V1_Camo_2`, `SK_Street_Warrior_Shirt_V1_Camo_3`, `SK_Street_Warrior_Shirt_V1_Camo_4`
+- Шлем Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Helmet_V1`, `SK_Street_Warrior_Helmet_V1_Camo_1`, `SK_Street_Warrior_Helmet_V1_Camo_2`, `SK_Street_Warrior_Helmet_V1_Camo_3`, `SK_Street_Warrior_Helmet_V1_Camo_4`
+- Штаны Street Warrior V1 — используется: 1
+  - classname: `SK_Street_Warrior_Pants_V1`, `SK_Street_Warrior_Pants_V1_Camo_1`, `SK_Street_Warrior_Pants_V1_Camo_2`, `SK_Street_Warrior_Pants_V1_Camo_3`, `SK_Street_Warrior_Pants_V1_Camo_4`
+- Набор для калибровки — используется: 36
+  - classname: `YW_Nabor_Calibrovki`
+- Чертеж оружия Bloody — используется: 7
+  - classname: `YW_Chertezh_Weapon_Bloody`
+- Чертеж оружия CSR50 Bloody — используется: 1
+  - classname: `YW_Chertezh_Weapon_CSR50`
+- Брусок золота — используется: 4
+  - classname: `YW_Bar_Gold`
+- Чертеж оружия серии Gold V2 — используется: 2
+  - classname: `YW_Chertezh_Weapon_Crystall_V2`
+- HK416 Gold V1 — используется: 1
+  - classname: `RS_P_GUN_HK416_GOLD`
+- Чертеж оружия серии Gold V3 — используется: 2
+  - classname: `YW_Chertezh_Weapon_Crystall_V3`
+- AKM Gold V1 — используется: 1
+  - classname: `RS_P_GUN_AKM_GOLD`
+- Автомат AR-15 Bloody V1 — используется: 1
+  - classname: `RS_P_GUN_Kinetics_ar15`
+- Автомат Phantom AR-15 Bloody V1 — используется: 1
+  - classname: `RS_P_GUN_AR_15_RED`
+- Автомат DBR Bloody V1 — используется: 1
+  - classname: `RS_P_GUN_DBR`
+- Автомат SIGSAUER Bloody V1 — используется: 1
+  - classname: `RS_P_GUN_SIGSAUER`
+- Пулемет PKP Bloody V1 — используется: 1
+  - classname: `RS_P_GUN_PKP`
+- LDR-308 Bloody V1 — используется: 1
+  - classname: `YW_LDR_308_Bloody`
+- Аукционный кейс 250 — используется: 1
+  - classname: `YW_Auk_Case_1`, `YW_Auk_Case_2`, `YW_Auk_Case_3`, `YW_Auk_Case_4`, `YW_Auk_Case_5`
+- Ботинки Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Boots`
+- Ботинки Roxxon V1 — используется: 1
+  - classname: `YW_Roxxon_Boots_Black`, `YW_Roxxon_Boots_Red`
+- Бронежилет Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Vest`
+- Бронежилет Roxxon V1 — используется: 1
+  - classname: `YW_Vest_Inviz_Roxxon`
+- Генератор V1 — используется: 1
+  - classname: `YW_PowerGenerator_V1`
+- Куртка Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Top`
+- Куртка Roxxon V1 — используется: 1
+  - classname: `YW_Roxxon_Jacket_Black`, `YW_Roxxon_Jacket_Red`
+- Перчатки Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Gloves`
+- Перчатки Roxxon V1 — используется: 1
+  - classname: `YW_Roxxon_Gloves_Black`, `YW_Roxxon_Gloves_Red`
+- Рюкзак Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Backpack`
+- Рюкзак Roxxon V1 — используется: 1
+  - classname: `YW_BackPack_Roxxon`
+- Шлем Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Helmet`
+- Шлем Roxxon V1 — используется: 1
+  - classname: `YW_Roxxon_Helmet_Black`, `YW_Roxxon_Helmet_Red`
+- Штаны Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Pants`
+- Штаны Roxxon V1 — используется: 1
+  - classname: `YW_Roxxon_Pants_Black`, `YW_Roxxon_Pants_Red`
+- Экзоскелет Crusher V1 — используется: 1
+  - classname: `YW_Crusher_Exo`
+- Экзоскелет Roxxon V1 — используется: 1
+  - classname: `YW_Roxxon_Exo_Black`, `YW_Roxxon_Exo_Red`

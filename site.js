@@ -57,6 +57,7 @@
     const isWeaponCollectorIndex = path === "/weapon-collector" || path === "/weapon-collector/index.html";
     const isVehicleCollectorIndex = path === "/vehicle-collector" || path === "/vehicle-collector/index.html";
     const isFishCollectorIndex = path === "/fish-collector" || path === "/fish-collector/index.html";
+    const isFishingIndex = path === "/fishing" || path === "/fishing/index.html";
     const isPokemonCollectionIndex = path === "/pokemon-collection" || path === "/pokemon-collection/index.html";
     const isMoneyExchangeIndex = path === "/money-exchange" || path === "/money-exchange/index.html";
     const isMiningIndex = path === "/mining" || path === "/mining/index.html";
@@ -223,6 +224,22 @@
         crumbs.push({ title: "Рыболовный коллекционер" });
       } else {
         crumbs.push({ title: "Рыболовный коллекционер", href: "/fish-collector/index.html" });
+      }
+    }
+
+    if (path.startsWith("/fishing")) {
+      if (isFishingIndex) {
+        crumbs.push({ title: "Рыбалка" });
+      } else {
+        crumbs.push({ title: "Рыбалка", href: "/fishing/index.html" });
+      }
+    }
+
+    if (path.startsWith("/furniture")) {
+      if (path.endsWith("/furniture/") || path.endsWith("/furniture/index.html")) {
+        crumbs.push({ title: "Фурнитура" });
+      } else {
+        crumbs.push({ title: "Фурнитура", href: "/furniture/index.html" });
       }
     }
 

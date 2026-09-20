@@ -11,6 +11,8 @@ const dynamicSources = [
   { url: "/dungeons/", title: "Данжи", files: ["dungeons/index.html"] },
   { url: "/events/", title: "События", files: ["events/index.html"] },
   { url: "/fish-collector/", title: "Рыболовный коллекционер", files: ["fish-collector/index.html"] },
+  { url: "/fishing/", title: "Рыбалка", files: ["fishing/index.html", "fishing/data.js"] },
+  { url: "/furniture/", title: "Фурнитура", files: ["furniture/index.html", "furniture/data.js"] },
   { url: "/melee-info/", title: "Холодное оружие", files: ["melee-info/index.html", "melee-info/data.js"] },
   { url: "/pokemon-collection/", title: "Коллекция Pokemon", files: ["pokemon-collection/index.html"] },
   { url: "/stash/", title: "Тайники", files: ["stash/index.html"] },
@@ -248,6 +250,86 @@ async function addVehicleCollectorRecords() {
   }
 }
 
+async function addFishingRecords() {
+  const source = await readFile(path.join(siteRoot, "fishing/data.js"), "utf8");
+  const data = readWindowData(source, "fishingGuideData");
+  const waterLabels = { fresh: "Пресная вода", sea: "Море" };
+  const rarityLabels = { common: "Обычная", valuable: "Ценная", rare: "Редкая" };
+  const rodNames = new Map((data.rods || []).map((rod) => [rod.id, rod.name]));
+
+  for (const rod of data.rods || []) {
+    if (!rod?.name) continue;
+    await addRecord({
+      url: "/fishing/",
+      content: "Удочка для рыбалки.",
+      meta: { title: rod.name }
+    });
+  }
+
+  for (const map of data.maps || []) {
+    for (const fish of map.items || []) {
+      const title = data.names?.[fish.id] || fish.id;
+      const rods = Array.isArray(fish.rods) && fish.rods.includes("ImprovisedFishingRod")
+        ? "Подходит любая удочка"
+        : Array.isArray(fish.rods) && fish.rods.includes("FishingRod")
+          ? "Без самодельной удочки"
+          : "Только улучшенные удочки";
+      const content = [
+        `Карта: ${map.label}`,
+        `Водоём: ${waterLabels[fish.water] || fish.water}`,
+        `Ценность: ${rarityLabels[fish.rarity] || fish.rarity}`,
+        rods
+      ].join(". ");
+      await addRecord({
+        url: `/fishing/?map=${encodeURIComponent(map.id)}&fish=${encodeURIComponent(fish.id)}`,
+        content,
+        meta: { title }
+      });
+    }
+
+    const seenSpecials = new Set();
+    for (const special of map.specials || []) {
+      if (!special?.id || seenSpecials.has(special.id)) continue;
+      seenSpecials.add(special.id);
+      const title = data.specials?.[special.id] || special.id;
+      const rods = (special.rods || []).map((id) => rodNames.get(id) || id).join(", ");
+      await addRecord({
+        url: `/fishing/?map=${encodeURIComponent(map.id)}`,
+        content: [
+          "Особая находка в рыбалке",
+          `Карта: ${map.label}`,
+          `Водоём: ${waterLabels[special.water] || "Море и пресная вода"}`,
+          rods && `Удочки: ${rods}`
+        ].filter(Boolean).join(". "),
+        meta: { title }
+      });
+    }
+  }
+}
+
+async function addFurnitureRecords() {
+  const source = await readFile(path.join(siteRoot, "furniture/data.js"), "utf8");
+  const data = readWindowData(source, "furnitureGuideData");
+  const categories = new Map((data.categories || []).map((category) => [category.id, category.label]));
+
+  for (const item of data.items || []) {
+    if (!item?.id || !item.name) continue;
+    const attachments = (item.attachments || [])
+      .map((attachment) => attachment.count > 1 ? `${attachment.name} ×${attachment.count}` : attachment.name)
+      .join(", ");
+    const content = [
+      `Раздел: ${categories.get(item.category) || item.category}`,
+      item.capacity && `Вместимость: ${item.capacity} слотов`,
+      attachments && `Аттачи: ${attachments}`
+    ].filter(Boolean).join(". ");
+    await addRecord({
+      url: `/furniture/?category=${encodeURIComponent(item.category)}&item=${encodeURIComponent(item.id)}`,
+      content,
+      meta: { title: item.name }
+    });
+  }
+}
+
 function extractStringLiterals(source, isHtml) {
   const scriptSource = isHtml
     ? [...source.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].map((match) => match[1]).join("\n")
@@ -282,7 +364,7 @@ if (errors.length) {
   throw new Error(errors.join("\n"));
 }
 
-for (const source of dynamicSources.filter((item) => !["/arsenal/", "/clothing-info/", "/dungeons/", "/events/", "/vehicle-collector/", "/vehicles-info/", "/melee-info/"].includes(item.url))) {
+for (const source of dynamicSources.filter((item) => !["/arsenal/", "/clothing-info/", "/dungeons/", "/events/", "/fishing/", "/furniture/", "/vehicle-collector/", "/vehicles-info/", "/melee-info/"].includes(item.url))) {
   const contents = await Promise.all(source.files.map(async (file) => ({
     file,
     source: await readFile(path.join(siteRoot, file), "utf8")
@@ -304,6 +386,8 @@ await addArsenalRecords();
 await addClothingRecords();
 await addDungeonRecords();
 await addEventRecords();
+await addFishingRecords();
+await addFurnitureRecords();
 await addVehicleCollectorRecords();
 
 const output = await index.writeFiles({ outputPath: path.join(siteRoot, "pagefind") });

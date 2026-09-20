@@ -23,6 +23,7 @@ window.RECIPES = [
   { title: "Ткань Immortal", path: "/craft/craft_resources/cloth_immortal.html", icon: "/images/items/cloth_immortal.png" },
   { title: "Баллончик с краской Immortal", path: "/craft/craft_resources/spraypaitn_immortal.html", icon: "/images/items/spray_immortal.png" },
   { title: "Набор деталей экзоскелета", path: "/craft/craft_resources/exo_nabor.html", icon: "/images/items/exo_parts_box.png" },
+  { title: "Ремень Thirst V2", path: "/craft/clothing/thirsh_belt_v2.html", icon: "/images/clothing/thirst_belt.png" },
   { title: "Канистра 100л", path: "/craft/items/canister_100.html", icon: "/images/items/canister_100.png" },
   { title: "Карта телепорта на данж - Портленд", path: "/craft/items/card_portland.html", icon: "/images/items/card_portland.png" },
   { title: "Садовая известь", path: "/craft/items/gardenlime.html", icon: "/images/food/gardenlime.png" },
@@ -198,13 +199,16 @@ window.RECIPES = [
   // ===== Сеты =====
   { title: "Кейс с сетом Calisto Undead V2", path: "/craft/sets/set_calisto.html", icon: "/images/sets/setbox_calisto.png" },
   { title: "Кейс с сетом Crusher V2", path: "/craft/sets/set_crusher.html", icon: "/images/sets/setbox_crusher.png" },
+  { title: "Кейс с сетом Echo V2", path: "/craft/sets/set_echo.html", icon: "/images/sets/setbox_echo.png" },
   { title: "Кейс с сетом Fixer V2", path: "/craft/sets/set_fixer.html", icon: "/images/sets/setbox_fixer.png" },
   { title: "Кейс с сетом Ghost V2", path: "/craft/sets/set_ghost.html", icon: "/images/sets/setbox_ghost.png" },
   { title: "Кейс с сетом Kasrkin V2", path: "/craft/sets/set_kasrkin.html", icon: "/images/sets/setbox_kasrkin_black.png" },
   { title: "Кейс с сетом Monochrome V2", path: "/craft/sets/set_monochrome.html", icon: "/images/sets/setbox_monochrome_blue.png" },
   { title: "Кейс с сетом Roxxon V2", path: "/craft/sets/set_roxxon.html", icon: "/images/sets/roxxon_black.png" },
   { title: "Кейс с сетом Sentinel V2", path: "/craft/sets/set_sentinel.html", icon: "/images/sets/sentinel.png" },
+  { title: "Кейс с сетом Sacai V2", path: "/craft/sets/set_sacai.html", icon: "/images/sets/setbox_sacai.png" },
   { title: "Кейс с сетом Street Warrior V2", path: "/craft/sets/set_streetwarrior.html", icon: "/images/sets/streetwarrior.png" },
+  { title: "Кейс с сетом Verano V2", path: "/craft/sets/set_verano.html", icon: "/images/sets/setbox_verano.png" },
 
   // ===== Одежда =====
   { title: "Невидимый бронежилет V2", path: "/craft/clothing/vest_inviz_v2.html", icon: "/images/clothing/vest_inviz_v2.png" },
