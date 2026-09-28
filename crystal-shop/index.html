@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ywlogo.ico" sizes="any">
+  <title>Товары за кристаллы | YourWorld Wiki</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/styles/pages/crystal-shop.css">
+  <meta name="description" content="Каталог предметов, одежды, оружия и транспорта, доступных за кристаллы на YourWorld PVE.">
+  <meta property="og:title" content="Товары за кристаллы | YourWorld Wiki">
+  <meta property="og:description" content="Предметы, одежда, оружие и транспорт за кристаллы на YourWorld PVE.">
+  <meta property="og:image" content="https://wiki-yourworld.ru/images/items/crystall_prew.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wiki-yourworld.ru/crystal-shop/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/images/ywlogo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0d">
+</head>
+<body>
+<div class="wrap">
+  <div class="page-top">
+    <a href="/index.html" class="back-btn" aria-label="Назад">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero crystal-shop-hero">
+    <div class="hero-inner">
+      <img class="hero-logo hero-logo--bottom" src="/images/items/crystall_prew.png" alt="Кристаллы">
+      <div>
+        <h1>Товары за кристаллы</h1>
+        <p class="muted">Предметы, одежда, оружие и транспорт для обмена на кристаллы</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="card info-card crystal-shop-intro">
+    <div>
+      <h2>Каталог товаров</h2>
+      <p class="info-text">Кристаллы можно получить за <a href="/vote/">голосование за сервер</a>. Известные цены указаны на карточках товаров.</p>
+    </div>
+  </section>
+
+  <section class="card info-card crystal-shop-catalog" aria-labelledby="crystal-shop-heading">
+    <div class="crystal-shop-catalog__head">
+      <div>
+        <h2 id="crystal-shop-heading">Выберите товар</h2>
+        <p class="crystal-shop-count" id="crystalShopCount" aria-live="polite"></p>
+      </div>
+      <label class="crystal-shop-search">
+        <span class="visually-hidden">Поиск по товарам</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/><path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="crystalShopSearch" type="search" placeholder="Найти товар" autocomplete="off">
+      </label>
+    </div>
+    <div class="crystal-shop-filters" role="group" aria-label="Категории товаров">
+      <button type="button" class="crystal-shop-filter is-active" data-filter="all" aria-pressed="true">Все</button>
+      <button type="button" class="crystal-shop-filter" data-filter="item" aria-pressed="false">Предметы</button>
+      <button type="button" class="crystal-shop-filter" data-filter="set" aria-pressed="false">Одежда</button>
+      <button type="button" class="crystal-shop-filter" data-filter="weapon" aria-pressed="false">Оружие</button>
+      <button type="button" class="crystal-shop-filter" data-filter="vehicle" aria-pressed="false">Транспорт</button>
+    </div>
+
+    <!-- Для предмета меняйте название, цену, путь изображения и описание в одной карточке. Заглушку /images/items/placeholder.png замените на файл предмета, когда он появится. -->
+    <div class="crystal-shop-grid" id="crystalShopGrid">
+      <article class="crystal-product" data-kind="item" data-price="150">
+        <div class="crystal-product__art">
+          <img src="/images/items/workbench.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Набор для сборки крафтового стола</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Используется для установки крафтового стола.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="50">
+        <div class="crystal-product__art">
+          <img src="/images/items/screwdriver_workbench.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Специальная отвёртка</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Отвертка для сборки крафтового стола (одноразовая).</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="50">
+        <div class="crystal-product__art">
+          <img src="/images/items/hdd_case.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кейс для жёстких дисков</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кейс для хранения жёстких дисков, у каждого диска свой слот.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="50">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_clothing.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — одежда</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания одежды.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_conserv.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — консервы</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания консерв.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="35">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_crates_barrel_chest.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — ящики, бочки, сундуки</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания ящиков, бочек и сундуков.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="35">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_knifes.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — ножи</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания ножей.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="35">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_electronic.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — электроника</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания электроники.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="40">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_mag_dark.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — магазины Dark</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания магазинов Dark.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_items.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — предметы</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания предметов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_craft_comp.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — крафт-компоненты</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания крафт-компонентов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="60">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_mag_bloody.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — магазины Bloody</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания магазинов Bloody.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="80">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_mag_immortal.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — магазины Immortal</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания магазинов Immortal.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="90">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_mag_phantom.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — магазины Phantom</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания магазинов Phantom.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_medecine.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — медицина</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания медицины.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="75">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_sets.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — сеты</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания сетов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_suppressor.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — глушители</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания глушителей.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="75">
+        <div class="crystal-product__art">
+          <img src="/images/categories/hdd_weapons.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Жёсткий диск — оружие</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Жесткий диск содержащий в себе данные для создания оружия.</p>
+      </article>
+
+
+      
+      <article class="crystal-product" data-kind="item" data-price="150">
+        <div class="crystal-product__art">
+          <img src="/images/battlepass/5_lvl.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Карта 5 уровней боевого пропуска</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Добавляет 5 уровней боевого пропуска.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/items/recycler.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Переработчик</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Устройство для переработки крафт-компонентов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="15">
+        <div class="crystal-product__art">
+          <img src="/images/items/yw_coin.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>YW Coin</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Монета для покупки виртуального кейса.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/items/box_casing.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Коробка с гильзами</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Пустые гильзы которые можно использовать для крафта патронов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/items/rune_book.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Книга для рун</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Книга для хранения 4 рун.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="10">
+        <div class="crystal-product__art">
+          <img src="/images/items/glasses.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Невидимые очки</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Невидимые очки с высокой прочностью.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="10">
+        <div class="crystal-product__art">
+          <img src="/images/items/wooden_gun.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Заглушка оружейного слота</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Занимает слот оружия за спиной.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="40">
+        <div class="crystal-product__art">
+          <img src="/images/items/nvg.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>ПНВ</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Стандартный прибор ночного видения.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="50">
+        <div class="crystal-product__art">
+          <img src="/images/items/sewing_kit_mask.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Швейный набор для масок-противогазов</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Стандартный набор для перекрафта маски-противогаза в обычную маску.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="240">
+        <div class="crystal-product__art">
+          <img src="/images/shron/card_500_700.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Карта апгрейда схрона 500–700</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Карта улучшает схрон с 500 до 700 слотов. На этом уровне доступно 5 дополнительных категорий.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="240">
+        <div class="crystal-product__art">
+          <img src="/images/shron/card_300_500.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Карта апгрейда схрона 300–500</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Карта улучшает схрон с 300 до 500 слотов. На этом уровне доступно 3 дополнительных категории.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/items/chertezh_reload_case.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Чертёж — Кейс для патронов</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Используется для создания кейса для патронов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="144">
+        <div class="crystal-product__art">
+          <img src="/images/items/chertezh_nvg.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Чертёж — ПНВ</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Используется для создания ПНВ.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="320">
+        <div class="crystal-product__art">
+          <img src="/images/items/chertezh_rune.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Чертёж — Руна ультра</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Используется для создания руны "Ультра".</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="250">
+        <div class="crystal-product__art">
+          <img src="/images/items/chertezh_weapon_csr.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Чертёж — CSR50 Bloody</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Используется для создания снайперской винтовки CSR50 Bloody.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/items/chertezh_weapon_gold_v2.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Чертёж — Оружие Gold V2</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Используется для создания оружия серии Gold V2.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/items/chertezh_weapon_gold_v3.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Чертёж — Оружие Gold V3</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Используется для создания оружия серии Gold V3.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="75">
+        <div class="crystal-product__art">
+          <img src="/images/items/generator_1.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Генератор V1</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Модифицированный генератор, способный работать 24 часа на полном баке.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="75">
+        <div class="crystal-product__art">
+          <img src="/images/items/canister_50.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Канистра с топливом 50 литров</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Увеличенная металлическая канистра, вмещающая в себя до 50 литров бензина.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/items/cardholder.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кардхолдер</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кардхолдер на 32 карточки.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/items/wallet_ruble.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кошелёк для рублей</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кошелёк для хранения рублей.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/items/wallet_dollar.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кошелёк для долларов</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кошелёк для хранения долларов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/items/cassette_case.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кейс для кассет</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кейс для хранения кассет.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="25">
+        <div class="crystal-product__art">
+          <img src="/images/items/crystall_case.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кейс для кристаллов</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кейс для хранения кристаллов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="80">
+        <div class="crystal-product__art">
+          <img src="/images/case/chertezh_book.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Книга для чертежей</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Книга для хранения 16 чертежей.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="208">
+        <div class="crystal-product__art">
+          <img src="/images/case/case_reload.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кейс для патронов</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кейс предназначен для зарядки магазинов. Имеет 50 слотов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="50">
+        <div class="crystal-product__art">
+          <img src="/images/items/belt_front.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Ремень для переноски оружия — передний</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Ремень для переноски оружия спереди.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="50">
+        <div class="crystal-product__art">
+          <img src="/images/items/belt_back.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Ремень для переноски оружия — задний</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Ремень для переноски оружия сзади.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/items/rod_yw.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Усиленная удочка</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Усиленная удочка для рыбалки.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="150">
+        <div class="crystal-product__art">
+          <img src="/images/items/mining_nabor.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Набор майнинг-фермы</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборки майнинг-фермы.</p>
+      </article>
+
+      <article class="crystal-product" data-kind="item" data-price="150">
+        <div class="crystal-product__art">
+          <img class="variant-slider" data-variant="crystal_case_100" data-dots="true" data-autoplay="false" src="/images/case/case_black.png" alt="Варианты цвета кейса 100" loading="lazy">
+          <span class="crystal-product__variant-label">Варианты</span>
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Кейс 100</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Кейс вместимостью 100 слотов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="120">
+        <div class="crystal-product__art">
+          <img class="variant-slider" data-variant="barrel" data-dots="true" data-autoplay="false" src="/images/crates/barrel_1.png" alt="Варианты цвета бочки 100" loading="lazy">
+          <span class="crystal-product__variant-label">Варианты</span>
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Бочка 100</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Бочка вместимостью 100 слотов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="40">
+        <div class="crystal-product__art">
+          <img src="/images/case/toolbox.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Ящик для инструментов</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Ящик для хранения инструментов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="120">
+        <div class="crystal-product__art">
+          <img class="variant-slider" data-variant="chest" data-dots="true" data-autoplay="false" src="/images/crates/chest_1.png" alt="Варианты цвета матросского сундука 100" loading="lazy">
+          <span class="crystal-product__variant-label">Варианты</span>
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Матросский сундук 100</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Матросский сундук вместимостью 100 слотов.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="120">
+        <div class="crystal-product__art">
+          <img class="variant-slider" data-variant="crate" data-dots="true" data-autoplay="false" src="/images/crates/crate_1.png" alt="Варианты цвета деревянного ящика 100" loading="lazy">
+          <span class="crystal-product__variant-label">Варианты</span>
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Деревянный ящик 100</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Деревянный ящик вместимостью 100 слотов.</p>
+      </article>
+
+      <article class="crystal-product" data-kind="item" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_2.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 2</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 2.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_9.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 9</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 9.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="150">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_5.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 5</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 5.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="180">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_8.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 8</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 8.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="200">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_3.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 3</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 3.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="250">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_6.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 6</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 6.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_11.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 11</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 11.</p>
+      </article>
+      <article class="crystal-product" data-kind="item" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/items/house_10.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Предмет</span>
+          <h3>Сборный дом № 10</h3>
+        </div>
+        <p class="crystal-product__description" hidden>Комплект для сборного дома № 10.</p>
+      </article>
+
+      <a class="crystal-product" data-kind="weapon" data-price="210" href="/melee-info/?item=fire_axe">
+        <div class="crystal-product__art">
+          <img src="/images/melee/fire_axe.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Ближний бой · открыть описание</span>
+          <h3>Пожарный топор</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="weapon" data-price="160" href="/melee-info/?item=reactive_hammer">
+        <div class="crystal-product__art">
+          <img src="/images/melee/reactive_hammer_1.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Ближний бой · открыть описание</span>
+          <h3>Реактивный молот — жёлтый</h3>
+        </div>
+      </a>
+
+      <a class="crystal-product" data-kind="set" href="/clothing-info/?item=calistoundead" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/sets/callisto_undead.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Одежда · открыть описание</span>
+          <h3>Calisto Undead V1</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="set" href="/clothing-info/?item=crusher" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/sets/crusher.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Одежда · открыть описание</span>
+          <h3>Crusher V1</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="set" href="/clothing-info/?item=fixer" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/sets/fixer.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Одежда · открыть описание</span>
+          <h3>Fixer V1</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="set" href="/clothing-info/?item=roxxon" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/sets/roxxon_black_set.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Одежда · открыть описание</span>
+          <h3>Сет Roxxon V1</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="set" href="/clothing-info/?item=sentinel" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/sets/sentinel_set.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Одежда · открыть описание</span>
+          <h3>Sentinel V1</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="set" href="/clothing-info/?item=streetwarrior" data-price="300">
+        <div class="crystal-product__art">
+          <img src="/images/sets/streetwarrior_set.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Одежда · открыть описание</span>
+          <h3>Street Warrior V1</h3>
+        </div>
+      </a>
+
+      <a class="crystal-product" data-kind="weapon" href="/arsenal/?series=crystal&amp;weapon=0" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/weapons/gold/gold_akm.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Оружие · открыть описание</span>
+          <h3>AKM Gold V1</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="weapon" href="/arsenal/?series=crystal&amp;weapon=3" data-price="100">
+        <div class="crystal-product__art">
+          <img src="/images/weapons/gold/gold_hk416.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Оружие · открыть описание</span>
+          <h3>HK416 Gold V1</h3>
+        </div>
+      </a>
+
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=ford_bronco_jeep_crystal" data-price="160">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/ford_bronco_black.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>Ford Bronco</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=uaz469_opentop_jeep_crystal " data-price="120">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/uaz469_opentop.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>UAZ 469 Open Top</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=bmw_e34_sedan_crystal" data-price="70">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/bmw_e34.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>BMW E34</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=bmw_m3_e46_sedan_crystal" data-price="500">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/bmw_m3_e46.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>BMW M3 E46</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=bmw_m3_cls_e46_sedan_crystal" data-price="550">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/bmw_m3_cls_e46.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>BMW M3 E46 CLS</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=bmw_m3_gtr_e46_sedan_crystal" data-price="600">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/bmw_m3_gtr_e46.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>BMW M3 E46 GTR</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=mazda_rx7_sedan_crystal" data-price="270">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/mazda_rx7_black.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>Mazda RX-7</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=mitsubishi_lancer_sedan_crystal" data-price="240">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/mitsubishi_lancer_black.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>Mitsubishi Lancer EVO X</h3>
+        </div>
+      </a>
+      <a class="crystal-product" data-kind="vehicle" href="/vehicles-info/?item=nissan_gtr_r34_sport_crystal" data-price="520">
+        <div class="crystal-product__art">
+          <img src="/images/vehicles/nissan_gtr_r34.png" alt="" loading="lazy">
+        </div>
+        <div class="crystal-product__body">
+          <span>Транспорт · открыть описание</span>
+          <h3>Nissan GTR R34</h3>
+        </div>
+      </a>
+    </div>
+    <p class="crystal-shop-empty" id="crystalShopEmpty" hidden>По вашему запросу ничего не найдено.</p>
+  </section>
+</div>
+
+<dialog class="crystal-item-dialog" id="crystalItemDialog" aria-labelledby="crystalItemTitle" aria-describedby="crystalItemDescription">
+  <button class="crystal-item-dialog__close" id="crystalItemClose" type="button" aria-label="Закрыть описание">×</button>
+  <div class="crystal-item-dialog__art" id="crystalItemArt">
+    <div class="crystal-item-dialog__preview" id="crystalItemPreview" aria-hidden="true"></div>
+    <button class="crystal-item-dialog__arrow crystal-item-dialog__arrow--prev" id="crystalItemPrev" type="button" aria-label="Предыдущий вариант" hidden>‹</button>
+    <button class="crystal-item-dialog__arrow crystal-item-dialog__arrow--next" id="crystalItemNext" type="button" aria-label="Следующий вариант" hidden>›</button>
+    <span class="crystal-item-dialog__variant-count" id="crystalItemVariantCount" hidden></span>
+  </div>
+  <div class="crystal-item-dialog__content">
+    <span class="crystal-item-dialog__type">Предмет за кристаллы</span>
+    <h2 id="crystalItemTitle"></h2>
+    <p id="crystalItemDescription"></p>
+    <div class="crystal-item-dialog__footer">
+      <span class="crystal-item-dialog__price" id="crystalItemPrice"></span>
+    </div>
+  </div>
+</dialog>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="/images/ywlogo.png" alt="YourWorld"><span>YourWorld</span></div>
+      <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
+      <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
+      <a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
+</footer>
+<script src="/site.js"></script>
+<script src="/craft/variants.js"></script>
+<script src="/craft/variant-slider.js"></script>
+<script src="/crystal-shop/shop.js"></script>
+</body>
+</html>

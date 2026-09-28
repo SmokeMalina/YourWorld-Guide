@@ -1,4 +1,16 @@
 window.CRAFT_VARIANTS = {
+  "crystal_case_100": [
+    "/images/case/case_black.png",
+    "/images/case/case_blue.png",
+    "/images/case/case_green.png",
+    "/images/case/case_lightblue.png",
+    "/images/case/case_orange.png",
+    "/images/case/case_pink.png",
+    "/images/case/case_purple.png",
+    "/images/case/case_red.png",
+    "/images/case/case_white.png",
+    "/images/case/case_yellow.png"
+  ],
   "auk_case_750": [
     "/images/case/case_auk_1.png",
     "/images/case/case_auk_2.png",

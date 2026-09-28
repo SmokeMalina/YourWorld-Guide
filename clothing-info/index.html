@@ -4670,13 +4670,22 @@
     restoreMapState(STORAGE_KEYS.versions, outfitVersionState);
     restoreMapState(STORAGE_KEYS.viewers, outfitViewerState);
 
+    const directOutfitSlug = new URLSearchParams(window.location.search).get("item")?.trim() || "";
+    const directCrystalOutfit = directOutfitSlug && outfits.find(
+      (outfit) => outfit.slug === directOutfitSlug && outfit.category === "crystals"
+    );
+
     try {
       const urlSearchQuery = new URLSearchParams(window.location.search)
         .getAll("search")
         .map((value) => value.trim())
         .filter(Boolean)
         .join(" ");
-      if (urlSearchQuery) {
+      if (directCrystalOutfit) {
+        currentCategory = "crystals";
+        currentQuery = "";
+        outfitVersionState.set(directOutfitSlug, 0);
+      } else if (urlSearchQuery) {
         // A global-search result must not be restricted by the last category
         // the visitor selected locally.
         currentCategory = "all";
@@ -4956,6 +4965,12 @@
     searchInput.value = currentQuery;
     setActiveFilter(currentCategory);
 
+    if (directCrystalOutfit) {
+      window.requestAnimationFrame(() => {
+        document.getElementById(directOutfitSlug)?.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    }
+
     function scrollToHashTarget() {
       const hash = window.location.hash ? window.location.hash.slice(1) : "";
       if (!hash) return;
@@ -4971,7 +4986,7 @@
 
     let restoreScrollPending = true;
     window.addEventListener("load", () => {
-      if (!restoreScrollPending) return;
+      if (!restoreScrollPending || directCrystalOutfit || window.location.hash) return;
       restoreScrollPending = false;
       try {
         const savedScroll = Number(localStorage.getItem(STORAGE_KEYS.scroll) || "0");

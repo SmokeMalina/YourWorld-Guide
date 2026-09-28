@@ -39,6 +39,87 @@
       object-fit: contain;
     }
 
+    .shron-interface {
+      margin: 18px 0 0;
+    }
+
+    .shron-interface a {
+      display: block;
+      overflow: hidden;
+      border: 1px solid rgba(255, 170, 70, 0.2);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .shron-interface img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .shron-interface figcaption {
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    .shron-guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .shron-guide-card {
+      min-width: 0;
+      padding: 20px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255, 170, 70, 0.055), rgba(255, 255, 255, 0.025) 42%);
+    }
+
+    .shron-guide-card--wide {
+      grid-column: 1 / -1;
+    }
+
+    .shron-guide-card h3 {
+      margin: 0 0 15px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .shron-guide-card .info-list {
+      gap: 8px;
+      padding-left: 22px;
+      line-height: 1.5;
+    }
+
+    .shron-guide-card .info-text {
+      line-height: 1.55;
+    }
+
+    .shron-guide-card .info-text + .info-text,
+    .shron-guide-card .info-list + .info-text {
+      margin-top: 12px;
+    }
+
+    .shron-guide-card .info-text + .info-list {
+      margin-top: 10px;
+    }
+
+    .shron-callout {
+      margin: 16px 0 0;
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      background: rgba(255, 133, 0, 0.08);
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
+    }
+
     .shron-grid {
       display: grid;
       gap: 16px;
@@ -65,6 +146,36 @@
       padding: 0;
     }
 
+    .shron-card--placeholder {
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px;
+      border: 1px dashed rgba(255, 170, 70, 0.36);
+      background: rgba(255, 133, 0, 0.045);
+      color: rgba(255, 255, 255, 0.88);
+      text-align: center;
+    }
+
+    .shron-card-placeholder-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 170, 70, 0.32);
+      border-radius: 12px;
+      color: var(--accent);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .shron-card--placeholder small {
+      color: rgba(255, 255, 255, 0.58);
+    }
+
     .shron-levels {
       display: grid;
       gap: 16px;
@@ -84,22 +195,36 @@
     }
 
     .shron-level-card h3 {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .shron-level-card .info-list {
-      margin: 0;
-      padding-left: 20px;
-      display: block;
+    .shron-level-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .shron-level-card .info-list li {
-      margin: 0;
-      line-height: 1.42;
+    .shron-level-stat + .shron-level-stat {
+      margin-top: 16px;
     }
 
-    .shron-level-card .info-list li + li {
-      margin-top: 4px;
+    .shron-level-stat > span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.86rem;
+    }
+
+    .shron-level-stat strong {
+      color: var(--accent);
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+
+    .shron-level-stat small {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.56em;
+      font-weight: 500;
     }
 
     .shron-upgrade-note {
@@ -107,8 +232,13 @@
     }
 
     @media (max-width: 680px) {
+      .shron-guide-grid {
+        grid-template-columns: 1fr;
+      }
+
       .shron-preview,
-      .shron-level-card {
+      .shron-level-card,
+      .shron-guide-card {
         padding: 16px;
       }
     }

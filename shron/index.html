@@ -9,9 +9,9 @@
   <link rel="icon" href="/images/ywlogo.ico" sizes="any">
   <title>Персональный схрон | YourWorld Wiki</title>
   <link rel="stylesheet" href="/style.css">
-  <meta name="description" content="Информация о персональном схроне на сервере YourWorld: где он установлен, сколько в нём слотов и как расширить вместимость.">
+  <meta name="description" content="Как пользоваться персональным схроном YourWorld: выбор предметов, категории, вложения, поиск и расширение вместимости.">
   <meta property="og:title" content="Персональный схрон YourWorld">
-  <meta property="og:description" content="Персональное хранилище на каждой трейд-зоне, стартовые 300 слотов и карты для расширения вместимости.">
+  <meta property="og:description" content="Инструкция по управлению персональным схроном, его категориям и расширению вместимости.">
   <meta property="og:image" content="https://wiki-yourworld.ru/images/shron/prev.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wiki-yourworld.ru/shron/">
@@ -61,6 +61,109 @@
     </div>
   </section>
 
+  <section class="card info-card" id="interface">
+    <h2>Взаимодействие со схроном</h2>
+    <p class="info-text">Виртуальный схрон состоит из трёх частей: слева находятся категории, по центру — предметы в схроне, справа — инвентарь персонажа. В верхней строке показаны общее количество предметов у персонажа, занятые слоты схрона, максимальная вместимость и процент заполнения.</p>
+    <figure class="shron-interface">
+      <a href="/images/shron/Panel.png" target="_blank" rel="noopener" aria-label="Открыть схему интерфейса схрона в полном размере">
+        <img src="/images/shron/Panel.png" alt="Схема интерфейса схрона: категории слева, предметы в центре, инвентарь справа, счётчик вместимости и кнопки управления" loading="lazy">
+      </a>
+      <figcaption>Нажмите на картинку, чтобы увеличить</figcaption>
+    </figure>
+  </section>
+
+  <section class="card info-card shron-guide">
+    <h2>Выбор и перемещение предметов</h2>
+    <div class="shron-guide-grid">
+    <article class="shron-guide-card">
+      <h3>Выбор предметов</h3>
+    <ul class="info-list">
+      <li><strong>ЛКМ по предмету</strong> выбирает только его и снимает предыдущее выделение в этой панели.</li>
+      <li><strong>ПКМ по предмету</strong> добавляет его к выделению или убирает из выделения. Так можно выбрать несколько предметов для одного действия.</li>
+      <li>Кнопка <strong>«Все»</strong> выделяет все подходящие предметы на текущей странице.</li>
+      <li>Кнопка <strong>«Снять»</strong> полностью отменяет выделение в соответствующей панели.</li>
+    </ul>
+      <p class="shron-callout">Выделение в схроне и инвентаре независимо: в центральной панели выбирают предметы для получения, в правой — для помещения.</p>
+    </article>
+
+    <article class="shron-guide-card">
+      <h3>Быстрые действия двойным нажатием</h3>
+    <ul class="info-list">
+      <li><strong>Двойной ЛКМ по предмету в схроне без вложений</strong> сразу забирает его.</li>
+      <li><strong>Двойной ЛКМ по предмету в схроне с вложениями</strong> открывает его содержимое.</li>
+      <li><strong>Двойной ЛКМ по контейнеру в инвентаре персонажа</strong> открывает его содержимое в режиме дерева.</li>
+      <li><strong>Двойной ЛКМ по обычному предмету в инвентаре</strong> сразу помещает его в выбранную категорию схрона.</li>
+    </ul>
+    </article>
+
+    <article class="shron-guide-card">
+      <h3>Как положить предметы</h3>
+    <ol class="info-list">
+      <li>Выберите предметы справа: ЛКМ — один предмет, ПКМ — несколько.</li>
+      <li>Выберите слева нужную категорию.</li>
+      <li>Нажмите <strong>«Положить»</strong>.</li>
+    </ol>
+      <p class="shron-callout">В схрон нельзя положить карты улучшения, предметы из чёрного списка и контейнеры с вещами внутри. Если предмет нельзя поместить, интерфейс покажет причину.</p>
+    </article>
+
+    <article class="shron-guide-card">
+      <h3>Как забрать предметы</h3>
+    <ol class="info-list">
+      <li>Выберите предметы в центральной панели.</li>
+      <li>Нажмите <strong>«Забрать»</strong>.</li>
+    </ol>
+      <p class="shron-callout">За раз можно забрать до 40 предметов. Предмет удаляется из схрона только после успешной выдачи в инвентарь персонажа. При наличии места он может попасть не только в основной инвентарь, но и в свободное место рюкзака, кейса или другого контейнера.</p>
+    </article>
+
+    <article class="shron-guide-card shron-guide-card--wide">
+      <h3>Просмотр вложений</h3>
+    <p class="info-text">Некоторые предметы в схроне содержат вложения, например оружие с обвесами или контейнеры.</p>
+    <ul class="info-list">
+      <li>Дважды нажмите ЛКМ по такому предмету, чтобы открыть содержимое.</li>
+      <li>Кнопка <strong>«Назад»</strong> в панели схрона возвращает на уровень выше.</li>
+      <li>Путь в верхней части панели показывает, внутри какого предмета вы находитесь.</li>
+    </ul>
+    </article>
+    </div>
+  </section>
+
+  <section class="card info-card shron-guide">
+    <h2>Просмотр и организация</h2>
+    <div class="shron-guide-grid">
+    <article class="shron-guide-card">
+      <h3>Режимы отображения инвентаря</h3>
+    <p class="info-text">По умолчанию справа отображается <strong>дерево инвентаря</strong>: сначала предметы верхнего уровня, а контейнеры открываются двойным ЛКМ.</p>
+    <p class="info-text">Кнопка <strong>«Всё»</strong> переключает интерфейс в единый список всех предметов персонажа, включая вещи внутри контейнеров. После переключения кнопка меняется на <strong>«Дерево»</strong> — она возвращает обычный режим просмотра.</p>
+    <p class="info-text">При просмотре контейнера кнопка справа меняется на <strong>«Назад»</strong> и возвращает к родительскому контейнеру.</p>
+    </article>
+
+    <article class="shron-guide-card">
+      <h3>Категории</h3>
+    <p class="info-text">Категории помогают организовать предметы внутри схрона.</p>
+    <ul class="info-list">
+      <li><strong>«Основное»</strong> — постоянная категория: её нельзя переименовать или удалить.</li>
+      <li><strong>«Создать категорию»</strong> создаёт новую категорию.</li>
+      <li><strong>«Переименовать категорию»</strong> меняет название выбранной категории.</li>
+      <li><strong>«Удалить категорию»</strong> удаляет выбранную категорию.</li>
+      <li>Предметы можно переносить между категориями через кнопку перемещения.</li>
+    </ul>
+      <p class="shron-callout">Количество доступных пользовательских категорий зависит от уровня улучшения схрона.</p>
+    </article>
+
+    <article class="shron-guide-card">
+      <h3>Поиск, страницы и сортировка</h3>
+    <p class="info-text">Внизу панелей схрона и инвентаря находятся отдельные строки поиска. Каждая ищет только в своей панели.</p>
+    <p class="info-text">Кнопки <strong>‹</strong> и <strong>›</strong> переключают страницы. Сортировка применяется к предметам текущей открытой категории только на время работы со схроном. После закрытия и повторного открытия порядок не сохраняется — сами предметы при этом не перемещаются и не меняются.</p>
+    </article>
+
+    <article class="shron-guide-card">
+      <h3>История и вместимость</h3>
+    <p class="info-text">Кнопка <strong>«История»</strong> показывает последние 10 операций со схроном.</p>
+    <p class="info-text">Схрон работает по правилу <strong>1 предмет = 1 слот</strong>. Текущая вместимость указана в верхней части окна в формате <strong>«Схрон: занято / максимум (процент заполнения)»</strong>.</p>
+    </article>
+    </div>
+  </section>
+
   <section class="card info-card">
     <h2>Карты расширения</h2>
     <div class="shron-grid">
@@ -73,48 +176,35 @@
       <article class="shron-card">
         <img src="/images/shron/card_700_1000.png" alt="Карта расширения схрона с 700 до 1000 слотов">
       </article>
+      <article class="shron-card">
+        <img src="/images/shron/card_300_1000.png" alt="Карта расширения схрона с 300 до 1000 слотов">
+      </article>
     </div>
   </section>
 
   <section class="card info-card">
     <h2>Уровни схрона</h2>
+    <p class="info-text">Дополнительные категории доступны помимо постоянной категории «Основное».</p>
     <div class="shron-levels">
       <article class="shron-level-card">
         <h3>1 уровень</h3>
-        <ul class="info-list">
-          <li><strong>300 слотов</strong></li>
-        </ul>
+        <div class="shron-level-stat"><span>Вместимость</span><strong>300 <small>слотов</small></strong></div>
+        <div class="shron-level-stat"><span>Дополнительные категории</span><strong>1 <small>категория</small></strong></div>
       </article>
       <article class="shron-level-card">
         <h3>2 уровень</h3>
-        <ul class="info-list">
-          <li><strong>500 слотов</strong></li>
-          <li><strong>4 руны</strong></li>
-        </ul>
+        <div class="shron-level-stat"><span>Вместимость</span><strong>500 <small>слотов</small></strong></div>
+        <div class="shron-level-stat"><span>Дополнительные категории</span><strong>3 <small>категории</small></strong></div>
       </article>
       <article class="shron-level-card">
         <h3>3 уровень</h3>
-        <ul class="info-list">
-          <li><strong>700 слотов</strong></li>
-          <li><strong>4 руны</strong></li>
-          <li><strong>нож</strong></li>
-          <li><strong>топор</strong></li>
-          <li><strong>топорик</strong></li>
-          <li><strong>удочка</strong></li>
-        </ul>
+        <div class="shron-level-stat"><span>Вместимость</span><strong>700 <small>слотов</small></strong></div>
+        <div class="shron-level-stat"><span>Дополнительные категории</span><strong>5 <small>категорий</small></strong></div>
       </article>
       <article class="shron-level-card">
         <h3>4 уровень</h3>
-        <ul class="info-list">
-          <li><strong>1000 слотов</strong></li>
-          <li><strong>4 руны</strong></li>
-          <li><strong>нож</strong></li>
-          <li><strong>топор</strong></li>
-          <li><strong>топорик</strong></li>
-          <li><strong>удочка</strong></li>
-          <li><strong>4 оружия</strong></li>
-          <li><strong>4 магазина</strong></li>
-        </ul>
+        <div class="shron-level-stat"><span>Вместимость</span><strong>1000 <small>слотов</small></strong></div>
+        <div class="shron-level-stat"><span>Дополнительные категории</span><strong>9 <small>категорий</small></strong></div>
       </article>
     </div>
   </section>

@@ -91,12 +91,12 @@
     hoverTarget.addEventListener("mouseenter", () => (paused = true));
     hoverTarget.addEventListener("mouseleave", () => (paused = false));
 
-    // Если вкладка скрыта, можно экономить (не обязательно, но приятно)
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) stop();
-      else start();
-    });
-
-    start();
+    if (img.dataset.autoplay !== "false") {
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+      });
+      start();
+    }
   });
 })();
