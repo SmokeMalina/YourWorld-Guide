@@ -49,6 +49,20 @@ window.meleeGuideData = {
   ],
   "meleeItems": [
     {
+      "id": "breaker_knife",
+      "key": "breaker_knife",
+      "title": "Нож Раздиратель",
+      "category": "exclusive",
+      "handType": "one_handed",
+      "skinningSpeed": "Моментальная",
+      "damagePrimary": "",
+      "damagePrimaryLabel": "Обычный удар",
+      "damageSecondary": "",
+      "damageSecondaryLabel": "Сильный удар",
+      "radiusSkinning": "5 метров",
+      "search": ""
+    },
+    {
       "id": "ancient_knife",
       "key": "ancient_knife",
       "title": "Ancient Knife Phantom",
@@ -1159,6 +1173,9 @@ window.meleeGuideData = {
     ],
     "warrior_axe": [
       "/images/melee/warrior_axe.png"
+    ],
+    "breaker_knife": [
+      "/images/melee/breaker_knife.png"
     ]
   }
 };

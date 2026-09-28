@@ -112,6 +112,20 @@ window.vehicleGuideData = {
           "2 сундука"
         ],
         "speed": "237 км/ч"
+      },
+      {
+        "id": "chevrolet_napalm",
+        "key": "chevrolet_napalm",
+        "title": "Chevrolet Napalm Nova",
+        "slots": "500 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "2 ящика",
+          "2 сундука"
+        ],
+        "speed": "223 км/ч"
       }
     ],
     "jeep": [
@@ -551,6 +565,21 @@ window.vehicleGuideData = {
         ],
         "speed": "239 км/ч",
         "note": "Валит деревья"
+      },
+      {
+        "id": "tahoe_jeep",
+        "key": "tahoe",
+        "title": "Chevrolet Tahoe",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "3 ящика",
+          "2 сундука",
+          "2 оружейных ящика"
+        ],
+        "speed": "230 км/ч"
       }
     ],
     "jeep_battlepass": [
@@ -1295,6 +1324,21 @@ window.vehicleGuideData = {
           "2 оружейных ящика"
         ],
         "speed": "285 км/ч"
+      },
+      {
+        "id": "mercedes_evolution_battlepass",
+        "key": "mercedes_evolution",
+        "title": "Mercedes Evolution",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "2 ящика",
+          "2 сундука",
+          "2 оружейных ящика"
+        ],
+        "speed": "290 км/ч"
       }
     ],
     "sedan_crystal": [
@@ -1694,6 +1738,21 @@ window.vehicleGuideData = {
         ],
         "speed": "247 км/ч",
         "note": "Имеет мигалку и полицеский гудок"
+      },
+      {
+        "id": "dodgechallenger_srt_sport",
+        "key": "dodgechallenger_srt",
+        "title": "Dodge Challenger SRT",
+        "slots": "1000 слотов",
+        "attachments": [
+          "Канистра",
+          "Оружие",
+          "Рюкзак",
+          "2 ящика",
+          "3 сундука",
+          "2 оружейных ящика"
+        ],
+        "speed": "230 км/ч"
       }
     ],
     "sport_crystal": [
@@ -3067,6 +3126,41 @@ window.vehicleGuideData = {
       "/images/vehicles/mercedes_sl63_white.png",
       "/images/vehicles/mercedes_sl63_yellow.png",
       "/images/vehicles/mercedes_sl63_camo1.png"
+    ],
+    "mercedes_evolution": [
+      "/images/vehicles/mercedes_evolution_black.png",
+      "/images/vehicles/mercedes_evolution_grey.png",
+      "/images/vehicles/mercedes_evolution_orange.png",
+      "/images/vehicles/mercedes_evolution_red.png",
+      "/images/vehicles/mercedes_evolution_yellow.png",
+      "/images/vehicles/mercedes_evolution_white.png",
+      "/images/vehicles/mercedes_evolution_camo.png"
+    ],
+    "chevrolet_napalm": [
+      "/images/vehicles/napalm_black.png",
+      "/images/vehicles/napalm_red.png",
+      "/images/vehicles/napalm_white.png"
+    ],
+    "dodgechallenger_srt": [
+      "/images/vehicles/dodgechallenger_black.png",
+      "/images/vehicles/dodgechallenger_blue.png",
+      "/images/vehicles/dodgechallenger_grey.png",
+      "/images/vehicles/dodgechallenger_orange.png",
+      "/images/vehicles/dodgechallenger_red.png",
+      "/images/vehicles/dodgechallenger_white.png",
+      "/images/vehicles/dodgechallenger_camo1.png",
+      "/images/vehicles/dodgechallenger_camo2.png",
+      "/images/vehicles/dodgechallenger_camo3.png"
+    ],
+    "tahoe": [
+      "/images/vehicles/tahoe_black.png",
+      "/images/vehicles/tahoe_brown.png",
+      "/images/vehicles/tahoe_lightblue.png",
+      "/images/vehicles/tahoe_red.png",
+      "/images/vehicles/tahoe_white.png",
+      "/images/vehicles/tahoe_camo1.png",
+      "/images/vehicles/tahoe_camo2.png",
+      "/images/vehicles/tahoe_camo3.png"
     ]
   }
 };

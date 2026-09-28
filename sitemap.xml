@@ -364,9 +364,6 @@
     <loc>https://wiki-yourworld.ru/craft/clothing/biohazard_belt_v2.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/biohazard_hood_nbc.html</loc>
-  </url>
-  <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/biohazard_hood_v2.html</loc>
   </url>
   <url>
@@ -424,9 +421,6 @@
     <loc>https://wiki-yourworld.ru/craft/clothing/caj_gloves_nbc.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/caj_helmet_nbc.html</loc>
-  </url>
-  <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/caj_helmet_v2.html</loc>
   </url>
   <url>
@@ -479,9 +473,6 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/deadagent_gloves_nbc.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/deadagent_helmet_nbc.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/deadagent_helmet_v2.html</loc>
@@ -556,9 +547,6 @@
     <loc>https://wiki-yourworld.ru/craft/clothing/rusher_gloves_nbc.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/rusher_helmet_nbc.html</loc>
-  </url>
-  <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/rusher_helmet_v2.html</loc>
   </url>
   <url>
@@ -613,9 +601,6 @@
     <loc>https://wiki-yourworld.ru/craft/clothing/shepard_gloves_nbc.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/shepard_helmet_nbc.html</loc>
-  </url>
-  <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/shepard_helmet_v2.html</loc>
   </url>
   <url>
@@ -656,9 +641,6 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/thirst_gloves_nbc.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/thirst_helmet_nbc.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/thirst_helmet_v2.html</loc>
@@ -713,9 +695,6 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/trooper_gloves_nbc.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/trooper_helmet_nbc.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/trooper_helmet_v2.html</loc>
@@ -775,9 +754,6 @@
     <loc>https://wiki-yourworld.ru/craft/clothing/warfighter_gloves_nbc.html</loc>
   </url>
   <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/warfighter_helmet_nbc.html</loc>
-  </url>
-  <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/warfighter_helmet_v2.html</loc>
   </url>
   <url>
@@ -830,9 +806,6 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/whimsy_gloves_nbc.html</loc>
-  </url>
-  <url>
-    <loc>https://wiki-yourworld.ru/craft/clothing/whimsy_helmet_nbc.html</loc>
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/clothing/whimsy_helmet_v2.html</loc>
@@ -1961,5 +1934,32 @@
   </url>
   <url>
     <loc>https://wiki-yourworld.ru/craft/medicine/iod600.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/clothing/thirsh_belt_v2.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_bloody/mag_ax50_10.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_aek_450.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_groza_450.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_mp7_450.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/mag_immortal/mag_vr80_200.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/sets/set_echo.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/sets/set_sacai.html</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/craft/sets/set_verano.html</loc>
   </url>
 </urlset>
