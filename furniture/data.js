@@ -945,7 +945,13 @@ window.furnitureGuideData = {
         "/images/furniture/Металлическая_кровать.png"
       ],
       "capacity": null,
-      "attachments": []
+      "attachments": [
+        {
+          "icon": "pistol",
+          "name": "Пистолет",
+          "count": 1
+        }
+      ]
     },
     {
       "id": "Монстера",
@@ -2552,6 +2558,263 @@ window.furnitureGuideData = {
         {
           "icon": "woodencrate",
           "name": "Ящик",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "Кактус_2",
+      "name": "Кактус",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Кактус_2.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Кактус_3",
+      "name": "Кактус",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Кактус_3.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Каменоломка_отпрысковая",
+      "name": "Каменоломка отпрысковая",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Каменоломка_отпрысковая.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Узамбарская_фиалка",
+      "name": "Узамбарская фиалка",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Узамбарская_фиалка.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Большая_пластиковая_канистра",
+      "name": "Большая пластиковая канистра",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Большая_пластиковая_канистра_синяя.png",
+        "/images/furniture/Большая_пластиковая_канистра_красная.png",
+        "/images/furniture/Большая_пластиковая_канистра_зеленая.png",
+        "/images/furniture/Большая_пластиковая_канистра_желтая.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Флагшток",
+      "name": "Флагшток",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Флагшток.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Раскладушка",
+      "name": "Раскладушка",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Раскладушка_1.png",
+        "/images/furniture/Раскладушка_2.png"
+      ],
+      "capacity": null,
+      "attachments": [
+        {
+          "icon": "pistol",
+          "name": "Пистолет",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "Самодельное_настенное_крепление",
+      "name": "Самодельное настенное крепление для оружия",
+      "category": "furniture",
+      "images": [
+        "/images/furniture/Самодельное_настенное_крепление.png"
+      ],
+      "capacity": null,
+      "attachments": [
+        {
+          "icon": "weapon",
+          "name": "Оружие",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "Старый_стул_1",
+      "name": "Старый стул",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Старый_стул_1.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Старый_стул_2",
+      "name": "Старый стул",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Старый_стул_2.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Старое_советское_кресло_1",
+      "name": "Старое советское кресло",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Старое_советское_кресло_1.png",
+        "/images/furniture/Старое_советское_кресло_2.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Кресло_из_автобуса",
+      "name": "Кресло из автобуса",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Кресло_из_автобуса.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Пластиковый_стол_1",
+      "name": "Пластиковый стол",
+      "category": "furniture",
+      "images": [
+        "/images/furniture/Пластиковый_стол_1.png",
+        "/images/furniture/Пластиковый_стол_2.png",
+        "/images/furniture/Пластиковый_стол_3.png",
+        "/images/furniture/Пластиковый_стол_4.png"
+      ],
+      "capacity": null,
+      "attachments": [
+        {
+          "icon": "foodcan",
+          "name": "Банка еды",
+          "count": 6
+        },
+        {
+          "icon": "sodacan",
+          "name": "Банка газировки",
+          "count": 8
+        },
+        {
+          "icon": "bottle_water",
+          "name": "Бутылка воды",
+          "count": 4
+        },
+        {
+          "icon": "pot",
+          "name": "Кастрюля",
+          "count": 1
+        },
+        {
+          "icon": "canteen",
+          "name": "Фляга",
+          "count": 1
+        },
+        {
+          "icon": "pistol",
+          "name": "Пистолет",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "Пластиковый_стул_1",
+      "name": "Пластиковый стул",
+      "category": "interior",
+      "images": [
+        "/images/furniture/Пластиковый_стул_1.png",
+        "/images/furniture/Пластиковый_стул_2.png",
+        "/images/furniture/Пластиковый_стул_3.png",
+        "/images/furniture/Пластиковый_стул_4.png"
+      ],
+      "capacity": null,
+      "attachments": []
+    },
+    {
+      "id": "Сейф_большой",
+      "name": "Большой сейф",
+      "category": "furniture",
+      "images": [
+        "/images/furniture/Сейф_большой.png"
+      ],
+      "capacity": 200,
+      "attachments": [
+        {
+          "icon": "wallet",
+          "name": "Кошелек",
+          "count": 3
+        },
+        {
+          "icon": "pistol",
+          "name": "Пистолет",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "Сейф_средний",
+      "name": "Средний сейф",
+      "category": "furniture",
+      "images": [
+        "/images/furniture/Сейф_средний.png"
+      ],
+      "capacity": 100,
+      "attachments": [
+        {
+          "icon": "wallet",
+          "name": "Кошелек",
+          "count": 2
+        },
+        {
+          "icon": "pistol",
+          "name": "Пистолет",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "Сейф_маленький",
+      "name": "Маленький сейф",
+      "category": "furniture",
+      "images": [
+        "/images/furniture/Сейф_маленький.png"
+      ],
+      "capacity": 100,
+      "attachments": [
+        {
+          "icon": "wallet",
+          "name": "Кошелек",
+          "count": 1
+        },
+        {
+          "icon": "pistol",
+          "name": "Пистолет",
           "count": 1
         }
       ]
