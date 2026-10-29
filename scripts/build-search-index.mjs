@@ -201,6 +201,7 @@ async function addClothingRecords() {
     const versions = Array.isArray(outfit.versions) ? outfit.versions.map((item) => item.label).filter(Boolean).join(", ") : outfit.version;
     const description = [
       versions && `Варианты: ${versions}`,
+      outfit.acquisition && `Получение: ${outfit.acquisition}`,
       Array.isArray(outfit.slots) && outfit.slots.length && `Слоты: ${outfit.slots.map((item) => `${item.label}: ${item.value}`).join(", ")}`
     ].filter(Boolean).map(plainText).join(". ");
     await addRecord({ url: `/clothing-info/#${encodeURIComponent(outfit.slug)}`, content: description, meta: { title: outfit.name } });

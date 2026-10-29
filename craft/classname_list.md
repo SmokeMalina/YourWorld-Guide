@@ -2053,3 +2053,22 @@
   - classname: `YW_Crusher_Exo`
 - Экзоскелет Roxxon V1 — используется: 1
   - classname: `YW_Roxxon_Exo_Black`, `YW_Roxxon_Exo_Red`
+
+## Хэллоуин
+
+- Крафтовый рюкзак «Кукла-марионетка» — `/craft/clothing/kukla_bag_craft.html`
+  - classname: `Men_HW_PuppetBag_Brown_700`, `Men_HW_PuppetBag_Black_700`, `Men_HW_PuppetBag_Blue_700`, `Men_HW_PuppetBag_Green_700`, `Men_HW_PuppetBag_Pink_700`
+- Крафтовый рюкзак «Тыква» — `/craft/clothing/pumpkin_bag_craft.html`
+  - classname: `Men_HW_Pumpkin_Bag_Green_700`, `Men_HW_Pumpkin_Bag_Orange_700`, `Men_HW_Pumpkin_Bag_Red_700`, `Men_HW_Pumpkin_Bag_Muerte_700`, `Men_HW_Pumpkin_Bag_Skull_700`, `Men_HW_Pumpkin_Bag_YW_700`
+- Крафтовый рюкзак «Надгробие» — `/craft/clothing/tomb_bag_craft.html`
+  - classname: `Men_HW_GraveStoneBag_Black_700`, `Men_HW_GraveStoneBag_Green_700`, `Men_HW_GraveStoneBag_Grey_700`, `Men_HW_GraveStoneBag_Red_700`
+- Кейс-тыква №1 — 750 слотов — `/craft/cases/pumpkin_case_1.html`
+  - classname: ``
+- Кейс-тыква №2 — 750 слотов — `/craft/cases/pumpkin_case_2.html`
+  - classname: ``
+- Кейс-тыква №3 — 750 слотов — `/craft/cases/pumpkin_case_3.html`
+  - classname: ``
+- Улучшенный меч затмения — `/craft/knife/eclipse_sword_craft.html`
+  - classname: `YW_Eclipse_Sword_Craft`
+- Улучшенная коса затмения — `/craft/knife/eclipse_scythe_craft.html`
+  - classname: `YW_Eclipse_Scythe_Craft`

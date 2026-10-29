@@ -1,0 +1,4 @@
+.craft-component-slot { display: block; width: 56px; height: 56px; border: 1px dashed var(--b2); border-radius: 14px; background: var(--card2); }
+.craft-component-blank { display: inline-block; min-width: min(180px, 100%); min-height: 1em; border-bottom: 1px solid #78675b; }
+.craft-component-blank--count { min-width: 32px; }
+@media (max-width: 480px) { .craft-component-blank { min-width: 70px; } .craft-component-blank--count { min-width: 24px; } }

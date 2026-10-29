@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wiki-yourworld.ru/halloween-collection/</loc>
+  </url>
+  <url>
+    <loc>https://wiki-yourworld.ru/halloween/</loc>
+  </url>
+  <url>
     <loc>https://wiki-yourworld.ru/</loc>
   </url>
   <url>
@@ -1965,4 +1971,12 @@
   <url>
     <loc>https://wiki-yourworld.ru/craft/sets/set_verano.html</loc>
   </url>
+  <url><loc>https://wiki-yourworld.ru/craft/clothing/kukla_bag_craft.html</loc></url>
+  <url><loc>https://wiki-yourworld.ru/craft/clothing/pumpkin_bag_craft.html</loc></url>
+  <url><loc>https://wiki-yourworld.ru/craft/clothing/tomb_bag_craft.html</loc></url>
+  <url><loc>https://wiki-yourworld.ru/craft/cases/pumpkin_case_1.html</loc></url>
+  <url><loc>https://wiki-yourworld.ru/craft/cases/pumpkin_case_2.html</loc></url>
+  <url><loc>https://wiki-yourworld.ru/craft/cases/pumpkin_case_3.html</loc></url>
+  <url><loc>https://wiki-yourworld.ru/craft/knife/eclipse_sword_craft.html</loc></url>
+  <url><loc>https://wiki-yourworld.ru/craft/knife/eclipse_scythe_craft.html</loc></url>
 </urlset>

@@ -322,6 +322,7 @@
               </div>
               ${showNav ? `<span class="melee-card__count">${currentIndex + 1} / ${model.gallery.length}</span>` : ""}
             </div>
+            ${model.craftRecipe ? `<p class="info-note"><a href="${escapeHtml(model.craftRecipe)}">Рецепт крафта</a></p>` : ""}
             <div class="melee-card__stats">
               ${skinningSpeed}
               ${damagePrimary}

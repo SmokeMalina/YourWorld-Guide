@@ -1,0 +1,175 @@
+.halloween-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 36%);
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  margin: 22px 0;
+  padding: 0 32px 0 36px;
+  border: 1px solid #9c602f;
+  border-radius: 26px;
+  background: radial-gradient(ellipse at 90% 100%, #66341c55, transparent 65%), #1b1511;
+  color: #fff1df;
+  text-decoration: none;
+  box-shadow: 0 12px 32px #0005;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.halloween-banner:hover { border-color: #f0a057; background-color: #271b13; }
+.halloween-banner__copy { display: grid; justify-items: start; gap: 14px; min-width: 0; padding: 30px 0; }
+.halloween-banner__copy strong { font-size: clamp(26px, 3vw, 36px); line-height: 1.15; text-wrap: balance; }
+.halloween-banner__dates { color: #ffc283; font-size: 16px; font-weight: 600; }
+.halloween-banner__description { max-width: 37ch; color: #e6cbb4; line-height: 1.5; font-size: 14px; }
+.halloween-banner__action { display: inline-flex; align-items: center; gap: 12px; margin-top: 4px; padding: 11px 16px; min-height: 44px; border: 1px solid #d18a4a66; border-radius: 12px; background: #ff850014; font-size: 14px; font-weight: 600; color: #ffcf99; }
+.halloween-banner:hover .halloween-banner__action { background: #ff850024; }
+.halloween-banner .halloween-banner__art { display: block; width: 100%; height: 300px; padding: 20px 0; object-fit: contain; object-position: center; align-self: center; }
+@media (max-width: 640px) {
+  .halloween-banner { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 24px; }
+  .halloween-banner__copy { padding: 26px 0 12px; gap: 12px; }
+  .halloween-banner .halloween-banner__art { justify-self: center; width: min(100%, 280px); height: 235px; }
+  .halloween-banner__action { grid-column: auto; white-space: normal; }
+}
+.halloween-banner:focus-visible,
+.halloween-nav a:focus-visible,
+.halloween-set:focus-visible { outline: 3px solid #ffbd74; outline-offset: 5px; }
+.halloween-page .hero { border-color: #b96d35; background: #281913; }
+.halloween-page h1 { text-wrap: balance; }
+.halloween-page .info-text { max-width: 72ch; }
+.halloween-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
+.halloween-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255,170,70,.24);
+  border-radius: 12px;
+  background: rgba(255,133,0,.08);
+  color: #ffd08a;
+  text-decoration: none;
+}
+.halloween-nav a:hover { background: rgba(255,133,0,.14); }
+.halloween-page section[id] { scroll-margin-top: 24px; }
+.halloween-facts { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 0 0 20px; }
+.halloween-facts div { display: grid; gap: 4px; }
+.halloween-facts dt { color: #d6c2b1; }
+.halloween-facts dd { margin: 0; color: #ffbd74; font-size: 22px; font-weight: 600; }
+.halloween-field { margin: 14px 0 0; color: #c9c0ba; line-height: 1.6; }
+.halloween-blank { display: inline-block; min-width: min(220px, 100%); min-height: 1.2em; border-bottom: 1px solid #78675b; vertical-align: baseline; overflow-wrap: anywhere; }
+.halloween-sets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+.halloween-set { display: grid; justify-items: center; gap: 8px; padding: 12px; color: #ffca91; text-decoration: none; }
+.halloween-set img { width: 100%; height: 280px; object-fit: contain; }
+.halloween-set strong { font-size: 22px; }
+.halloween-set span { color: #ded3c9; }
+.halloween-set:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 640px) {
+
+
+
+
+  .halloween-sets { grid-template-columns: 1fr; }
+  .halloween-set img { height: 250px; }
+  .halloween-nav a { flex: 1 1 130px; }
+}
+
+/* Коллекция «Хэллоуинские маски». */
+.halloween-masks { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px 16px; margin: 20px 0 28px; }
+.halloween-mask { min-width: 0; margin: 0; text-align: center; }
+.halloween-mask img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; }
+.halloween-mask figcaption { margin-top: 8px; color: #f5e6d7; font-weight: 600; }
+.halloween-mask figcaption span { display: block; margin-top: 2px; color: #c9c0ba; font-size: 13px; font-weight: 400; }
+@media (max-width: 800px) { .halloween-masks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .halloween-masks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Обзор ивента: переходы с изображениями и компактные каталоги. */
+.hw-toc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 24px; }
+.hw-toc a { display: flex; align-items: center; gap: 14px; min-width: 0; padding: 14px 18px; border: 1px solid var(--b1); border-radius: 16px; background: var(--card); color: var(--text); text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+.hw-toc a:hover { background: rgba(255,133,0,.08); border-color: rgba(255,170,70,.4); }
+.hw-toc img { width: 56px; height: 56px; object-fit: contain; flex-shrink: 0; }
+.hw-toc a > span { display: grid; gap: 4px; }
+.hw-toc strong { font-size: 17px; }
+.hw-toc small { color: #d6c2b1; font-size: 12px; }
+.hw-section-head, .hw-backpack__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.hw-section-head h2, .hw-backpack__head h3 { margin: 0; }
+.hw-source { padding: 5px 10px; border: 1px solid rgba(255,170,70,.24); border-radius: 8px; background: rgba(255,133,0,.08); color: #ffce9a; font-size: 12px; line-height: 1.4; }
+.hw-dates { display: flex; flex-wrap: wrap; gap: 10px 28px; }
+.hw-quest-reward { display: flex; align-items: center; gap: 22px; }
+.hw-quest-reward > img { width: 84px; height: 84px; object-fit: contain; flex-shrink: 0; }
+.hw-quest-reward h3 { margin: 0 0 8px; font-size: 18px; }
+.hw-quest-reward p { margin: 0; max-width: 68ch; color: #d6c2b1; }
+.hw-feature-grid, .hw-backpacks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+.hw-feature { display: grid; grid-template-columns: 110px minmax(0, 1fr); align-items: center; gap: 18px; }
+.hw-feature > img { width: 100%; height: 150px; object-fit: contain; }
+.hw-feature h2 { font-size: 21px; margin: 0 0 10px; }
+.hw-feature p { color: #d6c2b1; margin: 0 0 16px; }
+.hw-feature-grid .info-card, .hw-backpacks .info-card { margin-bottom: 0; }
+.hw-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 10px 16px; border: 1px solid rgba(255,170,70,.24); border-radius: 12px; background: rgba(255,133,0,.08); color: #ffd08a; text-decoration: none; font-size: 14px; }
+.hw-button:hover { background: rgba(255,133,0,.14); }
+.hw-backpack { min-width: 0; }
+.hw-backpack h3 { font-size: 22px; }
+.hw-colors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 8px; margin: 0 0 20px; }
+.hw-colors figure { min-width: 0; margin: 0; text-align: center; }
+.hw-colors img { display: block; width: 100%; height: 112px; object-fit: contain; }
+.hw-colors figcaption { margin-top: 6px; font-size: 12px; color: #c9c0ba; }
+.hw-specs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 12px; padding: 14px 0; margin: 0 0 14px; border-top: 1px solid var(--b1); border-bottom: 1px solid var(--b1); }
+.hw-specs dt { font-size: 12px; color: #c9c0ba; }
+.hw-specs dd { margin: 4px 0 0; font-size: 14px; color: #f5e6d7; }
+.hw-backpack__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.hw-text-link { color: #ffd08a; font-size: 13px; text-underline-offset: 4px; }
+.hw-caption { margin: 12px 0 0; font-size: 12px; color: #c9c0ba; }
+.hw-treats { margin-top: 20px; }
+.hw-treats .collector-item img { height: 120px; }
+.hw-toc a:focus-visible, .hw-button:focus-visible, .hw-text-link:focus-visible { outline: 3px solid #ffbd74; outline-offset: 4px; }
+@media (max-width: 800px) {
+  .hw-feature-grid, .hw-backpacks { grid-template-columns: 1fr; }
+  .hw-toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .hw-toc a { padding: 12px; gap: 8px; }
+  .hw-toc img { width: 38px; height: 44px; }
+  .hw-toc strong { font-size: 14px; }
+  .hw-toc small { font-size: 11px; }
+  .hw-feature { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+  .hw-feature > img { height: 100px; }
+  .hw-quest-reward { align-items: flex-start; gap: 12px; }
+  .hw-quest-reward > img { width: 48px; height: 48px; }
+  .hw-colors img { height: 90px; }
+  .hw-treats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Единые уровни галерей, характеристик и действий в карточках рюкзаков. */
+.hw-backpack { display: flex; flex-direction: column; }
+.hw-backpack__head { min-height: 52px; align-content: start; align-items: flex-start; }
+.hw-colors { height: 284px; flex: 0 0 auto; align-content: center; margin-bottom: 18px; }
+.hw-backpack--3-colors .hw-colors img { height: 168px; }
+.hw-backpack__footer { display: grid; grid-template-rows: auto auto minmax(36px, auto); align-content: start; margin-top: auto; }
+.hw-backpack__footer .hw-specs { margin-bottom: 16px; min-height: 76px; align-content: center; }
+.hw-backpack__actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 10px; }
+.hw-backpack__actions .hw-button { min-height: 52px; padding: 10px 12px; text-align: center; line-height: 1.35; }
+.hw-backpack__actions .hw-button:only-child { grid-column: 1 / -1; }
+.hw-button--secondary { background: transparent; color: #e6cbb4; border-color: var(--b2); }
+.hw-backpack__footer .hw-caption { margin-top: 12px; line-height: 1.5; }
+.hw-feature { align-items: stretch; }
+.hw-feature > img { align-self: center; }
+.hw-feature > div { display: flex; flex-direction: column; align-items: flex-start; }
+.hw-feature .hw-button { margin-top: auto; }
+@media (max-width: 800px) {
+  .hw-backpack__head { min-height: 0; }
+  .hw-colors { height: auto; min-height: 0; }
+  .hw-backpack__footer { grid-template-rows: auto auto auto; }
+  .hw-backpack--3-colors .hw-colors img { height: 140px; }
+}
+@media (max-width: 380px) {
+  .hw-backpack__actions { grid-template-columns: 1fr; }
+  .hw-backpack__actions .hw-button:only-child { grid-column: auto; }
+}
+
+.hw-toc__mobs { grid-column: 1 / -1; }
+.hw-mobs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.hw-mobs .collector-highlight img { height: auto; aspect-ratio: 1; object-fit: contain; padding: 18px; }
+.hw-mobs figcaption { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; color: #f5e6d7; font-weight: 600; }
+@media (max-width: 640px) { .hw-mobs { grid-template-columns: 1fr; } }
+
+/* Превью ивента в шапке с отступами от рамки. */
+.halloween-page #halloweenHeroPreview { width: 250px; height: 220px; flex: 0 0 250px; margin: 0 6px 0 auto; padding: 12px 0; object-fit: contain; object-position: center; }
+@media (max-width: 640px) { .halloween-page #halloweenHeroPreview { width: min(100%, 240px); height: 220px; flex: 0 0 auto; margin: 0 auto; } }

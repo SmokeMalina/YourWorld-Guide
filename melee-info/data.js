@@ -31,6 +31,10 @@ window.meleeGuideData = {
     {
       "id": "exclusive",
       "label": "Эксклюзив"
+    },
+    {
+      "id": "halloween",
+      "label": "Halloween"
     }
   ],
   "meleeHandTypes": [
@@ -901,6 +905,64 @@ window.meleeGuideData = {
       "damageSecondaryLabel": "Доп. урон",
       "radiusSkinning": "",
       "search": ""
+    },
+    {
+      "id": "eclipse_sword",
+      "key": "eclipse_sword",
+      "title": "Меч затмения",
+      "category": "halloween",
+      "handType": "two_handed",
+      "skinningSpeed": "1 секунды",
+      "damagePrimary": "20000",
+      "damagePrimaryLabel": "Урон",
+      "damageSecondary": "",
+      "damageSecondaryLabel": "Доп. урон",
+      "radiusSkinning": "",
+      "search": ""
+    },
+    {
+      "id": "eclipse_sword_craft",
+      "craftRecipe": "/craft/knife/eclipse_sword_craft.html",
+      "key": "eclipse_sword_craft",
+      "title": "Улучшенный меч затмения",
+      "category": "halloween",
+      "handType": "two_handed",
+      "skinningSpeed": "Моментальная",
+      "damagePrimary": "30000",
+      "damagePrimaryLabel": "Урон",
+      "damageSecondary": "",
+      "damageSecondaryLabel": "Доп. урон",
+      "radiusSkinning": "",
+      "search": ""
+    },
+    {
+      "id": "eclipse_scythe",
+      "key": "eclipse_scythe",
+      "title": "Коса затмения",
+      "category": "halloween",
+      "handType": "two_handed",
+      "skinningSpeed": "1 секунды",
+      "damagePrimary": "20000",
+      "damagePrimaryLabel": "Урон",
+      "damageSecondary": "",
+      "damageSecondaryLabel": "Доп. урон",
+      "radiusSkinning": "",
+      "search": ""
+    },
+    {
+      "id": "eclipse_scythe_craft",
+      "craftRecipe": "/craft/knife/eclipse_scythe_craft.html",
+      "key": "eclipse_scythe_craft",
+      "title": "Улучшенная коса затмения",
+      "category": "halloween",
+      "handType": "two_handed",
+      "skinningSpeed": "Моментальная",
+      "damagePrimary": "30000",
+      "damagePrimaryLabel": "Урон",
+      "damageSecondary": "",
+      "damageSecondaryLabel": "Доп. урон",
+      "radiusSkinning": "",
+      "search": ""
     }
   ],
   "meleeLibrary": {
@@ -1176,6 +1238,18 @@ window.meleeGuideData = {
     ],
     "breaker_knife": [
       "/images/melee/breaker_knife.png"
+    ],
+    "eclipse_sword": [
+      "/images/melee/eclipse_sword.png"
+    ],
+    "eclipse_scythe": [
+      "/images/melee/eclipse_scythe.png"
+    ],
+    "eclipse_sword_craft": [
+      "/images/melee/eclipse_sword.png"
+    ],
+    "eclipse_scythe_craft": [
+      "/images/melee/eclipse_scythe.png"
     ]
   }
 };

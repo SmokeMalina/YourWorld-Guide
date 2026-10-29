@@ -624,3 +624,15 @@ window.RECIPES = [
   { title: "Глушитель V3", path: "/craft/suppressors/supp_v3.html", icon: "/images/weapons/suppressor.png" }
   
 ];
+
+// Хэллоуинские рецепты. Компоненты заполняются на страницах рецептов.
+window.RECIPES.push(
+  {"title":"Крафтовый рюкзак «Кукла-марионетка»","path":"/craft/clothing/kukla_bag_craft.html","icon":"/images/clothing/kukla_bag_1.png"},
+  {"title":"Крафтовый рюкзак «Тыква»","path":"/craft/clothing/pumpkin_bag_craft.html","icon":"/images/clothing/pumpkin_bag_1.png"},
+  {"title":"Крафтовый рюкзак «Надгробие»","path":"/craft/clothing/tomb_bag_craft.html","icon":"/images/clothing/tomb_bag_1.png"},
+  {"title":"Кейс-тыква №1 — 750 слотов","path":"/craft/cases/pumpkin_case_1.html","icon":"/images/hw/pumpkin_case_1.png"},
+  {"title":"Кейс-тыква №2 — 750 слотов","path":"/craft/cases/pumpkin_case_2.html","icon":"/images/hw/pumpkin_case_2.png"},
+  {"title":"Кейс-тыква №3 — 750 слотов","path":"/craft/cases/pumpkin_case_3.html","icon":"/images/hw/pumpkin_case_3.png"},
+  {"title":"Улучшенный меч затмения","path":"/craft/knife/eclipse_sword_craft.html","icon":"/images/melee/eclipse_sword.png"},
+  {"title":"Улучшенная коса затмения","path":"/craft/knife/eclipse_scythe_craft.html","icon":"/images/melee/eclipse_scythe.png"}
+);

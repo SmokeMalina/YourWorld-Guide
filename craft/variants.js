@@ -645,3 +645,28 @@ window.CRAFT_VARIANTS = {
     "/images/weapons/bloody/bloody_m14_mag_camo1.png"
   ]
 };
+
+// Цвета крафтовых хэллоуинских рюкзаков.
+Object.assign(window.CRAFT_VARIANTS, {
+  "kukla_bag_craft": [
+    "/images/clothing/kukla_bag_1.png",
+    "/images/clothing/kukla_bag_2.png",
+    "/images/clothing/kukla_bag_3.png",
+    "/images/clothing/kukla_bag_4.png",
+    "/images/clothing/kukla_bag_5.png"
+  ],
+  "pumpkin_bag_craft": [
+    "/images/clothing/pumpkin_bag_1.png",
+    "/images/clothing/pumpkin_bag_2.png",
+    "/images/clothing/pumpkin_bag_3.png",
+    "/images/clothing/pumpkin_bag_4.png",
+    "/images/clothing/pumpkin_bag_5.png",
+    "/images/clothing/pumpkin_bag_6.png"
+  ],
+  "tomb_bag_craft": [
+    "/images/clothing/tomb_bag_1.png",
+    "/images/clothing/tomb_bag_2.png",
+    "/images/clothing/tomb_bag_3.png",
+    "/images/clothing/tomb_bag_4.png"
+  ]
+});

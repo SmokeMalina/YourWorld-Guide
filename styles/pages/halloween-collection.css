@@ -1,0 +1,4 @@
+/* Поле источника масок для ручного заполнения. */
+.collection-field { margin: 14px 0 0; color: #c9c0ba; }
+.collection-blank { display: inline-block; min-width: min(220px, 100%); min-height: 1.2em; border-bottom: 1px solid #78675b; overflow-wrap: anywhere; }
+
