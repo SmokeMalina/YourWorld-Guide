@@ -19,8 +19,10 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/collections-glass.css?v=20261111">
 </head>
-<body class="page-collection">
+<body class="collections-glass page-collection site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -40,20 +42,8 @@
     </div>
   </div>
 
-  <section class="card info-card">
-    <h2>Описание</h2>
-    <ul class="info-list">
-      <li>Коллекция включает в себя 239 карточек.</li>
-      <li>Для обмена на приз нужны 100 карточек из списка ниже.</li>
-      <li>Нужные для коллекции карточки подсвечиваются в игре зелёным цветом.</li>
-      <li>Доступно 2 вида лутбоксов со случайной карточкой: обычный и редкий.</li>
-      <li>Карточки можно складывать в виртуальную <a href="/collection-system/">систему коллекций</a>.</li>
-    </ul>
-  </section>
-
-  <section class="card info-card">
-    <h2>Виды лутбоксов</h2>
-    <div class="collector-feature-grid">
+<nav class="collection-nav" aria-label="Разделы коллекции"><a href="#collection-source">Где искать ↓</a><a href="#collection-rewards">Награда ↓</a><a href="#collection-cards">Каталог коллекции ↓</a></nav>
+<section class="collection-summary" aria-label="Условия коллекции"><div><strong>100</strong><span>нужных карточек для награды</span></div><div><strong>239</strong><span>карточек существует всего</span></div><div><strong>Specter</strong><span>оружие на выбор</span></div></section><section class="card info-card"><h2 id="collection-source">Где собирать карточки</h2><p class="info-text">Лутбоксы Pokemon можно найти на карте и различных событиях. Есть два вида: обычный и редкий.</p><p class="info-text">Вносите находки в виртуальную <a href="/collection-system/">систему коллекций</a>, чтобы отслеживать прогресс набора и получить награду.</p><p class="info-note"><strong>Для награды нужны 100 определённых карточек из списка ниже.</strong> В игре они подсвечиваются зелёным цветом.</p>    <div class="collector-feature-grid">
       <article class="collector-feature-card">
         <figure class="collector-highlight collector-highlight--plain">
           <img src="/images/pokemon_card_collector/pokemon_lootbox.png" alt="Лутбокс Pokemon">
@@ -68,16 +58,8 @@
       </article>
     </div>
   </section>
-
   <section class="card info-card">
-    <h2>Где искать карточки</h2>
-    <ul class="info-list">
-      <li>Лутбоксы Pokemon можно найти на карте и различных событиях.</li>
-    </ul>
-  </section>
-
-  <section class="card info-card">
-    <h2>Что даёт полная коллекция</h2>
+    <h2 id="collection-rewards">Награда за полную коллекцию</h2>
     <p class="info-text">После того как вы внесёте в систему коллекций 100 нужных карточек из списка ниже, коллекцию можно будет обменять на награду.</p>
     <p class="info-note">Награда за коллекцию включает в себя оружие на выбор серии Specter.</p>
     <div class="collector-highlight-grid">
@@ -97,7 +79,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Нужные карточки</h2>
+    <h2 id="collection-cards">100 нужных карточек</h2>
     <p class="info-note">Ниже показаны 100 карточек Pokemon, которые нужны для обмена на приз. В игре они подсвечиваются зелёным цветом.</p>
     <div class="collector-catalog" id="pokemon-collector-catalog"></div>
   </section>
@@ -112,7 +94,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
@@ -141,7 +123,7 @@
       const card = document.createElement("figure");
       card.className = "collector-item";
       card.innerHTML = `
-        <div class="collector-item__num">№${i}</div>
+        <div class="collector-item__num">Карточка ${String(i).padStart(2, "0")}</div>
         <img src="/images/pokemon_card_collector/pokemon_card_${i}.png" alt="Карточка Pokemon ${i}">
       `;
       root.appendChild(card);

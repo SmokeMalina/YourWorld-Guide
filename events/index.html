@@ -20,8 +20,10 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
   <link rel='stylesheet' href='/styles/pages/events.css'>
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/events-glass.css?v=20261110-crates">
 </head>
-<body>
+<body class="site-glass events-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -36,19 +38,18 @@
       <img class="hero-logo" src="/images/events/events_logo.png" alt="События">
       <div>
         <h1>События</h1>
-        <p class="muted">Переключайте карту и открывайте вкладку нужного события, чтобы посмотреть его описание и связанные предметы</p>
+        <p class="muted">События мира, условия прохождения и необходимые предметы</p>
       </div>
     </div>
   </div>
 
   <section class="card info-card">
-    <h2>Карта событий</h2>
-    <p class="info-text">Сначала выберите карту, а затем откройте вкладку нужного события. Внутри будет основная картинка события, текстовое описание и связанные предметы.</p>
+    <h2>Выберите карту</h2>
     <div class="events-map-switch" id="events-map-switch" role="tablist" aria-label="Выбор карты">
       <button class="events-map-btn is-active" type="button" data-map="chernarus" aria-selected="true">Chernarus</button>
       <button class="events-map-btn" type="button" data-map="deadfall" aria-selected="false">Deadfall</button>
     </div>
-    <div class="events-auto-note">
+    <details class="events-claim" open><summary>Как определяется занятие события</summary><div class="events-auto-note">
       <div class="events-auto-note__icon" aria-hidden="true">!</div>
       <div>
         <strong>Занятие события определяется автоматически</strong>
@@ -57,18 +58,18 @@
           <span>Военный конвой</span><span>Военный лагерь</span><span>Зачистка</span><span>Погрузка</span><span>Ритуал сектантов</span><span>Химическая авария</span>
         </div>
       </div>
-    </div>
+    </div></details>
   </section>
 
   <section class="events-map-panel is-active" data-map-panel="chernarus">
-    <div class="events-tabs-wrap">
+    <div class="events-tabs-wrap"><h2 class="events-nav-title">События</h2>
       <div class="events-tabs" data-events-tabs="chernarus"></div>
     </div>
     <div class="events-detail" data-events-detail="chernarus"></div>
   </section>
 
   <section class="events-map-panel" data-map-panel="deadfall">
-    <div class="events-tabs-wrap">
+    <div class="events-tabs-wrap"><h2 class="events-nav-title">События</h2>
       <div class="events-tabs" data-events-tabs="deadfall"></div>
     </div>
     <div class="events-detail" data-events-detail="deadfall"></div>
@@ -94,7 +95,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
@@ -451,10 +452,13 @@
                   <button class="events-crate-card__zoom" type="button" data-open-image="${item.image}" data-open-title="${item.title}">
                     <img src="${item.image}" alt="${item.title}">
                   </button>
-                  <h4>${item.title}</h4>
-                  ${item.note ? `<p>${item.note}</p>` : ""}
+                  <div class="events-crate-card__description">
+                    <h4>${item.title}</h4>
+                    ${item.note ? `<p>${item.note}</p>` : ""}
+                  </div>
                 </div>
                 <div class="events-crate-card__requirement">
+                  <span class="events-crate-card__label">Чем открыть</span>
                   ${item.requirement?.image ? `<img src="${item.requirement.image}" alt="${item.requirement.title}">` : ""}
                   <h5>${item.requirement?.title || ""}</h5>
                   ${item.requirement?.note ? `<p>${item.requirement.note}</p>` : ""}
@@ -595,7 +599,8 @@
           <h2>${event.title}</h2>
           <span class="events-detail__tag">${mapName === "chernarus" ? "Chernarus" : "Deadfall"}</span>
         </div>
-        ${renderDescription(event.description)}
+        <div class="events-detail__overview${event.image ? "" : " events-detail__overview--text"}">
+        ${renderDescription(event.relatedLayout === "crate-showcase" ? event.description.slice(0, 1) : event.description)}
         ${event.image ? `
           <div class="events-detail__preview">
             <button type="button" data-open-image="${event.image}" data-open-title="${event.title}">
@@ -603,6 +608,7 @@
             </button>
           </div>
         ` : ""}
+        </div>
         ${event.related.length ? `
           <div class="events-detail__related">
             ${event.relatedTitle === "" ? "" : `<h3>${event.relatedTitle || "Необходимые предметы"}</h3>`}
@@ -624,10 +630,11 @@
         <button
           class="events-tab-btn${currentEvent[mapName] === event.id ? " is-active" : ""}"
           type="button"
+          aria-pressed="${currentEvent[mapName] === event.id}"
           data-event-tab="${event.id}"
           data-map-owner="${mapName}"
         >
-          ${event.title}
+          <span>${event.title}</span><span aria-hidden="true">→</span>
         </button>
       `).join("");
 
@@ -637,6 +644,11 @@
           saveState();
           renderTabs(mapName);
           renderDetail(mapName);
+          tabs.querySelector(`[data-event-tab="${currentEvent[mapName]}"]`).focus({preventScroll:true});
+          const selectedDetail = document.querySelector(`[data-events-detail="${mapName}"]`);
+          if (selectedDetail.getBoundingClientRect().top < 0 || window.innerWidth <= 800) {
+            selectedDetail.scrollIntoView({block: "start", behavior: "instant"});
+          }
         });
       });
     }
@@ -677,3 +689,5 @@
 </script>
 </body>
 </html>
+
+

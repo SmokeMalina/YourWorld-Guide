@@ -9,7 +9,7 @@
   <link rel="icon" href="/images/ywlogo.ico" sizes="any">
   <title>Квестовая линейка | YourWorld Wiki</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/styles/pages/quests.css">
+  <link rel="stylesheet" href="/styles/pages/quests.css?v=20261110-glass">
   <meta name="description" content="Квестовая линейка YourWorld PVE: 135 заданий, дополнительные активности и четыре уникальные финальные награды.">
   <meta property="og:title" content="Квестовая линейка | YourWorld Wiki">
   <meta property="og:description" content="Основная линейка из 135 квестов, дополнительные задания и четыре уникальные финальные награды на выбор.">
@@ -20,8 +20,9 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
 </head>
-<body class="page-quests">
+<body class="page-quests site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -42,7 +43,10 @@
     </div>
   </div>
 
-  <section class="card info-card">
+  <nav class="quests-nav" aria-label="Разделы квестовой линейки">
+    <a href="#quests-start">Как начать</a><a href="#quests-unlocks">Этапы прохождения</a><a href="#quests-rewards">Финальные награды</a>
+  </nav>
+  <section class="card info-card" id="quests-start">
     <h2>Основная квестовая линейка</h2>
     <p class="info-text">Основная линейка состоит из 135 связанных квестов и рассчитана на долгосрочное прохождение. Задания постепенно знакомят игрока с системами, локациями и различными видами контента YourWorld.</p>
     <div class="quests-overview">
@@ -74,19 +78,19 @@
 
   <section class="card info-card">
     <h2>Как устроено прохождение</h2>
-    <ol class="grow-steps quests-steps">
+    <ul class="quests-steps">
       <li>Постепенное знакомство с различными системами проекта.</li>
       <li>Путешествие по новым и уже знакомым локациям.</li>
       <li>Освоение разных видов контента YourWorld.</li>
       <li>Выполнение заданий разных типов и сложности.</li>
-    </ol>
+    </ul>
   </section>
 
-  <section class="card info-card quests-unlocks-section">
+  <section class="card info-card quests-unlocks-section" id="quests-unlocks">
     <div class="quests-unlocks-head">
-      <p class="quests-eyebrow">Дополнительные задания</p>
-      <h2>Что открывается во время прохождения</h2>
-      <p class="info-text">По мере продвижения по основной квестовой линейке открывается доступ к дополнительным заданиям.</p>
+      <p class="quests-eyebrow">Прогресс линейки</p>
+      <h2>Этапы прохождения</h2>
+      <p class="info-text">Продвигайтесь по основной линейке, открывайте дополнительные задания и выбирайте награду в финале.</p>
     </div>
     <div class="quests-unlock-grid">
       <article class="quests-unlock-card">
@@ -105,10 +109,18 @@
           <p>Открывается доступ к еженедельным заданиям на прохождение данжей проекта.</p>
         </div>
       </article>
+      <article class="quests-unlock-card">
+        <span class="quests-unlock-icon" aria-hidden="true">135</span>
+        <div>
+          <h3>Финальная награда</h3>
+          <strong class="quests-unlock-stage">После прохождения 135 квестов</strong>
+          <p>Выберите один из четырёх уникальных вариантов награды.</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section class="card info-card quests-rewards-section">
+  <section class="card info-card quests-rewards-section" id="quests-rewards">
     <div class="quests-rewards-head">
       <div>
         <p class="quests-eyebrow">Финальная награда</p>
@@ -142,7 +154,7 @@
           <span class="quests-reward-type">Сет экипировки</span>
           <h3>Сет Marauder</h3>
           <p>Уникальный сет экипировки Marauder.</p>
-          <a class="quests-reward-link" href="/clothing-info/index.html">Посмотреть одежду</a>
+          <a class="quests-reward-link" href="/clothing-info/index.html?search=Marauder">Подробнее о сете</a>
         </div>
       </article>
 
@@ -154,7 +166,7 @@
           <span class="quests-reward-type">Сет экипировки</span>
           <h3>Сет Tempest</h3>
           <p>Уникальный сет экипировки Tempest.</p>
-          <a class="quests-reward-link" href="/clothing-info/index.html">Посмотреть одежду</a>
+          <a class="quests-reward-link" href="/clothing-info/index.html?search=Tempest">Подробнее о сете</a>
         </div>
       </article>
 
@@ -166,7 +178,7 @@
           <span class="quests-reward-type">Сет экипировки</span>
           <h3>Сет Al Katala</h3>
           <p>Уникальный сет экипировки Al Katala.</p>
-          <a class="quests-reward-link" href="/clothing-info/index.html">Посмотреть одежду</a>
+          <a class="quests-reward-link" href="/clothing-info/index.html?search=Al%20Katala">Подробнее о сете</a>
         </div>
       </article>
     </div>
@@ -184,7 +196,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

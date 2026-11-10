@@ -19,8 +19,10 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/collections-glass.css?v=20261111">
 </head>
-<body class="page-collection">
+<body class="collections-glass page-collection site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -40,34 +42,18 @@
     </div>
   </div>
 
-  <section class="card info-card">
-    <h2>Описание</h2>
-    <p class="info-text">Оружейный коллекционер — это отдельная система коллекционных карточек. Собрав полный набор из 50 карточек, вы сможете выбрать одно эксклюзивное оружие прямо в панели коллекций.</p>
-    <p class="info-note">Полученные карточки складываются в виртуальную <a href="/collection-system/">систему коллекций</a>, где также отображается прогресс полного набора.</p>
+  <nav class="collection-nav" aria-label="Разделы коллекции"><a href="#collection-source">Где искать ↓</a><a href="#collection-rewards">Награда ↓</a><a href="#collection-cards">Каталог коллекции ↓</a></nav>
+  <section class="collection-summary" aria-label="Условия коллекции">
+    <div><strong>50</strong><span>карточек в полном наборе</span></div>
+    <div><strong>1 из 4</strong><span>оружий на выбор за сдачу</span></div>
+    <div><strong>4 раза</strong><span>можно сдать коллекцию</span></div>
   </section>
-
-  <section class="card info-card">
-    <h2>Источник карточек</h2>
-    <div class="collector-feature-grid collector-feature-grid--compact">
-      <article class="collector-feature-card">
-        <figure class="collector-highlight collector-highlight--plain">
-          <img src="/images/weapon_card_collector/weapon_card_box.png" alt="Коробка с карточками">
-          <figcaption><span class="collector-highlight__meta">Лутбокс</span>Коробка с карточками</figcaption>
-        </figure>
-      </article>
-    </div>
+  <section class="card info-card collection-source">
+    <img src="/images/weapon_card_collector/weapon_card_box.png" alt="Коробка с карточками">
+    <div><h2 id="collection-source">Где собирать карточки</h2><p class="info-text">Оружейные карточки выпадают из военных зомби и зомби на данжах. Источник карточек — лутбокс «Коробка с карточками».</p><p class="info-text">Вносите карточки в виртуальную <a href="/collection-system/">систему коллекций</a>: там отображается прогресс набора и выбирается награда.</p></div>
   </section>
-
   <section class="card info-card">
-    <h2>Где брать карточки</h2>
-    <ul class="info-list">
-      <li>Оружейные карточки выпадают из военных зомби</li>
-      <li>Из зомби на данжах</li>
-    </ul>
-  </section>
-
-  <section class="card info-card">
-    <h2>Что даёт полная коллекция</h2>
+    <h2 id="collection-rewards">Выберите награду за полный набор</h2>
     <p class="info-text">После того как вы соберёте полную коллекцию из 50 карточек, в системе коллекций можно самостоятельно выбрать одно из четырёх эксклюзивных оружий.</p>
     <p class="info-note"><strong>Коллекцию можно сдать четыре раза.</strong> Повторно собирая полный набор карточек, вы сможете последовательно выбрать и получить все четыре оружия.</p>
     <div class="collector-highlight-grid">
@@ -101,7 +87,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Полная коллекция</h2>
+    <h2 id="collection-cards">Все 50 карточек</h2>
     <p class="info-note">Ниже показаны все 50 оружейных карточек, необходимые для одной полной сдачи коллекции.</p>
     <div class="collector-catalog" id="weapon-collector-catalog"></div>
   </section>
@@ -116,7 +102,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
@@ -135,7 +121,7 @@
       const card = document.createElement("figure");
       card.className = "collector-item";
       card.innerHTML = `
-        <div class="collector-item__num">№${i}</div>
+        <div class="collector-item__num">Карточка ${String(i).padStart(2, "0")}</div>
         <img src="/images/weapon_card_collector/weapon_card_${i}.png" alt="Оружейная карточка ${i}">
       `;
       root.appendChild(card);

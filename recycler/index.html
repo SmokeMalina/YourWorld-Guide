@@ -22,9 +22,11 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/recycler.css?v=20261110-scrap">
 </head>
 
-<body>
+<body class="site-glass page-recycler">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -50,9 +52,11 @@
 
   <div class="card recycler-card">
     <h2>Переработка компонентов</h2>
+    <div class="recycler-grid-note"><strong>Количество скрапа указано за 1 предмет</strong><span>Загружайте предметы по одному, без стака.</span></div>
     <div class="search-block recycler-search-block">
       <input
         id="recycler-search"
+        aria-label="Поиск компонента"
         class="search-input"
         type="text"
         placeholder="Поиск компонента..."
@@ -60,7 +64,7 @@
         spellcheck="false"
       >
     </div>
-    <div id="recycler-empty" class="search-empty hidden">Ничего не найдено</div>
+    <div id="recycler-empty" class="search-empty hidden" data-pagefind-ignore>Ничего не найдено</div>
     <div class="recycler-grid recycler-grid--cards">
       
       <div class="recycle-card">
@@ -71,7 +75,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -83,7 +87,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -95,7 +99,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -107,7 +111,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -119,7 +123,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -131,7 +135,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -143,7 +147,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -155,7 +159,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -167,7 +171,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -179,7 +183,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -191,7 +195,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -203,7 +207,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -215,7 +219,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -227,7 +231,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -239,7 +243,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -251,7 +255,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -263,7 +267,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -275,7 +279,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -287,7 +291,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -299,7 +303,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x10</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">10</b>
         </div>
       </div>
 
@@ -311,7 +315,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -323,7 +327,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -335,7 +339,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -347,7 +351,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -359,7 +363,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -371,7 +375,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x5</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">5</b>
         </div>
       </div>
 
@@ -383,7 +387,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -395,7 +399,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -407,7 +411,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -419,7 +423,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -431,7 +435,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -443,7 +447,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -455,7 +459,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -467,7 +471,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -479,7 +483,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -491,7 +495,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -503,7 +507,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -515,7 +519,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -527,7 +531,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -539,7 +543,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -551,7 +555,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -563,7 +567,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -575,7 +579,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -587,7 +591,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -599,7 +603,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x15</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">15</b>
         </div>
       </div>
 
@@ -611,7 +615,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -623,7 +627,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -635,7 +639,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x3</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">3</b>
         </div>
       </div>
 
@@ -647,7 +651,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x6</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">6</b>
         </div>
       </div>
 
@@ -659,7 +663,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x4</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">4</b>
         </div>
       </div>
 
@@ -671,7 +675,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x4</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">4</b>
         </div>
       </div>
 
@@ -683,7 +687,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x4</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">4</b>
         </div>
       </div>
 
@@ -695,7 +699,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x4</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">4</b>
         </div>
       </div>
 
@@ -707,7 +711,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x4</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">4</b>
         </div>
       </div>
 
@@ -719,7 +723,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x4</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">4</b>
         </div>
       </div>
 
@@ -731,7 +735,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x3</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">3</b>
         </div>
       </div>
 
@@ -743,7 +747,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x3</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">3</b>
         </div>
       </div>
 
@@ -755,7 +759,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x3</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">3</b>
         </div>
       </div>
 
@@ -767,7 +771,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x1</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">1</b>
         </div>
       </div>
 
@@ -779,7 +783,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -791,7 +795,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x3</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">3</b>
         </div>
       </div>
 
@@ -803,7 +807,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x4</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">4</b>
         </div>
       </div>
 
@@ -815,7 +819,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x5</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">5</b>
         </div>
       </div>
 
@@ -827,7 +831,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x15</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">15</b>
         </div>
       </div>
 
@@ -839,7 +843,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -851,7 +855,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -863,7 +867,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -875,7 +879,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x2</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">2</b>
         </div>
       </div>
 
@@ -887,7 +891,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x8</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">8</b>
         </div>
       </div>
 
@@ -899,7 +903,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x10</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">10</b>
         </div>
       </div>
 
@@ -911,7 +915,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x10</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">10</b>
         </div>
       </div>
 
@@ -923,7 +927,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x10</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">10</b>
         </div>
       </div>
 
@@ -935,7 +939,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x20</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">20</b>
         </div>
       </div>
 
@@ -947,7 +951,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x20</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">20</b>
         </div>
       </div>
 
@@ -959,7 +963,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x20</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">20</b>
         </div>
       </div>
 
@@ -971,7 +975,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x20</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">20</b>
         </div>
       </div>
 
@@ -983,7 +987,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x20</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">20</b>
         </div>
       </div>
 
@@ -995,7 +999,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x20</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">20</b>
         </div>
       </div>
 
@@ -1007,7 +1011,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x20</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">20</b>
         </div>
       </div>
 
@@ -1019,7 +1023,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x30</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">30</b>
         </div>
       </div>
 
@@ -1031,7 +1035,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x30</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">30</b>
         </div>
       </div>
 
@@ -1043,7 +1047,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x30</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">30</b>
         </div>
       </div>
 
@@ -1055,7 +1059,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x45</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">45</b>
         </div>
       </div>
 
@@ -1067,7 +1071,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x45</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">45</b>
         </div>
       </div>
 
@@ -1079,7 +1083,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x45</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">45</b>
         </div>
       </div>
 
@@ -1091,7 +1095,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x60</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">60</b>
         </div>
       </div>
 
@@ -1103,7 +1107,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x120</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">120</b>
         </div>
       </div>
 
@@ -1115,7 +1119,7 @@
           </div>
         </div>
         <div class="recycle-arrow">→</div>
-        <div class="recycle-side recycle-side--result">          <b class="recycle-count">x200</b>
+        <div class="recycle-side recycle-side--result">          <span class="recycle-result-label">Скрап</span><b class="recycle-count">200</b>
         </div>
       </div>
 
@@ -1133,7 +1137,7 @@
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
 
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

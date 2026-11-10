@@ -19,8 +19,10 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/field-guides.css?v=20261111">
 </head>
-<body class="page-stash">
+<body class="field-guide-refresh page-stash site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -40,13 +42,14 @@
     </div>
   </div>
 
+<nav class="field-guide-nav" aria-label="Разделы страницы"><a href="#guide-levels">Уровни обыска</a><a href="#guide-safes">Тировые сейфы</a><a href="#guide-cherno">Cherno</a><a href="#guide-deadfall">Deadfall</a><a href="#guide-dungeon">Dungeon</a></nav>
   <section class="card info-card">
     <h2>Описание</h2>
     <p class="info-text">На этой странице собраны все доступные тайники по трем серверам: Cherno, Deadfall и Dungeon. Ниже также указаны уровни обыска и время обыска для каждого уровня.</p>
   </section>
 
   <section class="card info-card">
-    <h2>Уровни обыска</h2>
+    <h2 id="guide-levels">Уровни обыска</h2>
     <div class="stash-level-grid">
       <article class="stash-level-card"><h3>1 уровень</h3><p>От 0 обысков</p><strong>20 сек</strong></article>
       <article class="stash-level-card"><h3>2 уровень</h3><p>От 100 обысков</p><strong>17 сек</strong></article>
@@ -62,7 +65,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Тировые сейфы</h2>
+    <h2 id="guide-safes">Тировые сейфы</h2>
     <p class="info-note">Цветные сейфы открываются специальными ключами. Ниже показаны все существующие тировые сейфы и соответствующие им ключи.</p>
     <div class="stash-safe-grid">
       <article class="stash-safe-card">
@@ -113,17 +116,17 @@
   </section>
 
   <section class="card info-card">
-    <h2>Cherno</h2>
+    <h2 id="guide-cherno">Cherno</h2>
     <div class="stash-gallery" id="stash-cherno"></div>
   </section>
 
   <section class="card info-card">
-    <h2>Deadfall</h2>
+    <h2 id="guide-deadfall">Deadfall</h2>
     <div class="stash-gallery" id="stash-deadfall"></div>
   </section>
 
   <section class="card info-card">
-    <h2>Dungeon</h2>
+    <h2 id="guide-dungeon">Dungeon</h2>
     <div class="stash-gallery" id="stash-dungeon"></div>
   </section>
 </div>
@@ -142,7 +145,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

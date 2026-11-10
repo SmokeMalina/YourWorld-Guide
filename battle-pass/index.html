@@ -9,10 +9,10 @@
   <link rel="icon" href="/images/ywlogo.ico" sizes="any">
   <title>Боевой пропуск | YourWorld Wiki</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/styles/pages/battle-pass.css">
-  <meta name="description" content="Боевой пропуск YourWorld PVE: сезоны, YW BP Coin, карточки уровней, реролл заданий, магазин наград и лимиты.">
+  <link rel="stylesheet" href="/styles/pages/battle-pass.css?v=20261110-glass">
+  <meta name="description" content="Боевой пропуск YourWorld PVE: сезон 2 завершён, ожидается сезон 3. Справочник по заданиям, YW BP Coin и наградам.">
   <meta property="og:title" content="Боевой пропуск | YourWorld Wiki">
-  <meta property="og:description" content="Как устроены сезоны, награды и магазин боевого пропуска YourWorld PVE.">
+  <meta property="og:description" content="Сезон 2 завершён. Боевой пропуск не активен, ожидается третий сезон.">
   <meta property="og:image" content="https://wiki-yourworld.ru/battle-pass/prev.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wiki-yourworld.ru/battle-pass/">
@@ -20,8 +20,9 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
 </head>
-<body class="page-battle-pass">
+<body class="page-battle-pass site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -42,18 +43,31 @@
     </div>
   </div>
 
-  <section class="card info-card">
+  <section class="card info-card battle-pass-status" aria-labelledby="bp-status-title">
+    <div>
+      <span class="battle-pass-status__badge">Сезон не активен</span>
+      <h2 id="bp-status-title">Ожидается третий сезон</h2>
+      <p>Сезон 2 завершён. Сейчас активного боевого пропуска нет.</p>
+    </div>
+    <div class="battle-pass-status__next"><span>Следующий сезон</span><strong>03</strong></div>
+  </section>
+  <nav class="battle-pass-nav" aria-label="Разделы боевого пропуска">
+    <a href="#bp-overview">О пропуске</a><a href="#bp-progress">Прохождение</a><a href="#bp-cards">Карточки</a><a href="#bp-rewards">Награды</a><a href="#bp-limits">Лимиты</a><a href="#bp-shop">Магазин</a>
+  </nav>
+
+  <section class="card info-card" id="bp-overview">
     <h2>Что такое боевой пропуск</h2>
     <p class="info-text">Боевой пропуск — это сезонная система заданий и наград. Во время прохождения игрок выполняет задания, повышает уровень пропуска и получает <strong>YW BP Coin</strong> для покупок во внутреннем магазине.</p>
-    <p class="info-text"><strong>Боевые пропуски на YourWorld являются сезонными.</strong> У каждого сезона есть свой срок, набор заданий и ассортимент наград. Текущий пропуск — <strong>Сезон 1</strong>.</p>
+    <p class="info-text"><strong>Боевые пропуски на YourWorld являются сезонными.</strong> У каждого сезона есть свой срок, набор заданий и ассортимент наград. <strong>Сезон 2 завершён; ожидается сезон 3.</strong></p>
     <p class="info-text">Боевой пропуск разделён на <strong>обычную</strong> и <strong>премиум</strong> ветки. Каждая ветка содержит 150 уровней наград.</p>
-    <div class="battle-pass-facts" aria-label="Основная информация о сезоне">
+    <p class="battle-pass-reference">Ниже сохранена справочная информация о прежнем пропуске. Условия и ассортимент третьего сезона здесь пока не представлены.</p>
+    <div class="battle-pass-facts" aria-label="Информация о завершённом сезоне">
       <article>
-        <span>Текущий сезон</span>
+        <span>Завершённый сезон</span>
         <strong>Сезон 2</strong>
       </article>
       <article>
-        <span>Срок прохождения</span>
+        <span>Длительность сезона 2</span>
         <strong>1 месяц</strong>
       </article>
       <article>
@@ -71,7 +85,7 @@
     </div>
   </section>
 
-  <section class="card info-card">
+  <section class="card info-card" id="bp-progress">
     <h2>Как устроено прохождение</h2>
     <div class="battle-pass-coin-layout">
       <figure class="battle-pass-coin-figure">
@@ -89,10 +103,10 @@
         <p class="battle-pass-balance">Баланс YW BP Coin отображается в правом верхнем углу интерфейса. Монеты рассчитаны только на один сезон и обнуляются при начале следующего.</p>
       </div>
     </div>
-    <div class="battle-pass-expiry"><strong>Не оставляйте монеты на следующий сезон.</strong> Советуем потратить все накопленные YW BP Coin до окончания текущего сезона.</div>
+    <div class="battle-pass-expiry"><strong>Не оставляйте монеты на следующий сезон.</strong> Во время активного сезона накопленные YW BP Coin стоит потратить до его окончания.</div>
   </section>
 
-  <section class="card info-card battle-pass-cards-section">
+  <section class="card info-card battle-pass-cards-section" id="bp-cards">
     <div class="battle-pass-cards-head">
       <div>
         <h2>Карточки боевого пропуска</h2>
@@ -145,7 +159,7 @@
     </div>
   </section>
 
-  <section class="card info-card">
+  <section class="card info-card" id="bp-rewards">
     <h2>Постоянные и сезонные награды</h2>
     <p class="info-text">Большая часть обычных наград находится в постоянном ассортименте. Тематические предметы, приуроченные к событию или определённому периоду, доступны только в соответствующем сезоне.</p>
     <div class="battle-pass-reward-types">
@@ -166,7 +180,7 @@
     </div>
   </section>
 
-  <section class="card info-card">
+  <section class="card info-card" id="bp-limits">
     <h2>Лимиты магазина</h2>
     <p class="info-text">Все товары имеют лимиты. Некоторые ограничения действуют не на отдельный предмет, а на целую категорию.</p>
     <div class="battle-pass-limit-grid">
@@ -188,12 +202,12 @@
     <div class="battle-pass-warning"><strong>Важно:</strong> перед покупкой проверьте полный ассортимент и заранее распределите YW BP Coin между нужными наградами.</div>
   </section>
 
-  <section class="card info-card battle-pass-shop-section">
+  <section class="card info-card battle-pass-shop-section" id="bp-shop">
     <div class="battle-pass-shop-head">
       <div>
-      <p class="battle-pass-eyebrow">Ассортимент внутриигрового магазина</p>
+      <p class="battle-pass-eyebrow">Справочный ассортимент</p>
         <h2>Магазин боевого пропуска</h2>
-        <p class="info-text">Во внутриигровом магазине боевого пропуска представлены автомобили, оружейные кейсы, контейнеры, расходные материалы и полезные наборы. Цена указана в YW BP Coin.</p>
+        <p class="info-text">Сохранённый ассортимент и цены прежнего пропуска. Это не предложение активного сезона и не список наград сезона 3. Цены указаны в YW BP Coin.</p>
       </div>
       <img class="battle-pass-shop-coin" src="/images/battlepass/bp_coin.png" alt="YW BP Coin">
     </div>
@@ -247,7 +261,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

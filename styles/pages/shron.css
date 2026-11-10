@@ -242,3 +242,19 @@
         padding: 16px;
       }
     }
+
+/* Glass refresh; gameplay content is unchanged. */
+.page-shron .shron-guide-card, .page-shron .shron-level-card { background: linear-gradient(135deg,#ffffff04,transparent),#080808a0; border: 1px solid #ffffff20; border-radius: 10px; padding: 20px; }
+.page-shron .shron-guide-card h3 { color: #ffad59; border: 0; padding: 0; font-size: 18px; font-weight: 500; line-height: 1.4; }
+.page-shron .shron-callout { border: 1px solid #ff9c3833; border-radius: 8px; background: #ff85000c; color: #e9d5c0; font-size: 14px; line-height: 1.6; }
+.page-shron .shron-preview { padding: 16px; border: 0; background: transparent; box-shadow: none; }
+.page-shron .shron-preview img { max-height: 240px; }
+.page-shron .shron-interface a { border-radius: 10px; border-color: #ffffff25; background: #080808a0; }
+.page-shron .shron-interface img { max-height: 480px; object-fit: contain; }
+.page-shron .shron-grid, .page-shron .shron-levels { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+.page-shron .shron-card img { height: 164px; aspect-ratio: auto; border-radius: 0; }
+.page-shron .shron-level-card h3 { font-size: 18px; font-weight: 500; }
+.page-shron .shron-level-stat strong { color: #ffad59; font-size: 28px; font-variant-numeric: tabular-nums; }
+.page-shron .shron-level-stat small { font-size: 14px; }
+@media(max-width:800px) { .page-shron .shron-grid, .page-shron .shron-levels { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:450px) { .page-shron .shron-levels { grid-template-columns: 1fr; } .page-shron .shron-card img { height: 128px; } }

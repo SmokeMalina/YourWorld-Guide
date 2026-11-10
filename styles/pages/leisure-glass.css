@@ -1,0 +1,38 @@
+/* Hooch, orchards and fishing share the established glass palette. */
+.leisure-glass :is(.hooch-flow-card,.hooch-ing,.fishing-rod,.fishing-bait,.fishing-item,.fishing-special) { background: linear-gradient(135deg,#ffffff04,transparent),#080808a0; border: 1px solid #ffffff20; border-radius: 10px; box-shadow: none; }
+.leisure-glass .hooch-flow-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.leisure-glass .hooch-flow-card { padding: 20px; }
+.leisure-glass .hooch-flow-card h3 { color: #ffad59; text-align: left; font-size: 18px; font-weight: 500; line-height: 1.4; }
+.leisure-glass .hooch-result img { width: 144px; height: 144px; padding: 0; border: 0; border-radius: 0; background: transparent; filter: drop-shadow(0 6px 10px #0005); }
+.leisure-glass .hooch-result { padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #ffffff18; }
+.leisure-glass .hooch-result::after,.leisure-glass .hooch-ingredients::before,.leisure-glass .hooch-ing::before { content: none; }
+.leisure-glass .hooch-ingredients { padding-top: 0; }
+.leisure-glass .hooch-ing { padding: 12px; align-content: start; gap: 10px; }
+.leisure-glass .hooch-ing img { width: 100%; height: 104px; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.leisure-glass .hooch-ing span { position: absolute; top: 8px; right: 8px; padding: 5px 8px; border: 1px solid #ff9c3840; border-radius: 6px; color: #ffad59; background: #0b0b0b; font-size: 14px; font-weight: 500; }
+.leisure-glass .hooch-ing-name { font-size: 13px; font-weight: 500; line-height: 1.4; text-align: center; color: #ddd; }
+.leisure-glass .hooch-tab-btn { min-height: 52px; padding: 10px 20px; border-radius: 8px; background: #080808a0; border-color: #ffffff25; color: #ddd; font-weight: 500; }
+.leisure-glass .hooch-tab-btn img { width: 32px; height: 32px; }
+.leisure-glass .hooch-tab-btn.is-active { background: #ff850018; color: #ffad59; border-color: #ff9c3860; box-shadow: none; }
+.leisure-glass .hooch-map-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.leisure-glass .hooch-map-grid .info-shot { padding: 10px; margin: 0; border: 1px solid #ffffff20; border-radius: 10px; background: #080808a0; }
+.leisure-glass .hooch-map-grid img { width: 100%; height: 210px; object-fit: contain; background: #0003; border-radius: 6px; }
+.leisure-glass .hooch-map-grid figcaption { padding: 12px 4px 4px; color: #ffad59; font-size: 16px; font-weight: 500; text-align: left; }
+.leisure-glass :is(.fishing-rods,.fishing-baits,.fishing-browser,.fishing-specials) { padding: 20px; margin: 16px 0; border: 1px solid #ffffff20; border-radius: 12px; background: #08080880; }
+.leisure-glass :is(.fishing-rod,.fishing-bait) strong { color: #ffad59; font-weight: 500; }
+.leisure-glass .fishing-rod__visual { background: transparent; border: 0; border-radius: 0; }
+.leisure-glass :is(.fishing-map-tab,.fishing-filter__button) { min-height: 44px; border-radius: 8px; border-color: #ffffff25; background: #080808a0; font-weight: 500; }
+.leisure-glass .fishing-map-tab[aria-selected="true"],.leisure-glass .fishing-filter__button[aria-pressed="true"] { color: #ffad59; border-color: #ff9c3860; background: #ff850018; box-shadow: none; }
+.leisure-glass .fishing-toolbar { padding: 12px 0; }
+.leisure-glass .fishing-catalog { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.leisure-glass .fishing-item { padding: 16px; grid-template-rows: 144px auto; min-height: 0; }
+.leisure-glass .fishing-item img { height: 136px; background: transparent; border: 0; }
+.leisure-glass .fishing-item h3 { color: #ffad59; font-size: 18px; line-height: 1.4; font-weight: 500; }
+.leisure-glass .fishing-item__meta { font-size: 13px; line-height: 1.5; }
+.leisure-glass .fishing-item p { font-size: 13px; line-height: 1.5; }
+.leisure-glass .fishing-item__rods { padding-top: 10px; border-top: 1px solid #ffffff18; }
+.leisure-glass .fishing-item:hover,.leisure-glass .fishing-bait:hover { transform: none; border-color: #ff9c3850; box-shadow: none; }
+.leisure-glass .fishing-special__copy :is(h3,strong) { color: #ffad59; font-weight: 500; }
+@media(max-width:900px) { .leisure-glass .hooch-map-grid,.leisure-glass .fishing-catalog { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:680px) { .leisure-glass .hooch-flow-grid { grid-template-columns: 1fr; } .leisure-glass .hooch-ingredients.five-cols,.leisure-glass .hooch-ingredients.four-cols { grid-template-columns: repeat(2,minmax(0,1fr)); } .leisure-glass :is(.fishing-rods,.fishing-baits,.fishing-browser,.fishing-specials) { padding: 14px; } }
+@media(max-width:480px) { .leisure-glass .hooch-map-grid,.leisure-glass .fishing-catalog { grid-template-columns: 1fr; } .leisure-glass .hooch-flow-card { padding: 12px; } .leisure-glass .fishing-specials__list { grid-template-columns: 1fr; } .leisure-glass .fishing-special { grid-template-columns: 80px minmax(0,1fr); gap: 12px; } .leisure-glass .fishing-special__visual { width: 80px; } }

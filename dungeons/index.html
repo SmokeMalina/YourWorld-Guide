@@ -19,9 +19,10 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
-  <link rel='stylesheet' href='/styles/pages/dungeons.css'>
+  <link rel='stylesheet' href='/styles/pages/dungeons.css?v=20261110-glass'>
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
 </head>
-<body>
+<body class="site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -42,12 +43,7 @@
   </div>
 
   <section class="card info-card">
-    <h2>Описание</h2>
-    <div class="dungeon-overview">
-      <div class="dungeon-overview__content">
-        <div class="info-note">Если нужна подробная информация по конкретному данжу, нажмите кнопку <strong>Открыть</strong> на его карточке ниже.</div>
-      </div>
-    </div>
+    <h2>Перед прохождением</h2>
 
     <div class="dungeon-notes">
       <article class="dungeon-note">
@@ -181,9 +177,10 @@
       <button class="dungeon-modal__close" type="button" id="dungeonModalClose">Закрыть</button>
     </div>
     <div class="dungeon-modal__body">
-      <div class="dungeon-modal__preview">
+      <button type="button" class="dungeon-modal__preview" id="dungeonPreviewToggle" aria-label="Увеличить изображение" aria-pressed="false">
         <img id="dungeonModalPreview" src="" alt="">
-      </div>
+        <span class="dungeon-modal__zoom-label">Увеличить изображение</span>
+      </button>
       <div class="dungeon-modal__content">
         <p class="dungeon-modal__lead" id="dungeonModalLead"></p>
         <ul class="dungeon-modal__facts" id="dungeonModalFacts"></ul>
@@ -201,7 +198,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
@@ -466,6 +463,30 @@
     const modalFacts = document.getElementById("dungeonModalFacts");
     const modalPreview = document.getElementById("dungeonModalPreview");
     const modalClose = document.getElementById("dungeonModalClose");
+    const previewToggle = document.getElementById("dungeonPreviewToggle");
+    let returnFocus;
+
+    function showModal(imageOnly = false) {
+      returnFocus = document.activeElement;
+      modal.classList.toggle("dungeon-modal--image", imageOnly);
+      modal.classList.remove("dungeon-modal--zoom");
+      previewToggle.setAttribute("aria-pressed", "false");
+      previewToggle.setAttribute("aria-label", "Увеличить изображение");
+      previewToggle.querySelector("span").textContent = "Увеличить изображение";
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      modal.querySelector(".dungeon-modal__panel").scrollTop = 0;
+      document.body.style.overflow = "hidden";
+      modalClose.focus({ preventScroll: true });
+    }
+
+    previewToggle.addEventListener("click", () => {
+      const expanded = modal.classList.toggle("dungeon-modal--zoom");
+      const label = expanded ? "Уменьшить изображение" : "Увеличить изображение";
+      previewToggle.setAttribute("aria-pressed", String(expanded));
+      previewToggle.setAttribute("aria-label", label);
+      previewToggle.querySelector("span").textContent = label;
+    });
 
     function imagePath(file) {
       return `/images/dungeons/${encodeURIComponent(file)}`;
@@ -483,8 +504,7 @@
       modalTitle.textContent = item.subtitle ? `${item.title} — ${item.subtitle}` : item.title;
       modalChips.innerHTML = [
         `<span class="dungeon-chip dungeon-chip--map">${item.map}</span>`,
-        `<span class="dungeon-chip dungeon-chip--accent">${item.difficulty}</span>`,
-        `<span class="dungeon-chip">${item.tier}</span>`,
+        `<span class="dungeon-chip dungeon-chip--accent">${item.tier}</span>`,
         `<span class="dungeon-chip">${item.bosses}</span>`
       ].join("");
       modalLead.textContent = item.lead;
@@ -503,9 +523,7 @@
       modalPreview.src = imagePath(item.preview);
       modalPreview.alt = item.title;
 
-      modal.hidden = false;
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+      showModal();
     }
 
     function closeModal() {
@@ -513,6 +531,7 @@
       modal.hidden = true;
       modal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      returnFocus?.focus({ preventScroll: true });
     }
 
     if (mapsRoot) {
@@ -595,9 +614,7 @@
         modalFacts.innerHTML = "";
         modalPreview.src = imagePath(image);
         modalPreview.alt = title;
-        modal.hidden = false;
-        modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
+        showModal(true);
       });
     }
 
@@ -615,9 +632,7 @@
         modalFacts.innerHTML = "";
         modalPreview.src = imagePath(image);
         modalPreview.alt = title;
-        modal.hidden = false;
-        modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
+        showModal(true);
       });
     }
 
@@ -634,6 +649,12 @@
     }
 
     document.addEventListener("keydown", (event) => {
+      if (event.key === "Tab" && !modal.hidden) {
+        const controls = [modalClose, previewToggle];
+        const next = controls[(controls.indexOf(document.activeElement) + 1) % controls.length];
+        event.preventDefault();
+        next.focus();
+      }
       if (event.key === "Escape" && modal && !modal.hidden) {
         closeModal();
       }

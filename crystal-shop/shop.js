@@ -39,11 +39,14 @@
     const icon = document.createElement("img");
     icon.src = "/images/money_razmen/1_crystal.png";
     icon.alt = "";
-    icon.width = 18;
-    icon.height = 18;
+    icon.width = 32;
+    icon.height = 32;
     const value = document.createElement("span");
     value.textContent = amount || "—";
-    price.append(value, icon);
+    const currency = document.createElement("small");
+    const form = new Intl.PluralRules("ru").select(Number(amount));
+    currency.textContent = amount ? ({ one: "кристалл", few: "кристалла", many: "кристаллов", other: "кристалла" }[form]) : "цена не указана";
+    price.append(icon, value, currency);
     price.setAttribute("aria-label", amount ? `Цена: ${amount} кристаллов` : "Цена пока не указана");
     return price;
   }
@@ -51,6 +54,8 @@
   products.forEach((product) => {
     const body = product.querySelector(".crystal-product__body");
     if (!body) return;
+    const kindLabel = body.querySelector(":scope > span:first-child");
+    if (kindLabel) kindLabel.textContent = { item: "Предмет", set: "Одежда", weapon: "Оружие", vehicle: "Транспорт" }[product.dataset.kind] || kindLabel.textContent;
     const amount = product.dataset.price?.trim();
     body.appendChild(createPrice(amount));
 
@@ -130,6 +135,12 @@
   }
 
   buttons.forEach((button) => {
+    const total = products.filter((product) => button.dataset.filter === "all" || product.dataset.kind === button.dataset.filter).length;
+    const badge = document.createElement("span");
+    badge.className = "crystal-shop-filter__count";
+    badge.textContent = total;
+    badge.setAttribute("aria-hidden", "true");
+    button.append(badge);
     button.addEventListener("click", () => {
       category = button.dataset.filter;
       buttons.forEach((item) => {

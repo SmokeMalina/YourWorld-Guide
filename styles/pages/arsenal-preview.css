@@ -1,0 +1,49 @@
+.arsenal-preview .hero-inner > div::before { display:none !important; }
+.arsenal-catalog { margin-top:24px; }
+.arsenal-catalog > h2 { font-size:24px; }
+.arsenal-preview .weapon-db-tabs { gap:8px; }
+.arsenal-preview .weapon-db-tab { min-height:48px; padding:12px 16px; border-radius:8px; }
+.arsenal-preview .weapon-db-tab__kicker { display:none; }
+.arsenal-preview .weapon-db-tab__title { font-size:16px; }
+.arsenal-preview .weapon-db-panel { padding:0; border:0; background:none; }
+.arsenal-preview .weapon-db-panel__intro { margin:24px 0 16px; }
+.arsenal-preview .weapon-db-grid { gap:24px; }
+.arsenal-preview .weapon-db-card { grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px 24px; padding:24px; border-radius:14px; background:linear-gradient(125deg,#ffad5909,transparent 50%),#090b0dd9; border-color:#ffffff24; }
+.arsenal-preview .weapon-db-card__header { border-bottom:1px solid #ffffff20; padding-bottom:16px; }
+.arsenal-preview .weapon-db-card__header h3 { font-size:30px; font-weight:600; }
+.arsenal-preview .weapon-db-card__media { min-height:0; }
+.arsenal-preview .weapon-db-card__image { height:240px; min-height:0; padding:16px; background:radial-gradient(ellipse,#ffad5909,transparent 70%); border:0; }
+.arsenal-preview .weapon-db-card__img { height:200px; max-height:200px; filter:none; }
+.arsenal-preview .weapon-db-card__body { align-self:center; }
+.arsenal-preview .weapon-db-stats { grid-template-columns:1fr 1fr; gap:16px; }
+.arsenal-preview .weapon-db-stat { padding:0; border:0; background:none; }
+.arsenal-preview .weapon-db-stats > .weapon-db-stat:nth-child(2) { grid-column:1/-1; order:3; }
+.arsenal-preview .weapon-db-stat--damage { grid-column:1/-1; }
+.arsenal-preview .weapon-db-stat__label,.arsenal-preview .weapon-db-detail__label { font-size:15px; font-weight:500; color:#c9c0b6; text-transform:none; letter-spacing:0; margin-bottom:12px; }
+.arsenal-preview .weapon-db-stat__badge { border:0; border-radius:0; background:none; padding:0; min-height:0; justify-content:flex-start; color:#f3e9df; font-size:24px; font-weight:500; font-variant-numeric:tabular-nums; }
+.arsenal-preview .weapon-db-stats > .weapon-db-stat:first-child > .weapon-db-stat__badge { color:#ffbd7c; font-size:36px; }
+.arsenal-preview .weapon-db-stats > .weapon-db-stat:nth-child(2) > strong { font-size:18px; }
+.arsenal-preview .weapon-db-detail-grid { grid-column:1/-1; grid-template-columns:1fr 1fr; gap:16px; }
+.arsenal-preview .weapon-db-detail-grid > div { padding:16px; border:1px solid #ffffff20; border-radius:10px; background:#ffffff03; }
+.arsenal-preview .weapon-db-ammo { display:grid; gap:12px; }
+.arsenal-preview .weapon-db-ammo__item { display:grid; grid-template-columns:112px minmax(0,1fr); gap:16px; }
+.arsenal-preview .weapon-db-ammo img { width:112px; height:112px; padding:0; border:0; border-radius:0; background:none; filter:none; }
+.arsenal-preview .weapon-db-ammo .weapon-db-stat__badge { font-size:20px; line-height:1.4; }
+.arsenal-preview .weapon-db-magazine-layout { grid-template-columns:minmax(0,1fr) 112px; gap:16px; min-height:112px; }
+.arsenal-preview .weapon-db-detail__content--preview { min-height:112px; }
+.arsenal-preview .weapon-db-preview-img { height:112px; max-height:112px; filter:none; }
+.arsenal-preview .weapon-db-chip { border-radius:8px; font-size:18px; font-weight:500; min-height:40px; }
+.arsenal-preview .weapon-db-detail--suppressors,.arsenal-preview .weapon-db-detail--integrated { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0 0; border:0; border-top:1px solid #ffffff20; border-radius:0; background:none; }
+.arsenal-preview .weapon-db-detail--suppressors .weapon-db-detail__label { margin:0; }
+.arsenal-preview .weapon-db-chip--integrated { font-size:16px; }
+.arsenal-preview .weapon-db-damage__item { max-width:none; grid-template-columns:minmax(0,1fr) auto; border:0; border-bottom:1px solid #ffffff20; border-radius:0; background:none; padding:8px 0; }
+.arsenal-preview .weapon-db-damage__item img { display:none; }
+.arsenal-preview .weapon-db-damage__name { font-size:16px; }
+.arsenal-preview .weapon-db-damage__value { background:none; border:0; font-size:20px; color:#ffbd7c; font-weight:500; }
+@media(max-width:720px) {
+ .arsenal-preview .weapon-db-card { grid-template-columns:1fr; padding:16px; gap:16px; }
+ .arsenal-preview .weapon-db-card__image { height:200px; }
+ .arsenal-preview .weapon-db-card__img { height:170px; }
+ .arsenal-preview .weapon-db-detail-grid { grid-template-columns:1fr; }
+ .arsenal-preview .weapon-db-detail--suppressors { flex-wrap:wrap; }
+}

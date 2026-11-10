@@ -10,12 +10,13 @@
   <title>Система коллекций | YourWorld Wiki</title>
   <meta name="description" content="Виртуальная система коллекций YourWorld: хранение коллекционных предметов, открытие панели и список доступных категорий.">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/styles/pages/collection-system.css">
+  <link rel="stylesheet" href="/styles/pages/collection-system.css?v=20261110-glass">
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
 </head>
-<body>
+<body class="site-glass page-collection-system">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -32,7 +33,8 @@
     </div>
   </div>
 
-  <section class="card info-card collection-about">
+  <nav class="collection-nav" aria-label="Разделы системы коллекций"><a href="#collection-about">Как пользоваться</a><a href="#collection-panel">Панель коллекций</a><a href="#collection-categories">Категории</a></nav>
+  <section class="card info-card collection-about" id="collection-about">
     <div class="collection-about__copy">
       <div class="collection-eyebrow">Что это такое</div>
       <h2>Коллекционные предметы больше не занимают инвентарь</h2>
@@ -44,7 +46,7 @@
     </div>
   </section>
 
-  <section class="card info-card collection-preview">
+  <section class="card info-card collection-preview" id="collection-panel">
     <div class="collection-preview__head">
       <div><div class="collection-eyebrow">Интерфейс</div><h2>Панель системы коллекций</h2></div>
       <span>Нажмите на изображение, чтобы увеличить</span>
@@ -55,12 +57,12 @@
   </section>
 
   <section class="collection-stats" aria-label="Основные возможности системы">
-    <article><strong>18</strong><span>категорий, включая сезонную</span></article>
+    <article><strong>17</strong><span>категорий в этом разделе</span></article>
     <article><strong>∞</strong><span>коллекционных предметов</span></article>
     <article><strong>1</strong><span>единая виртуальная панель</span></article>
   </section>
 
-  <section class="card info-card collection-catalog">
+  <section class="card info-card collection-catalog" id="collection-categories">
     <div class="collection-eyebrow">Доступные направления</div>
     <h2>Категории коллекций</h2>
     <p class="collection-catalog__lead">На данный момент в системе доступны следующие категории:</p>
@@ -83,7 +85,6 @@
       <li>Коллекция кроссовок №3</li>
       <li>Коллекция квестовых кроссовок</li>
       <li>Коллекция рун</li>
-      <li><a href="/halloween-collection/">Хэллоуинские маски</a> — только в период Хэллоуина</li>
     </ol>
   </section>
 
@@ -98,7 +99,7 @@
   <img class="img-modal__image" src="/images/collector_system/collector_system.png" alt="Увеличенный интерфейс системы коллекций YourWorld">
 </div>
 
-<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><img src="/images/ywlogo.png" alt="YourWorld"><span>YourWorld</span></div><p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p></div><div class="footer-links"><a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a><a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a><a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a><a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a></div></div><div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div></footer>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><div class="footer-logo"><img src="/images/ywlogo.png" alt="YourWorld"><span>YourWorld</span></div><p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p></div><div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a><a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a><a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a><a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a><a href="https://dayzmagazine.ru/" target="_blank" rel="noopener">Магазин</a></div></div><div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div></footer>
 <script src="/site.js"></script>
 <script>
   (() => {

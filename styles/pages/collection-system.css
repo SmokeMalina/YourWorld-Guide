@@ -245,3 +245,27 @@
   .collection-hotkey { min-width: 0; }
   .collection-preview__head { align-items: start; flex-direction: column; }
 }
+
+/* Collection system: compact glass guide and category directory. */
+.page-collection-system .collection-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.page-collection-system .collection-nav a { display: inline-flex; min-height: 44px; align-items: center; padding: 8px 16px; border: 1px solid #ffffff24; border-radius: 8px; background: #080808a0; color: #ddd; font-size: 14px; text-decoration: none; }
+.page-collection-system .collection-nav a:hover { border-color: #ff850060; color: #ff9c38; }
+.page-collection-system section[id] { scroll-margin-top: 16px; }
+.page-collection-system :is(.collection-hotkey,.collection-stats article,.collection-list li) { border-radius: 10px; border-color: #ffffff20; background: linear-gradient(135deg,#ffffff04,transparent),#080808a0; }
+.page-collection-system .collection-hotkey { min-width: 210px; border-color: #ff850040; }
+.page-collection-system .collection-hotkey kbd { border-radius: 8px; font-weight: 500; color: #ff9c38; }
+.page-collection-system .collection-stats strong { font-size: 32px; line-height: 40px; font-weight: 500; color: #ff9c38; }
+.page-collection-system .collection-stats span { font-size: 14px; line-height: 22px; font-weight: 400; }
+.page-collection-system .collection-preview__zoom { border-radius: 10px; border-color: #ffffff20; background: #0005; }
+.page-collection-system .collection-preview img { max-height: 400px; object-fit: contain; }
+.page-collection-system .collection-list { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.page-collection-system .collection-list li { display: flex; flex-wrap: wrap; align-content: center; min-height: 80px; padding: 12px 16px 12px 48px; font-size: 14px; line-height: 22px; }
+.page-collection-system .collection-list li::before { border: 0; background: transparent; left: 12px; width: 24px; font-size: 12px; color: #ff9c38; font-weight: 500; }
+.page-collection-system .collection-list a { font-weight: 500; color: #ffb36b; }
+.page-collection-system .collection-list li:has(a):hover { border-color: #ff850050; background: #ff85000c; }
+.page-collection-system .collection-list a::after { content: ' ↗'; color: #ff9c38; }
+.page-collection-system .collection-list__seasonal small { flex-basis: 100%; color: #aaa; font-size: 12px; line-height: 18px; }
+.page-collection-system .collection-note { border: 1px solid #ff850030; border-radius: 10px; background: #ff850008; }
+.page-collection-system .collection-eyebrow { font-weight: 500; color: #ff9c38; }
+@media(max-width: 950px) { .page-collection-system .collection-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width: 580px) { .page-collection-system .collection-list { grid-template-columns: minmax(0,1fr); } .page-collection-system .collection-list li { min-height: 56px; } }

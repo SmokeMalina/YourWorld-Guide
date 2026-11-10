@@ -1,0 +1,31 @@
+/* Shared glass styling for gameplay guides. */
+.field-guide-refresh :is(.stash-level-card,.stash-safe-card,.stash-card,.p2p-faq-item,.grow-steps li,.brodyaga-type-card,.brodyaga-location-card) { background: linear-gradient(135deg,#ffffff04,transparent),#080808a0; border: 1px solid #ffffff20; border-radius: 10px; box-shadow: none; }
+.field-guide-refresh .info-note { background: #ff85000c; border: 1px solid #ff9c3833; border-radius: 8px; color: #e9d5c0; padding: 16px; line-height: 1.6; }
+.field-guide-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.field-guide-nav a,.field-guide-refresh .bbp-jump-link { border: 1px solid #ffffff20; border-radius: 8px; background: #080808a0; color: #ddd; padding: 12px 16px; text-decoration: none; font-size: 14px; font-weight: 500; }
+.field-guide-nav a:hover,.field-guide-refresh .bbp-jump-link:hover { border-color: #ff9c3860; color: #ffad59; background: #ff850012; }
+.field-guide-refresh h2[id] { scroll-margin-top: 24px; }
+.field-guide-refresh .stash-level-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
+.field-guide-refresh .stash-level-card { text-align: left; padding: 16px; }
+.field-guide-refresh .stash-level-card h3 { font-size: 16px; font-weight: 500; }
+.field-guide-refresh .stash-level-card p { font-size: 13px; }
+.field-guide-refresh .stash-level-card strong { display: block; border-top: 1px solid #ffffff18; padding-top: 12px; font-size: 24px; color: #ffad59; font-variant-numeric: tabular-nums; }
+.field-guide-refresh .stash-safe-card h3 { text-align: left; color: #ffad59; font-weight: 500; }
+.field-guide-refresh .stash-safe-pair { grid-template-columns: 1fr .65fr; align-items: center; }
+.field-guide-refresh .stash-safe-pair .stash-card { border: 0; background: transparent; }
+.field-guide-refresh .stash-card img { filter: drop-shadow(0 4px 8px #0005); }
+.field-guide-refresh .stash-card--key img { height: 120px; }
+.field-guide-refresh .grow-steps li { padding: 16px 16px 16px 52px; line-height: 1.6; }
+.field-guide-refresh .grow-steps li::before { border-radius: 6px; color: #ffad59; background: #ff850014; }
+.field-guide-refresh .p2p-faq { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.field-guide-refresh .p2p-faq-item { padding: 20px; gap: 8px; line-height: 1.6; }
+.field-guide-refresh .p2p-faq-item strong { color: #ffad59; font-weight: 500; }
+.field-guide-refresh .brodyaga-type-card { padding: 20px; }
+.field-guide-refresh .brodyaga-type-card img { background: transparent; border: 0; border-radius: 0; height: 240px; object-fit: contain; }
+.field-guide-refresh :is(.brodyaga-type-card,.brodyaga-location-card) h3 { color: #ffad59; font-size: 18px; font-weight: 500; }
+.field-guide-refresh .brodyaga-location-card { padding: 16px; }
+.field-guide-refresh .brodyaga-location-card .info-shot { background: transparent; border: 0; border-radius: 6px; overflow: hidden; }
+.field-guide-refresh .brodyaga-location-card .info-shot img { border-radius: 6px; }
+.field-guide-refresh .view-btn { border-radius: 8px; }
+@media(max-width:800px) { .field-guide-refresh .stash-level-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media(max-width:540px) { .field-guide-refresh .stash-level-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .field-guide-refresh .stash-safe-grid,.field-guide-refresh .p2p-faq { grid-template-columns: 1fr; } }
