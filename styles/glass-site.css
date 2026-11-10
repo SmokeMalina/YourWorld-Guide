@@ -1,0 +1,238 @@
+/* Shared material and controls. Page CSS retains layouts and game-specific states. */
+body.site-glass {
+  --bg: #090909; --text: #eeeeee; --muted: #b7b7b7;
+  --accent: #ff922e; --accent2: #ffb976;
+  --card: #0b0b0bbd; --card2: #ffffff06;
+  --b1: #ffffff1c; --b2: #ffffff26; --b3: #ffad6240;
+  --r-lg: 12px; --r-md: 9px; --r-sm: 7px;
+  --glow: #ff922e14; --glow-strong: #ff922e1c;
+  --shadow-soft: 0 14px 30px -20px #000d;
+  --shadow-deep: 0 20px 44px -20px #000d;
+  background: var(--bg); color: var(--text); isolation: isolate; animation: none;
+  scrollbar-color: #795638 #101010;
+}
+body.site-glass::before {
+  content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background: url('/images/backgrounds/misty-castle.png') center bottom / cover no-repeat;
+  opacity: .5;
+}
+body.site-glass::after {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 3% 8%,#ff790038,transparent 55%),radial-gradient(ellipse at 97% 78%,#ff850026,transparent 52%),linear-gradient(180deg,#09090918,#09090945);
+}
+.site-glass ::selection { background: #ffad6240; color: #fff; }
+.site-glass :is(a,button,input,select,summary,[tabindex]):focus-visible { outline: 2px solid #ffb976; outline-offset: 3px; }
+.site-glass :is(input,textarea) { caret-color: #ffad62; }
+.site-glass h1 { font-weight: 600; letter-spacing: -.025em; line-height: 1.15; text-wrap: balance; }
+.site-glass h2 { font-weight: 600; letter-spacing: -.015em; line-height: 1.3; }
+.site-glass .wrap { padding-bottom: 56px; }
+.site-glass .page-top { gap: 12px; flex-wrap: wrap; padding: 10px 0; }
+.site-glass .breadcrumbs { min-width: 0; flex-wrap: wrap; font-size: 13px; line-height: 1.5; }
+.site-glass .crumb-current { color: #eee; }
+/* Existing hero variants have high-specificity selectors; only their material changes. */
+.site-glass .wrap .hero,
+.site-glass .item-hero {
+  border: 1px solid #ffffff20; border-top-color: #ffffff35; border-radius: 12px;
+  background: linear-gradient(115deg,#ff8a0010,transparent 65%),#090909b5 !important;
+  box-shadow: inset 0 1px 0 #ffffff05,0 20px 40px -28px #000d;
+}
+.site-glass .item-hero { padding: 22px; gap: 22px; margin-bottom: 24px; }
+.site-glass .item-hero__img { background: none; border: 0; box-shadow: none; border-radius: 0; object-fit: contain; }
+.site-glass .hero .hero-logo { background: none; border: 0; border-radius: 0; box-shadow: none; }
+.site-glass .hero p { color: #cecece; }
+/* Container materials, including all catalog families. Never change display here. */
+.site-glass :is(
+  .card,.info-card,.tile,.seed-tile,.recycle-card,.recycle-side,.resource-craft-item,
+  .weapon-db-card,.weapon-db-panel,.weapon-db-detail,.weapon-sheet,.weapon-detail-block,.weapon-magazine-card,
+  .arsenal-weapon-card,.arsenal-color-card,.vehicle-card,.melee-card,.outfit-card,.outfit-panel,.outfit-detail-card,
+  .dungeon-card,.dungeon-note,.dungeon-overview__content,.dungeon-booking,.dungeon-pass-card,.teleport-card,
+  .events-detail,.events-crate-card,.events-related-card,.events-related-variant-card,
+  .lootbox-entry,.collector-item,.collection-list,.collection-note,.collection-stats,.achievement-item,
+  .battle-pass-type-card,.battle-pass-item-card,.battle-pass-shop-card,.battle-pass-limit-card,
+  .bbp-card,.bbp-decor-board,.brodyaga-type-card,.brodyaga-location-card,
+  .connect-step-card,.connect-help-card,.crystal-product,.exchange-currency-block,.exchange-list-card,.exchange-note-card,
+  .faq-item,.faq-filters,.rules-group,.rules-nav,.furniture-item,.fishing-item,.fishing-bait,.fishing-rod,.fishing-special,
+  .hooch-flow-card,.hooch-conditions,.hooch-result,.grow-steps,.mining-panel,.mining-item-card,.mining-fuel-card,.mining-runtime-card,
+  .quests-overview,.quests-reward-card,.quests-unlock-card,.quests-panel-access,.p2p-faq-item,
+  .repair-barrel-copy,.shron-card,.shron-guide-card,.shron-level-card,.starter-item,.starter-limit,.starter-reminder,
+  .stash-card,.stash-level-card,.stash-safe-card,.teleports-card,.vote-card,.hw-source
+) {
+  border-color: #ffffff1c; border-top-color: #ffffff30; border-radius: 10px;
+  background: linear-gradient(135deg,#ffffff08,transparent 58%),#090909b0;
+  box-shadow: inset 0 1px 0 #ffffff05,0 14px 28px -20px #000d;
+}
+.site-glass .tile { will-change: auto; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.site-glass .tile:hover { transform: none; border-color: #ff9a4b70; background: linear-gradient(135deg,#ff8a001c,transparent 70%),#0c0c0cbd; box-shadow: 0 18px 34px -20px #000e; }
+.site-glass .tile img { border: 0; border-radius: 0; background: none; filter: none; }
+.site-glass .tile span { color: #ffb16d; font-weight: 500; }
+.site-glass :is(.item-row,.craft-component-slot,.mining-component-row,.mining-recipe__item-card,.mining-recipe__result,.weapon-db-stat,.weapon-spec,.vehicle-card__meta-block,.melee-card__stat,.outfit-slot-item,.furniture-slot,.hooch-ing,.bbp-control) {
+  border-color: #ffffff18; border-radius: 8px; background: #ffffff04; box-shadow: none;
+}
+.site-glass :is(.search-input,.faq-search,.crystal-shop-search) { border-color: #ffffff26; border-radius: 8px; background: #080808bd; color: #eee; }
+.site-glass :is(.search-input,.faq-search,.crystal-shop-search)::placeholder { color: #aaa; }
+.site-glass .search-dropdown { border-color: #ffffff2b; border-radius: 10px; background: #101010f5; box-shadow: 0 14px 36px #0008; }
+/* Shared actions and tab surfaces. Active states below preserve selection feedback. */
+.site-glass :is(.back-btn,.view-btn,.recycler-info-btn,.lootbox-rewards-btn,.dungeon-card__action,.furniture-item__open,.starter-action,.error-action,.hw-button,.halloween-nav a,.bbp-jump-link,.arsenal-jump-link) {
+  border-color: #ffad6240; border-radius: 8px; background: #ff922e0e; color: #ffb976;
+}
+.site-glass :is(.back-btn,.view-btn,.recycler-info-btn,.lootbox-rewards-btn,.dungeon-card__action,.furniture-item__open,.starter-action,.error-action,.hw-button):hover { border-color: #ffad6277; background: #ff922e20; }
+.site-glass :is(.arsenal-tab,.weapon-db-tab,.vehicle-db-tab,.melee-db-tab,.melee-db-subtab,.furniture-tab,.events-tab-btn,.events-map-btn,.outfit-filter-btn,.outfit-version-btn,.hooch-tab-btn,.fishing-map-tab,.fishing-filter__button,.crystal-shop-filter) {
+  border-color: #ffffff24; border-radius: 8px; background: #0a0a0ab8; color: #d0d0d0;
+}
+.site-glass :is(.arsenal-tab,.weapon-db-tab,.vehicle-db-tab,.melee-db-tab,.melee-db-subtab,.furniture-tab,.events-tab-btn,.events-map-btn,.outfit-filter-btn,.outfit-version-btn,.hooch-tab-btn,.fishing-map-tab,.fishing-filter__button,.crystal-shop-filter):is(.active,.is-active,[aria-selected="true"],[aria-pressed="true"]) {
+  color: #ffbd85; border-color: #ffad6266; background: linear-gradient(135deg,#ff922e26,#ff922e0b);
+}
+.site-glass :is(.img-modal__panel,.dungeon-modal__panel,.events-modal__panel,.reward-modal__panel,.teleports-modal__dialog,.crystal-item-dialog) {
+  border-color: #ffffff2b; border-radius: 14px; background: linear-gradient(135deg,#ff8a000c,transparent 60%),#0d0d0df5; box-shadow: 0 24px 70px #000b;
+}
+.site-glass :is(.img-modal__close,.img-modal__nav,.dungeon-modal__close,.events-modal__close,.reward-modal__close,.teleports-modal__close,.crystal-item-dialog__close,.crystal-item-dialog__arrow,.vehicle-viewer__nav,.melee-viewer__nav,.outfit-arrow,.outfit-detail-arrow) {
+  border-color: #ffad6240; border-radius: 8px; background: #151515e8; color: #ffb976;
+}
+.site-glass .site-search { --pf-border-radius: 8px; }
+.site-glass .site-search .pf-trigger-btn { background: #080808b8 !important; border-color: #ffffff26; }
+.site-glass .site-footer {
+  width: min(1068px,calc(100% - 32px)); margin: auto auto 24px; padding: 0;
+  border: 1px solid #ffffff1c; border-top-color: #ffffff32; border-radius: 14px;
+  background: radial-gradient(ellipse at 0% 0%,#ff8a0017,transparent 65%),linear-gradient(115deg,#111111b8,#060606bb);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 #ffffff06,0 20px 40px -24px #000d;
+}
+.site-glass .footer-inner { padding: 30px 28px 26px; gap: 24px; }
+.site-glass .footer-brand { gap: 10px; }
+.site-glass .footer-logo { gap: 12px; font-size: 22px; font-weight: 600; letter-spacing: -.01em; }
+.site-glass .footer-logo img { width: 48px; height: 48px; padding: 0; border: 0; border-radius: 0; background: none; filter: none; }
+.site-glass .footer-text { color: #bcbcbc; font-size: 13px; line-height: 1.6; }
+.site-glass .footer-links { gap: 8px; }
+.site-glass .footer-links a { display: flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 18px; border-radius: 8px; border-color: #ffffff20; background: linear-gradient(145deg,#ffffff07,transparent),#08080860; color: #ffae62; font-size: 13px; }
+.site-glass .footer-links a:hover { background: linear-gradient(120deg,#ff922e20,#ff922e09); border-color: #ffad6255; transform: none; }
+.site-glass .footer-bottom { margin: 0 28px; padding: 18px 0 20px; border-top-color: #ffffff12; font-size: 12px; color: #aaa; }
+.site-glass .scroll-top-btn { width: 46px; height: 46px; border-radius: 50%; border-color: #ffad6245; background: linear-gradient(145deg,#ffffff0c,transparent),#101010ed; backdrop-filter: blur(14px); color: #ffb976; box-shadow: 0 8px 24px #0006; }
+.site-glass .scroll-top-btn:hover { border-color: #ffad6290; background: #2b1b10ed; }
+@media (max-width:600px) {
+  .site-glass .wrap { padding-bottom: 36px; }
+  .site-glass .item-hero { padding: 16px; gap: 14px; }
+  .site-glass .site-footer { margin-bottom: 18px; border-radius: 11px; }
+  .site-glass .footer-inner { padding: 22px 18px; align-items: stretch; }
+  .site-glass .footer-links { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+  .site-glass .footer-bottom { margin: 0 18px; font-size: 11px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .site-glass { animation: none; }
+  .site-glass :is(.tile,.back-btn,.scroll-top-btn,.footer-links a) { transition: none; }
+  .site-glass .tile:hover { transform: none; }
+}
+
+/* Approved navigation and compact recipe components, 2026-11-10. */
+.site-glass .page-top {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0,1fr) auto;
+  gap: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-top-color: rgba(255,255,255,.22);
+  border-radius: 12px;
+  background: linear-gradient(110deg,rgba(255,148,51,.08),transparent 55%),rgba(10,11,12,.83);
+  box-shadow: inset 0 1px rgba(255,255,255,.035),0 10px 24px -16px #000;
+}
+.site-glass .page-top .back-btn {
+  width: 44px;
+  height: 44px;
+  color: #ffb35b;
+  background: rgba(255,170,70,.07);
+  border-color: rgba(255,170,70,.18);
+  border-radius: 8px;
+}
+.site-glass .page-top .back-btn:hover { background: rgba(255,170,70,.16); transform: none; }
+.site-glass .page-top .breadcrumbs { gap: 8px; font-size: 14px; }
+.site-glass .page-top .breadcrumbs a { color: #bdb6ac; }
+.site-glass .page-top .breadcrumbs a:hover { color: #ffb35b; }
+.site-glass .page-top .crumb-current { color: #f5eee5; }
+.site-glass .page-top .crumb-sep { color: #b18452; opacity: 1; }
+.site-glass .page-top .site-search--compact { width: auto; margin-left: 0; --pf-input-height: 44px; }
+.site-glass .page-top .site-search .pf-trigger-btn {
+  min-height: 44px;
+  background: rgba(255,170,70,.07) !important;
+  border: 1px solid rgba(255,170,70,.18) !important;
+  border-radius: 8px;
+  color: #ead8c2;
+}
+.site-glass .page-top .site-search .pf-trigger-icon { background: #ffb35b !important; color: #ffb35b !important; }
+.site-glass .page-top .site-search .pf-trigger-btn:hover { background: rgba(255,170,70,.16) !important; }
+@media (max-width: 640px) {
+  .site-glass .page-top { gap: 10px; grid-template-columns: 44px minmax(0,1fr); }
+  .site-glass .page-top .breadcrumbs { grid-column: 1 / -1; grid-row: 2; padding: 4px 6px; font-size: 13px; }
+  .site-glass .page-top .site-search--compact { grid-column: 2; grid-row: 1; justify-self: end; }
+}
+.site-glass .card:has(> .item-list) {
+  margin-top: 32px;
+}
+.site-glass .card:has(> .item-list) h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+.site-glass .item-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.site-glass .item-row {
+  position: relative;
+  min-width: 0;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255,255,255,.055), transparent 42%), radial-gradient(ellipse at 50% 28%, rgba(212,120,39,.12), transparent 66%), rgba(10,11,12,.72);
+  box-shadow: inset 0 1px rgba(255,255,255,.04), 0 12px 28px rgba(0,0,0,.16);
+  backdrop-filter: blur(12px);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.site-glass .item-row:hover {
+  border-color: rgba(255,170,70,.5);
+  background-color: rgba(42,29,17,.8);
+}
+.site-glass .item-row img {
+  display: block;
+  width: 100%;
+  height: 104px;
+  object-fit: contain;
+  margin: 20px auto 16px;
+  filter: drop-shadow(0 12px 12px rgba(0,0,0,.45));
+}
+.site-glass .item-row > span {
+  display: block;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  color: #f4f0e9;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.site-glass .item-row > b {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffb35b;
+  background: rgba(9,10,11,.72);
+  border: 1px solid rgba(255,170,70,.22);
+  border-radius: 7px;
+  padding: 4px 8px;
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.site-glass .card:has(> .item-list) { padding: 0; border: 0; background: none; box-shadow: none; }
+.site-glass .item-list > .item-row { display: block; border-bottom: 1px solid rgba(255,255,255,.15); }
+.site-glass .item-row img { padding: 0; border: 0; border-radius: 0; background: none; }
+.site-glass .item-row:hover img { transform: none; }
+.site-glass .item-row > span { min-height: 56px; overflow-wrap: anywhere; }
+.site-glass .page-top:not(:has(.back-btn)) { grid-template-columns: minmax(0,1fr) auto; }
+@media (max-width: 1000px) { .site-glass .item-list { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+@media (max-width: 780px) { .site-glass .item-list { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 540px) { .site-glass .item-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (prefers-reduced-motion: reduce) { .site-glass .item-row { transition: none; } }

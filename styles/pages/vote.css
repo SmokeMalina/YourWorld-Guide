@@ -36,3 +36,14 @@
     .vote-link-row {
       margin-top: 16px;
     }
+
+.vote-flow { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; list-style:none; padding:0; margin:24px 0; }
+.vote-flow li { position:relative; padding:16px; border:1px solid #ff9c3838; border-radius:10px; background:#ff85000c; }
+.vote-flow li:not(:last-child)::after { content:'→'; position:absolute; right:-21px; top:24px; color:#ffad59; }
+.vote-flow strong,.vote-flow span { display:block; }
+.vote-flow strong { color:#ffad59; font-size:20px; font-weight:600; }
+.vote-flow span { margin-top:8px; font-size:14px; color:#ccc; }
+.vote-instructions { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.vote-instructions .vote-card:last-child { grid-column:1/-1; }
+.vote-instructions h3 { color:#ffad59; }
+@media(max-width:640px) { .vote-flow,.vote-instructions { grid-template-columns:1fr; } .vote-flow { gap:24px; } .vote-flow li:not(:last-child)::after { content:'↓'; right:auto; left:24px; top:auto; bottom:-23px; } }

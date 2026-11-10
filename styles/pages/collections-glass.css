@@ -1,0 +1,46 @@
+/* Shared layout for active collections. */
+.collections-glass .wrap { max-width: 1200px; }
+.collection-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: 20px 0; font-size: 14px; }
+.collection-nav span { color: #aaa; margin-right: auto; }
+.collection-nav a { color: #ffad59; text-underline-offset: 4px; }
+.collection-summary { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; border: 1px solid #ff9c3838; border-radius: 12px; overflow: hidden; margin-bottom: 16px; background: #ffffff15; }
+.collection-summary > div { display: flex; flex-direction: column; gap: 8px; padding: 24px; background: linear-gradient(120deg,#ff85000a,transparent),#10100ff5; }
+.collection-summary strong { color: #ffad59; font-size: 32px; font-weight: 500; line-height: 1.2; }
+.collection-summary span { color: #ccc; font-size: 14px; }
+.collections-glass .collection-source { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: center; padding: 24px; }
+.collection-source > img { width: 100%; height: 160px; object-fit: contain; }
+.collection-source .info-text + .info-text { margin-top: 12px; }
+.collections-glass .collector-highlight-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-top: 20px; }
+.collections-glass .collector-highlight { margin: 0; padding: 20px; border: 1px solid #ffffff20; border-radius: 10px; background: linear-gradient(135deg,#ffffff04,transparent),#080808a0; }
+.collections-glass .collector-highlight img { width: 100%; height: 180px; max-width: none; object-fit: contain; border: 0; background: transparent; border-radius: 0; filter: brightness(1.15) drop-shadow(0 8px 12px #0005); }
+.collections-glass .collector-highlight figcaption { padding-top: 16px; border-top: 1px solid #ffffff18; color: #ffad59; text-align: left; font-size: 18px; font-weight: 500; }
+.collections-glass .info-note { border: 1px solid #ff9c3833; border-radius: 8px; padding: 16px; background: #ff85000c; color: #e9d5c0; line-height: 1.6; }
+.collections-glass .grow-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.collections-glass .grow-steps li { border-radius: 8px; background: #080808a0; padding: 16px 16px 16px 48px; line-height: 1.6; }
+.collections-glass .grow-steps li::before { color: #ffad59; background: #ff850018; border-radius: 6px; }
+.collections-glass .collector-catalog { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; }
+.collections-glass .collector-item { display: flex; flex-direction: column-reverse; gap: 12px; padding: 12px; border: 1px solid #ffffff20; border-radius: 10px; background: #080808a0; margin: 0; }
+.collections-glass .collector-item img { width: 100%; height: 156px; object-fit: contain; border: 0; background: transparent; padding: 0; border-radius: 0; }
+.collections-glass .collector-item__num { position: static; border: 0; border-radius: 0; background: transparent; padding: 0; color: #bbb; font-size: 13px; font-weight: 500; }
+.collections-glass h2[id] { scroll-margin-top: 24px; }
+@media(max-width:800px) { .collections-glass .collector-catalog { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media(max-width:580px) { .collection-summary > div { padding: 14px 10px; } .collection-summary strong { font-size: 24px; } .collection-summary span { font-size: 12px; line-height: 1.4; } .collections-glass .collection-source { grid-template-columns: 1fr; gap: 12px; } .collection-source > img { height: 120px; } .collections-glass .collector-highlight-grid,.collections-glass .grow-steps { grid-template-columns: 1fr; } .collections-glass .collector-catalog { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+.collections-glass .collector-feature-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:20px; }
+.collections-glass .collector-feature-card { padding:0; border:0; background:none; }
+.collections-glass .collector-feature-card > .collector-highlight { height:100%; box-sizing:border-box; }
+.collections-glass .collection-source-wide .collector-feature-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.collections-glass .collector-highlight__meta { color:#aaa; font-size:12px; margin-bottom:6px; }
+.collections-glass .collection-vehicle-gallery { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:20px; }
+.collections-glass .collection-vehicle-gallery .collector-highlight { padding:8px; }
+.collections-glass .collection-vehicle-gallery .collector-highlight:first-child { grid-column:1/-1; }
+.collections-glass .collection-vehicle-gallery .collector-highlight img { height:120px; filter:none; }
+.collections-glass .collection-vehicle-gallery .collector-highlight:first-child img { height:360px; }
+.collections-glass #vehicle-collector-catalog .collector-item { flex-direction:column; }
+.collections-glass .collector-item figcaption { color:#ddd; font-size:14px; line-height:1.45; margin:0; padding:12px 0 0; border-top:1px solid #ffffff18; }
+.collections-glass .collection-cash { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; padding:24px; margin-top:20px; border:1px solid #ff9c3840; border-radius:10px; background:linear-gradient(110deg,#ff850018,transparent); }
+.collections-glass .collection-cash strong { font-size:clamp(32px,5vw,48px); color:#ffad59; font-weight:500; }
+.collections-glass .collection-cash span { color:#ddd; }
+.collections-glass .collection-summary strong { overflow-wrap:anywhere; }
+@media(max-width:800px) { .collections-glass .collection-source-wide .collector-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:580px) { .collections-glass .collector-feature-grid { grid-template-columns:1fr; } .collections-glass .collection-vehicle-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } .collections-glass .collection-vehicle-gallery .collector-highlight:first-child img { height:200px; } .collections-glass .collection-source-wide .collector-highlight { padding:12px; } .collections-glass .collection-source-wide .collector-highlight img { height:120px; } }

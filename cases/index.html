@@ -20,8 +20,10 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
   <link rel='stylesheet' href='/styles/pages/cases.css'>
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/mechanics-refresh.css?v=20261111">
 </head>
-<body class="page-lootbox">
+<body class="mechanics-refresh page-lootbox site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -45,16 +47,7 @@
     <p class="info-note">При открытии кейса награда падает в виртуальный инвентарь и может храниться там бесконечно.</p>
   </div>
 
-  <section class="card info-card lootbox-entry halloween-case-card" id="halloween-case" aria-labelledby="halloween-case-title">
-    <h2 id="halloween-case-title">Хэллоуинский кейс</h2>
-    <img class="lootbox-entry__media" src="/images/cases/hw_case.png" alt="Хэллоуинский кейс" data-zoomable="true">
-    <p class="lootbox-currency"><img src="/images/hw/hw_coin.png" alt="Монета HW coin" width="40" height="40"> <span>Стоимость:</span> <strong>1 HW coin</strong></p>
-    <p class="halloween-case-card__limit">Этот кейс можно приобрести только один раз.</p>
-    <div class="lootbox-entry__actions">
-      <button class="lootbox-rewards-btn" type="button" data-reward-target="halloween-case-rewards">Возможные награды</button>
-    </div>
-    <a class="halloween-case-card__link" href="/halloween/">К хэллоуинскому ивенту</a>
-  </section>
+
 
   <section class="card info-card">
     <h2>Кейсы за время</h2>
@@ -129,6 +122,17 @@
           <button class="lootbox-rewards-btn" type="button" data-reward-target="dollar-case-6-rewards">Возможные награды</button>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section class="card info-card lootbox-entry halloween-case-card" id="halloween-case" aria-labelledby="halloween-case-title">
+    <p class="season-status"><strong>Сейчас неактивен</strong><span>Актуален только в период проведения события «Хэллоуин».</span></p>
+    <h2 id="halloween-case-title">Хэллоуинский кейс</h2>
+    <img class="lootbox-entry__media" src="/images/cases/hw_case.png" alt="Хэллоуинский кейс" data-zoomable="true">
+    <p class="lootbox-currency"><img src="/images/hw/hw_coin.png" alt="Монета HW coin" width="40" height="40"> <span>Стоимость:</span> <strong>1 HW coin</strong></p>
+    <p class="halloween-case-card__limit">Этот кейс можно приобрести только один раз.</p>
+    <div class="lootbox-entry__actions">
+      <button class="lootbox-rewards-btn" type="button" data-reward-target="halloween-case-rewards">Возможные награды</button>
     </div>
   </section>
 
@@ -437,7 +441,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

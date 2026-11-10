@@ -19,8 +19,10 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/collections-glass.css?v=20261111">
 </head>
-<body class="page-collection">
+<body class="collections-glass page-collection site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -40,18 +42,8 @@
     </div>
   </div>
 
-  <section class="card info-card">
-    <h2>Описание</h2>
-    <ul class="info-list">
-      <li>Коллекция включает в себя 100 карточек.</li>
-      <li>Доступно 4 вида лутбоксов со случайной карточкой.</li>
-      <li>Карточки можно складывать в виртуальную <a href="/collection-system/">систему коллекций</a>.</li>
-    </ul>
-  </section>
-
-  <section class="card info-card">
-    <h2>Виды лутбоксов</h2>
-    <div class="collector-feature-grid">
+<nav class="collection-nav" aria-label="Разделы коллекции"><a href="#collection-source">Где искать ↓</a><a href="#collection-rewards">Награда ↓</a><a href="#collection-cards">Каталог коллекции ↓</a></nav>
+<section class="collection-summary" aria-label="Условия коллекции"><div><strong>100</strong><span>карточек в полном наборе</span></div><div><strong>4 вида</strong><span>рыболовных лутбоксов</span></div><div><strong>2500 ₽</strong><span>на баланс сайта за набор</span></div></section><section class="card info-card collection-source-wide"><h2 id="collection-source">Где собирать карточки</h2><p class="info-text">Лутбоксы выпадают при ловле рыбы. В каждом находится случайная рыбная карточка.</p><p class="info-text">Вносите находки в виртуальную <a href="/collection-system/">систему коллекций</a>, чтобы отслеживать прогресс набора и получить награду.</p>    <div class="collector-feature-grid">
       <article class="collector-feature-card">
         <figure class="collector-highlight collector-highlight--plain">
           <img src="/images/fish_card_collector/fish_card_lootbox_1.png" alt="Морская рыба">
@@ -78,23 +70,14 @@
       </article>
     </div>
   </section>
-
   <section class="card info-card">
-    <h2>Где искать карточки</h2>
-    <ul class="info-list">
-      <li>Карточки выпадают из специальных рыболовных лутбоксов.</li>
-      <li>Лутбоксы выпадают при ловле рыбы.</li>
-    </ul>
-  </section>
-
-  <section class="card info-card">
-    <h2>Что даёт полная коллекция</h2>
+    <h2 id="collection-rewards">Награда за полную коллекцию</h2>
     <p class="info-text">После того как вы внесёте в систему коллекций все 100 карточек, полная коллекция будет закрыта и её можно будет обменять на награду.</p>
-    <p class="info-note">Награда за полную коллекцию — 2500 ₽ на баланс сайта.</p>
+    <div class="collection-cash"><strong>2500 ₽</strong><span>на баланс сайта за полную коллекцию</span></div>
   </section>
 
   <section class="card info-card">
-    <h2>Полная коллекция</h2>
+    <h2 id="collection-cards">Все 100 карточек</h2>
     <p class="info-note">Ниже показаны все 100 рыбных карточек, которые входят в полную коллекцию.</p>
     <div class="collector-catalog" id="fish-collector-catalog"></div>
   </section>
@@ -109,7 +92,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
@@ -128,7 +111,7 @@
       const card = document.createElement("figure");
       card.className = "collector-item";
       card.innerHTML = `
-        <div class="collector-item__num">№${i}</div>
+        <div class="collector-item__num">Карточка ${String(i).padStart(2, "0")}</div>
         <img src="/images/fish_card_collector/fish_card_${i}.png" alt="Рыбная карточка ${i}">
       `;
       root.appendChild(card);

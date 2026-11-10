@@ -1,0 +1,85 @@
+.events-glass .hero .muted { max-width: 580px; }
+.events-glass .events-map-switch { margin-top: 12px; }
+.events-glass .events-claim { margin-top: 16px; border-top: 1px solid #ffffff18; padding-top: 12px; }
+.events-glass .events-claim summary { width: fit-content; cursor: pointer; color: #ff9c38; font-size: 14px; line-height: 24px; }
+.events-glass .events-auto-note { margin-top: 12px; background: #ff850008; border-radius: 10px; }
+.events-glass .events-map-panel.is-active { grid-template-columns: 224px minmax(0, 1fr); align-items: start; gap: 20px; }
+.events-glass .events-tabs-wrap { padding: 12px; position: sticky; top: 16px; }
+.events-glass .events-nav-title { margin: 4px 8px 16px; font-size: 14px; line-height: 20px; font-weight: 500; color: #aaa; }
+.events-glass .events-tabs { flex-direction: column; gap: 4px; }
+.events-glass .events-tab-btn { display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; padding: 12px; min-height: 48px; background: transparent; border: 1px solid transparent; font-size: 14px; line-height: 20px; font-weight: 500; color: #d0d0d0; }
+.events-glass .events-tab-btn > span:last-child { opacity: 0; color: #ff9c38; }
+.events-glass .events-tab-btn.is-active > span:last-child { opacity: 1; }
+.events-glass .events-tab-btn.is-active { color: #ff9c38; background: linear-gradient(100deg,#ff85001f,#ff850006); border-color: #ff85004a; }
+.events-glass .events-tab-btn:hover { background: #ffffff08; transform: none; }
+.events-glass .events-detail { padding: 24px; gap: 24px; }
+.events-glass .events-detail__head { padding-bottom: 16px; border-bottom: 1px solid #ffffff14; }
+.events-glass .events-detail__head h2 { font-size: 30px; line-height: 36px; font-weight: 600; }
+.events-glass .events-detail__tag { border-radius: 8px; color: #ff9c38; font-size: 12px; line-height: 20px; padding: 4px 8px; }
+.events-glass .events-detail__overview { display: grid; grid-template-columns: minmax(0,1fr); gap: 20px; }
+.events-glass .events-detail__preview { grid-row: 1; }
+.events-glass .events-detail__preview img { aspect-ratio: 16/7; max-height: 310px; object-fit: cover; border-radius: 10px; }
+.events-glass .events-detail__text { gap: 12px; }
+.events-glass .events-detail__text h3, .events-glass .events-detail__related h3 { font-size: 18px; line-height: 28px; font-weight: 500; }
+.events-glass .events-detail__description-list { list-style: none; padding: 0; display: grid; gap: 12px; }
+.events-glass .events-detail__description-list li { margin: 0; padding-left: 16px; position: relative; font-size: 16px; line-height: 24px; }
+.events-glass .events-detail__description-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 4px; height: 4px; border-radius: 50%; background: #ff8500; }
+.events-glass .events-related-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; justify-content: start; }
+.events-glass .events-related-card { border-radius: 10px; padding: 12px; gap: 8px; align-content: start; }
+.events-glass .events-related-card img { width: 100%; height: 96px; max-height: 96px; margin: 0; padding: 0; border: 0; background: transparent; }
+.events-glass .events-related-card__kind { color: #ff9c38; font-size: 12px; line-height: 16px; font-weight: 500; text-transform: none; letter-spacing: 0; }
+.events-glass .events-related-card h4 { font-size: 16px; line-height: 24px; font-weight: 500; }
+.events-glass .events-related-card p { font-size: 14px; line-height: 22px; }
+.events-glass :is(.events-related-pair__main,.events-related-pair__sub,.events-related-variant-card,.events-crate-card) { border-radius: 10px; background: #0004; }
+.events-glass :is(.events-related-pair img,.events-related-variant-card__gallery img,.events-crate-card__requirement img) { border: 0; background: transparent; border-radius: 8px; }
+.events-glass .events-related-grid--paired, .events-glass .events-related-grid--list-split { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.events-glass .events-related-grid--list { grid-template-columns: minmax(0,1fr); }
+.events-glass .events-related-variant-card--single { grid-template-columns: 120px minmax(0,1fr); }
+.events-glass .events-crate-card__main img { min-height: 0; height: 180px; border-radius: 8px; }
+.events-glass .events-crate-card__requirement img { height: 80px; }
+.events-glass .events-modal { z-index: 1200; }
+.events-glass:has(.events-modal:not([hidden])) .scroll-top-btn { visibility: hidden; }
+.events-glass button:focus-visible, .events-glass summary:focus-visible { outline: 2px solid #ff8500; outline-offset: 3px; }
+@media (max-width: 800px) {
+ .events-glass .events-map-panel.is-active { grid-template-columns: minmax(0,1fr); }
+ .events-glass .events-tabs-wrap { position: static; }
+ .events-glass .events-tabs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .events-glass .events-nav-title { margin-bottom: 8px; }
+ .events-glass .events-detail { padding: 16px; gap: 20px; }
+}
+@media (max-width: 480px) {
+ .events-glass .events-related-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .events-glass .events-related-grid--list, .events-glass .events-related-grid--list-split, .events-glass .events-related-grid--paired { grid-template-columns: minmax(0,1fr); }
+ .events-glass .events-detail__head h2 { font-size: 24px; line-height: 32px; }
+ .events-glass .events-detail__preview img { aspect-ratio: 16/10; }
+}
+.events-glass .events-tabs-wrap { border-radius: 12px; background: linear-gradient(135deg,#ff850008,transparent),#080808b8; border-color: #ffffff22; box-shadow: inset 0 1px #ffffff08; backdrop-filter: blur(16px); }
+.events-glass .events-detail__preview img { max-height: 250px; }
+.events-glass .events-related-variant-card--single { grid-template-columns: minmax(0,1fr) 96px; gap: 12px; }
+.events-glass .events-related-variant-card--single .events-related-variant-card__gallery { grid-template-columns: minmax(0,1fr); align-self: center; }
+.events-glass .events-related-variant-card__body p { font-size: 14px; line-height: 22px; }
+@media (max-width: 480px) { .events-glass .events-related-variant-card--single { grid-template-columns: minmax(0,1fr) 96px; } }
+.events-glass .events-detail { scroll-margin-top: 16px; }
+
+/* Each crate keeps its location and opening item together. */
+.events-glass .events-crate-grid { grid-template-columns: minmax(0,1fr); gap: 16px; }
+.events-glass .events-crate-card { grid-template-columns: minmax(0,1fr) 190px; padding: 16px; gap: 20px; align-items: center; }
+.events-glass .events-crate-card__main { grid-template-columns: minmax(140px, 1fr) minmax(0,1fr); gap: 16px; align-items: center; }
+.events-glass .events-crate-card__main img { height: 160px; min-height: 0; aspect-ratio: auto; object-fit: contain; background: #0004; }
+.events-glass .events-crate-card__description { display: grid; gap: 12px; }
+.events-glass .events-crate-card__main h4 { font-size: 18px; line-height: 26px; font-weight: 600; }
+.events-glass .events-crate-card__main p { font-size: 14px; line-height: 22px; color: #bbb; }
+.events-glass .events-crate-card__requirement { padding: 12px; border: 1px solid #ff850030; border-radius: 8px; background: #ff850008; gap: 8px; }
+.events-glass .events-crate-card__label { font-size: 12px; line-height: 20px; color: #ff9c38; }
+.events-glass .events-crate-card__requirement img { height: 64px; max-height: 64px; width: 100%; padding: 0; }
+.events-glass .events-crate-card__requirement h5 { font-size: 16px; line-height: 24px; font-weight: 500; }
+.events-glass .events-crate-card__requirement p { font-size: 13px; line-height: 20px; color: #bbb; }
+@media (max-width: 1050px) and (min-width: 801px), (max-width: 580px) {
+ .events-glass .events-crate-card { grid-template-columns: minmax(0,1fr); gap: 12px; }
+ .events-glass .events-crate-card__requirement { grid-template-columns: 64px minmax(0,1fr); column-gap: 12px; }
+ .events-glass .events-crate-card__requirement img { grid-column: 1; grid-row: 1 / span 3; align-self: center; }
+ .events-glass .events-crate-card__requirement :is(span,h5,p) { grid-column: 2; }
+}
+@media (max-width: 400px) {
+ .events-glass .events-crate-card__main { grid-template-columns: minmax(0,1fr); }
+}

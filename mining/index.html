@@ -20,8 +20,10 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
   <link rel='stylesheet' href='/styles/pages/mining.css'>
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/production-glass.css?v=20261111">
 </head>
-<body>
+<body class="site-glass page-mining">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -41,6 +43,7 @@
     </div>
   </div>
 
+<nav class="production-nav" aria-label="Разделы страницы"><a href="#production-components">Основные компоненты</a><a href="#production-assembly">Сборка компонентов</a><a href="#production-cards">Видеокарты и время работы</a><a href="#production-generators">Генераторы</a><a href="#production-fuel">Канистры</a></nav>
   <section class="card info-card">
     <h2>Что такое майнинг-ферма</h2>
     <div class="mining-overview">
@@ -58,7 +61,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Основные компоненты</h2>
+    <h2 id="production-components">Основные компоненты</h2>
     <div class="mining-component-grid">
       <article class="mining-panel mining-component-row">
         <img src="/images/mining/mining_kit.png" alt="Комплект майнинг-фермы">
@@ -92,7 +95,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Сборка компонентов</h2>
+    <h2 id="production-assembly">Сборка компонентов</h2>
     <div class="mining-build-grid">
       <article class="mining-panel mining-recipe">
         <h3 class="mining-recipe__title">Сборка полки вентиляторов</h3>
@@ -176,7 +179,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Видеокарты и время работы</h2>
+    <h2 id="production-cards">Видеокарты и время работы</h2>
     <div class="mining-runtime-grid">
       <article class="mining-panel mining-runtime-card">
         <img src="/images/items/videocard_2060.png" alt="BL-2060">
@@ -213,7 +216,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Генераторы</h2>
+    <h2 id="production-generators">Генераторы</h2>
     <div class="mining-runtime-grid">
       <article class="mining-panel mining-runtime-card">
         <img src="/images/items/generator_1.png" alt="Генератор V1">
@@ -239,7 +242,7 @@
   </section>
 
   <section class="card info-card">
-    <h2>Канистры</h2>
+    <h2 id="production-fuel">Канистры</h2>
     <div class="mining-fuel-grid">
       <article class="mining-panel mining-fuel-card">
         <img src="/images/items/canister_50.png" alt="Канистра 50 литров">
@@ -266,7 +269,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

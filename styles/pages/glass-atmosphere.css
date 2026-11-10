@@ -1,0 +1,94 @@
+/* Variant 2: independent atmosphere layer over the first glass preview. */
+.glass-atmosphere {
+  background: #090909;
+  isolation: isolate;
+}
+.glass-atmosphere::before {
+  content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background: url('/images/dungeons/Гремучий лес.png') center / cover no-repeat;
+  filter: grayscale(1) blur(3px); opacity: .25;
+}
+.glass-atmosphere::after {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 8% 10%, #ff74002c, transparent 48%), radial-gradient(ellipse at 95% 65%, #ff8a001a, transparent 43%), linear-gradient(180deg,#09090920,#0909099c);
+}
+.glass-atmosphere .glass-masthead {
+  position: relative; isolation: isolate; overflow: clip; margin: 6px 0 22px;
+  padding: 0 24px; border: 1px solid #ffffff18; border-top-color: #ffffff35;
+  border-radius: 12px;
+  background: linear-gradient(115deg,#121212b8,#08080873 65%,#20150d80);
+  backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+  box-shadow: inset 0 1px 0 #ffffff08,0 24px 50px -28px #000d;
+}
+.glass-atmosphere .glass-masthead::before {
+  content: ''; position: absolute; z-index: -1; width: 390px; height: 390px; top: -100px; right: 38px;
+  background: url('/images/ywlogo.png') center / contain no-repeat;
+  opacity: .38; transform: rotate(-16deg); pointer-events: none;
+  mask-image: linear-gradient(120deg,transparent 4%,#000 42%,#000 80%,transparent);
+}
+.glass-atmosphere .glass-masthead::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 90% 0%,#ff8a0029,transparent 58%),linear-gradient(0deg,#080808b8,transparent 75%);
+}
+.glass-atmosphere .hero { margin: 0; padding: 26px 0 22px; min-height: 132px; background: none; border: 0; box-shadow: none; backdrop-filter: none; }
+.glass-atmosphere .hero::before,.glass-atmosphere .hero::after,
+.glass-atmosphere .tile::before,.glass-atmosphere .tile::after { display: none; }
+.glass-atmosphere .hero-inner { position: relative; }
+.glass-atmosphere .hero-logo { width: 70.4px; height: 70.4px; flex-basis: 70.4px; }
+.glass-atmosphere h1 { text-shadow: 0 2px 16px #000a; }
+.glass-atmosphere .hero p { color: #cecece; }
+.glass-atmosphere .home-search { margin: 0; }
+.glass-atmosphere .site-search--inline { --pf-border-radius: 7px; }
+.glass-atmosphere .site-search--inline .pf-trigger-btn { background: #07070788 !important; border-color: #ffffff24; backdrop-filter: blur(10px); }
+.glass-atmosphere .glass-jump { margin: 10px 0 0; padding: 0 0 12px; gap: 6px; border: 0; background: none; backdrop-filter: none; }
+.glass-atmosphere .glass-jump a { min-height: 42px; padding: 0 14px; border: 1px solid transparent; border-radius: 7px; transition: background .18s ease, border-color .18s ease, color .18s ease; }
+.glass-atmosphere .glass-jump a:first-child { padding-left: 14px; }
+.glass-atmosphere .glass-jump a:hover, .glass-atmosphere .glass-jump a:focus-visible { background: linear-gradient(120deg,#ff922e20,#ff922e08); border-color: #ffad6240; color: #ffc28a; }
+.glass-atmosphere .glass-jump a:focus-visible { outline: 2px solid #ffb976; outline-offset: -2px; }
+.glass-atmosphere .tile {
+  border: 1px solid #ffffff1c; border-top-color: #ffffff38; border-radius: 9px;
+  background: linear-gradient(135deg,#ffffff09,transparent 58%),#0909099e;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 #ffffff06,0 14px 28px -20px #000e;
+}
+.glass-atmosphere .tile:hover { border-color: #ff9a4b70; background: linear-gradient(135deg,#ff8a001c,transparent 70%),#0c0c0cba; box-shadow: 0 18px 34px -20px #000e; }
+.glass-atmosphere .home-hero-tile:first-child { border-color: #ff9a4b48; background: linear-gradient(140deg,#ff8a001a,transparent 75%),#0a0a0aa0; }
+.glass-atmosphere .home-hero-tile__copy strong { color: #ffb16d; }
+.glass-atmosphere .home-section__head { background: none; border: 0; padding: 4px 0 12px; backdrop-filter: none; }
+.glass-atmosphere .home-section__head::before { width: 22px; height: 2px; background: #ff9a4b; }
+.glass-atmosphere .tile-grid .tile span { border-top-color: #ffffff14; border-radius: 0 0 8px 8px; background: linear-gradient(180deg,#00000012,#0000004d); }
+.glass-atmosphere .site-footer {
+  width: min(1176px,calc(100% - 64px)); margin: 0 auto 28px; padding: 0;
+  border: 1px solid #ffffff1c; border-top-color: #ffffff32; border-radius: 14px;
+  background: radial-gradient(ellipse at 0% 0%,#ff8a0017,transparent 65%),linear-gradient(115deg,#111111b8,#060606bb);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 #ffffff06,0 20px 40px -24px #000d;
+}
+.glass-atmosphere .footer-inner { padding: 30px 28px 26px; gap: 24px; }
+.glass-atmosphere .footer-brand { gap: 10px; }
+.glass-atmosphere .footer-logo { gap: 12px; font-size: 22px; }
+.glass-atmosphere .footer-logo img { width: 48px; height: 48px; }
+.glass-atmosphere .footer-text { color: #bcbcbc; }
+.glass-atmosphere .footer-links { gap: 8px; }
+.glass-atmosphere .footer-links a { min-height: 46px; padding: 10px 18px; border-radius: 8px; border-color: #ffffff20; background: linear-gradient(145deg,#ffffff07,transparent),#08080860; }
+.glass-atmosphere .footer-links a:hover { background: linear-gradient(120deg,#ff922e20,#ff922e09); border-color: #ffad6255; }
+.glass-atmosphere .footer-bottom { margin: 0 28px; padding: 18px 0 20px; border-top-color: #ffffff12; }
+.glass-atmosphere .scroll-top-btn { width: 46px; height: 46px; border-radius: 50%; border: 1px solid #ffad6245; background: linear-gradient(145deg,#ffffff0c,transparent),#101010c9; backdrop-filter: blur(14px); box-shadow: 0 8px 24px #0006; }
+.glass-atmosphere .scroll-top-btn:hover { border-color: #ffad6290; background: #2b1b10e6; }
+@media (max-width:600px) {
+  .glass-atmosphere .glass-masthead { padding: 0 14px; border-radius: 9px; margin-bottom: 18px; }
+  .glass-atmosphere .hero { padding: 22px 0 18px; min-height: 110px; }
+  .glass-atmosphere .hero-inner { gap: 9px; }
+  .glass-atmosphere .hero-logo { width: 39.6px; height: 39.6px; flex-basis: 39.6px; }
+  .glass-atmosphere h1 { font-size: 26px; gap: 8px; }
+  .glass-atmosphere .glass-wordmark-label { font-size: 10px; padding-left: 8px; }
+  .glass-atmosphere .glass-masthead::before { width: 270px; height: 270px; right: -105px; top: -62px; opacity: .24; }
+  .glass-atmosphere .glass-jump { display: grid; grid-template-columns: 1fr 1fr; }
+  .glass-atmosphere .glass-jump a { padding: 0 6px; font-size: 11px; }
+  .glass-atmosphere .glass-jump a:first-child { padding-left: 6px; }
+  .glass-atmosphere .site-footer { width: calc(100% - 36px); margin-bottom: 18px; border-radius: 11px; }
+  .glass-atmosphere .footer-inner { padding: 22px 18px; }
+  .glass-atmosphere .footer-bottom { margin: 0 18px; font-size: 11px; }
+  .glass-atmosphere .glass-preview-bar { align-items: flex-start; }
+  .glass-atmosphere .glass-preview-bar a { text-align: right; padding-top: 0; max-width: 140px; }
+}

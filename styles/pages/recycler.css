@@ -1,0 +1,20 @@
+.page-recycler .wrap { max-width: 1440px; }
+.page-recycler .recycler-grid-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px; padding: 16px; margin: 12px 0 20px; border: 1px solid #ff9c3840; border-radius: 8px; background: linear-gradient(110deg,#ff850018,#ff850006); font-size: 14px; line-height: 22px; color: #ccc; }
+.page-recycler .recycler-grid-note strong { font-size: 16px; font-weight: 500; color: #ffad59; }
+.page-recycler .recycler-grid--cards { grid-template-columns: repeat(8,minmax(0,1fr)); gap: 12px; }
+.page-recycler.site-glass .recycler-grid--cards .recycle-card { display: flex; flex-direction: column; align-items: stretch; justify-content: start; gap: 10px; padding: 12px; border-radius: 10px; background: linear-gradient(135deg,#ffffff04,transparent),#080808a0; border-color: #ffffff20; }
+.page-recycler.site-glass .recycler-grid--cards .recycle-side { display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 0; border: 0; background: transparent; box-shadow: none; border-radius: 0; }
+.page-recycler .recycler-grid--cards .recycle-side img { width: 100%; height: 104px; padding: 0; border: 0; border-radius: 0; background: transparent; object-fit: contain; filter: drop-shadow(0 4px 8px #0005); }
+.page-recycler .recycler-grid--cards .recycle-label span { font-size: 13px; line-height: 18px; font-weight: 500; overflow-wrap: anywhere; }
+.page-recycler.site-glass .recycler-grid--cards .recycle-side--result { margin-top: auto; padding: 8px; border: 1px solid #ff9c3828; border-radius: 6px; background: #ff85000a; display: flex; flex-direction: row; align-items: center; min-width: 0; gap: 4px; }
+.page-recycler .recycler-grid--cards .recycle-side--result::before { width: 24px; height: 28px; margin: 0; flex-shrink: 0; }
+.page-recycler .recycler-grid--cards .recycle-count { font-size: 20px; line-height: 28px; font-weight: 600; color: #ffad59; min-width: 0; width: auto; margin-left: auto; text-align: right; font-variant-numeric: tabular-nums; }
+.page-recycler .recycler-grid--cards .recycle-side--result::after { content: none; }
+.page-recycler .recycle-result-label { font-size: 11px; line-height: 18px; color: #d5c4b3; }
+.page-recycler .info-gallery .info-shot { border-radius: 10px; background: #080808a0; border: 1px solid #ffffff20; }
+@media(max-width: 1300px) { .page-recycler .recycler-grid--cards { grid-template-columns: repeat(6,minmax(0,1fr)); } }
+@media(max-width: 1000px) { .page-recycler .recycler-grid--cards { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+@media(max-width: 650px) { .page-recycler .recycler-grid--cards { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; } .page-recycler.site-glass .recycler-grid--cards .recycle-card { padding: 8px; } .page-recycler .recycler-grid--cards .recycle-side--result::after { display: none; } }
+@media(max-width: 450px) { .page-recycler .recycler-grid--cards { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+@media(max-width: 650px) { .page-recycler .recycle-result-label { display: none; } }

@@ -19,8 +19,10 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/production-glass.css?v=20261111">
 </head>
-<body>
+<body class="site-glass page-gardening">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -40,9 +42,9 @@
     </div>
   </div>
 
+<nav class="production-nav" aria-label="Разделы страницы"><a href="#production-growing">Выращивание</a><a href="#production-seeds">Виды семян</a><a href="#production-harvest">Рост и урожай</a><a href="#production-fertilizer">Удобрение</a><a href="#production-care">Обработка растений</a></nav>
   <div class="card info-card">
-    <h2>Выращивание</h2>
-    <p class="info-note">Порядок действий:</p>
+    <h2 id="production-growing">Выращивание</h2>
     <ol class="grow-steps">
       <li>Вскопать грядку в теплице.</li>
       <li>Полить грядки водой.</li>
@@ -54,24 +56,24 @@
   </div>
 
   <div class="card info-card">
-    <h2>Виды семян</h2>
+    <h2 id="production-seeds">Виды семян</h2>
     <p class="info-note">В каждой пачке содержится 10 семян.</p>
     <div class="seed-grid">
-      <div class="seed-tile"><img src="/images/food/avocado_seed.png" alt="Семена авокадо" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/beetroot_seed.png" alt="Семена свеклы" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/cucumber_seed.png" alt="Семена огурца" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/eggplant_seed.png" alt="Семена баклажана" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/melon_seed.png" alt="Семена дыни" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/peper_seed.png" alt="Семена красного перца" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/radish_seed.png" alt="Семена редиса" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/red_potato_seed.png" alt="Семена красного картофеля" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/strawberry_seed.png" alt="Семена клубники" data-zoomable="true"></div>
-      <div class="seed-tile"><img src="/images/food/turnip_seed.png" alt="Семена репы" data-zoomable="true"></div>
+      <div class="seed-tile"><img src="/images/food/avocado_seed.png" alt="Семена авокадо" data-zoomable="true"><span>Семена авокадо</span></div>
+      <div class="seed-tile"><img src="/images/food/beetroot_seed.png" alt="Семена свеклы" data-zoomable="true"><span>Семена свеклы</span></div>
+      <div class="seed-tile"><img src="/images/food/cucumber_seed.png" alt="Семена огурца" data-zoomable="true"><span>Семена огурца</span></div>
+      <div class="seed-tile"><img src="/images/food/eggplant_seed.png" alt="Семена баклажана" data-zoomable="true"><span>Семена баклажана</span></div>
+      <div class="seed-tile"><img src="/images/food/melon_seed.png" alt="Семена дыни" data-zoomable="true"><span>Семена дыни</span></div>
+      <div class="seed-tile"><img src="/images/food/peper_seed.png" alt="Семена красного перца" data-zoomable="true"><span>Семена красного перца</span></div>
+      <div class="seed-tile"><img src="/images/food/radish_seed.png" alt="Семена редиса" data-zoomable="true"><span>Семена редиса</span></div>
+      <div class="seed-tile"><img src="/images/food/red_potato_seed.png" alt="Семена красного картофеля" data-zoomable="true"><span>Семена красного картофеля</span></div>
+      <div class="seed-tile"><img src="/images/food/strawberry_seed.png" alt="Семена клубники" data-zoomable="true"><span>Семена клубники</span></div>
+      <div class="seed-tile"><img src="/images/food/turnip_seed.png" alt="Семена репы" data-zoomable="true"><span>Семена репы</span></div>
     </div>
   </div>
 
   <div class="card info-card">
-    <h2>Рост и урожай</h2>
+    <h2 id="production-harvest">Рост и урожай</h2>
     <div class="info-table-wrap">
       <table class="info-table gardening-table">
         <thead>
@@ -102,7 +104,7 @@
   </div>
 
   <div class="card info-card">
-    <h2>Удобрение</h2>
+    <h2 id="production-fertilizer">Удобрение</h2>
     <ul class="info-list">
       <li>Удобрять грядки желательно только удобрением или удобрением, созданным из отходов фермы.</li>
       <li>Используя удобрения, повышается шанс получить на 1-2 плода больше.</li>
@@ -112,7 +114,7 @@
   </div>
 
   <div class="card info-card">
-    <h2>Обработка растений</h2>
+    <h2 id="production-care">Обработка растений</h2>
     <ul class="info-list">
       <li>Растения надо обрабатывать от вредителей инсектицидным спреем.</li>
       <li>Если не обрабатывать растения, вредители могут их уничтожить.</li>
@@ -149,7 +151,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

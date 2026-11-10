@@ -19,9 +19,10 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
-  <link rel='stylesheet' href='/styles/pages/vote.css'>
+  <link rel='stylesheet' href='/styles/pages/vote.css?v=20261111-flow'>
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
 </head>
-<body>
+<body class="site-glass">
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -43,7 +44,9 @@
 
   <section class="card info-card">
     <h2>Что даёт голосование</h2>
-    <p class="info-text">Голосование за наш сервер помогает привлекать новых игроков, поднимать проект в рейтинге и получать кристаллы, которые можно обменять на уникальные предметы в игре.</p>
+    <p class="info-text">За голосование вы получаете бонусы на сайте Wargm. На них можно купить кристаллы, забрать их в игре и обменять на предметы.</p>
+    <ol class="vote-flow" aria-label="Путь от голоса до предметов"><li><strong>Голос</strong><span>за сервер на Wargm</span></li><li><strong>Бонусы</strong><span>на балансе сайта</span></li><li><strong>Кристаллы</strong><span>покупка за бонусы</span></li><li><strong>Предметы</strong><span>обмен в игре</span></li></ol>
+    <p class="info-note"><strong>После голосования кристаллы не выдаются автоматически.</strong> Сначала купите их за накопленные бонусы на сайте Wargm проекта.</p>
     <div class="bbp-jump-nav vote-link-row">
       <a class="bbp-jump-link" href="https://yourworld.wargm.ru/" target="_blank" rel="noopener">Открыть Wargm проекта</a>
     </div>
@@ -51,7 +54,7 @@
 
   <section class="card info-card">
     <h2>Пошаговая инструкция</h2>
-    <div class="vote-step-grid">
+    <div class="vote-step-grid vote-instructions">
       <article class="vote-card">
         <h3>1. Перейдите на сайт Wargm</h3>
         <p class="info-text">Откройте страницу проекта <a href="https://yourworld.wargm.ru/" target="_blank" rel="noopener">Wargm</a>.</p>
@@ -65,16 +68,20 @@
         <p class="info-text">Откройте страницу нужного сервера, нажмите <strong>Голосовать</strong> и пройдите капчу, если она появится.</p>
       </article>
       <article class="vote-card">
-        <h3>4. Получите кристаллы</h3>
-        <p class="info-text">После успешного голосования на баланс сайта будут начислены кристаллы.</p>
+        <h3>4. Получите бонусы за голос</h3>
+        <p class="info-text">После успешного голосования на баланс Wargm начисляются бонусы. Это средства для покупки наград на сайте.</p>
       </article>
       <article class="vote-card">
-        <h3>5. Обменяйте кристаллы</h3>
-        <p class="info-text">На сайте можно купить товары <strong>Кристалл 1, 5, 10, 20, 50, 100, 200</strong>, а затем забрать их через автовыдачу сочетанием <strong>Shift + B</strong>.</p>
+        <h3>5. Купите кристаллы за бонусы</h3>
+        <p class="info-text">На <a href="https://yourworld.wargm.ru/" target="_blank" rel="noopener">сайте Wargm проекта</a> выберите товар <strong>«Кристалл»</strong> нужного количества: 1, 5, 10, 20, 50, 100 или 200. Оплатите его накопленными бонусами.</p>
       </article>
       <article class="vote-card">
-        <h3>6. Дождитесь автовыдачи</h3>
-        <p class="info-text">Кристаллы приходят в автовыдачу примерно через <strong>5 минут</strong> после покупки на сайте.</p>
+        <h3>6. Заберите кристаллы в игре</h3>
+        <p class="info-text">Примерно через <strong>5 минут после покупки</strong> зайдите в игру и откройте автовыдачу сочетанием <strong>Shift + B</strong>. Заберите купленные кристаллы.</p>
+      </article>
+      <article class="vote-card">
+        <h3>7. Обменяйте кристаллы на предметы</h3>
+        <p class="info-text">Теперь кристаллы можно потратить в игре. Посмотрите <a href="/crystal-shop/">предметы за кристаллы</a> и выберите награду.</p>
       </article>
     </div>
   </section>
@@ -143,7 +150,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>

@@ -19,8 +19,9 @@
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
-</head>
-<body class="page-collection">
+<link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
+<link rel="stylesheet" href="/styles/pages/outfits-glass.css?v=compact3"></head>
+<body class="page-collection site-glass outfits-glass" >
 <div class="wrap">
   <div class="page-top">
     <a href="/index.html" class="back-btn" aria-label="Назад">
@@ -40,28 +41,17 @@
     </div>
   </div>
 
-  <section class="card info-card">
-    <h2>Описание</h2>
-    <p class="info-text">На этой странице собрана информация по сетам YourWorld. Для каждого комплекта есть отдельная карточка с превью, слотами, местом под аттачи и основными параметрами защиты.</p>
-    <p class="info-note">Изображение сета можно открыть в увеличении. Если у комплекта есть разные версии, цвета или дополнительные варианты предметов, их можно переключать прямо в карточке.</p>
+  <section class="outfit-picker">
+    <div class="outfit-picker-top"><h2>Выберите комплект</h2><input type="search" id="outfitSearchInput" class="search-input" aria-label="Поиск по сетам одежды" placeholder="Найти сет по названию"></div>
+    <div class="outfit-kind-nav" id="outfitKindNav" role="group" aria-label="Тип одежды">
+      <button type="button" data-kind="all" aria-pressed="true">Все предметы</button>
+      <button type="button" data-kind="set" aria-pressed="false">Сеты</button>
+      <button type="button" data-kind="backpack" aria-pressed="false">Рюкзаки</button>
+      <button type="button" data-kind="belt" aria-pressed="false">Ремни</button>
+      <button type="button" data-kind="vest" aria-pressed="false">Бронежилеты</button>
+    </div>
+    <div class="outfit-filter-nav" id="outfitFilterNav" aria-label="Категории одежды"></div>
   </section>
-
-  <section class="card info-card">
-    <h2>Категории</h2>
-    <div class="outfit-filter-nav" id="outfitFilterNav"></div>
-  </section>
-
-  <section class="card info-card">
-    <h2>Поиск</h2>
-    <label class="search-input search-input--outfit" aria-label="Поиск по сетам одежды">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
-      </svg>
-      <input type="search" id="outfitSearchInput" placeholder="Найти сет по названию">
-    </label>
-  </section>
-
   <section class="outfit-stack" id="outfitCatalog"></section>
 </div>
 
@@ -74,7 +64,7 @@
       </div>
       <p class="footer-text">Информационный сайт по серверу YourWorld PVE.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links"><a href="https://lolka.gg/71bE4frpB" target="_blank" rel="noopener">Lolka</a>
       <a href="https://discord.gg/yourworlddayz" target="_blank" rel="noopener">Discord</a>
       <a href="https://wargm.ru/project/3488" target="_blank" rel="noopener">Wargm</a>
       <a href="https://vk.com/yourworlddayzpve" target="_blank" rel="noopener">VK</a>
@@ -662,7 +652,7 @@
         ]
       },
       {
-        slug: "calistoundead",
+        slug: "calistoundead-donation",
         category: "donation",
         name: "Calisto Undead",
         versions: [
@@ -4972,8 +4962,23 @@
       viewers: "yw-clothing-viewers"
     };
 
+    let currentKind = "all";
+    function getOutfitKind(outfit) {
+      const name = outfit.name.toLowerCase();
+      if (name.includes("рюкзак")) return "backpack";
+      if (name.includes("ремень")) return "belt";
+      if (name.includes("бронежилет")) return "vest";
+      return "set";
+    }
     let currentCategory = "all";
     let currentQuery = "";
+    document.getElementById("outfitKindNav").addEventListener("click", event => {
+      const button = event.target.closest("[data-kind]");
+      if (!button) return;
+      currentKind = button.dataset.kind;
+      document.querySelectorAll("[data-kind]").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      renderCatalog(currentCategory, currentQuery);
+    });
     const outfitViewerState = new Map();
     const outfitVersionState = new Map();
     const outfitDetailViewerState = new Map();
@@ -5036,19 +5041,14 @@
 
       const normalizedQuery = query.trim().toLowerCase();
 
-      const filteredOutfits = [...outfits].sort((a, b) => {
-        const aInvisible = a.name.startsWith("Невидимый");
-        const bInvisible = b.name.startsWith("Невидимый");
-        if (aInvisible !== bInvisible) return aInvisible ? 1 : -1;
-        return a.name.localeCompare(b.name, "ru");
-      }).filter((outfit) => {
+      const filteredOutfits = [...outfits].sort((a, b) => a.name.localeCompare(b.name, "ru", { numeric: true, sensitivity: "base" })).filter((outfit) => {
         const matchCategory = activeCategory === "all" || outfit.category === activeCategory;
         const versionLabels = Array.isArray(outfit.versions)
           ? outfit.versions.map((item) => item.label || "").join(" ")
           : "";
         const searchText = `${outfit.name} ${outfit.version || ""} ${versionLabels}`.toLowerCase();
         const matchQuery = !normalizedQuery || searchText.includes(normalizedQuery);
-        return matchCategory && matchQuery;
+        return matchCategory && matchQuery && (currentKind === "all" || getOutfitKind(outfit) === currentKind);
       });
 
       filteredOutfits.forEach((outfit) => {
@@ -5180,7 +5180,7 @@
         .join("");
 
       const card = document.createElement("article");
-      card.className = "outfit-card";
+      card.className = "outfit-card" + ((activeVersion.slots || []).length === 1 ? " outfit-card--single" : "");
       card.id = outfit.slug;
       card.dataset.category = outfit.category || "";
       card.innerHTML = `
@@ -5188,6 +5188,21 @@
           <h3>
             ${escapeHtml(`${outfit.name}${activeVersion.label ? ` ${activeVersion.label}` : ""}`)}
           </h3>
+          <span class="outfit-source">${escapeHtml(outfitCategories.find(category => category.id === outfit.category)?.label || '')}</span>
+              ${versions.length > 1 ? `
+              <section class="outfit-panel outfit-panel--wide outfit-panel--version-switch">
+                <div class="outfit-version-switch">
+                  ${versions.map((version, versionIndex) => `
+                    <button
+                      class="outfit-version-btn${versionIndex === safeVersionIndex ? " is-active" : ""}"
+                      type="button"
+                      data-outfit-version-btn="${escapeHtml(outfit.slug)}"
+                      data-version-index="${versionIndex}"
+                    >${escapeHtml(version.label || `V${versionIndex + 1}`)}</button>
+                  `).join("")}
+                </div>
+              </section>` : ""}
+
         </div>
         ${outfit.acquisition ? `<p class="info-note"><strong>Получение:</strong> ${escapeHtml(outfit.acquisition)}</p>` : ""}
         ${outfit.craftRecipe ? `<p class="info-note"><a href="${escapeHtml(outfit.craftRecipe)}">Рецепт крафта</a></p>` : ""}
@@ -5211,26 +5226,13 @@
           </div>
           <div class="outfit-card__body">
             <div class="outfit-card__grid">
-              ${versions.length > 1 ? `
-              <section class="outfit-panel outfit-panel--wide outfit-panel--version-switch">
-                <div class="outfit-version-switch">
-                  ${versions.map((version, versionIndex) => `
-                    <button
-                      class="outfit-version-btn${versionIndex === safeVersionIndex ? " is-active" : ""}"
-                      type="button"
-                      data-outfit-version-btn="${escapeHtml(outfit.slug)}"
-                      data-version-index="${versionIndex}"
-                    >${escapeHtml(version.label || `V${versionIndex + 1}`)}</button>
-                  `).join("")}
-                </div>
-              </section>` : ""}
               <section class="outfit-panel outfit-panel--wide">
-                <span class="outfit-panel__label">Слоты по предметам</span>
+                <span class="outfit-panel__label">Вместимость</span>
                 <div class="outfit-slot-grid">${slots}</div>
               </section>
               ${attachmentsSource.length ? `
               <section class="outfit-panel outfit-panel--wide">
-                <span class="outfit-panel__label">Аттачи</span>
+                <span class="outfit-panel__label">Attach-монты</span>
                 <div class="outfit-attach-grid">${attachments}</div>
               </section>` : ""}
               ${protectionSource.length ? `
@@ -5238,16 +5240,18 @@
                 <span class="outfit-panel__label">Защита</span>
                 <div class="outfit-protection">${protection}</div>
               </section>` : ""}
-              ${details || detailNote || nbcSwitchNote ? `
-              <section class="outfit-panel outfit-panel--wide">
-                <span class="outfit-panel__label">Дополнительная информация</span>
-                ${detailNote ? `<p class="outfit-detail-note">${escapeHtml(detailNote)}</p>` : ""}
-                ${nbcSwitchNote ? `<p class="outfit-detail-note">${escapeHtml(nbcSwitchNote)}</p>` : ""}
-                ${details ? `<div class="outfit-detail-grid">${details}</div>` : ""}
-              </section>` : ""}
             </div>
           </div>
         </div>
+              ${details || detailNote || nbcSwitchNote ? `
+              <section class="outfit-panel outfit-features${details ? ' outfit-features--illustrated' : ''}">
+                <div class="outfit-features__text">
+                <span class="outfit-panel__label">Особенности комплекта</span>
+                ${detailNote ? `<p class="outfit-detail-note">${escapeHtml(detailNote)}</p>` : ""}
+                ${nbcSwitchNote ? `<p class="outfit-detail-note">${escapeHtml(nbcSwitchNote)}</p>` : ""}
+                </div>
+                ${details ? `<div class="outfit-detail-grid">${details}</div>` : ""}
+              </section>` : ""}
       `;
       catalogRoot.appendChild(card);
       });

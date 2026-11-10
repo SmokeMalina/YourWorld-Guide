@@ -1,0 +1,19 @@
+/* Explicit ingredient-to-result diagrams. */
+.leisure-glass .hooch-flow-grid { grid-template-columns: 1fr; }
+.leisure-glass .hooch-assembly { display: grid; grid-template-columns: minmax(0,1fr) 48px 200px; gap: 16px; align-items: center; }
+.leisure-glass .hooch-flow-label { margin: 0 0 12px; font-size: 13px; font-weight: 500; color: #bdb5ad; text-align: left; }
+.leisure-glass .hooch-input-group { min-width: 0; }
+.leisure-glass .hooch-ingredients { overflow: visible; gap: 28px; }
+.leisure-glass .hooch-ingredients.two-cols { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.leisure-glass .hooch-ing { overflow: visible; height: 100%; }
+.leisure-glass .hooch-ing + .hooch-ing::before { content: '+'; position: absolute; left: -24px; top: 50%; width: 20px; height: 24px; transform: translateY(-50%); background: transparent; color: #ffad59; font-size: 24px; text-align: center; }
+.leisure-glass .hooch-assembly-arrow { color: #ffad59; font-size: 40px; line-height: 1; text-align: center; }
+.leisure-glass .hooch-result { display: flex; flex-direction: column; gap: 8px; align-items: center; border: 1px solid #ff9c3850; border-radius: 10px; background: #ff85000a; margin: 0; padding: 16px; }
+.leisure-glass .hooch-result .hooch-flow-label { align-self: flex-start; color: #ffad59; margin: 0; }
+.leisure-glass .hooch-result img { height: 112px; width: 100%; }
+.leisure-glass .hooch-result strong { font-size: 14px; line-height: 1.4; font-weight: 500; color: #ffad59; text-align: center; }
+.leisure-glass .hooch-ingredients.five-cols,.leisure-glass .hooch-ingredients.four-cols { gap: 20px; }
+.leisure-glass :is(.five-cols,.four-cols) .hooch-ing + .hooch-ing::before { left: -20px; }
+.leisure-glass :is(.five-cols,.four-cols) .hooch-ing { padding: 10px 6px; }
+@media(max-width:1000px) { .leisure-glass .hooch-assembly { grid-template-columns: 1fr; gap: 12px; } .leisure-glass .hooch-assembly-arrow { transform: rotate(90deg); height: 40px; } .leisure-glass .hooch-result { width: min(100%,320px); justify-self: center; } }
+@media(max-width:680px) { .leisure-glass .hooch-ingredients.five-cols,.leisure-glass .hooch-ingredients.four-cols { grid-template-columns: 1fr; gap: 28px; } .leisure-glass :is(.five-cols,.four-cols) .hooch-ing { display: grid; grid-template-columns: 80px 1fr; padding: 12px 44px 12px 12px; } .leisure-glass :is(.five-cols,.four-cols) .hooch-ing img { height: 80px; } .leisure-glass :is(.five-cols,.four-cols) .hooch-ing + .hooch-ing::before { top: -27px; left: 50%; transform: translateX(-50%); } }
