@@ -585,3 +585,20 @@
     addSiteSearch();
   });
 })();
+
+// Load ingredient prices only on craft recipe pages.
+(() => {
+  if (!location.pathname.startsWith('/craft/') || !document.querySelector('.item-list .item-row')) return;
+  const style = document.createElement('link');
+  style.rel = 'stylesheet';
+  style.href = '/styles/pages/craft-cost-hints.css?v=20261111-clean';
+  document.head.append(style);
+  const prices = document.createElement('script');
+  prices.src = '/craft/resource_costs.js';
+  prices.onload = () => {
+    const hints = document.createElement('script');
+    hints.src = '/craft/cost-hints.js?v=20261111-clean';
+    document.body.append(hints);
+  };
+  document.body.append(prices);
+})();

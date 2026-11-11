@@ -1,0 +1,9 @@
+.site-glass .item-row.has-craft-cost { cursor:pointer; }
+.site-glass .item-row.has-craft-cost:focus-visible { outline:2px solid #ffb16d; outline-offset:3px; }
+.craft-cost-tooltip { position:fixed; z-index:1200; box-sizing:border-box; width:280px; max-width:calc(100vw - 24px); padding:16px; border:1px solid #ffad6255; border-radius:12px; background:linear-gradient(130deg,#2c2118f5,#0b0b0bf8); box-shadow:0 12px 32px #0009; color:#eee; font:14px/1.5 Rubik,sans-serif; }
+.craft-cost-tooltip[hidden] { display:none; }
+.craft-cost-tooltip__label { display:block; margin-bottom:6px; color:#aaa; font-size:12px; }
+.craft-cost-tooltip > strong { display:block; font-size:16px; font-weight:500; }
+.craft-cost-tooltip__value { display:flex; align-items:center; gap:10px; margin-top:12px; color:#ffb16d; font-weight:500; }
+.craft-cost-tooltip__value img { width:32px; height:32px; object-fit:contain; }
+.craft-cost-tooltip p { margin:12px 0 0; padding-top:10px; border-top:1px solid #ffffff20; color:#ddd; }
