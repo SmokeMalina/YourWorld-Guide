@@ -1,0 +1,48 @@
+{
+  "index.html": [
+    "home-glass",
+    "/styles/home-glass.css"
+  ],
+  "arsenal/index.html": [
+    "arsenal-panorama",
+    "/styles/pages/arsenal-glass.css",
+    "/arsenal/weapons-data.js"
+  ],
+  "vehicles-info/index.html": [
+    "transport-glass",
+    "/styles/pages/transport-glass.css",
+    "/vehicles-info/catalog.js"
+  ],
+  "clothing-info/index.html": [
+    "outfits-glass",
+    "/styles/pages/outfits-glass.css"
+  ],
+  "events/index.html": [
+    "events-glass",
+    "/styles/pages/events-glass.css"
+  ],
+  "weapon-collector/index.html": [
+    "collections-glass",
+    "/styles/pages/collections-glass.css"
+  ],
+  "fish-collector/index.html": [
+    "collections-glass",
+    "/styles/pages/collections-glass.css"
+  ],
+  "vehicle-collector/index.html": [
+    "collections-glass",
+    "/styles/pages/collections-glass.css"
+  ],
+  "pokemon-collection/index.html": [
+    "collections-glass",
+    "/styles/pages/collections-glass.css"
+  ],
+  "craft/electronic/nvg.html": [
+    "/styles/glass-site.css",
+    "class=\"item-list\""
+  ],
+  "craft/workbench/ammo_20mm_v1.html": [
+    "/styles/glass-site.css",
+    "class=\"item-list\""
+  ]
+}

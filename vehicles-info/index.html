@@ -15,15 +15,15 @@
   <meta property="og:image" content="https://wiki-yourworld.ru/images/items/cars_prev.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wiki-yourworld.ru/vehicles-info/">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index,follow">
   <link rel="apple-touch-icon" href="/images/ywlogo.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0b0d">
 <link rel="stylesheet" href="/styles/glass-site.css?v=20261110-components">
-</head>
-<body class="page-vehicles site-glass">
+<link rel="stylesheet" href="/styles/pages/transport-glass.css?v=20261111"></head>
+<body class="page-vehicles site-glass transport-glass">
 <div class="wrap">
-  <div class="page-top">
+  <div class="page-top"><nav class="breadcrumbs" aria-label="Навигация"><a href="/index.html">Главная</a><span class="crumb-sep">›</span><span class="crumb-current">Транспорт</span></nav>
     <a href="/index.html" class="back-btn" aria-label="Назад">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
         <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -36,31 +36,21 @@
       <img class="hero-logo" src="/images/items/cars_prev.png" alt="Транспорт">
       <div>
         <h1>Транспорт</h1>
-        <p class="muted">Каталог транспорта YourWorld по категориям с переключением расцветок</p>
+        <p class="muted">Выберите тип машины и способ получения. Сравните вместимость, скорость и расцветки.</p>
       </div>
     </div>
   </div>
 
-  <section class="card info-card">
-    <h2>Описание</h2>
-    <p class="info-text">На этой странице собрана информация по машинам YourWorld. Внутри каждой категории показаны инфокарты моделей с параметрами: вместимостью, доступными аттачами и максимальной скоростью.</p>
-    <p class="info-note">Изображение машины можно открыть в увеличении. Если у модели есть разные цвета или версии кузова, их можно переключать прямо в карточке.</p>
+  <section class="transport-filters" aria-label="Подбор транспорта">
+    <div class="transport-search-line"><h2>Подберите транспорт</h2><input class="search-input" id="vehicleSearch" type="search" aria-label="Название машины" placeholder="Поиск по выбранным фильтрам…"></div>
+    <span class="transport-filter-label" id="typeLabel">Тип транспорта</span>
+    <div class="transport-types" id="vehicleTypes" role="group" aria-labelledby="typeLabel"></div>
+    <span class="transport-filter-label" id="sourceLabel">Способ получения</span>
+    <div class="transport-sources" id="vehicleSources" role="group" aria-labelledby="sourceLabel"></div>
+    <p class="transport-description" id="sourceDescription"></p>
   </section>
-
-  <section class="card info-card">
-    <h2>Категории и поиск</h2>
-    <div class="vehicle-db-tabs" id="vehicleTabs" role="tablist" aria-label="Категории машин"></div>
-    <div class="search-block vehicle-db-search-block">
-      <input
-        class="search-input"
-        id="vehicleSearch"
-        type="search"
-        placeholder="Найти машину по названию в категории..."
-        autocomplete="off">
-    </div>
-    <div class="vehicle-db-search-empty hidden" data-pagefind-ignore id="vehicleSearchEmpty">Ничего не найдено.</div>
-  </section>
-
+  <div class="transport-results"><h2 id="resultTitle"></h2><span id="resultCount" role="status"></span><button type="button" class="transport-reset" id="resetFilters">Сбросить фильтры</button></div>
+  <p class="transport-empty" id="vehicleSearchEmpty" hidden>По этим условиям машин не найдено. Измените тип, способ получения или название.</p>
   <section class="vehicle-stack" id="vehicleCatalog"></section>
 </div>
 
@@ -83,394 +73,8 @@
   <div class="footer-bottom">© 2026 YourWorld DayZ. Все права защищены.</div>
 </footer>
 
-<div class="img-modal" id="vehicleModal" aria-hidden="true">
-  <button class="img-modal__nav img-modal__nav--prev" type="button" aria-label="Предыдущее изображение">‹</button>
-  <button class="img-modal__close" type="button" aria-label="Закрыть">&times;</button>
-  <img class="img-modal__image" src="" alt="">
-  <button class="img-modal__nav img-modal__nav--next" type="button" aria-label="Следующее изображение">›</button>
-</div>
-
+<dialog id="vehicleImageDialog" aria-label="Изображение машины"><button type="button">Закрыть</button><img alt=""></dialog>
 <script src="/site.js"></script>
 <script src="/vehicles-info/data.js"></script>
-<script>
-  (() => {
-    const data = window.vehicleGuideData || {};
-    const vehicleCategories = Array.isArray(data.vehicleCategories) ? data.vehicleCategories : [];
-    const vehicleGroups = data.vehicleGroups || {};
-    const vehicleLibrary = data.vehicleLibrary || {};
-
-    const STORAGE_KEYS = {
-      category: "vehicles.category",
-      query: "vehicles.query",
-      scroll: "vehicles.scroll",
-      viewers: "vehicles.viewers"
-    };
-
-    const tabsEl = document.getElementById("vehicleTabs");
-    const searchInput = document.getElementById("vehicleSearch");
-    const searchEmpty = document.getElementById("vehicleSearchEmpty");
-    const catalogEl = document.getElementById("vehicleCatalog");
-
-    const modal = document.getElementById("vehicleModal");
-    const modalImage = modal ? modal.querySelector(".img-modal__image") : null;
-    const modalPrev = modal ? modal.querySelector(".img-modal__nav--prev") : null;
-    const modalNext = modal ? modal.querySelector(".img-modal__nav--next") : null;
-    const modalClose = modal ? modal.querySelector(".img-modal__close") : null;
-
-    let currentCategory = vehicleCategories[0] ? vehicleCategories[0].id : "";
-    let currentQuery = "";
-    let restoredScroll = false;
-    let modalGallery = [];
-    let modalIndex = 0;
-    let modalTitle = "";
-
-    const viewerState = loadJSON(STORAGE_KEYS.viewers, {});
-
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/\"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-    }
-
-    function loadJSON(key, fallback) {
-      try {
-        const raw = localStorage.getItem(key);
-        return raw ? JSON.parse(raw) : fallback;
-      } catch (_) {
-        return fallback;
-      }
-    }
-
-    function saveJSON(key, value) {
-      try {
-        localStorage.setItem(key, JSON.stringify(value));
-      } catch (_) {
-        // ignore
-      }
-    }
-
-    function humanizeKey(key) {
-      return key
-        .split("_")
-        .map((part) => /^[a-z]+$/i.test(part) ? part.charAt(0).toUpperCase() + part.slice(1) : part.toUpperCase())
-        .join(" ");
-    }
-
-    function normalizeCategoryEntry(entry, index) {
-      if (typeof entry === "string") {
-        return {
-          id: `${entry}__${index}`,
-          key: entry,
-          title: humanizeKey(entry),
-          slots: "",
-          attachments: [],
-          speed: "",
-          search: "",
-          note: ""
-        };
-      }
-
-      if (!entry || typeof entry !== "object") return null;
-
-      const baseKey = entry.key || entry.model || entry.vehicle || entry.id;
-      if (!baseKey) return null;
-
-      return {
-        id: entry.id || `${baseKey}__${index}`,
-        key: baseKey,
-        title: entry.title || humanizeKey(baseKey),
-        slots: entry.slots || "",
-        attachments: Array.isArray(entry.attachments) ? entry.attachments : [],
-        speed: entry.speed || "",
-        search: entry.search || "",
-        note: entry.note || ""
-      };
-    }
-
-    function getCategoryModels(categoryId) {
-      const entries = Array.isArray(vehicleGroups[categoryId]) ? vehicleGroups[categoryId] : [];
-      return entries
-        .map(normalizeCategoryEntry)
-        .filter((entry) => entry && Array.isArray(vehicleLibrary[entry.key]) && vehicleLibrary[entry.key].length)
-        .map((entry) => ({
-          ...entry,
-          gallery: vehicleLibrary[entry.key]
-        }))
-        .sort((a, b) => a.title.localeCompare(b.title, "ru"));
-    }
-
-    function getViewerIndex(key, gallery) {
-      const raw = Number(viewerState[key] || 0);
-      const length = gallery.length || 1;
-      return ((raw % length) + length) % length;
-    }
-
-    function persistViewers() {
-      saveJSON(STORAGE_KEYS.viewers, viewerState);
-    }
-
-    function renderTabs() {
-      tabsEl.innerHTML = vehicleCategories.map((category) => `
-        <button
-          class="vehicle-db-tab${category.id === currentCategory ? " is-active" : ""}"
-          type="button"
-          data-vehicle-tab="${escapeHtml(category.id)}"
-          role="tab"
-          aria-selected="${category.id === currentCategory ? "true" : "false"}">
-          ${escapeHtml(category.label)}
-        </button>
-      `).join("");
-    }
-
-    function renderCard(model) {
-      const currentIndex = getViewerIndex(model.id, model.gallery);
-      const currentImage = model.gallery[currentIndex];
-      const showNav = model.gallery.length > 1;
-      const attachments = model.attachments.length
-        ? `
-            <div class="vehicle-card__meta-block">
-              <span class="vehicle-card__meta-label">Аттачи</span>
-              <div class="vehicle-card__meta-chips">
-                ${model.attachments.map((item) => `<span class="vehicle-card__meta-chip">${escapeHtml(item)}</span>`).join("")}
-              </div>
-            </div>
-          `
-        : "";
-      return `
-        <article class="vehicle-card" data-vehicle-card="${escapeHtml(model.id)}">
-          <div class="vehicle-card__head">
-            <h3 class="vehicle-card__title">${escapeHtml(model.title)}</h3>
-            ${showNav ? `<span class="vehicle-card__count">${currentIndex + 1} / ${model.gallery.length}</span>` : ""}
-          </div>
-          <div class="vehicle-viewer">
-            <button class="vehicle-viewer__nav vehicle-viewer__nav--prev" type="button" aria-label="Предыдущий цвет" data-vehicle-arrow="${escapeHtml(model.id)}" data-direction="-1"${showNav ? "" : " hidden"}>‹</button>
-            <img
-              class="vehicle-viewer__img"
-              src="${escapeHtml(currentImage)}"
-              alt="${escapeHtml(model.title)}"
-              data-vehicle-open="${escapeHtml(model.id)}">
-            <button class="vehicle-viewer__nav vehicle-viewer__nav--next" type="button" aria-label="Следующий цвет" data-vehicle-arrow="${escapeHtml(model.id)}" data-direction="1"${showNav ? "" : " hidden"}>›</button>
-          </div>
-          <div class="vehicle-card__meta">
-            <div class="vehicle-card__meta-row">
-              <span class="vehicle-card__meta-label">Слоты</span>
-              <strong class="vehicle-card__meta-value">${escapeHtml(model.slots || "Указать")}</strong>
-            </div>
-            <div class="vehicle-card__meta-row">
-              <span class="vehicle-card__meta-label">Макс. скорость</span>
-              <strong class="vehicle-card__meta-value">${escapeHtml(model.speed || "Указать")}</strong>
-            </div>
-            ${attachments}
-            ${model.note ? `<p class="vehicle-card__note">${escapeHtml(model.note)}</p>` : ""}
-          </div>
-        </article>
-      `;
-    }
-
-    function renderCatalog() {
-      const query = currentQuery.toLowerCase();
-      const models = getCategoryModels(currentCategory).filter((model) =>
-        !query ||
-        model.title.toLowerCase().includes(query) ||
-        String(model.search || "").toLowerCase().includes(query)
-      );
-
-      searchEmpty.classList.toggle("hidden", models.length > 0);
-      catalogEl.innerHTML = models.map(renderCard).join("");
-
-      if (!restoredScroll) {
-        const savedScroll = Number(localStorage.getItem(STORAGE_KEYS.scroll) || "0");
-        if (savedScroll > 0) {
-          restoredScroll = true;
-          requestAnimationFrame(() => window.scrollTo(0, savedScroll));
-        }
-      }
-    }
-
-    function updateCard(key) {
-      const card = document.querySelector(`[data-vehicle-card="${CSS.escape(key)}"]`);
-      const model = getCategoryModels(currentCategory).find((item) => item.id === key);
-      const gallery = model ? model.gallery : null;
-      if (!card || !Array.isArray(gallery) || !gallery.length) return;
-      const index = getViewerIndex(key, gallery);
-      const img = card.querySelector(".vehicle-viewer__img");
-      const count = card.querySelector(".vehicle-card__count");
-      if (img) img.src = gallery[index];
-      if (count) count.textContent = `${index + 1} / ${gallery.length}`;
-    }
-
-    function openModal(gallery, index, title) {
-      if (!modal || !modalImage) return;
-      modalGallery = Array.isArray(gallery) ? gallery.filter(Boolean) : [];
-      modalIndex = Number.isFinite(index) ? index : 0;
-      modalTitle = title || "";
-      syncModal();
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-    }
-
-    function closeModal() {
-      if (!modal) return;
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      modalGallery = [];
-      modalIndex = 0;
-      modalTitle = "";
-    }
-
-    function syncModal() {
-      if (!modalImage || !modalGallery.length) return;
-      modalIndex = ((modalIndex % modalGallery.length) + modalGallery.length) % modalGallery.length;
-      modalImage.src = modalGallery[modalIndex];
-      modalImage.alt = modalTitle || "Машина";
-      if (modalPrev) modalPrev.hidden = modalGallery.length <= 1;
-      if (modalNext) modalNext.hidden = modalGallery.length <= 1;
-    }
-
-    function setCategory(categoryId) {
-      currentCategory = categoryId;
-      localStorage.setItem(STORAGE_KEYS.category, currentCategory);
-      localStorage.setItem(STORAGE_KEYS.scroll, "0");
-      renderTabs();
-      renderCatalog();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function initState() {
-      const urlItemId = new URLSearchParams(window.location.search).get("item")?.trim();
-      if (urlItemId) {
-        const target = vehicleCategories
-          .map((category) => ({ category, model: getCategoryModels(category.id).find((model) => model.id === urlItemId) }))
-          .find((item) => item.model);
-        if (target) {
-          currentCategory = target.category.id;
-          currentQuery = target.model.title;
-          if (searchInput) searchInput.value = currentQuery;
-          return;
-        }
-      }
-
-      const urlSearchQuery = new URLSearchParams(window.location.search)
-        .getAll("search")
-        .map((value) => value.trim())
-        .filter(Boolean)
-        .join(" ");
-      if (urlSearchQuery) {
-        currentQuery = urlSearchQuery;
-        const matchingCategory = vehicleCategories.find((category) => getCategoryModels(category.id).some((model) => {
-          const query = urlSearchQuery.toLowerCase();
-          return model.title.toLowerCase().includes(query) || String(model.search || "").toLowerCase().includes(query);
-        }));
-        if (matchingCategory) currentCategory = matchingCategory.id;
-        if (searchInput) searchInput.value = currentQuery;
-        return;
-      }
-
-      const savedCategory = localStorage.getItem(STORAGE_KEYS.category);
-      if (savedCategory && vehicleCategories.some((category) => category.id === savedCategory)) {
-        currentCategory = savedCategory;
-      }
-
-      const savedQuery = localStorage.getItem(STORAGE_KEYS.query);
-      if (savedQuery) {
-        currentQuery = savedQuery;
-        if (searchInput) searchInput.value = savedQuery;
-      }
-    }
-
-    initState();
-    renderTabs();
-    renderCatalog();
-
-    const urlItemId = new URLSearchParams(window.location.search).get("item")?.trim();
-    if (urlItemId) {
-      requestAnimationFrame(() => {
-        document.querySelector(`[data-vehicle-card="${CSS.escape(urlItemId)}"]`)
-          ?.scrollIntoView({ block: "start", behavior: "auto" });
-      });
-    }
-
-    tabsEl.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-vehicle-tab]");
-      if (!button) return;
-      setCategory(button.getAttribute("data-vehicle-tab"));
-    });
-
-    if (searchInput) {
-      searchInput.addEventListener("input", () => {
-        currentQuery = searchInput.value.trim();
-        localStorage.setItem(STORAGE_KEYS.query, currentQuery);
-        localStorage.setItem(STORAGE_KEYS.scroll, "0");
-        renderCatalog();
-      });
-    }
-
-    catalogEl.addEventListener("click", (event) => {
-      const arrow = event.target.closest("[data-vehicle-arrow]");
-      if (arrow) {
-        const key = arrow.getAttribute("data-vehicle-arrow");
-        const direction = Number(arrow.getAttribute("data-direction") || "0");
-        const model = getCategoryModels(currentCategory).find((item) => item.id === key);
-        const gallery = model ? model.gallery : null;
-        if (!Array.isArray(gallery) || gallery.length <= 1) return;
-        viewerState[key] = getViewerIndex(key, gallery) + direction;
-        persistViewers();
-        updateCard(key);
-        return;
-      }
-
-      const opener = event.target.closest("[data-vehicle-open]");
-      if (!opener) return;
-      const key = opener.getAttribute("data-vehicle-open");
-      const model = getCategoryModels(currentCategory).find((item) => item.id === key);
-      const gallery = model ? model.gallery : null;
-      if (!Array.isArray(gallery) || !gallery.length) return;
-      openModal(gallery, getViewerIndex(key, gallery), model.title);
-    });
-
-    window.addEventListener("scroll", () => {
-      localStorage.setItem(STORAGE_KEYS.scroll, String(window.scrollY || 0));
-    }, { passive: true });
-
-    if (modalClose) modalClose.addEventListener("click", closeModal);
-    if (modalPrev) modalPrev.addEventListener("click", () => {
-      if (modalGallery.length <= 1) return;
-      modalIndex -= 1;
-      syncModal();
-    });
-    if (modalNext) modalNext.addEventListener("click", () => {
-      if (modalGallery.length <= 1) return;
-      modalIndex += 1;
-      syncModal();
-    });
-
-    if (modal) {
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) closeModal();
-      });
-    }
-
-    document.addEventListener("keydown", (event) => {
-      if (!modal || !modal.classList.contains("is-open")) return;
-      if (event.key === "Escape") {
-        closeModal();
-        return;
-      }
-      if (modalGallery.length <= 1) return;
-      if (event.key === "ArrowLeft") {
-        modalIndex -= 1;
-        syncModal();
-      }
-      if (event.key === "ArrowRight") {
-        modalIndex += 1;
-        syncModal();
-      }
-    });
-  })();
-</script>
-</body>
-</html>
-
+<script src="/vehicles-info/catalog.js?v=20261111"></script>
+</body></html>

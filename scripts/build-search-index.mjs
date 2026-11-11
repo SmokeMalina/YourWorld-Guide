@@ -6,7 +6,7 @@ import * as pagefind from "pagefind";
 const siteRoot = process.cwd();
 
 const dynamicSources = [
-  { url: "/arsenal/", title: "Огнестрельное оружие", files: ["arsenal/index.html"] },
+  { url: "/arsenal/", title: "Огнестрельное оружие", files: ["arsenal/index.html", "arsenal/weapons-data.js"] },
   { url: "/clothing-info/", title: "Одежда", files: ["clothing-info/index.html"] },
   { url: "/dungeons/", title: "Данжи", files: ["dungeons/index.html"] },
   { url: "/events/", title: "События", files: ["events/index.html"] },
@@ -25,15 +25,6 @@ function readWindowData(source, property) {
   const context = { window: {} };
   vm.runInNewContext(source, context, { timeout: 1000 });
   return context.window[property];
-}
-
-function readArsenalData(source) {
-  const start = source.indexOf("    const suppressorIcon =");
-  const end = source.indexOf("    const tabsRoot =");
-  if (start < 0 || end < 0) throw new Error("Unable to locate arsenal data");
-  const context = {};
-  vm.runInNewContext(`${source.slice(start, end)}\nglobalThis.__seriesData = seriesData;`, context, { timeout: 1000 });
-  return context.__seriesData;
 }
 
 function readInlineConst(source, name) {
@@ -166,8 +157,8 @@ async function addMeleeRecords() {
 }
 
 async function addArsenalRecords() {
-  const source = await readFile(path.join(siteRoot, "arsenal/index.html"), "utf8");
-  const seriesData = readArsenalData(source);
+  const source = await readFile(path.join(siteRoot, "arsenal/weapons-data.js"), "utf8");
+  const seriesData = readWindowData(source, "YW_WEAPON_SERIES");
 
   for (const series of seriesData) {
     for (const [weaponIndex, weapon] of (series.weapons || []).entries()) {
